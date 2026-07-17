@@ -1,0 +1,2 @@
+rs80357906|Pathogenic|Hereditary_breast_ovarian_cancer|BRCA1:672|criteria_provided,_multiple_submitters,_no_conflicts
+rs1065852|drug_response|CYP2D6_drug_response|CYP2D6:1565|practice_guideline

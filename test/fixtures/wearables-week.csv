@@ -1,0 +1,11 @@
+metric,value,unit
+sleep_duration,7.4,hours
+sleep_efficiency,88,%
+deep_sleep_minutes,72,min
+rem_sleep_minutes,84,min
+recovery_score,55,%
+hrv,42,ms
+resting_heart_rate,58,bpm
+steps,9200,steps
+spo2,96,%
+active_energy,420,kcal

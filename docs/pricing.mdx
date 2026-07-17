@@ -1,0 +1,123 @@
+---
+title: "Hosted pricing"
+description: "Hosted ForeverBetter Wellness API plans, limits, billing, and self-hosting."
+---
+
+The hosted ForeverBetter Wellness API gives you managed authentication, private
+storage, worker capacity, wearable connections, billing, and support. Every
+plan uses the same API and MCP contract.
+
+| Plan | Price | Best for | What is included |
+| --- | ---: | --- | --- |
+| Free | $0 | Evaluation and personal experimentation | API key, MCP/OpenAPI access, 25 uploads and analyses per month, one queued WGS job |
+| Standard | $9.99/month | One person and their own agent | 250 uploads and analyses, 100 wearable syncs, five queued WGS jobs, managed cloud storage and workers |
+| Builder | $24.99/month | Commercial agents, pilots, and small apps | 1,000 uploads, 750 analyses, 300 wearable syncs, 15 WGS jobs, webhooks and production app use |
+| Growth | $49/month | Production agent products with recurring syncs | 5,000 uploads, 3,000 analyses, 1,500 wearable syncs, 50 WGS jobs, multi-workspace automation |
+| Enterprise | Custom | Regulated or high-volume deployments | Custom quotas, dedicated environments/workers, retention and support options |
+
+The live contract is also available from `GET /pricing`; use it when building a
+pricing UI so limits remain current.
+
+## Included features
+
+- Biomarker, wearable, behavioral, and genetics ingestion
+- WHOOP and Oura connection flows; Android Health Connect through the companion app
+- Source-backed analyses, trends, action plans, dashboard JSON, and webhooks
+- MCP, OpenAPI, scoped API keys, and agent discovery
+- Private direct-to-storage VCF, VCF.GZ, SNP-array, and 23andMe uploads with queued genetics analysis
+- Export and deletion controls for your workspace
+
+Full dbSNP WGS annotation is a separate advanced capability. The hosted Fly
+deployment provisions the official NCBI GRCh37 reference on an encrypted WGS
+volume. It requires an active paid Stripe subscription, a valid payment method,
+and a plan with a non-zero `full_dbsnp_jobs` quota. Free and Standard remain
+compact-only; Builder, Growth, and Enterprise are the intended hosted tiers
+for full dbSNP capacity. Self-hosted deployments are not subject to
+ForeverBetter billing.
+
+Builder and above permit an app, platform, or service that serves other users.
+Standard is for one person's own data and their own agent.
+
+## Billing
+
+From the dashboard, choose a hosted plan when the workspace is ready to
+continue. Stripe processes payment; ForeverBetter receives only verified
+subscription events. Selecting a plan does not start billing. Every cloud
+workspace gets its first **100 protected hosted API requests free** - enough to
+connect data, run an analysis, and test a small agent workflow. Checkout is
+only prompted when that allowance is exhausted. It requires a payment method
+up front (card or an eligible accelerated payment method) and begins the
+selected monthly subscription immediately. A cancelled plan does not reset the
+introductory allowance.
+Use **Manage billing** in the dashboard to update payment details, switch a
+plan, download invoices, or cancel.
+
+For integrations, the authenticated routes are:
+
+- `GET /billing/subscription`
+- `POST /billing/checkout` with `{"tier":"standard","activation_source":"request_limit"}`
+- `POST /billing/portal`
+
+### Internal billing administrators
+
+Operators can grant a narrowly scoped hosted `billing_admin` entitlement with
+the deployment secrets `HEALTH_API_BILLING_ADMIN_EMAILS` and/or
+`HEALTH_API_BILLING_ADMIN_USER_IDS` (comma- or whitespace-separated). This
+entitlement bypasses Stripe checkout, the introductory request allowance, and
+paid-tier/full dbSNP eligibility checks for the matching account. It does not
+grant `health:admin`, cross-user data access, or additional data permissions;
+normal endpoint, organization, storage, and worker limits still apply. Keep
+these values in Fly secrets, not source control, and revoke them with
+`fly secrets unset` when access is no longer needed.
+
+The subscription status response exposes `billing_admin: true` and the
+effective `enterprise` tier for an entitled account. A billing administrator
+still needs the dbSNP reference provisioned on the deployment before using
+`annotation_depth: "full_dbsnp"`.
+
+## FAQ
+
+### Do I have to pay to self-host?
+
+No. **Self-hosting is always an option.** The ForeverBetter Wellness API is
+open source; run the API, workers, Postgres, object storage, and your data on
+your own infrastructure. A hosted plan only pays for ForeverBetter-managed
+cloud operations and support - it does not gate the self-hosted software or MCP
+server. See [Self-hosting](/self-hosting).
+
+### What happens if I cancel?
+
+Stripe manages cancellation in its hosted billing portal. A canceled or
+delinquent hosted subscription falls back to Free hosted limits; you can still
+export or delete your data. Self-hosted deployments are unaffected.
+
+### Do I need to provide a payment method for the free requests?
+
+Not until the first 100 protected hosted requests are used. Then a managed
+cloud plan needs a payment method to continue, and its subscription begins at
+Checkout. Self-hosting never requires a ForeverBetter payment method.
+
+### Can I change plans?
+
+Yes. Use the billing portal from the dashboard. Plan changes are reflected from
+verified Stripe subscription events.
+
+## Cloud operator setup
+
+Create one recurring monthly price for each hosted plan in the existing
+ForeverBetter Stripe account: **Standard $9.99**, **Builder $24.99**, and
+**Growth $49** (the highest self-serve hosted plan). Add the resulting price IDs and the Stripe secret key as cloud
+secrets; never put them in source control.
+
+Configure Stripe to send these events to
+`https://api.foreverbetter.xyz/billing/stripe/webhook`:
+
+- `checkout.session.completed`
+- `customer.subscription.created`, `customer.subscription.updated`, and `customer.subscription.deleted`
+- `invoice.paid` and `invoice.payment_failed`
+
+Set `BILLING_ENABLED=true` plus the endpoint signing secret as
+`STRIPE_WEBHOOK_SECRET`. The application
+verifies Stripe's raw-body signature, stores events idempotently, and only then
+updates a workspace's hosted tier. Configure the Stripe customer portal to let
+customers update payment details, switch plans, download invoices, and cancel.

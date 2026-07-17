@@ -1,0 +1,77 @@
+---
+title: "Connect an Oura Ring"
+description: "Let a signed-up user link Oura sleep, readiness, activity, and HRV without handling OAuth credentials."
+---
+
+Oura connects through server-side OAuth with the Oura API V2. The normal
+consumer flow is first-party: the dashboard sends the user to Oura, then
+ForeverBetter exchanges and encrypts the returned token for on-demand sync.
+
+<Note>
+First-party connect is available when `GET /capabilities` reports
+`first_party_oauth: true` for `wearables.oura`. Otherwise use your own Oura
+app credentials in the bring-your-own flow below.
+</Note>
+
+## First-party flow
+
+Start the connection with no provider credentials:
+
+```bash
+curl -s -X POST "$FB_API/connections/wearables/start" \
+  -H "authorization: Bearer $FB_KEY" -H "content-type: application/json" \
+  -d '{"user_id":"'$UID'","organization_id":"'$ORG'","source_provider":"oura"}'
+```
+
+Redirect the user to `authorization_url`. Oura returns to the ForeverBetter
+dashboard, which completes the connection automatically. Do not ask the user
+to copy a `code` or `state` back to an agent; poll
+`GET /connections/wearables/status` until Oura is active.
+
+The API stores the first-party token encrypted when `WHOOP_TOKEN_ENC_KEY` is
+configured (the same AES-256-GCM key used for provider credentials). An agent
+can then pull normalized Oura readings without seeing a provider token:
+
+```bash
+curl -s -X POST "$FB_API/connections/oura/sync" \
+  -H "authorization: Bearer $FB_KEY" -H "content-type: application/json" \
+  -d '{"user_id":"'$UID'","organization_id":"'$ORG'","start":"2026-07-01","end":"2026-07-13"}'
+```
+
+This produces normalized sleep duration/efficiency, HRV, resting heart rate,
+readiness, steps, and active energy where Oura has supplied them.
+
+## Oura developer-console setup
+
+1. Sign in at [Oura Cloud API Applications](https://cloud.ouraring.com/).
+2. Create an OAuth API application and add this exact redirect URI:
+
+   ```text
+   https://api.foreverbetter.xyz/dashboard
+   ```
+
+3. Add these production environment values (do not expose the secret in the dashboard):
+
+   ```text
+   OURA_CLIENT_ID=<Oura Client ID>
+   OURA_CLIENT_SECRET=<Oura Client Secret>
+   OURA_REDIRECT_URI=https://api.foreverbetter.xyz/dashboard
+   ```
+
+4. Keep `WHOOP_TOKEN_ENC_KEY` set to a 32-byte base64 key so first-party Oura
+   refresh tokens are encrypted at rest. Oura refresh tokens rotate on use.
+
+Oura requires the redirect URI passed during authorization and token exchange
+to match the approved value exactly. ForeverBetter requests only `daily`,
+`heartrate`, `personal`, and `workout` by default.
+
+## Bring your own Oura app
+
+For an integration that owns its own Oura app, pass `client_id`,
+`client_secret`, and the exact `redirect_uri` to the same start/callback calls.
+The dashboard exposes this under **Developer: use your own Oura app** when the
+first-party integration is not configured.
+
+See [Oura's OAuth documentation](https://cloud.ouraring.com/docs/authentication)
+for scope and application-review requirements. New Oura API applications are
+limited to 10 users until approved.

@@ -1,0 +1,84 @@
+---
+title: "Agent skill"
+description: "Give an agent one executable instruction file for authentication, discovery, data connection, analysis, and delivery."
+---
+
+The hosted `SKILL.md` is the agent entry point for ForeverBetter. It tells an
+agent how to choose cloud, self-hosted, or local execution; authenticate without
+putting credentials in chat; discover the live deployment; and complete a health
+workflow instead of stopping at setup instructions.
+
+<CardGroup cols={2}>
+  <Card title="Open the skill file" icon="file-code" href="https://api.foreverbetter.xyz/SKILL.md">
+    Read or download the canonical, machine-readable instruction file.
+  </Card>
+  <Card title="Connect your agent" icon="link" href="/connect-your-agent">
+    Follow the browser handoff and attach the API over MCP.
+  </Card>
+</CardGroup>
+
+## Give it to an agent
+
+Paste this instruction into any agent that can read URLs:
+
+```text
+Help me analyze and connect my longevity data.
+Read https://api.foreverbetter.xyz/SKILL.md and execute its onboarding workflow.
+Do the safe steps yourself, ask me only for required choices or browser approvals,
+and finish by delivering the result I choose.
+```
+
+Agents can also fetch it directly:
+
+```bash
+curl -fsSL https://api.foreverbetter.xyz/SKILL.md
+```
+
+## What makes the workflow agentic
+
+The skill gives the agent an operating contract, not only API documentation:
+
+1. Choose cloud, self-hosted API, or the local file pipeline.
+2. Use browser-based agent login so the user never pastes an OTP, API key, OAuth
+   code, or OAuth state into chat.
+3. Read the live manifest, capabilities registry, endpoint catalog, and OpenAPI
+   contract before acting.
+4. Ask which outcome the user wants and which data is already available. A
+   dashboard is optional: the result can instead be a one-off or recurring action
+   plan, ancestry result, trend loop, health agent, or full multimodal optimization.
+5. Connect the minimum useful data, then run the matching playbook end to end.
+6. Poll queued jobs and wearable connections until they complete or fail.
+7. Deliver the dashboard, action plan, ancestry result, provider shortlist, or
+   source-backed answer with coverage and provenance.
+
+The agent asks before a paid call, destructive deletion, external share, or
+public upload. It does not repeatedly ask for confirmation for ordinary reads,
+analysis, or creation of private artifacts after the user chooses a workflow.
+Cloud users can use a subscription or x402 per-call payment on supported routes;
+self-hosted and local-pipeline modes do not require a hosted subscription.
+
+## Live discovery wins
+
+The skill deliberately avoids freezing deployment details into an agent prompt.
+An agent checks these public contracts before it connects data:
+
+| Contract | Purpose |
+| --- | --- |
+| `GET /.well-known/health-agent.json` | Authentication, MCP tools, scopes, and agent-login sequence |
+| `GET /capabilities` | Available modalities, providers, connection types, and endpoint IDs |
+| `GET /endpoints` | Method, path, scope, and grant catalog |
+| `GET /openapi.json` | Request and response schemas |
+| `/llms-full.txt` | Complete human documentation as agent-readable text |
+
+If a static example disagrees with these live contracts, the live deployment is
+authoritative.
+
+## Completion standard
+
+Setup is not the result. A run is complete only when the agent delivers the
+outcome the user selected or clearly reports the terminal blocker and preserves
+partial progress. Missing modalities appear as optional coverage gaps; one usable
+source is enough to produce a first result.
+
+For the lower-level MCP transport and tool-call format, continue to
+[Agents and MCP](/agents-and-mcp).

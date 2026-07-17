@@ -1,0 +1,18 @@
+##fileformat=VCFv4.2
+##source=23longevity-reference-validation-wgs-fixture
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Structural variant type">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position">
+##INFO=<ID=SVLEN,Number=1,Type=Integer,Description="Structural variant length">
+##INFO=<ID=GENE,Number=1,Type=String,Description="Gene symbol">
+##INFO=<ID=REPID,Number=1,Type=String,Description="Repeat locus identifier">
+##INFO=<ID=RU,Number=1,Type=String,Description="Repeat unit">
+##INFO=<ID=REPCN,Number=1,Type=Integer,Description="Repeat copy number">
+##INFO=<ID=IMPACT,Number=1,Type=String,Description="Functional impact">
+##INFO=<ID=AF,Number=1,Type=Float,Description="Population allele frequency">
+##INFO=<ID=CLNSIG,Number=1,Type=String,Description="ClinVar-style significance">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE
+17	43071077	cnv_brca1_del	N	<DEL>	80	PASS	SVTYPE=DEL;END=43112000;SVLEN=-40923;GENE=BRCA1	GT	0/1
+4	3074877	htt_cag_repeat	N	<STR>	80	PASS	SVTYPE=STR;REPID=HTT_CAG;RU=CAG;REPCN=42;GENE=HTT	GT	0/1
+19	44907000	apoe_region_inv	N	<INV>	80	PASS	SVTYPE=INV;END=44910000;SVLEN=3000;GENE=APOE	GT	0/1
+2	47636000	msh2_large_ins	N	<INS>	80	PASS	SVTYPE=INS;END=47636000;SVLEN=650;GENE=MSH2	GT	0/1
+13	32936732	rs80357906	C	T	80	PASS	GENE=BRCA2;IMPACT=HIGH;AF=0.0003;CLNSIG=Pathogenic	GT	0/1

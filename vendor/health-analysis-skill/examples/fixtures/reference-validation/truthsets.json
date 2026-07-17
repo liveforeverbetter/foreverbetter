@@ -1,0 +1,37 @@
+{
+  "truthsets": [
+    {
+      "id": "tiny_reference_validation_wgs_classes",
+      "description": "Synthetic VCF records for CNV, repeat, SV, large indel, and rsID rare-small-variant classification.",
+      "input": "wgs-classes.vcf",
+      "expected_calls": [
+        { "id": "cnv_brca1_del", "class": "copy_number_variants", "reportability": "clinician_review", "genes": ["BRCA1"] },
+        { "id": "htt_cag_repeat", "class": "tandem_repeats", "reportability": "clinician_review", "genes": ["HTT"] },
+        { "id": "apoe_region_inv", "class": "rearrangements", "reportability": "clinician_review", "genes": ["APOE"] },
+        { "id": "msh2_large_ins", "class": "large_indels", "reportability": "clinician_review", "genes": ["MSH2"] },
+        { "id": "rs80357906", "class": "rare_small_variants", "reportability": "clinician_review", "genes": ["BRCA2"] }
+      ],
+      "expected_classes": ["copy_number_variants", "tandem_repeats", "rearrangements", "large_indels", "rare_small_variants"],
+      "minimum_recall": 1,
+      "minimum_precision": 1,
+      "minimum_reportable_classes": 5
+    }
+  ],
+  "external_truthsets": [
+    {
+      "id": "tiny_giab_metric_shape",
+      "description": "Tiny GIAB-style metric JSON shape for external validation parsing.",
+      "source_name": "Synthetic GIAB metric shape",
+      "source_url": "https://www.nist.gov/programs-projects/genome-bottle",
+      "benchmark_tool": "custom",
+      "genome_build": "GRCh38",
+      "variant_classes": ["rare_small_variants", "copy_number_variants", "large_indels", "tandem_repeats", "rearrangements"],
+      "truth_vcf": "wgs-classes.vcf",
+      "query_vcf": "wgs-classes.vcf",
+      "metrics_json": "giab-metrics.json",
+      "minimum_recall": 0.98,
+      "minimum_precision": 0.98,
+      "required": false
+    }
+  ]
+}

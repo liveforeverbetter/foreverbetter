@@ -1,0 +1,266 @@
+[
+  {
+    "id": 474,
+    "name": "Bone mineral density",
+    "url_slug": "results/dna-wellness-test/bone-mineral-density",
+    "loci_count": null
+  },
+  {
+    "id": 477,
+    "name": "Systolic blood pressure levels",
+    "url_slug": "results/dna-wellness-test/systolic-blood-pressure-levels",
+    "loci_count": null
+  },
+  {
+    "id": 544,
+    "name": "Apolipoprotein A1 levels",
+    "url_slug": "results/dna-wellness-test/apolipoprotein-a1-levels",
+    "loci_count": null
+  },
+  {
+    "id": 421,
+    "name": "Prediction of visceral adipose tissue",
+    "url_slug": "results/dna-wellness-test/prediction-visceral-adipose-tissue",
+    "loci_count": null
+  },
+  {
+    "id": 476,
+    "name": "Glycated hemoglobin levels",
+    "url_slug": "results/dna-wellness-test/glycated-hemoglobin-levels",
+    "loci_count": null
+  },
+  {
+    "id": 239,
+    "name": "LDL cholesterol levels",
+    "url_slug": "results/dna-wellness-test/ldl-cholesterol-levels",
+    "loci_count": null
+  },
+  {
+    "id": 238,
+    "name": "HDL cholesterol levels",
+    "url_slug": "results/dna-wellness-test/hdl-cholesterol-levels",
+    "loci_count": null
+  },
+  {
+    "id": 553,
+    "name": "Galectin-3 levels",
+    "url_slug": "results/dna-wellness-test/galectin-3-levels",
+    "loci_count": null
+  },
+  {
+    "id": 242,
+    "name": "Vitamin D levels",
+    "url_slug": "results/dna-wellness-test/levels-vitamin-d",
+    "loci_count": null
+  },
+  {
+    "id": 549,
+    "name": "Creatinine levels",
+    "url_slug": "results/dna-wellness-test/creatinine-levels",
+    "loci_count": null
+  },
+  {
+    "id": 214,
+    "name": "Caffeine dependence after prolonged consumption",
+    "url_slug": "results/dna-wellness-test/caffeine-dependence-prolonged-consumption",
+    "loci_count": null
+  },
+  {
+    "id": 222,
+    "name": "Blood glucose",
+    "url_slug": "results/dna-wellness-test/blood-glucose",
+    "loci_count": null
+  },
+  {
+    "id": 475,
+    "name": "Lung function (exhaled air volume)",
+    "url_slug": "results/dna-wellness-test/lung-function-exhaled-air-volume",
+    "loci_count": null
+  },
+  {
+    "id": 232,
+    "name": "Body mass index",
+    "url_slug": "results/dna-wellness-test/body-mass-index",
+    "loci_count": null
+  },
+  {
+    "id": 478,
+    "name": "Diastolic blood pressure levels",
+    "url_slug": "results/dna-wellness-test/diastolic-blood-pressure-levels",
+    "loci_count": null
+  },
+  {
+    "id": 556,
+    "name": "Urate levels",
+    "url_slug": "results/dna-wellness-test/urate-levels",
+    "loci_count": null
+  },
+  {
+    "id": 552,
+    "name": "Serum phosphate levels",
+    "url_slug": "results/dna-wellness-test/serum-phosphate-levels",
+    "loci_count": null
+  },
+  {
+    "id": 479,
+    "name": "Intraocular pressure",
+    "url_slug": "results/dna-wellness-test/intraocular-pressure",
+    "loci_count": null
+  },
+  {
+    "id": 548,
+    "name": "Calcium levels",
+    "url_slug": "results/dna-wellness-test/calcium-levels",
+    "loci_count": null
+  },
+  {
+    "id": 449,
+    "name": "Vitamin C levels",
+    "url_slug": "results/dna-wellness-test/vitamin-c-levels",
+    "loci_count": null
+  },
+  {
+    "id": 545,
+    "name": "Apolipoprotein B levels",
+    "url_slug": "results/dna-wellness-test/apolipoprotein-b-levels",
+    "loci_count": null
+  },
+  {
+    "id": 566,
+    "name": "Body fat percentage",
+    "url_slug": "results/dna-wellness-test/body-fat-percentage",
+    "loci_count": null
+  },
+  {
+    "id": 228,
+    "name": "Lactose intolerance",
+    "url_slug": "results/dna-wellness-test/lactose-intolerance",
+    "loci_count": null
+  },
+  {
+    "id": 382,
+    "name": "Tendinopathies in lower extremities (legs)",
+    "url_slug": "results/dna-wellness-test/tendinopathies-lower-extremities-legs",
+    "loci_count": null
+  },
+  {
+    "id": 383,
+    "name": "Tendinopathies in upper extremities (arms)",
+    "url_slug": "results/dna-wellness-test/tendinopathies-upper-extremities-arms",
+    "loci_count": null
+  },
+  {
+    "id": 384,
+    "name": "Exercise-induced muscle damage (initial phase)",
+    "url_slug": "results/dna-wellness-test/exercise-induced-muscle-damage-initial-phase",
+    "loci_count": null
+  },
+  {
+    "id": 385,
+    "name": "Exercise-induced muscle damage (second phase)",
+    "url_slug": "results/dna-wellness-test/exercise-induced-muscle-damage-second-phase",
+    "loci_count": null
+  },
+  {
+    "id": 386,
+    "name": "Exercise-induced muscle damage (regeneration capacity)",
+    "url_slug": "results/dna-wellness-test/exercise-induced-muscle-damage-regeneration-capacity",
+    "loci_count": null
+  },
+  {
+    "id": 442,
+    "name": "Histamine intolerance",
+    "url_slug": "results/dna-wellness-test/histamine-intolerance",
+    "loci_count": null
+  },
+  {
+    "id": 445,
+    "name": "Genetic predisposition to peanut allergy",
+    "url_slug": "results/dna-wellness-test/genetic-predisposition-peanut-allergy",
+    "loci_count": null
+  },
+  {
+    "id": 446,
+    "name": "Celiac disease predisposition",
+    "url_slug": "results/dna-wellness-test/celiac-disease-predisposition",
+    "loci_count": null
+  },
+  {
+    "id": 448,
+    "name": "Vitamin E levels",
+    "url_slug": "results/dna-wellness-test/vitamin-e-levels",
+    "loci_count": null
+  },
+  {
+    "id": 245,
+    "name": "Bitter taste perception",
+    "url_slug": "results/dna-wellness-test/bitter-taste-perception",
+    "loci_count": null
+  },
+  {
+    "id": 417,
+    "name": "Antioxidant capacity",
+    "url_slug": "results/dna-wellness-test/antioxidant-capacity",
+    "loci_count": null
+  },
+  {
+    "id": 437,
+    "name": "Food intake control",
+    "url_slug": "results/dna-wellness-test/food-intake-control",
+    "loci_count": null
+  },
+  {
+    "id": 440,
+    "name": "Vitamin B12 levels",
+    "url_slug": "results/dna-wellness-test/vitamin-b12-levels",
+    "loci_count": null
+  },
+  {
+    "id": 510,
+    "name": "Myoadenylate deaminase (AMPD1 gene)",
+    "url_slug": "results/dna-wellness-test/myoadenylate-deaminase",
+    "loci_count": null
+  },
+  {
+    "id": 248,
+    "name": "Preference for sweets",
+    "url_slug": "results/dna-wellness-test/preference-sweet",
+    "loci_count": null
+  },
+  {
+    "id": 438,
+    "name": "Long-chain omega fatty acids levels",
+    "url_slug": "results/dna-wellness-test/long-chain-omega-fatty-acid-levels",
+    "loci_count": null
+  },
+  {
+    "id": 255,
+    "name": "Muscle endurance",
+    "url_slug": "results/dna-wellness-test/muscle-endurance",
+    "loci_count": null
+  },
+  {
+    "id": 509,
+    "name": "Caffeine and sports performance",
+    "url_slug": "results/dna-wellness-test/caffeine-and-sports-performance",
+    "loci_count": null
+  },
+  {
+    "id": 439,
+    "name": "Levels of vitamin A (beta carotene)",
+    "url_slug": "results/dna-wellness-test/levels-vitamin-a-beta-carotene",
+    "loci_count": null
+  },
+  {
+    "id": 511,
+    "name": "Farmer-hunter profile",
+    "url_slug": "results/dna-wellness-test/farmer-hunter-profile",
+    "loci_count": null
+  },
+  {
+    "id": 205,
+    "name": "Caffeine and anxiety",
+    "url_slug": "results/dna-wellness-test/caffeine-anxiety",
+    "loci_count": null
+  }
+]

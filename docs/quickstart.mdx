@@ -1,0 +1,125 @@
+---
+title: "Quickstart"
+description: "Try a complete synthetic result, then create a free key and build with your own data."
+---
+
+## Zero-setup synthetic proof
+
+The public alpha sandbox returns a complete biomarker + wearable analysis,
+action plan, modality coverage, and dashboard JSON in one request:
+
+```bash
+export HEALTH_API=https://api.foreverbetter.xyz
+curl -s -X POST "$HEALTH_API/sandbox/sessions" \
+  -H "content-type: application/json" \
+  -d '{}'
+```
+
+The response is deterministic synthetic data. It is never persisted, contains
+no real person data, and its bearer token expires after 30 minutes. That token
+can only repeat `POST /sandbox/hero`; it cannot upload or read customer data.
+
+When the result shape fits your product, continue with a free personal key. No
+credit card is required.
+
+## 1. Create a free API key
+
+Open the [developer dashboard](https://api.foreverbetter.xyz/dashboard), sign in
+with the 8-digit code sent to your email, and create a personal workspace key. You get a
+ready-to-run command with your user and workspace IDs already filled in. It covers
+the full loop: upload, analyze, list, read trends, and pull recommendations.
+
+Using the API through an AI agent instead? The agent can sign you in and mint
+its own key in three calls; see [Connect your agent](/connect-your-agent).
+
+## 2. Set the values from your dashboard
+
+Protected routes require a bearer token with:
+
+- a subject/user identity
+- an organization claim for the target customer organization
+- endpoint grants such as `imports.file`, `biomarkers.derive`, and
+  `dashboard_specs.read`
+
+```bash
+export TOKEN=<your-api-key>
+export USER_ID=<your-user-id>
+export ORGANIZATION_ID=<your-workspace-id>
+```
+
+## 3. Upload synthetic source data
+
+```bash
+curl -s "$HEALTH_API/imports/file" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{
+    "user_id": "'"$USER_ID"'",
+    "organization_id": "'"$ORGANIZATION_ID"'",
+    "category": "biomarkers",
+    "filename": "labs.csv",
+    "text": "marker,value,unit\nGlucose,92,mg/dL\nInsulin,7,uIU/mL\nTriglycerides,110,mg/dL\nHDL,55,mg/dL"
+  }'
+```
+
+Copy the returned `source.id` into `SOURCE_ID`.
+
+```bash
+export SOURCE_ID=<source-id>
+```
+
+## 4. Derive biomarkers
+
+```bash
+curl -s "$HEALTH_API/biomarkers/derive" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{
+    "user_id": "'"$USER_ID"'",
+    "organization_id": "'"$ORGANIZATION_ID"'",
+    "source_ids": ["'"$SOURCE_ID"'"]
+  }'
+```
+
+Copy the returned `analysis.id` into `ANALYSIS_ID`.
+
+```bash
+export ANALYSIS_ID=<analysis-id>
+```
+
+## 5. Read dashboard output
+
+```bash
+curl -s "$HEALTH_API/dashboard-specs/$ANALYSIS_ID" \
+  -H "authorization: Bearer $TOKEN"
+```
+
+The dashboard spec is the versioned frontend-facing JSON contract for cards,
+actual values and targets, sections, modality coverage, freshness, quality
+warnings, and provenance. A single modality remains useful: check
+`quality.usable`, not whether coverage is complete.
+
+## 6. Discover, trend, act
+
+```bash
+# List everything you have uploaded and computed
+curl -s "$HEALTH_API/sources?user_id=$USER_ID&organization_id=$ORGANIZATION_ID" \
+  -H "authorization: Bearer $TOKEN"
+curl -s "$HEALTH_API/analyses?user_id=$USER_ID&organization_id=$ORGANIZATION_ID" \
+  -H "authorization: Bearer $TOKEN"
+
+# Prioritized action items for the analysis
+curl -s "$HEALTH_API/analyses/$ANALYSIS_ID/recommendations" \
+  -H "authorization: Bearer $TOKEN"
+
+# Improving/worsening direction across every upload
+curl -s -X POST "$HEALTH_API/users/$USER_ID/trends" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{"organization_id": "'"$ORGANIZATION_ID"'"}'
+```
+
+Next, walk a full flow end to end: the
+[get-better-every-year loop](/use-cases/retest-loop) (goals, trends, and retest
+reminders) or a [personal action protocol](/use-cases/action-protocol)
+(recommendations and an evidence-graded supplement stack).

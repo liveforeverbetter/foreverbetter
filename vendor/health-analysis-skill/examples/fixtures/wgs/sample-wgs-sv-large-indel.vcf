@@ -1,0 +1,14 @@
+##fileformat=VCFv4.2
+##source=23longevity-synthetic-wgs-sv-large-indel-truthset
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Structural variant type">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position">
+##INFO=<ID=SVLEN,Number=1,Type=Integer,Description="Structural variant length">
+##INFO=<ID=GENE,Number=1,Type=String,Description="Gene symbol">
+##INFO=<ID=IMPACT,Number=1,Type=String,Description="Functional impact">
+##INFO=<ID=AF,Number=1,Type=Float,Description="Population allele frequency">
+##INFO=<ID=CLNSIG,Number=1,Type=String,Description="ClinVar-style clinical significance">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE
+19	44907000	apoe_region_inv	N	<INV>	98	PASS	SVTYPE=INV;END=44910000;SVLEN=3000;GENE=APOE	GT	0/1
+2	47636000	msh2_large_ins	N	<INS>	82	PASS	SVTYPE=INS;END=47636000;SVLEN=650;GENE=MSH2	GT	0/1
+22	42523000	cyp2d6_breakend	N	N[22:42526800[	73	PASS	SVTYPE=BND;END=42526800;SVLEN=3800;GENE=CYP2D6	GT	0/1
+13	32936732	brca2_pathogenic_stop	C	T	69	PASS	GENE=BRCA2;IMPACT=HIGH;AF=0.0003;CLNSIG=Pathogenic	GT	0/1

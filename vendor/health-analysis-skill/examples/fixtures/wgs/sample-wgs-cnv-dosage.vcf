@@ -1,0 +1,11 @@
+##fileformat=VCFv4.2
+##source=23longevity-synthetic-wgs-cnv-dosage-truthset
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Structural variant type">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position">
+##INFO=<ID=SVLEN,Number=1,Type=Integer,Description="Structural variant length">
+##INFO=<ID=GENE,Number=1,Type=String,Description="Gene symbol">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE
+19	11091000	ldlr_exon_del	N	<DEL>	116	PASS	SVTYPE=DEL;END=11128000;SVLEN=-37000;GENE=LDLR	GT	0/1
+17	15205000	pmp22_region_dup	N	<DUP>	103	PASS	SVTYPE=DUP;END=15412000;SVLEN=207000;GENE=PMP22	GT	0/1
+17	15210000	pmp22_region_del	N	<DEL>	97	PASS	SVTYPE=DEL;END=15390000;SVLEN=-180000;GENE=PMP22	GT	0/1
+12	12000000	neutral_intergenic_dup	N	<DUP>	71	PASS	SVTYPE=DUP;END=12120000;SVLEN=120000;GENE=INTERGENIC	GT	0/1

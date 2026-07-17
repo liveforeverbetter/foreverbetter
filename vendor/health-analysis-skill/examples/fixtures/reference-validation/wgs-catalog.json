@@ -1,0 +1,45 @@
+{
+  "dosage_sensitive_regions": [
+    {
+      "id": "fixture_brca1_loss",
+      "gene": "BRCA1",
+      "chrom": "17",
+      "start": 43044295,
+      "end": 43125483,
+      "sensitive_to": ["copy_number_loss"],
+      "evidence": "Synthetic dosage-sensitive region for parser validation.",
+      "reportability": "clinician_review"
+    }
+  ],
+  "repeat_loci": [
+    {
+      "id": "HTT_CAG",
+      "gene": "HTT",
+      "chrom": "4",
+      "start": 3074877,
+      "end": 3074933,
+      "repeat_unit": "CAG",
+      "normal_max": 26,
+      "intermediate_min": 27,
+      "pathogenic_min": 40,
+      "condition": "Synthetic HTT CAG repeat expansion",
+      "reportability": "clinician_review"
+    }
+  ],
+  "structural_genes": [
+    {
+      "gene": "APOE",
+      "chrom": "19",
+      "start": 44905754,
+      "end": 44909393,
+      "reason": "Synthetic structural-region validation target."
+    },
+    {
+      "gene": "MSH2",
+      "chrom": "2",
+      "start": 47630100,
+      "end": 47789450,
+      "reason": "Synthetic large-indel validation target."
+    }
+  ]
+}

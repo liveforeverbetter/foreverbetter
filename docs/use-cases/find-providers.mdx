@@ -1,0 +1,127 @@
+---
+title: "Get users their first data"
+description: "Turn an empty dashboard into a next step: genome kits to order, blood draws to book nearby, and wearables to connect."
+---
+
+A new user's dashboard stays empty until they get tested or connect a device.
+`GET /providers` turns that empty state into a concrete next step. One call
+returns three ways in: whole-genome kits they can order, lab draw sites they can
+book near where they live, and wearables they may already own.
+
+| Step | Endpoint |
+| --- | --- |
+| List every way to get data | `GET /providers` |
+| Compare genome kits | `GET /providers?modality=genetics&type=wgs` |
+| Map nearby blood draws | `GET /providers?modality=biomarkers&postal_code=94107` |
+| Connect a wearable | `POST /connections/wearables/start` |
+
+## 1. List every way to get data
+
+```bash
+curl -s "$FB_API/providers" -H "authorization: Bearer $FB_KEY" | jq .
+```
+
+Results come back grouped by modality, since each group renders differently in
+your UI:
+
+```json
+{
+  "query": { "modalities": ["genetics", "biomarkers", "wearables"] },
+  "genetics": [
+    { "id": "dante_labs", "name": "Dante Labs", "type": "wgs",
+      "regions": ["Europe", "North America"], "price_range_usd": "…",
+      "raw_data_access": true }
+  ],
+  "wearables": [
+    { "id": "whoop", "display_name": "WHOOP", "connection_type": "oauth",
+      "data_types": ["sleep", "recovery", "hrv"] }
+  ],
+  "biomarkers": {
+    "supported_providers": ["quest", "synlab"],
+    "locations": [],
+    "note": "Pass postal_code, city, or lat/lon (with optional radius_miles) to locate nearby lab draw sites."
+  }
+}
+```
+
+Render one card per group: order a kit, book a draw, connect a device. Whichever
+the user picks, they come back with data you can upload and analyze.
+
+## 2. Compare genome kits
+
+Filter genetics by test type and region, then let the user compare kits on
+price, turnaround, and raw-data access. Raw-data access decides whether the
+results can ever be uploaded to `POST /imports/file`, so surface it prominently.
+
+```bash
+curl -s "$FB_API/providers?modality=genetics&type=wgs&region=Europe" \
+  -H "authorization: Bearer $FB_KEY" | jq '.genetics'
+```
+
+`type` accepts `wgs`, `snp_array`, or `exome`. The catalog covers pricing,
+turnaround, data formats, and CLIA status per provider.
+
+## 3. Map nearby blood draws
+
+Add a location and the biomarkers group fills with bookable draw sites, grouped
+by lab network:
+
+```bash
+curl -s "$FB_API/providers?modality=biomarkers&postal_code=94107&radius_miles=25" \
+  -H "authorization: Bearer $FB_KEY" | jq '.biomarkers.locations'
+```
+
+```json
+[
+  {
+    "provider": "quest",
+    "status": "partner_api_result",
+    "booking_url": "https://appointment.questdiagnostics.com/as-home",
+    "locations": [
+      { "id": "…", "name": "Quest Diagnostics",
+        "address": "500 Terry A Francois Blvd, San Francisco, CA, 94158",
+        "distance_miles": 1.2, "phone": "…", "booking_url": "https://…" }
+    ]
+  }
+]
+```
+
+Accepted location inputs: `postal_code`, `city`, `country`, or `lat` and `lon`,
+plus an optional `radius_miles` (default 25). Narrow to one network with
+`lab_provider=quest` or `lab_provider=synlab`. Each site carries an address,
+distance, phone, and booking link, so "book a draw" can be a single tap in your
+app.
+
+## 4. Connect a wearable today
+
+The wearables group lists supported integrations with their connection model
+and data types. A user who already owns one can contribute data immediately:
+
+```bash
+curl -s "$FB_API/providers?modality=wearables" -H "authorization: Bearer $FB_KEY" | jq '.wearables'
+```
+
+Start the connection with `POST /connections/wearables/start`. The full flows
+are in [Connect a WHOOP](/use-cases/connect-whoop) and
+[Wearable onboarding](/wearable-onboarding).
+
+## Parameters
+
+| Param | Applies to | Notes |
+| --- | --- | --- |
+| `modality` | all | Comma-separated: `genetics`, `biomarkers`, `wearables`. Defaults to all. |
+| `type` | genetics | `wgs`, `snp_array`, or `exome`. |
+| `region` | genetics | For example `Europe` or `North America`. |
+| `postal_code` / `city` / `country` / `lat` / `lon` | biomarkers | Location for the draw-site search. |
+| `radius_miles` | biomarkers | Search radius, default 25. |
+| `lab_provider` | biomarkers | `quest`, `synlab`, or `all`. |
+
+## Take it further
+
+- Agents can query the same catalog through the MCP tool `find_providers`.
+- The single-modality endpoints remain available: `GET /wgs-providers` for
+  genetics and `GET /labs/search` for draw sites. `GET /providers` composes
+  them behind one call.
+- Close the loop once results arrive: upload with `POST /imports/file`, then
+  follow the [personal action protocol](/use-cases/action-protocol) or the
+  [get-better-every-year loop](/use-cases/retest-loop).

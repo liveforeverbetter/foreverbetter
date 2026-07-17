@@ -1,0 +1,856 @@
+[
+  {
+    "id": 1,
+    "name": "Russian: Adyghe people",
+    "group": "North Caucasus",
+    "continent": "Europe",
+    "area": "Russia"
+  },
+  {
+    "id": 2,
+    "name": "Finnish",
+    "group": "North & East Europe",
+    "continent": "Europe",
+    "area": "Finland"
+  },
+  {
+    "id": 3,
+    "name": "Russian",
+    "group": "North & East Europe",
+    "continent": "Europe",
+    "area": "Russia"
+  },
+  {
+    "id": 4,
+    "name": "West & South European population",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "West & South European"
+  },
+  {
+    "id": 5,
+    "name": "British",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Great Britain"
+  },
+  {
+    "id": 6,
+    "name": "Basque",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "France"
+  },
+  {
+    "id": 7,
+    "name": "Iberian",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Spain / Portugal"
+  },
+  {
+    "id": 8,
+    "name": "Italian",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Italy"
+  },
+  {
+    "id": 9,
+    "name": "Sardinian",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Italy"
+  },
+  {
+    "id": 10,
+    "name": "Central African: Aka people",
+    "group": "South & Central Hunter-Gatherer",
+    "continent": "Africa",
+    "area": "Central African Republic"
+  },
+  {
+    "id": 11,
+    "name": "Congolese: Mbuti people",
+    "group": "South & Central Hunter-Gatherer",
+    "continent": "Africa",
+    "area": "Democratic Republic of the Congo"
+  },
+  {
+    "id": 12,
+    "name": "Namibian: San people or Bushmen",
+    "group": "South & Central Hunter-Gatherer",
+    "continent": "Africa",
+    "area": "Namibia"
+  },
+  {
+    "id": 13,
+    "name": "Kenyan: Bantu people",
+    "group": "South & East Africa",
+    "continent": "Africa",
+    "area": "Kenya"
+  },
+  {
+    "id": 14,
+    "name": "South African: Bantu people",
+    "group": "South & East Africa",
+    "continent": "Africa",
+    "area": "South Africa"
+  },
+  {
+    "id": 15,
+    "name": "Gambian: Mandinka people",
+    "group": "West Africa",
+    "continent": "Africa",
+    "area": "Gambia"
+  },
+  {
+    "id": 16,
+    "name": "Nigerian: Esan people",
+    "group": "West Africa",
+    "continent": "Africa",
+    "area": "Nigeria"
+  },
+  {
+    "id": 17,
+    "name": "Senegalese: Mandinka people",
+    "group": "West Africa",
+    "continent": "Africa",
+    "area": "Senegal"
+  },
+  {
+    "id": 18,
+    "name": "Sierra Leonean: Mende people",
+    "group": "West Africa",
+    "continent": "Africa",
+    "area": "Sierra Leona"
+  },
+  {
+    "id": 19,
+    "name": "Algerian: Mozabite people",
+    "group": "North Africa",
+    "continent": "Africa",
+    "area": "Algeria"
+  },
+  {
+    "id": 20,
+    "name": "Israeli: Bedouin people",
+    "group": "West Middle East",
+    "continent": "Middle East",
+    "area": "Israel"
+  },
+  {
+    "id": 21,
+    "name": "Israeli: Druze people",
+    "group": "West Middle East",
+    "continent": "Middle East",
+    "area": "Israel"
+  },
+  {
+    "id": 22,
+    "name": "Israeli: Palestinian people",
+    "group": "West Middle East",
+    "continent": "Middle East",
+    "area": "Israel"
+  },
+  {
+    "id": 23,
+    "name": "Pakistani: Hazara people",
+    "group": "East Central Asia",
+    "continent": "Central Asia",
+    "area": "Pakistan"
+  },
+  {
+    "id": 24,
+    "name": "Chinese: Uygur people",
+    "group": "East Central Asia",
+    "continent": "Central Asia",
+    "area": "China"
+  },
+  {
+    "id": 25,
+    "name": "Pakistani: Pathan people",
+    "group": "Indian Subcontinent",
+    "continent": "South Asia",
+    "area": "Pakistan"
+  },
+  {
+    "id": 26,
+    "name": "Pakistani: Sindhi people",
+    "group": "Indian Subcontinent",
+    "continent": "South Asia",
+    "area": "Pakistan"
+  },
+  {
+    "id": 27,
+    "name": "Pakistani: Balochi/Brahui/Makrani people",
+    "group": "Indian Subcontinent",
+    "continent": "South Asia",
+    "area": "Pakistan"
+  },
+  {
+    "id": 28,
+    "name": "Pakistani: Burusho people",
+    "group": "Indian Subcontinent",
+    "continent": "South Asia",
+    "area": "Pakistan"
+  },
+  {
+    "id": 29,
+    "name": "Pakistani: Kalash people",
+    "group": "Indian Subcontinent",
+    "continent": "South Asia",
+    "area": "Pakistan"
+  },
+  {
+    "id": 30,
+    "name": "Indian: Telugu people",
+    "group": "Indian Subcontinent",
+    "continent": "South Asia",
+    "area": "India"
+  },
+  {
+    "id": 31,
+    "name": "Gujarati Indian",
+    "group": "Indian Subcontinent",
+    "continent": "South Asia",
+    "area": "India"
+  },
+  {
+    "id": 32,
+    "name": "Sri Lankan: Tamil people",
+    "group": "Indian Subcontinent",
+    "continent": "South Asia",
+    "area": "Sri Lanka"
+  },
+  {
+    "id": 33,
+    "name": "Bangladeshi: Bengali people",
+    "group": "Indian Subcontinent",
+    "continent": "South Asia",
+    "area": "Bangladesh"
+  },
+  {
+    "id": 34,
+    "name": "Chinese: Naxi/Tu/Yi people",
+    "group": "Greater China",
+    "continent": "East Asia",
+    "area": "China"
+  },
+  {
+    "id": 35,
+    "name": "Chinese: Daur/Hezhen/Oroquen people",
+    "group": "Greater China",
+    "continent": "East Asia",
+    "area": "China"
+  },
+  {
+    "id": 36,
+    "name": "Chinese: Dai people",
+    "group": "Greater China",
+    "continent": "East Asia",
+    "area": "China"
+  },
+  {
+    "id": 37,
+    "name": "Chinese: Han/Miaozu/She people",
+    "group": "Greater China",
+    "continent": "East Asia",
+    "area": "China"
+  },
+  {
+    "id": 38,
+    "name": "Japanese",
+    "group": "Northeast Asia",
+    "continent": "East Asia",
+    "area": "Japan"
+  },
+  {
+    "id": 39,
+    "name": "Russian: Yakut people",
+    "group": "Siberia",
+    "continent": "East Asia",
+    "area": "Russia"
+  },
+  {
+    "id": 40,
+    "name": "Cambodian: Khmer people",
+    "group": "Southeast Asian",
+    "continent": "East Asia",
+    "area": "Cambodia"
+  },
+  {
+    "id": 41,
+    "name": "Vietnamese: Kinh people",
+    "group": "Southeast Asian",
+    "continent": "East Asia",
+    "area": "Vietnam"
+  },
+  {
+    "id": 42,
+    "name": "Papuan",
+    "group": "Melanesia",
+    "continent": "Oceania",
+    "area": "Papua New Guinea"
+  },
+  {
+    "id": 43,
+    "name": "Mexican: Maya people",
+    "group": "North America",
+    "continent": "America",
+    "area": "Mexico"
+  },
+  {
+    "id": 44,
+    "name": "Mexican: Pima people",
+    "group": "North America",
+    "continent": "America",
+    "area": "Mexico"
+  },
+  {
+    "id": 45,
+    "name": "Brazilian: Karitiana people",
+    "group": "South America",
+    "continent": "America",
+    "area": "Brazil"
+  },
+  {
+    "id": 46,
+    "name": "Brazilian: Surui people",
+    "group": "South America",
+    "continent": "America",
+    "area": "Brazil"
+  },
+  {
+    "id": 47,
+    "name": "Colombian: Native population / Mixed population",
+    "group": "South America",
+    "continent": "America",
+    "area": "Colombia"
+  },
+  {
+    "id": 48,
+    "name": "Peruvian: Native population / Mixed population",
+    "group": "South America",
+    "continent": "America",
+    "area": "Peru"
+  },
+  {
+    "id": 49,
+    "name": "Swedish",
+    "group": "North & East Europe",
+    "continent": "Europe",
+    "area": "Sweden"
+  },
+  {
+    "id": 50,
+    "name": "British",
+    "group": "North & East Europe",
+    "continent": "Europe",
+    "area": "Great Britain"
+  },
+  {
+    "id": 51,
+    "name": "Russian",
+    "group": "North & East Europe",
+    "continent": "Europe",
+    "area": "Russia"
+  },
+  {
+    "id": 52,
+    "name": "Ukrainian",
+    "group": "North & East Europe",
+    "continent": "Europe",
+    "area": "Ukraine"
+  },
+  {
+    "id": 53,
+    "name": "French",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "France"
+  },
+  {
+    "id": 54,
+    "name": "Basque",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "France"
+  },
+  {
+    "id": 55,
+    "name": "Ashkenazi Jew",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Multiple Backgrounds"
+  },
+  {
+    "id": 56,
+    "name": "Iberian",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Spain / Portugal"
+  },
+  {
+    "id": 57,
+    "name": "Italian",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Italy"
+  },
+  {
+    "id": 58,
+    "name": "Sardinian",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Italy"
+  },
+  {
+    "id": 59,
+    "name": "Croatian",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Croatia"
+  },
+  {
+    "id": 60,
+    "name": "Greek",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Greece"
+  },
+  {
+    "id": 61,
+    "name": "Russian: Adyghe people",
+    "group": "Caucasus",
+    "continent": "Caucasus & Central Asia",
+    "area": "Russia"
+  },
+  {
+    "id": 62,
+    "name": "Armenian",
+    "group": "Caucasus",
+    "continent": "Caucasus & Central Asia",
+    "area": "Armenia"
+  },
+  {
+    "id": 63,
+    "name": "Georgian",
+    "group": "Caucasus",
+    "continent": "Caucasus & Central Asia",
+    "area": "Georgia"
+  },
+  {
+    "id": 64,
+    "name": "Uzbek",
+    "group": "Central Asian",
+    "continent": "Caucasus & Central Asia",
+    "area": "Uzbekistan"
+  },
+  {
+    "id": 65,
+    "name": "Pakistani: Hazara people",
+    "group": "Central Asian",
+    "continent": "Caucasus & Central Asia",
+    "area": "Pakistan"
+  },
+  {
+    "id": 66,
+    "name": "Chinese: Uygur people",
+    "group": "Central Asian",
+    "continent": "Caucasus & Central Asia",
+    "area": "China"
+  },
+  {
+    "id": 67,
+    "name": "Moroccan",
+    "group": "North Africa",
+    "continent": "North Africa & Middle East",
+    "area": "Morocco"
+  },
+  {
+    "id": 68,
+    "name": "Algerian: Mozabite people",
+    "group": "North Africa",
+    "continent": "North Africa & Middle East",
+    "area": "Algeria"
+  },
+  {
+    "id": 69,
+    "name": "Egyptian",
+    "group": "North Africa",
+    "continent": "North Africa & Middle East",
+    "area": "Egypt"
+  },
+  {
+    "id": 70,
+    "name": "Turkish",
+    "group": "Middle East",
+    "continent": "North Africa & Middle East",
+    "area": "Turkey"
+  },
+  {
+    "id": 71,
+    "name": "Israeli: Bedouin people",
+    "group": "Middle East",
+    "continent": "North Africa & Middle East",
+    "area": "Israel"
+  },
+  {
+    "id": 72,
+    "name": "Israeli: Druze people",
+    "group": "Middle East",
+    "continent": "North Africa & Middle East",
+    "area": "Israel"
+  },
+  {
+    "id": 73,
+    "name": "Israeli: Palestinian people",
+    "group": "Middle East",
+    "continent": "North Africa & Middle East",
+    "area": "Israel"
+  },
+  {
+    "id": 74,
+    "name": "Qatari",
+    "group": "Middle East",
+    "continent": "North Africa & Middle East",
+    "area": "Qatar"
+  },
+  {
+    "id": 75,
+    "name": "Middle East Jews",
+    "group": "Middle East",
+    "continent": "North Africa & Middle East",
+    "area": "Multiple Backgrounds"
+  },
+  {
+    "id": 76,
+    "name": "Ethiopian",
+    "group": "South & East Africa",
+    "continent": "Africa",
+    "area": "Ethiopia"
+  },
+  {
+    "id": 77,
+    "name": "Pakistani: Pathan / Sindhi people",
+    "group": "Indian Subcontinent",
+    "continent": "South Asia",
+    "area": "Pakistan"
+  },
+  {
+    "id": 78,
+    "name": "Brazilian: Karitiana / Surui people",
+    "group": "South America",
+    "continent": "America",
+    "area": "Brazil"
+  },
+  {
+    "id": 79,
+    "name": "German",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Germany"
+  },
+  {
+    "id": 80,
+    "name": "Scottish",
+    "group": "North & East Europe",
+    "continent": "Europe",
+    "area": "Scotland"
+  },
+  {
+    "id": 81,
+    "name": "English",
+    "group": "North & East Europe",
+    "continent": "Europe",
+    "area": "England"
+  },
+  {
+    "id": 82,
+    "name": "Austrian",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Austria"
+  },
+  {
+    "id": 83,
+    "name": "Slovene",
+    "group": "West & South Europe",
+    "continent": "Europe",
+    "area": "Slovenia"
+  },
+  {
+    "id": 84,
+    "name": "Native American (North)",
+    "group": "Native American",
+    "continent": "America",
+    "area": "United States"
+  },
+  {
+    "id": 88,
+    "name": "Native American (Central and South)",
+    "group": "Native American",
+    "continent": "America",
+    "area": "Argentina"
+  },
+  {
+    "id": 119,
+    "name": "Japanese",
+    "group": "East Asian",
+    "continent": "East Asia",
+    "area": "Japan"
+  },
+  {
+    "id": 120,
+    "name": "Korean",
+    "group": "East Asian",
+    "continent": "East Asia",
+    "area": "South Korea"
+  },
+  {
+    "id": 122,
+    "name": "Mongolian and North Chinese",
+    "group": "East Asian",
+    "continent": "East Asia",
+    "area": "China"
+  },
+  {
+    "id": 128,
+    "name": "Dai Chinese and Indochinese",
+    "group": "East Asian",
+    "continent": "East Asia",
+    "area": "Cambodia"
+  },
+  {
+    "id": 134,
+    "name": "Han Chinese",
+    "group": "East Asian",
+    "continent": "East Asia",
+    "area": "China"
+  },
+  {
+    "id": 135,
+    "name": "Siberian Eskimo",
+    "group": "East Asian",
+    "continent": "East Asia",
+    "area": "Chukchi Autonomous Okrug (Russia)"
+  },
+  {
+    "id": 136,
+    "name": "Eastern Siberian Native",
+    "group": "East Asian",
+    "continent": "East Asia",
+    "area": "Russia"
+  },
+  {
+    "id": 147,
+    "name": "Papuan",
+    "group": "Oceanian",
+    "continent": "Oceania",
+    "area": "Papua New Guinea"
+  },
+  {
+    "id": 149,
+    "name": "Melanesian",
+    "group": "Oceanian",
+    "continent": "Oceania",
+    "area": "Solomon Islands"
+  },
+  {
+    "id": 157,
+    "name": "Maghrebi",
+    "group": "African",
+    "continent": "Africa",
+    "area": "Morocco"
+  },
+  {
+    "id": 162,
+    "name": "West African (Gambian and Senegalese)",
+    "group": "African",
+    "continent": "Africa",
+    "area": "Gambia"
+  },
+  {
+    "id": 164,
+    "name": "West African (Sierra Leonean and Liberian)",
+    "group": "African",
+    "continent": "Africa",
+    "area": "Liberia"
+  },
+  {
+    "id": 166,
+    "name": "West African (Nigerian and Ghanaian)",
+    "group": "African",
+    "continent": "Africa",
+    "area": "Ghana"
+  },
+  {
+    "id": 170,
+    "name": "East African (Kenyan and Ugandan)",
+    "group": "African",
+    "continent": "Africa",
+    "area": "Kenya"
+  },
+  {
+    "id": 173,
+    "name": "Pygmy and San hunter-gatherer",
+    "group": "African",
+    "continent": "Africa",
+    "area": "South Africa"
+  },
+  {
+    "id": 188,
+    "name": "Iberian",
+    "group": "European",
+    "continent": "Europe",
+    "area": "Spain"
+  },
+  {
+    "id": 192,
+    "name": "Basque",
+    "group": "European",
+    "continent": "Europe",
+    "area": "France"
+  },
+  {
+    "id": 193,
+    "name": "Italian",
+    "group": "European",
+    "continent": "Europe",
+    "area": "Italy"
+  },
+  {
+    "id": 194,
+    "name": "Sardinian",
+    "group": "European",
+    "continent": "Europe",
+    "area": "Sardinia (Italy)"
+  },
+  {
+    "id": 195,
+    "name": "Greece and Balkan Peninsula",
+    "group": "European",
+    "continent": "Europe",
+    "area": "Greece"
+  },
+  {
+    "id": 208,
+    "name": "Eastern European",
+    "group": "European",
+    "continent": "Europe",
+    "area": "Poland"
+  },
+  {
+    "id": 216,
+    "name": "British and Irish",
+    "group": "European",
+    "continent": "Europe",
+    "area": "United Kingdom"
+  },
+  {
+    "id": 218,
+    "name": "Orcadian",
+    "group": "European",
+    "continent": "Europe",
+    "area": "Orkney Islands (United Kingdom)"
+  },
+  {
+    "id": 219,
+    "name": "Scandinavian",
+    "group": "European",
+    "continent": "Europe",
+    "area": "Norway"
+  },
+  {
+    "id": 226,
+    "name": "Finnish",
+    "group": "European",
+    "continent": "Europe",
+    "area": "Finland"
+  },
+  {
+    "id": 227,
+    "name": "French",
+    "group": "European",
+    "continent": "Europe",
+    "area": "France"
+  },
+  {
+    "id": 232,
+    "name": "German",
+    "group": "European",
+    "continent": "Europe",
+    "area": "Germany"
+  },
+  {
+    "id": 239,
+    "name": "Ashkenazi Jew",
+    "group": "European",
+    "continent": "Europe",
+    "area": "Germany"
+  },
+  {
+    "id": 243,
+    "name": "Egyptian, Levantine and Arabian",
+    "group": "Western Asian",
+    "continent": "Middle East",
+    "area": "Egypt"
+  },
+  {
+    "id": 253,
+    "name": "Turkish, Caucasian and Iranian",
+    "group": "Western Asian",
+    "continent": "Middle East",
+    "area": "Turkey"
+  },
+  {
+    "id": 258,
+    "name": "Bedouin",
+    "group": "Western Asian",
+    "continent": "Middle East",
+    "area": "Morocco"
+  },
+  {
+    "id": 276,
+    "name": "Central Asian",
+    "group": "Central and South Asian",
+    "continent": "South Asia",
+    "area": "Kazakhstan"
+  },
+  {
+    "id": 281,
+    "name": "Pakistani and Afghan",
+    "group": "Central and South Asian",
+    "continent": "South Asia",
+    "area": "Pakistan"
+  },
+  {
+    "id": 283,
+    "name": "Gujarati Indian",
+    "group": "Central and South Asian",
+    "continent": "South Asia",
+    "area": "India"
+  },
+  {
+    "id": 285,
+    "name": "Punjabi",
+    "group": "Central and South Asian",
+    "continent": "South Asia",
+    "area": "India"
+  },
+  {
+    "id": 292,
+    "name": "Bengali, Bangladeshi and Northeast Indian",
+    "group": "Central and South Asian",
+    "continent": "South Asia",
+    "area": "Bangladesh"
+  },
+  {
+    "id": 308,
+    "name": "Sri Lankan and Southern Indian",
+    "group": "Central and South Asian",
+    "continent": "South Asia",
+    "area": "Sri Lanka"
+  }
+]

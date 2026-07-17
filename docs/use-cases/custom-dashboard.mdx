@@ -1,0 +1,121 @@
+---
+title: "Build a custom health dashboard"
+description: "Go from one wellness data source to a styled dashboard and an expiring private link."
+---
+
+Turn a user's first available wellness data source into a dashboard your app can render
+(cards, scores, and a design system to style them) without building any
+analysis logic yourself.
+
+| Step | Endpoint |
+| --- | --- |
+| Upload data | `POST /imports/file` |
+| Run one multimodal analysis | `POST /analyses` |
+| Read the render-ready spec | `GET /dashboard-specs/{id}` |
+| Pull recommendations | `GET /analyses/{id}/recommendations` |
+| Style it | `GET /design/systems/{id}` |
+| Create a private hosted view | `POST /dashboard-links` |
+
+```bash
+export FB_API="https://api.foreverbetter.xyz"
+export FB_KEY="…"   # a key from the dashboard
+export UID="user_123"  ORG="org_123"
+```
+
+## 1. Upload the user's data
+
+Upload the first file the user already has; capture the returned `source.id`.
+This example starts with labs so the dashboard exists before any wearable setup.
+
+```bash
+LABS=$(curl -s -X POST "$FB_API/imports/file" -H "authorization: Bearer $FB_KEY" \
+  -H "content-type: application/json" -d '{
+    "user_id":"'$UID'","organization_id":"'$ORG'","category":"biomarkers",
+    "filename":"labs.csv","content_type":"text/csv",
+    "text":"marker,value,unit\nApoB,118,mg/dL\nHbA1c,5.7,%\nHDL-C,44,mg/dL\nVitamin D,24,ng/mL"
+  }' | jq -r .source.id)
+```
+
+## 2. Run one multimodal analysis
+
+`POST /analyses` combines every source for the user into a single analysis with a
+healthspan score and a dashboard spec.
+
+```bash
+AN=$(curl -s -X POST "$FB_API/analyses" -H "authorization: Bearer $FB_KEY" \
+  -H "content-type: application/json" -d '{
+    "user_id":"'$UID'","organization_id":"'$ORG'",
+    "source_ids":["'$LABS'"],
+    "profile":{"age":42,"sex":"male"}
+  }' | jq -r .id)
+```
+
+## 3. Read the render-ready dashboard spec
+
+The additive `schema_version: "1.0"` presentation contract keeps the original
+flat `cards` array and adds the primitives a custom UI normally has to invent:
+values, units, targets, visualization hints, confidence, per-card provenance,
+sections, modality coverage, and freshness/quality warnings.
+
+```bash
+curl -s "$FB_API/dashboard-specs/$AN" -H "authorization: Bearer $FB_KEY" | jq '.cards[0]'
+# { "id":"…","title":"ApoB","category":"biomarkers","value":118,"unit":"mg/dL",
+#   "target":{"max":80},"score":55,"status":"watch","visualization":"range",
+#   "confidence":"high","summary":"ApoB is high versus the wellness target…",
+#   "action":"Review ApoB lowering strategy…","provenance":{"source_ids":["src_…"],…} }
+```
+
+Render `sections[].card_ids` as navigation or dashboard groups. Use
+`quality.usable` to decide whether to render, `quality.warnings` for honest data
+state, and `coverage` to offer useful connection prompts without treating a
+single-modality user as an error. Freshness thresholds are modality-aware:
+wearables age faster than labs, while genetics is effectively stable.
+
+Pair it with the healthspan score and priority findings from the analysis summary
+(`GET /analyses/{id}`) for a hero header.
+
+## 4. Add prioritized recommendations
+
+```bash
+curl -s "$FB_API/analyses/$AN/recommendations" -H "authorization: Bearer $FB_KEY" \
+  | jq '.protocols'   # tiered core / optimize / maintain routines
+```
+
+## 5. Style it with a design system
+
+Skip design bikeshedding: pull a ready design-token set and a `DESIGN.md`.
+
+```bash
+curl -s "$FB_API/design/systems/aperture" | jq '{colors,typography,radii}'
+```
+
+## 6. Create an expiring private dashboard link
+
+Create a dedicated hosted snapshot using the analysis and chosen design:
+
+```bash
+curl -s -X POST "$FB_API/dashboard-links" \
+  -H "authorization: Bearer $FB_KEY" -H "content-type: application/json" \
+  -d '{"analysis_id":"'$AN'","design_id":"aperture","expires_in_days":30}'
+# → { "dashboard_url":"https://…/dashboards/private/…",
+#     "visibility":"private_by_possession", "expires_at":"…" }
+```
+
+The URL is unguessable, sent with `no-store` and `noindex` protections, and
+expires automatically. It is private until the user shares it; anyone holding
+the URL can view that snapshot until expiration, so treat it like a sensitive
+document link. It is bound to the exact analysis snapshot and stops opening if
+that stored analysis changes; create a new link after an update.
+
+## Take it further
+
+- Add `category=genetics` or `category=behavioral` uploads before step 2; the
+  same analysis folds them in.
+- Offer wearable authorization and first sync after the initial dashboard is
+  visible; then rerun the analysis to add sleep, recovery, HRV, and activity.
+- Re-render on new data with `POST /analyses/{id}/rerun`.
+- Generate charts from `cards[].value/target`, longitudinal plots from
+  `POST /users/{id}/trends`, and action pipelines from recommendations or the
+  evidence-graded `GET /analyses/{id}/action-plan` result.
+- For an agent, the identical flow is available as MCP tools (`upload_health_data`,
+  `run_health_analysis`, `get_dashboard_spec`, `create_private_dashboard_link`).

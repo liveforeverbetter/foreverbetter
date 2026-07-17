@@ -1,0 +1,83 @@
+---
+title: "Analyze your ancestry"
+description: "From a raw genome file to ancestry proportions, haplogroups, and a per-chromosome breakdown."
+---
+
+Give a user their genetic ancestry story: super-population proportions, maternal
+and paternal haplogroups, a geographic map, and a per-chromosome breakdown,
+starting from a 23andMe, AncestryDNA, or WGS VCF file.
+
+| Step | Endpoint |
+| --- | --- |
+| Upload the genome | `POST /genetics/uploads` → signed PUT → `/complete` |
+| Run ancestry | `POST /genetics/ancestry` |
+
+## 1. Upload the genome file
+
+For a small raw SNP export, `/imports/file` is still convenient. For WGS or
+large 23andMe/AncestryDNA exports, use the private direct-upload flow so the
+file does not pass through Cloudflare. The upload session returns `source_id`,
+`upload.url`, and the exact headers for the PUT; finalize it before calling
+ancestry.
+
+```bash
+GENE=$(curl -s -X POST "$FB_API/imports/file" -H "authorization: Bearer $FB_KEY" \
+  -H "content-type: application/json" -d '{
+    "user_id":"'$UID'","organization_id":"'$ORG'","category":"genetics",
+    "filename":"genome.txt","content_type":"text/plain",
+    "text":"# rsid\tchromosome\tposition\tgenotype\nrs4477212\t1\t82154\tAA\n…"
+  }' | jq -r .source.id)
+```
+
+Large WGS VCFs and SNP-array exports are supported through the direct-upload
+flow above; their raw payloads are stored privately and referenced by the source.
+
+## 2. Run the ancestry analysis
+
+```bash
+curl -s -X POST "$FB_API/genetics/ancestry" -H "authorization: Bearer $FB_KEY" \
+  -H "content-type: application/json" -d '{
+    "user_id":"'$UID'","organization_id":"'$ORG'","source_id":"'$GENE'",
+    "resolution":"continental"
+  }' | jq .
+```
+
+You get a maximum-likelihood estimate over 1000 Genomes reference populations:
+
+```json
+{
+  "schema_version": "1.0",
+  "status": "complete",
+  "reference_panel": "1000_genomes_phase3",
+  "proportion_unit": "percent",
+  "method": { "id": "curated_aim_maximum_likelihood", "version": "1.0", "execution": "synchronous" },
+  "resolution": "continental",
+  "summary": "Genetic ancestry estimated with moderate confidence…",
+  "ancestry": [{"region":"European","proportion":72,"confidence":"medium","range":{"low":64,"high":80}}, …],
+  "haplogroups": { "maternal": {"haplogroup":"H","confidence":"medium","defining_markers":["rs2853511"]} },
+  "geographic_map": { "regions": [{"name":"European","proportion":72,"coordinates":[{"lat":51.5,"lon":-0.13,"weight":0.72}]}] },
+  "chromosome_breakdown": [ {"chromosome":"1","proportions":{"European":72}}, … ],
+  "quality": { "matched_markers": 61, "matched_proportion": 88.4, "compatible_for_projection": true },
+  "methodology": { "algorithm": "Maximum-likelihood population allele-frequency comparison…", "limitations": [ … ] }
+}
+```
+
+## Reading the result
+
+- `status` is `complete`, `low_confidence`, or `setup_required`. SNP-array files
+  match many markers; sparse or unmatched files return `setup_required` with guidance
+  in `quality.notes`.
+- `proportion_unit` is always `percent`, so `72` means 72%, not `0.72`.
+- `resolution` can be `continental`, `regional`, or `sub_population`.
+  Continental output contains only top-level regions; the finer modes also
+  include sub-region rows when marker coverage supports them.
+- Always show `methodology.limitations`: genetic ancestry is not identity,
+  ethnicity, or nationality.
+
+## Take it further
+
+- Combine with the rest of the genome: `POST /genetics/analyze` runs the bundled
+  ClinVar / CPIC / PRS / aging-hallmarks pipeline (queued for large WGS; poll
+  `GET /genetics/jobs/{id}`).
+- Fold ancestry context into a multimodal `POST /analyses` alongside biomarkers and
+  wearables.

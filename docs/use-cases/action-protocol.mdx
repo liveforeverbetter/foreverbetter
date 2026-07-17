@@ -1,0 +1,86 @@
+---
+title: "Personal action protocol"
+description: "Turn a lab panel and a supplement/medication list into a cited, personalized plan."
+---
+
+A lab report tells a user what is out of range. This flow turns it into a plan:
+each out-of-range finding maps to lifestyle interventions and an evidence-graded
+supplement stack, personalized against what the user already takes, with drug
+interactions flagged and cited from the literature.
+
+| Step | Endpoint |
+| --- | --- |
+| Upload labs | `POST /imports/file` (biomarkers) |
+| Upload supplements & meds | `POST /imports/file` (behavioral) |
+| Analyze | `POST /biomarkers/analyze` |
+| Build the protocol | `GET /analyses/{id}/action-plan` |
+
+## 1. Upload labs and the user's current stack
+
+```bash
+LABS=$(curl -s -X POST "$FB_API/imports/file" -H "authorization: Bearer $FB_KEY" \
+  -H "content-type: application/json" -d '{
+    "user_id":"'$UID'","organization_id":"'$ORG'","category":"biomarkers",
+    "filename":"labs.csv","content_type":"text/csv",
+    "text":"marker,value,unit\nApoB,132,mg/dL\nTriglycerides,190,mg/dL\nVitamin D,21,ng/mL\nHomocysteine,14,umol/L"
+  }' | jq -r .source.id)
+
+# Behavioral upload records what they already take, used to personalize the plan.
+BEH=$(curl -s -X POST "$FB_API/imports/file" -H "authorization: Bearer $FB_KEY" \
+  -H "content-type: application/json" -d '{
+    "user_id":"'$UID'","organization_id":"'$ORG'","category":"behavioral",
+    "filename":"stack.json","content_type":"application/json",
+    "text":"{\"entries\":[{\"kind\":\"supplement\",\"name\":\"Omega-3\",\"dose\":\"2 g\"},{\"kind\":\"medication\",\"name\":\"Warfarin\",\"dose\":\"5 mg\"}]}"
+  }' | jq -r .source.id)
+```
+
+## 2. Analyze
+
+```bash
+AN=$(curl -s -X POST "$FB_API/analyses" -H "authorization: Bearer $FB_KEY" \
+  -H "content-type: application/json" \
+  -d '{"user_id":"'$UID'","organization_id":"'$ORG'","source_ids":["'$LABS'","'$BEH'"],"profile":{"age":45,"sex":"male"}}' \
+  | jq -r .id)
+```
+
+## 3. Build the action protocol
+
+```bash
+curl -s "$FB_API/analyses/$AN/action-plan" -H "authorization: Bearer $FB_KEY" | jq .
+```
+
+What comes back:
+
+- **Interventions first**: lifestyle changes (reduce saturated fat, zone-2 cardio)
+  ranked `core` vs `optimize`, each with the markers it targets.
+- **An evidence-graded supplement discussion list**: A–D grade, mechanism, and
+  which flagged markers it addresses. Exact dose and timing are withheld by
+  default until a clinician-reviewed deployment policy explicitly enables them.
+- **Personalized to their stack**: supplements they already log are marked
+  `already_taking` instead of re-recommended.
+- **Cited interaction cautions**: because the user takes warfarin, the plan flags
+  it: _"Vitamin K2 has a documented interaction with Warfarin (186 literature
+  reports via supp.ai)."_ Interaction cautions only appear for drugs the user
+  actually logs.
+
+```json
+{
+  "supplements": [{
+    "id": "omega_3", "name": "Omega-3 (EPA/DHA)",
+    "dose_guidance": "Exact dose and timing are withheld in the wellness API.",
+    "evidence": "A", "priority": "core",
+    "targets": [{"marker":"triglycerides","direction":"high"},{"marker":"apob","direction":"high"}],
+    "already_taking": true,
+    "cautions": ["You logged Warfarin: Omega-3 can increase bleeding risk…"],
+    "sources": [{"name":"SUPP.AI","url":"https://supp.ai/…"},{"name":"Pillser","url":"https://pillser.com/…"}]
+  }],
+  "disclaimer": "Educational wellness guidance, not medical advice…"
+}
+```
+
+## Take it further
+
+- Add genetics to close the pharmacogenomics loop: CPIC gene-drug context surfaces
+  at the plan level.
+- Re-run after the next panel to watch the protocol evolve.
+- Always surface the `disclaimer` and `sources` in your UI.

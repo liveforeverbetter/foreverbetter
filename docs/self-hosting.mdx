@@ -1,0 +1,58 @@
+---
+title: "Self-hosting"
+description: "Run the ForeverBetter Wellness API on your own infrastructure with Docker."
+---
+
+The hosted ForeverBetter Wellness API at `https://api.foreverbetter.xyz` is the fastest way to start:
+nothing to run, and the same endpoints documented throughout these guides. If
+you would rather keep all data on your own infrastructure, the service is open
+source and runs with Docker. **Self-hosting is always an option and never
+requires a hosted subscription.**
+
+The self-hosted build uses open-source components only (Postgres, optional
+object storage, optional SMTP). It needs no third-party API keys. Everything in
+these docs works the same way against your own base URL.
+
+## Quickstart
+
+```bash
+git clone https://github.com/liveforeverbetter/foreverbetter-api.git
+cd foreverbetter-api
+cp .env.example .env
+# set POSTGRES_PASSWORD, API_KEY_JWT_SECRET, and SERVICE_ACCOUNT_JWT_SECRET
+docker compose up -d
+```
+
+The API listens on `http://localhost:8787`. Database migrations run on first
+boot. Check health:
+
+```bash
+curl http://localhost:8787/ready
+```
+
+The public response is intentionally minimal. For storage, migration, auth, and
+x402 dependency diagnostics, call `GET /ready/details` with an API key that has
+the `health:admin` scope.
+
+Point your requests at your own base URL instead of the hosted one:
+
+```bash
+curl http://localhost:8787/capabilities \
+  -H "Authorization: Bearer $YOUR_KEY"
+```
+
+## What you get
+
+The minimal stack is Postgres plus the API. Add the background workers for
+genetics and wearable syncing, and optional profiles for S3-compatible payload
+storage (MinIO) or a local mail inbox (Mailpit). Genomics analysis runs locally
+in the bundled pipeline with no external service.
+
+## Full guide
+
+The repository has the complete setup, including storage and email options,
+wearable OAuth, backups, and upgrades:
+
+- [Self-hosting guide](https://github.com/liveforeverbetter/foreverbetter-api/blob/main/SELF_HOSTING.md)
+- [Configuration reference](https://github.com/liveforeverbetter/foreverbetter-api/blob/main/.env.example)
+- [Security notes](https://github.com/liveforeverbetter/foreverbetter-api/blob/main/SECURITY.md)

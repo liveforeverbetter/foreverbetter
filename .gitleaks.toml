@@ -1,0 +1,4 @@
+title = "ForeverBetter secret scanning"
+
+[extend]
+useDefault = true

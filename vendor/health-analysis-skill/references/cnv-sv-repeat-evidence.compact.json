@@ -1,0 +1,241 @@
+{
+  "version": "2026-06-09",
+  "catalog_type": "compact_validation_catalog",
+  "purpose": "Small CNV/SV/repeat evidence fixture for validating provenance, class labels, reportability boundaries, and disclosure behavior in local tests.",
+  "completeness": {
+    "status": "compact_not_complete",
+    "statement": "This is a compact validation catalog, not complete CNV, SV, repeat, dosage, ClinVar, dbVar, DGV, gnomAD-SV, GIAB, or clinical evidence.",
+    "not_intended_for": [
+      "production clinical interpretation",
+      "comprehensive CNV/SV/repeat discovery",
+      "variant pathogenicity adjudication",
+      "population-frequency filtering at scale"
+    ]
+  },
+  "scope": {
+    "genome_builds": ["GRCh37", "GRCh38"],
+    "variant_classes": ["copy_number_variant", "structural_variant", "tandem_repeat"],
+    "max_evidence_items": 6,
+    "local_fixture_only": true
+  },
+  "sources": [
+    {
+      "id": "clingen_dosage",
+      "name": "ClinGen Dosage Sensitivity Map",
+      "source_type": "dosage_curation",
+      "url": "https://search.clinicalgenome.org/kb/gene-dosage",
+      "use_in_fixture": "Names dosage-sensitive genes or regions used to verify CNV provenance and reportability boundaries.",
+      "repo_policy": "Store only compact source references and fixture assertions; do not vendor the full dosage map."
+    },
+    {
+      "id": "clinvar",
+      "name": "ClinVar",
+      "source_type": "variant_archive",
+      "url": "https://www.ncbi.nlm.nih.gov/clinvar/",
+      "use_in_fixture": "Provides example clinical-archive provenance for structural and copy-number assertions.",
+      "repo_policy": "Store only external identifiers or URLs needed by compact validation examples."
+    },
+    {
+      "id": "giab_sv",
+      "name": "NIST Genome in a Bottle Structural Variant Benchmarks",
+      "source_type": "benchmark_truthset",
+      "url": "https://www.nist.gov/programs-projects/genome-bottle",
+      "use_in_fixture": "Documents that production validation should use external benchmark truthsets rather than this compact fixture alone.",
+      "repo_policy": "Keep GIAB truthsets outside git; this file only records benchmark provenance expectations."
+    },
+    {
+      "id": "gnomad_sv",
+      "name": "gnomAD Structural Variants",
+      "source_type": "population_reference",
+      "url": "https://gnomad.broadinstitute.org/",
+      "use_in_fixture": "Represents population-context provenance that can support research-only or frequency-aware structural interpretation.",
+      "repo_policy": "Do not bundle population-scale SV tables in the repo."
+    },
+    {
+      "id": "repeat_catalog",
+      "name": "Curated repeat expansion locus references",
+      "source_type": "repeat_locus_reference",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK1116/",
+      "use_in_fixture": "Provides compact repeat-threshold examples for local tandem-repeat validation.",
+      "repo_policy": "Store only selected locus threshold examples, not a full repeat-expansion panel."
+    }
+  ],
+  "evidence_items": [
+    {
+      "id": "brca1_loss_cnv_fixture",
+      "variant_class": "copy_number_variant",
+      "gene_or_region": "BRCA1",
+      "genome_build": "GRCh37",
+      "event": {
+        "type": "deletion",
+        "display": "BRCA1 copy-number loss",
+        "minimum_call_fields": ["chrom", "start", "end", "SVTYPE=DEL", "gene"]
+      },
+      "interpretation_boundary": "Validate dosage-sensitive CNV provenance and clinician-review routing; do not infer pathogenicity from overlap alone.",
+      "provenance": [
+        {
+          "source_id": "clingen_dosage",
+          "external_id": "BRCA1",
+          "evidence_role": "dosage_sensitivity",
+          "assertion": "BRCA1 is used as a compact dosage-sensitive CNV fixture.",
+          "strength": "curated"
+        },
+        {
+          "source_id": "clinvar",
+          "external_id": "BRCA1 copy number loss examples",
+          "evidence_role": "clinical_archive",
+          "assertion": "Clinical archive provenance must remain attached when this fixture is rendered or exported.",
+          "strength": "context_only"
+        }
+      ],
+      "validation_expectation": {
+        "expected_class": "copy_number_variants",
+        "expected_reportability": "clinician_review",
+        "must_preserve_provenance": true
+      }
+    },
+    {
+      "id": "pmp22_dosage_fixture",
+      "variant_class": "copy_number_variant",
+      "gene_or_region": "PMP22",
+      "genome_build": "GRCh37",
+      "event": {
+        "type": "duplication",
+        "display": "PMP22 dosage-region gain",
+        "minimum_call_fields": ["chrom", "start", "end", "SVTYPE=DUP", "copy_number"]
+      },
+      "interpretation_boundary": "Validate that gain and loss-sensitive regions can be represented without bundling a full dosage catalog.",
+      "provenance": [
+        {
+          "source_id": "clingen_dosage",
+          "external_id": "PMP22",
+          "evidence_role": "dosage_sensitivity",
+          "assertion": "PMP22 is used as a compact gain/loss dosage-region fixture.",
+          "strength": "curated"
+        }
+      ],
+      "validation_expectation": {
+        "expected_class": "copy_number_variants",
+        "expected_reportability": "clinician_review",
+        "must_preserve_provenance": true
+      }
+    },
+    {
+      "id": "apoe_region_inversion_fixture",
+      "variant_class": "structural_variant",
+      "gene_or_region": "APOE region",
+      "genome_build": "GRCh37",
+      "event": {
+        "type": "inversion",
+        "display": "APOE-region inversion or rearrangement",
+        "minimum_call_fields": ["chrom", "start", "end", "SVTYPE=INV", "gene"]
+      },
+      "interpretation_boundary": "Validate structural-variant class normalization and provenance retention; this does not imply a complete APOE structural-risk model.",
+      "provenance": [
+        {
+          "source_id": "giab_sv",
+          "external_id": "SV benchmark provenance placeholder",
+          "evidence_role": "benchmark_region",
+          "assertion": "Production SV precision and recall should be benchmarked externally with GIAB-style truthsets.",
+          "strength": "benchmark"
+        }
+      ],
+      "validation_expectation": {
+        "expected_class": "rearrangements",
+        "expected_reportability": "clinician_review",
+        "must_preserve_provenance": true
+      }
+    },
+    {
+      "id": "cyp2d6_breakend_fixture",
+      "variant_class": "structural_variant",
+      "gene_or_region": "CYP2D6",
+      "genome_build": "GRCh37",
+      "event": {
+        "type": "breakend",
+        "display": "CYP2D6-region breakend or hybrid-allele signal",
+        "minimum_call_fields": ["chrom", "pos", "ALT breakend notation", "gene"]
+      },
+      "interpretation_boundary": "Validate that pharmacogenomic structural regions are routed to clinician review or dedicated assay confirmation.",
+      "provenance": [
+        {
+          "source_id": "clinvar",
+          "external_id": "CYP2D6 structural variation examples",
+          "evidence_role": "clinical_archive",
+          "assertion": "Clinical archive provenance should be preserved for pharmacogenomic structural examples.",
+          "strength": "context_only"
+        },
+        {
+          "source_id": "gnomad_sv",
+          "external_id": "CYP2D6-region population SV context",
+          "evidence_role": "population_context",
+          "assertion": "Population SV context is useful for filtering but is not a standalone interpretation catalog.",
+          "strength": "context_only"
+        }
+      ],
+      "validation_expectation": {
+        "expected_class": "rearrangements",
+        "expected_reportability": "clinician_review",
+        "must_preserve_provenance": true
+      }
+    },
+    {
+      "id": "htt_cag_repeat_fixture",
+      "variant_class": "tandem_repeat",
+      "gene_or_region": "HTT",
+      "genome_build": "GRCh38",
+      "event": {
+        "type": "repeat_expansion",
+        "display": "HTT CAG repeat count",
+        "minimum_call_fields": ["chrom", "start", "REPID=HTT_CAG", "REPCN", "repeat_unit"]
+      },
+      "interpretation_boundary": "Validate repeat-threshold provenance and boundary disclosure; repeat counts require an appropriate repeat caller.",
+      "provenance": [
+        {
+          "source_id": "repeat_catalog",
+          "external_id": "HTT CAG repeat threshold example",
+          "evidence_role": "repeat_threshold",
+          "assertion": "HTT CAG repeat threshold examples are included only to test repeat evidence handling.",
+          "strength": "curated"
+        }
+      ],
+      "validation_expectation": {
+        "expected_class": "tandem_repeats",
+        "expected_reportability": "clinician_review",
+        "must_preserve_provenance": true
+      }
+    },
+    {
+      "id": "fxn_gaa_repeat_fixture",
+      "variant_class": "tandem_repeat",
+      "gene_or_region": "FXN",
+      "genome_build": "GRCh38",
+      "event": {
+        "type": "repeat_expansion",
+        "display": "FXN GAA repeat count",
+        "minimum_call_fields": ["chrom", "start", "REPID=FXN_GAA", "REPCN", "repeat_unit"]
+      },
+      "interpretation_boundary": "Validate that repeat evidence remains source-attributed and explicitly limited to compact local examples.",
+      "provenance": [
+        {
+          "source_id": "repeat_catalog",
+          "external_id": "FXN GAA repeat threshold example",
+          "evidence_role": "repeat_threshold",
+          "assertion": "FXN GAA repeat threshold examples are included only to test repeat evidence handling.",
+          "strength": "curated"
+        }
+      ],
+      "validation_expectation": {
+        "expected_class": "tandem_repeats",
+        "expected_reportability": "clinician_review",
+        "must_preserve_provenance": true
+      }
+    }
+  ],
+  "validation_expectations": {
+    "requires_all_variant_classes": true,
+    "requires_source_urls": true,
+    "requires_compact_catalog_disclaimer": true,
+    "forbids_production_completeness_claim": true
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "user_composition": [
+    {
+      "id": "EUR",
+      "name": "item.ancestry.continent.EUR",
+      "percent": 100.0,
+      "superpopulation": [
+        {
+          "id": "EUR_BRT",
+          "name": "item.ancestry.superpoblation.EUR_BRT",
+          "percent": 49.7,
+          "overview": "item.ancestry.superpoblation.overview.EUR_BRT",
+          "population": [
+            {
+              "id": "EUR_BRT_GBR",
+              "name": "item.ancestry.poblation.EUR_BRT_GBR",
+              "percent": 39.2,
+              "overview": "item.ancestry.poblation.overview.EUR_BRT_GBR",
+              "detected": true
+            },
+            {
+              "id": "EUR_BRT_IRL",
+              "name": "item.ancestry.poblation.EUR_BRT_IRL",
+              "percent": 10.4,
+              "overview": "item.ancestry.poblation.overview.EUR_BRT_IRL",
+              "detected": true
+            }
+          ]
+        },
+        {
+          "id": "EUR_EST",
+          "name": "item.ancestry.superpoblation.EUR_EST",
+          "percent": 40.2,
+          "overview": "item.ancestry.superpoblation.overview.EUR_EST",
+          "population": [
+            {
+              "id": "EUR_EST_CZE",
+              "name": "item.ancestry.poblation.EUR_EST_CZE",
+              "percent": 15.7,
+              "overview": "item.ancestry.poblation.overview.EUR_EST_CZE",
+              "detected": true
+            },
+            {
+              "id": "EUR_EST_EST",
+              "name": "item.ancestry.poblation.EUR_EST_EST",
+              "percent": 9.4,
+              "overview": "item.ancestry.poblation.overview.EUR_EST_EST",
+              "detected": true
+            },
+            {
+              "id": "EUR_EST_SVN",
+              "name": "item.ancestry.poblation.EUR_EST_SVN",
+              "percent": 7.6,
+              "overview": "item.ancestry.poblation.overview.EUR_EST_SVN",
+              "detected": true
+            },
+            {
+              "id": "EUR_EST_SVK",
+              "name": "item.ancestry.poblation.EUR_EST_SVK",
+              "percent": 7.5,
+              "overview": "item.ancestry.poblation.overview.EUR_EST_SVK",
+              "detected": true
+            },
+            {
+              "id": "EUR_EST_UKR",
+              "name": "item.ancestry.poblation.EUR_EST_UKR",
+              "percent": 0.0,
+              "overview": "item.ancestry.poblation.overview.EUR_EST_UKR",
+              "detected": false
+            },
+            {
+              "id": "EUR_EST_LTU",
+              "name": "item.ancestry.poblation.EUR_EST_LTU",
+              "percent": 0.0,
+              "overview": "item.ancestry.poblation.overview.EUR_EST_LTU",
+              "detected": false
+            },
+            {
+              "id": "EUR_EST_RUS",
+              "name": "item.ancestry.poblation.EUR_EST_RUS",
+              "percent": 0.0,
+              "overview": "item.ancestry.poblation.overview.EUR_EST_RUS",
+              "detected": false
+            },
+            {
+              "id": "EUR_EST_HUN",
+              "name": "item.ancestry.poblation.EUR_EST_HUN",
+              "percent": 0.0,
+              "overview": "item.ancestry.poblation.overview.EUR_EST_HUN",
+              "detected": false
+            },
+            {
+              "id": "EUR_EST_POL",
+              "name": "item.ancestry.poblation.EUR_EST_POL",
+              "percent": 0.0,
+              "overview": "item.ancestry.poblation.overview.EUR_EST_POL",
+              "detected": false
+            },
+            {
+              "id": "EUR_EST_BLR",
+              "name": "item.ancestry.poblation.EUR_EST_BLR",
+              "percent": 0.0,
+              "overview": "item.ancestry.poblation.overview.EUR_EST_BLR",
+              "detected": false
+            },
+            {
+              "id": "EUR_EST_LVA",
+              "name": "item.ancestry.poblation.EUR_EST_LVA",
+              "percent": 0.0,
+              "overview": "item.ancestry.poblation.overview.EUR_EST_LVA",
+              "detected": false
+            }
+          ]
+        },
+        {
+          "id": "EUR_GRB",
+          "name": "item.ancestry.superpoblation.EUR_GRB",
+          "percent": 10.1,
+          "overview": "item.ancestry.superpoblation.overview.EUR_GRB",
+          "population": [
+            {
+              "id": "EUR_GRB_MDA",
+              "name": "item.ancestry.poblation.EUR_GRB_MDA",
+              "percent": 4.2,
+              "overview": "item.ancestry.poblation.overview.EUR_GRB_MDA",
+              "detected": true
+            },
+            {
+              "id": "EUR_GRB_HRV",
+              "name": "item.ancestry.poblation.EUR_GRB_HRV",
+              "percent": 3.1,
+              "overview": "item.ancestry.poblation.overview.EUR_GRB_HRV",
+              "detected": true
+            },
+            {
+              "id": "EUR_GRB_BIH",
+              "name": "item.ancestry.poblation.EUR_GRB_BIH",
+              "percent": 2.8,
+              "overview": "item.ancestry.poblation.overview.EUR_GRB_BIH",
+              "detected": true
+            },
+            {
+              "id": "EUR_GRB_GRC",
+              "name": "item.ancestry.poblation.EUR_GRB_GRC",
+              "percent": 0.0,
+              "overview": "item.ancestry.poblation.overview.EUR_GRB_GRC",
+              "detected": false
+            },
+            {
+              "id": "EUR_GRB_MKD",
+              "name": "item.ancestry.poblation.EUR_GRB_MKD",
+              "percent": 0.0,
+              "overview": "item.ancestry.poblation.overview.EUR_GRB_MKD",
+              "detected": false
+            },
+            {
+              "id": "EUR_GRB_ROU",
+              "name": "item.ancestry.poblation.EUR_GRB_ROU",
+              "percent": 0.0,
+              "overview": "item.ancestry.poblation.overview.EUR_GRB_ROU",
+              "detected": false
+            },
+            {
+              "id": "EUR_GRB_BGR",
+              "name": "item.ancestry.poblation.EUR_GRB_BGR",
+              "percent": 0.0,
+              "overview": "item.ancestry.poblation.overview.EUR_GRB_BGR",
+              "detected": false
+            },
+            {
+              "id": "EUR_GRB_ALB",
+              "name": "item.ancestry.poblation.EUR_GRB_ALB",
+              "percent": 0.0,
+              "overview": "item.ancestry.poblation.overview.EUR_GRB_ALB",
+              "detected": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "neandertal": {
+    "barcode": "ULWEDCBG3433",
+    "neandertalvariant": "9298",
+    "neandertalPercentage": "2.9%",
+    "scoreAboutMedian": 19.59
+  },
+  "haplogroup_paternal": {
+    "haplogroup": [
+      "Y-Adam",
+      "A0T",
+      "A1",
+      "A1b",
+      "BT",
+      "CT",
+      "CF",
+      "F",
+      "GHIJK",
+      "HIJK",
+      "IJK",
+      "K",
+      "K2",
+      "K2b",
+      "P",
+      "R",
+      "R1",
+      "R1a"
+    ],
+    "barcode": "ULWEDCBG3433",
+    "subHaplogroup": "R1a1a1b1a2"
+  },
+  "haplogroup_maternal": {
+    "haplogroup": "H2a2a1",
+    "kit": "ULWEDCBG3433",
+    "associatedHaplogroup": {
+      "name": "H",
+      "parentHaplogroup": null
+    },
+    "haplogroupParentList": [
+      {
+        "name": "H",
+        "parentHaplogroup": null
+      },
+      {
+        "name": "HV",
+        "parentHaplogroup": null
+      },
+      {
+        "name": "R0",
+        "parentHaplogroup": null
+      },
+      {
+        "name": "R",
+        "parentHaplogroup": null
+      },
+      {
+        "name": "N",
+        "parentHaplogroup": null
+      },
+      {
+        "name": "L3",
+        "parentHaplogroup": null
+      },
+      {
+        "name": "L",
+        "parentHaplogroup": null
+      }
+    ],
+    "result": 0.5
+  }
+}

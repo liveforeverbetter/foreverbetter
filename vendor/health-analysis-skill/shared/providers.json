@@ -1,0 +1,25 @@
+{
+  "note": "Bundled provider list for local-mode gap guidance: when a user lacks a modality, point them here. In cloud mode, call GET /providers for a fuller, filterable list including nearby lab draw sites.",
+  "genetics": [
+    { "name": "tellmeGen", "type": "wgs + snp_array", "url": "https://www.tellmegen.com", "raw_data": true, "notes": "Whole-genome and SNP array; raw VCF/BAM download." },
+    { "name": "Sequencing.com", "type": "wgs", "url": "https://sequencing.com", "raw_data": true, "notes": "30x whole-genome; raw data access." },
+    { "name": "Nebula Genomics", "type": "wgs", "url": "https://nebula.org", "raw_data": true, "notes": "Deep whole-genome sequencing (DNA Complete)." },
+    { "name": "Nucleus Genomics", "type": "wgs", "url": "https://mynucleus.com", "raw_data": true, "notes": "Whole-genome with interpretation." },
+    { "name": "Dante Labs", "type": "wgs", "url": "https://www.dantelabs.com", "raw_data": true, "notes": "Whole-genome; VCF/BAM available." },
+    { "name": "23andMe", "type": "snp_array", "url": "https://www.23andme.com", "raw_data": true, "notes": "SNP array; export raw data. Lower coverage than WGS." },
+    { "name": "AncestryDNA", "type": "snp_array", "url": "https://www.ancestry.com/dna", "raw_data": true, "notes": "SNP array; export raw data." }
+  ],
+  "biomarkers": [
+    { "name": "Quest Diagnostics", "region": "US", "url": "https://www.questdiagnostics.com", "notes": "Patient service centers; some direct-to-consumer panels." },
+    { "name": "SYNLAB", "region": "Europe", "url": "https://www.synlab.com", "notes": "Lab network across Europe." },
+    { "name": "Function Health", "region": "US", "url": "https://www.functionhealth.com", "notes": "100+ biomarker membership." },
+    { "name": "Any accredited lab", "region": "Global", "url": "", "notes": "Order a panel and export results as CSV/PDF. Cloud mode can locate nearby draw sites by postal code." }
+  ],
+  "wearables": [
+    { "name": "WHOOP", "connect": "OAuth (cloud mode) or export", "url": "https://www.whoop.com", "notes": "Sleep, recovery, HRV, strain." },
+    { "name": "Oura", "connect": "via Health Connect / export", "url": "https://ouraring.com", "notes": "Sleep and readiness." },
+    { "name": "Apple Health", "connect": "export or Health Connect bridge", "url": "https://www.apple.com/health", "notes": "Aggregates many sources." },
+    { "name": "Garmin", "connect": "export", "url": "https://www.garmin.com", "notes": "Activity, sleep, HRV." },
+    { "name": "Google Health Connect", "connect": "mobile bridge (cloud mode)", "url": "https://health.google/health-connect-android", "notes": "Android aggregator: Fitbit, Samsung Health, Google Fit, and more in one place." }
+  ]
+}

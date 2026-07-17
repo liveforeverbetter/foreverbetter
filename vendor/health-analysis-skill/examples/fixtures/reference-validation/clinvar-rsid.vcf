@@ -1,0 +1,7 @@
+##fileformat=VCFv4.2
+##source=23longevity-reference-validation-rsid-fixture
+##INFO=<ID=GENE,Number=1,Type=String,Description="Gene symbol">
+##INFO=<ID=CLNSIG,Number=1,Type=String,Description="Synthetic ClinVar-style significance">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+17	43071077	rs80357906	G	A	80	PASS	GENE=BRCA1;CLNSIG=Pathogenic
+22	42130692	rs1065852	G	A	80	PASS	GENE=CYP2D6;CLNSIG=drug_response

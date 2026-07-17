@@ -1,0 +1,49 @@
+---
+title: "Run an analysis"
+description: "Run a focused modality analysis, or combine modalities when the product question requires it."
+---
+
+Start with the narrowest analysis that answers your product question.
+
+| Goal | Endpoint | Accepted sources |
+| --- | --- | --- |
+| Calculate metrics from a lab panel | `POST /biomarkers/derive` | Biomarkers |
+| Interpret a lab panel | `POST /biomarkers/analyze` | Biomarkers |
+| Interpret sleep, recovery, and activity | `POST /wearables/analyze` | Wearables |
+| Interpret genetic data | `POST /genetics/analyze` | Genetics |
+| Combine modalities | `POST /analyses` | Any supported combination |
+
+Focused routes reject source IDs from the wrong modality. Every route accepts
+`user_id`, `organization_id`, `source_ids`, and an optional profile.
+
+## Read results
+
+```bash
+curl "$HEALTH_API/analyses/<analysis_id>" \
+  -H "authorization: Bearer $TOKEN"
+
+curl "$HEALTH_API/dashboard-specs/<analysis_id>" \
+  -H "authorization: Bearer $TOKEN"
+```
+
+Every analysis includes a `healthspan_score` with per-domain sub-scores.
+
+## List, re-run, and act
+
+```bash
+# Every stored analysis for a user, newest first (filter by modality/since/limit)
+curl "$HEALTH_API/analyses?user_id=customer_001&modality=biomarkers" \
+  -H "authorization: Bearer $TOKEN"
+
+# Refresh a stored analysis from its original sources without re-uploading
+curl -X POST "$HEALTH_API/analyses/<analysis_id>/rerun" \
+  -H "authorization: Bearer $TOKEN"
+
+# Prioritized action items and longitudinal direction
+curl "$HEALTH_API/analyses/<analysis_id>/recommendations" \
+  -H "authorization: Bearer $TOKEN"
+curl -X POST "$HEALTH_API/users/customer_001/trends" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{"organization_id": "org_001"}'
+```

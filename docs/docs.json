@@ -1,0 +1,211 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "ForeverBetter Wellness API",
+  "colors": {
+    "primary": "#256E5B",
+    "light": "#F7FAF8",
+    "dark": "#173B34"
+  },
+  "favicon": "/favicon.svg",
+  "navbar": {
+    "links": [
+      {
+        "label": "API Reference",
+        "href": "/api-reference/introduction"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/liveforeverbetter/foreverbetter-api"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get an API key",
+      "href": "https://api.foreverbetter.xyz/dashboard"
+    }
+  },
+  "api": {
+    "baseUrl": "https://api.foreverbetter.xyz",
+    "auth": {
+      "method": "bearer"
+    },
+    "playground": {
+      "mode": "show"
+    }
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Start",
+        "pages": [
+          "index",
+          "quickstart",
+          "connect-your-agent",
+          "auth-and-claims"
+        ]
+      },
+      {
+        "group": "Build",
+        "pages": [
+          {
+            "group": "Data modalities",
+            "pages": [
+              "biomarkers",
+              "wearables",
+              "genetics",
+              "behavioral"
+            ]
+          },
+          {
+            "group": "Core workflows",
+            "pages": [
+              "data-model",
+              "ingest-data",
+              "run-analysis",
+              "action-plans",
+              "wearable-onboarding"
+            ]
+          },
+          {
+            "group": "Agents and apps",
+            "pages": [
+              "agent-skill",
+              "agents-and-mcp",
+              "design-systems",
+              "x402"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Use cases",
+        "pages": [
+          "use-cases/custom-dashboard",
+          "use-cases/connect-whoop",
+          "use-cases/connect-oura",
+          "use-cases/find-providers",
+          "use-cases/action-protocol",
+          "use-cases/ancestry",
+          "use-cases/retest-loop",
+          "use-cases/ai-health-agent"
+        ]
+      },
+      {
+        "group": "Operate",
+        "pages": [
+          "pricing",
+          "self-hosting"
+        ]
+      },
+      {
+        "group": "API Reference",
+        "openapi": "openapi.json",
+        "pages": [
+          "api-reference/introduction",
+          {
+            "group": "Start and authenticate",
+            "pages": [
+              "GET /health",
+              "GET /ready",
+              "GET /version",
+              "GET /capabilities",
+              "GET /endpoints",
+              "GET /openapi.json",
+              "POST /sandbox/sessions",
+              "POST /sandbox/hero",
+              "POST /auth/otp/start",
+              "POST /auth/otp/verify",
+              "POST /api-keys"
+            ]
+          },
+          {
+            "group": "Ingest and connect",
+            "pages": [
+              "POST /imports/file",
+              "POST /genetics/uploads",
+              "POST /genetics/uploads/{id}/complete",
+              "GET /sources",
+              "GET /sources/{id}",
+              "POST /connections/wearables/start",
+              "GET /connections/wearables/status",
+              "POST /connections/wearables/callback",
+              "POST /connections/{provider}/auth-url",
+              "POST /connections/{provider}/token",
+              "POST /connections/{provider}/refresh",
+              "POST /api/v1/sdk/users/{user_id}/sync",
+              "GET /connections/wearables/jobs/{id}"
+            ]
+          },
+          {
+            "group": "Analyze and personalize",
+            "pages": [
+              "GET /analyses",
+              "POST /analyses",
+              "GET /analyses/{id}",
+              "POST /analyses/{id}/rerun",
+              "GET /analyses/{id}/recommendations",
+              "GET /analyses/{id}/action-plan",
+              "POST /biomarkers/derive",
+              "POST /biomarkers/analyze",
+              "POST /wearables/analyze",
+              "POST /genetics/analyze",
+              "POST /genetics/ancestry",
+              "GET /genetics/jobs/{id}",
+              "GET /dashboard-specs/{analysis_id}",
+              "POST /dashboard-links",
+              "GET /dashboards/private/{token}",
+              "POST /users/{user_id}/health-context",
+              "POST /users/{user_id}/trends",
+              "GET /users/{user_id}/retest-reminders",
+              "GET /users/{user_id}/goals",
+              "POST /users/{user_id}/goals",
+              "GET /goals/{id}",
+              "POST /goals/{id}",
+              "POST /goals/{id}/delete",
+              "POST /query"
+            ]
+          },
+          {
+            "group": "Build apps and agents",
+            "pages": [
+              "GET /.well-known/health-agent.json",
+              "POST /mcp",
+              "GET /design/systems",
+              "GET /design/systems/{id}",
+              "GET /design/systems/{id}/implementation",
+              "GET /webhook-events"
+            ]
+          },
+          {
+            "group": "Discover providers",
+            "pages": [
+              "GET /providers",
+              "GET /labs/search",
+              "GET /wgs-providers",
+              "GET /wgs-providers/{id}"
+            ]
+          },
+          {
+            "group": "Billing and payments",
+            "pages": [
+              "GET /pricing",
+              "GET /billing/subscription",
+              "POST /billing/checkout",
+              "POST /billing/portal",
+              "POST /billing/stripe/webhook",
+              "GET /.well-known/x402.json"
+            ]
+          },
+          {
+            "group": "Privacy and operations",
+            "pages": [
+              "POST /users/{user_id}/data/export",
+              "POST /users/{user_id}/data/delete"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

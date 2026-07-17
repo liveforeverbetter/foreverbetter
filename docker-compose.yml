@@ -1,0 +1,146 @@
+# Self-hosted Wellness API stack.
+#
+#   cp .env.example .env      # then set the secrets it tells you to
+#   docker compose up -d      # postgres + api + workers
+#
+# Optional add-ons via profiles:
+#   docker compose --profile s3 up -d      # MinIO object storage
+#   docker compose --profile mail up -d    # Mailpit local SMTP + inbox
+#
+# The minimal stack is postgres + api; workers are needed only for genetics and
+# wearable syncing. All three app services run the same image, selected by PROCESS.
+
+x-app-env: &app-env
+  DATABASE_URL: postgres://${POSTGRES_USER:-health}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@postgres:5432/${POSTGRES_DB:-health}
+  STORE_MODE: postgres
+  STORAGE_DRIVER: ${STORAGE_DRIVER:-filesystem}
+  PAYLOAD_DIR: /data/payloads
+  NODE_ENV: ${NODE_ENV:-production}
+
+services:
+  postgres:
+    image: postgres:16-alpine@sha256:57c72fd2a128e416c7fcc499958864df5301e940bca0a56f58fddf30ffc07777
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-health}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-health}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-health} -d ${POSTGRES_DB:-health}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  api:
+    image: ${IMAGE:-ghcr.io/liveforeverbetter/foreverbetter-api}:${IMAGE_TAG:-latest}
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      <<: *app-env
+      PROCESS: api
+      PORT: "8787"
+    ports:
+      - "${PORT:-8787}:8787"
+    volumes:
+      - payloads:/data/payloads
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:8787/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+
+  genetics-worker:
+    image: ${IMAGE:-ghcr.io/liveforeverbetter/foreverbetter-api}:${IMAGE_TAG:-latest}
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      <<: *app-env
+      PROCESS: worker:wgs
+      RUN_MIGRATIONS: "false"
+    volumes:
+      - payloads:/data/payloads
+    depends_on:
+      api:
+        condition: service_healthy
+
+  wearables-worker:
+    image: ${IMAGE:-ghcr.io/liveforeverbetter/foreverbetter-api}:${IMAGE_TAG:-latest}
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      <<: *app-env
+      PROCESS: worker:wearables
+      RUN_MIGRATIONS: "false"
+    depends_on:
+      api:
+        condition: service_healthy
+
+  # Optional S3-compatible object storage. Enable with `--profile s3` and set
+  # STORAGE_DRIVER=s3 plus the S3_* vars in .env.
+  minio:
+    image: minio/minio:latest@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e
+    profiles: ["s3"]
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "-ec"]
+    command:
+      - |
+        test -n "$$MINIO_ROOT_USER" || { echo 'S3_ACCESS_KEY_ID is required for the s3 profile' >&2; exit 1; }
+        test -n "$$MINIO_ROOT_PASSWORD" || { echo 'S3_SECRET_ACCESS_KEY is required for the s3 profile' >&2; exit 1; }
+        exec minio server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${S3_ACCESS_KEY_ID:-}
+      MINIO_ROOT_PASSWORD: ${S3_SECRET_ACCESS_KEY:-}
+    ports:
+      - "${MINIO_BIND_ADDRESS:-127.0.0.1}:${MINIO_PORT:-9000}:9000"
+      - "${MINIO_BIND_ADDRESS:-127.0.0.1}:${MINIO_CONSOLE_PORT:-9001}:9001"
+    volumes:
+      - miniodata:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # One-shot: create the payload bucket in MinIO on first run.
+  minio-init:
+    image: minio/mc:latest@sha256:a7fe349ef4bd8521fb8497f55c6042871b2ae640607cf99d9bede5e9bdf11727
+    profiles: ["s3"]
+    depends_on:
+      minio:
+        condition: service_healthy
+    environment:
+      S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID:-}
+      S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY:-}
+      S3_BUCKET: ${S3_BUCKET:-health-api-payloads}
+    entrypoint: ["/bin/sh", "-ec"]
+    command:
+      - |
+        test -n "$$S3_ACCESS_KEY_ID" || { echo 'S3_ACCESS_KEY_ID is required for the s3 profile' >&2; exit 1; }
+        test -n "$$S3_SECRET_ACCESS_KEY" || { echo 'S3_SECRET_ACCESS_KEY is required for the s3 profile' >&2; exit 1; }
+        mc alias set local http://minio:9000 "$$S3_ACCESS_KEY_ID" "$$S3_SECRET_ACCESS_KEY"
+        mc mb --ignore-existing "local/$$S3_BUCKET"
+        echo 'bucket ready'
+
+  # Optional local SMTP + web inbox for testing email sign-in. Enable with
+  # `--profile mail`, set EMAIL_DRIVER=smtp, SMTP_HOST=mailpit, SMTP_PORT=1025.
+  mailpit:
+    image: axllent/mailpit:latest@sha256:5a49a77c5bdbe7c5474450b4f46348d09949df3695257729c93a30369382d4f6
+    profiles: ["mail"]
+    restart: unless-stopped
+    ports:
+      - "${MAILPIT_BIND_ADDRESS:-127.0.0.1}:${MAILPIT_SMTP_PORT:-1025}:1025"
+      - "${MAILPIT_BIND_ADDRESS:-127.0.0.1}:${MAILPIT_UI_PORT:-8025}:8025"
+
+volumes:
+  pgdata:
+  payloads:
+  miniodata:

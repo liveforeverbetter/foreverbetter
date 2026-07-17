@@ -1,0 +1,68 @@
+---
+title: "The get-better-every-year loop"
+description: "Set goals, track trends across retests, and drive the annual re-test that keeps users engaged."
+---
+
+Healthspan products retain users through a loop: set a target, retest on a
+cadence, watch the trend, and get nudged when the next panel is due. This guide
+wires that loop up with four endpoints.
+
+| Step | Endpoint |
+| --- | --- |
+| Set a goal | `POST /users/{id}/goals` |
+| Upload panels over time | `POST /imports/file` + `POST /analyses` |
+| See the trend | `POST /users/{id}/trends` |
+| Know when to retest | `GET /users/{id}/retest-reminders` |
+
+## 1. Set a goal
+
+```bash
+curl -s -X POST "$FB_API/users/$UID/goals" -H "authorization: Bearer $FB_KEY" \
+  -H "content-type: application/json" -d '{
+    "organization_id":"'$ORG'","title":"Get ApoB under 80 mg/dL",
+    "metric":"apob","target_value":80,"target_direction":"decrease","due_date":"2027-01-01"
+  }' | jq '{id,status}'
+```
+
+List, update (`POST /goals/{id}`), and close (`POST /goals/{id}/delete`) as the user
+progresses.
+
+## 2. Upload each retest and analyze it
+
+Every few months, upload the new panel and run an analysis (same as any ingest
+flow). Each analysis is stored and timestamped, which is what makes trends possible.
+
+## 3. See the trend across uploads
+
+```bash
+curl -s -X POST "$FB_API/users/$UID/trends" -H "authorization: Bearer $FB_KEY" \
+  -H "content-type: application/json" -d '{"organization_id":"'$ORG'"}' | jq .
+```
+
+Trends chart each marker across every upload: direction, magnitude, and whether the
+user is moving toward their goal.
+
+## 4. Drive the retest cadence
+
+```bash
+curl -s "$FB_API/users/$UID/retest-reminders?organization_id=$ORG" \
+  -H "authorization: Bearer $FB_KEY" | jq .
+```
+
+Reminders are computed from the freshest data on file per modality against a cadence
+(biomarkers 365 days, behavioral 90 days), so each comes back as `due`, `upcoming`,
+`ok`, or `never_tested` with a plain-language reason:
+
+```json
+{ "reminders": [
+  { "category":"biomarkers","status":"upcoming","days_until_due":24,
+    "reason":"Your biomarker panel retest is coming up in 24 days." } ] }
+```
+
+## Take it further
+
+- Subscribe to `GET /webhook-events` for `analysis.completed` and `export.ready`
+  events to trigger emails or push notifications.
+- Pair reminders with goals to show "38 days to your ApoB target, last value 96."
+- When a retest comes due, route the user to a nearby draw site with
+  [Get users their first data](/use-cases/find-providers).

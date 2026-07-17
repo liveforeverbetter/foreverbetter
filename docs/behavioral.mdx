@@ -1,0 +1,47 @@
+---
+title: "Behavioral and lifestyle"
+description: "Upload supplements, medications, nutrition, and symptoms as structured, scored, cross-referenced data."
+---
+
+The API treats behavioral data as a first-class modality. Upload supplements,
+medications, daily nutrition, and subjective signals, and it structures,
+scores, and cross-references them.
+
+## Upload
+
+`POST /imports/file` with `category: "behavioral"`. Structured JSON is preferred;
+CSV and light free-text are also parsed.
+
+```bash
+curl -s "$HEALTH_API/imports/file" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{
+    "user_id": "'"$USER_ID"'",
+    "organization_id": "'"$ORGANIZATION_ID"'",
+    "category": "behavioral",
+    "filename": "lifestyle.json",
+    "content_type": "application/json",
+    "text": "{\"entries\":[{\"kind\":\"supplement\",\"name\":\"Vitamin D3\",\"dose\":\"4000 IU\",\"timing\":\"morning\"},{\"kind\":\"medication\",\"name\":\"atorvastatin\",\"dose\":\"20 mg\"},{\"kind\":\"nutrition\",\"name\":\"fiber\",\"value\":18},{\"kind\":\"symptom\",\"name\":\"stress\",\"value\":7}]}"
+  }'
+```
+
+Each entry has a `kind`: `supplement`, `medication`, `nutrition`, `symptom`, or
+`note`.
+
+## What it produces
+
+- **Nutrition** (protein, fiber, added sugar, sodium, vegetables, water, alcohol)
+  is scored against daily wellness targets.
+- **Subjective signals** (energy, mood, stress, sleep quality) are scored on a
+  1–10 scale.
+- **Supplements and medications** become a structured inventory with dose and
+  timing.
+- **Medications with pharmacogenomic relevance** (e.g. clopidogrel, statins,
+  codeine, PPIs, SSRIs) are flagged so that, when genetic data is present, the
+  gene–drug context can be reviewed with a clinician or pharmacist. The API never
+  advises changing a medication.
+
+Behavioral findings appear in `POST /analyses`, roll into the healthspan score,
+and surface under the `behavioral` block of the unified health context,
+including supplement, medication, nutrition, and symptom counts.

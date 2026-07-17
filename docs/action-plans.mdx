@@ -1,0 +1,99 @@
+---
+title: "Action plans"
+description: "Turn an analysis into a prioritized set of lifestyle interventions and an evidence-graded supplement stack, cross-referenced against what the user already takes."
+---
+
+`GET /analyses/{id}/action-plan` builds a customized plan from a stored analysis.
+Each out-of-range finding is mapped to lifestyle interventions and supplements,
+aggregated across findings, and cross-referenced against the user's logged
+supplements and medications.
+
+```bash
+curl -s "$FB_API/analyses/$AN/action-plan" \
+  -H "authorization: Bearer $FB_KEY" | jq .
+```
+
+## What you get back
+
+```json
+{
+  "analysis_id": "analysis_...",
+  "summary": "4 findings outside target mapped to 6 lifestyle changes and 5 supplements, 2 of them core priorities...",
+  "interventions": [
+    {
+      "id": "reduce_sat_fat",
+      "name": "Cut saturated fat, raise unsaturated",
+      "category": "nutrition",
+      "detail": "Swap butter and fatty processed meat for olive oil, nuts, and fatty fish.",
+      "evidence": "A",
+      "priority": "core",
+      "targets": [{ "marker": "apob", "finding": "ApoB", "direction": "high", "status": "needs_attention" }],
+      "rationale": "Targets high ApoB, high Non-HDL-C."
+    }
+  ],
+  "supplements": [
+    {
+      "id": "omega_3",
+      "name": "Omega-3 (EPA/DHA)",
+      "dose_guidance": "Exact dose and timing are withheld in the wellness API. Confirm need, product, dose, timing, interactions, and a retest plan with a qualified clinician or pharmacist.",
+      "evidence": "A",
+      "evidence_note": "Consistently lowers triglycerides; supports inflammation and blood pressure.",
+      "priority": "core",
+      "targets": [ { "marker": "triglycerides", "finding": "Triglycerides", "direction": "high" } ],
+      "rationale": "Targets high Triglycerides, high ApoB.",
+      "cautions": ["You logged warfarin: Omega-3 can increase bleeding risk with blood thinners."],
+      "already_taking": true
+    }
+  ],
+  "cautions": ["You logged 1 medication with pharmacogenomic relevance (warfarin)..."],
+  "evidence_key": { "A": "Strong, consistent human evidence", "B": "Moderate evidence from good trials", "C": "Limited or preliminary evidence", "D": "Mixed or mechanistic evidence" },
+  "disclaimer": "Educational wellness guidance, not medical advice..."
+}
+```
+
+## How it is built
+
+- **Mapped from findings.** Only findings outside their target range drive the
+  plan. Each maps by marker and direction (e.g. high ApoB, low vitamin D) to a
+  curated set of interventions and supplements.
+- **Aggregated.** A supplement or intervention that helps several flagged markers
+  is listed once, with every marker it addresses in `targets`, and ranks higher.
+- **Prioritized.** `priority` is `core` when it addresses a `needs_attention`
+  finding, otherwise `optimize`. Lifestyle interventions lead; supplements follow.
+- **Evidence-graded.** Every item carries an A–D `evidence` grade (see
+  `evidence_key`) and a short `evidence_note`.
+- **Dose-safe by default.** Public wellness responses omit exact supplement dose
+  and timing. A deployment can expose them only after enabling a separately
+  reviewed clinical policy; consumer UIs must not infer a dose when absent.
+- **Personalized against what they take.** Supplements the user already logs are
+  marked `already_taking` instead of re-recommended. Known supplement–drug
+  interactions surface as `cautions` against the user's medication list, and
+  medications with pharmacogenomic (CPIC) relevance surface at the plan level.
+
+## Sources
+
+Each supplement carries a `sources` array, and the plan carries a top-level
+`sources` list, so every recommendation can be traced to its evidence:
+
+- **[SUPP.AI](https://supp.ai)** (Allen Institute for AI): supplement–drug
+  interaction evidence extracted from the scientific literature. When a user's
+  logged medication matches a documented interaction, the caution names the drug,
+  the number of supporting literature reports, and links to the evidence.
+- **[Pillser](https://pillser.com/health-outcomes)**: per-outcome study counts.
+  When a supplement targets a marker with a mapped outcome (e.g. reduced LDL,
+  improved insulin sensitivity), the plan cites that outcome page as an evidence
+  base.
+- The mappings from findings to interventions and supplements, and the A–D
+  grades themselves, are the API's own curated knowledge base, informed by the
+  sources above.
+
+Interaction cautions are only shown for drugs the user actually logs, so the
+underlying interaction dataset never produces noise for medications they don't take.
+
+## Safety
+
+Action plans are educational wellness guidance, not medical advice. They never
+diagnose or treat disease and never tell a user to start, stop, or change a
+prescribed medication. Confirm nutrient deficiencies with testing, and review
+supplements and interactions with a clinician or pharmacist. The `disclaimer`
+field carries this language for display.

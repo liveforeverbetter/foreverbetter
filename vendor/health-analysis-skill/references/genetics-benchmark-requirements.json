@@ -1,0 +1,67 @@
+{
+  "version": "2026-06-01",
+  "purpose": "Internal TellmeGen-style genetics coverage benchmark. This is not rendered to users; it prevents the skill pipeline from scoring highly when report-category breadth, WGS variant-class validation, or VCF interpretation readiness is incomplete.",
+  "source_notes": [
+    "TellmeGen Ultra WGS public baseline advertises 30x whole-genome sequencing, 3 billion variants, 600+ reports, raw FASTQ/VCF downloads, and report blocks for genetic vulnerability, pharmacogenetics, hereditary conditions, traits, wellness, and ancestry.",
+    "This local benchmark converts that product shape into deterministic checks against interpretation catalogs, generated dashboard output, VCF-first WGS class handling, optional WGS caller manifests, and validation reports.",
+    "Raw-read callers are not required for the default product path because users are expected to provide WGS VCF/VCF.GZ or 23andMe-style SNP-array exports; callers are optional escalation for FASTQ/BAM/CRAM or incomplete vendor VCFs."
+  ],
+  "target_total_reports": 600,
+  "target_category_recall": 0.9,
+  "target_rendered_sections": 6,
+  "target_raw_download_types": 1,
+  "target_variant_classes": 5,
+  "target_external_validation_sources": 0,
+  "target_caller_available": 0,
+  "target_prs_supported": 27,
+  "target_gene_catalog": 1000,
+  "target_report_catalog_quality": 0.98,
+  "target_report_catalog_source_types": 6,
+  "target_interpretation_depth_score": 90,
+  "target_interpretation_source_families": 5,
+  "target_interpretation_clinvar_gene_targets": 150,
+  "target_interpretation_cpic_gene_drug_rules": 10,
+  "target_interpretation_pgs_variants": 180,
+  "report_categories": {
+    "genetic_vulnerability": {
+      "target": 105,
+      "source_files": ["vulnerability.json"]
+    },
+    "pharmacogenetics": {
+      "target": 95,
+      "source_files": ["pharmacology.json"]
+    },
+    "hereditary_conditions": {
+      "target": 200,
+      "source_files": ["hereditary.json"]
+    },
+    "personal_traits": {
+      "target": 80,
+      "source_files": ["personality.json", "performance.json"]
+    },
+    "wellness": {
+      "target": 50,
+      "source_files": ["wellness.json"]
+    },
+    "ancestry": {
+      "target": 4,
+      "source_files": ["ancestry.json"]
+    }
+  },
+  "required_sections": [
+    "Genome register",
+    "Genome analysis summary",
+    "Innate strengths",
+    "Polygenic risk",
+    "Hereditary",
+    "Aging hallmark"
+  ],
+  "raw_download_types": ["VCF"],
+  "variant_classes": [
+    "rare_small_variants",
+    "copy_number_variants",
+    "large_indels",
+    "tandem_repeats",
+    "rearrangements"
+  ]
+}

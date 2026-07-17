@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://foreverbetter.local/schemas/cnv-sv-repeat-evidence.schema.json",
+  "title": "Compact CNV/SV/repeat evidence validation catalog",
+  "description": "Schema for a compact, provenance-oriented CNV/SV/repeat validation fixture. This schema is intentionally not a production-depth clinical evidence catalog.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "catalog_type",
+    "purpose",
+    "completeness",
+    "scope",
+    "sources",
+    "evidence_items",
+    "validation_expectations"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "catalog_type": {
+      "const": "compact_validation_catalog"
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 40
+    },
+    "completeness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "statement", "not_intended_for"],
+      "properties": {
+        "status": {
+          "const": "compact_not_complete"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 60
+        },
+        "not_intended_for": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["genome_builds", "variant_classes", "max_evidence_items", "local_fixture_only"],
+      "properties": {
+        "genome_builds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "variant_classes": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "enum": ["copy_number_variant", "structural_variant", "tandem_repeat"]
+          },
+          "uniqueItems": true
+        },
+        "max_evidence_items": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "local_fixture_only": {
+          "const": true
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "source_type", "url", "use_in_fixture", "repo_policy"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "source_type": {
+            "enum": ["dosage_curation", "variant_archive", "benchmark_truthset", "population_reference", "repeat_locus_reference"]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "use_in_fixture": {
+            "type": "string"
+          },
+          "repo_policy": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence_items": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "variant_class",
+          "gene_or_region",
+          "genome_build",
+          "event",
+          "interpretation_boundary",
+          "provenance",
+          "validation_expectation"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "variant_class": {
+            "enum": ["copy_number_variant", "structural_variant", "tandem_repeat"]
+          },
+          "gene_or_region": {
+            "type": "string"
+          },
+          "genome_build": {
+            "type": "string"
+          },
+          "event": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "display", "minimum_call_fields"],
+            "properties": {
+              "type": {
+                "enum": ["deletion", "duplication", "inversion", "breakend", "repeat_expansion"]
+              },
+              "display": {
+                "type": "string"
+              },
+              "minimum_call_fields": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "interpretation_boundary": {
+            "type": "string",
+            "minLength": 20
+          },
+          "provenance": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["source_id", "external_id", "evidence_role", "assertion", "strength"],
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                },
+                "external_id": {
+                  "type": "string"
+                },
+                "evidence_role": {
+                  "enum": ["dosage_sensitivity", "clinical_archive", "benchmark_region", "population_context", "repeat_threshold"]
+                },
+                "assertion": {
+                  "type": "string",
+                  "minLength": 20
+                },
+                "strength": {
+                  "enum": ["curated", "benchmark", "context_only"]
+                }
+              }
+            }
+          },
+          "validation_expectation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["expected_class", "expected_reportability", "must_preserve_provenance"],
+            "properties": {
+              "expected_class": {
+                "enum": ["copy_number_variants", "rearrangements", "tandem_repeats"]
+              },
+              "expected_reportability": {
+                "enum": ["clinician_review", "research_only"]
+              },
+              "must_preserve_provenance": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "validation_expectations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requires_all_variant_classes",
+        "requires_source_urls",
+        "requires_compact_catalog_disclaimer",
+        "forbids_production_completeness_claim"
+      ],
+      "properties": {
+        "requires_all_variant_classes": {
+          "const": true
+        },
+        "requires_source_urls": {
+          "const": true
+        },
+        "requires_compact_catalog_disclaimer": {
+          "const": true
+        },
+        "forbids_production_completeness_claim": {
+          "const": true
+        }
+      }
+    }
+  }
+}

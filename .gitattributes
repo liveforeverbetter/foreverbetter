@@ -1,0 +1,5 @@
+# Bundled genomic reference data (ClinVar, GWAS Catalog) is large and binary.
+# Store it with Git LFS so normal clones stay slim; CI and release builds fetch
+# it with `git lfs` (see .github/workflows/publish.yml checkout lfs: true).
+vendor/health-analysis-skill/**/*.gz filter=lfs diff=lfs merge=lfs -text
+vendor/health-analysis-skill/**/*.tbi filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,60 @@
+---
+title: "ForeverBetter Wellness API"
+description: "One API for building wellness products on wearables, genetics, biomarkers, and agent-ready health context."
+---
+
+Build a source-backed wellness product without spending months rebuilding
+ingestion, normalization, and analysis infrastructure.
+
+ForeverBetter Wellness API turns wearable signals, genetic uploads, and lab biomarkers into
+application-ready health context with source provenance, queued analysis jobs,
+dashboard JSON, and agent endpoints.
+
+<CardGroup cols={2}>
+  <Card title="Try the synthetic API" icon="flask" href="/quickstart">
+    Get analysis, action-plan, modality-coverage, and dashboard JSON in one request. No account or real wellness data.
+  </Card>
+  <Card title="Get a free API key" icon="key" href="https://api.foreverbetter.xyz/dashboard">
+    Sign in with an 8-digit email code and copy a personal key you keep. No credit card.
+  </Card>
+</CardGroup>
+
+## Start building
+
+- Base URL: `https://api.foreverbetter.xyz`
+- Synthetic alpha: `POST /sandbox/sessions` (30-minute, non-persistent sandbox)
+- Developer dashboard: [create an API key](https://api.foreverbetter.xyz/dashboard)
+- Agent skill: [give your agent one executable instruction file](/agent-skill)
+- Reference: [browse the categorized API reference](/api-reference/introduction)
+- OpenAPI: [download the raw production contract](https://api.foreverbetter.xyz/openapi.json)
+- Auth: OIDC bearer tokens and scoped API keys
+- Hosted plans: [Free, Standard $9.99/month, Builder, Growth, and Enterprise](/pricing)
+
+Self-hosting is always available; hosted plans pay for managed cloud capacity,
+not access to the open-source software. See [Self-hosting](/self-hosting).
+
+## Data modalities
+
+| Modality | Input path | Processing path |
+| --- | --- | --- |
+| [Biomarkers](/biomarkers) | `POST /imports/file` with `category: "biomarkers"` | Unit-converted, sex/age-aware scoring via `/biomarkers/derive` and `/biomarkers/analyze` |
+| [Wearables](/wearables) | WHOOP OAuth, Google Health Connect bridge, or uploaded files | `POST /wearables/analyze` |
+| [Genetics](/genetics) | Small exports: `POST /imports/file`; VCF/WGS: `POST /genetics/uploads` direct to private storage | Queued pipeline via `POST /genetics/analyze` |
+| [Behavioral & lifestyle](/behavioral) | `POST /imports/file` with `category: "behavioral"` | Structured supplements, medications, nutrition, and symptoms, scored and cross-referenced |
+
+## Discover, trend, act
+
+Every upload and result is listable, with no ID bookkeeping on your side:
+
+- `GET /sources` and `GET /analyses`: everything a user has uploaded and computed
+- `GET /analyses/{id}/recommendations`: prioritized, de-duplicated action items
+- `POST /users/{user_id}/trends`: improving/worsening direction per marker across uploads
+- `POST /analyses/{id}/rerun`: refresh results without re-upload
+
+## Build product experiences
+
+- Customer dashboards with traceable health observations
+- Focused lab, wearable, or genetic analysis
+- "Better every year" progress views from longitudinal trends
+- Multimodal health context for wellness agents
+- Privacy-aware export and deletion workflows

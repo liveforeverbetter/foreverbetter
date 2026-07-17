@@ -1,0 +1,150 @@
+{
+  "version": "2026-06-01",
+  "purpose": "Internal WGS variant-class validation fixtures. These synthetic fixtures gate parser, class-normalization, evidence-tier, and reportability behavior. Production validation should add Genome in a Bottle and externally curated CNV/SV/repeat truthsets.",
+  "truthsets": [
+    {
+      "id": "synthetic_wgs_variant_classes_v1",
+      "description": "Synthetic fixture covering the five WGS variant classes required for TellmeGen-style whole-genome interpretation breadth.",
+      "input": "examples/fixtures/wgs/sample-wgs-variant-classes.vcf",
+      "expected_calls": [
+        { "id": "cnv_brca1_del", "class": "copy_number_variants", "reportability": "clinician_review", "genes": ["BRCA1"] },
+        { "id": "sv_lpa_dup", "class": "copy_number_variants", "reportability": "research_only", "genes": ["LPA"] },
+        { "id": "large_ins_msh2", "class": "large_indels", "reportability": "clinician_review", "genes": ["MSH2"] },
+        { "id": "inv_apoe_region", "class": "rearrangements", "reportability": "clinician_review", "genes": ["APOE"] },
+        { "id": "htt_cag_repeat", "class": "tandem_repeats", "reportability": "clinician_review", "genes": ["HTT"] },
+        { "id": "fxn_gaa_repeat", "class": "tandem_repeats", "reportability": "clinician_review", "genes": ["FXN"] },
+        { "id": "rare_brca2_stop", "class": "rare_small_variants", "reportability": "clinician_review", "genes": ["BRCA2"] }
+      ],
+      "expected_classes": [
+        "rare_small_variants",
+        "copy_number_variants",
+        "large_indels",
+        "tandem_repeats",
+        "rearrangements"
+      ],
+      "minimum_recall": 1,
+      "minimum_precision": 1,
+      "minimum_reportable_classes": 5
+    },
+    {
+      "id": "synthetic_cnv_dosage_v1",
+      "description": "CNV dosage fixture that distinguishes reportable ClinGen-style dosage regions from a normalized research-only CNV.",
+      "input": "examples/fixtures/wgs/sample-wgs-cnv-dosage.vcf",
+      "expected_calls": [
+        { "id": "ldlr_exon_del", "class": "copy_number_variants", "reportability": "clinician_review", "genes": ["LDLR"] },
+        { "id": "pmp22_region_dup", "class": "copy_number_variants", "reportability": "clinician_review", "genes": ["PMP22"] },
+        { "id": "pmp22_region_del", "class": "copy_number_variants", "reportability": "clinician_review", "genes": ["PMP22"] },
+        { "id": "neutral_intergenic_dup", "class": "copy_number_variants", "reportability": "research_only", "genes": ["INTERGENIC"] }
+      ],
+      "expected_classes": ["copy_number_variants"],
+      "minimum_recall": 1,
+      "minimum_precision": 1,
+      "minimum_reportable_classes": 1
+    },
+    {
+      "id": "synthetic_repeat_boundaries_v1",
+      "description": "Repeat-expansion fixture that verifies normal, intermediate, and pathogenic repeat reportability boundaries.",
+      "input": "examples/fixtures/wgs/sample-wgs-repeat-boundaries.vcf",
+      "expected_calls": [
+        { "id": "htt_normal_cag", "class": "tandem_repeats", "reportability": "research_only", "genes": ["HTT"] },
+        { "id": "htt_intermediate_cag", "class": "tandem_repeats", "reportability": "clinician_review", "genes": ["HTT"] },
+        { "id": "fxn_pathogenic_gaa", "class": "tandem_repeats", "reportability": "clinician_review", "genes": ["FXN"] }
+      ],
+      "expected_classes": ["tandem_repeats"],
+      "minimum_recall": 1,
+      "minimum_precision": 1,
+      "minimum_reportable_classes": 1
+    },
+    {
+      "id": "synthetic_sv_large_indel_v1",
+      "description": "Structural and large-indel fixture covering rearrangements, large insertions, breakends, and rare coding calls.",
+      "input": "examples/fixtures/wgs/sample-wgs-sv-large-indel.vcf",
+      "expected_calls": [
+        { "id": "apoe_region_inv", "class": "rearrangements", "reportability": "clinician_review", "genes": ["APOE"] },
+        { "id": "msh2_large_ins", "class": "large_indels", "reportability": "clinician_review", "genes": ["MSH2"] },
+        { "id": "cyp2d6_breakend", "class": "rearrangements", "reportability": "clinician_review", "genes": ["CYP2D6"] },
+        { "id": "brca2_pathogenic_stop", "class": "rare_small_variants", "reportability": "clinician_review", "genes": ["BRCA2"] }
+      ],
+      "expected_classes": ["rare_small_variants", "large_indels", "rearrangements"],
+      "minimum_recall": 1,
+      "minimum_precision": 1,
+      "minimum_reportable_classes": 3
+    }
+  ],
+  "external_truthsets": [
+    {
+      "id": "giab_hg002_sv_v0_6_grch37",
+      "description": "GIAB HG002 structural-variant benchmark for real SV precision/recall; intended for Truvari benchmarking against the pipeline's HG002 SV query VCF.",
+      "source_name": "NIST Genome in a Bottle HG002 SV v0.6",
+      "source_url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NIST_SV_v0.6/",
+      "benchmark_tool": "truvari",
+      "genome_build": "GRCh37",
+      "variant_classes": ["copy_number_variants", "large_indels", "rearrangements"],
+      "truth_vcf": "../../external-truthsets/giab/HG002_SVs_Tier1_v0.6.vcf.gz",
+      "truth_vcf_url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NIST_SV_v0.6/HG002_SVs_Tier1_v0.6.vcf.gz",
+      "truth_vcf_index_url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NIST_SV_v0.6/HG002_SVs_Tier1_v0.6.vcf.gz.tbi",
+      "confident_regions": "../../external-truthsets/giab/HG002_SVs_Tier1_v0.6.bed",
+      "confident_regions_url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NIST_SV_v0.6/HG002_SVs_Tier1_v0.6.bed",
+      "query_vcf": "output/external-validation/hg002-sv-query.vcf.gz",
+      "metrics_json": "output/external-validation/giab-hg002-sv-truvari-summary.json",
+      "minimum_recall": 0.9,
+      "minimum_precision": 0.9,
+      "required": true
+    },
+    {
+      "id": "giab_hg002_small_variant_grch38",
+      "description": "GIAB HG002 small-variant benchmark for rare SNV/indel recall and precision using GA4GH-style hap.py comparison.",
+      "source_name": "NIST Genome in a Bottle HG002 small-variant benchmark",
+      "source_url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/",
+      "benchmark_tool": "hap.py",
+      "genome_build": "GRCh38",
+      "variant_classes": ["rare_small_variants"],
+      "truth_vcf": "../../external-truthsets/giab/HG002_GRCh38_1_22_v4.2.1_benchmark.vcf.gz",
+      "truth_vcf_url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/GRCh38/HG002_GRCh38_1_22_v4.2.1_benchmark.vcf.gz",
+      "truth_vcf_index_url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/GRCh38/HG002_GRCh38_1_22_v4.2.1_benchmark.vcf.gz.tbi",
+      "confident_regions": "../../external-truthsets/giab/HG002_GRCh38_1_22_v4.2.1_benchmark_noinconsistent.bed",
+      "confident_regions_url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/GRCh38/HG002_GRCh38_1_22_v4.2.1_benchmark_noinconsistent.bed",
+      "query_vcf": "output/external-validation/hg002-small-variant-query.vcf.gz",
+      "metrics_json": "output/external-validation/giab-hg002-small-happy-summary.json",
+      "minimum_recall": 0.98,
+      "minimum_precision": 0.98,
+      "required": true
+    },
+    {
+      "id": "giab_hg002_repeat_regions_grch38",
+      "description": "GIAB tandem-repeat benchmark target for repeat-region sensitivity; repeat callers should produce a query VCF/JSON converted to comparable VCF before scoring.",
+      "source_name": "NIST Genome in a Bottle HG002 tandem-repeat benchmark",
+      "source_url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/TandemRepeats_v1.0/GRCh38/",
+      "benchmark_tool": "truvari",
+      "genome_build": "GRCh38",
+      "variant_classes": ["tandem_repeats"],
+      "truth_vcf": "../../external-truthsets/giab/HG002_GRCh38_TandemRepeats_v1.0.1.vcf.gz",
+      "truth_vcf_url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/TandemRepeats_v1.0/GRCh38/HG002_GRCh38_TandemRepeats_v1.0.1.vcf.gz",
+      "truth_vcf_index_url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/TandemRepeats_v1.0/GRCh38/HG002_GRCh38_TandemRepeats_v1.0.1.vcf.gz.tbi",
+      "confident_regions": "../../external-truthsets/giab/HG002_GRCh38_TandemRepeats_v1.0.1_Tier1.bed.gz",
+      "confident_regions_url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/TandemRepeats_v1.0/GRCh38/HG002_GRCh38_TandemRepeats_v1.0.1_Tier1.bed.gz",
+      "query_vcf": "output/external-validation/hg002-repeat-query.vcf.gz",
+      "metrics_json": "output/external-validation/giab-hg002-repeat-truvari-summary.json",
+      "minimum_recall": 0.85,
+      "minimum_precision": 0.85,
+      "required": true
+    }
+  ],
+  "required_future_truthsets": [
+    {
+      "id": "giab_structural_variant_benchmark",
+      "status": "not_configured",
+      "reason": "Needed for real precision/recall on CNV/SV calls from WGS reads."
+    },
+    {
+      "id": "clinically_curated_repeat_expansion_panel",
+      "status": "not_configured",
+      "reason": "Needed for repeat expansion sensitivity and boundary-condition testing."
+    },
+    {
+      "id": "clinvar_clingen_cnv_regression_set",
+      "status": "not_configured",
+      "reason": "Needed for dosage-sensitive CNV interpretation regression testing."
+    }
+  ]
+}

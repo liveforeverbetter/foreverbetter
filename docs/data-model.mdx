@@ -1,0 +1,38 @@
+---
+title: "Data model"
+description: "The five primitives every request flows through: sources, observations, interpretations, analyses, and dashboard specs."
+---
+
+Every modality shares one canonical shape, so an app or agent learns the model
+once and reuses it across biomarkers, wearables, genetics, and behavioral data.
+
+## The primitives
+
+| Primitive | What it is |
+| --- | --- |
+| **Source** | A raw upload or connected pull (`RawSourceReference`). Preserves filename, provider, byte length, and storage mode. |
+| **Observation** | A normalized reading extracted from a source (`NormalizedObservation`): a lab value, a wearable metric, a supplement, a symptom. |
+| **Interpretation** | A derived finding (`DerivedInterpretation`): a scored status, a derived metric, or a genetic summary, always with provenance. |
+| **Analysis** | A run that combines sources into interpretations plus a healthspan score (`AnalysisResult`). |
+| **Dashboard spec** | Versioned frontend JSON: renderable cards, values/targets, sections, coverage, freshness, quality warnings, and provenance. |
+
+## Provenance is always attached
+
+Every interpretation records `source_ids`, `source_categories`, a `source_type`
+(`direct`, `derived`, `combined`, `queued`, `setup_required`, `failed`), the
+`engine` that produced it, and a timestamp. Derived metrics also record their
+`inputs`. This lets a customer trace any number on a dashboard back to the exact
+upload it came from.
+
+## Modalities
+
+`biomarkers`, `wearables`, `genetics`, and `behavioral`. One modality is useful
+on its own; the unified health context reports which modalities are present,
+what is missing, and the impact of each gap.
+
+## Discover without bookkeeping
+
+- `GET /capabilities`: supported modalities, providers, and setup state.
+- `GET /sources` and `GET /analyses`: everything a user has uploaded and computed.
+- `POST /users/{user_id}/health-context`: a bounded, provenance-rich summary
+  across all modalities.

@@ -1,0 +1,106 @@
+marker,value,unit,collected_at,source
+ApoB,118,mg/dL,2026-05-01,Synthetic Superpower-style panel
+LDL-C,142,mg/dL,2026-05-01,Synthetic Superpower-style panel
+HDL-C,48,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Triglycerides,168,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Total cholesterol,224,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Non-HDL-C,176,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Lp(a),42,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Fasting glucose,97,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Fasting insulin,13.4,uIU/mL,2026-05-01,Synthetic Superpower-style panel
+HbA1c,5.7,%,2026-05-01,Synthetic Superpower-style panel
+hs-CRP,3.6,mg/L,2026-05-01,Synthetic Superpower-style panel
+Ferritin,245,ng/mL,2026-05-01,Synthetic Superpower-style panel
+Homocysteine,11.8,umol/L,2026-05-01,Synthetic Superpower-style panel
+White blood cells,5.9,10^9/L,2026-05-01,Synthetic Superpower-style panel
+Neutrophils,3.4,10^9/L,2026-05-01,Synthetic Superpower-style panel
+Lymphocytes,1.7,10^9/L,2026-05-01,Synthetic Superpower-style panel
+Vitamin D,24,ng/mL,2026-05-01,Synthetic Superpower-style panel
+Vitamin B12,430,pg/mL,2026-05-01,Synthetic Superpower-style panel
+Folate,7.4,ng/mL,2026-05-01,Synthetic Superpower-style panel
+Magnesium,1.9,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Omega-3 index,4.8,%,2026-05-01,Synthetic Superpower-style panel
+Uric acid,6.8,mg/dL,2026-05-01,Synthetic Superpower-style panel
+TSH,3.2,mIU/L,2026-05-01,Synthetic Superpower-style panel
+Free T4,1.1,ng/dL,2026-05-01,Synthetic Superpower-style panel
+Free T3,2.6,pg/mL,2026-05-01,Synthetic Superpower-style panel
+Total testosterone,390,ng/dL,2026-05-01,Synthetic Superpower-style panel
+Free testosterone,72,pg/mL,2026-05-01,Synthetic Superpower-style panel
+Estradiol,32,pg/mL,2026-05-01,Synthetic Superpower-style panel
+SHBG,68,nmol/L,2026-05-01,Synthetic Superpower-style panel
+DHEA-S,95,ug/dL,2026-05-01,Synthetic Superpower-style panel
+Morning cortisol,19.5,ug/dL,2026-05-01,Synthetic Superpower-style panel
+ALT,42,U/L,2026-05-01,Synthetic Superpower-style panel
+AST,34,U/L,2026-05-01,Synthetic Superpower-style panel
+GGT,48,U/L,2026-05-01,Synthetic Superpower-style panel
+ALP,88,U/L,2026-05-01,Synthetic Superpower-style panel
+Bilirubin,0.8,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Creatinine,1.08,mg/dL,2026-05-01,Synthetic Superpower-style panel
+eGFR,84,mL/min/1.73m2,2026-05-01,Synthetic Superpower-style panel
+BUN,22,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Albumin,4.4,g/dL,2026-05-01,Synthetic Superpower-style panel
+Hemoglobin,14.3,g/dL,2026-05-01,Synthetic Superpower-style panel
+Hematocrit,43,%,2026-05-01,Synthetic Superpower-style panel
+Platelets,255,10^9/L,2026-05-01,Synthetic Superpower-style panel
+RDW,14.2,%,2026-05-01,Synthetic Superpower-style panel
+MCV,91,fL,2026-05-01,Synthetic Superpower-style panel
+ApoA1,128,mg/dL,2026-05-01,Synthetic Superpower-style panel
+ApoB/ApoA1 ratio,0.92,ratio,2026-05-01,Synthetic Superpower-style panel
+LDL particle number,1450,nmol/L,2026-05-01,Synthetic Superpower-style panel
+Small LDL particles,720,nmol/L,2026-05-01,Synthetic Superpower-style panel
+HDL particle number,29,umol/L,2026-05-01,Synthetic Superpower-style panel
+VLDL-C,34,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Remnant cholesterol,28,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Oxidized LDL,74,U/L,2026-05-01,Synthetic Superpower-style panel
+Lp-PLA2,214,nmol/min/mL,2026-05-01,Synthetic Superpower-style panel
+C-peptide,3.4,ng/mL,2026-05-01,Synthetic Superpower-style panel
+Fructosamine,292,umol/L,2026-05-01,Synthetic Superpower-style panel
+Glycated albumin,15.2,%,2026-05-01,Synthetic Superpower-style panel
+Adiponectin,5.1,ug/mL,2026-05-01,Synthetic Superpower-style panel
+Leptin,22,ng/mL,2026-05-01,Synthetic Superpower-style panel
+Ghrelin,520,pg/mL,2026-05-01,Synthetic Superpower-style panel
+ESR,22,mm/hr,2026-05-01,Synthetic Superpower-style panel
+IL-6,3.1,pg/mL,2026-05-01,Synthetic Superpower-style panel
+TNF-alpha,9.8,pg/mL,2026-05-01,Synthetic Superpower-style panel
+Fibrinogen,390,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Myeloperoxidase,520,pmol/L,2026-05-01,Synthetic Superpower-style panel
+ANA titer,80,titer,2026-05-01,Synthetic Superpower-style panel
+Rheumatoid factor,11,IU/mL,2026-05-01,Synthetic Superpower-style panel
+Iron,64,ug/dL,2026-05-01,Synthetic Superpower-style panel
+TIBC,392,ug/dL,2026-05-01,Synthetic Superpower-style panel
+Transferrin saturation,16,%,2026-05-01,Synthetic Superpower-style panel
+Zinc,72,ug/dL,2026-05-01,Synthetic Superpower-style panel
+Copper,126,ug/dL,2026-05-01,Synthetic Superpower-style panel
+Selenium,94,ug/L,2026-05-01,Synthetic Superpower-style panel
+Vitamin A,42,ug/dL,2026-05-01,Synthetic Superpower-style panel
+Vitamin E,8.2,mg/L,2026-05-01,Synthetic Superpower-style panel
+Vitamin B6,4.7,ng/mL,2026-05-01,Synthetic Superpower-style panel
+Methylmalonic acid,0.31,umol/L,2026-05-01,Synthetic Superpower-style panel
+CoQ10,0.62,ug/mL,2026-05-01,Synthetic Superpower-style panel
+LH,5.2,IU/L,2026-05-01,Synthetic Superpower-style panel
+FSH,7.4,IU/L,2026-05-01,Synthetic Superpower-style panel
+Prolactin,16,ng/mL,2026-05-01,Synthetic Superpower-style panel
+Progesterone,0.7,ng/mL,2026-05-01,Synthetic Superpower-style panel
+IGF-1,82,ng/mL,2026-05-01,Synthetic Superpower-style panel
+TPO antibodies,18,IU/mL,2026-05-01,Synthetic Superpower-style panel
+Thyroglobulin antibodies,7,IU/mL,2026-05-01,Synthetic Superpower-style panel
+Sodium,139,mmol/L,2026-05-01,Synthetic Superpower-style panel
+Potassium,4.7,mmol/L,2026-05-01,Synthetic Superpower-style panel
+Chloride,102,mmol/L,2026-05-01,Synthetic Superpower-style panel
+CO2,24,mmol/L,2026-05-01,Synthetic Superpower-style panel
+Calcium,9.6,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Phosphorus,3.1,mg/dL,2026-05-01,Synthetic Superpower-style panel
+Total protein,6.9,g/dL,2026-05-01,Synthetic Superpower-style panel
+Globulin,2.5,g/dL,2026-05-01,Synthetic Superpower-style panel
+Cystatin C,1.08,mg/L,2026-05-01,Synthetic Superpower-style panel
+Urine albumin/creatinine ratio,24,mg/g,2026-05-01,Synthetic Superpower-style panel
+Creatine kinase,245,U/L,2026-05-01,Synthetic Superpower-style panel
+LDH,238,U/L,2026-05-01,Synthetic Superpower-style panel
+Red blood cells,4.8,10^12/L,2026-05-01,Synthetic Superpower-style panel
+MCH,30,pg,2026-05-01,Synthetic Superpower-style panel
+MCHC,34,g/dL,2026-05-01,Synthetic Superpower-style panel
+MPV,10.7,fL,2026-05-01,Synthetic Superpower-style panel
+Monocytes,0.7,10^9/L,2026-05-01,Synthetic Superpower-style panel
+Eosinophils,0.42,10^9/L,2026-05-01,Synthetic Superpower-style panel
+Basophils,0.08,10^9/L,2026-05-01,Synthetic Superpower-style panel
+Reticulocyte count,1.9,%,2026-05-01,Synthetic Superpower-style panel

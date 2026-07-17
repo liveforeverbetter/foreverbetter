@@ -1,0 +1,470 @@
+[
+  {
+    "id": 206,
+    "name": "Male baldness",
+    "url_slug": "results/dna-traits-test/male-baldness",
+    "loci_count": null
+  },
+  {
+    "id": 452,
+    "name": "Cognitive ability",
+    "url_slug": "results/dna-traits-test/cognitive-ability",
+    "loci_count": null
+  },
+  {
+    "id": 458,
+    "name": "Sleep duration",
+    "url_slug": "results/dna-traits-test/sleep-duration",
+    "loci_count": null
+  },
+  {
+    "id": 565,
+    "name": "Resistin levels",
+    "url_slug": "results/dna-traits-test/resistin-levels",
+    "loci_count": null
+  },
+  {
+    "id": 564,
+    "name": "Cathepsin D levels",
+    "url_slug": "results/dna-traits-test/cathepsin-d-levels",
+    "loci_count": null
+  },
+  {
+    "id": 567,
+    "name": "Lymphocyte count",
+    "url_slug": "results/dna-traits-test/lymphocyte-count",
+    "loci_count": null
+  },
+  {
+    "id": 457,
+    "name": "Alcohol dependence after prolonged consumption",
+    "url_slug": "results/dna-traits-test/alcohol-dependence-prolonged-consumption",
+    "loci_count": null
+  },
+  {
+    "id": 467,
+    "name": "Insomnia",
+    "url_slug": "results/dna-traits-test/insomnia",
+    "loci_count": null
+  },
+  {
+    "id": 536,
+    "name": "Resting heart rate",
+    "url_slug": "results/dna-traits-test/resting-heart-rate",
+    "loci_count": null
+  },
+  {
+    "id": 558,
+    "name": "Red blood cell count",
+    "url_slug": "results/dna-traits-test/red-blood-cell-count",
+    "loci_count": null
+  },
+  {
+    "id": 465,
+    "name": "Epigenetic aging",
+    "url_slug": "results/dna-traits-test/epigenetic-aging",
+    "loci_count": null
+  },
+  {
+    "id": 455,
+    "name": "C-reactive protein levels",
+    "url_slug": "results/dna-traits-test/c-reactive-protein-levels",
+    "loci_count": null
+  },
+  {
+    "id": 468,
+    "name": "Neuroticisms",
+    "url_slug": "results/dna-traits-test/neuroticisms",
+    "loci_count": null
+  },
+  {
+    "id": 554,
+    "name": "Gamma glutamyl transferase levels",
+    "url_slug": "results/dna-traits-test/gamma-glutamyl-transferase-levels",
+    "loci_count": null
+  },
+  {
+    "id": 466,
+    "name": "Facial aging",
+    "url_slug": "results/dna-traits-test/facial-aging",
+    "loci_count": null
+  },
+  {
+    "id": 471,
+    "name": "Risk tendency",
+    "url_slug": "results/dna-traits-test/risk-tendency",
+    "loci_count": null
+  },
+  {
+    "id": 543,
+    "name": "Serum albumin levels",
+    "url_slug": "results/dna-traits-test/serum-albumin-levels",
+    "loci_count": null
+  },
+  {
+    "id": 546,
+    "name": "Aspartate aminotransferase levels",
+    "url_slug": "results/dna-traits-test/aspartate-aminotransferase-levels",
+    "loci_count": null
+  },
+  {
+    "id": 557,
+    "name": "White blood cell count",
+    "url_slug": "results/dna-traits-test/white-blood-cell-count",
+    "loci_count": null
+  },
+  {
+    "id": 562,
+    "name": "Usual walking pace",
+    "url_slug": "results/dna-traits-test/normal-walking-pace",
+    "loci_count": null
+  },
+  {
+    "id": 456,
+    "name": "Eye clarity",
+    "url_slug": "results/dna-traits-test/eye-clarity",
+    "loci_count": null
+  },
+  {
+    "id": 227,
+    "name": "QT Intervals",
+    "url_slug": "results/dna-traits-test/qt-intervals",
+    "loci_count": null
+  },
+  {
+    "id": 469,
+    "name": "Probability of snoring",
+    "url_slug": "results/dna-traits-test/probability-snoring",
+    "loci_count": null
+  },
+  {
+    "id": 540,
+    "name": "Telomere length",
+    "url_slug": "results/dna-traits-test/telomere-length",
+    "loci_count": null
+  },
+  {
+    "id": 538,
+    "name": "Corneal hysteresis",
+    "url_slug": "results/dna-traits-test/corneal-hysteresis",
+    "loci_count": null
+  },
+  {
+    "id": 550,
+    "name": "Alkaline phosphatase levels",
+    "url_slug": "results/dna-traits-test/alkaline-phosphatase-levels",
+    "loci_count": null
+  },
+  {
+    "id": 563,
+    "name": "Spleen volume",
+    "url_slug": "results/dna-traits-test/spleen-volume",
+    "loci_count": null
+  },
+  {
+    "id": 220,
+    "name": "Height",
+    "url_slug": "results/dna-traits-test/height",
+    "loci_count": null
+  },
+  {
+    "id": 539,
+    "name": "Intensity of itching due to mosquito bites",
+    "url_slug": "results/dna-traits-test/mosquito-bite-itch-intensity",
+    "loci_count": null
+  },
+  {
+    "id": 215,
+    "name": "Nicotine dependence after prolonged consumption",
+    "url_slug": "results/dna-traits-test/nicotine-dependence-prolonged-consumption",
+    "loci_count": null
+  },
+  {
+    "id": 470,
+    "name": "Morning circadian rythm (Morning person)",
+    "url_slug": "results/dna-traits-test/morning-circadian-rythm-morning-person",
+    "loci_count": null
+  },
+  {
+    "id": 464,
+    "name": "Dental caries and periodontitis",
+    "url_slug": "results/dna-traits-test/dental-caries-periodontitis",
+    "loci_count": null
+  },
+  {
+    "id": 542,
+    "name": "Alanine aminotransferase levels",
+    "url_slug": "results/dna-traits-test/alanine-aminotransferase-levels",
+    "loci_count": null
+  },
+  {
+    "id": 472,
+    "name": "Mouth ulcers",
+    "url_slug": "results/dna-traits-test/mouth-ulcers",
+    "loci_count": null
+  },
+  {
+    "id": 559,
+    "name": "Monocyte count",
+    "url_slug": "results/dna-traits-test/monocyte-count",
+    "loci_count": null
+  },
+  {
+    "id": 551,
+    "name": "Estradiol levels",
+    "url_slug": "results/dna-traits-test/estradiol-levels",
+    "loci_count": null
+  },
+  {
+    "id": 453,
+    "name": "Mental agility",
+    "url_slug": "results/dna-traits-test/mental-agility",
+    "loci_count": null
+  },
+  {
+    "id": 560,
+    "name": "Neutrophil count",
+    "url_slug": "results/dna-traits-test/neutrophil-count",
+    "loci_count": null
+  },
+  {
+    "id": 555,
+    "name": "Selectin E levels",
+    "url_slug": "results/dna-traits-test/selectin-e-levels",
+    "loci_count": null
+  },
+  {
+    "id": 463,
+    "name": "Acne vulgaris",
+    "url_slug": "results/dna-traits-test/acne-vulgaris",
+    "loci_count": null
+  },
+  {
+    "id": 425,
+    "name": "Thyroid function (TSH levels)",
+    "url_slug": "results/dna-traits-test/thyroid-function-tsh-levels",
+    "loci_count": null
+  },
+  {
+    "id": 247,
+    "name": "Birth weight",
+    "url_slug": "results/dna-traits-test/birth-weight",
+    "loci_count": null
+  },
+  {
+    "id": 537,
+    "name": "Frequency of bowel movements",
+    "url_slug": "results/dna-traits-test/bowel-movement-frequency",
+    "loci_count": null
+  },
+  {
+    "id": 534,
+    "name": "Liver iron levels",
+    "url_slug": "results/dna-traits-test/iron-content-liver",
+    "loci_count": null
+  },
+  {
+    "id": 561,
+    "name": "Eosinophil count",
+    "url_slug": "results/dna-traits-test/eosinophil-count",
+    "loci_count": null
+  },
+  {
+    "id": 454,
+    "name": "Sex hormone regulation (SHBG)",
+    "url_slug": "results/dna-traits-test/sex-hormone-regulation-shbg",
+    "loci_count": null
+  },
+  {
+    "id": 460,
+    "name": "Basal metabolic rate",
+    "url_slug": "results/dna-traits-test/basal-metabolic-rate",
+    "loci_count": null
+  },
+  {
+    "id": 435,
+    "name": "Skin melanin levels",
+    "url_slug": "results/dna-traits-test/skin-melanin-levels",
+    "loci_count": null
+  },
+  {
+    "id": 461,
+    "name": "Hair color",
+    "url_slug": "results/dna-traits-test/hair-color",
+    "loci_count": null
+  },
+  {
+    "id": 535,
+    "name": "Corneal curvature",
+    "url_slug": "results/dna-traits-test/corneal-curvature",
+    "loci_count": null
+  },
+  {
+    "id": 473,
+    "name": "Left-handedness (left lateral)",
+    "url_slug": "results/dna-traits-test/left-handedness-left-lateral",
+    "loci_count": null
+  },
+  {
+    "id": 541,
+    "name": "Total serum protein levels",
+    "url_slug": "results/dna-traits-test/serum-total-protein-levels",
+    "loci_count": null
+  },
+  {
+    "id": 221,
+    "name": "Hair Shape",
+    "url_slug": "results/dna-traits-test/hair-texture",
+    "loci_count": null
+  },
+  {
+    "id": 547,
+    "name": "Bilirubin levels",
+    "url_slug": "results/dna-traits-test/bilirubin-levels",
+    "loci_count": null
+  },
+  {
+    "id": 512,
+    "name": "Heat production in response to cold",
+    "url_slug": "results/dna-traits-test/heat-production-in-response-to-cold",
+    "loci_count": null
+  },
+  {
+    "id": 240,
+    "name": "PSA (Prostate Specific Antigen) Levels",
+    "url_slug": "results/dna-traits-test/prostate-specific-antigen-levels-psa",
+    "loci_count": null
+  },
+  {
+    "id": 424,
+    "name": "Permanent tooth eruption",
+    "url_slug": "results/dna-traits-test/permanent-tooth-eruption",
+    "loci_count": null
+  },
+  {
+    "id": 430,
+    "name": "Earlobe type",
+    "url_slug": "results/dna-traits-test/earlobe-type",
+    "loci_count": null
+  },
+  {
+    "id": 432,
+    "name": "Secretor status and ABH antigens (FUT2 gene)",
+    "url_slug": "results/dna-traits-test/secretor-status-abh-antigens-fut2-gene",
+    "loci_count": null
+  },
+  {
+    "id": 443,
+    "name": "Blood coagulation, factor V Leiden and 20210G-A",
+    "url_slug": "results/dna-traits-test/blood-coagulation-factor-v-leiden-20210g-a",
+    "loci_count": null
+  },
+  {
+    "id": 444,
+    "name": "Blood Group ABO/Rh",
+    "url_slug": "results/dna-traits-test/blood-group-abo-rh",
+    "loci_count": null
+  },
+  {
+    "id": 451,
+    "name": "Gene MTHFR",
+    "url_slug": "results/dna-traits-test/mthfr-gene",
+    "loci_count": null
+  },
+  {
+    "id": 210,
+    "name": "Probability of having red hair",
+    "url_slug": "results/dna-traits-test/probability-having-red-hair",
+    "loci_count": null
+  },
+  {
+    "id": 428,
+    "name": "Asparagus odor detection",
+    "url_slug": "results/dna-traits-test/asparagus-odor-detection",
+    "loci_count": null
+  },
+  {
+    "id": 431,
+    "name": "Nasion prominence",
+    "url_slug": "results/dna-traits-test/nasion-prominence",
+    "loci_count": null
+  },
+  {
+    "id": 427,
+    "name": "Earwax type / Armpit odor",
+    "url_slug": "results/dna-traits-test/earwax-type-armpit-odor",
+    "loci_count": null
+  },
+  {
+    "id": 203,
+    "name": "Duffy Antigen, malaria resistant",
+    "url_slug": "results/dna-traits-test/duffy-antigen-malaria-resistant",
+    "loci_count": null
+  },
+  {
+    "id": 506,
+    "name": "Gene MTR",
+    "url_slug": "results/dna-traits-test/gene-mtr",
+    "loci_count": null
+  },
+  {
+    "id": 246,
+    "name": "Persistence of fetal hemoglobin",
+    "url_slug": "results/dna-traits-test/persistence-fetal-hemoglobin",
+    "loci_count": null
+  },
+  {
+    "id": 426,
+    "name": "Tooth morphology",
+    "url_slug": "results/dna-traits-test/tooth-morphology",
+    "loci_count": null
+  },
+  {
+    "id": 253,
+    "name": "Photic sneeze reflex",
+    "url_slug": "results/dna-traits-test/photic-sneeze-reflex",
+    "loci_count": null
+  },
+  {
+    "id": 433,
+    "name": "CCR5Delta32 and susceptibility to HIV infection",
+    "url_slug": "results/dna-traits-test/ccr5delta32-susceptibility-hiv-infection",
+    "loci_count": null
+  },
+  {
+    "id": 507,
+    "name": "Gene MTRR",
+    "url_slug": "results/dna-traits-test/gene-mtrr",
+    "loci_count": null
+  },
+  {
+    "id": 450,
+    "name": "HLA-B27 antigen",
+    "url_slug": "results/dna-traits-test/hla-b27-antigen",
+    "loci_count": null
+  },
+  {
+    "id": 243,
+    "name": "Smell",
+    "url_slug": "results/dna-traits-test/smell",
+    "loci_count": null
+  },
+  {
+    "id": 201,
+    "name": "Alcohol flush reaction",
+    "url_slug": "results/dna-traits-test/alcohol-flush-reaction",
+    "loci_count": null
+  },
+  {
+    "id": 202,
+    "name": "Pigmented rings on the iris",
+    "url_slug": "results/dna-traits-test/pigmented-rings-iris",
+    "loci_count": null
+  },
+  {
+    "id": 508,
+    "name": "Gene COMT",
+    "url_slug": "results/dna-traits-test/gene-comt",
+    "loci_count": null
+  }
+]

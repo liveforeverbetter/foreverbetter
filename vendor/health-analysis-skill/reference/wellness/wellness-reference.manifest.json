@@ -1,0 +1,59 @@
+{
+  "version": "2026-06-10",
+  "generated_at": "2026-06-10T06:32:56.612Z",
+  "sources": [
+    {
+      "source_id": "gwas_catalog",
+      "source_name": "NHGRI-EBI GWAS Catalog",
+      "source_type": "gwas_catalog",
+      "source_url": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations_ontology-annotated-full.zip",
+      "release": "2026-06-10",
+      "retrieved_at": "2026-06-10T06:32:50.167Z",
+      "genome_build": "mixed; rsID association layer",
+      "limitation": "GWAS associations are population-level and not diagnostic; effect sizes depend on discovery cohort ancestry and phenotype definitions."
+    },
+    {
+      "source_id": "pgs_catalog",
+      "source_name": "PGS Catalog",
+      "source_type": "pgs_catalog",
+      "source_url": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/metadata/pgs_all_metadata.tar.gz",
+      "release": "2026-06-10",
+      "retrieved_at": "2026-06-10T06:32:55.533Z",
+      "genome_build": "GRCh37 harmonized scoring files where available",
+      "limitation": "PGS scores depend on ancestry, genome build harmonization, imputation/coverage, and original model validation."
+    }
+  ],
+  "files": [
+    {
+      "path": "gwas_wellness_associations.json.gz",
+      "bytes": 4860126,
+      "records": 179606,
+      "sha256": "f83b431738d9be11cd88824084815bbd21dab640b6d0afff37fad9f546469e53"
+    },
+    {
+      "path": "pgs_wellness_weights.json.gz",
+      "bytes": 2420404,
+      "records": 117276,
+      "sha256": "f191fb6fed8bea9f60e19e9d638a8181484d261acecac1bad24ca7bc53a4deb2"
+    }
+  ],
+  "counts": {
+    "gwas_associations": 179606,
+    "gwas_rsids": 98006,
+    "pgs_scores_selected": 9,
+    "pgs_scores_skipped_coordinate_only": 9,
+    "pgs_variants": 117276
+  },
+  "disclosures": {
+    "scope": "PGS Catalog and GWAS Catalog findings are wellness association context, not ClinVar clinical assertions.",
+    "ancestry": "PRS and GWAS effects depend on the ancestry distribution of the discovery, training, and evaluation cohorts; interpret scores as directional when ancestry is unknown or mismatched.",
+    "genome_build": "Default compact scoring files are harmonized to GRCh37 when available; build mismatches require liftover or matching harmonized scoring files.",
+    "coverage": "PGS confidence depends on how many configured score variants are observed in the user VCF.",
+    "not_diagnostic": "These associations are not diagnostic and should be interpreted with biomarkers, clinical history, and clinician guidance."
+  },
+  "repo_policy": {
+    "commit_compact_outputs_if_under_1gb": true,
+    "keep_raw_downloads_local": true,
+    "raw_cache": "raw"
+  }
+}

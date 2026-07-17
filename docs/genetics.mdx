@@ -1,0 +1,122 @@
+---
+title: "Genetics"
+description: "Upload VCF/WGS or SNP-array data, queue interpretation, and read genetic pipeline results."
+---
+
+Genetics runs as a queued job. Upload a file, start analysis, and poll the job.
+The hosted worker runs the bundled analyze-health pipeline (ClinVar, CPIC
+pharmacogenomics, polygenic risk scores, aging hallmarks, and a Genomic
+Longevity Index).
+
+## Choose a provider first
+
+If a user does not yet have genetic data, `GET /wgs-providers` returns a catalog
+of WGS, exome, and SNP-array providers with pricing, turnaround, data formats,
+raw-data access, and CLIA status. Filter by `type` and `region`.
+
+## Upload and analyze
+
+For VCF, VCF.GZ, SNP-array, 23andMe, or AncestryDNA raw files larger than a few
+megabytes, do not base64 encode the file or send it to `/imports/file`. Create
+a direct upload session instead. The source is
+created as `genetics` with `upload_status: "pending"`; it cannot be analyzed
+until it has been finalized.
+
+The hosted private bucket currently accepts individual genetics files up to
+512 MB, which includes a 103 MB VCF. Larger files need a storage-plan increase
+before creating an upload session.
+
+```bash
+# 1. Create a private direct-upload session (the JSON body stays tiny)
+SESSION=$(curl -s "$HEALTH_API/genetics/uploads" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{
+    "user_id": "'"$USER_ID"'",
+    "organization_id": "'"$ORGANIZATION_ID"'",
+    "filename": "genome.vcf.gz",
+    "byte_length": 108003328,
+    "content_type": "application/gzip"
+  }')
+UPLOAD_URL=$(jq -r '.upload.url' <<<"$SESSION")
+SOURCE_ID=$(jq -r '.source_id' <<<"$SESSION")
+
+# 2. PUT the unmodified file directly to `upload.url`.
+# Use exactly the supplied method and headers. This URL is private, scoped to
+# one object, and expires after `expires_in_seconds`; it bypasses Cloudflare
+# and the API server entirely.
+curl --fail-with-body -X PUT "$UPLOAD_URL" \
+  -H "content-type: application/gzip" \
+  --upload-file genome.vcf.gz
+
+# 3. Confirm that the private storage object is complete.
+curl -s -X POST "$HEALTH_API/genetics/uploads/$SOURCE_ID/complete" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{"user_id":"'"$USER_ID"'","organization_id":"'"$ORGANIZATION_ID"'"}'
+
+# 4. Start analysis (returns a queued job)
+curl -s "$HEALTH_API/genetics/analyze" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{"user_id":"'"$USER_ID"'","organization_id":"'"$ORGANIZATION_ID"'","source_ids":["'"$SOURCE_ID"'"]}'
+
+# 5. Poll the job
+curl -s "$HEALTH_API/genetics/jobs/$JOB_ID" -H "authorization: Bearer $TOKEN"
+```
+
+Small text genetic exports can still use `POST /imports/file` with
+`category: "genetics"`. For an agent using MCP, call `start_genetics_upload`,
+PUT the file to the returned `upload.url`, then call
+`complete_genetics_upload` with the returned `source_id`. Do not include a
+genetics source ID in a biomarker field: a multimodal analysis accepts source
+IDs from both modalities separately.
+
+When complete, the analysis gains a `genetic_pipeline_analysis` interpretation
+summarizing GLI, matched markers, CPIC matches, and ClinVar findings. Clinical
+and medication findings are treated as educational until confirmed by a
+qualified clinician.
+
+## Reference modes
+
+- **Compact (default):** bundled ClinVar-derived rsID reference, with no large
+  download.
+- **Full dbSNP (advanced, hosted GRCh37):** broader rsID recovery. It runs on
+  the dedicated Fly WGS worker against a shared encrypted persistent reference
+  cache; it is not downloaded inline for an individual request. GRCh38 remains
+  a separate setup and is not enabled by this deployment.
+
+### Hosted full-dbSNP status and billing contract
+
+The hosted Fly deployment was validated on **July 15, 2026**. It has a 40 GB
+encrypted `dbsnp_refs` volume mounted only on the WGS worker at
+`/data/reference`. The reference is the official NCBI GRCh37 assembly
+`GCF_000001405.25.gz` from the NCBI FTP latest-release directory (downloaded
+at the official advertised byte length with its `.md5` and `.tbi` sidecars;
+the sidecars remain on the volume for operator verification).
+`GET /capabilities` reports `genetics.full_dbsnp` as `available` when the
+operator enables the corresponding secrets.
+
+When full dbSNP is provisioned, the reference is shared across jobs - not copied
+per user. Plan for roughly 30–40 GB per genome build (GRCh37 and GRCh38 need
+separate references), plus temporary space for the input and annotated output.
+
+Full dbSNP must be an explicit, paid hosted capability. Before accepting a
+`full_dbsnp` request, the service must verify an active Stripe subscription, a
+valid payment method on the Stripe customer, and a plan with a non-zero
+`full_dbsnp_jobs` quota (currently intended for Builder, Growth, and Enterprise).
+Free and Standard remain compact-only. Self-hosted deployments control their
+own reference provisioning and billing policy.
+
+The request contract exposes an explicit annotation choice:
+`annotation_depth: "compact" | "full_dbsnp"`. Results preserve the selected
+depth and should include reference build/version, annotated count, and
+provenance. Do not describe compact annotation as exhaustive genome
+interpretation: full dbSNP improves rsID recovery, but it does not make every
+variant medically interpretable.
+
+## Ancestry
+
+`POST /genetics/ancestry` validates source readiness and returns reference-panel
+setup requirements. Ancestry proportions are returned once the ancestry worker
+(1000 Genomes + PCA/admixture) is configured.

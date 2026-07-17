@@ -1,0 +1,118 @@
+{
+  "version": "2026-06-01",
+  "purpose": "Internal biomarker validation fixtures for Superpower-style annual-panel coverage. These truthsets verify scoring, derived metrics, domain coverage, duplicate alias handling, action completeness, and retest readiness.",
+  "truthsets": [
+    {
+      "id": "cardiometabolic_metabolic_risk_v1",
+      "description": "Cardiometabolic and glucose/insulin panel with derived lipid and insulin-resistance metrics.",
+      "minimum_status_recall": 1,
+      "minimum_derived_recall": 1,
+      "minimum_action_count": 5,
+      "minimum_domains_covered": 2,
+      "expected_measured_count": 10,
+      "readings": [
+        { "id": "ApoB", "value": 126, "unit": "mg/dL" },
+        { "id": "Apo A1", "value": 118, "unit": "mg/dL" },
+        { "id": "total cholesterol", "value": 238, "unit": "mg/dL" },
+        { "id": "HDL", "value": 42, "unit": "mg/dL" },
+        { "id": "LDL", "value": 162, "unit": "mg/dL" },
+        { "id": "Triglycerides", "value": 170, "unit": "mg/dL" },
+        { "id": "Lp(a)", "value": 64, "unit": "mg/dL" },
+        { "id": "fasting glucose", "value": 101, "unit": "mg/dL" },
+        { "id": "insulin", "value": 14, "unit": "uIU/mL" },
+        { "id": "HbA1c", "value": 5.8, "unit": "%" }
+      ],
+      "expected_findings": [
+        { "id": "apob", "status": "needs_attention" },
+        { "id": "lp_a", "status": "needs_attention" },
+        { "id": "hba1c", "status": "watch" },
+        { "id": "homa_ir", "status": "needs_attention", "value": 3.49, "tolerance": 0.01, "derived": true },
+        { "id": "non_hdl_c", "status": "needs_attention", "value": 196, "tolerance": 0.01, "derived": true },
+        { "id": "remnant_cholesterol", "status": "needs_attention", "value": 34, "tolerance": 0.01, "derived": true },
+        { "id": "apob_apoa1_ratio", "status": "needs_attention", "derived": true },
+        { "id": "vldl_c", "status": "watch", "value": 34, "tolerance": 0.01, "derived": true }
+      ],
+      "expected_domains": [
+        { "id": "cardiometabolic", "minimum_measured": 8 },
+        { "id": "glucose_insulin", "minimum_measured": 4 }
+      ]
+    },
+    {
+      "id": "nutrient_immune_boundary_v1",
+      "description": "Nutrient and immune/inflammation panel with iron derivation and low/high boundary states.",
+      "minimum_status_recall": 1,
+      "minimum_derived_recall": 1,
+      "minimum_action_count": 5,
+      "minimum_domains_covered": 2,
+      "expected_measured_count": 9,
+      "readings": [
+        { "id": "Vitamin D", "value": 18, "unit": "ng/mL" },
+        { "id": "B12", "value": 260, "unit": "pg/mL" },
+        { "id": "Folate", "value": 3.8, "unit": "ng/mL" },
+        { "id": "Iron", "value": 36, "unit": "ug/dL" },
+        { "id": "TIBC", "value": 420, "unit": "ug/dL" },
+        { "id": "hs-CRP", "value": 4.1, "unit": "mg/L" },
+        { "id": "Ferritin", "value": 18, "unit": "ng/mL" },
+        { "id": "Homocysteine", "value": 16.2, "unit": "umol/L" },
+        { "id": "White blood cells", "value": 3.2, "unit": "10^9/L" }
+      ],
+      "expected_findings": [
+        { "id": "vitamin_d", "status": "needs_attention" },
+        { "id": "b12", "status": "needs_attention" },
+        { "id": "folate", "status": "needs_attention" },
+        { "id": "iron", "status": "needs_attention" },
+        { "id": "hs_crp", "status": "needs_attention" },
+        { "id": "ferritin", "status": "needs_attention" },
+        { "id": "homocysteine", "status": "needs_attention" },
+        { "id": "transferrin_saturation", "status": "needs_attention", "value": 8.57, "tolerance": 0.02, "derived": true }
+      ],
+      "expected_domains": [
+        { "id": "nutrient_status", "minimum_measured": 6 },
+        { "id": "inflammation_immune", "minimum_measured": 4 }
+      ]
+    },
+    {
+      "id": "organ_hormone_hematology_alias_v1",
+      "description": "Organ, hormone, and hematology panel that verifies alias de-duplication and concrete action output.",
+      "minimum_status_recall": 1,
+      "minimum_derived_recall": 1,
+      "minimum_action_count": 5,
+      "minimum_domains_covered": 3,
+      "expected_measured_count": 12,
+      "readings": [
+        { "id": "ALT", "value": 62, "unit": "U/L" },
+        { "id": "AST", "value": 58, "unit": "U/L" },
+        { "id": "GGT", "value": 71, "unit": "U/L" },
+        { "id": "eGFR", "value": 58, "unit": "mL/min/1.73m2" },
+        { "id": "Creatinine", "value": 1.55, "unit": "mg/dL" },
+        { "id": "TSH", "value": 5.2, "unit": "mIU/L" },
+        { "id": "Free T4", "value": 0.76, "unit": "ng/dL" },
+        { "id": "total testosterone", "value": 240, "unit": "ng/dL" },
+        { "id": "Hemoglobin", "value": 10.8, "unit": "g/dL" },
+        { "id": "Hgb", "value": 11.4, "unit": "g/dL" },
+        { "id": "Platelets", "value": 470, "unit": "10^9/L" },
+        { "id": "MCV", "value": 101, "unit": "fL" },
+        { "id": "RDW", "value": 15.8, "unit": "%" }
+      ],
+      "expected_findings": [
+        { "id": "alt", "status": "needs_attention" },
+        { "id": "ast", "status": "needs_attention" },
+        { "id": "ggt", "status": "needs_attention" },
+        { "id": "egfr", "status": "needs_attention" },
+        { "id": "creatinine", "status": "needs_attention" },
+        { "id": "tsh", "status": "needs_attention" },
+        { "id": "free_t4", "status": "needs_attention" },
+        { "id": "testosterone_total", "status": "watch" },
+        { "id": "hemoglobin", "status": "needs_attention" },
+        { "id": "platelets", "status": "needs_attention" },
+        { "id": "mcv", "status": "needs_attention" },
+        { "id": "rdw", "status": "needs_attention" }
+      ],
+      "expected_domains": [
+        { "id": "organ_function", "minimum_measured": 5 },
+        { "id": "hormone_thyroid", "minimum_measured": 3 },
+        { "id": "hematology", "minimum_measured": 4 }
+      ]
+    }
+  ]
+}

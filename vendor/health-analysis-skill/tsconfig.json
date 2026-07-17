@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noUncheckedIndexedAccess": false,
+    "outDir": "./dist",
+    "rootDir": "..",
+    "types": ["node"]
+  },
+  "include": ["scripts/**/*.ts", "src/**/*.ts", "shared/**/*.ts"],
+  "exclude": ["node_modules", "dist", "output", "scripts/**/*.test.ts"]
+}

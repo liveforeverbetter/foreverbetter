@@ -1,0 +1,150 @@
+---
+title: "Pay per request with x402"
+description: "Let agents pay selected wellness API routes directly on Base, Polygon, or Solana without creating an API key."
+---
+
+ForeverBetter supports [x402 v2](https://docs.x402.org/) as an optional
+authorization path for agent-friendly API calls. An agent can discover a
+capability, pay a small USDC amount, and receive the response without an
+account, subscription, or API key.
+
+API keys remain the best choice for sustained use. If a request includes an
+`Authorization` header, ForeverBetter uses normal bearer authentication and
+does not invoke or charge x402.
+
+## Payment flow
+
+1. Call an x402-enabled route without an API key.
+2. Read the base64-encoded x402 v2 object from `PAYMENT-REQUIRED` on the `402`
+   response.
+3. Choose an accepted network and sign the payment with an x402 client.
+4. Retry the same request with the encoded payload in `PAYMENT-SIGNATURE`.
+5. Read settlement details from `PAYMENT-RESPONSE` on the successful response.
+
+```bash
+curl -i "https://api.foreverbetter.xyz/providers?modality=genetics"
+# HTTP/2 402
+# PAYMENT-REQUIRED: <base64 x402 v2 requirements>
+
+curl -i "https://api.foreverbetter.xyz/providers?modality=genetics" \
+  -H "PAYMENT-SIGNATURE: <signed x402 payload>"
+# HTTP/2 200
+# PAYMENT-RESPONSE: <base64 settlement response>
+```
+
+Use an official x402 buyer SDK to decode, select, sign, and retry automatically.
+The protocol uses CAIP-2 network identifiers:
+
+| Network | CAIP-2 identifier |
+| --- | --- |
+| Base mainnet | `eip155:8453` |
+| Polygon mainnet | `eip155:137` |
+| Solana mainnet | `solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp` |
+
+## Private wallet workspace
+
+A verified payer address becomes a deterministic, private ForeverBetter
+identity. Base and Polygon share the `eip155` address namespace, so the same EVM
+wallet can import on Base and analyze or read the result after paying on
+Polygon. Solana addresses use their own namespace.
+
+This is an authorization boundary, not merely a billing label. A wallet cannot
+pay to read another wallet's sources, analyses, ancestry results, or dashboard
+specifications. For x402 requests, omit `user_id` and `organization_id`;
+ForeverBetter fills them from the verified payer.
+
+## Enabled capabilities
+
+The live deployment is authoritative. Read
+`GET https://api.foreverbetter.xyz/.well-known/x402.json` for enabled networks,
+facilitators, route templates, and prices. The implementation supports:
+
+- Provider and lab search
+- Small multimodal imports through `POST /imports/file`
+- Multimodal and modality-specific analyses
+- Reading wallet-owned sources and analyses
+- Recommendations and action plans
+- Renderer-neutral dashboard specifications
+- Grounded health queries
+- Ancestry analysis from a wallet-owned genetics source
+
+Account administration, API-key issuance, billing, wearable OAuth, provider
+token exchange, private share links, exports, deletion, and direct WGS upload
+sessions intentionally remain API-key-only. They either establish durable
+authority, connect third-party accounts, or have consequences that should not
+be authorized by a one-off payment.
+
+## Bazaar discovery
+
+Every paid route declares the x402 Bazaar extension with an input example,
+input schema, output example, service name, and topical tags. Dynamic paths use
+`:param` route templates. For example, calls to
+`/analyses/an_123/action-plan` and `/analyses/an_456/action-plan` are cataloged
+as one resource:
+
+```text
+/analyses/:id/action-plan
+```
+
+The extension adds the concrete value under `pathParams` while the facilitator
+uses `routeTemplate` as the stable catalog key. Agents can search a
+Bazaar-enabled facilitator through its `/discovery/resources` endpoint. See
+the [official Bazaar dynamic-route specification](https://github.com/x402-foundation/x402/blob/main/docs/extensions/bazaar.mdx#dynamic-routes).
+
+## Self-hosting
+
+x402 is disabled unless the explicit billing toggle, the x402 toggle, and every
+required value are configured:
+
+```dotenv
+BILLING_ENABLED=true
+X402_ENABLED=true
+X402_NETWORKS=base,polygon,solana
+X402_FACILITATOR_URLS=https://facilitator-one.example,https://facilitator-two.example
+X402_EVM_PAY_TO=0xYourBaseAndPolygonAddress
+X402_SOLANA_PAY_TO=YourSolanaAddress
+```
+
+The configured facilitators may be separate services. Collectively their
+`/supported` responses must advertise x402 v2 `exact` settlement for every
+enabled network. When multiple facilitators advertise the same network, the
+first URL has precedence. The default public x402.org facilitator is intended
+for testnets, so do not use it as an implicit mainnet production default.
+
+Coinbase CDP mainnet uses dynamically signed authentication rather than a
+static bearer header. Include its production URL and configure both credentials
+as deployment secrets:
+
+```dotenv
+X402_FACILITATOR_URLS=https://x402.polygon.technology,https://api.cdp.coinbase.com/platform/v2/x402
+CDP_API_KEY_ID=organizations/.../apiKeys/...
+CDP_API_KEY_SECRET=...
+```
+
+With the ordering above, Polygon payments use Polygon's facilitator and the CDP
+facilitator handles Base. CDP can also provide Solana once a Solana payout
+address is configured.
+
+Override prices with a JSON object keyed by ForeverBetter endpoint ID or route:
+
+```dotenv
+X402_ROUTE_PRICES={"imports.file":"$0.02","analyses.create":"$0.05","genetics.ancestry.create":"$0.10"}
+```
+
+If a facilitator requires static headers, store the JSON value of
+`X402_FACILITATOR_AUTH_HEADERS` as a deployment secret. Never commit facilitator
+credentials or payout-wallet private keys. ForeverBetter needs only public
+recipient addresses; payment signing stays with the paying agent.
+
+## Fulfillment guarantees
+
+ForeverBetter verifies the payment before executing the route, buffers the
+endpoint response, and settles only after successful fulfillment. Handler
+errors cancel the verified payment flow and return the normal API problem
+response without `PAYMENT-RESPONSE`.
+
+For paid `POST` routes, ForeverBetter derives an idempotency key from the signed
+payment when the caller does not provide one. Retrying the same signed payment
+therefore replays the original write instead of creating a duplicate import or
+analysis. Solana duplicate-settlement protection is delegated to the configured
+x402 facilitator and the official SVM mechanism.

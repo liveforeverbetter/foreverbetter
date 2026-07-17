@@ -1,0 +1,59 @@
+---
+title: "Connect a WHOOP"
+description: "How a signed-up user links their WHOOP in a few clicks, with no developer credentials required."
+---
+
+WHOOP connects through server-side OAuth. There are two ways to do it, depending on
+who owns the WHOOP app:
+
+- **First-party (consumer)**: a signed-up user connects their own WHOOP with one
+  click. ForeverBetter's WHOOP app is configured on the server, so the user never
+  sees a `client_id`/`secret`. This is the flow below.
+- **Bring-your-own (integrator)**: your app owns a WHOOP app and passes its
+  credentials on each call. See [Wearable onboarding](/wearable-onboarding).
+
+<Note>
+First-party connect is available when the `wearables.whoop` entry in
+`GET /capabilities` reports `first_party_oauth: true`. When it does not, use
+bring-your-own mode and pass your WHOOP app's `client_id`/`secret` on start,
+callback, and refresh.
+</Note>
+
+## 1. Start the connection (no credentials)
+
+Once the user is signed in and has a key, start a WHOOP connection with just the
+provider. The server fills in its own WHOOP app:
+
+```bash
+curl -s -X POST "$FB_API/connections/wearables/start" \
+  -H "authorization: Bearer $FB_KEY" -H "content-type: application/json" \
+  -d '{"user_id":"'$UID'","organization_id":"'$ORG'","source_provider":"whoop"}'
+# → { "connection_type":"oauth", "authorization_url":"https://api.prod.whoop.com/oauth/oauth2/auth?...", "scopes":[...] }
+```
+
+## 2. Send the user to WHOOP
+
+Redirect the user to `authorization_url`. They log into WHOOP and approve access.
+WHOOP redirects back to the configured redirect URI with `?code=...`.
+
+## 3. Dashboard completes the connection
+
+After approval, the ForeverBetter dashboard exchanges the code server-side and
+confirms the connection automatically. Do not copy an OAuth code or state back
+to an agent. The signed redirect state is bound to the user and organisation
+that started the flow.
+
+Your agent can poll `GET /connections/wearables/status` until WHOOP is active.
+The provider tokens are encrypted server-side for automatic updates and never
+appear in chat.
+
+## 4. Analyze
+
+```bash
+# Run wearable analysis once WHOOP data has arrived
+curl -s -X POST "$FB_API/wearables/analyze" \
+  -H "authorization: Bearer $FB_KEY" -H "content-type: application/json" \
+  -d '{"user_id":"'$UID'","organization_id":"'$ORG'","source_ids":["..."]}'
+```
+
+Automatic webhook sync refreshes first-party WHOOP tokens as needed.

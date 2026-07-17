@@ -1,0 +1,1668 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Healthspan dossier</title>
+<style>
+/* Design tokens
+ * Single source for color, type, spacing, motion across BOTH surfaces:
+ *   - Marketing (Fraunces + DM Sans + DM Mono)
+ *   - Product / dashboard (Plus Jakarta Sans + JetBrains Mono)
+ *
+ * Load order:
+ *   1. <link rel="stylesheet" href="colors_and_type.css">
+ *   2. Override --font-display / --font-body / --font-mono in :root if your
+ *      surface is the product instead of marketing.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=DM+Sans:opsz,wght@9..40,300..700&family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  /* ─── Color: brand & paper ─────────────────────────────────────────────── */
+  --color-brand:        #df1e39;   /* oklch(58% 0.22 22) */
+  --color-brand-hover:  #e8324c;   /* oklch(62% 0.22 22) */
+  --color-brand-soft:   #fce8eb;
+  --color-brand-tint:   #fdf3f5;
+
+  --color-canvas:       #f6f3ee;   /* page background, warm paper */
+  --color-paper:        #fbf9f5;   /* lifted card surface */
+  --color-paper-2:      #f1ede5;   /* nested surface */
+  --color-surface:      #ffffff;   /* product / dashboard card */
+
+  --color-night:        #0a0806;   /* inverted hero, pricing card body */
+  --color-night-2:      #111111;   /* second-tier dark surface (trust strip) */
+
+  /* ─── Color: text & line ───────────────────────────────────────────────── */
+  --color-ink:        #0e0e0e;
+  --color-ink-soft:   #3a3a38;
+  --color-ink-mute:   #7a7770;
+  --color-ink-faint:  #a8a59c;
+  --color-inverse:    #ffffff;
+
+  --color-line:         #e6e1d8;   /* hairline divider */
+  --color-line-soft:    #efeae0;
+  --color-line-strong:  #c5beb7;
+
+  /* ─── Color: semantic ─────────────────────────────────────────────────── */
+  --color-optimal:   oklch(52% 0.16 145);   /* "in range", "improving" */
+  --color-good:      #1e7a52;               /* same role, sRGB fallback */
+  --color-neutral:   oklch(48% 0.12 248);   /* info, blue tier */
+  --color-moderate:  oklch(55% 0.14 72);    /* watch / amber */
+  --color-critical:  oklch(48% 0.20 22);    /* same hue as brand */
+  --color-inactive:  #a0948e;               /* empty/pending */
+
+  /* ─── Color: focus & selection ────────────────────────────────────────── */
+  --color-focus:        oklch(58% 0.22 22);
+  --color-focus-ring:   oklch(58% 0.22 22 / 0.35);
+  --color-selection-bg: oklch(58% 0.22 22);
+  --color-selection-fg: #ffffff;
+
+  /* ─── Type: families ──────────────────────────────────────────────────── */
+  /* Marketing default. Override per-surface for product. */
+  --font-display: "Fraunces", "Georgia", "Times New Roman", serif;
+  --font-body:    "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Product / dashboard alternative — uncomment in product surfaces:
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body:    "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+  */
+
+  /* ─── Type: scale ─────────────────────────────────────────────────────── */
+  --text-xs:       0.72rem;     /* 11.5px — captions, monospace metadata */
+  --text-sm:       0.86rem;     /* 13.8px — small body, nav links */
+  --text-base:     1rem;        /* 16px — body */
+  --text-md:       1.18rem;     /* 18.9px — large body, hero subhead */
+  --text-lg:       1.5rem;      /* 24px — h3 / card title */
+  --text-xl:       1.95rem;     /* 31.2px — h2 small */
+  --text-2xl:      2.55rem;     /* 40.8px — h2 */
+  --text-3xl:      3.25rem;     /* 52px — display small */
+  --text-display-s: clamp(2.55rem, 5vw + 0.5rem, 4.35rem);
+  --text-display:   clamp(3.1rem, 7vw + 0.25rem, 5.35rem);
+
+  /* Product dashboard ladder (Plus Jakarta) — section 3.2 of DESIGN.md */
+  --text-hero:    56px;   /* GLI score */
+  --text-h1:      32px;
+  --text-h2:      24px;
+  --text-h3:      18px;
+  --text-body:    14px;
+  --text-caption: 12px;
+  --text-label:   11px;
+
+  /* ─── Spacing ────────────────────────────────────────────────────────── */
+  --space-3xs:  0.125rem;
+  --space-2xs:  0.25rem;
+  --space-xs:   0.5rem;
+  --space-sm:   0.75rem;
+  --space-md:   1rem;
+  --space-lg:   1.5rem;
+  --space-xl:   2.5rem;
+  --space-2xl:  4rem;
+  --space-3xl:  6rem;
+  --space-4xl:  9rem;
+
+  /* 4px-base aliases used by the dashboard template */
+  --space-1:  4px;  --space-2:  8px;  --space-3: 12px;
+  --space-4: 16px;  --space-5: 20px;  --space-6: 24px;
+  --space-8: 32px;  --space-10: 40px; --space-12: 48px; --space-16: 64px;
+
+  /* ─── Radii ──────────────────────────────────────────────────────────── */
+  --radius-sm:   5px;
+  --radius-md:   8px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-full: 9999px;
+
+  /* ─── Shadows ────────────────────────────────────────────────────────── */
+  --shadow-card:     0 1px 2px rgba(10,8,6,.04), 0 1px 3px rgba(10,8,6,.06);
+  --shadow-elevated: 0 4px 12px rgba(10,8,6,.06), 0 2px 4px rgba(10,8,6,.04);
+  --shadow-hero:     0 24px 72px rgba(10,8,6,.22);
+  --shadow-modal:    0 20px 60px rgba(10,8,6,.12), 0 8px 20px rgba(10,8,6,.06);
+  --shadow-sm:       0 4px 20px rgba(10,8,6,.12);
+
+  /* ─── Motion ─────────────────────────────────────────────────────────── */
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long:  420ms;
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ─── Layout ─────────────────────────────────────────────────────────── */
+  --content-max: 1240px;
+  --content-max-wide: 1440px;
+  --nav-h: 64px;
+  --rule-hair: 1px;
+}
+
+/* ─── Semantic typography ───────────────────────────────────────────────
+ * Use these class names on raw text, or copy the rules into your own
+ * components. They encode the marketing voice (Fraunces display, DM Sans
+ * body). For the dashboard, override --font-display/-body to Plus Jakarta. */
+
+.t-display {
+  font-family: var(--font-display);
+  font-size:   var(--text-display);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+
+.t-display-s {
+  font-family: var(--font-display);
+  font-size:   var(--text-display-s);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+
+.t-h1, h1 {
+  font-family: var(--font-display);
+  font-size:   var(--text-2xl);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.t-h2, h2 {
+  font-family: var(--font-display);
+  font-size:   var(--text-xl);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+}
+
+.t-h3, h3 {
+  font-family: var(--font-display);
+  font-size:   var(--text-lg);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+.t-lead, p.lead {
+  font-family: var(--font-body);
+  font-size:   var(--text-md);
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+
+.t-body, p {
+  font-family: var(--font-body);
+  font-size:   var(--text-base);
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+
+.t-small {
+  font-family: var(--font-body);
+  font-size:   var(--text-sm);
+  line-height: 1.55;
+  color: var(--color-ink-soft);
+}
+
+.t-caption {
+  font-family: var(--font-mono);
+  font-size:   var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-mute);
+}
+
+.t-eyebrow {
+  font-family: var(--font-mono);
+  font-size:   11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ink-mute);
+}
+
+.t-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.t-nums {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Base resets ──────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+::selection {
+  background: var(--color-selection-bg);
+  color: var(--color-selection-fg);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.skip-link { position: absolute; left: 12px; top: -60px; z-index: 20; min-height: 44px; display: inline-flex; align-items: center; padding: 0 14px; background: var(--color-surface); border: 1px solid var(--color-focus); color: var(--color-text); font-family: var(--font-ui); font-weight: 700; }
+.skip-link:focus { top: 12px; }
+.ib-nav a, .stamp-btn { min-height: 44px; display: inline-flex; align-items: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper:   #f5f3ec;
+    --paper-2: #efece2;
+    --ink:     #17150f;
+    --ink-2:   #3c382f;
+    --muted:   #76705f;
+    --line:    #d6cfbf;
+    --line-2:  #c2bAa4;
+    --accent:  var(--color-brand);            /* coral #df1e39 */
+    --accent-soft: oklch(58% 0.22 22 / 0.08);
+    --accent-line: oklch(58% 0.22 22 / 0.40);
+    --positive: #1e7a52;
+    --positive-soft: #e6f1eb;
+    --positive-line: rgba(30, 122, 82, 0.42);
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --disp:  "Fraunces", Georgia, serif;
+    --mono:  "JetBrains Mono", ui-monospace, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  /* faint paper grain + registration dot grid */
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: radial-gradient(var(--line) 0.5px, transparent 0.5px);
+    background-size: 22px 22px;
+    opacity: 0.30;
+  }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  .label {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .accent { color: var(--accent); }
+
+  /* ─── Sticky index strip ───────────────────────────────────────── */
+  .indexbar {
+    position: sticky; top: 0; z-index: 40;
+    background: color-mix(in oklab, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--ink);
+  }
+  .indexbar-in {
+    max-width: 1080px; margin: 0 auto;
+    padding: 10px 40px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  }
+  .ib-mark { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.04em; color: var(--ink); }
+  .ib-mark b { color: var(--accent); font-weight: 700; }
+  .ib-nav { display: flex; gap: 4px; flex-wrap: wrap; }
+  .ib-nav a {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.10em; text-transform: uppercase;
+    color: var(--muted); padding: 4px 9px; border: 1px solid transparent;
+    transition: color 120ms, border-color 120ms;
+  }
+  .ib-nav a:hover { color: var(--accent); border-color: var(--accent-line); }
+  .ib-nav a.active { color: var(--accent); border-color: var(--accent); }
+
+  .panel { display: none; }
+  .panel.is-active { display: block; }
+  .section.first { padding-top: 36px; }
+
+  /* ─── Sheet ────────────────────────────────────────────────────── */
+  .sheet {
+    position: relative; z-index: 1;
+    max-width: 1080px; margin: 0 auto;
+    padding: 0 40px 120px;
+  }
+  /* registration crosshairs at the page corners of each major block */
+  .regmark { position: absolute; width: 13px; height: 13px; opacity: 0.65; }
+  .regmark::before, .regmark::after { content: ""; position: absolute; background: var(--accent); }
+  .regmark::before { left: 6px; top: 0; width: 1px; height: 13px; }
+  .regmark::after  { top: 6px; left: 0; height: 1px; width: 13px; }
+
+  /* ─── Rules ────────────────────────────────────────────────────── */
+  .rule { height: 1px; background: var(--ink); margin: 0; }
+  .rule-double { border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); height: 4px; }
+  .rule-accent { height: 2px; background: var(--accent); }
+  .rule-dash { height: 0; border-top: 1px dashed var(--line-2); }
+
+  /* ─── Masthead ─────────────────────────────────────────────────── */
+  .masthead { padding: 30px 0 0; }
+  .masthead-top {
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;
+    padding-bottom: 10px;
+  }
+  .wordmark { font-family: var(--mono); font-weight: 700; font-size: 15px; letter-spacing: 0.02em; }
+  .wordmark b { color: var(--accent); }
+  .masthead-meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.10em; color: var(--muted); text-align: right; padding-bottom: 6px; }
+
+  .masthead-body {
+    display: grid; grid-template-columns: 1.05fr 1fr;
+    gap: 48px; align-items: start;
+    padding: 30px 0 26px;
+  }
+  .mh-kicker { margin-bottom: 18px; }
+  .masthead-title {
+    font-family: var(--disp);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 74px);
+    line-height: 1.04;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 0;
+    padding-bottom: 52px;
+  }
+  .masthead-title em { font-style: italic; color: var(--accent); }
+  .deck {
+    font-size: 18px; line-height: 1.55; color: var(--ink-2);
+    max-width: 46ch; margin: 0 0 26px;
+  }
+  .read-kicker {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 10px;
+  }
+  .read-list { display: grid; grid-template-columns: auto 1fr; gap: 7px 22px; max-width: 50ch; }
+  .read-list dt {
+    font-family: var(--serif); font-size: 15px; font-style: italic;
+    color: var(--ink); line-height: 1.3; padding-top: 1px;
+  }
+  .read-list dd {
+    font-family: var(--mono); font-size: 12.5px; color: var(--ink-2);
+    letter-spacing: 0.02em; padding-top: 3px;
+  }
+  .read-list dd.is-muted { color: var(--muted); }
+
+  .plate {
+    border: 1px solid var(--ink);
+    background: var(--paper-2);
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  .plate-body { flex: 1; display: flex; align-items: center; justify-content: center; padding: 18px 16px; }
+  .plate svg { width: 100%; height: auto; display: block; }
+  .plate figcaption {
+    border-top: 1px solid var(--ink);
+    padding: 9px 12px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em; color: var(--muted);
+    display: flex; justify-content: space-between; gap: 12px; align-items: center;
+  }
+  .plate figcaption b { color: var(--accent); font-weight: 500; white-space: nowrap; }
+  .plate figcaption span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* ─── Section frame ────────────────────────────────────────────── */
+  .section { padding: 56px 0 0; position: relative; }
+  .sec-head { display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: baseline; margin-bottom: 8px; }
+  .sec-no {
+    font-family: var(--disp); font-weight: 700; font-size: 30px; color: var(--accent);
+    font-variant-numeric: tabular-nums; line-height: 1;
+  }
+  .sec-title { font-family: var(--disp); font-weight: 600; font-size: 30px; letter-spacing: -0.01em; color: var(--ink); }
+  .sec-fig { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  .sec-rule { margin: 14px 0 26px; }
+  .sec-deck { font-size: 17px; line-height: 1.6; color: var(--ink-2); max-width: 64ch; margin-bottom: 30px; }
+  .dropcap::first-letter {
+    font-family: var(--disp); font-weight: 700;
+    float: left; font-size: 3.1em; line-height: 0.8;
+    padding: 6px 10px 0 0; color: var(--accent);
+  }
+
+  /* ─── Section 01 · specimens (edges) ──────────────────────────── */
+  .specimens { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1px solid var(--ink); }
+  .specimen {
+    position: relative;
+    padding: 22px 22px 24px;
+    border-right: 1px solid var(--line-2);
+    border-bottom: 1px solid var(--line-2);
+    background: var(--paper);
+  }
+  .specimen:nth-child(2n) { border-right: 0; }
+  .specimen.featured {
+    grid-column: 1 / -1;
+    background: var(--positive-soft);
+    border-bottom: 1px solid var(--ink);
+    display: grid; grid-template-columns: 200px 1fr; gap: 26px; align-items: center;
+  }
+  .specimen-figtag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 14px; display: flex; justify-content: space-between; }
+  .specimen-figtag .tier { color: var(--positive); }
+  .specimen-rarity { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
+  .specimen-rarity .big { font-family: var(--disp); font-weight: 700; font-size: 40px; color: var(--positive); letter-spacing: -0.02em; line-height: 0.9; white-space: nowrap; }
+  .specimen.featured .specimen-rarity .big { font-size: 56px; }
+  .specimen-rarity .cap { font-family: var(--mono); font-size: 10px; letter-spacing: 0.10em; text-transform: uppercase; color: var(--muted); max-width: 12ch; line-height: 1.3; }
+  .specimen-meter { display: flex; gap: 4px; margin-bottom: 16px; }
+  .specimen-meter span { height: 4px; flex: 1; max-width: 34px; background: var(--line-2); }
+  .specimen-meter span.on { background: var(--positive); }
+  .specimen-name { font-family: var(--disp); font-weight: 600; font-size: 21px; letter-spacing: -0.01em; line-height: 1.1; margin-bottom: 6px; color: var(--ink); }
+  .specimen.featured .specimen-name { font-size: 27px; }
+  .specimen-gene { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--muted); margin-bottom: 12px; }
+  .specimen-benefit { font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
+  .specimen.featured .specimen-benefit { font-size: 16px; }
+  .specimen-plate { border: 1px solid var(--ink); background: var(--paper); padding: 12px; }
+  .specimen-plate svg { width: 100%; height: auto; display: block; }
+
+  .share-row { display: flex; align-items: center; gap: 14px; margin-top: 22px; }
+  .stamp-btn {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+    border: 1px solid var(--ink); background: var(--ink); color: var(--paper);
+    padding: 11px 18px; cursor: pointer;
+    transition: background 120ms, color 120ms;
+  }
+  .stamp-btn:hover { background: var(--positive); border-color: var(--positive); color: #fff; }
+  .share-note { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--muted); }
+
+  /* ─── Strengths pillars ───────────────────────────────────────── */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--ink); }
+  .pillar { padding: 22px; border-right: 1px solid var(--line-2); }
+  .pillar:last-child { border-right: 0; }
+  .pillar.secondary { background: var(--paper-2); }
+  .pillar-top { display: flex; align-items: center; gap: 14px; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .pillar-ring { position: relative; width: 50px; height: 50px; flex-shrink: 0; }
+  .pillar-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .pillar-ring-n { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--ink); }
+  .pillar-mod { font-family: var(--disp); font-weight: 600; font-size: 16px; color: var(--ink); }
+  .pillar-tag { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+  .pillar-primary { font-size: 14.5px; line-height: 1.45; color: var(--ink); margin-bottom: 14px; }
+  .pillar-supports { display: flex; flex-direction: column; gap: 7px; }
+  .pillar-sup { display: flex; justify-content: space-between; gap: 12px; font-family: var(--mono); font-size: 11.5px; }
+  .pillar-sup .l { color: var(--muted); }
+  .pillar-sup .v { color: var(--ink); text-align: right; }
+
+  #sec-edges .sec-no,
+  #sec-edges .dropcap::first-letter,
+  #sec-strengths .sec-no {
+    color: var(--positive);
+  }
+  #sec-edges .rule-accent,
+  #sec-strengths .rule-accent {
+    background: var(--positive);
+  }
+
+  /* ─── Section 02 · healthspan dial ────────────────────────────── */
+  .dial-row { display: grid; grid-template-columns: 320px 1fr; gap: 44px; align-items: center; }
+  .dial-plate { border: 1px solid var(--ink); background: var(--paper-2); }
+  .dial-plate .plate-body { padding: 22px; }
+  .dial-plate figcaption { border-top: 1px solid var(--ink); padding: 8px 12px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; color: var(--muted); display: flex; justify-content: space-between; }
+  .dial-plate figcaption b { color: var(--accent); font-weight: 500; }
+
+  .subscore-table { width: 100%; border-collapse: collapse; margin-bottom: 22px; }
+  .subscore-table th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding: 0 0 8px; border-bottom: 1px solid var(--ink); }
+  .subscore-table th.r, .subscore-table td.r { text-align: right; }
+  .subscore-table td { padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .subscore-table td.metric { font-family: var(--disp); font-weight: 600; font-size: 19px; font-variant-numeric: tabular-nums; }
+  .subscore-bar { position: relative; height: 6px; background: var(--line-2); width: 120px; display: inline-block; vertical-align: middle; }
+  .subscore-bar > div { position: absolute; inset: 0 auto 0 0; background: var(--accent); }
+  .focus-line { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--muted); }
+  .focus-line b { color: var(--ink); font-weight: 500; }
+
+  .sources { display: flex; flex-direction: column; gap: 0; margin-top: 8px; border-top: 1px solid var(--ink); }
+  .source { display: grid; grid-template-columns: 14px 1fr auto; gap: 12px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 12px; }
+  .source .box { width: 9px; height: 9px; border: 1px solid var(--ink); background: var(--accent); }
+  .source .box.off { background: transparent; }
+  .source .nm { color: var(--ink); }
+  .source .ct { color: var(--muted); }
+
+  /* ─── Section 03 · procedure (plan) ───────────────────────────── */
+  .proc { display: grid; grid-template-columns: 80px 1fr; gap: 28px; padding: 26px 0; border-top: 1px solid var(--ink); }
+  .proc.featured { background: linear-gradient(90deg, var(--accent-soft), transparent 60%); }
+  .proc-no { font-family: var(--mono); font-size: 11px; letter-spacing: 0.10em; color: var(--muted); }
+  .proc-no b { display: block; font-family: var(--disp); font-weight: 700; font-size: 42px; color: var(--accent); letter-spacing: -0.02em; line-height: 0.9; margin-top: 4px; }
+  .proc-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tag {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.10em; text-transform: uppercase;
+    padding: 3px 9px; border: 1px solid var(--line-2);
+  }
+  .tag.now { border-color: var(--accent); color: var(--accent); }
+  .tag.next { color: var(--ink-2); }
+  .tag.high { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .tag.medium { color: var(--muted); }
+  .proc-title { font-family: var(--disp); font-weight: 600; font-size: 23px; letter-spacing: -0.01em; line-height: 1.15; margin-bottom: 12px; }
+  .proc-why { font-size: 15.5px; line-height: 1.6; color: var(--ink-2); margin-bottom: 16px; max-width: 68ch; }
+  .proc-ev { display: flex; gap: 0; flex-wrap: wrap; margin-bottom: 18px; border: 1px solid var(--line-2); width: fit-content; max-width: 100%; }
+  .ev { font-family: var(--mono); font-size: 11px; padding: 7px 12px; border-right: 1px solid var(--line-2); display: flex; gap: 8px; }
+  .ev:last-child { border-right: 0; }
+  .ev .k { color: var(--muted); }
+  .ev .v { color: var(--ink); }
+  .ev .v.bad { color: var(--accent); font-weight: 600; }
+  .ev .v.warn { color: var(--ink); font-weight: 600; }
+  .ev .v.good { color: var(--ink); }
+  .proc-steps { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 18px; }
+  .proc-step { display: grid; grid-template-columns: 22px 1fr; gap: 10px; font-size: 14.5px; line-height: 1.5; color: var(--ink); }
+  .proc-step .sq { width: 13px; height: 13px; border: 1px solid var(--accent); margin-top: 4px; position: relative; }
+  .proc-step .sq::after { content: ""; position: absolute; inset: 2px; background: var(--accent); opacity: 0; }
+  .proc-spec { display: flex; gap: 28px; flex-wrap: wrap; padding-top: 14px; border-top: 1px dashed var(--line-2); }
+  .proc-spec-i { display: flex; flex-direction: column; gap: 3px; }
+  .proc-spec-l { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+  .proc-spec-v { font-size: 14px; font-weight: 500; color: var(--ink); }
+
+  /* Coverage strip — modalities feeding this plan */
+  .plan-coverage {
+    display: flex; flex-wrap: wrap; gap: 0; border: 1px solid var(--ink);
+    margin: 10px 0 26px; background: var(--paper);
+  }
+  .plan-cov {
+    display: flex; align-items: baseline; gap: 10px;
+    padding: 10px 16px; border-right: 1px solid var(--line-2); flex: 1 1 220px;
+  }
+  .plan-cov:last-child { border-right: 0; }
+  .plan-cov-tick { font-size: 11px; color: var(--accent); }
+  .plan-cov.absent .plan-cov-tick { color: var(--muted); }
+  .plan-cov-label {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.10em;
+    text-transform: uppercase; color: var(--ink);
+  }
+  .plan-cov.absent .plan-cov-label { color: var(--muted); }
+  .plan-cov-state {
+    margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--ink-2);
+  }
+  .plan-cov.absent .plan-cov-state { color: var(--muted); }
+
+  /* Safety + modality chips on priority cards */
+  .proc-safety {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.10em;
+    text-transform: uppercase; padding: 3px 9px; border: 1px solid var(--line-2);
+  }
+  .proc-safety.safety-med { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+  .proc-safety.safety-prompt { border-color: var(--accent); color: var(--accent); }
+  .proc-safety.safety-routine { color: var(--ink-2); }
+  .proc-safety.safety-self { color: var(--muted); }
+  .proc-mod-chip {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.10em;
+    text-transform: uppercase; padding: 3px 9px; border: 1px solid var(--line-2);
+    color: var(--ink-2);
+  }
+  .proc-mod-chip.genetics { border-color: var(--ink); }
+  .proc-rationale {
+    margin-top: 12px; font-size: 12.5px; line-height: 1.5; color: var(--ink-2);
+  }
+  .proc-rationale-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.10em;
+    text-transform: uppercase; color: var(--accent); margin-right: 6px;
+  }
+  .proc-safety-msg {
+    margin-top: 8px; font-size: 12.5px; line-height: 1.45;
+    color: var(--accent); font-style: italic;
+  }
+  .proc-empty .proc-no b { color: var(--muted); }
+  .proc-empty .proc-title { color: var(--ink-2); }
+
+  /* Review items (conflict / missing context / temporal mismatch) */
+  #plan-review:not(:empty) { margin-top: 32px; padding-top: 18px; border-top: 1px dashed var(--line-2); }
+  .plan-section-title {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+  }
+  .plan-review-list { list-style: none; display: flex; flex-direction: column; gap: 12px; padding: 0; }
+  .plan-review-item {
+    border: 1px solid var(--line-2); border-left-width: 3px; padding: 14px 16px;
+    background: var(--paper);
+  }
+  .plan-review-item.plan-review-conflict { border-left-color: var(--accent); }
+  .plan-review-item.plan-review-missing_context { border-left-color: var(--ink); }
+  .plan-review-item.plan-review-temporal_mismatch { border-left-color: var(--muted); }
+  .plan-review-title { font-family: var(--disp); font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .plan-review-body { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); }
+  .plan-review-meta {
+    margin-top: 8px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.10em;
+    text-transform: uppercase; color: var(--muted);
+  }
+
+  /* Next-context prompt — optional, always after current plan */
+  #plan-next:not(:empty) { margin-top: 26px; }
+  .plan-next {
+    border: 1px dashed var(--line-2); padding: 16px 18px; background: var(--paper-2);
+  }
+  .plan-next-eyebrow {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 6px;
+  }
+  .plan-next-body { font-size: 14px; line-height: 1.55; color: var(--ink-2); margin-bottom: 8px; }
+  .plan-next-unlocks {
+    list-style: disc; margin-left: 22px; font-size: 13px; line-height: 1.55; color: var(--ink-2);
+  }
+
+  /* Mobile coverage strip and chips */
+  @media (max-width: 768px) {
+    .plan-coverage { flex-direction: column; }
+    .plan-cov { border-right: 0; border-bottom: 1px solid var(--line-2); }
+    .plan-cov:last-child { border-bottom: 0; }
+    .proc { grid-template-columns: 1fr; }
+    .proc-no { display: flex; align-items: baseline; gap: 12px; }
+    .proc-no b { font-size: 28px; margin-top: 0; }
+  }
+
+  .maint { border: 1px solid var(--ink); margin-top: 8px; }
+  .maint-row { display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--line); align-items: start; }
+  .maint-row:last-child { border-bottom: 0; }
+  .maint-check { font-family: var(--mono); color: var(--accent); font-size: 15px; }
+  .maint-title { font-family: var(--disp); font-weight: 600; font-size: 16px; margin-bottom: 2px; }
+  .maint-note { font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+
+  /* ─── Section 04 · biomarker register ─────────────────────────── */
+  .bio-stats, .wear-stats { grid-template-columns: repeat(5, 1fr); margin-bottom: 26px; }
+  .notice { border: 1px solid var(--accent); background: var(--accent-soft); padding: 18px 22px; margin-bottom: 30px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+  .notice-l .label { color: var(--accent); margin-bottom: 6px; display: block; }
+  .notice-title { font-family: var(--disp); font-weight: 600; font-size: 18px; margin-bottom: 5px; }
+  .notice-body { font-size: 14px; line-height: 1.55; color: var(--ink-2); max-width: 70ch; }
+  .notice-figs { display: flex; gap: 22px; flex-shrink: 0; }
+  .notice-fig { text-align: right; }
+  .notice-fig .v { font-family: var(--disp); font-weight: 700; font-size: 24px; color: var(--accent); line-height: 1; white-space: nowrap; }
+  .notice-fig .l { font-family: var(--mono); font-size: 10px; letter-spacing: 0.10em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+
+  .reg { margin-bottom: 30px; }
+  .reg-head { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: baseline; border-bottom: 2px solid var(--ink); padding-bottom: 8px; }
+  .reg-glyph { font-family: var(--disp); font-weight: 700; color: var(--accent); font-size: 18px; }
+  .reg-name { font-family: var(--disp); font-weight: 600; font-size: 20px; letter-spacing: -0.01em; }
+  .reg-score { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+  .reg-score.optimal { color: var(--muted); }
+  .reg-score.watch { color: var(--ink); }
+  .reg-score.attention { color: var(--accent); }
+  .reg-sum { font-size: 14.5px; line-height: 1.55; color: var(--ink-2); margin: 12px 0 6px; max-width: 78ch; }
+  .reg-rows { border-top: 1px solid var(--line); }
+  .reg-item { border-bottom: 1px solid var(--line); }
+  .reg-row { display: grid; grid-template-columns: 1fr auto 130px 18px; gap: 18px; align-items: baseline; padding: 13px 0; list-style: none; cursor: pointer; }
+  .reg-row::-webkit-details-marker { display: none; }
+  .reg-chev { font-family: var(--mono); font-size: 14px; color: var(--muted); text-align: center; transition: transform 180ms var(--ease-out); align-self: center; }
+  .reg-item[open] .reg-chev { transform: rotate(45deg); color: var(--accent); }
+  .reg-item[open] .reg-row { border-bottom: 1px dashed var(--line-2); }
+  .reg-row.compact { grid-template-columns: 1fr auto 130px; cursor: default; border-bottom: 1px solid var(--line); }
+  .reg-interp { grid-column: 1 / -1; font-size: 13.5px; line-height: 1.5; color: var(--ink-2); padding-bottom: 4px; }
+  .reg-marker { font-size: 16px; color: var(--ink); }
+  .reg-marker .tech { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-left: 6px; }
+  .reg-val { font-family: var(--mono); font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+  .reg-stat { display: flex; align-items: center; justify-content: flex-end; gap: 8px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.10em; text-transform: uppercase; white-space: nowrap; }
+  .reg-stat.optimal { color: var(--muted); }
+  .reg-stat.watch { color: var(--ink-2); }
+  .reg-stat.attention { color: var(--accent); }
+  .reg-stat.needs_attention { color: var(--accent); }
+  .tick-box { width: 9px; height: 9px; border: 1px solid var(--ink); flex-shrink: 0; }
+  .tick-box.optimal { border-color: var(--line-2); }
+  .tick-box.watch { border-color: var(--accent); background: var(--accent-soft); }
+  .tick-box.attention { border-color: var(--accent); background: var(--accent); }
+  .tick-box.needs_attention { border-color: var(--accent); background: var(--accent); }
+  .reg-note { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); padding: 12px 130px 16px 0; max-width: 82ch; }
+  .reg-note-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+  .reg-note-meta span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line-2); padding: 3px 7px; background: var(--paper); }
+  .reg-note-meta span.priority { color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft); }
+  .reg-note-meta span.trend { color: var(--ink-2); }
+
+  /* ─── Section 05 · genetic register ───────────────────────────── */
+  .gstats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--ink); margin-bottom: 34px; }
+  .gstat { padding: 18px 20px; border-right: 1px solid var(--line-2); }
+  .gstat:last-child { border-right: 0; }
+  .gstat-v { font-family: var(--disp); font-weight: 700; font-size: 30px; letter-spacing: -0.02em; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+  .gstat-l { font-size: 12px; line-height: 1.45; color: var(--ink-2); }
+  .gcoverage { margin: 0 0 34px; }
+  .gcoverage-disclosure { border: 1px solid var(--ink); }
+  .gcoverage-disclosure > summary {
+    list-style: none; cursor: pointer; padding: 14px 22px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent); background: var(--paper-2);
+  }
+  .gcoverage-disclosure > summary::-webkit-details-marker { display: none; }
+  .gcoverage-disclosure > summary::after {
+    content: "Show details +"; font-family: var(--mono); font-size: 10.5px;
+    letter-spacing: 0.10em; color: var(--muted); text-transform: none;
+  }
+  .gcoverage-disclosure[open] > summary { border-bottom: 1px solid var(--line-2); }
+  .gcoverage-disclosure[open] > summary::after { content: "Hide −"; }
+  .gcoverage-intro {
+    font-size: 14px; line-height: 1.55; color: var(--ink-2);
+    max-width: 64ch; margin: 0 0 14px;
+  }
+  .gcoverage-head { padding: 20px 22px; border-bottom: 1px solid var(--line-2); display: grid; grid-template-columns: 1.1fr 1.6fr; gap: 24px; }
+  .gcoverage-title { font-family: var(--disp); font-weight: 650; font-size: 22px; line-height: 1.12; color: var(--ink); }
+  .gcoverage-body { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+  .gcoverage-list { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line-2); }
+  .gcoverage-list span { padding: 14px 18px; border-right: 1px solid var(--line-2); font-size: 12.5px; line-height: 1.45; color: var(--ink-2); }
+  .gcoverage-list span:last-child { border-right: 0; }
+  .gcoverage-classes { display: grid; grid-template-columns: repeat(5, 1fr); }
+  .gclass { padding: 16px 16px 18px; border-right: 1px solid var(--line-2); }
+  .gclass:last-child { border-right: 0; }
+  .gclass-count { font-family: var(--disp); font-weight: 700; font-size: 24px; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+  .gclass-name { font-weight: 650; font-size: 13.5px; line-height: 1.2; margin-bottom: 6px; color: var(--ink); }
+  .gclass-status { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .gclass-meaning { font-size: 12.5px; line-height: 1.45; color: var(--ink-2); }
+  .strengths { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1px solid var(--ink); margin-bottom: 8px; }
+  .strength { padding: 22px; border-right: 1px solid var(--line-2); background: var(--positive-soft); }
+  .strength:nth-child(2n) { border-right: 0; }
+  .strength-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+  .strength-gene { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--muted); }
+  .strength-score { font-family: var(--disp); font-weight: 700; font-size: 26px; color: var(--positive); letter-spacing: -0.02em; line-height: 1; }
+  .strength-title { font-family: var(--disp); font-weight: 600; font-size: 18px; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 8px; color: var(--ink); }
+  .strength-body { font-size: 14px; line-height: 1.55; color: var(--ink-2); margin-bottom: 12px; }
+  .strength-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .strength-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--positive-line); color: var(--positive); padding: 3px 8px; }
+
+  .gtable { width: 100%; border-collapse: collapse; margin-bottom: 14px; }
+  .gtable th { text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding: 0 12px 8px 0; border-bottom: 2px solid var(--ink); }
+  .gtable th.r, .gtable td.r { text-align: right; padding-right: 0; }
+  .gtable td { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 14.5px; line-height: 1.5; }
+  .gtable td.gene { font-family: var(--mono); font-size: 12.5px; color: var(--ink); white-space: nowrap; }
+  .gtable td.gene .rsid { color: var(--muted); display: block; font-size: 11px; margin-top: 2px; }
+  .gtable td.lead { font-weight: 600; color: var(--ink); }
+  .gtable .desc { color: var(--ink-2); }
+  .gtag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--line-2); padding: 3px 8px; white-space: nowrap; }
+  .gtag.accent { border-color: var(--accent); color: var(--accent); }
+  .gtag.lower { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+  .gtag.average { border-color: var(--muted); color: var(--ink); }
+  .gtag.elevated { border-color: var(--accent); color: var(--accent); }
+  .gtag.high { border-color: var(--ink); color: var(--ink); }
+  .pbar-wrap { display: flex; align-items: center; gap: 10px; justify-content: flex-end; }
+  .pbar { width: 80px; height: 6px; background: var(--line-2); position: relative; }
+  .pbar > div { position: absolute; inset: 0 auto 0 0; }
+  .pbar > div.lower { background: var(--ink); }
+  .pbar > div.average { background: var(--muted); }
+  .pbar > div.elevated { background: var(--accent); }
+  .ppct { font-family: var(--mono); font-size: 12px; color: var(--ink); width: 56px; text-align: right; }
+
+  .hall { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1px solid var(--ink); }
+  .hall-cell { padding: 18px 20px; border-right: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); }
+  .hall-cell:nth-child(2n) { border-right: 0; }
+  .hall-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+  .hall-name { font-family: var(--disp); font-weight: 600; font-size: 16px; }
+  .hall-ct { font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.06em; }
+  .hall-bar { height: 4px; background: var(--line-2); margin-bottom: 10px; position: relative; }
+  .hall-bar > div { position: absolute; inset: 0 auto 0 0; background: var(--accent); }
+  .hall-genes { font-family: var(--mono); font-size: 11px; color: var(--accent); margin-bottom: 8px; letter-spacing: 0.04em; }
+  .hall-action { font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }
+  .hall-tech { font-family: var(--mono); font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* ─── Colophon / notice ───────────────────────────────────────── */
+  .colophon { margin-top: 64px; border-top: 2px solid var(--ink); padding-top: 26px; }
+  .disclaimer-notice { border: 1px solid var(--ink); padding: 22px 24px; display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: start; }
+  .disclaimer-notice .mk { width: 34px; height: 34px; position: relative; }
+  .disclaimer-notice .mk::before, .disclaimer-notice .mk::after { content: ""; position: absolute; background: var(--accent); }
+  .disclaimer-notice .mk::before { left: 16px; top: 0; width: 2px; height: 34px; }
+  .disclaimer-notice .mk::after { top: 16px; left: 0; height: 2px; width: 34px; }
+  .disclaimer-notice h4 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .disclaimer-notice p { font-size: 13.5px; line-height: 1.6; color: var(--ink-2); max-width: 92ch; }
+  .colophon-foot { display: flex; justify-content: space-between; gap: 16px; margin-top: 20px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--muted); flex-wrap: wrap; }
+
+  /* ─── Responsive ──────────────────────────────────────────────── */
+  @media (max-width: 920px) {
+    .sheet, .indexbar-in { padding-left: 24px; padding-right: 24px; }
+    .masthead-body { grid-template-columns: 1fr; gap: 30px; }
+    .dial-row { grid-template-columns: 1fr; gap: 28px; }
+    .indexbar-in { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .ib-nav {
+      display: flex;
+      width: 100%;
+      flex-wrap: nowrap;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .ib-nav::-webkit-scrollbar { display: none; }
+    .ib-nav a { flex: 0 0 auto; padding-left: 10px; padding-right: 10px; }
+  }
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .specimens { grid-template-columns: 1fr; }
+    .specimen { border-right: 0; }
+    .specimen.featured { grid-template-columns: 1fr; }
+    .proc { grid-template-columns: 1fr; gap: 14px; }
+    .proc-no { display: flex; align-items: baseline; gap: 12px; }
+    .proc-no b { margin-top: 0; }
+    .hall { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: 1fr; }
+    .pillar { border-right: 0; border-bottom: 1px solid var(--line-2); }
+    .gstats { grid-template-columns: 1fr 1fr; }
+    .gstat:nth-child(2n) { border-right: 0; }
+    .gcoverage-head, .gcoverage-list, .gcoverage-classes { grid-template-columns: 1fr; }
+    .gcoverage-list span, .gclass { border-right: 0; border-bottom: 1px solid var(--line-2); }
+    .gclass:last-child { border-bottom: 0; }
+    .strengths { grid-template-columns: 1fr; }
+    .strength { border-right: 0; border-bottom: 1px solid var(--line-2); }
+    .reg-row { grid-template-columns: 1fr auto 18px; }
+    .reg-row .reg-stat { grid-column: 1 / 3; justify-content: flex-start; padding-top: 2px; }
+    .reg-note { padding-right: 0; }
+    .notice { grid-template-columns: 1fr; gap: 14px; }
+    .gtable td.desc-cell { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<script type="application/json" id="dashboard-data">{{DASHBOARD_DATA_JSON}}</script>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="indexbar">
+  <div class="indexbar-in">
+    <span class="ib-mark">HEALTHSPAN <b>INDEX</b></span>
+    <nav class="ib-nav" id="tabnav" aria-label="Dashboard sections">
+      <a href="#overview"   data-tab="overview"   class="active" role="tab">Overview</a>
+      <a href="#plan"       data-tab="plan" role="tab">Plan</a>
+      <a href="#genetics"   data-tab="genetics" role="tab">Genetics</a>
+      <a href="#biomarkers" data-tab="biomarkers" role="tab">Biomarkers</a>
+      <a href="#behavioral" data-tab="behavioral" role="tab">Behavioral</a>
+    </nav>
+  </div>
+</div>
+
+<main class="sheet" id="main">
+
+  <!-- ══ OVERVIEW ══════════════════════════════════════════════════ -->
+  <section class="panel is-active" data-panel="overview">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <span class="regmark" style="top:30px; left:-13px;"></span>
+    <div class="masthead-top">
+      <span class="wordmark">HEALTHSPAN <b>DOSSIER</b></span>
+      <span class="masthead-meta" id="mh-meta">FIELD MANUAL · ED. 01</span>
+    </div>
+    <div class="rule-double"></div>
+    <div class="masthead-body">
+      <div class="masthead-left">
+        <div class="label mh-kicker">Document 23L / Personal healthspan dossier</div>
+        <h1 class="masthead-title">Your edge starts<br>with your <em>health</em>.</h1>
+        <p class="deck" id="mh-deck"></p>
+        <p class="read-kicker" id="mh-read-kicker">What we read for you</p>
+        <dl class="read-list" id="mh-spec"></dl>
+      </div>
+      <figure class="plate">
+        <div class="plate-body" id="helix-plate"></div>
+        <figcaption><span id="helix-caption-label">FIG_001 · Your genome, schematic</span><b id="helix-cap">1.18M variants read</b></figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <!-- 01 · STANDOUT VARIANTS -->
+  <section class="section" id="sec-edges">
+    <div class="sec-head">
+      <span class="sec-no">01</span>
+      <span class="sec-title">Standout variants</span>
+      <span class="sec-fig" id="edges-figrange"></span>
+    </div>
+    <div class="rule-accent sec-rule"></div>
+    <p class="sec-deck dropcap" id="edges-deck"></p>
+    <div class="specimens" id="specimens"></div>
+    <div class="share-row">
+      <button class="stamp-btn" id="share-btn" type="button">Stamp &amp; share dossier</button>
+      <span class="share-note" id="share-note"></span>
+    </div>
+  </section>
+
+  <!-- 02 · HEALTHSPAN INDEX -->
+  <section class="section" id="sec-strengths">
+    <div class="sec-head">
+      <span class="sec-no">02</span>
+      <span class="sec-title">Strengths across your data</span>
+      <span class="sec-fig">Genes · Blood · Day-to-day</span>
+    </div>
+    <div class="rule-accent sec-rule"></div>
+    <p class="sec-deck">What is working in your favour, read across all three instruments. The first two are the core signal; behavioral data is supplementary.</p>
+    <div class="pillars" id="pillars"></div>
+  </section>
+
+  <!-- 03 · HEALTHSPAN INDEX -->
+  <section class="section" id="sec-index">
+    <div class="sec-head">
+      <span class="sec-no">03</span>
+      <span class="sec-title">Healthspan index</span>
+      <span class="sec-fig">FIG_007</span>
+    </div>
+    <div class="rule-accent sec-rule"></div>
+    <p class="sec-deck" id="index-deck"></p>
+    <div class="dial-row">
+      <figure class="dial-plate">
+        <div class="plate-body" id="dial-plate"></div>
+        <figcaption><span>FIG_007 · Composite index dial</span><b>0–100 scale</b></figcaption>
+      </figure>
+      <div>
+        <table class="subscore-table" id="subscore-table"></table>
+        <p class="focus-line" id="focus-line"></p>
+        <div class="sources" id="sources"></div>
+      </div>
+    </div>
+  </section>
+
+  </section><!-- /overview -->
+
+  <!-- ══ PLAN ══════════════════════════════════════════════════════ -->
+  <section class="panel" data-panel="plan">
+  <section class="section first" id="sec-plan">
+    <div class="sec-head">
+      <span class="sec-no">03</span>
+      <span class="sec-title">Action plan</span>
+      <span class="sec-fig">Personalized / retestable</span>
+    </div>
+    <div class="rule-accent sec-rule"></div>
+    <p class="sec-deck" id="plan-deck"></p>
+    <div class="plan-coverage" id="plan-coverage" role="list" aria-label="Modalities feeding this plan"></div>
+    <div id="proc-list"></div>
+    <div id="plan-review"></div>
+    <div id="plan-next"></div>
+    <div class="sec-head" style="margin-top:48px;">
+      <span class="sec-no" style="font-size:20px;">§</span>
+      <span class="sec-title" style="font-size:22px;">Maintenance log</span>
+      <span class="sec-fig">No action required</span>
+    </div>
+    <div class="rule sec-rule"></div>
+    <div class="maint" id="maint"></div>
+  </section>
+  </section><!-- /plan -->
+
+  <!-- ══ GENETICS ══════════════════════════════════════════════════ -->
+  <section class="panel" data-panel="genetics">
+  <section class="section first" id="sec-gen">
+    <div class="sec-head">
+      <span class="sec-no">04</span>
+      <span class="sec-title">Genome register</span>
+      <span class="sec-fig">ClinVar / CPIC / PRS</span>
+    </div>
+    <div class="rule-accent sec-rule"></div>
+
+    <div class="gstats" id="genetic-stats"></div>
+    <div class="gcoverage" id="genomic-coverage"></div>
+
+    <h3 class="label" style="color:var(--accent); margin:36px 0 14px;">4.1 / Genome analysis summary</h3>
+    <table class="gtable" id="genome-analysis-table"></table>
+
+    <h3 class="label" style="color:var(--positive); margin:36px 0 14px;">4.2 / Innate strengths</h3>
+    <div class="strengths" id="strengths"></div>
+
+    <h3 class="label" style="color:var(--accent); margin:36px 0 14px;">4.3 / Polygenic risk &amp; trait scores</h3>
+    <table class="gtable" id="prs-table"></table>
+
+    <h3 class="label" style="color:var(--accent); margin:36px 0 14px;">4.4 / Hereditary &amp; medication findings</h3>
+    <table class="gtable" id="findings-table"></table>
+
+    <h3 class="label" style="color:var(--accent); margin:36px 0 14px;">4.5 / Aging hallmark pathways</h3>
+    <div class="hall" id="hall"></div>
+
+    <h3 class="label" style="color:var(--accent); margin:36px 0 14px;">4.6 / GWAS trait associations</h3>
+    <div id="gwas-traits"></div>
+  </section>
+  </section><!-- /genetics -->
+
+  <!-- ══ BIOMARKERS ════════════════════════════════════════════════ -->
+  <section class="panel" data-panel="biomarkers">
+  <section class="section first" id="sec-bio">
+    <div class="sec-head">
+      <span class="sec-no">05</span>
+      <span class="sec-title">Bloodwork register</span>
+      <span class="sec-fig" id="bio-figrange"></span>
+    </div>
+    <div class="rule-accent sec-rule"></div>
+    <div class="gstats bio-stats" id="bio-stats"></div>
+    <div class="notice" id="bio-notice"></div>
+    <div id="bio-register"></div>
+  </section>
+  </section><!-- /biomarkers -->
+
+  <!-- ══ BEHAVIORAL ════════════════════════════════════════════════ -->
+  <section class="panel" data-panel="behavioral">
+  <section class="section first" id="sec-wear">
+    <div class="sec-head">
+      <span class="sec-no">06</span>
+      <span class="sec-title">Behavioral register</span>
+      <span class="sec-fig">Supplementary · 30-day</span>
+    </div>
+    <div class="rule-accent sec-rule"></div>
+    <div class="gstats wear-stats" id="wear-stats"></div>
+    <p class="sec-deck" id="wear-deck"></p>
+    <div id="wear-register"></div>
+  </section>
+  </section><!-- /behavioral -->
+
+  <!-- COLOPHON -->
+  <footer class="colophon">
+    <div class="disclaimer-notice">
+      <div class="mk"></div>
+      <div>
+        <h4>Notice · not a medical device</h4>
+        <p>This is a wellness and lifestyle service, not a medical service. The biomarker analysis, healthspan score, genomic interpretation, and procedure recommendations are informational only. They do not constitute medical advice, diagnosis, treatment, or prescription. Always consult a qualified physician before changing medication, diet, supplementation, or training.</p>
+        <p>Local analysis: raw genetic files are processed on this machine unless you choose to move files elsewhere. Polygenic scores are directional and depend on available marker coverage.</p>
+        <p id="clinvar-disclosure">ClinVar findings are educational and require clinical confirmation before medical action. Variants of uncertain significance are not used as medical action triggers.</p>
+      </div>
+    </div>
+    <div class="colophon-foot">
+      <span id="colophon-left">Healthspan dossier · MMXXVI</span>
+      <span>Local-first · open source</span>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  const data = JSON.parse(document.getElementById("dashboard-data").textContent);
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+  const rarityLabel = (p) => p <= 5 ? "Rare" : p <= 15 ? "Uncommon" : p <= 35 ? "Notable" : "Common";
+  const oneInN = (p) => "1 in " + Math.max(2, Math.round(100 / Math.max(0.5, p)));
+  const statusWord = { optimal: "in target", watch: "monitor", attention: "act on this", needs_attention: "act on this", missing: "not measured" };
+  const quality = data.quality || {};
+  document.getElementById("clinvar-disclosure").textContent = [
+    quality.rsid_annotation_source ? `rsID source: ${quality.rsid_annotation_source}.` : "",
+    quality.rsid_annotation_note || "",
+    quality.clinvar_not_diagnostic || "ClinVar findings are educational and require clinical confirmation before medical action.",
+    quality.clinvar_vus_note || "Variants of uncertain significance are not used as medical action triggers."
+  ].filter(Boolean).join(" ");
+
+  // ── Masthead ──────────────────────────────────────────────────
+  document.getElementById("mh-meta").textContent = `HEALTHSPAN DOSSIER · ${data.member.lastUpdated}`;
+  document.getElementById("mh-deck").textContent =
+    "Genome, bloodwork, and daily signals, read together and turned into a short list of what to actually do. Start with the strengths you already have, then work the few numbers that move.";
+  const connectedSources = data.healthspan.connected || [];
+  const genomeSource = connectedSources.find((c) => /genome|wgs/i.test(c.name)) || connectedSources[0] || { count: '—' };
+  const bloodSource = connectedSources.find((c) => /blood|panel/i.test(c.name));
+  const behaviorSource = connectedSources.find((c) => /behavior|wearable/i.test(c.name));
+  const readRows = [
+    { label: 'Your genome', value: esc(genomeSource.count || '—'), muted: false },
+    bloodSource && bloodSource.connected
+      ? { label: 'Your blood work', value: esc(bloodSource.count), muted: false }
+      : { label: 'Your blood work', value: 'Not connected yet', muted: true },
+    behaviorSource && behaviorSource.connected
+      ? { label: 'Your daily signals', value: esc(behaviorSource.count), muted: false }
+      : { label: 'Your daily signals', value: 'Not connected yet', muted: true },
+    { label: 'Updated', value: esc(data.member.lastUpdated), muted: false },
+  ];
+  document.getElementById("mh-spec").innerHTML = readRows
+    .map((r) => `<dt>${r.label}</dt><dd${r.muted ? ' class="is-muted"' : ''}>${r.value}</dd>`)
+    .join("");
+  document.getElementById("helix-cap").textContent = `${data.healthspan.connected[0].count} read`;
+  document.getElementById("colophon-left").textContent = `Healthspan dossier · MMXXVI · For ${esc(data.member.initials)}`;
+
+  // ── Helix plate (FIG_001) ─────────────────────────────────────
+  // Helix parameters are deterministically seeded from the user's data
+  // (initials + GLI + variant count + biomarker count) so each person
+  // gets a recognizably-different "genomic fingerprint" — same data in,
+  // same helix out.
+  (function helix() {
+    const initials = (data.member && data.member.initials) || "XX";
+    const gli = Number(data.healthspan && data.healthspan.gli) || 50;
+    const variantStr = String((data.healthspan.connected && data.healthspan.connected[0] && data.healthspan.connected[0].count) || "0");
+    const variantNum = parseInt(variantStr.replace(/[^\d]/g, ""), 10) || 0;
+    const biomarkerNum = parseInt(String((data.biomarkerStats && data.biomarkerStats[1] && data.biomarkerStats[1].value) || 0), 10) || 0;
+    const seedStr = `${initials}:${gli}:${variantNum}:${biomarkerNum}`;
+    let hash = 2166136261;
+    for (let i = 0; i < seedStr.length; i++) {
+      hash = (hash ^ seedStr.charCodeAt(i)) >>> 0;
+      hash = (hash * 16777619) >>> 0;
+    }
+    let state = hash || 1;
+    const rand = () => {
+      state = (Math.imul(state, 16807) >>> 0) % 2147483647 || 1;
+      return state / 2147483647;
+    };
+
+    const W = 440, H = 240, midY = H / 2;
+    const amp = 56 + rand() * 16;                       // 56–72
+    const turns = 2.0 + rand() * 0.8;                   // 2.0–2.8
+    const N = 72 + Math.floor(rand() * 5) * 12;          // 72, 84, 96, 108, 120
+    const rungEvery = 4 + Math.floor(rand() * 4);        // 4–7
+    const accentStrandTop = rand() < 0.5;                // which strand carries the accent
+    const accentChance = 0.35 + rand() * 0.35;           // how many rungs are accent-colored
+    const x0 = 24, x1 = W - 24;
+    const xAt = (i) => x0 + (x1 - x0) * (i / N);
+    const phase = (i) => (i / N) * turns * Math.PI * 2;
+    const strandTop = accentStrandTop ? "var(--accent)" : "var(--ink)";
+    const strandBot = accentStrandTop ? "var(--ink)" : "var(--accent)";
+
+    let s1 = "", s2 = "";
+    for (let i = 0; i <= N; i++) {
+      const x = xAt(i).toFixed(1);
+      const y1 = (midY + amp * Math.sin(phase(i))).toFixed(1);
+      const y2 = (midY - amp * Math.sin(phase(i))).toFixed(1);
+      s1 += (i ? "L" : "M") + x + "," + y1 + " ";
+      s2 += (i ? "L" : "M") + x + "," + y2 + " ";
+    }
+    let rungs = "";
+    for (let i = 2; i < N; i += rungEvery) {
+      const x = xAt(i).toFixed(1);
+      const y1 = midY + amp * Math.sin(phase(i));
+      const y2 = midY - amp * Math.sin(phase(i));
+      const near = Math.abs(y1 - y2) < 30;
+      const isAccent = rand() < accentChance;
+      const rungColor = near ? "var(--line-2)" : (isAccent ? "var(--accent)" : "var(--ink-2)");
+      rungs += `<line x1="${x}" y1="${y1.toFixed(1)}" x2="${x}" y2="${y2.toFixed(1)}" stroke="${rungColor}" stroke-width="1.2"/>`;
+      rungs += `<circle cx="${x}" cy="${y1.toFixed(1)}" r="2.4" fill="${strandTop}"/><circle cx="${x}" cy="${y2.toFixed(1)}" r="2.4" fill="${strandBot}"/>`;
+    }
+    let ticks = "";
+    for (let t = x0; t <= x1; t += 26) {
+      ticks += `<line x1="${t}" y1="${H-14}" x2="${t}" y2="${H-8}" stroke="var(--muted)" stroke-width="1"/>`;
+    }
+    document.getElementById("helix-plate").innerHTML = `
+      <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Schematic DNA double helix, personalized to this report">
+        <line x1="${x0}" y1="${H-11}" x2="${x1}" y2="${H-11}" stroke="var(--muted)" stroke-width="1"/>
+        ${ticks}
+        <path d="${s1}" fill="none" stroke="${strandTop}" stroke-width="1.6"/>
+        <path d="${s2}" fill="none" stroke="${strandBot}" stroke-width="1.6"/>
+        ${rungs}
+        <text x="${x0}" y="18" font-family="var(--mono)" font-size="10" fill="var(--muted)" letter-spacing="1">5'</text>
+        <text x="${x1-14}" y="${H-20}" font-family="var(--mono)" font-size="10" fill="var(--muted)" letter-spacing="1">3'</text>
+      </svg>`;
+  })();
+
+  // ── Section 01 · specimens ────────────────────────────────────
+  (function edges() {
+    const s = data.signature;
+    document.getElementById("edges-deck").textContent = s.sub;
+    document.getElementById("edges-figrange").textContent = `FIG_002–00${1 + s.edges.length}`;
+    document.getElementById("specimens").innerHTML = s.edges.map((e, i) => {
+      const featured = i === 0;
+      const tierAccent = (e.tier || "").toLowerCase().includes("emerg");
+      const pips = e.carriedByPct <= 5 ? 4 : e.carriedByPct <= 15 ? 3 : e.carriedByPct <= 35 ? 2 : 1;
+      const meter = [0,1,2,3].map((n) => `<span class="${n < pips ? "on" : ""}"></span>`).join("");
+      const fig = "FIG_00" + (i + 2);
+      const core = `
+        <div class="specimen-figtag"><span>${fig}</span><span class="tier">[ ${esc((e.tier||"").toUpperCase())} ]</span></div>
+        <div class="specimen-rarity"><span class="big">${esc(oneInN(e.carriedByPct))}</span><span class="cap">people carry this · ${esc(rarityLabel(e.carriedByPct).toLowerCase())}</span></div>
+        <div class="specimen-meter">${meter}</div>
+        <div class="specimen-name">${esc(e.name)}</div>
+        <div class="specimen-gene">${esc(e.gene)} · ${esc(e.rsid)}</div>
+        <p class="specimen-benefit">${esc(e.benefit)}</p>`;
+      if (featured) {
+        return `<figure class="specimen featured">
+          <div class="specimen-plate">${chromoSVG()}</div>
+          <div>${core}</div>
+        </figure>`;
+      }
+      return `<figure class="specimen">${core}</figure>`;
+    }).join("");
+
+    const note = `Top variant "${s.edges[0].name}" (${s.edges[0].gene}) · only ${oneInN(s.edges[0].carriedByPct).toLowerCase()} people.`;
+    document.getElementById("share-note").textContent = note;
+    const btn = document.getElementById("share-btn");
+    btn.addEventListener("click", async () => {
+      const line = `My health dossier: ${s.edges.length} standout genes, including "${s.edges[0].name}" (${s.edges[0].gene}) that only ${oneInN(s.edges[0].carriedByPct).toLowerCase()} people carry.`;
+      try {
+        if (navigator.share) { await navigator.share({ title: "My health dossier", text: line }); return; }
+        await navigator.clipboard.writeText(line);
+      } catch (err) {}
+      const o = btn.textContent; btn.textContent = "Copied ✓";
+      setTimeout(() => { btn.textContent = o; }, 1700);
+    });
+  })();
+
+  // small chromosome / locus diagram for the featured specimen
+  function chromoSVG() {
+    let bands = "";
+    const ys = [22, 40, 58, 76, 100, 118, 136];
+    ys.forEach((y, i) => {
+      const h = i === 3 ? 10 : 8;
+      const fill = i === 3 ? "var(--positive)" : (i % 2 ? "var(--ink)" : "var(--line-2)");
+      bands += `<rect x="20" y="${y}" width="34" height="${h}" rx="2" fill="${fill}"/>`;
+    });
+    return `<svg viewBox="0 0 74 168" role="img" aria-label="Gene locus on chromosome, schematic">
+      <rect x="20" y="10" width="34" height="148" rx="17" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+      ${bands}
+      <line x1="54" y1="105" x2="70" y2="105" stroke="var(--positive)" stroke-width="1"/>
+      <circle cx="70" cy="105" r="2.4" fill="var(--positive)"/>
+      <text x="6" y="14" font-family="var(--mono)" font-size="8" fill="var(--muted)">p</text>
+      <text x="6" y="156" font-family="var(--mono)" font-size="8" fill="var(--muted)">q</text>
+    </svg>`;
+  }
+
+  // ── Section 02 · index dial ───────────────────────────────────
+  (function dial() {
+    const h = data.healthspan;
+    document.getElementById("index-deck").textContent =
+      "A single composite, the Genomic Longevity Index, built from three independently scored modalities. Read it as a starting altitude, not a verdict.";
+    // gauge
+    const cx = 130, cy = 138, r = 104;
+    const ang = (v) => Math.PI - (v / 100) * Math.PI;     // 0→180°, 100→0°
+    const pt = (v, rr) => [cx + rr * Math.cos(ang(v)), cy - rr * Math.sin(ang(v))];
+    const arc = (v0, v1, rr) => { const [x0,y0]=pt(v0,rr),[x1,y1]=pt(v1,rr); return `M${x0.toFixed(1)},${y0.toFixed(1)} A${rr},${rr} 0 0 1 ${x1.toFixed(1)},${y1.toFixed(1)}`; };
+    let ticks = "";
+    for (let v = 0; v <= 100; v += 10) {
+      const major = v % 20 === 0;
+      const [xo,yo] = pt(v, r + 2), [xi,yi] = pt(v, r - (major ? 14 : 8));
+      ticks += `<line x1="${xo.toFixed(1)}" y1="${yo.toFixed(1)}" x2="${xi.toFixed(1)}" y2="${yi.toFixed(1)}" stroke="${major ? "var(--ink)" : "var(--muted)"}" stroke-width="1"/>`;
+      if (major) { const [lx,ly] = pt(v, r - 26); ticks += `<text x="${lx.toFixed(1)}" y="${(ly+4).toFixed(1)}" text-anchor="middle" font-family="var(--mono)" font-size="9" fill="var(--muted)">${v}</text>`; }
+    }
+    const [nx, ny] = pt(h.gli, r - 18);
+    document.getElementById("dial-plate").innerHTML = `
+      <svg viewBox="0 0 260 168" role="img" aria-label="Healthspan index ${h.gli} of 100">
+        <path d="${arc(0,100,r)}" fill="none" stroke="var(--line-2)" stroke-width="2"/>
+        <path d="${arc(0,h.gli,r)}" fill="none" stroke="var(--accent)" stroke-width="3"/>
+        ${ticks}
+        <line x1="${cx}" y1="${cy}" x2="${nx.toFixed(1)}" y2="${ny.toFixed(1)}" stroke="var(--accent)" stroke-width="1.6"/>
+        <circle cx="${cx}" cy="${cy}" r="4" fill="var(--ink)"/>
+        <line x1="${cx-7}" y1="${cy}" x2="${cx+7}" y2="${cy}" stroke="var(--paper)" stroke-width="1"/>
+        <line x1="${cx}" y1="${cy-7}" x2="${cx}" y2="${cy+7}" stroke="var(--paper)" stroke-width="1"/>
+        <text x="${cx}" y="${cy-22}" text-anchor="middle" font-family="var(--disp)" font-weight="700" font-size="46" fill="var(--ink)">${h.gli}</text>
+        <text x="${cx}" y="${cy+16}" text-anchor="middle" font-family="var(--mono)" font-size="9" letter-spacing="2" fill="var(--muted)">GLI INDEX</text>
+      </svg>`;
+
+    document.getElementById("subscore-table").innerHTML = `
+      <thead><tr><th>Modality</th><th>Reading</th><th class="r">Score / 100</th></tr></thead>
+      <tbody>${h.subscores.map((s) => `
+        <tr>
+          <td>${esc(s.label)}</td>
+          <td><span class="subscore-bar"><div style="width:${s.value}%"></div></span></td>
+          <td class="r metric">${esc(s.value)}</td>
+        </tr>`).join("")}
+      </tbody>`;
+    document.getElementById("focus-line").innerHTML = `Focus areas · <b>${h.focusAreas.map(esc).join(" · ")}</b>`;
+    document.getElementById("sources").innerHTML = h.connected.map((c) => `
+      <div class="source"><span class="box ${c.connected ? "" : "off"}"></span><span class="nm">${esc(c.name)}</span><span class="ct">${esc(c.count)}</span></div>`).join("");
+  })();
+
+  // ── Section 02b · strengths pillars ───────────────────────────
+  (function pillars() {
+    const ringSVG = (score) => {
+      const r = 42, C = 2 * Math.PI * r, dash = C * Math.min(1, Math.max(0, score / 100));
+      return `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="${r}" fill="none" stroke="var(--line-2)" stroke-width="9"/><circle cx="50" cy="50" r="${r}" fill="none" stroke="var(--positive)" stroke-width="9" stroke-linecap="butt" stroke-dasharray="${dash} ${C - dash}"/></svg>`;
+    };
+    document.getElementById("pillars").innerHTML = data.identity.pillars.map((p) => {
+      const supports = p.supports.map((s) => `<div class="pillar-sup"><span class="l">${esc(s.lbl)}</span><span class="v">${esc(s.val)}</span></div>`).join("");
+      return `
+        <article class="pillar${p.secondary ? " secondary" : ""}">
+          <div class="pillar-top">
+            <div class="pillar-ring">${ringSVG(p.score)}<span class="pillar-ring-n">${esc(p.score)}</span></div>
+            <div><div class="pillar-mod">${esc(p.modality)}</div>${p.secondary ? `<div class="pillar-tag">Supplementary</div>` : ""}</div>
+          </div>
+          <p class="pillar-primary">${esc(p.primary)}</p>
+          <div class="pillar-supports">${supports}</div>
+        </article>`;
+    }).join("");
+  })();
+
+  // ── Section 03 · procedure ────────────────────────────────────
+  (function plan() {
+    const p = data.plan;
+    document.getElementById("plan-deck").textContent = p.intro;
+
+    // Coverage strip — shows which modalities supplied evidence for this plan.
+    const coverageEl = document.getElementById("plan-coverage");
+    if (coverageEl) {
+      coverageEl.innerHTML = (p.coverage || []).map((c) => {
+        const stateClass = c.status === "connected" ? "connected" : "absent";
+        const stateLabel = c.status === "connected"
+          ? `${c.signalCount} signal${c.signalCount === 1 ? "" : "s"}`
+          : "Not provided";
+        return `<div class="plan-cov ${stateClass}" role="listitem">
+          <span class="plan-cov-tick" aria-hidden="true">${c.status === "connected" ? "●" : "○"}</span>
+          <span class="plan-cov-label">${esc(c.label)}</span>
+          <span class="plan-cov-state">${esc(stateLabel)}</span>
+        </div>`;
+      }).join("");
+    }
+
+    const safetyToneClass = (tier) => {
+      if (tier === "medication_safety") return "safety-med";
+      if (tier === "prompt_review") return "safety-prompt";
+      if (tier === "routine_review") return "safety-routine";
+      return "safety-self";
+    };
+    const modalityChip = (m) => {
+      const label = m === "genetics" ? "Genetics" : m === "biomarkers" ? "Blood" : "Wearable";
+      return `<span class="proc-mod-chip ${esc(m)}">${esc(label)}</span>`;
+    };
+
+    const priorityList = document.getElementById("proc-list");
+    if ((p.priorities || []).length === 0) {
+      priorityList.innerHTML = `
+        <article class="proc proc-empty" role="status" aria-live="polite">
+          <div class="proc-no">PROC.<b>--</b></div>
+          <div>
+            <h3 class="proc-title">No qualified priorities right now.</h3>
+            <p class="proc-why">${esc(p.summary || "Connect additional modalities or wait for fresh measurements to qualify a personalized action.")}</p>
+          </div>
+        </article>`;
+    } else {
+      priorityList.innerHTML = p.priorities.map((it, i) => {
+        const ev = (it.evidence || []).map((e) => {
+          const sev = e.sev === "bad" ? "bad" : e.sev === "warn" ? "warn" : e.sev === "good" ? "good" : "";
+          return `<span class="ev"><span class="k">${esc(e.k)}</span><span class="v ${sev}">${esc(e.v)}</span></span>`;
+        }).join("");
+        const steps = (it.steps || []).map((s) => `<li class="proc-step"><span class="sq"></span><span>${esc(s)}</span></li>`).join("");
+        const hz = (it.horizon||"").toLowerCase().includes("now") ? "now" : "next";
+        const im = (it.impact||"").toLowerCase().includes("high") ? "high" : "medium";
+        const modChips = (it.sourceModalities || []).map(modalityChip).join("");
+        const safetyTone = safetyToneClass(it.safety?.tier);
+        const safetyBadge = it.safety
+          ? `<span class="proc-safety ${safetyTone}" aria-label="Safety tier: ${esc(it.safety.tier_label)}">${esc(it.safety.tier_label)}</span>`
+          : "";
+        const safetyMessage = it.safety?.message
+          ? `<p class="proc-safety-msg">${esc(it.safety.message)}</p>`
+          : "";
+        const rationale = it.rankingExplanation
+          ? `<p class="proc-rationale"><span class="proc-rationale-label">Why ranked here</span> ${esc(it.rankingExplanation)}</p>`
+          : "";
+        return `
+          <article class="proc${i === 0 ? " featured" : ""}" data-safety="${esc(it.safety?.tier || "self_directed")}">
+            <div class="proc-no">PROC.<b>${esc(it.rank)}</b></div>
+            <div>
+              <div class="proc-tags">
+                <span class="tag ${hz}">${esc(it.horizon)}</span>
+                <span class="tag ${im}">${esc(it.impact)}</span>
+                ${safetyBadge}
+                ${modChips}
+              </div>
+              <h3 class="proc-title">${esc(it.title)}</h3>
+              <p class="proc-why">${esc(it.why)}</p>
+              ${ev ? `<div class="proc-ev">${ev}</div>` : ""}
+              <ol class="proc-steps">${steps}</ol>
+              <div class="proc-spec">
+                <div class="proc-spec-i"><span class="proc-spec-l">Expected change</span><span class="proc-spec-v">${esc(it.result)}</span></div>
+                <div class="proc-spec-i"><span class="proc-spec-l">Recheck</span><span class="proc-spec-v">${esc(it.retest)}</span></div>
+              </div>
+              ${rationale}
+              ${safetyMessage}
+            </div>
+          </article>`;
+      }).join("");
+    }
+
+    // Review items — conflicts, missing context, temporal mismatch.
+    const reviewEl = document.getElementById("plan-review");
+    if (reviewEl) {
+      const items = p.reviewItems || [];
+      if (items.length === 0) {
+        reviewEl.innerHTML = "";
+      } else {
+        reviewEl.innerHTML = `
+          <h3 class="plan-section-title">Needs review</h3>
+          <ul class="plan-review-list" role="list">
+            ${items.map((r) => `
+              <li class="plan-review-item plan-review-${esc(r.reason)}" role="listitem">
+                <div class="plan-review-title">${esc(r.title)}</div>
+                <div class="plan-review-body">${esc(r.explanation)}</div>
+                ${(r.neededContext && r.neededContext.length) ? `<div class="plan-review-meta">Missing: ${r.neededContext.map(esc).join(", ")}</div>` : ""}
+              </li>`).join("")}
+          </ul>`;
+      }
+    }
+
+    // Maintenance — always renders, even when empty (template provides surrounding structure).
+    document.getElementById("maint").innerHTML = (p.maintain || []).map((m) => {
+      const mods = (m.sourceModalities || []).map(modalityChip).join("");
+      return `<div class="maint-row"><span class="maint-check" aria-hidden="true">✓</span><div><div class="maint-title">${esc(m.title)} ${mods}</div><div class="maint-note">${esc(m.note)}</div></div></div>`;
+    }).join("") || `<div class="maint-row"><span class="maint-check" aria-hidden="true">·</span><div><div class="maint-title">No maintenance items yet.</div><div class="maint-note">Maintenance surfaces when at least one supplied signal is in its target range.</div></div></div>`;
+
+    // Optional next-context prompt.
+    const nextEl = document.getElementById("plan-next");
+    if (nextEl) {
+      const next = p.nextContext;
+      if (next) {
+        const unlocks = (next.unlocks || []).map((u) => `<li>${esc(u)}</li>`).join("");
+        nextEl.innerHTML = `
+          <aside class="plan-next" role="note">
+            <span class="plan-next-eyebrow">Optional · Improve the picture</span>
+            <p class="plan-next-body">${esc(next.why)}</p>
+            ${unlocks ? `<ul class="plan-next-unlocks" role="list">${unlocks}</ul>` : ""}
+          </aside>`;
+      } else {
+        nextEl.innerHTML = "";
+      }
+    }
+  })();
+
+  // ── Section 04 · bloodwork register ───────────────────────────
+  (function bio() {
+    const pr = data.biomarkerPriority;
+    document.getElementById("bio-figrange").textContent = `${data.biomarkerStats?.[1]?.value || 0} entries`;
+    document.getElementById("bio-stats").innerHTML = (data.biomarkerStats || []).map((s) => `
+      <div class="gstat"><div class="gstat-v">${esc(s.value)}</div><div class="gstat-l">${esc(s.label)}</div></div>`).join("");
+    document.getElementById("bio-notice").innerHTML = `
+      <div class="notice-l">
+        <span class="label">Notice · priority signals</span>
+        <div class="notice-title">${esc(pr.title)}</div>
+        <div class="notice-body">${esc(pr.body)}</div>
+      </div>
+      <div class="notice-figs">${pr.markers.map((m) => `<div class="notice-fig"><div class="v">${esc(m.value)}</div><div class="l">${esc(m.name)}</div></div>`).join("")}</div>`;
+
+    document.getElementById("bio-register").innerHTML = data.biomarkerCategories.length ? data.biomarkerCategories.map((c) => {
+      const rows = c.markers.map((m) => `
+        <details class="reg-item">
+          <summary class="reg-row">
+            <div class="reg-marker">${esc(m.name)}${m.tech ? ` <span class="tech">${esc(m.tech)}</span>` : ""}</div>
+            <div class="reg-val">${esc(m.value)}</div>
+            <div class="reg-stat ${esc(m.status)}"><span class="tick-box ${esc(m.status)}"></span>${esc(m.statusLabel || statusWord[m.status] || m.status)}</div>
+            <span class="reg-chev">+</span>
+          </summary>
+          <div class="reg-note">
+            <div class="reg-note-meta">
+              ${m.priorityRank ? `<span class="priority">Priority ${esc(m.priorityRank)}</span>` : ""}
+              ${m.targetLabel ? `<span>Target ${esc(m.targetLabel)}</span>` : ""}
+              ${m.trendLabel ? `<span class="trend">${esc(m.trendLabel)}</span>` : ""}
+            </div>
+            <p>${esc(m.info)}</p>
+          </div>
+        </details>`).join("");
+      return `
+        <section class="reg">
+          <div class="reg-head"><span class="reg-glyph">§</span><span class="reg-name">${esc(c.title)}</span><span class="reg-score ${esc(c.scoreStatus)}">${esc(c.score)} / 100 · ${esc(c.scoreStatus)}</span></div>
+          <p class="reg-sum">${esc(c.summary)}</p>
+          <div class="reg-rows">${rows}</div>
+        </section>`;
+    }).join("") : `<p class="reg-sum">Connect a blood panel to see scored markers, target ranges, and retestable priorities.</p>`;
+  })();
+
+  // ── Section 04 · genome register ──────────────────────────────
+  (function gen() {
+    document.getElementById("genetic-stats").innerHTML = data.geneticStats.map((s) => `
+      <div class="gstat"><div class="gstat-v">${esc(s.value)}</div><div class="gstat-l">${esc(s.label)}</div></div>`).join("");
+
+    const coverage = data.genomicCoverage || {};
+    const fmtCount = (value) => {
+      const n = Number(value || 0);
+      if (n >= 1000000) return `${(n / 1000000).toFixed(2)}M`;
+      if (n >= 1000) return `${Math.round(n / 1000)}K`;
+      return String(n);
+    };
+    const totalVariants = (coverage.classes || []).reduce((sum, c) => sum + (Number(c.count) || 0), 0);
+    const totalVariantsFmt = totalVariants > 0 ? fmtCount(totalVariants) : null;
+    const interpretedCount = data.healthspan?.connected?.[0]?.count || (totalVariantsFmt ? `${totalVariantsFmt} variants` : "your full genome");
+    document.getElementById("genomic-coverage").innerHTML = `
+      <p class="gcoverage-intro">We read ${esc(interpretedCount)} across your full genome. Only the variants with strong enough evidence drive the recommendations in your Plan — the rest are kept for context. Open the breakdown below for the technical detail.</p>
+      <details class="gcoverage-disclosure">
+        <summary>How we read your genome</summary>
+        <div class="gcoverage-head">
+          <div class="gcoverage-title">${esc(coverage.headline || "Whole-genome coverage summary")}</div>
+          <div class="gcoverage-body">${esc(coverage.body || "The report separates variants examined from findings with enough evidence to explain clearly.")}</div>
+        </div>
+        <div class="gcoverage-list">${(coverage.interpreted || []).map((item) => `<span>${esc(item)}</span>`).join("")}</div>
+        <div class="gcoverage-classes">${(coverage.classes || []).map((item) => `
+          <article class="gclass">
+            <div class="gclass-count">${esc(fmtCount(item.count))}</div>
+            <div class="gclass-name">${esc(item.label)}</div>
+            <div class="gclass-status">${esc(item.status)}</div>
+            <p class="gclass-meaning">${esc(item.meaning)}</p>
+          </article>`).join("")}</div>
+      </details>`;
+
+    const analysisRows = coverage.classes || [];
+    document.getElementById("genome-analysis-table").innerHTML = `
+      <thead><tr><th>Variant class</th><th>Records read</th><th class="desc-cell">How this is used</th><th class="r">Status</th></tr></thead>
+      <tbody>${analysisRows.map((v) => `
+        <tr>
+          <td class="lead">${esc(v.label)}</td>
+          <td><span class="lead">${esc(fmtCount(v.count))}</span></td>
+          <td class="desc desc-cell">${esc(v.meaning)}</td>
+          <td class="r"><span class="gtag average">${esc(v.status)}</span></td>
+        </tr>`).join("")}
+      </tbody>`;
+
+    document.getElementById("strengths").innerHTML = data.strengths.map((s) => `
+      <article class="strength">
+        <div class="strength-top"><span class="strength-gene">${esc(s.gene)} · ${esc(s.rsid)}</span><span class="strength-score">${esc(s.score)}</span></div>
+        <div class="strength-title">${esc(s.title)}</div>
+        <p class="strength-body">${esc(s.body)}</p>
+        <div class="strength-tags">${s.tags.map((t) => `<span class="strength-tag">${esc(t)}</span>`).join("")}</div>
+      </article>`).join("");
+
+    document.getElementById("prs-table").innerHTML = `
+      <thead><tr><th>Trait</th><th class="desc-cell">Reading</th><th class="r">Percentile</th></tr></thead>
+      <tbody>${data.polygenic.map((p) => `
+        <tr>
+          <td class="lead">${esc(p.name)}</td>
+          <td class="desc desc-cell">${esc(p.desc)}</td>
+          <td class="r"><span class="pbar-wrap"><span class="pbar"><div class="${esc(p.band)}" style="width:${Math.max(6, Math.min(100, p.pct))}%"></div></span><span class="ppct">${esc(p.pct)}th</span></span></td>
+        </tr>`).join("")}
+      </tbody>`;
+
+    const findings = [].concat(
+      data.hereditary.map((h) => ({ ...h, kind: "Hereditary" })),
+      data.drugGene.map((d) => ({ ...d, kind: "Medication" }))
+    );
+    document.getElementById("findings-table").innerHTML = `
+      <thead><tr><th>Gene</th><th>Finding</th><th class="r">Class</th></tr></thead>
+      <tbody>${findings.map((f) => `
+        <tr>
+          <td class="gene">${esc(f.gene)}<span class="rsid">${esc(f.rsid)}</span></td>
+          <td><span class="lead" style="display:block;margin-bottom:3px;">${esc(f.name)}: ${esc(f.lead)}</span><span class="desc">${esc(f.desc)}</span></td>
+          <td class="r"><span class="gtag accent">${esc(f.tag)}</span>${f.confidence ? `<span class="rsid">${esc(f.confidence)}</span>` : ""}</td>
+        </tr>`).join("")}
+      </tbody>`;
+
+    document.getElementById("hall").innerHTML = data.hallmarks.map((h) => `
+      <div class="hall-cell">
+        <div class="hall-top"><span class="hall-name">${esc(h.name)}</span><span class="hall-ct">${esc(h.count)} ${h.count === 1 ? "gene" : "genes"}</span></div>
+        <div class="hall-bar"><div style="width:${esc(h.burden)}%"></div></div>
+        <div class="hall-genes">${h.genes.map(esc).join(" · ")}</div>
+        <div class="hall-action">${esc(h.action)}</div>
+      </div>`).join("");
+  })();
+
+  // ── Section 4.6 · GWAS trait associations ─────────────────────
+  (function gwas() {
+    const el = document.getElementById("gwas-traits");
+    if (!el) return;
+    const g = data.gwasTraits;
+    if (!g || !g.referencePresent) {
+      el.innerHTML = `<p class="sec-deck" style="color:var(--muted);font-size:13px;">Trait associations from published GWAS studies are still being prepared for this report. They will appear here once your genome has been scanned against the catalog.</p>`;
+      return;
+    }
+    const NET_LABELS = {
+      favorable: { label: "Favorable", cls: "optimal" },
+      slightly_favorable: { label: "Slightly favorable", cls: "optimal" },
+      typical: { label: "Typical", cls: "neutral" },
+      slightly_elevated: { label: "Slightly elevated", cls: "watch" },
+      elevated: { label: "Elevated", cls: "needs_attention" },
+    };
+    const DIR_ARROW = { risk: "▲", protective: "▼", neutral: "─", unknown: "·" };
+    const DIR_CLS   = { risk: "needs_attention", protective: "optimal", neutral: "neutral", unknown: "neutral" };
+
+    el.innerHTML = `
+      <p class="sec-deck" style="margin-bottom:24px;">
+        ${esc(g.totalHits.toLocaleString())} genome-wide significant associations found across ${esc(g.domains.length)} domains
+        (${esc(g.totalRsidsScanned.toLocaleString())} rsIDs scanned · p &lt; 5×10⁻⁸).
+        Source: ${esc(g.sourceName || "GWAS Catalog")}${g.sourceRelease ? ` · ${esc(g.sourceRelease)}` : ""}${g.genomeBuild ? ` · ${esc(g.genomeBuild)}` : ""}.
+        Each variant shown here cleared the genome-wide significance bar in published GWAS studies.
+        ${esc(g.ancestryDisclosure || "GWAS effects depend on discovery cohort ancestry and should be treated as directional context when ancestry is unknown or mismatched.")}
+      </p>
+      ${g.domains.map(domain => {
+        const net = NET_LABELS[domain.netSignal] || { label: domain.netSignal, cls: "neutral" };
+        const rows = domain.topHits.slice(0, 5).map(h => `
+          <div class="reg-row compact">
+            <div class="reg-marker" style="flex:2.5">
+              <span style="font-family:var(--mono);font-size:10.5px;color:var(--accent);margin-right:6px;">${esc(h.rsid)}</span>
+              <span style="font-weight:600;">${esc(h.gene)}</span>
+              <span style="color:var(--muted);font-size:12px;margin-left:4px;">${esc(h.trait)}</span>
+            </div>
+            <div class="reg-val" style="font-family:var(--mono);font-size:11px;">${h.or !== null ? 'OR ' + h.or.toFixed(2) : 'BETA'}</div>
+            <div class="reg-stat ${esc(DIR_CLS[h.effectDirection] || 'neutral')}">
+              <span style="margin-right:4px;">${DIR_ARROW[h.effectDirection] || '·'}</span>${esc(h.effectDirection)}
+              <span style="display:block;font-size:10px;color:var(--muted);">${esc(h.confidenceTier || "gwas_association")}</span>
+            </div>
+          </div>`).join("");
+        const moreCount = domain.hitCount - 5;
+        return `
+          <section class="reg" style="margin-bottom:24px;">
+            <div class="reg-head">
+              <span class="reg-glyph">§</span>
+              <span class="reg-name">${esc(domain.label)}</span>
+              <span class="reg-score ${esc(net.cls)}">${esc(domain.hitCount)} variants · ${esc(net.label)}</span>
+            </div>
+            <div class="reg-rows">${rows}</div>
+            ${moreCount > 0 ? `<p style="font-family:var(--mono);font-size:11px;color:var(--muted);padding:8px 0 0 0;">+ ${moreCount} more associations in this domain</p>` : ''}
+          </section>`;
+      }).join("")}`;
+  })();
+
+  // ── Section 06 · behavioral register ─────────────────────────
+  (function wear() {
+    document.getElementById("wear-deck").textContent =
+      "Day-to-day behavioral signals scored against evidence-based ranges. Each metric shows its status and what it means for your health trajectory. Trends over 4–8 weeks matter more than any single reading.";
+    document.getElementById("wear-stats").innerHTML = (data.wearableStats || []).map((s) => `
+      <div class="gstat"><div class="gstat-v">${esc(s.value)}</div><div class="gstat-l">${esc(s.label)}</div></div>`).join("");
+    document.getElementById("wear-register").innerHTML = data.wearableDomains.length ? data.wearableDomains.map((c) => {
+      const rows = c.markers.map((m) => `
+        <details class="reg-item">
+          <summary class="reg-row">
+            <div class="reg-marker">${esc(m.name)}${m.tech ? ` <span class="tech">${esc(m.tech)}</span>` : ""}</div>
+            <div class="reg-val">${esc(m.value)}</div>
+            <div class="reg-stat ${esc(m.status)}"><span class="tick-box ${esc(m.status)}"></span>${esc(m.statusLabel || statusWord[m.status] || m.status)}</div>
+            <span class="reg-chev">+</span>
+          </summary>
+          <div class="reg-note">
+            <div class="reg-note-meta">
+              ${m.priorityRank ? `<span class="priority">Priority ${esc(m.priorityRank)}</span>` : ""}
+              ${m.targetLabel ? `<span>Target ${esc(m.targetLabel)}</span>` : ""}
+            </div>
+            <p>${esc(m.interpretation)}</p>
+            ${m.action ? `<p>${esc(m.action)}</p>` : ""}
+          </div>
+        </details>`).join("");
+      return `
+        <section class="reg">
+          <div class="reg-head"><span class="reg-glyph">§</span><span class="reg-name">${esc(c.title)}</span><span class="reg-score ${esc(c.scoreStatus)}">${esc(c.score)} / 100 · ${esc(c.scoreStatus)}</span></div>
+          <p class="reg-sum">${esc(c.summary)}</p>
+          <div class="reg-rows">${rows}</div>
+        </section>`;
+    }).join("") : `<p class="reg-sum">Connect wearable or behavioral exports to see scored habits, target ranges, and behavior priorities.</p>`;
+  })();
+
+  // ── Tabs ──────────────────────────────────────────────────────
+  (function tabs() {
+    const valid = ["overview", "plan", "genetics", "biomarkers", "behavioral"];
+    function show(name) {
+      if (!valid.includes(name)) name = "overview";
+      document.querySelectorAll(".panel").forEach((p) => p.classList.toggle("is-active", p.dataset.panel === name));
+      document.querySelectorAll("#tabnav a").forEach((a) => a.classList.toggle("active", a.dataset.tab === name));
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+    document.querySelectorAll("#tabnav a").forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault();
+      show(a.dataset.tab);
+      history.replaceState(null, "", "#" + a.dataset.tab);
+    }));
+    show((location.hash || "#overview").slice(1));
+  })();
+</script>
+
+</body>
+</html>

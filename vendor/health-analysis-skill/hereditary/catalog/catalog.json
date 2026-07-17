@@ -1,0 +1,1022 @@
+[
+  {
+    "id": 129,
+    "name": "Beta Thalassemia",
+    "url_slug": "results/monogenic-diseases/beta-thalassemia"
+  },
+  {
+    "id": 130,
+    "name": "Glucose-6-phosphate dehydrogenase deficiency (G6PD deficiency)",
+    "url_slug": "results/monogenic-diseases/glucose-6-phosphate-dehydrogenase-deficiency-g6pd"
+  },
+  {
+    "id": 131,
+    "name": "Alpha-1 Antitrypsin Deficiency",
+    "url_slug": "results/monogenic-diseases/alpha-1-antitrypsin-deficiency"
+  },
+  {
+    "id": 132,
+    "name": "Autosomal recessive limb-girdle muscular dystrophy",
+    "url_slug": "results/monogenic-diseases/limb-girdle-muscular-dystrophy"
+  },
+  {
+    "id": 133,
+    "name": "Canavan Disease",
+    "url_slug": "results/monogenic-diseases/canavan-disease"
+  },
+  {
+    "id": 135,
+    "name": "Salla Disease",
+    "url_slug": "results/monogenic-diseases/salla-disease"
+  },
+  {
+    "id": 136,
+    "name": "Cystic fibrosis",
+    "url_slug": "results/monogenic-diseases/cystic-fibrosis"
+  },
+  {
+    "id": 137,
+    "name": "Familial Mediterranean fever",
+    "url_slug": "results/monogenic-diseases/familial-mediterranean-fever"
+  },
+  {
+    "id": 138,
+    "name": "Glycogen storage disease type 1A (Von Gierke Disease)",
+    "url_slug": "results/monogenic-diseases/glycogen-type-1a-von-gierke-disease"
+  },
+  {
+    "id": 139,
+    "name": "Glycogenosis type 2 or Pompe disease",
+    "url_slug": "results/monogenic-diseases/glycogenosis-type-2-pompe-disease"
+  },
+  {
+    "id": 140,
+    "name": "Hereditary hemochromatosis type 1 (HFE gene)",
+    "url_slug": "results/monogenic-diseases/hereditary-hemochromatosis-associated-hfe"
+  },
+  {
+    "id": 141,
+    "name": "Familial Hypercholesterolemia ",
+    "url_slug": "results/monogenic-diseases/familial-hypercholesterolemia"
+  },
+  {
+    "id": 142,
+    "name": "Malignant Hyperthermia",
+    "url_slug": "results/monogenic-diseases/malignant-hyperthermia"
+  },
+  {
+    "id": 144,
+    "name": "Classical homocystinuria due to CBS deficiency",
+    "url_slug": "results/monogenic-diseases/classical-homocystinuria-cbs-deficiency"
+  },
+  {
+    "id": 145,
+    "name": "Hereditary fructose intolerance",
+    "url_slug": "results/monogenic-diseases/hereditary-fructose-intolerance"
+  },
+  {
+    "id": 146,
+    "name": "Familial Hypertrophic Cardiomyopathy (HCM)",
+    "url_slug": "results/monogenic-diseases/familial-hypertrophic-cardiomyopathy"
+  },
+  {
+    "id": 147,
+    "name": "Mucolipidosis type IV (MCOLN1 gene)",
+    "url_slug": "results/monogenic-diseases/mucolipidosis-type-iv"
+  },
+  {
+    "id": 148,
+    "name": "Hypokalemic Periodic Paralysis",
+    "url_slug": "results/monogenic-diseases/hypokalemic-periodic-paralysis"
+  },
+  {
+    "id": 149,
+    "name": "Acute intermittent porphyria (HMBS gene)",
+    "url_slug": "results/monogenic-diseases/acute-intermittent-porphyria"
+  },
+  {
+    "id": 150,
+    "name": "Ehlers-Danlos Syndrome (EDS)",
+    "url_slug": "results/monogenic-diseases/ehlers-danlos-syndrome"
+  },
+  {
+    "id": 151,
+    "name": "Familial advanced sleep phase syndrome  (FASPS)",
+    "url_slug": "results/monogenic-diseases/familial-advanced-sleep-phase-disorder-fasps"
+  },
+  {
+    "id": 152,
+    "name": "Li-Fraumeni Syndrome",
+    "url_slug": "results/monogenic-diseases/li-fraumeni-syndrome"
+  },
+  {
+    "id": 261,
+    "name": "Agenesis of the Corpus Callosum with Peripheral Neuropathy (ACCPN)",
+    "url_slug": "results/monogenic-diseases/agenesis-corpus-callosum-peripheral-neuropathy-accpn"
+  },
+  {
+    "id": 262,
+    "name": "Alpha-mannosidosis",
+    "url_slug": "results/monogenic-diseases/alpha-mannosidosis"
+  },
+  {
+    "id": 264,
+    "name": "Cystinosis",
+    "url_slug": "results/monogenic-diseases/cystinosis"
+  },
+  {
+    "id": 265,
+    "name": "Rhizomelic Chondrodysplasia Punctata Type 1",
+    "url_slug": "results/monogenic-diseases/rhizomelic-chondrodysplasia-punctata-type-1"
+  },
+  {
+    "id": 266,
+    "name": "Medium-chain acyl-CoA dehydrogenase deficiency (MCADD)",
+    "url_slug": "results/monogenic-diseases/medium-chain-acyl-coa-dehydrogenase-deficiency-mcadd"
+  },
+  {
+    "id": 267,
+    "name": "Short chain acyl-CoA dehydrogenase deficiency (SCADD)",
+    "url_slug": "results/monogenic-diseases/short-chain-acyl-coa-dehydrogenase-deficiency-scadd"
+  },
+  {
+    "id": 268,
+    "name": "Fanconi anemia (FANCC gene)",
+    "url_slug": "results/monogenic-diseases/fanconi-anemia-fancc-related"
+  },
+  {
+    "id": 269,
+    "name": "ARSACS (Autosomal recessive spastic ataxia of Charlevoix-Saguenay)",
+    "url_slug": "results/monogenic-diseases/arsacs-autosomal-recessive-spastic-ataxia-charlevoix-saguenay"
+  },
+  {
+    "id": 270,
+    "name": "Biotinidase deficiency",
+    "url_slug": "results/monogenic-diseases/biotinidase-deficiency"
+  },
+  {
+    "id": 271,
+    "name": "Dihydrolipoamide Dehydrogenase Deficiency",
+    "url_slug": "results/monogenic-diseases/dihydrolipoamide-dehydrogenase-deficiency"
+  },
+  {
+    "id": 272,
+    "name": "D-Bifunctional Protein Deficiency",
+    "url_slug": "results/monogenic-diseases/d-bifunctional-protein-deficiency"
+  },
+  {
+    "id": 273,
+    "name": "Methylmalonic aciduria due to methylmalonyl-CoA mutase deficiency",
+    "url_slug": "results/monogenic-diseases/methylmalonic-aciduria-methylmalonyl-coa-mutase-deficiency"
+  },
+  {
+    "id": 274,
+    "name": "Familial dysautonomia (Riley-Day syndrome)",
+    "url_slug": "results/monogenic-diseases/familial-dysautonomia-riley-day-syndrome"
+  },
+  {
+    "id": 275,
+    "name": "Diastrophic dysplasia",
+    "url_slug": "results/monogenic-diseases/diastrophic-dysplasia"
+  },
+  {
+    "id": 276,
+    "name": "Leukoencephalopathy with vanishing white matter",
+    "url_slug": "results/monogenic-diseases/leukoencephalopathy-vanishing-white-matter"
+  },
+  {
+    "id": 277,
+    "name": "Gaucher disease",
+    "url_slug": "results/monogenic-diseases/gaucher-disease"
+  },
+  {
+    "id": 285,
+    "name": "Niemann-Pick disease type A and B",
+    "url_slug": "results/monogenic-diseases/niemann-pick-disease-type-a"
+  },
+  {
+    "id": 286,
+    "name": "Maple syrup urine disease type 1B",
+    "url_slug": "results/monogenic-diseases/maple-syrup-urine-disease-type-1b"
+  },
+  {
+    "id": 287,
+    "name": "Refsum disease",
+    "url_slug": "results/monogenic-diseases/refsum-disease"
+  },
+  {
+    "id": 288,
+    "name": "Tay-Sachs disease",
+    "url_slug": "results/monogenic-diseases/tay-sachs-disease"
+  },
+  {
+    "id": 289,
+    "name": "Wilson disease",
+    "url_slug": "results/monogenic-diseases/wilson-disease"
+  },
+  {
+    "id": 290,
+    "name": "Autosomal recessive polycystic kidney disease",
+    "url_slug": "results/monogenic-diseases/autosomal-recessive-polycystic-kidney-disease"
+  },
+  {
+    "id": 291,
+    "name": "Junctional Epidermolysis Bullosa ",
+    "url_slug": "results/monogenic-diseases/junctional-epidermolysis-bullosa"
+  },
+  {
+    "id": 292,
+    "name": "Pyridoxine-dependent epilepsy",
+    "url_slug": "results/monogenic-diseases/pyridoxine-dependent-epilepsy"
+  },
+  {
+    "id": 310,
+    "name": "Phenylketonuria",
+    "url_slug": "results/monogenic-diseases/phenylketonuria"
+  },
+  {
+    "id": 311,
+    "name": "Glycogen storage disease type 1B",
+    "url_slug": "results/monogenic-diseases/glycogen-storage-disease-type-1b"
+  },
+  {
+    "id": 320,
+    "name": "Glycogen storage disease type 3",
+    "url_slug": "results/monogenic-diseases/glycogen-storage-disease-type-iii"
+  },
+  {
+    "id": 321,
+    "name": "Glycogenosis type 5 or McArdle's disease",
+    "url_slug": "results/monogenic-diseases/glycogen-storage-disease-type-v"
+  },
+  {
+    "id": 322,
+    "name": "Primary hyperoxaluria type 1 (PH1)",
+    "url_slug": "results/monogenic-diseases/primary-hyperoxaluria-type-1-ph1"
+  },
+  {
+    "id": 323,
+    "name": "Primary hyperoxaluria type 2 (PH2)",
+    "url_slug": "results/monogenic-diseases/primary-hyperoxaluria-type-2-ph2"
+  },
+  {
+    "id": 324,
+    "name": "Hypophosphatasia",
+    "url_slug": "results/monogenic-diseases/hypophosphatasia"
+  },
+  {
+    "id": 336,
+    "name": "Transthyretin amyloidosis (TTR gene)",
+    "url_slug": "results/monogenic-diseases/familial-transthyretin-amyloidosis"
+  },
+  {
+    "id": 337,
+    "name": "Pontocerebellar hypoplasia types 2A, 4, and 5 (TSEN54 gene)",
+    "url_slug": "results/monogenic-diseases/pontocerebellar-hypoplasia"
+  },
+  {
+    "id": 338,
+    "name": "Metachromatic leukodystrophy ",
+    "url_slug": "results/monogenic-diseases/metachromatic-leukodystrophy"
+  },
+  {
+    "id": 339,
+    "name": "Neuronal Ceroid-Lipofuscinoses type 1 (associated to PPT1)",
+    "url_slug": "results/monogenic-diseases/neuronal-ceroid-lipofuscinoses-type-1-associated-ppt1"
+  },
+  {
+    "id": 340,
+    "name": "Neuronal ceroid lipofuscinosis type 3 (CLN3 gene)",
+    "url_slug": "results/monogenic-diseases/neuronal-ceroid-lipofuscinoses-type-3-associated-cln3"
+  },
+  {
+    "id": 341,
+    "name": "Neuronal ceroid lipofuscinosis type 5 (CLN5 gene)",
+    "url_slug": "results/monogenic-diseases/neuronal-ceroid-lipofuscinoses-type-5-associated-cln5"
+  },
+  {
+    "id": 342,
+    "name": "Neuronal ceroid lipofuscinosis type 6 (CLN6 gene)",
+    "url_slug": "results/monogenic-diseases/neuronal-ceroid-lipofuscinoses-type-6-associated-cln6"
+  },
+  {
+    "id": 343,
+    "name": "Neuronal ceroid lipofuscinosis type 7 (MFSD8 gene)",
+    "url_slug": "results/monogenic-diseases/neuronal-ceroid-lipofuscinoses-type-7-associated-mfsd8"
+  },
+  {
+    "id": 344,
+    "name": "Congenital myasthenic syndrome (RAPSN gene)",
+    "url_slug": "results/monogenic-diseases/congenital-myasthenic-syndrome"
+  },
+  {
+    "id": 356,
+    "name": "Mucolipidosis II and III alpha/beta",
+    "url_slug": "results/monogenic-diseases/mucolipidosis-type-ii"
+  },
+  {
+    "id": 357,
+    "name": "Multiple endocrine neoplasia 2B",
+    "url_slug": "results/monogenic-diseases/multiple-endocrine-neoplasia-2b"
+  },
+  {
+    "id": 359,
+    "name": "Familial adenomatous polyposis",
+    "url_slug": "results/monogenic-diseases/familial-adenomatous-polyposis"
+  },
+  {
+    "id": 360,
+    "name": "Birt-Hogg-Dube syndrome",
+    "url_slug": "results/monogenic-diseases/birt-hogg-dube-syndrome"
+  },
+  {
+    "id": 361,
+    "name": "GRACILE syndrome",
+    "url_slug": "results/monogenic-diseases/gracile-syndrome"
+  },
+  {
+    "id": 362,
+    "name": "Pendred syndrome",
+    "url_slug": "results/monogenic-diseases/pendred-syndrome"
+  },
+  {
+    "id": 363,
+    "name": "Leigh Syndrome, French-Canadian type (LSFC)",
+    "url_slug": "results/monogenic-diseases/leigh-syndrome-french-canadian-type-lsfc"
+  },
+  {
+    "id": 370,
+    "name": "Peters plus syndrome ",
+    "url_slug": "results/monogenic-diseases/peters-plus-syndrome"
+  },
+  {
+    "id": 371,
+    "name": "Sjögren-Larsson syndrome",
+    "url_slug": "results/monogenic-diseases/sjoegren-larsson-syndrome"
+  },
+  {
+    "id": 372,
+    "name": "Non-syndromic mitochondrial hearing loss",
+    "url_slug": "results/monogenic-diseases/non-syndromic-mitochondrial-hearing-loss"
+  },
+  {
+    "id": 373,
+    "name": "Familial breast cancer (BRCA1 and BRCA2 genes)",
+    "url_slug": "results/monogenic-diseases/hereditary-breast-ovarian-cancer"
+  },
+  {
+    "id": 380,
+    "name": "Usher syndrome",
+    "url_slug": "results/monogenic-diseases/usher-syndrome"
+  },
+  {
+    "id": 381,
+    "name": "Zellweger syndrome ",
+    "url_slug": "results/monogenic-diseases/zellweger-syndrome"
+  },
+  {
+    "id": 397,
+    "name": "Tyrosinemia type I",
+    "url_slug": "results/monogenic-diseases/tyrosinemia-type-i"
+  },
+  {
+    "id": 398,
+    "name": "Congenital disorder of glycosylation type 1a (PMM2 gene)",
+    "url_slug": "results/monogenic-diseases/congenital-disorder-glycosylation-type-1a-pmm2-cdg"
+  },
+  {
+    "id": 399,
+    "name": "Brugada Syndrome",
+    "url_slug": "results/monogenic-diseases/brugada-syndrome"
+  },
+  {
+    "id": 400,
+    "name": "Dubin-Johnson syndrome",
+    "url_slug": "results/monogenic-diseases/dubin-johnson-syndrome"
+  },
+  {
+    "id": 401,
+    "name": "cblA Type Methylmalonic aciduria ",
+    "url_slug": "results/monogenic-diseases/methylmalonic-aciduria-type-cbla"
+  },
+  {
+    "id": 402,
+    "name": "cblB Type Methylmalonic aciduria ",
+    "url_slug": "results/monogenic-diseases/methylmalonic-aciduria-type-cblb"
+  },
+  {
+    "id": 403,
+    "name": "Autosomal recessive retinitis pigmentosa",
+    "url_slug": "results/monogenic-diseases/retinitis-pigmentosa"
+  },
+  {
+    "id": 404,
+    "name": "Achromatopsia",
+    "url_slug": "results/monogenic-diseases/complete-achromatopsia-type-2-incomplete-achromatopsia"
+  },
+  {
+    "id": 405,
+    "name": "Congenital muscular alpha-dystroglycanopathy and Walker-Warburg syndrome",
+    "url_slug": "results/monogenic-diseases/congenital-muscular-a-dystroglycanopathy-walker-warburg-syndrome"
+  },
+  {
+    "id": 406,
+    "name": "Oculocutaneous albinism (OCA2 gene)",
+    "url_slug": "results/monogenic-diseases/oculocutaneous-albinism-type-2-tyrosinase-positive"
+  },
+  {
+    "id": 407,
+    "name": "Glutaric Acidemia type 1",
+    "url_slug": "results/monogenic-diseases/glutaric-acidemia-type-1"
+  },
+  {
+    "id": 408,
+    "name": "Glutaric Acidemia type 2 ",
+    "url_slug": "results/monogenic-diseases/glutaric-acidemia-type-2"
+  },
+  {
+    "id": 409,
+    "name": "Oculocutaneous albinism (TYR gene)",
+    "url_slug": "results/monogenic-diseases/oculocutaneous-albinism-type-1-tyrosinase-negative"
+  },
+  {
+    "id": 410,
+    "name": "Dilated cardiomyopathy 1A (LMNA gene)",
+    "url_slug": "results/monogenic-diseases/dilated-cardiomyopathy-1a"
+  },
+  {
+    "id": 411,
+    "name": "Very long chain acyl-CoA dehydrogenase deficiency (VLCADD)",
+    "url_slug": "results/monogenic-diseases/very-long-chain-acyl-coa-dehydrogenase-deficiency-vlcadd"
+  },
+  {
+    "id": 412,
+    "name": "Congenital stationary night blindness",
+    "url_slug": "results/monogenic-diseases/congenital-stationary-night-blindness-1c"
+  },
+  {
+    "id": 413,
+    "name": "Bloom syndrome",
+    "url_slug": "results/monogenic-diseases/bloom-syndrome"
+  },
+  {
+    "id": 414,
+    "name": "Nonsyndromic Hearing Loss and Deafness, DFNB1",
+    "url_slug": "results/monogenic-diseases/nonsyndromic-hearing-loss-deafness-dfnb1"
+  },
+  {
+    "id": 415,
+    "name": "Familiar hyperinsulinism (ABCC8-related)",
+    "url_slug": "results/monogenic-diseases/familial-hyperinsulinism-abcc8-related"
+  },
+  {
+    "id": 416,
+    "name": "Homocystinuria due to MTHFR deficiency",
+    "url_slug": "results/monogenic-diseases/homocystinuria-mthfr-deficiency"
+  },
+  {
+    "id": 417,
+    "name": "Hemophilia A",
+    "url_slug": "results/monogenic-diseases/hemophilia-a"
+  },
+  {
+    "id": 419,
+    "name": "Hamartoma tumor syndrome (PTEN gene)",
+    "url_slug": "results/monogenic-diseases/cowden-syndrome"
+  },
+  {
+    "id": 420,
+    "name": "Lynch syndrome",
+    "url_slug": "results/monogenic-diseases/lynch-syndrome"
+  },
+  {
+    "id": 422,
+    "name": "Long-chain 3-hydroxyacyl-CoA dehydrogenase deficiency",
+    "url_slug": "results/monogenic-diseases/long-chain-3-hydroxyacyl-coenzyme-a-dehydrogenase-deficiency"
+  },
+  {
+    "id": 423,
+    "name": "Pyruvate kinase deficiency",
+    "url_slug": "results/monogenic-diseases/pyruvate-kinase-deficiency"
+  },
+  {
+    "id": 424,
+    "name": "von Willebrand disease",
+    "url_slug": "results/monogenic-diseases/von-willebrand-disease"
+  },
+  {
+    "id": 425,
+    "name": "Neurofibromatosis type I",
+    "url_slug": "results/monogenic-diseases/neurofibromatosis-type-i"
+  },
+  {
+    "id": 429,
+    "name": "Methylmalonic Aciduria with Homocystinuria, cblD type",
+    "url_slug": "results/monogenic-diseases/methylmalonic-aciduria-with-homocystinuria-cbld-type"
+  },
+  {
+    "id": 430,
+    "name": "Methylmalonic Aciduria with Homocystinuria, cblC type",
+    "url_slug": "results/monogenic-diseases/methylmalonic-aciduria-with-homocystinuria-cblc-type"
+  },
+  {
+    "id": 431,
+    "name": "Methylmalonic Aciduria with Homocystinuria, cblJ type",
+    "url_slug": "results/monogenic-diseases/methylmalonic-aciduria-with-homocystinuria-cblj-type"
+  },
+  {
+    "id": 432,
+    "name": "Methylmalonic Aciduria with Homocystinuria, cblF type",
+    "url_slug": "results/monogenic-diseases/methylmalonic-aciduria-with-homocystinuria-cblf-type"
+  },
+  {
+    "id": 435,
+    "name": "Oculocutaneous Albinism (TYRP1 gene)",
+    "url_slug": "results/monogenic-diseases/oculocutaneous-albinism-tyrp1-gene"
+  },
+  {
+    "id": 437,
+    "name": "Oculocutaneous Albinism (SLC45A2 gene)",
+    "url_slug": "results/monogenic-diseases/oculocutaneous-albinism-slc45a2-gene"
+  },
+  {
+    "id": 444,
+    "name": "Amyloidosis, Finnish-type (GSN gene)",
+    "url_slug": "results/monogenic-diseases/amyloidosis-finnish-type-gsn-gene"
+  },
+  {
+    "id": 445,
+    "name": "Systemic Amyloidosis (FGA gene)",
+    "url_slug": "results/monogenic-diseases/systemic-amyloidosis-fga-gene"
+  },
+  {
+    "id": 446,
+    "name": "Visceral Amyloidosis (APOA1 gene)",
+    "url_slug": "results/monogenic-diseases/visceral-amyloidosis-apoa1-gene"
+  },
+  {
+    "id": 448,
+    "name": "Fanconi Anemia (FANCA gene)",
+    "url_slug": "results/monogenic-diseases/fanconi-anemia-fanca-gene"
+  },
+  {
+    "id": 449,
+    "name": "Fanconi Anemia (FANCG gene)",
+    "url_slug": "results/monogenic-diseases/fanconi-anemia-fancg-gene"
+  },
+  {
+    "id": 450,
+    "name": "Fanconi Anemia (FANCE gene)",
+    "url_slug": "results/monogenic-diseases/fanconi-anemia-fance-gene"
+  },
+  {
+    "id": 456,
+    "name": "Spastic Paraplegia (SPAST gene)",
+    "url_slug": "results/monogenic-diseases/spastic-paraplegia-spast-gene"
+  },
+  {
+    "id": 457,
+    "name": "Spastic Paraplegia (ATL1 gene)",
+    "url_slug": "results/monogenic-diseases/spastic-paraplegia-atl1-gene"
+  },
+  {
+    "id": 459,
+    "name": "Spastic Paraplegia with Pelizaeus-Merzbacher Disease (PLP1 gene)",
+    "url_slug": "results/monogenic-diseases/spastic-paraplegia-with-pelizaeus-merzbacher-disease-plp1-gene"
+  },
+  {
+    "id": 467,
+    "name": "Hereditary Cancer (PALB2 gene)",
+    "url_slug": "results/monogenic-diseases/hereditary-cancer-palb2-gene"
+  },
+  {
+    "id": 471,
+    "name": "Dilated Cardiomyopathy 1D (TNNT2 gene)",
+    "url_slug": "results/monogenic-diseases/dilated-cardiomyopathy-1d-tnnt2-gene"
+  },
+  {
+    "id": 472,
+    "name": "Dilated Cardiomyopathy 1DD (RBM20 gene)",
+    "url_slug": "results/monogenic-diseases/dilated-cardiomyopathy-1dd-rbm20-gene"
+  },
+  {
+    "id": 473,
+    "name": "Dilated Cardiomyopathy 1E (SCN5A gene)",
+    "url_slug": "results/monogenic-diseases/dilated-cardiomyopathy-1e-scn5a-gene"
+  },
+  {
+    "id": 474,
+    "name": "Dilated Cardiomyopathy 1G (TTN gene)",
+    "url_slug": "results/monogenic-diseases/dilated-cardiomyopathy-1g-ttn-gene"
+  },
+  {
+    "id": 475,
+    "name": "Dilated Cardiomyopathy 1HH (BAG3 gene)",
+    "url_slug": "results/monogenic-diseases/dilated-cardiomyopathy-1hh-bag3-gene"
+  },
+  {
+    "id": 476,
+    "name": "Dilated Cardiomyopathy 1I (DES gene)",
+    "url_slug": "results/monogenic-diseases/dilated-cardiomyopathy-1i-des-gene"
+  },
+  {
+    "id": 477,
+    "name": "Dilated Cardiomyopathy 1S (MYH7 gene)",
+    "url_slug": "results/monogenic-diseases/dilated-cardiomyopathy-1s-myh7-gene"
+  },
+  {
+    "id": 478,
+    "name": "Dilated Cardiomyopathy 1Z (TNNC1 gene)",
+    "url_slug": "results/monogenic-diseases/dilated-cardiomyopathy-1z-tnnc1-gene"
+  },
+  {
+    "id": 481,
+    "name": "Familial Arrhythmogenic Right Ventricular Cardiomyopathy",
+    "url_slug": "results/monogenic-diseases/familial-arrhythmogenic-right-ventricular-cardiomyopathy"
+  },
+  {
+    "id": 483,
+    "name": "X-linked Congenital Stationary Night Blindness",
+    "url_slug": "results/monogenic-diseases/x-linked-congenital-stationary-night-blindness"
+  },
+  {
+    "id": 485,
+    "name": "Congenital Stationary Night Blindness (Oguchi Disease)",
+    "url_slug": "results/monogenic-diseases/congenital-stationary-night-blindness-oguchi-disease"
+  },
+  {
+    "id": 488,
+    "name": "Rhizomelic Chondrodysplasia Punctata Type 2",
+    "url_slug": "results/monogenic-diseases/rhizomelic-chondrodysplasia-punctata-type-2"
+  },
+  {
+    "id": 489,
+    "name": "Rhizomelic Chondrodysplasia Punctata Type 3",
+    "url_slug": "results/monogenic-diseases/rhizomelic-chondrodysplasia-punctata-type-3"
+  },
+  {
+    "id": 490,
+    "name": "X-linked Recessive Rhizomelic Chondrodysplasia Punctata",
+    "url_slug": "results/monogenic-diseases/x-linked-recessive-rhizomelic-chondrodysplasia-punctata"
+  },
+  {
+    "id": 491,
+    "name": "X-linked Dominant Rhizomelic Chondrodysplasia Punctata",
+    "url_slug": "results/monogenic-diseases/x-linked-dominant-rhizomelic-chondrodysplasia-punctata"
+  },
+  {
+    "id": 502,
+    "name": "Primary Pyruvate Dehydrogenase Complex Deficiency",
+    "url_slug": "results/monogenic-diseases/primary-pyruvate-dehydrogenase-complex-deficiency"
+  },
+  {
+    "id": 507,
+    "name": "Mitochondrial Trifunctional Protein Deficiency",
+    "url_slug": "results/monogenic-diseases/mitochondrial-trifunctional-protein-deficiency"
+  },
+  {
+    "id": 510,
+    "name": "Ornithine Transcarbamylase Deficiency",
+    "url_slug": "results/monogenic-diseases/ornithine-transcarbamylase-deficiency"
+  },
+  {
+    "id": 524,
+    "name": "Autosomal Dominant Multiple Epiphyseal Dysplasia",
+    "url_slug": "results/monogenic-diseases/autosomal-dominant-multiple-epiphyseal-dysplasia"
+  },
+  {
+    "id": 527,
+    "name": "Autosomal Dominant Limb-Girdle Muscular Dystrophy",
+    "url_slug": "results/monogenic-diseases/autosomal-dominant-limb-girdle-muscular-dystrophy"
+  },
+  {
+    "id": 531,
+    "name": "Fabry Disease",
+    "url_slug": "results/monogenic-diseases/fabry-disease"
+  },
+  {
+    "id": 538,
+    "name": "Niemann-Pick Disease Type C",
+    "url_slug": "results/monogenic-diseases/niemann-pick-disease-type-c"
+  },
+  {
+    "id": 543,
+    "name": "Autosomal Dominant Polycystic Kidney Disease",
+    "url_slug": "results/monogenic-diseases/autosomal-dominant-polycystic-kidney-disease"
+  },
+  {
+    "id": 547,
+    "name": "Tuberous Sclerosis",
+    "url_slug": "results/monogenic-diseases/tuberous-sclerosis"
+  },
+  {
+    "id": 553,
+    "name": "Glycogen Storage Disease Type IV",
+    "url_slug": "results/monogenic-diseases/glycogen-storage-disease-type-iv"
+  },
+  {
+    "id": 554,
+    "name": "Glycogen Storage Disease Type VI",
+    "url_slug": "results/monogenic-diseases/glycogen-storage-disease-type-vi"
+  },
+  {
+    "id": 556,
+    "name": "Hereditary Hemochromatosis Type 2A (HJV gene)",
+    "url_slug": "results/monogenic-diseases/hereditary-hemochromatosis-type-2a-hjv-gene"
+  },
+  {
+    "id": 557,
+    "name": "Hereditary Hemochromatosis Type 2B (HAMP gene)",
+    "url_slug": "results/monogenic-diseases/hereditary-hemochromatosis-type-2b-hamp-gene"
+  },
+  {
+    "id": 558,
+    "name": "Hereditary Hemochromatosis Type 3 (TFR2 gene)",
+    "url_slug": "results/monogenic-diseases/hereditary-hemochromatosis-type-3-tfr2-gene"
+  },
+  {
+    "id": 559,
+    "name": "Hereditary Hemochromatosis Type 4 (SLC40A1 gene)",
+    "url_slug": "results/monogenic-diseases/hereditary-hemochromatosis-type-4-slc40a1-gene"
+  },
+  {
+    "id": 560,
+    "name": "Hemophilia B",
+    "url_slug": "results/monogenic-diseases/hemophilia-b"
+  },
+  {
+    "id": 562,
+    "name": "HNF1A-related Diabetes (MODY 3)",
+    "url_slug": "results/monogenic-diseases/hnf1a-related-diabetes-mody-3"
+  },
+  {
+    "id": 563,
+    "name": "GCK-related Diabetes (MODY 2)",
+    "url_slug": "results/monogenic-diseases/gck-related-diabetes-mody-2"
+  },
+  {
+    "id": 564,
+    "name": "HNF4A-related Diabetes (MODY 1)",
+    "url_slug": "results/monogenic-diseases/hnf4a-related-diabetes-mody-1"
+  },
+  {
+    "id": 568,
+    "name": "HNF1B-related Diabetes (MODY 5)",
+    "url_slug": "results/monogenic-diseases/hnf1b-related-diabetes-mody-5"
+  },
+  {
+    "id": 572,
+    "name": "Primary Hyperoxaluria Type 3 (PH3)",
+    "url_slug": "results/monogenic-diseases/primary-hyperoxaluria-type-3-ph3"
+  },
+  {
+    "id": 577,
+    "name": "Pontocerebellar Hypoplasia Type 9 (AMPD2 gene)",
+    "url_slug": "results/monogenic-diseases/pontocerebellar-hypoplasia-type-9-ampd2-gene"
+  },
+  {
+    "id": 578,
+    "name": "Pontocerebellar Hypoplasia Type 8 (CHMP1A gene)",
+    "url_slug": "results/monogenic-diseases/pontocerebellar-hypoplasia-type-8-chmp1a-gene"
+  },
+  {
+    "id": 579,
+    "name": "Pontocerebellar Hypoplasia Type 10 (CLP1 gene)",
+    "url_slug": "results/monogenic-diseases/pontocerebellar-hypoplasia-type-10-clp1-gene"
+  },
+  {
+    "id": 580,
+    "name": "Pontocerebellar Hypoplasia Type 1B (EXOSC3 gene)",
+    "url_slug": "results/monogenic-diseases/pontocerebellar-hypoplasia-type-1b-exosc3-gene"
+  },
+  {
+    "id": 582,
+    "name": "Pontocerebellar Hypoplasia Type 6 (RARS2 gene)",
+    "url_slug": "results/monogenic-diseases/pontocerebellar-hypoplasia-type-6-rars2-gene"
+  },
+  {
+    "id": 583,
+    "name": "Pontocerebellar Hypoplasia Type 2D (SEPSECS gene)",
+    "url_slug": "results/monogenic-diseases/pontocerebellar-hypoplasia-type-2d-sepsecs-gene"
+  },
+  {
+    "id": 584,
+    "name": "Pontocerebellar Hypoplasia Type 11 (TBC1D23 gene)",
+    "url_slug": "results/monogenic-diseases/pontocerebellar-hypoplasia-type-11-tbc1d23-gene"
+  },
+  {
+    "id": 585,
+    "name": "Pontocerebellar Hypoplasia Type 7 (TOE1 gene)",
+    "url_slug": "results/monogenic-diseases/pontocerebellar-hypoplasia-type-7-toe1-gene"
+  },
+  {
+    "id": 587,
+    "name": "Pontocerebellar Hypoplasia Type 2B (TSEN2 gene)",
+    "url_slug": "results/monogenic-diseases/pontocerebellar-hypoplasia-type-2b-tsen2-gene"
+  },
+  {
+    "id": 589,
+    "name": "Pontocerebellar Hypoplasia Type 1A (VRK1 gene)",
+    "url_slug": "results/monogenic-diseases/pontocerebellar-hypoplasia-type-1a-vrk1-gene"
+  },
+  {
+    "id": 591,
+    "name": "Neuronal Ceroid Lipofuscinosis Type 2 (TPP1 gene)",
+    "url_slug": "results/monogenic-diseases/neuronal-ceroid-lipofuscinosis-type-2-tpp1-gene"
+  },
+  {
+    "id": 592,
+    "name": "Neuronal Ceroid Lipofuscinosis Type 8 (CLN8 gene)",
+    "url_slug": "results/monogenic-diseases/neuronal-ceroid-lipofuscinosis-type-8-cln8-gene"
+  },
+  {
+    "id": 593,
+    "name": "Neuronal Ceroid Lipofuscinosis Type 10 (CTSD gene)",
+    "url_slug": "results/monogenic-diseases/neuronal-ceroid-lipofuscinosis-type-10-ctsd-gene"
+  },
+  {
+    "id": 594,
+    "name": "Neuronal Ceroid Lipofuscinosis Type 11 (GRN gene)",
+    "url_slug": "results/monogenic-diseases/neuronal-ceroid-lipofuscinosis-type-11-grn-gene"
+  },
+  {
+    "id": 595,
+    "name": "Neuronal Ceroid Lipofuscinosis Type 13 (CTSF gene)",
+    "url_slug": "results/monogenic-diseases/neuronal-ceroid-lipofuscinosis-type-13-ctsf-gene"
+  },
+  {
+    "id": 601,
+    "name": "Mucolipidosis III Gamma (GNPTG gene)",
+    "url_slug": "results/monogenic-diseases/mucolipidosis-iii-gamma-gnptg-gene"
+  },
+  {
+    "id": 609,
+    "name": "Multiple Endocrine Neoplasia Type 1",
+    "url_slug": "results/monogenic-diseases/multiple-endocrine-neoplasia-type-1"
+  },
+  {
+    "id": 610,
+    "name": "Multiple Endocrine Neoplasia Type 4",
+    "url_slug": "results/monogenic-diseases/multiple-endocrine-neoplasia-type-4"
+  },
+  {
+    "id": 611,
+    "name": "Neurofibromatosis Type 2",
+    "url_slug": "results/monogenic-diseases/neurofibromatosis-type-2"
+  },
+  {
+    "id": 616,
+    "name": "Polymerase Proofreading–Associated Polyposis (POLD1 and POLE genes)",
+    "url_slug": "results/monogenic-diseases/polymerase-proofreading-associated-polyposis-pold1-and-pole-genes"
+  },
+  {
+    "id": 618,
+    "name": "Variegate Porphyria (PPOX gene)",
+    "url_slug": "results/monogenic-diseases/variegate-porphyria-ppox-gene"
+  },
+  {
+    "id": 619,
+    "name": "Hereditary Coproporphyria (CPOX gene)",
+    "url_slug": "results/monogenic-diseases/hereditary-coproporphyria-cpox-gene"
+  },
+  {
+    "id": 620,
+    "name": "Familial Porphyria Cutanea Tarda (UROD gene)",
+    "url_slug": "results/monogenic-diseases/familial-porphyria-cutanea-tarda-urod-gene"
+  },
+  {
+    "id": 624,
+    "name": "Retinoblastoma",
+    "url_slug": "results/monogenic-diseases/retinoblastoma"
+  },
+  {
+    "id": 625,
+    "name": "Autosomal Dominant Retinitis Pigmentosa",
+    "url_slug": "results/monogenic-diseases/autosomal-dominant-retinitis-pigmentosa"
+  },
+  {
+    "id": 626,
+    "name": "X-linked Retinitis Pigmentosa",
+    "url_slug": "results/monogenic-diseases/x-linked-retinitis-pigmentosa"
+  },
+  {
+    "id": 627,
+    "name": "Retinitis Pigmentosa with or without Skeletal Abnormalities",
+    "url_slug": "results/monogenic-diseases/retinitis-pigmentosa-with-or-without-skeletal-abnormalities"
+  },
+  {
+    "id": 628,
+    "name": "Recessive Retinopathy (RPE65 gene)",
+    "url_slug": "results/monogenic-diseases/recessive-retinopathy-rpe65-gene"
+  },
+  {
+    "id": 668,
+    "name": "Hereditary Paraganglioma-Pheochromocytoma Syndrome",
+    "url_slug": "results/monogenic-diseases/hereditary-paraganglioma-pheochromocytoma-syndrome"
+  },
+  {
+    "id": 669,
+    "name": "Peutz-Jeghers Syndrome",
+    "url_slug": "results/monogenic-diseases/peutz-jeghers-syndrome"
+  },
+  {
+    "id": 670,
+    "name": "Juvenile Polyposis Syndrome (BMPR1A gene)",
+    "url_slug": "results/monogenic-diseases/juvenile-polyposis-syndrome-bmpr1a-gene"
+  },
+  {
+    "id": 679,
+    "name": "Von Hippel-Lindau Syndrome",
+    "url_slug": "results/monogenic-diseases/von-hippel-lindau-syndrome"
+  },
+  {
+    "id": 688,
+    "name": "Congenital Myasthenic Syndrome (CHRNB1 gene)",
+    "url_slug": "results/monogenic-diseases/congenital-myasthenic-syndrome-chrnb1-gene"
+  },
+  {
+    "id": 693,
+    "name": "Hereditary Hemorrhagic Telangiectasia",
+    "url_slug": "results/monogenic-diseases/hereditary-hemorrhagic-telangiectasia"
+  },
+  {
+    "id": 694,
+    "name": "Tyrosinemia Type II",
+    "url_slug": "results/monogenic-diseases/tyrosinemia-type-ii"
+  },
+  {
+    "id": 695,
+    "name": "Congenital disorder of glycosylation type 1c (ALG6 gene)",
+    "url_slug": "results/monogenic-diseases/congenital-disorder-of-glycosylation-type-1c-alg6-cdg"
+  },
+  {
+    "id": 696,
+    "name": "Congenital disorder of glycosylation type 1k (ALG1 gene)",
+    "url_slug": "results/monogenic-diseases/congenital-disorder-of-glycosylation-type-1k-alg1-cdg"
+  },
+  {
+    "id": 700,
+    "name": "Wilms Tumor 1 (WT1 gene)",
+    "url_slug": "results/monogenic-diseases/wilms-tumor-wt1-gene"
+  },
+  {
+    "id": 705,
+    "name": "X-linked Adrenoleukodystrophy",
+    "url_slug": "results/monogenic-diseases/x-linked-adrenoleukodystrophy"
+  },
+  {
+    "id": 706,
+    "name": "Familial Thoracic Aortic Aneurysm and Dissection (ACTA2 gene)",
+    "url_slug": "results/monogenic-diseases/familial-thoracic-aortic-aneurysm-and-dissection-acta2-gene"
+  },
+  {
+    "id": 707,
+    "name": "Familial Thoracic Aortic Aneurysm and Dissection (MYH11 gene)",
+    "url_slug": "results/monogenic-diseases/familial-thoracic-aortic-aneurysm-and-dissection-myh11-gene"
+  },
+  {
+    "id": 708,
+    "name": "Dilated Cardiomyopathy 1P (PLN gene)",
+    "url_slug": "results/monogenic-diseases/dilated-cardiomyopathy-1p-pln-gene"
+  },
+  {
+    "id": 709,
+    "name": "Juvenile Polyposis Syndrome (SMAD4 gene)",
+    "url_slug": "results/monogenic-diseases/juvenile-polyposis-syndrome-smad4-gene"
+  },
+  {
+    "id": 710,
+    "name": "Long QT Syndrome Type 3",
+    "url_slug": "results/monogenic-diseases/long-qt-syndrome-type-3"
+  },
+  {
+    "id": 711,
+    "name": "Long QT Syndrome Types 1 and 2",
+    "url_slug": "results/monogenic-diseases/long-qt-syndrome-types-1-and-2"
+  },
+  {
+    "id": 712,
+    "name": "Long QT Syndrome Types 14, 15, and 16",
+    "url_slug": "results/monogenic-diseases/long-qt-syndrome-types-14-15-and-16"
+  },
+  {
+    "id": 713,
+    "name": "Catecholaminergic Polymorphic Ventricular Tachycardia (CASQ2 gene)",
+    "url_slug": "results/monogenic-diseases/catecholaminergic-polymorphic-ventricular-tachycardia-casq2-gene"
+  },
+  {
+    "id": 714,
+    "name": "Catecholaminergic Polymorphic Ventricular Tachycardia (RYR2 gene)",
+    "url_slug": "results/monogenic-diseases/catecholaminergic-polymorphic-ventricular-tachycardia-ryr2-gene"
+  },
+  {
+    "id": 715,
+    "name": "Catecholaminergic Polymorphic Ventricular Tachycardia (TRDN gene)",
+    "url_slug": "results/monogenic-diseases/catecholaminergic-polymorphic-ventricular-tachycardia-trdn-gene"
+  },
+  {
+    "id": 716,
+    "name": "Cerebrotendinous Xanthomatosis",
+    "url_slug": "results/monogenic-diseases/cerebrotendinous-xanthomatosis"
+  }
+]

@@ -1,0 +1,59 @@
+---
+title: "Ingest data"
+description: "Upload biomarker, wearable, genetic, or behavioral source files."
+---
+
+Use `POST /imports/file` to register source data for analysis.
+
+## Supported categories
+
+| Category | Common payloads |
+| --- | --- |
+| `biomarkers` | CSV, JSON, or text lab panels |
+| `wearables` | CSV/JSON exports, daily summaries, synced provider data |
+| `genetics` | Small SNP-array text exports, or VCF/VCF.GZ via the direct-upload flow below |
+| `behavioral` | Notes, protocols, intake context |
+
+## Payload shape
+
+```json
+{
+  "user_id": "customer_001",
+  "organization_id": "org_001",
+  "category": "biomarkers",
+  "filename": "labs.csv",
+  "content_type": "text/csv",
+  "text": "marker,value,unit\nApoB,88,mg/dL"
+}
+```
+
+Use `data_base64` instead of `text` for small binary or compressed uploads. Include
+`collected_at` dates in payload rows whenever you have them; repeat uploads
+then become longitudinal trends automatically.
+
+## Round-trip every upload
+
+```bash
+# List uploads for a user, filterable by category and date
+curl -s "$HEALTH_API/sources?user_id=customer_001&category=biomarkers" \
+  -H "authorization: Bearer $TOKEN"
+
+# Inspect one upload with its normalized observations
+curl -s "$HEALTH_API/sources/<source_id>" \
+  -H "authorization: Bearer $TOKEN"
+```
+
+## Large genetics files
+
+For full WGS VCFs and large SNP-array raw exports, call `POST /genetics/uploads`
+with the user, organization, filename, and exact byte length. Upload the file
+with a PUT request to the returned private `upload.url` using its supplied
+headers, then call
+`POST /genetics/uploads/{source_id}/complete`. This prevents base64 expansion,
+request-body limits, and API-server buffering. Once `upload_status` is
+`complete`, start `POST /genetics/analyze` and poll the returned job.
+
+The production bucket currently permits individual genetics files up to 512 MB.
+
+The genetics source ID remains separate from biomarker IDs. Supply both in
+`source_ids` only for a multimodal analysis.

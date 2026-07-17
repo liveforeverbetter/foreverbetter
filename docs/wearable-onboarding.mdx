@@ -1,0 +1,128 @@
+---
+title: "Onboard wearable users"
+description: "Connect WHOOP or Oura, or push Google Health Connect readings from an Android app."
+---
+
+ForeverBetter supports three wearable sources through a stable `wearables`
+modality:
+
+| Source | Connection | Where the user grants access |
+| --- | --- | --- |
+| WHOOP | Server OAuth | WHOOP authorization page |
+| Oura | Server OAuth | Oura authorization page |
+| Google Health Connect | Mobile bridge push | On the user's Android device |
+
+Every source is stored with a user ID, organization ID, source ID, provider,
+timestamps, and provenance.
+
+## 1. Use a user-scoped identity
+
+Your backend should mint a short-lived user token or a deliberately scoped API
+key. Do not place an organization-wide admin key in a mobile app.
+
+For the stable mobile endpoint, create a key with
+`"intended_use":"mobile_sync"` after a fresh user sign-in. The returned key is
+restricted to `health:data:write` and the `connections.sync` endpoint grant.
+
+## 2. WHOOP and Oura OAuth
+
+Start a connection through the generic wearable setup route. Replace `whoop`
+with `oura` for Oura:
+
+```bash
+curl -s "$HEALTH_API/connections/wearables/start" \
+  -H "authorization: Bearer $USER_TOKEN" \
+  -H "content-type: application/json" \
+  -d '{
+    "user_id":"'"$END_USER"'",
+    "organization_id":"'"$ORG"'",
+    "source_provider":"whoop",
+    "client_id":"...",
+    "redirect_uri":"https://yourapp.com/oauth/whoop"
+  }'
+```
+
+Redirect the user to `authorization_url`, then complete the connection:
+
+```bash
+curl -s "$HEALTH_API/connections/wearables/callback" \
+  -H "authorization: Bearer $USER_TOKEN" \
+  -H "content-type: application/json" \
+  -d '{
+    "user_id":"'"$END_USER"'",
+    "organization_id":"'"$ORG"'",
+    "source_provider":"whoop",
+    "code":"...",
+    "client_id":"...",
+    "client_secret":"...",
+    "redirect_uri":"https://yourapp.com/oauth/whoop"
+  }'
+```
+
+When the deployment has first-party WHOOP or Oura credentials, the caller can
+omit its own client credentials from the start flow.
+
+## 3. Direct provider sync
+
+Sync a provider through its named route:
+
+```bash
+curl -s "$HEALTH_API/connections/whoop/sync" \
+  -H "authorization: Bearer $USER_TOKEN" \
+  -H "content-type: application/json" \
+  -d '{
+    "user_id":"'"$END_USER"'",
+    "organization_id":"'"$ORG"'",
+    "access_token":"...",
+    "refresh_token":"...",
+    "client_id":"...",
+    "client_secret":"...",
+    "start":"2026-06-01",
+    "end":"2026-06-30"
+  }'
+```
+
+Use `/connections/oura/sync` for Oura. WHOOP and Oura webhooks enqueue
+reconciliation work for the wearable worker when the deployment has encrypted
+provider-token storage configured.
+
+## 4. Google Health Connect mobile bridge
+
+Your Android app requests the exact Health Connect read permissions it needs,
+reads records on-device, and pushes the stable SDK envelope directly to the
+user's ForeverBetter workspace:
+
+```bash
+curl -s "$HEALTH_API/api/v1/sdk/users/$END_USER/sync" \
+  -H "x-foreverbetter-api-key: $MOBILE_SYNC_KEY" \
+  -H "content-type: application/json" \
+  -d '{
+    "provider":"health_connect",
+    "sdkVersion":"1.0.0",
+    "syncTimestamp":"2026-07-16T07:30:00Z",
+    "data":{
+      "records":[
+        {
+          "id":"steps-2026-07-15",
+          "type":"steps",
+          "value":9342,
+          "unit":"steps",
+          "startDate":"2026-07-15T00:00:00Z",
+          "endDate":"2026-07-15T23:59:59Z"
+        }
+      ]
+    }
+  }'
+```
+
+The API returns `202 Accepted`, a source ID, and the normalized observation
+count. It preserves the original record timestamps. A custom bridge can also
+use `POST /imports/file` with `category: "wearables"` and
+`provider: "health_connect"`.
+
+## 5. Analyze the data
+
+Call `POST /wearables/analyze` with wearable source IDs, combine sources through
+`POST /analyses`, query longitudinal change through
+`POST /users/{id}/trends`, or build bounded agent context through
+`POST /users/{id}/health-context`.

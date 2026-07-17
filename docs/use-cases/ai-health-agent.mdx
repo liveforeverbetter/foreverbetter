@@ -1,0 +1,76 @@
+---
+title: "Build an AI health agent"
+description: "Give an agent one health context to reason over, then ask it questions and act over REST or MCP."
+---
+
+The API is agent-native. An agent can discover its own capabilities, pull a single
+consolidated health context for a user, ask natural-language questions against it,
+and hand back a prioritized plan, with provenance on every fact.
+
+| Step | Endpoint / MCP tool |
+| --- | --- |
+| Discover capabilities | `GET /capabilities` · `GET /.well-known/health-agent.json` |
+| Consolidate context | `POST /users/{id}/health-context` · `get_health_context` |
+| Ask questions | `POST /query` · `query_health_context` |
+| Return a plan | `GET /analyses/{id}/action-plan` · `get_action_plan` |
+
+## 1. Discover what's possible
+
+```bash
+curl -s "$FB_API/.well-known/health-agent.json" | jq '{auth,endpoints,mcp}'
+```
+
+The manifest lists auth requirements, every endpoint, and the MCP tool set, which
+is enough for an agent to self-configure. The same operations are exposed over MCP at
+`POST /mcp` (`initialize`, `tools/list`, `tools/call`).
+
+## 2. Consolidate one health context
+
+Instead of stitching modalities together itself, the agent asks for a single
+context: coverage per modality, priority findings, and gaps.
+
+```bash
+curl -s -X POST "$FB_API/users/$UID/health-context" -H "authorization: Bearer $FB_KEY" \
+  -H "content-type: application/json" -d '{
+    "organization_id":"'$ORG'","analysis_ids":["'$AN'"],"max_findings":12
+  }' | jq '{coverage,priority_findings}'
+```
+
+Responses are cached (watch for `x-cache: HIT`) so repeated agent turns are cheap.
+Every finding carries provenance (the source and engine that produced it), so the
+agent can cite real data behind every claim.
+
+## 3. Ask questions against the context
+
+```bash
+curl -s -X POST "$FB_API/query" -H "authorization: Bearer $FB_KEY" \
+  -H "content-type: application/json" -d '{
+    "user_id":"'$UID'","analysis_ids":["'$AN'"],"query":"What is driving my cardiovascular risk?"
+  }' | jq '.matches'
+```
+
+## 4. Return an actionable plan
+
+When the user asks "what should I do?", the agent returns a real protocol: cited
+interventions and an evidence-graded supplement stack, personalized to their meds
+(see [Personal action protocol](/use-cases/action-protocol)):
+
+```bash
+curl -s "$FB_API/analyses/$AN/action-plan" -H "authorization: Bearer $FB_KEY" | jq '.summary,.interventions[0]'
+```
+
+## Why it works for agents
+
+- **One context object** instead of N modality calls to reason over.
+- **Provenance on every fact**: sources and engine on each finding, citations
+  (supp.ai, Pillser) on each recommendation.
+- **RFC 9457 structured errors** with `code`, `cause`, `fix`, and `docs_url`, so a
+  stuck agent can self-correct.
+- **MCP + OpenAPI** from one schema source, so you use whichever your framework
+  speaks.
+
+## Take it further
+
+- Register per-user tokens (`POST /api-keys`) so one agent can serve many users,
+  each scoped to their own data.
+- Use `GET /design/systems` if the agent also renders UI.

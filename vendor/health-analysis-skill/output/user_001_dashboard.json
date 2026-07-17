@@ -1,0 +1,478 @@
+{
+  "gli": 364,
+  "gli_rating": "Needs Work",
+  "category_gli": {
+    "methylation": 450,
+    "dna": 250,
+    "lipid": 250,
+    "cholesterol": 300,
+    "inflammation": 250,
+    "cardiovascular": 250,
+    "oxidative": 800
+  },
+  "top_traits": [
+    {
+      "trait_id": "cholesterol",
+      "score": 30,
+      "confidence": 0.9,
+      "mechanism": "PCSK9-mediated LDL receptor recycling"
+    },
+    {
+      "trait_id": "lipid_metabolism",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "APOB and PCSK9 regulation of LDL cholesterol"
+    },
+    {
+      "trait_id": "inflammation",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "IL-6 and TNF-alpha signaling"
+    },
+    {
+      "trait_id": "dna_repair",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "PARP enzyme activity and DNA damage response"
+    },
+    {
+      "trait_id": "cardiovascular",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "NOS3-mediated endothelial nitric oxide production"
+    }
+  ],
+  "traits": [
+    {
+      "trait_id": "methylation",
+      "score": 45,
+      "confidence": 0.85,
+      "mechanism": "MTHFR enzyme efficiency",
+      "outcomes": [
+        {
+          "id": "elevated_homocysteine",
+          "severity": 0.8,
+          "description": "Increased cardiovascular risk"
+        },
+        {
+          "id": "folate_deficiency",
+          "severity": 0.6,
+          "description": "Fatigue and cognitive effects"
+        }
+      ],
+      "actions": [
+        {
+          "id": "methylfolate_supplementation",
+          "title": "Take methylfolate",
+          "impact": 0.9,
+          "difficulty": "low",
+          "description": "400-800mcg methylfolate daily"
+        },
+        {
+          "id": "reduce_folic_acid",
+          "title": "Avoid synthetic folic acid",
+          "impact": 0.7,
+          "difficulty": "medium"
+        },
+        {
+          "id": "test_homocysteine",
+          "title": "Monitor homocysteine levels",
+          "impact": 0.6,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "trait_id": "dna_repair",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "PARP enzyme activity and DNA damage response",
+      "outcomes": [
+        {
+          "id": "dna_damage_accumulation",
+          "severity": 0.6,
+          "description": "Accelerated cellular aging"
+        }
+      ],
+      "actions": [
+        {
+          "id": "nad_precursors",
+          "title": "Support NAD+ levels",
+          "impact": 0.7,
+          "difficulty": "low"
+        },
+        {
+          "id": "nad_booster",
+          "title": "Take NMN or NR",
+          "impact": 0.6,
+          "difficulty": "low"
+        },
+        {
+          "id": "avoid_dna_damage",
+          "title": "Minimize UV exposure",
+          "impact": 0.5,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "trait_id": "lipid_metabolism",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "APOB and PCSK9 regulation of LDL cholesterol",
+      "outcomes": [
+        {
+          "id": "elevated_ldl",
+          "severity": 0.7,
+          "description": "Increased cardiovascular risk"
+        }
+      ],
+      "actions": [
+        {
+          "id": "heart_healthy_diet",
+          "title": "Follow heart-healthy diet",
+          "impact": 0.7,
+          "difficulty": "medium"
+        },
+        {
+          "id": "statin_therapy",
+          "title": "Consider statin therapy",
+          "impact": 0.8,
+          "difficulty": "high"
+        },
+        {
+          "id": "monitor_lipids",
+          "title": "Regular lipid monitoring",
+          "impact": 0.6,
+          "difficulty": "low"
+        }
+      ]
+    },
+    {
+      "trait_id": "cholesterol",
+      "score": 30,
+      "confidence": 0.9,
+      "mechanism": "PCSK9-mediated LDL receptor recycling",
+      "outcomes": [
+        {
+          "id": "familial_hypercholesterolemia",
+          "severity": 0.8,
+          "description": "Very high LDL cholesterol"
+        }
+      ],
+      "actions": [
+        {
+          "id": "pcsk9_inhibitor",
+          "title": "Consider PCSK9 inhibitor",
+          "impact": 0.9,
+          "difficulty": "high"
+        },
+        {
+          "id": "statin_therapy",
+          "title": "Aggressive statin therapy",
+          "impact": 0.8,
+          "difficulty": "high"
+        },
+        {
+          "id": "family_screening",
+          "title": "Family lipid screening",
+          "impact": 0.7,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "trait_id": "inflammation",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "IL-6 and TNF-alpha signaling",
+      "outcomes": [
+        {
+          "id": "chronic_inflammation",
+          "severity": 0.7,
+          "description": "Accelerated aging, disease risk"
+        }
+      ],
+      "actions": [
+        {
+          "id": "omega3",
+          "title": "Increase omega-3 intake",
+          "impact": 0.7,
+          "difficulty": "low"
+        },
+        {
+          "id": "curcumin",
+          "title": "Take curcumin",
+          "impact": 0.6,
+          "difficulty": "low"
+        },
+        {
+          "id": "reduce_omega6",
+          "title": "Reduce omega-6 foods",
+          "impact": 0.5,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "trait_id": "cardiovascular",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "NOS3-mediated endothelial nitric oxide production",
+      "outcomes": [
+        {
+          "id": "endothelial_dysfunction",
+          "severity": 0.6,
+          "description": "Impaired blood vessel function"
+        },
+        {
+          "id": "hypertension_risk",
+          "severity": 0.5,
+          "description": "Increased blood pressure risk"
+        }
+      ],
+      "actions": [
+        {
+          "id": "l_arginine",
+          "title": "Consider L-arginine supplementation",
+          "impact": 0.5,
+          "difficulty": "medium"
+        },
+        {
+          "id": "aerobic_exercise",
+          "title": "Regular aerobic exercise",
+          "impact": 0.7,
+          "difficulty": "medium"
+        },
+        {
+          "id": "monitor_bp",
+          "title": "Regular blood pressure monitoring",
+          "impact": 0.6,
+          "difficulty": "low"
+        }
+      ]
+    },
+    {
+      "trait_id": "oxidative_metabolism",
+      "score": 80,
+      "confidence": 0.85,
+      "mechanism": "PPARGC1B-mediated oxidative metabolism",
+      "outcomes": [
+        {
+          "id": "reduced_oxidative_capacity",
+          "severity": 0.4,
+          "description": "Slightly reduced oxidative metabolism"
+        }
+      ],
+      "actions": [
+        {
+          "id": "aerobic_training",
+          "title": "Aerobic exercise training",
+          "impact": 0.6,
+          "difficulty": "medium"
+        },
+        {
+          "id": "balanced_diet",
+          "title": "Balanced nutrition",
+          "impact": 0.5,
+          "difficulty": "low"
+        }
+      ]
+    }
+  ],
+  "priorities": [
+    {
+      "trait_id": "cholesterol",
+      "priority": 0.65,
+      "reasoning": "Score 30 is below optimal threshold (40)"
+    },
+    {
+      "trait_id": "lipid_metabolism",
+      "priority": 0.5,
+      "reasoning": "Score 25 is below optimal threshold (40)"
+    },
+    {
+      "trait_id": "inflammation",
+      "priority": 0.44,
+      "reasoning": "Score 25 is below optimal threshold (40)"
+    },
+    {
+      "trait_id": "dna_repair",
+      "priority": 0.38,
+      "reasoning": "Score 25 is below optimal threshold (40)"
+    },
+    {
+      "trait_id": "cardiovascular",
+      "priority": 0.35,
+      "reasoning": "Score 25 is below optimal threshold (40)"
+    },
+    {
+      "trait_id": "methylation",
+      "priority": 0.27,
+      "reasoning": "Score 45 is within acceptable range"
+    },
+    {
+      "trait_id": "oxidative_metabolism",
+      "priority": 0.1,
+      "reasoning": "Score 80 is within acceptable range"
+    }
+  ],
+  "insights": [
+    {
+      "title": "Methylation",
+      "summary": "Your methylation is moderate. There is room for optimization.",
+      "impact": "elevated_homocysteine",
+      "actions": [
+        "Take methylfolate",
+        "Avoid synthetic folic acid",
+        "Monitor homocysteine levels"
+      ],
+      "score": 45,
+      "confidence": 0.85
+    },
+    {
+      "title": "Dna repair",
+      "summary": "Your dna repair is below optimal. Consider the actions below to improve.",
+      "impact": "dna_damage_accumulation",
+      "actions": [
+        "Support NAD+ levels",
+        "Take NMN or NR",
+        "Minimize UV exposure"
+      ],
+      "score": 25,
+      "confidence": 0.9
+    },
+    {
+      "title": "Lipid metabolism",
+      "summary": "Your lipid metabolism is below optimal. Consider the actions below to improve.",
+      "impact": "elevated_ldl",
+      "actions": [
+        "Follow heart-healthy diet",
+        "Consider statin therapy",
+        "Regular lipid monitoring"
+      ],
+      "score": 25,
+      "confidence": 0.9
+    },
+    {
+      "title": "Cholesterol",
+      "summary": "Your cholesterol is below optimal. Consider the actions below to improve.",
+      "impact": "familial_hypercholesterolemia",
+      "actions": [
+        "Consider PCSK9 inhibitor",
+        "Aggressive statin therapy",
+        "Family lipid screening"
+      ],
+      "score": 30,
+      "confidence": 0.9
+    },
+    {
+      "title": "Inflammation",
+      "summary": "Your inflammation is below optimal. Consider the actions below to improve.",
+      "impact": "chronic_inflammation",
+      "actions": [
+        "Increase omega-3 intake",
+        "Take curcumin",
+        "Reduce omega-6 foods"
+      ],
+      "score": 25,
+      "confidence": 0.9
+    },
+    {
+      "title": "Cardiovascular",
+      "summary": "Your cardiovascular is below optimal. Consider the actions below to improve.",
+      "impact": "endothelial_dysfunction",
+      "actions": [
+        "Consider L-arginine supplementation",
+        "Regular aerobic exercise",
+        "Regular blood pressure monitoring"
+      ],
+      "score": 25,
+      "confidence": 0.9
+    },
+    {
+      "title": "Oxidative metabolism",
+      "summary": "Your oxidative metabolism is optimal. Maintain current habits.",
+      "impact": "reduced_oxidative_capacity",
+      "actions": [
+        "Aerobic exercise training",
+        "Balanced nutrition"
+      ],
+      "score": 80,
+      "confidence": 0.85
+    }
+  ],
+  "protocols": [
+    {
+      "title": "Core Optimization Protocol",
+      "description": "Prioritized actions for 5 at-risk traits (score < 40)",
+      "actions": [
+        {
+          "id": "methylfolate_supplementation",
+          "title": "Take methylfolate",
+          "impact": 0.9,
+          "difficulty": "low",
+          "description": "400-800mcg methylfolate daily"
+        },
+        {
+          "id": "pcsk9_inhibitor",
+          "title": "Consider PCSK9 inhibitor",
+          "impact": 0.9,
+          "difficulty": "high"
+        },
+        {
+          "id": "statin_therapy",
+          "title": "Aggressive statin therapy",
+          "impact": 0.8,
+          "difficulty": "high"
+        },
+        {
+          "id": "reduce_folic_acid",
+          "title": "Avoid synthetic folic acid",
+          "impact": 0.7,
+          "difficulty": "medium"
+        },
+        {
+          "id": "nad_precursors",
+          "title": "Support NAD+ levels",
+          "impact": 0.7,
+          "difficulty": "low"
+        }
+      ],
+      "trait_count": 5
+    },
+    {
+      "title": "Maintenance Protocol",
+      "description": "Optimize 1 moderate trait",
+      "actions": [
+        {
+          "id": "methylfolate_supplementation",
+          "title": "Take methylfolate",
+          "impact": 0.9,
+          "difficulty": "low",
+          "description": "400-800mcg methylfolate daily"
+        },
+        {
+          "id": "pcsk9_inhibitor",
+          "title": "Consider PCSK9 inhibitor",
+          "impact": 0.9,
+          "difficulty": "high"
+        },
+        {
+          "id": "statin_therapy",
+          "title": "Aggressive statin therapy",
+          "impact": 0.8,
+          "difficulty": "high"
+        }
+      ],
+      "trait_count": 1
+    }
+  ],
+  "metadata": {
+    "user_id": "user_001",
+    "processed_at": "2026-04-28T09:41:13.051Z",
+    "trait_count": 7,
+    "insight_count": 7,
+    "protocol_count": 2
+  }
+}

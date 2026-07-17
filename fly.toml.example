@@ -1,0 +1,71 @@
+# Example Fly.io deployment for the Wellness API.
+#   cp fly.toml.example fly.toml   # then set app + PUBLIC_BASE_URL
+#   fly postgres create --name <db-app> && fly postgres attach <db-app>
+#   fly storage create             # Tigris S3 bucket (payloads); sets AWS_* + BUCKET_NAME
+#   fly secrets set API_KEY_JWT_SECRET=... SERVICE_ACCOUNT_JWT_SECRET=...
+#   fly deploy
+#
+# One image runs all three process groups; the entrypoint execs the process
+# command. Migrations apply on boot of the `app` process.
+
+app = "your-app-name"
+primary_region = "fra"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[processes]
+  app = "node dist/index.js"
+  worker = "node dist/workers/wearables-worker.js"
+  wgs = "node dist/workers/genetics-worker.js"
+
+[http_service]
+  internal_port = 8787
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+  [[http_service.checks]]
+    grace_period = "30s"
+    interval = "30s"
+    method = "GET"
+    timeout = "10s"
+    path = "/ready"
+
+[env]
+  NODE_ENV = "production"
+  PORT = "8787"
+  STORE_MODE = "postgres"
+  STORAGE_DRIVER = "s3"
+  AUTH_MODE = "service_account"
+  AUTH_AUDIENCE = "health-api"
+  REQUIRE_HTTPS = "true"
+  DOCS_URL = "https://foreverbetter.mintlify.app"
+  EMAIL_DRIVER = "none"
+  HEALTH_ANALYSIS_EXECUTION_MODE = "queue"
+  HEALTH_ANALYSIS_TIMEOUT_MS = "1800000"
+  MAX_GENETICS_UPLOAD_BYTES = "536870912"
+  MAX_BODY_BYTES = "10485760"
+  # PUBLIC_BASE_URL = "https://your-app-name.fly.dev"
+  # Set your dashboard origin(s) here to allow cross-origin browser access:
+  # CORS_ALLOWED_ORIGINS = "https://your-app-name.fly.dev"
+
+# Secrets (set with `fly secrets set`, never in this file):
+#   DATABASE_URL                 (set automatically by `fly postgres attach`)
+#   AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY / AWS_ENDPOINT_URL_S3 / BUCKET_NAME
+#                                (set automatically by `fly storage create`)
+#   API_KEY_JWT_SECRET           (openssl rand -hex 32)
+#   SERVICE_ACCOUNT_JWT_SECRET   (openssl rand -hex 32)
+#   WHOOP_TOKEN_ENC_KEY          (openssl rand -base64 32) if using WHOOP/Oura
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"
+  processes = ["app", "worker"]
+
+[[vm]]
+  size = "shared-cpu-2x"
+  memory = "1024mb"
+  processes = ["wgs"]

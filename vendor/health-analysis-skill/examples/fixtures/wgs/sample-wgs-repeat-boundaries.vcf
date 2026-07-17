@@ -1,0 +1,11 @@
+##fileformat=VCFv4.2
+##source=23longevity-synthetic-wgs-repeat-boundary-truthset
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Structural variant type">
+##INFO=<ID=REPID,Number=1,Type=String,Description="Repeat locus identifier">
+##INFO=<ID=RU,Number=1,Type=String,Description="Repeat unit">
+##INFO=<ID=REPCN,Number=1,Type=Integer,Description="Repeat copy number">
+##INFO=<ID=GENE,Number=1,Type=String,Description="Gene symbol">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE
+4	3074877	htt_normal_cag	N	<STR>	80	PASS	SVTYPE=STR;REPID=HTT_CAG;RU=CAG;REPCN=18;GENE=HTT	GT	0/0
+4	3074877	htt_intermediate_cag	N	<STR>	93	PASS	SVTYPE=STR;REPID=HTT_CAG;RU=CAG;REPCN=31;GENE=HTT	GT	0/1
+9	69037286	fxn_pathogenic_gaa	N	<STR>	96	PASS	SVTYPE=STR;REPID=FXN_GAA;RU=GAA;REPCN=72;GENE=FXN	GT	0/1

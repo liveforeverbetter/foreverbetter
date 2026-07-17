@@ -1,0 +1,36 @@
+{
+  "source": "NCBI ClinVar",
+  "genome_build": "GRCh37",
+  "source_url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz",
+  "source_md5": "b6844fd8dc371e792b6515e83d67c6dd",
+  "source_release": "clinvar_20260606.vcf.gz",
+  "generated_at": "2026-06-09T12:50:00Z",
+  "row_counts": {
+    "rsid_annotation_rows": 2896063,
+    "unique_rsids": 2645236,
+    "interpretation_rows": 2896127
+  },
+  "files": [
+    {
+      "path": "reference/clinvar/clinvar_rsid_annotation.tsv.gz",
+      "bytes": 23247398,
+      "purpose": "Tabix-indexed GRCh37 CHROM/POS/REF/ALT to ClinVar rsID annotation table for bcftools annotate."
+    },
+    {
+      "path": "reference/clinvar/clinvar_rsid_annotation.tsv.gz.tbi",
+      "bytes": 467513,
+      "purpose": "Tabix index for the lean ClinVar rsID annotation table."
+    },
+    {
+      "path": "reference/clinvar/clinvar_index.txt.gz",
+      "bytes": 25283689,
+      "purpose": "Compressed rsID-keyed ClinVar interpretation index: rsID, clinical significance, disease, gene, review status."
+    }
+  ],
+  "disclosure": {
+    "rsid_source": "ClinVar GRCh37 rsID subset, generated from INFO/RS in NCBI ClinVar.",
+    "limitation": "ClinVar rsID recovery only. This is not full dbSNP annotation and will miss many non-ClinVar rsIDs used by GWAS, PRS, and consumer wellness markers.",
+    "not_diagnostic": "ClinVar findings are educational and are not a diagnosis, treatment plan, or clinical decision tool. Confirm clinically before medical action.",
+    "vus_policy": "Variants of uncertain significance are shown as uncertain context only and are not used as medical action triggers."
+  }
+}

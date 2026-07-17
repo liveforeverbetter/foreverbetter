@@ -1,0 +1,903 @@
+{
+  "gli": 560,
+  "gli_rating": "Moderate",
+  "category_gli": {
+    "methylation": 450,
+    "dna": 250,
+    "lipid": 500,
+    "cholesterol": 300,
+    "inflammation": 250,
+    "endothelial": 250,
+    "oxidative": 800,
+    "cardiovascular": 700,
+    "muscular": 700,
+    "sleep": 700,
+    "baseline": 750,
+    "body": 750,
+    "glucose": 750,
+    "blood": 750
+  },
+  "top_traits": [
+    {
+      "trait_id": "cholesterol",
+      "score": 30,
+      "confidence": 0.9,
+      "mechanism": "PCSK9-mediated LDL receptor recycling"
+    },
+    {
+      "trait_id": "lipid_metabolism",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "APOB and PCSK9 regulation of LDL cholesterol"
+    },
+    {
+      "trait_id": "inflammation",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "IL-6 and TNF-alpha signaling"
+    },
+    {
+      "trait_id": "dna_repair",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "PARP enzyme activity and DNA damage response"
+    },
+    {
+      "trait_id": "cardiovascular_fitness",
+      "score": 70,
+      "confidence": 0.95,
+      "mechanism": "VO2max - maximal oxygen consumption capacity"
+    }
+  ],
+  "traits": [
+    {
+      "trait_id": "methylation",
+      "score": 45,
+      "confidence": 0.85,
+      "mechanism": "MTHFR enzyme efficiency",
+      "outcomes": [
+        {
+          "id": "elevated_homocysteine",
+          "severity": 0.8,
+          "description": "Increased cardiovascular risk"
+        },
+        {
+          "id": "folate_deficiency",
+          "severity": 0.6,
+          "description": "Fatigue and cognitive effects"
+        }
+      ],
+      "actions": [
+        {
+          "id": "methylfolate_supplementation",
+          "title": "Take methylfolate",
+          "impact": 0.9,
+          "difficulty": "low",
+          "description": "400-800mcg methylfolate daily"
+        },
+        {
+          "id": "reduce_folic_acid",
+          "title": "Avoid synthetic folic acid",
+          "impact": 0.7,
+          "difficulty": "medium"
+        },
+        {
+          "id": "test_homocysteine",
+          "title": "Monitor homocysteine levels",
+          "impact": 0.6,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "trait_id": "dna_repair",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "PARP enzyme activity and DNA damage response",
+      "outcomes": [
+        {
+          "id": "dna_damage_accumulation",
+          "severity": 0.6,
+          "description": "Accelerated cellular aging"
+        }
+      ],
+      "actions": [
+        {
+          "id": "nad_precursors",
+          "title": "Support NAD+ levels",
+          "impact": 0.7,
+          "difficulty": "low"
+        },
+        {
+          "id": "nad_booster",
+          "title": "Take NMN or NR",
+          "impact": 0.6,
+          "difficulty": "low"
+        },
+        {
+          "id": "avoid_dna_damage",
+          "title": "Minimize UV exposure",
+          "impact": 0.5,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "trait_id": "lipid_metabolism",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "APOB and PCSK9 regulation of LDL cholesterol",
+      "outcomes": [
+        {
+          "id": "elevated_ldl",
+          "severity": 0.7,
+          "description": "Increased cardiovascular risk"
+        }
+      ],
+      "actions": [
+        {
+          "id": "heart_healthy_diet",
+          "title": "Follow heart-healthy diet",
+          "impact": 0.7,
+          "difficulty": "medium"
+        },
+        {
+          "id": "statin_therapy",
+          "title": "Consider statin therapy",
+          "impact": 0.8,
+          "difficulty": "high"
+        },
+        {
+          "id": "monitor_lipids",
+          "title": "Regular lipid monitoring",
+          "impact": 0.6,
+          "difficulty": "low"
+        }
+      ]
+    },
+    {
+      "trait_id": "cholesterol",
+      "score": 30,
+      "confidence": 0.9,
+      "mechanism": "PCSK9-mediated LDL receptor recycling",
+      "outcomes": [
+        {
+          "id": "familial_hypercholesterolemia",
+          "severity": 0.8,
+          "description": "Very high LDL cholesterol"
+        }
+      ],
+      "actions": [
+        {
+          "id": "pcsk9_inhibitor",
+          "title": "Consider PCSK9 inhibitor",
+          "impact": 0.9,
+          "difficulty": "high"
+        },
+        {
+          "id": "statin_therapy",
+          "title": "Aggressive statin therapy",
+          "impact": 0.8,
+          "difficulty": "high"
+        },
+        {
+          "id": "family_screening",
+          "title": "Family lipid screening",
+          "impact": 0.7,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "trait_id": "inflammation",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "IL-6 and TNF-alpha signaling",
+      "outcomes": [
+        {
+          "id": "chronic_inflammation",
+          "severity": 0.7,
+          "description": "Accelerated aging, disease risk"
+        }
+      ],
+      "actions": [
+        {
+          "id": "omega3",
+          "title": "Increase omega-3 intake",
+          "impact": 0.7,
+          "difficulty": "low"
+        },
+        {
+          "id": "curcumin",
+          "title": "Take curcumin",
+          "impact": 0.6,
+          "difficulty": "low"
+        },
+        {
+          "id": "reduce_omega6",
+          "title": "Reduce omega-6 foods",
+          "impact": 0.5,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "trait_id": "endothelial_function",
+      "score": 25,
+      "confidence": 0.9,
+      "mechanism": "NOS3/VEGFA-mediated vascular health",
+      "outcomes": [
+        {
+          "id": "vascular_dysfunction",
+          "severity": 0.5,
+          "description": "Impaired blood vessel function"
+        }
+      ],
+      "actions": [
+        {
+          "id": "nitric_oxide_support",
+          "title": "Support nitric oxide production",
+          "impact": 0.6,
+          "difficulty": "low"
+        },
+        {
+          "id": "antioxidant_support",
+          "title": "Take antioxidants",
+          "impact": 0.5,
+          "difficulty": "low"
+        },
+        {
+          "id": "regular_exercise",
+          "title": "Regular aerobic exercise",
+          "impact": 0.7,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "trait_id": "oxidative_metabolism",
+      "score": 80,
+      "confidence": 0.85,
+      "mechanism": "PPARGC1B-mediated oxidative metabolism",
+      "outcomes": [
+        {
+          "id": "reduced_oxidative_capacity",
+          "severity": 0.4,
+          "description": "Slightly reduced oxidative metabolism"
+        }
+      ],
+      "actions": [
+        {
+          "id": "aerobic_training",
+          "title": "Aerobic exercise training",
+          "impact": 0.6,
+          "difficulty": "medium"
+        },
+        {
+          "id": "balanced_diet",
+          "title": "Balanced nutrition",
+          "impact": 0.5,
+          "difficulty": "low"
+        }
+      ]
+    },
+    {
+      "trait_id": "cardiovascular_fitness",
+      "score": 70,
+      "confidence": 0.95,
+      "mechanism": "VO2max - maximal oxygen consumption capacity",
+      "outcomes": [
+        {
+          "id": "low_vo2max",
+          "severity": 0.8,
+          "description": "Strong predictor of all-cause mortality"
+        }
+      ],
+      "actions": [
+        {
+          "id": "vo2max_test",
+          "title": "Get baseline VO2max test",
+          "impact": 0.9,
+          "difficulty": "medium",
+          "description": "Lab test (~$200) or smartwatch estimate"
+        },
+        {
+          "id": "hiit_training",
+          "title": "2x/week HIIT: 4x4min hard / 3min easy",
+          "impact": 0.9,
+          "difficulty": "medium",
+          "description": "10-min warmup + 4 rounds + cool down (~40 min total)"
+        },
+        {
+          "id": "endurance_base",
+          "title": "1-2x/week Zone 2 cardio at conversational pace",
+          "impact": 0.8,
+          "difficulty": "low",
+          "description": "45-60 min at ~60-70% max HR"
+        },
+        {
+          "id": "vo2max_target",
+          "title": "Target: 42+ mL/kg/min for 40s, 50+ excellent",
+          "impact": 0.9,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "trait_id": "muscular_strength",
+      "score": 70,
+      "confidence": 0.95,
+      "mechanism": "Skeletal muscle mass and strength capacity",
+      "outcomes": [
+        {
+          "id": "sarcopenia",
+          "severity": 0.6,
+          "description": "Age-related muscle loss"
+        }
+      ],
+      "actions": [
+        {
+          "id": "resistance_training",
+          "title": "2x/week full-body compound training",
+          "impact": 0.8,
+          "difficulty": "medium",
+          "description": "Squat, hinge, press, pull, carry - 30-45 min"
+        },
+        {
+          "id": "grip_strength_test",
+          "title": "Annual hand dynamometer test ($30)",
+          "impact": 0.5,
+          "difficulty": "low",
+          "description": "Simple proxy for overall strength"
+        }
+      ]
+    },
+    {
+      "trait_id": "sleep_longevity",
+      "score": 70,
+      "confidence": 0.95,
+      "mechanism": "Sleep duration and quality impact on cellular repair",
+      "outcomes": [
+        {
+          "id": "sleep_debt",
+          "severity": 0.6,
+          "description": "Accumulates disease risk"
+        }
+      ],
+      "actions": [
+        {
+          "id": "sleep_7to9",
+          "title": "Target 7-9 hours nightly",
+          "impact": 0.8,
+          "difficulty": "medium"
+        },
+        {
+          "id": "fixed_wake_time",
+          "title": "Consistent wake time (highest-leverage sleep intervention)",
+          "impact": 0.7,
+          "difficulty": "medium"
+        },
+        {
+          "id": "sleep_hygiene",
+          "title": "Sleep hygiene: cool room, dark, no screens before bed",
+          "impact": 0.6,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "trait_id": "baseline_labs",
+      "score": 75,
+      "confidence": 0.9,
+      "mechanism": "Essential biomarker monitoring",
+      "outcomes": [
+        {
+          "id": "undetected_deficiency",
+          "severity": 0.5,
+          "description": "Silent deficiencies affecting longevity"
+        }
+      ],
+      "actions": [
+        {
+          "id": "vitamin_d_test",
+          "title": "Test Vitamin D before supplementing",
+          "impact": 0.6,
+          "difficulty": "low"
+        },
+        {
+          "id": "b12_ferritin_test",
+          "title": "Test B12 and ferritin",
+          "impact": 0.5,
+          "difficulty": "low"
+        },
+        {
+          "id": "tsh_test",
+          "title": "Annual TSH",
+          "impact": 0.5,
+          "difficulty": "low"
+        },
+        {
+          "id": "hscrp_test",
+          "title": "Annual hsCRP",
+          "impact": 0.5,
+          "difficulty": "low"
+        }
+      ]
+    },
+    {
+      "trait_id": "body_composition",
+      "score": 75,
+      "confidence": 0.85,
+      "mechanism": "Lean mass vs fat mass distribution",
+      "outcomes": [
+        {
+          "id": "visceral_adiposity",
+          "severity": 0.7,
+          "description": "Central obesity drives metabolic disease"
+        }
+      ],
+      "actions": [
+        {
+          "id": "waist_measurement",
+          "title": "Track waist circumference",
+          "impact": 0.6,
+          "difficulty": "low",
+          "description": "Better than scale for metabolic health"
+        },
+        {
+          "id": "dexa_scan",
+          "title": "DEXA scan for baseline body composition",
+          "impact": 0.5,
+          "difficulty": "medium",
+          "description": "One-time baseline"
+        },
+        {
+          "id": "bmi_target",
+          "title": "Target BMI ~25 (not 22)",
+          "impact": 0.5,
+          "difficulty": "medium",
+          "description": "Lowest all-cause mortality"
+        }
+      ]
+    },
+    {
+      "trait_id": "glucose_insulin_management",
+      "score": 75,
+      "confidence": 0.9,
+      "mechanism": "Glucose/insulin signaling and metabolic health",
+      "outcomes": [
+        {
+          "id": "insulin_resistance",
+          "severity": 0.7,
+          "description": "Driver of metabolic syndrome"
+        }
+      ],
+      "actions": [
+        {
+          "id": "annual_glucose",
+          "title": "Annual HbA1c, fasting glucose, fasting insulin",
+          "impact": 0.8,
+          "difficulty": "low"
+        },
+        {
+          "id": "cgm_2weeks",
+          "title": "Consider 2-week CGM for comprehensive glucose data",
+          "impact": 0.7,
+          "difficulty": "medium",
+          "description": "More signal than single fasting measurement"
+        },
+        {
+          "id": "glp1_consideration",
+          "title": "Discuss GLP-1 (semaglutide) with physician if indicated",
+          "impact": 0.8,
+          "difficulty": "high",
+          "description": "Showing biological age effects beyond weight loss"
+        }
+      ]
+    },
+    {
+      "trait_id": "lipid_management",
+      "score": 75,
+      "confidence": 0.9,
+      "mechanism": "Apolipoprotein B as primary lipid risk factor",
+      "outcomes": [
+        {
+          "id": "elevated_apoB",
+          "severity": 0.7,
+          "description": "Direct measure of atherogenic particles"
+        }
+      ],
+      "actions": [
+        {
+          "id": "apoB_test",
+          "title": "Request apoB test (more predictive than LDL-C)",
+          "impact": 0.8,
+          "difficulty": "low",
+          "description": "Target: <80 mg/dL primary prevention, <60 high-risk"
+        },
+        {
+          "id": "statin_therapy",
+          "title": "Statin therapy if indicated",
+          "impact": 0.8,
+          "difficulty": "medium",
+          "description": "Generic atorvastatin or rosuvastatin first-line"
+        },
+        {
+          "id": "lipid_panel",
+          "title": "Annual lipid panel",
+          "impact": 0.6,
+          "difficulty": "low"
+        }
+      ]
+    },
+    {
+      "trait_id": "blood_pressure_control",
+      "score": 75,
+      "confidence": 0.9,
+      "mechanism": "Arterial pressure and cardiovascular strain",
+      "outcomes": [
+        {
+          "id": "hypertension",
+          "severity": 0.7,
+          "description": "Silent driver of cardiovascular disease"
+        }
+      ],
+      "actions": [
+        {
+          "id": "home_bp_monitoring",
+          "title": "Home BP cuff monitoring (2 weeks)",
+          "impact": 0.7,
+          "difficulty": "low",
+          "description": "More accurate than clinic readings"
+        },
+        {
+          "id": "bp_target",
+          "title": "Target ~120/80 mmHg",
+          "impact": 0.7,
+          "difficulty": "medium"
+        },
+        {
+          "id": "reduce_sodium",
+          "title": "Reduce sodium intake",
+          "impact": 0.5,
+          "difficulty": "medium"
+        }
+      ]
+    }
+  ],
+  "priorities": [
+    {
+      "trait_id": "cholesterol",
+      "priority": 0.65,
+      "reasoning": "Score 30 is below optimal threshold (40)"
+    },
+    {
+      "trait_id": "lipid_metabolism",
+      "priority": 0.5,
+      "reasoning": "Score 25 is below optimal threshold (40)"
+    },
+    {
+      "trait_id": "inflammation",
+      "priority": 0.44,
+      "reasoning": "Score 25 is below optimal threshold (40)"
+    },
+    {
+      "trait_id": "dna_repair",
+      "priority": 0.38,
+      "reasoning": "Score 25 is below optimal threshold (40)"
+    },
+    {
+      "trait_id": "cardiovascular_fitness",
+      "priority": 0.34,
+      "reasoning": "Score 70 is within acceptable range"
+    },
+    {
+      "trait_id": "endothelial_function",
+      "priority": 0.32,
+      "reasoning": "Score 25 is below optimal threshold (40)"
+    },
+    {
+      "trait_id": "methylation",
+      "priority": 0.27,
+      "reasoning": "Score 45 is within acceptable range"
+    },
+    {
+      "trait_id": "glucose_insulin_management",
+      "priority": 0.25,
+      "reasoning": "Score 75 is within acceptable range"
+    },
+    {
+      "trait_id": "lipid_management",
+      "priority": 0.25,
+      "reasoning": "Score 75 is within acceptable range"
+    },
+    {
+      "trait_id": "muscular_strength",
+      "priority": 0.23,
+      "reasoning": "Score 70 is within acceptable range"
+    },
+    {
+      "trait_id": "sleep_longevity",
+      "priority": 0.23,
+      "reasoning": "Score 70 is within acceptable range"
+    },
+    {
+      "trait_id": "blood_pressure_control",
+      "priority": 0.22,
+      "reasoning": "Score 75 is within acceptable range"
+    },
+    {
+      "trait_id": "body_composition",
+      "priority": 0.18,
+      "reasoning": "Score 75 is within acceptable range"
+    },
+    {
+      "trait_id": "baseline_labs",
+      "priority": 0.14,
+      "reasoning": "Score 75 is within acceptable range"
+    },
+    {
+      "trait_id": "oxidative_metabolism",
+      "priority": 0.1,
+      "reasoning": "Score 80 is within acceptable range"
+    }
+  ],
+  "insights": [
+    {
+      "title": "Methylation",
+      "summary": "Your methylation is moderate. There is room for optimization.",
+      "impact": "elevated_homocysteine",
+      "actions": [
+        "Take methylfolate",
+        "Avoid synthetic folic acid",
+        "Monitor homocysteine levels"
+      ],
+      "score": 45,
+      "confidence": 0.85
+    },
+    {
+      "title": "Dna repair",
+      "summary": "Your dna repair is below optimal. Consider the actions below to improve.",
+      "impact": "dna_damage_accumulation",
+      "actions": [
+        "Support NAD+ levels",
+        "Take NMN or NR",
+        "Minimize UV exposure"
+      ],
+      "score": 25,
+      "confidence": 0.9
+    },
+    {
+      "title": "Lipid metabolism",
+      "summary": "Your lipid metabolism is below optimal. Consider the actions below to improve.",
+      "impact": "elevated_ldl",
+      "actions": [
+        "Follow heart-healthy diet",
+        "Consider statin therapy",
+        "Regular lipid monitoring"
+      ],
+      "score": 25,
+      "confidence": 0.9
+    },
+    {
+      "title": "Cholesterol",
+      "summary": "Your cholesterol is below optimal. Consider the actions below to improve.",
+      "impact": "familial_hypercholesterolemia",
+      "actions": [
+        "Consider PCSK9 inhibitor",
+        "Aggressive statin therapy",
+        "Family lipid screening"
+      ],
+      "score": 30,
+      "confidence": 0.9
+    },
+    {
+      "title": "Inflammation",
+      "summary": "Your inflammation is below optimal. Consider the actions below to improve.",
+      "impact": "chronic_inflammation",
+      "actions": [
+        "Increase omega-3 intake",
+        "Take curcumin",
+        "Reduce omega-6 foods"
+      ],
+      "score": 25,
+      "confidence": 0.9
+    },
+    {
+      "title": "Endothelial function",
+      "summary": "Your endothelial function is below optimal. Consider the actions below to improve.",
+      "impact": "vascular_dysfunction",
+      "actions": [
+        "Support nitric oxide production",
+        "Take antioxidants",
+        "Regular aerobic exercise"
+      ],
+      "score": 25,
+      "confidence": 0.9
+    },
+    {
+      "title": "Oxidative metabolism",
+      "summary": "Your oxidative metabolism is optimal. Maintain current habits.",
+      "impact": "reduced_oxidative_capacity",
+      "actions": [
+        "Aerobic exercise training",
+        "Balanced nutrition"
+      ],
+      "score": 80,
+      "confidence": 0.85
+    },
+    {
+      "title": "Cardiovascular fitness",
+      "summary": "Your cardiovascular fitness is optimal. Maintain current habits.",
+      "impact": "low_vo2max",
+      "actions": [
+        "Get baseline VO2max test",
+        "2x/week HIIT: 4x4min hard / 3min easy",
+        "1-2x/week Zone 2 cardio at conversational pace",
+        "Target: 42+ mL/kg/min for 40s, 50+ excellent"
+      ],
+      "score": 70,
+      "confidence": 0.95
+    },
+    {
+      "title": "Muscular strength",
+      "summary": "Your muscular strength is optimal. Maintain current habits.",
+      "impact": "sarcopenia",
+      "actions": [
+        "2x/week full-body compound training",
+        "Annual hand dynamometer test ($30)"
+      ],
+      "score": 70,
+      "confidence": 0.95
+    },
+    {
+      "title": "Sleep longevity",
+      "summary": "Your sleep longevity is optimal. Maintain current habits.",
+      "impact": "sleep_debt",
+      "actions": [
+        "Target 7-9 hours nightly",
+        "Consistent wake time (highest-leverage sleep intervention)",
+        "Sleep hygiene: cool room, dark, no screens before bed"
+      ],
+      "score": 70,
+      "confidence": 0.95
+    },
+    {
+      "title": "Baseline labs",
+      "summary": "Your baseline labs is optimal. Maintain current habits.",
+      "impact": "undetected_deficiency",
+      "actions": [
+        "Test Vitamin D before supplementing",
+        "Test B12 and ferritin",
+        "Annual TSH",
+        "Annual hsCRP"
+      ],
+      "score": 75,
+      "confidence": 0.9
+    },
+    {
+      "title": "Body composition",
+      "summary": "Your body composition is optimal. Maintain current habits.",
+      "impact": "visceral_adiposity",
+      "actions": [
+        "Track waist circumference",
+        "DEXA scan for baseline body composition",
+        "Target BMI ~25 (not 22)"
+      ],
+      "score": 75,
+      "confidence": 0.85
+    },
+    {
+      "title": "Glucose insulin management",
+      "summary": "Your glucose insulin management is optimal. Maintain current habits.",
+      "impact": "insulin_resistance",
+      "actions": [
+        "Annual HbA1c, fasting glucose, fasting insulin",
+        "Consider 2-week CGM for comprehensive glucose data",
+        "Discuss GLP-1 (semaglutide) with physician if indicated"
+      ],
+      "score": 75,
+      "confidence": 0.9
+    },
+    {
+      "title": "Lipid management",
+      "summary": "Your lipid management is optimal. Maintain current habits.",
+      "impact": "elevated_apoB",
+      "actions": [
+        "Request apoB test (more predictive than LDL-C)",
+        "Statin therapy if indicated",
+        "Annual lipid panel"
+      ],
+      "score": 75,
+      "confidence": 0.9
+    },
+    {
+      "title": "Blood pressure control",
+      "summary": "Your blood pressure control is optimal. Maintain current habits.",
+      "impact": "hypertension",
+      "actions": [
+        "Home BP cuff monitoring (2 weeks)",
+        "Target ~120/80 mmHg",
+        "Reduce sodium intake"
+      ],
+      "score": 75,
+      "confidence": 0.9
+    }
+  ],
+  "protocols": [
+    {
+      "title": "Core Optimization Protocol",
+      "description": "Prioritized actions for 5 at-risk traits (score < 40)",
+      "actions": [
+        {
+          "id": "methylfolate_supplementation",
+          "title": "Take methylfolate",
+          "impact": 0.9,
+          "difficulty": "low",
+          "description": "400-800mcg methylfolate daily"
+        },
+        {
+          "id": "pcsk9_inhibitor",
+          "title": "Consider PCSK9 inhibitor",
+          "impact": 0.9,
+          "difficulty": "high"
+        },
+        {
+          "id": "vo2max_test",
+          "title": "Get baseline VO2max test",
+          "impact": 0.9,
+          "difficulty": "medium",
+          "description": "Lab test (~$200) or smartwatch estimate"
+        },
+        {
+          "id": "hiit_training",
+          "title": "2x/week HIIT: 4x4min hard / 3min easy",
+          "impact": 0.9,
+          "difficulty": "medium",
+          "description": "10-min warmup + 4 rounds + cool down (~40 min total)"
+        },
+        {
+          "id": "vo2max_target",
+          "title": "Target: 42+ mL/kg/min for 40s, 50+ excellent",
+          "impact": 0.9,
+          "difficulty": "medium"
+        }
+      ],
+      "trait_count": 5
+    },
+    {
+      "title": "Maintenance Protocol",
+      "description": "Optimize 1 moderate trait",
+      "actions": [
+        {
+          "id": "methylfolate_supplementation",
+          "title": "Take methylfolate",
+          "impact": 0.9,
+          "difficulty": "low",
+          "description": "400-800mcg methylfolate daily"
+        },
+        {
+          "id": "pcsk9_inhibitor",
+          "title": "Consider PCSK9 inhibitor",
+          "impact": 0.9,
+          "difficulty": "high"
+        },
+        {
+          "id": "vo2max_test",
+          "title": "Get baseline VO2max test",
+          "impact": 0.9,
+          "difficulty": "medium",
+          "description": "Lab test (~$200) or smartwatch estimate"
+        }
+      ],
+      "trait_count": 1
+    }
+  ],
+  "metadata": {
+    "user_id": "example_user",
+    "processed_at": "2026-04-28T15:06:31.646Z",
+    "trait_count": 15,
+    "insight_count": 15,
+    "protocol_count": 2
+  }
+}

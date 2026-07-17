@@ -1,0 +1,7 @@
+{
+  "summary": {
+    "METRIC.Recall": 0.992,
+    "METRIC.Precision": 0.987,
+    "METRIC.F1_Score": 0.989
+  }
+}

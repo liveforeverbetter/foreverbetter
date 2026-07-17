@@ -1,0 +1,94 @@
+{
+  "version": "2026-06-01",
+  "purpose": "Small local interpretation catalog for whole-genome variant-class normalization tests. Production WGS interpretation should replace this with ClinGen, ClinVar, gnomAD-SV, dbVar/DGV, and validated repeat catalogs.",
+  "dosage_sensitive_regions": [
+    {
+      "id": "CLINGEN_BRCA1_HAPLO",
+      "gene": "BRCA1",
+      "chrom": "17",
+      "start": 43044295,
+      "end": 43125483,
+      "sensitive_to": ["copy_number_loss"],
+      "evidence": "ClinGen-style haploinsufficiency-sensitive cancer predisposition gene.",
+      "reportability": "clinician_review"
+    },
+    {
+      "id": "CLINGEN_LDLR_HAPLO",
+      "gene": "LDLR",
+      "chrom": "19",
+      "start": 11089431,
+      "end": 11133820,
+      "sensitive_to": ["copy_number_loss"],
+      "evidence": "ClinGen-style dosage-sensitive familial hypercholesterolemia gene.",
+      "reportability": "clinician_review"
+    },
+    {
+      "id": "CLINGEN_PMP22_DOSAGE",
+      "gene": "PMP22",
+      "chrom": "17",
+      "start": 15199000,
+      "end": 15421000,
+      "sensitive_to": ["copy_number_loss", "copy_number_gain"],
+      "evidence": "ClinGen-style dosage-sensitive neuropathy region.",
+      "reportability": "clinician_review"
+    }
+  ],
+  "repeat_loci": [
+    {
+      "id": "HTT_CAG",
+      "gene": "HTT",
+      "chrom": "4",
+      "start": 3074877,
+      "end": 3074933,
+      "repeat_unit": "CAG",
+      "normal_max": 26,
+      "intermediate_min": 27,
+      "pathogenic_min": 40,
+      "condition": "HTT CAG repeat expansion",
+      "reportability": "clinician_review"
+    },
+    {
+      "id": "FXN_GAA",
+      "gene": "FXN",
+      "chrom": "9",
+      "start": 69037286,
+      "end": 69037380,
+      "repeat_unit": "GAA",
+      "normal_max": 33,
+      "intermediate_min": 34,
+      "pathogenic_min": 66,
+      "condition": "FXN GAA repeat expansion",
+      "reportability": "clinician_review"
+    }
+  ],
+  "structural_genes": [
+    {
+      "gene": "APOE",
+      "chrom": "19",
+      "start": 44905754,
+      "end": 44909393,
+      "reason": "Cardiometabolic and neurodegenerative risk context."
+    },
+    {
+      "gene": "LPA",
+      "chrom": "6",
+      "start": 160531483,
+      "end": 160664275,
+      "reason": "Copy-number/repeat structure can affect Lp(a) biology and cardiovascular context."
+    },
+    {
+      "gene": "CYP2D6",
+      "chrom": "22",
+      "start": 42522500,
+      "end": 42526883,
+      "reason": "Pharmacogenomic copy-number and hybrid alleles require dedicated assays/callers."
+    },
+    {
+      "gene": "MSH2",
+      "chrom": "2",
+      "start": 47630100,
+      "end": 47789450,
+      "reason": "DNA-repair gene where large disruptive events require clinician review."
+    }
+  ]
+}

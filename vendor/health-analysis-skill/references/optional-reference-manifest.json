@@ -1,0 +1,344 @@
+{
+  "version": "2026-06-09",
+  "purpose": "Optional heavyweight reference assets for full WGS annotation and external validation. These assets are intentionally not bundled with the repo; the doctor checks local presence and prints setup guidance.",
+  "bloat_policy": {
+    "bundle_in_repo": false,
+    "local_cache_roots": [
+      "../../reference/dbsnp",
+      "../../reference/clinvar",
+      "../../reference/wellness/raw",
+      "../../reference/vep",
+      "../../external-truthsets",
+      "../../caller-output"
+    ],
+    "notes": [
+      "Keep full dbSNP, raw GWAS/PGS source downloads, VEP caches, GIAB truthsets, BAM/CRAM/FASTQ caller outputs, and generated query VCFs out of git.",
+      "Commit compact derived references only when they stay below GitHub file-size limits and provide meaningful default runtime behavior."
+    ]
+  },
+  "assets": [
+    {
+      "id": "wellness_gwas_pgs_raw_cache",
+      "group": "wellness",
+      "label": "Raw GWAS Catalog and PGS Catalog cache for rebuilding compact wellness references",
+      "version": "latest",
+      "genome_build": "mixed; PGS scoring files harmonized to GRCh37 where available",
+      "source": "NHGRI-EBI GWAS Catalog and PGS Catalog",
+      "source_page": "https://www.ebi.ac.uk/gwas/docs/file-downloads",
+      "required_for": [
+        "Rebuilding reference/wellness compact GWAS/PGS association files"
+      ],
+      "expected_files": [
+        {
+          "path": "reference/wellness/raw/gwas-catalog-associations_ontology-annotated-full.zip",
+          "filename": "gwas-catalog-associations_ontology-annotated-full.zip",
+          "url": "https://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations_ontology-annotated-full.zip",
+          "expected_size": "65M",
+          "required": false
+        },
+        {
+          "path": "reference/wellness/raw/pgs_all_metadata.tar.gz",
+          "filename": "pgs_all_metadata.tar.gz",
+          "url": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/metadata/pgs_all_metadata.tar.gz",
+          "expected_size": "4M",
+          "required": false
+        }
+      ],
+      "setup_commands": [
+        "npm run reference:wellness"
+      ]
+    },
+    {
+      "id": "dbsnp_grch37_latest_vcf",
+      "group": "dbsnp",
+      "label": "NCBI dbSNP latest human GRCh37 VCF",
+      "version": "latest_release 2025-01-15 listing",
+      "genome_build": "GRCh37 / GCF_000001405.25",
+      "source": "NCBI dbSNP FTP",
+      "source_page": "https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/",
+      "required_for": [
+        "rsID annotation for WGS VCFs aligned to GRCh37/hg19"
+      ],
+      "expected_files": [
+        {
+          "path": "../../reference/dbsnp/GCF_000001405.25.gz",
+          "filename": "GCF_000001405.25.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.25.gz",
+          "checksum_url": "https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.25.gz.md5",
+          "expected_size": "26G",
+          "required": true
+        },
+        {
+          "path": "../../reference/dbsnp/GCF_000001405.25.gz.tbi",
+          "filename": "GCF_000001405.25.gz.tbi",
+          "url": "https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.25.gz.tbi",
+          "checksum_url": "https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.25.gz.tbi.md5",
+          "expected_size": "2.9M",
+          "required": true
+        }
+      ],
+      "setup_commands": [
+        "mkdir -p reference/dbsnp",
+        "curl -L -o reference/dbsnp/GCF_000001405.25.gz https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.25.gz",
+        "curl -L -o reference/dbsnp/GCF_000001405.25.gz.tbi https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.25.gz.tbi",
+        "curl -L -o reference/dbsnp/GCF_000001405.25.gz.md5 https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.25.gz.md5"
+      ]
+    },
+    {
+      "id": "dbsnp_grch38_latest_vcf",
+      "group": "dbsnp",
+      "label": "NCBI dbSNP latest human GRCh38 VCF",
+      "version": "latest_release 2025-01-15 listing",
+      "genome_build": "GRCh38 / GCF_000001405.40",
+      "source": "NCBI dbSNP FTP",
+      "source_page": "https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/",
+      "required_for": [
+        "rsID annotation for WGS VCFs aligned to GRCh38"
+      ],
+      "expected_files": [
+        {
+          "path": "../../reference/dbsnp/GCF_000001405.40.gz",
+          "filename": "GCF_000001405.40.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz",
+          "checksum_url": "https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz.md5",
+          "expected_size": "28G",
+          "required": true
+        },
+        {
+          "path": "../../reference/dbsnp/GCF_000001405.40.gz.tbi",
+          "filename": "GCF_000001405.40.gz.tbi",
+          "url": "https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz.tbi",
+          "checksum_url": "https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz.tbi.md5",
+          "expected_size": "3.0M",
+          "required": true
+        }
+      ],
+      "setup_commands": [
+        "mkdir -p reference/dbsnp",
+        "curl -L -o reference/dbsnp/GCF_000001405.40.gz https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz",
+        "curl -L -o reference/dbsnp/GCF_000001405.40.gz.tbi https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz.tbi",
+        "curl -L -o reference/dbsnp/GCF_000001405.40.gz.md5 https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz.md5"
+      ]
+    },
+    {
+      "id": "clinvar_grch38_weekly_vcf",
+      "group": "clinvar",
+      "label": "NCBI ClinVar GRCh38 weekly VCF",
+      "version": "weekly current; listing checked 2026-06-08",
+      "genome_build": "GRCh38",
+      "source": "NCBI ClinVar FTP",
+      "source_page": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/",
+      "required_for": [
+        "ClinVar enrichment and clinical-significance disclosure"
+      ],
+      "expected_files": [
+        {
+          "path": "../../reference/clinvar/clinvar.vcf.gz",
+          "filename": "clinvar.vcf.gz",
+          "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar.vcf.gz",
+          "checksum_url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar.vcf.gz.md5",
+          "expected_size": "187M",
+          "required": true
+        },
+        {
+          "path": "../../reference/clinvar/clinvar.vcf.gz.tbi",
+          "filename": "clinvar.vcf.gz.tbi",
+          "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar.vcf.gz.tbi",
+          "expected_size": "599K",
+          "required": true
+        }
+      ],
+      "setup_commands": [
+        "mkdir -p reference/clinvar",
+        "curl -L -o reference/clinvar/clinvar.vcf.gz https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar.vcf.gz",
+        "curl -L -o reference/clinvar/clinvar.vcf.gz.tbi https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar.vcf.gz.tbi",
+        "curl -L -o reference/clinvar/clinvar.vcf.gz.md5 https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar.vcf.gz.md5"
+      ]
+    },
+    {
+      "id": "vep_homo_sapiens_grch38_cache",
+      "group": "vep",
+      "label": "Ensembl VEP indexed homo_sapiens GRCh38 cache",
+      "version": "Ensembl release 115",
+      "genome_build": "GRCh38",
+      "source": "Ensembl FTP",
+      "source_page": "https://ftp.ensembl.org/pub/current_variation/indexed_vep_cache/",
+      "required_for": [
+        "offline VEP consequence annotation"
+      ],
+      "expected_files": [
+        {
+          "path": "../../reference/vep/homo_sapiens_vep_115_GRCh38.tar.gz",
+          "filename": "homo_sapiens_vep_115_GRCh38.tar.gz",
+          "url": "https://ftp.ensembl.org/pub/current_variation/indexed_vep_cache/homo_sapiens_vep_115_GRCh38.tar.gz",
+          "checksum_url": "https://ftp.ensembl.org/pub/current_variation/indexed_vep_cache/CHECKSUMS",
+          "expected_size": "24G",
+          "required": true
+        }
+      ],
+      "setup_commands": [
+        "mkdir -p reference/vep",
+        "curl -L -o reference/vep/homo_sapiens_vep_115_GRCh38.tar.gz https://ftp.ensembl.org/pub/current_variation/indexed_vep_cache/homo_sapiens_vep_115_GRCh38.tar.gz",
+        "curl -L -o reference/vep/CHECKSUMS https://ftp.ensembl.org/pub/current_variation/indexed_vep_cache/CHECKSUMS"
+      ]
+    },
+    {
+      "id": "vep_homo_sapiens_grch37_cache",
+      "group": "vep",
+      "label": "Ensembl VEP indexed homo_sapiens GRCh37 cache",
+      "version": "Ensembl release 115",
+      "genome_build": "GRCh37",
+      "source": "Ensembl FTP",
+      "source_page": "https://ftp.ensembl.org/pub/current_variation/indexed_vep_cache/",
+      "required_for": [
+        "offline VEP consequence annotation for hg19/GRCh37 WGS"
+      ],
+      "expected_files": [
+        {
+          "path": "../../reference/vep/homo_sapiens_vep_115_GRCh37.tar.gz",
+          "filename": "homo_sapiens_vep_115_GRCh37.tar.gz",
+          "url": "https://ftp.ensembl.org/pub/current_variation/indexed_vep_cache/homo_sapiens_vep_115_GRCh37.tar.gz",
+          "checksum_url": "https://ftp.ensembl.org/pub/current_variation/indexed_vep_cache/CHECKSUMS",
+          "expected_size": "23G",
+          "required": true
+        }
+      ],
+      "setup_commands": [
+        "mkdir -p reference/vep",
+        "curl -L -o reference/vep/homo_sapiens_vep_115_GRCh37.tar.gz https://ftp.ensembl.org/pub/current_variation/indexed_vep_cache/homo_sapiens_vep_115_GRCh37.tar.gz",
+        "curl -L -o reference/vep/CHECKSUMS https://ftp.ensembl.org/pub/current_variation/indexed_vep_cache/CHECKSUMS"
+      ]
+    },
+    {
+      "id": "giab_hg002_small_variant_grch38",
+      "group": "giab",
+      "label": "GIAB HG002 small-variant benchmark v4.2.1",
+      "version": "NISTv4.2.1",
+      "genome_build": "GRCh38",
+      "source": "NIST Genome in a Bottle",
+      "source_page": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/GRCh38/",
+      "required_for": [
+        "external small-variant precision/recall validation"
+      ],
+      "expected_files": [
+        {
+          "path": "../../external-truthsets/giab/HG002_GRCh38_1_22_v4.2.1_benchmark.vcf.gz",
+          "filename": "HG002_GRCh38_1_22_v4.2.1_benchmark.vcf.gz",
+          "url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/GRCh38/HG002_GRCh38_1_22_v4.2.1_benchmark.vcf.gz",
+          "expected_size": "149M",
+          "required": true
+        },
+        {
+          "path": "../../external-truthsets/giab/HG002_GRCh38_1_22_v4.2.1_benchmark.vcf.gz.tbi",
+          "filename": "HG002_GRCh38_1_22_v4.2.1_benchmark.vcf.gz.tbi",
+          "url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/GRCh38/HG002_GRCh38_1_22_v4.2.1_benchmark.vcf.gz.tbi",
+          "expected_size": "1.6M",
+          "required": true
+        },
+        {
+          "path": "../../external-truthsets/giab/HG002_GRCh38_1_22_v4.2.1_benchmark_noinconsistent.bed",
+          "filename": "HG002_GRCh38_1_22_v4.2.1_benchmark_noinconsistent.bed",
+          "url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/GRCh38/HG002_GRCh38_1_22_v4.2.1_benchmark_noinconsistent.bed",
+          "expected_size": "11M",
+          "required": true
+        }
+      ],
+      "setup_commands": [
+        "npm run wgs:truthsets -- --check-remote",
+        "npm run wgs:truthsets -- --download --max-mb=500"
+      ]
+    },
+    {
+      "id": "caller_generated_query_vcfs",
+      "group": "caller-output",
+      "label": "HG002 query VCFs generated by local caller pipelines",
+      "version": "local",
+      "genome_build": "caller-dependent",
+      "source": "Local BAM/CRAM/FASTQ caller stack",
+      "source_page": "local",
+      "required_for": [
+        "external GIAB precision/recall validation"
+      ],
+      "expected_files": [
+        {
+          "path": "output/external-validation/hg002-small-variant-query.vcf.gz",
+          "filename": "hg002-small-variant-query.vcf.gz",
+          "expected_size": "local",
+          "required": false
+        },
+        {
+          "path": "output/external-validation/hg002-sv-query.vcf.gz",
+          "filename": "hg002-sv-query.vcf.gz",
+          "expected_size": "local",
+          "required": false
+        },
+        {
+          "path": "output/external-validation/hg002-repeat-query.vcf.gz",
+          "filename": "hg002-repeat-query.vcf.gz",
+          "expected_size": "local",
+          "required": false
+        }
+      ],
+      "setup_commands": [
+        "npm run wgs:caller-manifest",
+        "npm run wgs:query-readiness"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "id": "bcftools",
+      "command": "bcftools",
+      "version_command": "bcftools --version",
+      "required_for": [
+        "VCF normalization, annotation, indexing, and subsetting"
+      ],
+      "install_hint": "Install bcftools with conda/bioconda, Homebrew, or the local bioinformatics environment."
+    },
+    {
+      "id": "tabix",
+      "command": "tabix",
+      "version_command": "tabix --version",
+      "required_for": [
+        "VCF/tabix index validation"
+      ],
+      "install_hint": "Install htslib/tabix with conda/bioconda, Homebrew, or the local bioinformatics environment."
+    },
+    {
+      "id": "bgzip",
+      "command": "bgzip",
+      "version_command": "bgzip --version",
+      "required_for": [
+        "Blocked gzip compression for VCFs"
+      ],
+      "install_hint": "Install htslib/bgzip with conda/bioconda, Homebrew, or the local bioinformatics environment."
+    },
+    {
+      "id": "vep",
+      "command": "vep",
+      "version_command": "vep --help",
+      "required_for": [
+        "offline VEP annotation"
+      ],
+      "install_hint": "Install Ensembl VEP and point it at the local reference/vep cache."
+    },
+    {
+      "id": "truvari",
+      "command": "truvari",
+      "version_command": "truvari version",
+      "required_for": [
+        "GIAB structural-variant benchmarking"
+      ],
+      "install_hint": "Install Truvari in the local benchmark environment."
+    },
+    {
+      "id": "hap.py",
+      "command": "hap.py",
+      "version_command": "hap.py --version",
+      "required_for": [
+        "GIAB small-variant benchmarking"
+      ],
+      "install_hint": "Install hap.py through a GIAB/RTG/hap.py container or conda environment."
+    }
+  ]
+}

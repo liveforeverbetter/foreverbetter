@@ -1,0 +1,78 @@
+---
+title: "Agents and MCP"
+description: "Discover the service, list scoped tools, and call them over MCP or REST."
+---
+
+The API is agent-native. An agent can discover the contract without credentials,
+then call scoped tools over MCP JSON-RPC or plain REST.
+
+For end-to-end execution, start with the [Agent skill](/agent-skill). It tells an
+agent how to authenticate, discover the deployment, connect the minimum useful
+data, run a workflow, poll asynchronous work, and deliver the selected outcome.
+
+## Discover the contract
+
+```bash
+curl -s "$HEALTH_API/.well-known/health-agent.json"
+```
+
+The manifest includes the base URL, OTP auth endpoints, required JWT claims,
+available REST endpoints, MCP tools, scopes, and endpoint IDs. The OpenAPI 3.1
+contract at `GET /openapi.json` is generated from the same schema source the MCP
+tools use.
+
+## Get a key
+
+Use the manifest's recommended `auth.agent_login` flow. Call
+`POST /agent-login/start` with a short `agent_name`, give only the returned browser
+URL to the user, and keep `polling_secret` private. The user signs in and explicitly
+approves the named agent. Poll `GET /agent-login/status?session_code=...` with the
+`X-Agent-Login-Secret` header until it returns `confirmed` or `denied`. A confirmed
+API key returns exactly once, directly to the waiting agent instead of through chat.
+Agent-login keys cover normal analysis and connection workflows but cannot manage
+billing or delete account data.
+
+Store the key in a `600`-permission file and never print it or place it in a URL
+or shell argument. The complete walkthrough, including a ready-made MCP config,
+is at [Connect your agent](/connect-your-agent).
+
+## List tools (scoped to the token)
+
+```bash
+curl -s -X POST "$HEALTH_API/mcp" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+```
+
+`tools/list` returns every safe read tool covered by `health:data:read`, scoped
+to the authenticated user's resources, plus consequential tools explicitly
+enabled by the token. Tenant checks still run on every tool call.
+
+## Call a tool
+
+```bash
+curl -s -X POST "$HEALTH_API/mcp" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{
+    "jsonrpc": "2.0",
+    "id": 2,
+    "method": "tools/call",
+    "params": {
+      "name": "query_health_context",
+      "arguments": { "user_id": "user_123", "organization_id": "org_123", "query": "ApoB" }
+    }
+  }'
+```
+
+## Scopes and endpoint grants
+
+Tokens carry scopes (`health:data:read`, `health:data:write`,
+`health:connections:write`, `health:labs:read`) and consequential endpoint
+grants. A user-controlled agent receives full read access to its user's health
+data by default. Grant only the write actions it needs, for example
+`imports.file` and `analyses.create`. Export, deletion, source connection, key
+issuance, and costly compute remain explicit. Errors use RFC
+9457 Problem Details for REST and structured `error.data` (with `code`, `cause`,
+`fix`, `docs_url`, `request_id`) for MCP.

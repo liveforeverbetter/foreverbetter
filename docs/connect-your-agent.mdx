@@ -1,0 +1,165 @@
+---
+title: "Connect your agent"
+description: "Let an AI agent use the local pipeline, your self-hosted API, or ForeverBetter cloud to deliver the health outcome you choose."
+---
+
+You do not need to write code. Point your agent at the ForeverBetter skill and it
+will choose among the local pipeline, your self-hosted API, or managed cloud;
+start with the data you already have; and deliver the outcome you ask for. That
+may be a daily action plan, full multimodal optimization, ancestry result, trend
+loop, health agent, or custom dashboard.
+
+See [Agent skill](/agent-skill) for the operating contract, live discovery
+sequence, and completion standard behind this workflow.
+
+## Paste this into your agent
+
+```text
+Help me analyze and connect my longevity data.
+Read https://api.foreverbetter.xyz/SKILL.md and follow its onboarding instructions.
+```
+
+Works with Claude and any agent that can call an HTTP API or speak MCP.
+
+## What the agent does
+
+### Local pipeline mode
+
+The agent clones and runs the
+[ForeverBetter open-source repository](https://github.com/liveforeverbetter/agentic-health-analysis),
+verifies a sample result before reading personal files, and keeps raw data on
+your machine. It runs directly with `npm`, without an API server. Plan-only
+requests return local JSON and a plain-language summary; dashboard requests can
+also produce a local HTML file that is not uploaded or network-accessible. After
+the local workflow succeeds, the agent may ask whether you want to star the
+repository. That is optional and only happens with your approval.
+
+### Self-hosted API mode
+
+Run the complete open-source API, MCP server, workers, and data store on your own
+infrastructure. This is the full endpoint surface, not the npm-only local pipeline.
+Your agent points `HEALTH_API_URL` at the deployment, reads its live manifest and
+capabilities, and follows the same playbooks as cloud. Self-hosting never requires
+a ForeverBetter hosted subscription. Start with [Self-hosting](/self-hosting).
+
+### Cloud mode
+
+The agent starts a secure handoff and gives you a ForeverBetter sign-in URL. You
+open it in your browser and sign in with email; the API creates a scoped personal
+key and returns it directly to the waiting agent. The agent stores the key
+securely and never asks you to paste an OTP, API key, OAuth code, or OAuth state
+into chat.
+
+It then reads `GET /capabilities`, connects only the data the chosen outcome
+needs, and runs that playbook end to end. If the result includes a dashboard, it
+can create a dedicated hosted link that stays private until you choose to share
+its unguessable URL. Wearables come last unless you explicitly asked to connect
+one first, because authorization and the first sync usually take longer.
+
+The personal key lasts 365 days and acts only for you: it is scoped to your user
+and personal workspace, with grants for imports, analyses, trends, goals,
+questions, health context, and wearable connections. Your first 100 protected
+hosted API requests require no payment method. After that, choose a hosted plan
+or use x402 per-call payment on supported routes. Local-pipeline and self-hosted
+modes remain available without a hosted subscription.
+
+## Your first result follows your ask
+
+The agent asks for the outcome before collecting files. If you say "here is all
+my data, optimize me," it connects each ready modality, runs one multimodal
+analysis, builds a consolidated health context, and returns a prioritized action
+plan. If you ask for a recurring plan, it delivers the first plan before offering
+daily or periodic automation. Scheduling remains opt-in.
+
+Only dashboard outcomes invoke design selection. The agent reads
+`GET /design/systems`, recommends at most two designs for your goal, and lets you
+choose before rendering `GET /dashboard-specs/{analysis_id}`.
+
+Local dashboards remain local HTML files. Cloud dashboards should use a private,
+deployment-owned link with optional sharing. The agent creates one with
+`POST /dashboard-links` or the MCP tool `create_private_dashboard_link`, using
+the analysis and design you selected. The URL is private by possession, excluded
+from indexing, and expires automatically; anyone you intentionally share it with
+can view that snapshot until it expires. It is bound to the exact analysis
+snapshot, so issue a new link if the stored analysis changes.
+
+## Add the API to Claude over MCP
+
+With the key in hand, the API can also be attached as an MCP server:
+
+```bash
+claude mcp add --transport http foreverbetter \
+  https://api.foreverbetter.xyz/mcp \
+  --header "Authorization: Bearer <api key>"
+```
+
+Or in any client that reads an `mcpServers` config:
+
+```json
+{
+  "mcpServers": {
+    "foreverbetter": {
+      "type": "http",
+      "url": "https://api.foreverbetter.xyz/mcp",
+      "headers": { "Authorization": "Bearer <api key>" }
+    }
+  }
+}
+```
+
+`tools/list` returns every safe read tool for your user plus the write and
+consequential tools your key explicitly grants. See
+[Agents and MCP](/agents-and-mcp) for the tool catalog and error format.
+
+## Connect WHOOP or Oura from chat, after your first result
+
+The same key authorizes wearable connections. Your agent starts either flow with
+no OAuth credentials on first-party deployments (check `first_party_oauth`
+under `wearables.whoop` or `wearables.oura` in `GET /capabilities`):
+
+```bash
+curl -s -X POST "https://api.foreverbetter.xyz/connections/wearables/start" \
+  -H "authorization: Bearer $FB_KEY" -H "content-type: application/json" \
+  -d '{"user_id":"'$UID'","organization_id":"'$ORG'","source_provider":"whoop"}'
+# → { "authorization_url": "https://api.prod.whoop.com/oauth/oauth2/auth?..." }
+```
+
+Open the `authorization_url` your agent gives you and approve access. WHOOP
+sends you back to the ForeverBetter dashboard, which completes the link
+automatically. You do not copy a code or state into chat. Your agent polls
+`GET /connections/wearables/status` for the active WHOOP connection, then can
+analyze data as it arrives.
+
+The full WHOOP walkthrough is at [Connect a WHOOP](/use-cases/connect-whoop).
+For Oura, send the same request with `"source_provider":"oura"`; see
+[Connect an Oura Ring](/use-cases/connect-oura).
+
+## Google Health Connect through ForeverBetter Connect
+
+On Android, install and open the **ForeverBetter Connect** consumer app. Sign
+in with the same ForeverBetter account, choose **Google Health Connect**, grant
+the read permissions you want, and start background sync. Health Connect can
+aggregate Fitbit, Samsung Health, Google Fit, and other Android sources before
+ForeverBetter Connect uploads normalized records to your account.
+
+On Android 14 and newer, Health Connect is built into Settings. On Android 13
+and lower, install [Google Health Connect](https://play.google.com/store/apps/details?id=com.google.android.apps.healthdata)
+from Google Play first. Installing Google's app alone does not upload data to
+ForeverBetter; ForeverBetter Connect performs the authenticated sync. See
+[Wearable onboarding](/wearable-onboarding) for the consumer and embedded
+flows.
+
+## Prefer the dashboard?
+
+Sign in at the [dashboard](https://api.foreverbetter.xyz/dashboard) with your
+email and create a key there. Store it in your agent client's secret or
+environment configuration; do not paste credentials into chat. Both paths
+produce the same scoped key.
+
+## Boundaries
+
+A free personal key covers you and your own agent. Building an app, platform,
+or service for other users requires a Builder key or higher; see
+[pricing](https://api.foreverbetter.xyz/pricing). You can export or delete
+everything the API holds about you at any time with
+`POST /users/{user_id}/data/export` and `POST /users/{user_id}/data/delete`.

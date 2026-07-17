@@ -1,0 +1,25 @@
+# Local development artifacts
+.DS_Store
+node_modules/
+.design-audit/
+.gstack/
+.playwright-mcp/
+*.log
+*.tgz
+src/dist/
+
+# Generated dashboards and benchmark outputs
+output/
+output-*/
+examples/sample-dashboard.json
+*_dashboard.json
+pipeline-run-*.jsonl
+
+# Temporary and externally supplied genomics assets
+*.tmp.vcf
+*.decompressed.tmp.vcf
+external-truthsets/
+caller-output/
+reference/wellness/raw/
+reference/dbsnp/
+reference/vep/

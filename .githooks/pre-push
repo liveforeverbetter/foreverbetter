@@ -1,0 +1,47 @@
+#!/bin/sh
+set -eu
+
+GITLEAKS_IMAGE="ghcr.io/gitleaks/gitleaks@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f"
+ZERO_SHA="0000000000000000000000000000000000000000"
+repo_root=$(git rev-parse --show-toplevel)
+push_lines=$(mktemp "${TMPDIR:-/tmp}/foreverbetter-pre-push.XXXXXX")
+trap 'rm -f "$push_lines"' EXIT HUP INT TERM
+cat > "$push_lines"
+
+if [ "${ALLOW_PROTECTED_MAIN_PUSH:-0}" != "1" ]; then
+  while IFS=' ' read -r local_ref local_sha remote_ref remote_sha; do
+    if [ "$remote_ref" = "refs/heads/main" ]; then
+      echo "Direct pushes to main are blocked. Push a feature branch and merge it through a pull request." >&2
+      exit 1
+    fi
+  done < "$push_lines"
+fi
+
+scan_ref() {
+  ref=$1
+  echo "Scanning $ref for committed secrets before push..." >&2
+  if command -v gitleaks >/dev/null 2>&1; then
+    gitleaks git --redact --no-banner --log-opts="$ref" "$repo_root"
+    return
+  fi
+  if command -v docker >/dev/null 2>&1; then
+    docker run --rm \
+      -v "$repo_root:/repo" \
+      -w /repo \
+      "$GITLEAKS_IMAGE" \
+      git --redact --no-banner --log-opts="$ref" /repo
+    return
+  fi
+  echo "Push blocked: install Gitleaks or Docker so the secret scan can run." >&2
+  exit 1
+}
+
+while IFS=' ' read -r local_ref local_sha remote_ref remote_sha; do
+  [ -n "$local_sha" ] || continue
+  [ "$local_sha" = "$ZERO_SHA" ] && continue
+  scan_ref "$local_sha"
+done < "$push_lines"
+
+if command -v git-lfs >/dev/null 2>&1; then
+  git lfs pre-push "$@" < "$push_lines"
+fi

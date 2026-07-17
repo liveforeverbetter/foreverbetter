@@ -1,0 +1,103 @@
+{
+  "version": "2026-06-03",
+  "purpose": "VCF-first interpretation catalog manifest. The repo ships compact, source-attributed interpretation slices and treats raw-read caller stacks as optional escalation for BAM/CRAM inputs or vendor VCFs that omit CNV/SV/repeat calls.",
+  "default_input_model": {
+    "expected_inputs": [
+      "WGS VCF or VCF.GZ from a sequencing provider",
+      "23andMe/Ancestry-style SNP array export or converted VCF"
+    ],
+    "raw_read_inputs": [
+      "FASTQ",
+      "BAM",
+      "CRAM"
+    ],
+    "raw_read_callers_required_for_default": false,
+    "raw_read_callers_required_when": [
+      "the user provides BAM/CRAM/FASTQ instead of VCF",
+      "the vendor VCF does not include needed CNV/SV/repeat records",
+      "the pipeline is being externally validated by regenerating query VCFs from GIAB reads"
+    ]
+  },
+  "repo_size_budget": {
+    "compiled_catalog_max_bytes": 2000000,
+    "reference_manifest_max_bytes": 50000,
+    "large_external_caches_in_repo": false
+  },
+  "repo_contained_sources": [
+    {
+      "id": "curated_interpretations",
+      "path": "shared/interpretations/*.json",
+      "role": "consumer-ready rsID genotype interpretations",
+      "source_policy": "source-attributed curated entries only"
+    },
+    {
+      "id": "prs_weights",
+      "path": "shared/prs_weights.json",
+      "role": "compact PRS definitions for disease, wellness, and optimization traits",
+      "source_policy": "keep trait definitions compact; do not vendor full PGS scoring archives"
+    },
+    {
+      "id": "wgs_variant_class_catalog",
+      "path": "references/wgs-interpretation-catalog.json",
+      "role": "small local CNV/SV/repeat interpretation and normalization catalog",
+      "source_policy": "clinician-review or readiness annotations only unless validated"
+    },
+    {
+      "id": "knowledge_graph",
+      "path": "shared/knowledge_graph_data.json",
+      "role": "trait-to-pathway/action mapping",
+      "source_policy": "consumer wording must remain wellness-first and non-diagnostic"
+    }
+  ],
+  "optional_external_sources": [
+    {
+      "id": "clinvar",
+      "name": "ClinVar",
+      "url": "https://www.ncbi.nlm.nih.gov/clinvar/docs/downloads/",
+      "recommended_use": "pathogenic, likely pathogenic, risk factor, pharmacogenomic, and benign/conflict filtering",
+      "repo_policy": "download or index locally outside git; compile only matched/reportable rows into compact artifacts"
+    },
+    {
+      "id": "cpic",
+      "name": "CPIC API/database",
+      "url": "https://cpicpgx.org/api-and-database/",
+      "recommended_use": "drug-gene and diplotype-to-phenotype interpretation",
+      "repo_policy": "vendor only derived drug-gene rules needed by the report"
+    },
+    {
+      "id": "pgs_catalog",
+      "name": "PGS Catalog",
+      "url": "https://www.pgscatalog.org/downloads/",
+      "recommended_use": "polygenic scores for cardiometabolic, sleep, activity, lipid, inflammatory, and aging-adjacent traits",
+      "repo_policy": "keep selected compact scoring definitions; do not vendor bulk FTP archives"
+    },
+    {
+      "id": "gwas_catalog",
+      "name": "GWAS Catalog",
+      "url": "https://www.ebi.ac.uk/gwas",
+      "recommended_use": "source discovery for wellness and optimization associations",
+      "repo_policy": "use as discovery input; promote only replicated, genome-wide significant, consumer-safe entries"
+    },
+    {
+      "id": "open_targets_genetics",
+      "name": "Open Targets Genetics",
+      "url": "https://platform.opentargets.org/api?from=genetics",
+      "recommended_use": "variant-to-gene prioritization and pathway support",
+      "repo_policy": "store only compact variant-gene-trait evidence summaries"
+    }
+  ],
+  "consumer_interpretation_policy": {
+    "always_distinguish": [
+      "variant examined",
+      "variant interpreted",
+      "finding actionable",
+      "finding requires clinician review",
+      "finding requires deeper caller"
+    ],
+    "do_not_claim": [
+      "every VCF record has a wellness meaning",
+      "CNV/SV/repeat findings are complete when only SNP-array or small-variant VCF data is present",
+      "single weak SNP associations are personal health recommendations"
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+---
+title: "Design systems"
+description: "Curated design-token sets for health & wellness UIs, so you can style your product in minutes."
+---
+
+Building a wellness product's UI is easier when you start from a coherent design
+system. `GET /design/systems` returns a curated library of design-token sets
+covering color, typography, spacing, radii, elevation, motion, and signature
+components. Only the three supported systems are returned: ForeverBetter,
+Aperture, and Meridian. These are **public reference data (no auth required)**.
+
+```bash
+curl -s "$FB_API/design/systems" | jq .
+curl -s "$FB_API/design/systems/aperture" | jq .
+```
+
+## What you get
+
+`GET /design/systems` lists every system with a short `vibe` and what it's
+`best_for`. `GET /design/systems/{id}` returns the full token set plus a
+ready-to-paste `design_md`:
+
+```json
+{
+  "id": "aperture",
+  "inspired_by": "Aperture Design System handoff",
+  "color_scheme": "light",
+  "colors": {
+    "background": "#F4F6F7",
+    "primary": "#0EA5A0",
+    "data_viz": ["#0EA5A0", "#5B67EA", "..."]
+  },
+  "typography": {
+    "font_display": "\"Fustat\", \"Segoe UI\", system-ui, sans-serif",
+    "google_fonts": [],
+    "scale": { "display": { "size": "56px", "weight": 800 } }
+  },
+  "spacing": { "base_px": 4, "scale_px": [4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80] },
+  "radii": { "md": "14px", "pill": "999px" },
+  "components": {
+    "aperture_energy_score": { "description": "…", "css": { "font-size": "56px" } }
+  },
+  "layout": {
+    "hero": "aperture-overview",
+    "score_word": "Energy",
+    "voice": "coach",
+    "sections": ["day-brief", "energy-score", "activity-and-sleep"],
+    "summary": "A calm, optimistic daily health overview."
+  },
+  "design_md": "…"
+}
+```
+
+The `design_md` field is a complete DESIGN.md you can drop into Cursor, Claude
+Code, or v0 to steer generated UI toward that look.
+
+Each system also carries a **`layout`**: systems differ in dashboard
+structure as well as palette. `hero`, `sections`, and `voice` give the order
+and tone, so a client can reproduce the intended information hierarchy instead
+of applying a palette-only theme.
+
+## Reproduce the Meridian dashboard exactly
+
+Tokens help an agent design a new UI. If it needs to build the exact production
+Meridian dashboard, use the implementation package instead. Meridian is a
+**WHOOP-inspired wearable-performance dashboard**: recovery, strain, sleep,
+and connected-data readiness lead the experience. It is an independent
+ForeverBetter implementation, not affiliated with or endorsed by WHOOP.
+
+```bash
+curl -s "$FB_API/design/systems/meridian/implementation" > meridian-dashboard.json
+```
+
+The response contains the complete, production `dashboard/index.html`,
+`dashboard/styles.css`, and `dashboard/app.js` file contents; checksums; binary
+asset URLs; component selectors; and the ForeverBetter API bindings the files
+expect. Write the files at the supplied paths and download the binary assets to
+their listed paths. The entry point is `dashboard/index.html` and is intended to
+be served at `/dashboard` on the same API origin.
+
+This is deliberately a file package rather than generated JSX: it gives an agent
+the exact working implementation while keeping live health values and OAuth
+flows in the existing API contract. Over MCP, call `get_design_implementation`
+with `{ "design_id": "meridian" }`.
+
+Every visual system carries the same full dashboard contract. Alongside tokens
+and components it exposes `metrics`, `modality_sections`, `responsive`,
+`animations`, `action_plan`, and `data_capture`. The hero, palette, typography,
+voice, and section order still change by system, but no visual system drops a
+modality or the action plan. These fields let an agent or custom dashboard
+builder reproduce the information architecture without copying reference HTML.
+
+`aperture` encodes the user-provided Aperture Design System handoff for clients
+that want a calm, consumer-health interface. Query it with
+`GET /design/systems/aperture` to receive the teal-led tokens, Fustat and Geist
+Mono type roles, five health-pillar colors, components, layout, source-aware
+metric rules, responsive behavior, action-plan voice, and motion guidance. It
+is a design contract, not the ForeverBetter hosted dashboard implementation:
+
+```bash
+curl -s "$FB_API/design/systems/aperture" | jq .
+```
+
+Its `aperture_energy_score` is deliberately conditional: render it only when a
+documented calculation has enough current data; otherwise present the supplied
+connection state and the next useful action. The same rule applies to all
+derived scores and keeps a generated UI from inventing health values.
+
+## Available systems
+
+| id                | inspired by                | scheme | best for                                                          |
+| ----------------- | -------------------------- | ------ | ----------------------------------------------------------------- |
+| `foreverbetter`   | ForeverBetter              | light  | full multimodal longevity dossiers, composite healthspan index    |
+| `meridian`        | WHOOP (Meridian handoff)   | dark   | agent-built wearable apps, recovery, strain, sleep, data readiness |
+| `aperture`        | Aperture Design System handoff | light | consumer health coaching, pillars, source-aware daily overview |
+
+## How these are sourced
+
+The token values are our own encoding, built with open Google Fonts and system
+font stacks. No proprietary fonts, screenshots, or third-party design datasets
+are used. `aperture` encodes its user-provided handoff as tokens, layout, data
+contracts, and motion guidance, without shipping prototype HTML, runtimes,
+fonts, or uploaded images. Treat systems as a starting point and make them yours.

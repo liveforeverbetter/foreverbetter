@@ -1,0 +1,20 @@
+##fileformat=VCFv4.2
+##source=23longevity-synthetic-wgs-variant-class-fixture
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Structural variant type">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position">
+##INFO=<ID=SVLEN,Number=1,Type=Integer,Description="Structural variant length">
+##INFO=<ID=GENE,Number=1,Type=String,Description="Gene symbol">
+##INFO=<ID=REPID,Number=1,Type=String,Description="Repeat locus identifier">
+##INFO=<ID=RU,Number=1,Type=String,Description="Repeat unit">
+##INFO=<ID=REPCN,Number=1,Type=Integer,Description="Repeat copy number">
+##INFO=<ID=IMPACT,Number=1,Type=String,Description="Functional impact">
+##INFO=<ID=AF,Number=1,Type=Float,Description="Population allele frequency">
+##INFO=<ID=CLNSIG,Number=1,Type=String,Description="ClinVar-style clinical significance">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE
+17	43071077	cnv_brca1_del	N	<DEL>	120	PASS	SVTYPE=DEL;END=43112000;SVLEN=-40923;GENE=BRCA1	GT	0/1
+6	160570000	sv_lpa_dup	N	<DUP>	84	PASS	SVTYPE=DUP;END=160625000;SVLEN=55000;GENE=LPA	GT	0/1
+2	47630210	large_ins_msh2	N	<INS>	77	PASS	SVTYPE=INS;END=47630210;SVLEN=420;GENE=MSH2	GT	0/1
+19	44908000	inv_apoe_region	N	<INV>	91	PASS	SVTYPE=INV;END=44922000;SVLEN=14000;GENE=APOE	GT	0/1
+4	3074877	htt_cag_repeat	N	<STR>	99	PASS	SVTYPE=STR;REPID=HTT_CAG;RU=CAG;REPCN=42;GENE=HTT	GT	0/1
+9	69037286	fxn_gaa_repeat	N	<STR>	88	PASS	SVTYPE=STR;REPID=FXN_GAA;RU=GAA;REPCN=48;GENE=FXN	GT	0/1
+13	32936732	rare_brca2_stop	C	T	64	PASS	GENE=BRCA2;IMPACT=HIGH;AF=0.0004;CLNSIG=Pathogenic	GT	0/1

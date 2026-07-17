@@ -1,0 +1,9 @@
+##fileformat=VCFv4.2
+##source=health-api-synthetic-test-fixture
+##note=Synthetic, non-real sample data for tests only. Not derived from any person.
+##reference=GRCh38
+##contig=<ID=chr1,length=248956422>
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SYNTHETIC_SAMPLE
+chr1	1000001	rs9000001	A	G	100	PASS	GENE=TEST1	GT	0/0
+chr1	1000002	rs9000002	C	T	100	PASS	GENE=TEST2	GT	0/0
+chr1	1000003	rs9000003	G	A	100	PASS	GENE=TEST3	GT	0/0

@@ -1,0 +1,59 @@
+---
+title: "Auth and claims"
+description: "Required OIDC token shape for customer data access."
+---
+
+Protected routes require scope, user, and organization authorization. A token
+with `health:data:read` can read and query every health resource owned by its
+authenticated user by default. Endpoint grants remain required for writes,
+connections, exports, deletion, authority issuance, and costly compute.
+
+Evaluating the API? Create a free personal key from the
+[developer dashboard](https://api.foreverbetter.xyz/dashboard). Sign in with an
+8-digit email code and the key comes with the right grants already set.
+
+Agents can mint the same key without the dashboard: start an email OTP, verify
+the 8-digit code, then call `POST /api-keys` with the returned session token.
+A free personal key needs no organization or endpoint claims on the session
+token; the issued key carries them. The exact sequence is in
+[Connect your agent](/connect-your-agent) and in the `auth.self_serve_key`
+block of `GET /.well-known/health-agent.json`.
+
+## Required token fields
+
+| Requirement | Accepted claim names |
+| --- | --- |
+| User identity | `sub`, plus route body `user_id` matching access rules |
+| Organization access | `organization_id`, `org_id`, `organization_ids`, `org_ids`, `allowed_organizations`, or the same fields under `app_metadata` |
+| Consequential endpoint grants | `health_enabled_endpoints`, `enabled_endpoints`, or `allowed_endpoints` |
+
+## Endpoint grant examples
+
+```json
+{
+  "organization_id": "org_001",
+  "enabled_endpoints": [
+    "imports.file",
+    "biomarkers.derive",
+    "biomarkers.analyze",
+    "wearables.analyze",
+    "genetics.analyze",
+    "analyses.create",
+    "analyses.read",
+    "analyses.list",
+    "analyses.recommendations.read",
+    "sources.list",
+    "sources.read",
+    "trends.read",
+    "dashboard_specs.read",
+    "genetics.jobs.read",
+    "connections.sync"
+  ]
+}
+```
+
+Read endpoint IDs in this example are optional under the default policy; they
+are shown for portability to strict deployments. Use canonical dotted IDs in
+generated keys and service tokens. Grant `analyses.create` only when the product
+intentionally combines modalities. Set `AGENT_FULL_USER_DATA_READS=false` to
+require endpoint grants for reads as well.

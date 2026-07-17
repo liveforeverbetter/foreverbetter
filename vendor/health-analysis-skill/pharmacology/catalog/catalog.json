@@ -1,0 +1,402 @@
+[
+  {
+    "id": 640,
+    "name": "Inhalation anesthetics and succinylcholine (Adverse Reactions)",
+    "url_slug": null
+  },
+  {
+    "id": 641,
+    "name": "Abacavir (Adverse effects)",
+    "url_slug": null
+  },
+  {
+    "id": 642,
+    "name": "Irinotecan (Adverse effects)",
+    "url_slug": null
+  },
+  {
+    "id": 643,
+    "name": "Ivacaftor (Efficacy)",
+    "url_slug": null
+  },
+  {
+    "id": 644,
+    "name": "Pravastatin (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 645,
+    "name": "Lansoprazole, Dexlansoprazole (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 646,
+    "name": "Simvastatin (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 647,
+    "name": "Quetiapine (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 649,
+    "name": "Nortriptyline (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 650,
+    "name": "Desipramine (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 655,
+    "name": "Clopidogrel (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 656,
+    "name": "Warfarin (Adverse Reactions)\n",
+    "url_slug": null
+  },
+  {
+    "id": 657,
+    "name": "Paroxetin (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 658,
+    "name": "Sertraline (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 659,
+    "name": "Escitalopram (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 660,
+    "name": "Citalopram (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 661,
+    "name": "Fluvoxamine (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 662,
+    "name": "Omeprazole (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 663,
+    "name": "Venlafaxine (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 665,
+    "name": "Celecoxib (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 666,
+    "name": "Codeine (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 667,
+    "name": "Tramadol (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 668,
+    "name": "Phenytoin (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 669,
+    "name": "Pantoprazole (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 670,
+    "name": "Tamoxifen (Efficacy)",
+    "url_slug": null
+  },
+  {
+    "id": 671,
+    "name": "Metoprolol (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 672,
+    "name": "Tacrolimus (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 673,
+    "name": "Amitriptyline (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 674,
+    "name": "Voriconazole (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 675,
+    "name": "Clomipramine (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 676,
+    "name": "Fluorouracil, Capecitabine (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 677,
+    "name": "Atazanavir (Adverse effects)",
+    "url_slug": null
+  },
+  {
+    "id": 680,
+    "name": "Ibuprofen (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 681,
+    "name": "Acenocoumarol, Fenprocoumon (Adverse effects)",
+    "url_slug": null
+  },
+  {
+    "id": 682,
+    "name": "Efavirenz (Adverse effects)",
+    "url_slug": null
+  },
+  {
+    "id": 684,
+    "name": "Doxepin (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 685,
+    "name": "Imipramine (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 686,
+    "name": "Trimipramine (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 687,
+    "name": "Atorvastatin (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 688,
+    "name": "Fluvastatin (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 689,
+    "name": "Lovastatin (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 690,
+    "name": "Pitavastatin (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 691,
+    "name": "Rosuvastatin (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 692,
+    "name": "G6PD Deficiency and Adverse Drug Reactions",
+    "url_slug": null
+  },
+  {
+    "id": 693,
+    "name": "Vortioxetine (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 694,
+    "name": "Allopurinol (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 696,
+    "name": "Flucytosine (Adverse Reactions)",
+    "url_slug": null
+  },
+  {
+    "id": 697,
+    "name": "Flurbiprofen (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 698,
+    "name": "Hydrocodone (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 699,
+    "name": "Lornoxicam (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 700,
+    "name": "Meloxicam (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 701,
+    "name": "Piroxicam (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 703,
+    "name": "Siponimod (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 704,
+    "name": "Tenoxicam (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 705,
+    "name": "Brivaracetam (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 706,
+    "name": "Clobazam (Adverse Reactions)",
+    "url_slug": null
+  },
+  {
+    "id": 707,
+    "name": "Diazepam (Adverse Reactions)",
+    "url_slug": null
+  },
+  {
+    "id": 708,
+    "name": "Iloperidone (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 709,
+    "name": "Pitolisant (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 710,
+    "name": "Fluindione (Adverse Reactions)",
+    "url_slug": null
+  },
+  {
+    "id": 711,
+    "name": "Floxacillin (Adverse effects)",
+    "url_slug": null
+  },
+  {
+    "id": 639,
+    "name": "Thioguanine, Azathioprine, Mercaptopurine (Dosage)",
+    "url_slug": null
+  },
+  {
+    "id": 179,
+    "name": "Olanzapine (Efficacy)",
+    "url_slug": "results/pharmacology/olanzapine-efficacy"
+  },
+  {
+    "id": 180,
+    "name": "Olanzapine (Adverse effects)",
+    "url_slug": "results/pharmacology/olanzapine-adverse-effects"
+  },
+  {
+    "id": 452,
+    "name": "Methotrexate in rheumatoid arthritis (Efficacy)",
+    "url_slug": "results/pharmacology/methotrexate-rheumatoid-arthritis-efficacy"
+  },
+  {
+    "id": 619,
+    "name": "Isoniazid (Adverse effects)",
+    "url_slug": "results/pharmacology/isoniazid-adverse-effects"
+  },
+  {
+    "id": 469,
+    "name": "Amifampridine (Dosage)",
+    "url_slug": "results/pharmacology/amifampridine-dosage"
+  },
+  {
+    "id": 328,
+    "name": "Valproic Acid (Adverse effects)",
+    "url_slug": "results/pharmacology/valproic-acid-adverse-effects"
+  },
+  {
+    "id": 624,
+    "name": "Daunorubicin, Doxorubicin (Adverse Reactions)",
+    "url_slug": "results/pharmacology/daunorubicin-doxorubicin-adverse-reactions"
+  },
+  {
+    "id": 623,
+    "name": "Cisplatin (Adverse Reactions)",
+    "url_slug": "results/pharmacology/cisplatin-adverse-reactions"
+  },
+  {
+    "id": 632,
+    "name": "Mivacurium and succinylcholine (Adverse Reactions)",
+    "url_slug": "results/pharmacology/mivacurium-succinylcholine-adverse-reactions"
+  },
+  {
+    "id": 453,
+    "name": "Methotrexate (Adverse Reactions)",
+    "url_slug": "results/pharmacology/methotrexate-rheumatoid-arthritis-adverse-effects"
+  },
+  {
+    "id": 390,
+    "name": "Carbamazepine (Dosage)",
+    "url_slug": "results/pharmacology/carbamazepine-dosage"
+  },
+  {
+    "id": 633,
+    "name": "Nilotinib (Adverse Reactions)",
+    "url_slug": "results/pharmacology/nilotinib-adverse-reactions"
+  },
+  {
+    "id": 392,
+    "name": "Hydrochlorothiazide (Efficacy)",
+    "url_slug": "results/pharmacology/hydrochlorothiazide-efficacy"
+  },
+  {
+    "id": 306,
+    "name": "Fentanyl (Efficacy)",
+    "url_slug": "results/pharmacology/fentanyl-efficacy"
+  },
+  {
+    "id": 294,
+    "name": "Lumacaftor + Ivacaftor (Efficacy)",
+    "url_slug": "results/pharmacology/lumacaftor-ivacaftor-efficacy"
+  },
+  {
+    "id": 165,
+    "name": "Docetaxel (Adverse effects)",
+    "url_slug": "results/pharmacology/docetaxel-adverse-effects"
+  },
+  {
+    "id": 163,
+    "name": "Selective Serotonin Reuptake Inhibitors (SSRIs) (Adverse effects)",
+    "url_slug": "results/pharmacology/selective-serotonin-reuptake-inhibitor-sssris-adverse-effects"
+  },
+  {
+    "id": 170,
+    "name": "Peginterferons alfa-2a -2b and ribavirin (Efficacy)",
+    "url_slug": "results/pharmacology/peginterferon-ribavirin-boceprevir-telaprevir-efficacy"
+  }
+]

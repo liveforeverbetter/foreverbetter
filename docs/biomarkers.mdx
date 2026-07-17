@@ -1,0 +1,73 @@
+---
+title: "Biomarkers"
+description: "Upload labs in any common unit, get sex- and age-aware interpretations, derived metrics, and dashboard cards."
+---
+
+Upload a lab panel once and the API normalizes, unit-converts, scores, and
+derives metrics across cardiometabolic, glucose/insulin, inflammation, nutrient,
+hormone/thyroid, organ function, hematology, and cancer-screening context.
+
+## Upload a panel
+
+CSV, JSON, or plain-text labs are all accepted at `POST /imports/file` with
+`category: "biomarkers"`. Include a `unit` column whenever you can.
+
+```bash
+curl -s "$HEALTH_API/imports/file" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{
+    "user_id": "'"$USER_ID"'",
+    "organization_id": "'"$ORGANIZATION_ID"'",
+    "category": "biomarkers",
+    "filename": "labs.csv",
+    "text": "marker,value,unit\nGlucose,5.1,mmol/L\nTotal cholesterol,5.0,mmol/L\nApoB,95,mg/dL\nTestosterone,18,nmol/L\nHbA1c,34,mmol/mol"
+  }'
+```
+
+## Units are converted automatically
+
+Thresholds are held in a canonical unit per marker, and common SI/EU units are
+converted before scoring. A panel reported in `mmol/L`, `µmol/L`, `nmol/L`,
+`pmol/L`, or `mmol/mol` is interpreted correctly: glucose `5.1 mmol/L` is read
+as `~92 mg/dL` instead of being flagged as critically low. Each finding reports the
+canonical `unit` and, when converted, `converted_from`. An unrecognized unit is
+flagged (`unit_unrecognized`) rather than silently scored.
+
+## Sex- and age-aware ranges
+
+Pass a `profile` with `sex` and `age` to `POST /analyses`,
+`POST /biomarkers/analyze`, or `POST /biomarkers/derive`. Markers whose healthy
+range differs by sex (hemoglobin, hematocrit, ferritin, creatinine,
+testosterone, uric acid, body fat, and others) are scored against the correct
+band. eGFR is computed from creatinine, age, and sex (CKD-EPI 2021).
+
+```bash
+curl -s "$HEALTH_API/biomarkers/analyze" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{
+    "user_id": "'"$USER_ID"'",
+    "organization_id": "'"$ORGANIZATION_ID"'",
+    "source_ids": ["'"$SOURCE_ID"'"],
+    "profile": { "age": 42, "sex": "male" }
+  }'
+```
+
+## Direct and derived metrics
+
+`POST /biomarkers/derive` computes metrics from what you uploaded: HOMA-IR,
+TG/HDL, TyG index, non-HDL-C, remnant cholesterol, ApoB/ApoA1, total- and
+LDL-to-HDL ratios, neutrophil-to-lymphocyte ratio, eGFR, and a metabolic-signal
+count. Every derived interpretation records its `inputs` and provenance.
+
+## Coverage
+
+Cardiometabolic (ApoB, LDL-C, HDL-C, triglycerides, total & non-HDL cholesterol,
+Lp(a), ApoA1); glucose/insulin (glucose, insulin, HbA1c); inflammation
+(hs-CRP, homocysteine, neutrophils, lymphocytes); nutrient (ferritin, vitamin D,
+B12, folate, magnesium, uric acid, omega-3 index); hormone/thyroid (TSH, free
+T4/T3, total & free testosterone, estradiol, SHBG, DHEA-S, cortisol, IGF-1);
+organ function (creatinine, eGFR, cystatin C, ALT, AST, GGT, ALP, bilirubin,
+albumin, BUN); hematology (hemoglobin, hematocrit, WBC, platelets, RDW, MCV);
+and PSA as cancer-screening context.

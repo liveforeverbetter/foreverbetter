@@ -1,0 +1,176 @@
+{
+  "version": "2026-05-28",
+  "purpose": "Objective coverage benchmark for 23longevity genomic and multimodal dashboard output.",
+  "source_notes": [
+    "Website claim surface: ../website/src/app/page.tsx and content pages describe 100+ annual biomarkers, private dashboard, optional VCF/WGS context, uploaded past labs, wearable summaries, open-source pipeline, and wellness boundaries.",
+    "TellmeGen public baseline: Ultra WGS advertises 30x whole genome sequencing, 600+ reports, raw FASTQ/VCF download, health, pharmacogenetics, hereditary conditions, traits, wellness, and ancestry.",
+    "Superpower public baseline: annual 100+ biomarker panel grouped into health domains plus personalized action plan and dashboard.",
+    "WHOOP public API baseline: recovery, cycle, sleep, and workout data including recovery score, HRV, resting heart rate, strain, and sleep stages."
+  ],
+  "source_urls": [
+    "https://www.tellmegen.com/en/dna-test-ultra",
+    "https://superpower.com/best-biomarkers",
+    "https://developer.whoop.com/api/",
+    "https://www.whoop.com/pl/en/thelocker/access-your-whoop-data-with-new-integrations-data-export-options/",
+    "https://hcup-us.ahrq.gov/datainnovations/clinicaldata/AppendixO_LabDataVariablesandRelevantRanges.pdf"
+  ],
+  "local_extracts": "external-benchmark-extracts.json",
+  "website_claim_requirements": {
+    "annual_biomarker_marker_min": 100,
+    "dashboard_outputs": [
+      "private dashboard",
+      "plain-language action plan",
+      "annual retesting loop",
+      "clinician follow-up boundary",
+      "export or deletion path"
+    ],
+    "accepted_uploads": [
+      "past labs",
+      "VCF",
+      "WGS",
+      "wearable summaries"
+    ],
+    "biomarker_domains": [
+      "cardiometabolic",
+      "glucose_insulin",
+      "inflammation_immune",
+      "nutrient_status",
+      "hormone_thyroid",
+      "organ_function",
+      "hematology"
+    ],
+    "wearable_domains": [
+      "sleep_recovery",
+      "cardiovascular_recovery",
+      "activity_training",
+      "rhythm_consistency"
+    ]
+  },
+  "tellmegen_wgs_baseline": {
+    "wgs_depth": "30x",
+    "report_min": 600,
+    "raw_downloads": [
+      "FASTQ",
+      "VCF"
+    ],
+    "required_sections": [
+      "genetic_vulnerability",
+      "pharmacogenetics",
+      "hereditary_conditions",
+      "personal_traits",
+      "wellness",
+      "ancestry"
+    ],
+    "reported_item_counts": {
+      "genetic_vulnerability": 105,
+      "pharmacogenetics": 95,
+      "hereditary_conditions": 200,
+      "personal_traits": 80,
+      "wellness": 50
+    },
+    "variant_classes": [
+      "rare variants",
+      "copy number variants",
+      "large insertions/deletions",
+      "tandem repeats",
+      "rearrangements"
+    ]
+  },
+  "open_source_pass_thresholds": {
+    "wgs_variant_min": 500000,
+    "local_vcf_record_min": 1000000,
+    "local_vcf_rsid_min": 500000,
+    "local_vcf_class_min": 5,
+    "local_vcf_curated_overlap_min": 75,
+    "local_vcf_prs_overlap_min": 40,
+    "compact_catalog_entry_min": 300,
+    "compact_catalog_wellness_min": 80,
+    "compact_catalog_max_bytes": 2000000,
+    "interpretation_depth_score_min": 90,
+    "interpretation_source_family_min": 5,
+    "interpretation_clinvar_gene_target_min": 150,
+    "interpretation_cpic_gene_drug_rule_min": 10,
+    "interpretation_pgs_variant_min": 180,
+    "curated_marker_min": 200,
+    "trait_min": 50,
+    "insight_min": 50,
+    "protocol_min": 2,
+    "variant_card_min": 50,
+    "prs_supported_min": 27,
+    "hallmark_supported_min": 9,
+    "wgs_variant_class_min": 5,
+    "wgs_reportable_class_min": 5,
+    "wgs_validation_truthset_min": 3,
+    "wgs_external_validation_min": 0,
+    "wgs_caller_available_min": 0,
+    "genetics_benchmark_score_min": 90,
+    "genetics_total_report_min": 600,
+    "genetics_category_recall_min": 90,
+    "genetics_report_catalog_quality_min": 98,
+    "genetics_report_catalog_source_type_min": 6,
+    "biomarker_supported_min": 45,
+    "biomarker_measured_min": 35,
+    "biomarker_validation_truthset_min": 3,
+    "biomarker_status_recall_min": 100,
+    "biomarker_derived_recall_min": 100,
+    "biomarker_benchmark_score_min": 90,
+    "biomarker_system_score_min": 17,
+    "biomarker_biological_age_model_min": 1,
+    "wearable_supported_min": 19,
+    "wearable_measured_min": 15
+  },
+  "internal_quality_targets": {
+    "genetics": {
+      "gene_catalog_min": 1000,
+      "tellmegen_section_min": 6,
+      "tellmegen_variant_class_min": 5,
+      "prs_supported_min": 27,
+      "wgs_normalized_class_min": 5,
+      "wgs_reportable_call_min": 5,
+      "caller_manifest_min": 5,
+      "caller_available_min": 0,
+      "validation_truthset_min": 3,
+      "external_validation_min": 0,
+      "benchmark_score_min": 90,
+      "total_report_min": 600,
+      "category_recall_min": 90,
+      "report_catalog_quality_min": 98,
+      "report_catalog_source_type_min": 6,
+      "compact_catalog_entry_min": 300,
+      "compact_catalog_wellness_min": 80,
+      "compact_catalog_max_bytes": 2000000,
+      "interpretation_depth_score_min": 90,
+      "interpretation_source_family_min": 5,
+      "interpretation_clinvar_gene_target_min": 150,
+      "interpretation_cpic_gene_drug_rule_min": 10,
+      "interpretation_pgs_variant_min": 180
+    },
+    "biomarkers": {
+      "superpower_marker_min": 100,
+      "domain_min": 7,
+      "domain_depth_min": 10,
+      "derived_metric_min": 5,
+      "validation_truthset_min": 3,
+      "status_recall_min": 100,
+      "derived_recall_min": 100,
+      "action_completeness_min": 100,
+      "trend_point_min": 2,
+      "trend_overlap_min": 40,
+      "benchmark_score_min": 90,
+      "system_score_min": 17,
+      "biological_age_model_min": 1,
+      "action_coverage_min": 5,
+      "unit_coverage_min": 100
+    },
+    "wearables": {
+      "whoop_signal_min": 24,
+      "domain_min": 4,
+      "api_sync_min": 1
+    },
+    "dashboard_ux": {
+      "core_section_min": 5,
+      "embedded_payload_min": 3,
+      "visual_baseline_min": 1
+    }
+  }
+}

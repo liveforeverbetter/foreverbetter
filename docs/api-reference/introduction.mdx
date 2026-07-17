@@ -1,0 +1,74 @@
+---
+title: "API Reference"
+description: "Explore the ForeverBetter Wellness API by workflow, from authentication and ingestion to analysis, agents, and privacy controls."
+---
+
+Use this reference to build with the public ForeverBetter Wellness API. The
+endpoint pages are generated from the live OpenAPI contract, so request fields,
+response schemas, and interactive examples stay aligned with production.
+
+<CardGroup cols={2}>
+  <Card title="Start and authenticate" icon="key">
+    Check service capabilities, create a sandbox session, or mint an API key.
+  </Card>
+  <Card title="Ingest and connect" icon="arrow-up-from-bracket">
+    Upload files and connect wearable providers.
+  </Card>
+  <Card title="Analyze and personalize" icon="chart-line">
+    Run modality-specific or multimodal analysis and retrieve actionable output.
+  </Card>
+  <Card title="Build apps and agents" icon="robot">
+    Use MCP, webhooks, private dashboards, and design-system contracts.
+  </Card>
+  <Card title="Discover providers" icon="magnifying-glass-location">
+    Find supported wearables, lab locations, and genetic testing providers.
+  </Card>
+  <Card title="Billing and payments" icon="credit-card">
+    Read plans, start checkout, manage subscriptions, or pay per request.
+  </Card>
+  <Card title="Privacy and operations" icon="shield-halved">
+    Export or delete user data through explicit lifecycle controls.
+  </Card>
+</CardGroup>
+
+## Base URL
+
+```text
+https://api.foreverbetter.xyz
+```
+
+## Authentication
+
+Protected endpoints accept an OIDC access token or scoped API key as a bearer
+token:
+
+```text
+Authorization: Bearer <token>
+```
+
+The token must identify the user and organization and grant access to the
+requested operation. See [Auth and claims](/auth-and-claims) for the claim model,
+or [Connect your agent](/connect-your-agent) for agent-led authentication.
+
+## Choose a starting point
+
+| Goal | Start with |
+| --- | --- |
+| Test the response shape without an account | `POST /sandbox/sessions` |
+| Upload biomarkers or a small genetic export | `POST /imports/file` |
+| Upload a large VCF or WGS file | `POST /genetics/uploads` |
+| Connect WHOOP or Oura | `POST /connections/wearables/start` |
+| Run a multimodal analysis | `POST /analyses` |
+| Read dashboard-ready JSON | `GET /dashboard-specs/{analysis_id}` |
+| Give an agent source-backed health context | `POST /mcp` or `POST /query` |
+| Export or delete a user's data | `POST /users/{user_id}/data/export` or `POST /users/{user_id}/data/delete` |
+
+## Errors
+
+Errors use structured JSON with an HTTP status, human-readable detail, request
+path, and request ID. Treat `401` and `403` as authentication or permission
+issues, `404` as a missing or inaccessible resource, and `422` as request
+validation feedback.
+
+For code generation or offline inspection, download the
+[raw OpenAPI document](https://api.foreverbetter.xyz/openapi.json).

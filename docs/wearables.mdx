@@ -1,0 +1,80 @@
+---
+title: "Wearables"
+description: "Connect WHOOP or Oura, push Google Health Connect records, and analyze source-backed wearable signals."
+---
+
+ForeverBetter exposes one stable `wearables` modality with three implemented
+source paths:
+
+| Source | Connection | Implemented flow |
+| --- | --- | --- |
+| WHOOP | Server OAuth | Start, callback, refresh, named sync, webhook reconciliation, analysis |
+| Oura | Server OAuth | Start, callback, refresh, named sync, webhook reconciliation, analysis |
+| Google Health Connect | Android mobile bridge | User-granted on-device read, direct SDK push, analysis |
+
+## WHOOP and Oura
+
+Start with `POST /connections/wearables/start`, using `source_provider` set to
+`whoop` or `oura`. Complete the provider redirect through
+`POST /connections/wearables/callback`.
+
+```bash
+curl -s "$HEALTH_API/connections/wearables/start" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{
+    "user_id":"customer_001",
+    "organization_id":"org_001",
+    "source_provider":"whoop",
+    "client_id":"<provider-client-id>",
+    "redirect_uri":"https://app.example.com/oauth/callback"
+  }'
+```
+
+Use the named provider route for a direct sync:
+
+```bash
+curl -s "$HEALTH_API/connections/whoop/sync" \
+  -H "authorization: Bearer $TOKEN" \
+  -H "content-type: application/json" \
+  -d '{
+    "user_id":"customer_001",
+    "organization_id":"org_001",
+    "access_token":"<provider-access-token>",
+    "start":"2026-06-01",
+    "end":"2026-06-08"
+  }'
+```
+
+Use `/connections/oura/sync` for Oura. If a WHOOP token has expired, include
+the refresh token and client credentials. The API refreshes once and returns the
+rotated token for secure persistence.
+
+## Google Health Connect
+
+Google Health Connect is an on-device Android aggregator. ForeverBetter does
+not receive data from it until a user-approved mobile app reads records and
+pushes them to the API.
+
+The stable endpoint is:
+
+```text
+POST /api/v1/sdk/users/{user_id}/sync
+X-ForeverBetter-API-Key: <mobile-sync-key>
+```
+
+The JSON body accepts `records`, `sleep`, and `workouts` arrays under `data`.
+The API maps common Health Connect record names to canonical metric IDs and
+preserves source timestamps. See [Onboard wearable users](/wearable-onboarding)
+for a complete request.
+
+## Analyze wearable data
+
+Call `POST /wearables/analyze` with one or more wearable source IDs. The route
+rejects biomarker and genetic sources so the result stays modality-specific.
+Normalized signals cover sleep, recovery, HRV, resting heart rate, SpO2,
+respiratory rate, activity, steps, energy, body composition, blood pressure,
+and supported glucose observations.
+
+For a whole-person result, combine wearable sources with biomarkers, genetics,
+or behavioral context through `POST /analyses`.

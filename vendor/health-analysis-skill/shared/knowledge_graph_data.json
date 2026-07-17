@@ -1,0 +1,5086 @@
+{
+  "_nad_metabolism_update": {
+    "trait_id": "_nad_metabolism_update",
+    "mechanism": "NOTE: Clinical endpoint evidence for NMN/NR is null in latest large RCTs despite increases in blood NAD+ levels",
+    "outcomes": [
+      {
+        "id": "nad_levels_only",
+        "severity": 0.3,
+        "description": "NAD+ precursor supplementation raises blood NAD+ but does not improve clinical outcomes in current evidence"
+      }
+    ],
+    "actions": [
+      {
+        "id": "nad_caution",
+        "title": "Reconsider NMN/NR supplementation",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Latest large RCT (NR-long COVID-2025) confirms no clinical endpoint benefit from NAD+ precursors alone"
+      }
+    ]
+  },
+  "_telomere_update": {
+    "trait_id": "_telomere_update",
+    "mechanism": "NOTE: The 2022 PNAS MCMV-TERT paper claiming +41% mouse lifespan was retracted August 2025",
+    "outcomes": [
+      {
+        "id": "telomere_evidence_gap",
+        "severity": 0.5,
+        "description": "No credible evidence that telomerase pills extend human lifespan"
+      }
+    ],
+    "actions": [
+      {
+        "id": "telomere_skepticism",
+        "title": "Avoid telomerase supplement products",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "Retracted foundational paper; no replacement evidence for pill-based telomere extension"
+      }
+    ]
+  },
+  "acetylator_status": {
+    "trait_id": "acetylator_status",
+    "mechanism": "NAT2 acetylation capacity",
+    "outcomes": [
+      {
+        "id": "slow_acetylation",
+        "severity": 0.4,
+        "description": "Reduced drug and toxin clearance"
+      }
+    ],
+    "actions": [
+      {
+        "id": "toxin_avoidance",
+        "title": "Avoid environmental toxins",
+        "impact": 0.5,
+        "difficulty": "medium"
+      },
+      {
+        "id": "medication_consult",
+        "title": "Discuss medication timing",
+        "impact": 0.4,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "alcohol_moderation": {
+    "trait_id": "alcohol_moderation",
+    "mechanism": "Ethanol metabolism and cancer risk",
+    "outcomes": [
+      {
+        "id": "alcohol_cancer",
+        "severity": 0.6,
+        "description": "No safe lower threshold for stroke"
+      }
+    ],
+    "actions": [
+      {
+        "id": "limit_alcohol",
+        "title": "Max ~100g/week (~7 standard drinks)",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Lowest all-cause mortality threshold"
+      },
+      {
+        "id": "alcohol_free_days",
+        "title": "Include alcohol-free days",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "angiogenesis": {
+    "trait_id": "angiogenesis",
+    "mechanism": "VEGFA-mediated blood vessel formation",
+    "outcomes": [
+      {
+        "id": "altered_angiogenesis",
+        "severity": 0.3,
+        "description": "Modified blood vessel growth capacity"
+      }
+    ],
+    "actions": [
+      {
+        "id": "adequate_antioxidants",
+        "title": "Ensure adequate antioxidant intake",
+        "impact": 0.4,
+        "difficulty": "low"
+      },
+      {
+        "id": "vascular_support",
+        "title": "Support vascular health",
+        "impact": 0.4,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "anti_il11": {
+    "trait_id": "anti_il11",
+    "mechanism": "IL-11 inhibition reduces pro-fibrotic and pro-inflammatory signaling in aging",
+    "outcomes": [
+      {
+        "id": "fibrosis",
+        "severity": 0.6,
+        "description": "Age-related tissue fibrosis driven in part by IL-11 signaling"
+      },
+      {
+        "id": "multimorbidity",
+        "severity": 0.5,
+        "description": "IL-11 contributes to multi-organ age-related decline"
+      }
+    ],
+    "actions": [
+      {
+        "id": "monitor_trials",
+        "title": "Monitor anti-IL-11 clinical trials",
+        "impact": 0.4,
+        "difficulty": "low",
+        "description": "Anti-IL-11 antibody extended mouse lifespan 25% late in life; already in human trials for fibrotic lung disease"
+      }
+    ]
+  },
+  "anti_inflammation": {
+    "trait_id": "anti_inflammation",
+    "mechanism": "IL-10 anti-inflammatory cytokine production",
+    "outcomes": [
+      {
+        "id": "reduced_anti_inflammatory",
+        "severity": 0.4,
+        "description": "Reduced ability to resolve inflammation"
+      }
+    ],
+    "actions": [
+      {
+        "id": "pro_resolve_med",
+        "title": "Ensure adequate omega-3 intake",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "gut_health",
+        "title": "Support gut microbiome",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "aortopathy_risk": {
+    "trait_id": "aortopathy_risk",
+    "mechanism": "Genetic variants affecting connective tissue and vascular integrity, primarily in FBN1 (Marfan syndrome), TGFBR1/TGFBR2 (Loeys-Dietz syndrome), COL3A1 (vascular Ehlers-Danlos), ACTA2, and MYH11, leading to aortic root dilation, aneurysm, and dissection",
+    "outcomes": [
+      {
+        "id": "aortic_aneurysm",
+        "severity": 0.9,
+        "description": "Progressive aortic root or ascending aortic aneurysm formation"
+      },
+      {
+        "id": "aortic_dissection",
+        "severity": 1,
+        "description": "Life-threatening aortic dissection risk, particularly at younger ages"
+      },
+      {
+        "id": "marfan_features",
+        "severity": 0.6,
+        "description": "Skeletal, ocular, and cardiovascular manifestations in Marfan syndrome"
+      },
+      {
+        "id": "arterial_tortuosity",
+        "severity": 0.7,
+        "description": "Arterial tortuosity and aneurysm risk in Loeys-Dietz syndrome"
+      }
+    ],
+    "actions": [
+      {
+        "id": "aortic_imaging",
+        "title": "Baseline aortic imaging",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Echocardiogram and CT/MRI for aortic root and entire aorta measurement"
+      },
+      {
+        "id": "serial_aortic_monitoring",
+        "title": "Serial aortic surveillance",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Annual imaging to monitor aortic growth rate and determine surgical timing"
+      },
+      {
+        "id": "beta_blocker_arbs",
+        "title": "Beta-blocker or ARB therapy",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Reduce aortic wall stress with atenolol or losartan to slow dilation"
+      },
+      {
+        "id": "elective_surgery",
+        "title": "Elective aortic root replacement",
+        "impact": 0.9,
+        "difficulty": "high",
+        "description": "Prophylactic valve-sparing root replacement at threshold diameters"
+      },
+      {
+        "id": "pregnancy_counseling",
+        "title": "Pregnancy counseling and monitoring",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "High-risk pregnancy monitoring; discuss dissection risk and surgical timing before conception"
+      },
+      {
+        "id": "activity_restriction_aortopathy",
+        "title": "Activity restriction",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Avoid heavy lifting, contact sports, and isometric exercise that increases aortic wall stress"
+      }
+    ]
+  },
+  "apoB_management": {
+    "trait_id": "apoB_management",
+    "mechanism": "Apolipoprotein B as direct measure of atherogenic particle count",
+    "outcomes": [
+      {
+        "id": "cardiovascular_risk",
+        "severity": 0.8,
+        "description": "Elevated apoB drives atherosclerosis independently of LDL-C"
+      }
+    ],
+    "actions": [
+      {
+        "id": "apoB_test",
+        "title": "Request apoB test (more predictive than LDL-C)",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "Target: <80 mg/dL primary prevention, <60 mg/dL high-risk"
+      },
+      {
+        "id": "statin_therapy",
+        "title": "Statin therapy if apoB elevated",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Each 1 mmol/L LDL-C reduction = ~21% lower vascular events/year (CTT meta-analysis)"
+      }
+    ]
+  },
+  "arrhythmia": {
+    "trait_id": "arrhythmia",
+    "mechanism": "Cardiac ion channel genes (SCN5A, KCNH2, KCNQ1) regulating electrical conduction and heart rhythm",
+    "outcomes": [
+      {
+        "id": "arrhythmia_optimal",
+        "severity": 0.2,
+        "description": "Favorable cardiac rhythm \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "arrhythmia_moderate",
+        "severity": 0.5,
+        "description": "Moderate cardiac rhythm \u2014 some genetic predisposition"
+      },
+      {
+        "id": "arrhythmia_elevated",
+        "severity": 0.8,
+        "description": "Elevated cardiac rhythm \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_arrhythmia",
+        "title": "Discuss cardiac rhythm with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_arrhythmia",
+        "title": "Evidence-based heart rhythm optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "arrhythmia_risk": {
+    "trait_id": "arrhythmia_risk",
+    "mechanism": "Genetic variants in cardiac ion channel genes (KCNQ1, KCNH2, SCN5A, RYR2, CACNA1C) and associated proteins that alter cardiac electrophysiology and predispose to long QT syndrome, Brugada syndrome, catecholaminergic polymorphic ventricular tachycardia, and other channelopathies",
+    "outcomes": [
+      {
+        "id": "lqts_risk",
+        "severity": 0.9,
+        "description": "Long QT syndrome risk with potential for torsades de pointes and sudden cardiac death"
+      },
+      {
+        "id": "brs_risk",
+        "severity": 0.8,
+        "description": "Brugada syndrome risk with characteristic ECG pattern and ventricular arrhythmia risk"
+      },
+      {
+        "id": "cpvt_risk",
+        "severity": 0.8,
+        "description": "Catecholaminergic polymorphic VT risk during exercise or emotional stress"
+      },
+      {
+        "id": "sudden_cardiac_death_risk",
+        "severity": 1,
+        "description": "Elevated risk of sudden cardiac death if untreated"
+      }
+    ],
+    "actions": [
+      {
+        "id": "ecg_evaluation",
+        "title": "Comprehensive ECG evaluation",
+        "impact": 0.9,
+        "difficulty": "low",
+        "description": "12-lead ECG, exercise stress test, and Holter monitoring for arrhythmia screening"
+      },
+      {
+        "id": "beta_blocker_channelopathy",
+        "title": "Beta-blocker therapy",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "Nonselective beta-blockers (nadolol, propranolol) for LQTS and CPVT"
+      },
+      {
+        "id": "icd_consideration",
+        "title": "ICD placement evaluation",
+        "impact": 0.9,
+        "difficulty": "high",
+        "description": "Implantable cardioverter-defibrillator for high-risk phenotypes or cardiac arrest survivors"
+      },
+      {
+        "id": "medication_avoidance",
+        "title": "Avoid QTc-prolonging medications",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Avoid drugs that prolong QT interval (www.crediblemeds.org) and electrolyte abnormalities"
+      },
+      {
+        "id": "lifestyle_channelopathy",
+        "title": "Lifestyle modifications for channelopathy",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Avoid intense exercise (especially swimming in LQTS), maintain potassium/magnesium levels"
+      }
+    ]
+  },
+  "b12_metabolism": {
+    "trait_id": "b12_metabolism",
+    "mechanism": "MTR/MTRR enzyme activity",
+    "outcomes": [
+      {
+        "id": "b12_deficiency",
+        "severity": 0.7,
+        "description": "Anemia, fatigue, neurological issues"
+      },
+      {
+        "id": "methylation_impairment",
+        "severity": 0.6,
+        "description": "Reduced methylation capacity"
+      }
+    ],
+    "actions": [
+      {
+        "id": "methylcobalamin",
+        "title": "Take methylcobalamin",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "1000mcg methylcobalamin sublingual"
+      },
+      {
+        "id": "test_b12",
+        "title": "Monitor B12 levels",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "baseline_labs": {
+    "trait_id": "baseline_labs",
+    "mechanism": "Comprehensive blood biomarker monitoring across seven domains: metabolic, cardiovascular, hormonal, inflammation, nutrient, liver/kidney, and cellular aging. Annual baseline recommended for healthy adults; every 3-6 months when optimizing performance or managing conditions.",
+    "outcomes": [
+      {
+        "id": "undetected_deficiency",
+        "severity": 0.5,
+        "description": "Silent deficiencies affecting longevity"
+      },
+      {
+        "id": "metabolic_blindness",
+        "severity": 0.6,
+        "description": "Undetected insulin resistance or prediabetes"
+      },
+      {
+        "id": "cardiovascular_silence",
+        "severity": 0.7,
+        "description": "Unmeasured ApoB and Lp(a) - stronger predictors than standard lipids"
+      },
+      {
+        "id": "hormonal_imbalance",
+        "severity": 0.5,
+        "description": "Undiagnosed thyroid or sex hormone dysfunction"
+      }
+    ],
+    "actions": [
+      {
+        "id": "hbA1c_test",
+        "title": "HbA1c every 3-6 months (target <5.5%)",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "3-month average blood sugar - flags prediabetes earlier than fasting glucose"
+      },
+      {
+        "id": "fasting_glucose",
+        "title": "Fasting glucose annually (optimal 70-89 mg/dL)",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Lower end of normal range associated with better outcomes"
+      },
+      {
+        "id": "fasting_insulin",
+        "title": "Fasting insulin annually (optimal <6 \u00b5IU/mL)",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "Earliest marker of insulin resistance - rises decades before glucose"
+      },
+      {
+        "id": "apoB_test",
+        "title": "ApoB annually (target <80 mg/dL for low risk)",
+        "impact": 0.9,
+        "difficulty": "low",
+        "description": "Counts atherogenic particles directly - out-predicts LDL for plaque risk"
+      },
+      {
+        "id": "lpa_test",
+        "title": "Lp(a) once in lifetime (genetic, stable over time)",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Genetic lipoprotein variant - elevated in ~20% of population, shrugs off most lifestyle changes"
+      },
+      {
+        "id": "lipid_panel",
+        "title": "Full lipid panel annually (LDL-C, HDL-C, triglycerides)",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Standard cardiovascular risk assessment; track trends over time"
+      },
+      {
+        "id": "tsh_test",
+        "title": "TSH annually (optimal 0.5-2.5 mIU/L)",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Thyroid function screening - controls every cell's energy pace"
+      },
+      {
+        "id": "thyroid_full",
+        "title": "Free T3, Free T4, reverse T3 if TSH abnormal",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Full thyroid panel when screening flags issues"
+      },
+      {
+        "id": "testosterone_test",
+        "title": "Testosterone (total + free) if symptomatic",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Steers libido, muscle maintenance, mood, and sleep quality"
+      },
+      {
+        "id": "cortisol_test",
+        "title": "Cortisol (AM) if sleep or stress concerns",
+        "impact": 0.5,
+        "difficulty": "medium",
+        "description": "Chronic elevation drives belly fat, poor sleep, and immune suppression"
+      },
+      {
+        "id": "hscrp_test",
+        "title": "hs-CRP annually (target <1.0 mg/L)",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Low-grade inflammation marker - even mild elevation signals vascular risk"
+      },
+      {
+        "id": "vitamin_d_test",
+        "title": "25-OH Vitamin D annually (target 40-60 ng/mL)",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Test before supplementing - affects bone density, immune function, and mood"
+      },
+      {
+        "id": "b12_ferritin_test",
+        "title": "B12 and ferritin annually",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "B12 absorption declines with age; ferritin screens iron status and hidden inflammation"
+      },
+      {
+        "id": "magnesium_test",
+        "title": "RBC magnesium if fatigue, cramps, or arrhythmia",
+        "impact": 0.5,
+        "difficulty": "medium",
+        "description": "Serum magnesium is poorly reflective; RBC magnesium is more accurate. Depleted by stress, sweat, and certain drugs"
+      },
+      {
+        "id": "liver_panel",
+        "title": "ALT, AST, GGT annually",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Liver enzymes flag fatty liver (ALT), oxidative stress (GGT), and medication effects"
+      },
+      {
+        "id": "kidney_panel",
+        "title": "Creatinine and eGFR annually",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Low eGFR is an early warning for chronic kidney disease"
+      },
+      {
+        "id": "uric_acid",
+        "title": "Uric acid annually (target <6.0 mg/dL)",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Beyond gout - elevated uric acid affects metabolism and cardiovascular risk"
+      },
+      {
+        "id": "homocysteine",
+        "title": "Homocysteine annually (target <10 \u00b5mol/L)",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Amino acid byproduct linked to heart, brain health, and biological aging rate"
+      }
+    ]
+  },
+  "blood_health": {
+    "trait_id": "blood_health",
+    "mechanism": "Hematopoietic and hemoglobin genes regulating red blood cell production and oxygen transport",
+    "outcomes": [
+      {
+        "id": "blood_health_optimal",
+        "severity": 0.2,
+        "description": "Favorable blood cell production \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "blood_health_moderate",
+        "severity": 0.5,
+        "description": "Moderate blood cell production \u2014 some genetic predisposition"
+      },
+      {
+        "id": "blood_health_elevated",
+        "severity": 0.8,
+        "description": "Elevated blood cell production \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_blood_health",
+        "title": "Discuss blood cell production with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_blood_health",
+        "title": "Evidence-based blood health optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "blood_pressure": {
+    "trait_id": "blood_pressure",
+    "mechanism": "AGTR1 angiotensin receptor function",
+    "outcomes": [
+      {
+        "id": "altered_bp_response",
+        "severity": 0.5,
+        "description": "Modified blood pressure regulation"
+      }
+    ],
+    "actions": [
+      {
+        "id": "low_sodium_diet",
+        "title": "Consider low sodium diet",
+        "impact": 0.6,
+        "difficulty": "medium"
+      },
+      {
+        "id": "potassium_intake",
+        "title": "Ensure adequate potassium",
+        "impact": 0.5,
+        "difficulty": "low"
+      },
+      {
+        "id": "bp_monitoring",
+        "title": "Regular blood pressure monitoring",
+        "impact": 0.6,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "blood_pressure_control": {
+    "trait_id": "blood_pressure_control",
+    "mechanism": "Arterial pressure and cardiovascular strain",
+    "outcomes": [
+      {
+        "id": "hypertension",
+        "severity": 0.7,
+        "description": "Silent driver of cardiovascular disease"
+      }
+    ],
+    "actions": [
+      {
+        "id": "home_bp_monitoring",
+        "title": "Home BP cuff monitoring (2 weeks)",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "More accurate than clinic readings"
+      },
+      {
+        "id": "bp_target",
+        "title": "Target ~120/80 mmHg",
+        "impact": 0.7,
+        "difficulty": "medium"
+      },
+      {
+        "id": "reduce_sodium",
+        "title": "Reduce sodium intake",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "body_composition": {
+    "trait_id": "body_composition",
+    "mechanism": "Lean mass vs fat mass distribution",
+    "outcomes": [
+      {
+        "id": "visceral_adiposity",
+        "severity": 0.7,
+        "description": "Central obesity drives metabolic disease"
+      }
+    ],
+    "actions": [
+      {
+        "id": "waist_measurement",
+        "title": "Track waist circumference",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Better than scale for metabolic health"
+      },
+      {
+        "id": "dexa_scan",
+        "title": "DEXA scan for baseline body composition",
+        "impact": 0.5,
+        "difficulty": "medium",
+        "description": "One-time baseline"
+      },
+      {
+        "id": "bmi_target",
+        "title": "Target BMI ~25 (not 22)",
+        "impact": 0.5,
+        "difficulty": "medium",
+        "description": "Lowest all-cause mortality"
+      }
+    ]
+  },
+  "body_weight": {
+    "trait_id": "body_weight",
+    "mechanism": "FTO gene-mediated appetite and metabolism",
+    "outcomes": [
+      {
+        "id": "increased_appetite",
+        "severity": 0.6,
+        "description": "Higher propensity for weight gain"
+      }
+    ],
+    "actions": [
+      {
+        "id": "protein_forward",
+        "title": "Prioritize protein intake",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "fiber_intake",
+        "title": "Increase dietary fiber",
+        "impact": 0.5,
+        "difficulty": "low"
+      },
+      {
+        "id": "meal_timing",
+        "title": "Consider time-restricted eating",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "bone_health": {
+    "trait_id": "bone_health",
+    "mechanism": "Bone matrix and mineralization genes (collagens, growth factors, mineral transporters) regulating bone density and strength",
+    "outcomes": [
+      {
+        "id": "bone_health_optimal",
+        "severity": 0.2,
+        "description": "Favorable bone density \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "bone_health_moderate",
+        "severity": 0.5,
+        "description": "Moderate bone density \u2014 some genetic predisposition"
+      },
+      {
+        "id": "bone_health_elevated",
+        "severity": 0.8,
+        "description": "Elevated bone density \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_bone_health",
+        "title": "Discuss bone density with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_bone_health",
+        "title": "Evidence-based bone strength optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "brain_rejuvenation": {
+    "trait_id": "brain_rejuvenation",
+    "mechanism": "Reversal of neuroinflammation, synaptic loss, and vascular decline in aging brain",
+    "outcomes": [
+      {
+        "id": "neuroinflammation",
+        "severity": 0.7,
+        "description": "Chronic brain inflammation drives cognitive decline"
+      },
+      {
+        "id": "vascular_dementia_risk",
+        "severity": 0.6,
+        "description": "Brain vascular aging contributes to dementia risk"
+      }
+    ],
+    "actions": [
+      {
+        "id": "aerobic_exercise",
+        "title": "Regular aerobic exercise (strongest brain anti-aging intervention)",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Increases BDNF, improves cerebral blood flow, reduces neuroinflammation"
+      },
+      {
+        "id": "cognitive_engagement",
+        "title": "Maintain cognitive and social engagement",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "Learning new skills and social connection are protective against cognitive decline"
+      },
+      {
+        "id": "sleep_quality",
+        "title": "Prioritize sleep for glymphatic clearance",
+        "impact": 0.7,
+        "difficulty": "medium",
+        "description": "Deep sleep phase clears amyloid-beta and tau from the brain"
+      }
+    ]
+  },
+  "caffeine_metabolism": {
+    "trait_id": "caffeine_metabolism",
+    "mechanism": "CYP1A2 enzyme activity",
+    "outcomes": [
+      {
+        "id": "sleep_disruption",
+        "severity": 0.7,
+        "description": "Difficulty falling asleep after caffeine consumption"
+      },
+      {
+        "id": "anxiety_elevation",
+        "severity": 0.5,
+        "description": "Increased anxiety with caffeine"
+      }
+    ],
+    "actions": [
+      {
+        "id": "limit_caffeine",
+        "title": "Limit caffeine intake",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Reduce daily caffeine to < 200mg"
+      },
+      {
+        "id": "avoid_late_caffeine",
+        "title": "Avoid caffeine after 12:00",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "No caffeine after noon for better sleep"
+      },
+      {
+        "id": "switch_decaf",
+        "title": "Switch to decaf after noon",
+        "impact": 0.6,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "calcium_metabolism": {
+    "trait_id": "calcium_metabolism",
+    "mechanism": "Calcium-sensing receptor and vitamin D pathway genes regulating mineral homeostasis",
+    "outcomes": [
+      {
+        "id": "calcium_metabolism_optimal",
+        "severity": 0.2,
+        "description": "Favorable calcium regulation \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "calcium_metabolism_moderate",
+        "severity": 0.5,
+        "description": "Moderate calcium regulation \u2014 some genetic predisposition"
+      },
+      {
+        "id": "calcium_metabolism_elevated",
+        "severity": 0.8,
+        "description": "Elevated calcium regulation \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_calcium_metabolism",
+        "title": "Discuss calcium regulation with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_calcium_metabolism",
+        "title": "Evidence-based bone and mineral health optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "caloric_restriction": {
+    "trait_id": "caloric_restriction",
+    "mechanism": "Reduced caloric intake activates mTOR inhibition and metabolic reprogramming",
+    "outcomes": [
+      {
+        "id": "metabolic_health",
+        "severity": 0.5,
+        "description": "Improved insulin sensitivity and metabolic markers"
+      },
+      {
+        "id": "longevity_benefit",
+        "severity": 0.6,
+        "description": "Lifespan extension proportional to restriction in animal models"
+      }
+    ],
+    "actions": [
+      {
+        "id": "time_restricted_eating",
+        "title": "Time-restricted eating (16:8 or 14:10)",
+        "impact": 0.5,
+        "difficulty": "medium",
+        "description": "Eat within 8-10 hour window; strongest evidence for metabolic health"
+      },
+      {
+        "id": "moderate_cr",
+        "title": "Moderate caloric reduction (10-15% below maintenance)",
+        "impact": 0.4,
+        "difficulty": "high",
+        "description": "CALERIE trial: sustained 2-year CR improved cardiometabolic risk factors in humans"
+      },
+      {
+        "id": "avoid_extreme_cr",
+        "title": "Avoid extreme restriction (<20% CR)",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Risk of muscle loss, bone density decline, and immune suppression. Genetics > diet for longevity outcome"
+      }
+    ]
+  },
+  "cancer_susceptibility": {
+    "trait_id": "cancer_susceptibility",
+    "mechanism": "Inherited predisposition to malignancies from germline pathogenic variants in tumor suppressor genes, oncogenes, and DNA repair genes (e.g., BRCA1/2, TP53, MLH1, APC, CDKN2A)",
+    "outcomes": [
+      {
+        "id": "breast_cancer_risk",
+        "severity": 0.9,
+        "description": "Elevated lifetime risk of breast cancer (BRCA1/2, PALB2, CHEK2, ATM)"
+      },
+      {
+        "id": "colorectal_cancer_risk",
+        "severity": 0.9,
+        "description": "Elevated risk of colorectal cancer (Lynch syndrome, FAP, MUTYH-associated polyposis)"
+      },
+      {
+        "id": "ovarian_cancer_risk",
+        "severity": 0.9,
+        "description": "Elevated risk of ovarian cancer (BRCA1/2, RAD51C/D, BRIP1)"
+      },
+      {
+        "id": "pancreatic_cancer_risk",
+        "severity": 0.8,
+        "description": "Elevated risk of pancreatic cancer (CDKN2A, BRCA2, PALB2, STK11)"
+      },
+      {
+        "id": "prostate_cancer_risk",
+        "severity": 0.7,
+        "description": "Elevated risk of prostate cancer (HOXB13, BRCA2, ATM)"
+      },
+      {
+        "id": "melanoma_risk",
+        "severity": 0.7,
+        "description": "Elevated risk of malignant melanoma (CDKN2A, MC1R, MITF, TERT)"
+      }
+    ],
+    "actions": [
+      {
+        "id": "genetic_counseling",
+        "title": "Genetic counseling and risk assessment",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Refer to certified genetic counselor for comprehensive risk evaluation and family history review"
+      },
+      {
+        "id": "enhanced_screening",
+        "title": "Enhanced cancer screening protocol",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Earlier and more frequent screenings (mammography, colonoscopy, MRI) per NCCN guidelines"
+      },
+      {
+        "id": "risk_reducing_surgery",
+        "title": "Risk-reducing surgical options",
+        "impact": 0.9,
+        "difficulty": "high",
+        "description": "Discuss prophylactic mastectomy or salpingo-oophorectomy for high-penetrance variants"
+      },
+      {
+        "id": "chemoprevention",
+        "title": "Chemoprevention strategies",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Tamoxifen/raloxifene for breast cancer risk; aspirin for colorectal cancer risk"
+      },
+      {
+        "id": "lifestyle_modification_cancer",
+        "title": "Lifestyle risk reduction",
+        "impact": 0.5,
+        "difficulty": "medium",
+        "description": "Maintain healthy weight, limit alcohol, avoid tobacco, sun protection, HPV vaccination"
+      }
+    ]
+  },
+  "cardiomyopathy": {
+    "trait_id": "cardiomyopathy",
+    "mechanism": "Cardiac muscle structural genes (MYH7, MYBPC3, TTN, LMNA) affecting heart muscle contractility and integrity",
+    "outcomes": [
+      {
+        "id": "cardiomyopathy_optimal",
+        "severity": 0.2,
+        "description": "Favorable cardiac muscle function \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "cardiomyopathy_moderate",
+        "severity": 0.5,
+        "description": "Moderate cardiac muscle function \u2014 some genetic predisposition"
+      },
+      {
+        "id": "cardiomyopathy_elevated",
+        "severity": 0.8,
+        "description": "Elevated cardiac muscle function \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_cardiomyopathy",
+        "title": "Discuss cardiac muscle function with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_cardiomyopathy",
+        "title": "Evidence-based heart health optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "cardiomyopathy_risk": {
+    "trait_id": "cardiomyopathy_risk",
+    "mechanism": "Genetic variants in sarcomere genes (MYH7, MYBPC3, TNNT2, TNNI3), desmosomal genes (PKP2, DSP, DSG2), and other structural proteins that increase susceptibility to dilated, hypertrophic, or arrhythmogenic cardiomyopathy",
+    "outcomes": [
+      {
+        "id": "hcm_risk",
+        "severity": 0.8,
+        "description": "Hypertrophic cardiomyopathy risk from sarcomere gene variants"
+      },
+      {
+        "id": "dcm_risk",
+        "severity": 0.8,
+        "description": "Dilated cardiomyopathy risk from TTN, LMNA, and other structural variants"
+      },
+      {
+        "id": "arvc_risk",
+        "severity": 0.8,
+        "description": "Arrhythmogenic right ventricular cardiomyopathy risk from desmosomal variants"
+      },
+      {
+        "id": "heart_failure_risk",
+        "severity": 0.9,
+        "description": "Progressive heart failure if cardiomyopathy develops"
+      }
+    ],
+    "actions": [
+      {
+        "id": "cardiology_referral",
+        "title": "Refer to cardiology for echocardiogram",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Baseline echocardiogram, ECG, and cardiac MRI for family screening"
+      },
+      {
+        "id": "serial_monitoring",
+        "title": "Serial cardiac monitoring",
+        "impact": 0.7,
+        "difficulty": "medium",
+        "description": "Regular echocardiograms every 1-3 years to detect early structural changes"
+      },
+      {
+        "id": "activity_restriction",
+        "title": "Activity restriction guidance",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Avoid competitive sports and intense exertion in HCM and ARVC phenotypes"
+      },
+      {
+        "id": "beta_blocker_prophylaxis",
+        "title": "Beta-blocker prophylaxis",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Consider beta-blockers for HCM with obstruction or high-risk features"
+      },
+      {
+        "id": "family_screening",
+        "title": "Cascade family screening",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "First-degree relatives should undergo clinical screening and variant testing"
+      }
+    ]
+  },
+  "cardiotoxicity_risk": {
+    "trait_id": "cardiotoxicity_risk",
+    "mechanism": "Genetic variants affecting drug metabolism, transport, and cardiac ion channels that increase susceptibility to chemotherapy-induced cardiomyopathy (anthracyclines, trastuzumab), antiarrhythmic drug toxicity, and other drug-induced cardiac adverse events",
+    "outcomes": [
+      {
+        "id": "anthracycline_cardiotoxicity",
+        "severity": 0.8,
+        "description": "Doxorubicin and related anthracycline-induced cardiomyopathy, potentially irreversible"
+      },
+      {
+        "id": "her2_cardiotoxicity",
+        "severity": 0.7,
+        "description": "Trastuzumab-related left ventricular dysfunction, typically reversible"
+      },
+      {
+        "id": "antiarrhythmic_toxicity",
+        "severity": 0.8,
+        "description": "Proarrhythmia or toxicity from antiarrhythmic medications"
+      },
+      {
+        "id": "tk_inhibitor_cardiotoxicity",
+        "severity": 0.7,
+        "description": "Tyrosine kinase inhibitor-associated hypertension and heart failure"
+      }
+    ],
+    "actions": [
+      {
+        "id": "baseline_cardiac_assessment",
+        "title": "Baseline cardiac function assessment",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "LVEF assessment by echocardiogram or MUGA before cardiotoxic therapy"
+      },
+      {
+        "id": "cardioprotective_regimen",
+        "title": "Cardioprotective regimen",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Dexrazoxane for anthracycline cardioprotection in high-risk patients"
+      },
+      {
+        "id": "cardiac_monitoring_during_tx",
+        "title": "On-treatment cardiac monitoring",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Serial troponin and LVEF monitoring during and after chemotherapy"
+      },
+      {
+        "id": "alt_chemotherapy",
+        "title": "Consider alternative chemotherapy",
+        "impact": 0.7,
+        "difficulty": "high",
+        "description": "Liposomal doxorubicin formulations or non-anthracycline regimens for high-risk patients"
+      },
+      {
+        "id": "heart_failure_therapy",
+        "title": "Early heart failure therapy",
+        "impact": 0.7,
+        "difficulty": "medium",
+        "description": "Initiate ACE inhibitor and beta-blocker at earliest sign of LV dysfunction"
+      }
+    ]
+  },
+  "cardiovascular": {
+    "trait_id": "cardiovascular",
+    "mechanism": "NOS3-mediated endothelial nitric oxide production",
+    "outcomes": [
+      {
+        "id": "endothelial_dysfunction",
+        "severity": 0.6,
+        "description": "Impaired blood vessel function"
+      },
+      {
+        "id": "hypertension_risk",
+        "severity": 0.5,
+        "description": "Increased blood pressure risk"
+      }
+    ],
+    "actions": [
+      {
+        "id": "l_arginine",
+        "title": "Consider L-arginine supplementation",
+        "impact": 0.5,
+        "difficulty": "medium"
+      },
+      {
+        "id": "aerobic_exercise",
+        "title": "Regular aerobic exercise",
+        "impact": 0.7,
+        "difficulty": "medium"
+      },
+      {
+        "id": "monitor_bp",
+        "title": "Regular blood pressure monitoring",
+        "impact": 0.6,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "cardiovascular_fitness": {
+    "trait_id": "cardiovascular_fitness",
+    "mechanism": "VO2max - maximal oxygen consumption capacity",
+    "outcomes": [
+      {
+        "id": "low_vo2max",
+        "severity": 0.8,
+        "description": "Strong predictor of all-cause mortality"
+      }
+    ],
+    "actions": [
+      {
+        "id": "vo2max_test",
+        "title": "Get baseline VO2max test",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Lab test (~$200) or smartwatch estimate"
+      },
+      {
+        "id": "hiit_training",
+        "title": "2x/week HIIT: 4x4min hard / 3min easy",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "10-min warmup + 4 rounds + cool down (~40 min total)"
+      },
+      {
+        "id": "endurance_base",
+        "title": "1-2x/week Zone 2 cardio at conversational pace",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "45-60 min at ~60-70% max HR"
+      },
+      {
+        "id": "vo2max_target",
+        "title": "Target: 42+ mL/kg/min for 40s, 50+ excellent",
+        "impact": 0.9,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "cell_cycle": {
+    "trait_id": "cell_cycle",
+    "mechanism": "CDKN2BAS-mediated cell proliferation",
+    "outcomes": [
+      {
+        "id": "altered_proliferation",
+        "severity": 0.5,
+        "description": "Modified cell cycle control"
+      }
+    ],
+    "actions": [
+      {
+        "id": "cancer_screening",
+        "title": "Stay current with cancer screenings",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "antioxidant_support",
+        "title": "Ensure antioxidant intake",
+        "impact": 0.4,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "cholesterol": {
+    "trait_id": "cholesterol",
+    "mechanism": "PCSK9-mediated LDL receptor recycling",
+    "outcomes": [
+      {
+        "id": "familial_hypercholesterolemia",
+        "severity": 0.8,
+        "description": "Very high LDL cholesterol"
+      }
+    ],
+    "actions": [
+      {
+        "id": "pcsk9_inhibitor",
+        "title": "Consider PCSK9 inhibitor",
+        "impact": 0.9,
+        "difficulty": "high"
+      },
+      {
+        "id": "statin_therapy",
+        "title": "Aggressive statin therapy",
+        "impact": 0.8,
+        "difficulty": "high"
+      },
+      {
+        "id": "family_screening",
+        "title": "Family lipid screening",
+        "impact": 0.7,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "cholesterol_transport": {
+    "trait_id": "cholesterol_transport",
+    "mechanism": "CETP/ABCA1-mediated cholesterol transport",
+    "outcomes": [
+      {
+        "id": "altered_hdl",
+        "severity": 0.4,
+        "description": "Modified HDL cholesterol function"
+      }
+    ],
+    "actions": [
+      {
+        "id": "regular_exercise",
+        "title": "Regular aerobic exercise",
+        "impact": 0.6,
+        "difficulty": "medium"
+      },
+      {
+        "id": "healthy_fats",
+        "title": "Include healthy fats in diet",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "circadian_rhythm": {
+    "trait_id": "circadian_rhythm",
+    "mechanism": "CLOCK/PER2 circadian gene function",
+    "outcomes": [
+      {
+        "id": "sleep_phase_shift",
+        "severity": 0.5,
+        "description": "Natural tendency for later sleep timing"
+      }
+    ],
+    "actions": [
+      {
+        "id": "consistent_sleep_schedule",
+        "title": "Maintain consistent sleep schedule",
+        "impact": 0.6,
+        "difficulty": "medium"
+      },
+      {
+        "id": "morning_light",
+        "title": "Get bright light exposure in morning",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "clinvar_pathogenic": {
+    "trait_id": "clinvar_pathogenic",
+    "mechanism": "Identification of a genetic variant classified as Pathogenic (P) or Likely Pathogenic (LP) in ClinVar, an NIH-aggregated database of human genetic variation and phenotype relationships. These variants have established or strong evidence of association with Mendelian disease based on ACMG/AMP classification criteria",
+    "outcomes": [
+      {
+        "id": "actionable_pathogenic_finding",
+        "severity": 0.8,
+        "description": "Pathogenic variant in an ACMG-recommended actionable gene (e.g., BRCA1, MLH1, LDLR, RYR1, KCNQ1)"
+      },
+      {
+        "id": "non_actionable_pathogenic",
+        "severity": 0.5,
+        "description": "Pathogenic variant in a gene without established medical management guidelines"
+      },
+      {
+        "id": "carrier_status_recessive",
+        "severity": 0.3,
+        "description": "Pathogenic variant carrier for a recessive condition; no clinical phenotype but reproductive implications"
+      },
+      {
+        "id": "pharmacogenetic_pathogenic",
+        "severity": 0.7,
+        "description": "Pathogenic variant affecting drug metabolism or response with established PGx guidance"
+      }
+    ],
+    "actions": [
+      {
+        "id": "clinical_genetics_referral",
+        "title": "Referral to clinical genetics",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Comprehensive evaluation by clinical geneticist and genetic counselor for result disclosure and management"
+      },
+      {
+        "id": "penetrance_assessment",
+        "title": "Penetrance and expressivity assessment",
+        "impact": 0.7,
+        "difficulty": "medium",
+        "description": "Evaluate age-related penetrance, family history, and modifying factors for the specific variant-gene-disease triad"
+      },
+      {
+        "id": "disease_specific_screening",
+        "title": "Disease-specific surveillance protocol",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Implement evidence-based screening and risk-reduction strategies per professional society guidelines"
+      },
+      {
+        "id": "family_cascade_clinvar",
+        "title": "Cascade testing of at-risk relatives",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Offer targeted testing to first-degree relatives; discuss implications for second-degree relatives"
+      },
+      {
+        "id": "insurance_and_psychosocial",
+        "title": "Insurance and psychosocial counseling",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Discuss GINA protections (US), insurance implications, and psychological impact of genetic testing results"
+      }
+    ]
+  },
+  "connective_tissue": {
+    "trait_id": "connective_tissue",
+    "mechanism": "Structural protein genes (collagens, fibrillin, TGF-beta pathway) providing tissue integrity and elasticity",
+    "outcomes": [
+      {
+        "id": "connective_tissue_optimal",
+        "severity": 0.2,
+        "description": "Favorable connective tissue integrity \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "connective_tissue_moderate",
+        "severity": 0.5,
+        "description": "Moderate connective tissue integrity \u2014 some genetic predisposition"
+      },
+      {
+        "id": "connective_tissue_elevated",
+        "severity": 0.8,
+        "description": "Elevated connective tissue integrity \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_connective_tissue",
+        "title": "Discuss connective tissue integrity with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_connective_tissue",
+        "title": "Evidence-based tissue health optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "cyp2c19_metabolism": {
+    "trait_id": "cyp2c19_metabolism",
+    "mechanism": "CYP2C19 enzyme activity determined primarily by CYP2C19*2 (c.681G>A, rs4244285), CYP2C19*3 (c.636G>A, rs4986893), and CYP2C19*17 (c.-806C>T, rs12248560) variants, producing poor, intermediate, normal, and ultrarapid metabolizer phenotypes affecting drug metabolism of clopidogrel, proton pump inhibitors, antidepressants, and voriconazole",
+    "outcomes": [
+      {
+        "id": "poor_cyp2c19_metabolizer",
+        "severity": 0.8,
+        "description": "Reduced clopidogrel activation with increased stent thrombosis risk; increased PPI efficacy"
+      },
+      {
+        "id": "ultrarapid_cyp2c19_metabolizer",
+        "severity": 0.5,
+        "description": "Reduced PPI efficacy for GERD/H. pylori; standard clopidogrel efficacy"
+      },
+      {
+        "id": "intermediate_cyp2c19_metabolizer",
+        "severity": 0.4,
+        "description": "Intermediate enzyme activity with moderate reduction in prodrug activation"
+      },
+      {
+        "id": "antidepressant_response",
+        "severity": 0.6,
+        "description": "Altered escitalopram and sertraline metabolism affecting efficacy and tolerability"
+      }
+    ],
+    "actions": [
+      {
+        "id": "cyp2c19_genotyping",
+        "title": "CYP2C19 genotype/phenotype determination",
+        "impact": 0.9,
+        "difficulty": "low",
+        "description": "Test for *2, *3, and *17 alleles to classify metabolizer status per CPIC guidelines"
+      },
+      {
+        "id": "clopidogrel_alternative",
+        "title": "Alternative antiplatelet for CYP2C19 poor metabolizers",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Use prasugrel or ticagrelor instead of clopidogrel in CYP2C19 poor metabolizers undergoing PCI"
+      },
+      {
+        "id": "ppi_dose_adjustment",
+        "title": "PPI dose adjustment for ultrarapid metabolizers",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Consider increasing PPI dose or using twice-daily dosing in CYP2C19*17/*17 for GERD management"
+      },
+      {
+        "id": "antidepressant_dose_guidance",
+        "title": "Antidepressant selection and dosing",
+        "impact": 0.7,
+        "difficulty": "medium",
+        "description": "Avoid escitalopram and sertraline in ultrarapid metabolizers; consider citalopram dose reduction in poor metabolizers"
+      }
+    ]
+  },
+  "cyp2c9_metabolism": {
+    "trait_id": "cyp2c9_metabolism",
+    "mechanism": "CYP2C9 enzyme activity affected by CYP2C9*2 (c.430C>T, rs1799853) and CYP2C9*3 (c.1075A>C, rs1057910) loss-of-function variants, reducing clearance of CYP2C9 substrates including warfarin (S-warfarin), phenytoin, glipizide, tolbutamide, losartan, and multiple NSAIDs",
+    "outcomes": [
+      {
+        "id": "impaired_cyp2c9_metabolism",
+        "severity": 0.7,
+        "description": "Reduced clearance of CYP2C9 substrates requiring dose reduction of affected drugs"
+      },
+      {
+        "id": "warfarin_sensitivity_cyp2c9",
+        "severity": 0.8,
+        "description": "Increased sensitivity to warfarin with higher bleeding risk at standard doses"
+      },
+      {
+        "id": "phenytoin_toxicity",
+        "severity": 0.8,
+        "description": "Elevated phenytoin levels with increased risk of nystagmus, ataxia, and CNS toxicity"
+      },
+      {
+        "id": "nsaid_gi_risk",
+        "severity": 0.4,
+        "description": "Potentially increased NSAID exposure; relevance for GI and renal adverse effects"
+      }
+    ],
+    "actions": [
+      {
+        "id": "cyp2c9_testing_and_dosing",
+        "title": "CYP2C9 genotype-guided dosing",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "Use genotype to guide warfarin dosing algorithm; reduce phenytoin loading and maintenance doses for *2/*3 carriers"
+      },
+      {
+        "id": "alternative_anticoagulant_cyp2c9",
+        "title": "Consider DOAC over warfarin",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "DOACs (apixaban, rivaroxaban, edoxaban) may be preferred to avoid CYP2C9-dependent warfarin metabolism"
+      },
+      {
+        "id": "phenytoin_level_monitoring",
+        "title": "Enhanced phenytoin therapeutic monitoring",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "More frequent serum phenytoin level checks, especially during dose titration; consider fosphenytoin loading"
+      },
+      {
+        "id": "nsaid_precaution",
+        "title": "NSAID use caution",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "Use lowest effective NSAID dose; consider alternative analgesics in CYP2C9 poor metabolizers"
+      }
+    ]
+  },
+  "cyp2d6_metabolism": {
+    "trait_id": "cyp2d6_metabolism",
+    "mechanism": "CYP2D6 enzyme activity determined by highly polymorphic gene locus with over 100 star-allele variants, copy number variation (gene deletions and multiplications), and hybridization with CYP2D7 pseudogene, resulting in a wide spectrum from poor to ultrarapid metabolizer phenotypes affecting metabolism of ~25% of all prescribed drugs",
+    "outcomes": [
+      {
+        "id": "poor_cyp2d6_metabolizer",
+        "severity": 0.7,
+        "description": "Reduced prodrug activation (codeine, tramadol) and elevated concentrations of substrate drugs (metoprolol, antidepressants)"
+      },
+      {
+        "id": "ultrarapid_cyp2d6_metabolizer",
+        "severity": 0.7,
+        "description": "Rapid drug clearance reducing efficacy; toxicity from prodrugs due to accelerated conversion to active metabolites"
+      },
+      {
+        "id": "intermediate_cyp2d6_metabolizer",
+        "severity": 0.4,
+        "description": "Intermediate enzyme activity with dose-dependent drug response variability"
+      }
+    ],
+    "actions": [
+      {
+        "id": "cyp2d6_genotyping",
+        "title": "CYP2D6 genotype/phenotype determination",
+        "impact": 0.9,
+        "difficulty": "low",
+        "description": "Determine activity score from star alleles to classify as poor, intermediate, normal, or ultrarapid metabolizer"
+      },
+      {
+        "id": "cyp2d6_dose_adjustment",
+        "title": "Dose adjustment of CYP2D6 substrates",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Reduce doses of CYP2D6-metabolized drugs in poor metabolizers; increase doses or choose alternatives in ultrarapid metabolizers"
+      },
+      {
+        "id": "cyp2d6_prodrug_avoidance",
+        "title": "Avoid prodrugs requiring CYP2D6 activation",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "Poor metabolizers: avoid codeine, tramadol, tamoxifen; use alternatives not requiring CYP2D6 activation"
+      },
+      {
+        "id": "drug_interaction_checking",
+        "title": "Drug interaction management",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Avoid potent CYP2D6 inhibitors (paroxetine, fluoxetine, bupropion) that can phenoconvert to poor metabolizer status"
+      }
+    ]
+  },
+  "cyp3a_metabolism": {
+    "trait_id": "cyp3a_metabolism",
+    "mechanism": "CYP3A4 and CYP3A5 enzyme activity influenced by genetic variants including CYP3A5*3 (c.6986A>G, rs776746) causing alternative splicing and loss of CYP3A5 expression, and CYP3A4*22 (c.-392G>A, rs35599367) reducing CYP3A4 expression, with CYP3A also being highly susceptible to drug-drug interactions via induction and inhibition",
+    "outcomes": [
+      {
+        "id": "cyp3a5_poor_expresser",
+        "severity": 0.6,
+        "description": "Loss of CYP3A5 activity affecting tacrolimus dosing, statin metabolism, and other substrate drugs"
+      },
+      {
+        "id": "cyp3a4_reduced_expression",
+        "severity": 0.5,
+        "description": "Reduced CYP3A4 expression (CYP3A4*22 carriers) affecting tacrolimus, statin, and midazolam clearance"
+      },
+      {
+        "id": "tacrolimus_dosing_challenge",
+        "severity": 0.7,
+        "description": "Significantly higher tacrolimus dose requirements in CYP3A5 expressers; lower doses in CYP3A4*22 carriers"
+      },
+      {
+        "id": "drug_interaction_susceptibility",
+        "severity": 0.7,
+        "description": "High susceptibility to CYP3A-mediated drug-drug interactions affecting a wide range of medications"
+      }
+    ],
+    "actions": [
+      {
+        "id": "cyp3a5_tacrolimus_dosing",
+        "title": "CYP3A5-guided tacrolimus dosing",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "CYP3A5 expressers require 1.5-2x standard tacrolimus starting dose; use FDA-approved dosing tables"
+      },
+      {
+        "id": "tacrolimus_tdm",
+        "title": "Tacrolimus therapeutic drug monitoring",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "Frequent trough monitoring during tacrolimus initiation and after interacting drugs added/removed"
+      },
+      {
+        "id": "statin_metabolism_consideration",
+        "title": "Consider CYP3A4 statin metabolism",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "Atorvastatin and simvastatin are CYP3A4 substrates; pravastatin and rosuvastatin are not"
+      },
+      {
+        "id": "drug_interaction_assessment",
+        "title": "Comprehensive drug interaction assessment",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Review all medications for CYP3A4/5 interactions including strong inhibitors (clarithromycin, itraconazole, ritonavir) and inducers (rifampin, carbamazepine, St. John's wort)"
+      }
+    ]
+  },
+  "detoxification": {
+    "trait_id": "detoxification",
+    "mechanism": "GSTM1/GSTA1 glutathione S-transferase activity",
+    "outcomes": [
+      {
+        "id": "reduced_detox_capacity",
+        "severity": 0.5,
+        "description": "Lower ability to clear toxins"
+      }
+    ],
+    "actions": [
+      {
+        "id": "glutathione_support",
+        "title": "Support glutathione levels",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "avoid_environmental_toxins",
+        "title": "Minimize toxin exposure",
+        "impact": 0.7,
+        "difficulty": "medium"
+      },
+      {
+        "id": "sweat_regularly",
+        "title": "Regular exercise and sweating",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "dna_repair": {
+    "trait_id": "dna_repair",
+    "mechanism": "PARP enzyme activity and DNA damage response",
+    "outcomes": [
+      {
+        "id": "dna_damage_accumulation",
+        "severity": 0.6,
+        "description": "Accelerated cellular aging"
+      }
+    ],
+    "actions": [
+      {
+        "id": "nad_precursors",
+        "title": "Support NAD+ levels",
+        "impact": 0.7,
+        "difficulty": "low"
+      },
+      {
+        "id": "nad_booster",
+        "title": "Take NMN or NR",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "avoid_dna_damage",
+        "title": "Minimize UV exposure",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "dopamine_metabolism": {
+    "trait_id": "dopamine_metabolism",
+    "mechanism": "COMT-mediated dopamine breakdown",
+    "outcomes": [
+      {
+        "id": "altered_dopamine",
+        "severity": 0.5,
+        "description": "Modified dopamine levels"
+      }
+    ],
+    "actions": [
+      {
+        "id": "magnesium",
+        "title": "Consider magnesium supplementation",
+        "impact": 0.5,
+        "difficulty": "low"
+      },
+      {
+        "id": "stress_management",
+        "title": "Manage stress effectively",
+        "impact": 0.6,
+        "difficulty": "medium"
+      },
+      {
+        "id": "dopamine_support",
+        "title": "Support dopamine with precursors",
+        "impact": 0.4,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "dopamine_signaling": {
+    "trait_id": "dopamine_signaling",
+    "mechanism": "DRD2/DRD4 receptor function",
+    "outcomes": [
+      {
+        "id": "altered_reward",
+        "severity": 0.4,
+        "description": "Modified reward pathway sensitivity"
+      }
+    ],
+    "actions": [
+      {
+        "id": "dopamine_balance",
+        "title": "Support dopamine balance",
+        "impact": 0.4,
+        "difficulty": "low"
+      },
+      {
+        "id": "healthy_rewards",
+        "title": "Engage in healthy reward activities",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "drug_hypersensitivity": {
+    "trait_id": "drug_hypersensitivity",
+    "mechanism": "Specific HLA alleles that present drug-derived antigens to T-cells, triggering immune-mediated hypersensitivity reactions. Well-characterized associations include HLA-B*57:01 with abacavir, HLA-B*15:02 with carbamazepine, HLA-A*31:01 with carbamazepine, HLA-B*58:01 with allopurinol, and HLA-B*57:03 with flucloxacillin",
+    "outcomes": [
+      {
+        "id": "abacavir_hsr",
+        "severity": 0.9,
+        "description": "Abacavir hypersensitivity reaction (fever, rash, GI symptoms, respiratory distress) in HLA-B*57:01 carriers"
+      },
+      {
+        "id": "sjsten_carbamazepine",
+        "severity": 1,
+        "description": "Stevens-Johnson syndrome / toxic epidermal necrolysis from carbamazepine in HLA-B*15:02 carriers"
+      },
+      {
+        "id": "sjsten_allopurinol",
+        "severity": 1,
+        "description": "Stevens-Johnson syndrome / DRESS from allopurinol in HLA-B*58:01 carriers"
+      },
+      {
+        "id": "drug_hypersensitivity_mild",
+        "severity": 0.5,
+        "description": "Mild to moderate cutaneous adverse drug reactions (maculopapular exanthem)"
+      }
+    ],
+    "actions": [
+      {
+        "id": "pretreatment_hla_screening",
+        "title": "Pre-treatment HLA screening",
+        "impact": 1,
+        "difficulty": "low",
+        "description": "Mandatory HLA-B*57:01 screening before abacavir; recommended for HLA-B*15:02 / HLA-A*31:01 before carbamazepine in at-risk populations"
+      },
+      {
+        "id": "avoid_culprit_drug",
+        "title": "Avoid culprit medication",
+        "impact": 1,
+        "difficulty": "low",
+        "description": "Contraindicated: abacavir in HLA-B*57:01+; carbamazepine in HLA-B*15:02+; allopurinol in HLA-B*58:01+"
+      },
+      {
+        "id": "alternative_drug_selection",
+        "title": "Select alternative medication",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Choose alternative ARV (e.g., tenofovir/emtricitabine instead of abacavir), anticonvulsant, or urate-lowering therapy"
+      },
+      {
+        "id": "patient_education_hypersensitivity",
+        "title": "Patient education on hypersensitivity",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Educate on early recognition of hypersensitivity symptoms; importance of immediate medical evaluation"
+      }
+    ]
+  },
+  "drug_metabolism": {
+    "trait_id": "drug_metabolism",
+    "mechanism": "CYP450 enzyme activity",
+    "outcomes": [
+      {
+        "id": "altered_drug_metabolism",
+        "severity": 0.6,
+        "description": "Modified drug clearance rates"
+      }
+    ],
+    "actions": [
+      {
+        "id": "pharmacogenomic_testing",
+        "title": "Consider pharmacogenomic testing",
+        "impact": 0.8,
+        "difficulty": "low"
+      },
+      {
+        "id": "physician_consult",
+        "title": "Inform physician of variations",
+        "impact": 0.7,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "drug_transport": {
+    "trait_id": "drug_transport",
+    "mechanism": "ABCB1/P-glycoprotein transport function",
+    "outcomes": [
+      {
+        "id": "altered_drug_absorption",
+        "severity": 0.5,
+        "description": "Modified drug absorption and distribution"
+      }
+    ],
+    "actions": [
+      {
+        "id": "pharmacist_consult",
+        "title": "Consult pharmacist on drug interactions",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "medication_timing",
+        "title": "Optimize medication timing",
+        "impact": 0.4,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "endothelial_function": {
+    "trait_id": "endothelial_function",
+    "mechanism": "NOS3/VEGFA-mediated vascular health",
+    "outcomes": [
+      {
+        "id": "vascular_dysfunction",
+        "severity": 0.5,
+        "description": "Impaired blood vessel function"
+      }
+    ],
+    "actions": [
+      {
+        "id": "nitric_oxide_support",
+        "title": "Support nitric oxide production",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "antioxidant_support",
+        "title": "Take antioxidants",
+        "impact": 0.5,
+        "difficulty": "low"
+      },
+      {
+        "id": "regular_exercise",
+        "title": "Regular aerobic exercise",
+        "impact": 0.7,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "energy_metabolism": {
+    "trait_id": "energy_metabolism",
+    "mechanism": "AMPK-mediated cellular energy sensing",
+    "outcomes": [
+      {
+        "id": "altered_metabolism",
+        "severity": 0.4,
+        "description": "Modified energy homeostasis"
+      }
+    ],
+    "actions": [
+      {
+        "id": "regular_exercise",
+        "title": "Consistent exercise routine",
+        "impact": 0.6,
+        "difficulty": "medium"
+      },
+      {
+        "id": "adequate_sleep",
+        "title": "Prioritize sleep",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "epigenetic_age": {
+    "trait_id": "epigenetic_age",
+    "mechanism": "DNA methylation-based age estimation",
+    "outcomes": [
+      {
+        "id": "epigenetic_acceleration",
+        "severity": 0.4,
+        "description": "May indicate accelerated biological aging"
+      }
+    ],
+    "actions": [
+      {
+        "id": "epigenetic_test",
+        "title": "Optional: TruDiagnostic or MyDNAge",
+        "impact": 0.3,
+        "difficulty": "low",
+        "description": "Clocks disagree \u2014 do not act on a single reading; use for longitudinal tracking only"
+      }
+    ]
+  },
+  "epigenetic_maintenance": {
+    "trait_id": "epigenetic_maintenance",
+    "mechanism": "Histone modifications, DNA methylation, chromatin remodeling \u2014 the epigenomic landscape of aging",
+    "outcomes": [
+      {
+        "id": "epigenetic_drift",
+        "severity": 0.5,
+        "description": "Progressive loss of epigenetic information correlates with biological age"
+      },
+      {
+        "id": "chromatin_dysregulation",
+        "severity": 0.4,
+        "description": "Loss of heterochromatin and derepression of repetitive elements"
+      }
+    ],
+    "actions": [
+      {
+        "id": "exercise_epigenetics",
+        "title": "Exercise slows epigenetic aging",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Physically active individuals show younger epigenetic age by multiple clock measures"
+      },
+      {
+        "id": "hdac_inhibitors_diet",
+        "title": "Dietary HDAC inhibitors (sulforaphane, curcumin, butyrate)",
+        "impact": 0.3,
+        "difficulty": "low",
+        "description": "Modest epigenetic effects; sulforaphane and fiber-derived butyrate have strongest evidence"
+      },
+      {
+        "id": "clock_tracking",
+        "title": "Track epigenetic age every 1-2 years",
+        "impact": 0.3,
+        "difficulty": "low",
+        "description": "Use for longitudinal trend tracking; do not act on a single clock change"
+      }
+    ]
+  },
+  "exercise_endurance": {
+    "trait_id": "exercise_endurance",
+    "mechanism": "AMPD1-mediated energy production",
+    "outcomes": [
+      {
+        "id": "reduced_endurance",
+        "severity": 0.4,
+        "description": "Impaired energy production during exercise"
+      }
+    ],
+    "actions": [
+      {
+        "id": "carb_loading",
+        "title": "Strategic carbohydrate intake",
+        "impact": 0.5,
+        "difficulty": "low"
+      },
+      {
+        "id": "training_periodization",
+        "title": "Periodized training",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "eye_health": {
+    "trait_id": "eye_health",
+    "mechanism": "Retinal and ocular development genes protecting photoreceptors and retinal pigment epithelium from degeneration",
+    "outcomes": [
+      {
+        "id": "eye_health_optimal",
+        "severity": 0.2,
+        "description": "Favorable eye health \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "eye_health_moderate",
+        "severity": 0.5,
+        "description": "Moderate eye health \u2014 some genetic predisposition"
+      },
+      {
+        "id": "eye_health_elevated",
+        "severity": 0.8,
+        "description": "Elevated eye health \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_eye_health",
+        "title": "Discuss eye health with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_eye_health",
+        "title": "Evidence-based vision protection optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "fatty_acid_oxidation": {
+    "trait_id": "fatty_acid_oxidation",
+    "mechanism": "PPAR-mediated fatty acid metabolism",
+    "outcomes": [
+      {
+        "id": "altered_fat_burning",
+        "severity": 0.4,
+        "description": "Modified fat oxidation capacity"
+      }
+    ],
+    "actions": [
+      {
+        "id": "keto_adaptation",
+        "title": "Consider ketogenic diet",
+        "impact": 0.5,
+        "difficulty": "high"
+      },
+      {
+        "id": "fasted_exercise",
+        "title": "Include fasted exercise",
+        "impact": 0.4,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "fluoropyrimidine_toxicity": {
+    "trait_id": "fluoropyrimidine_toxicity",
+    "mechanism": "DPYD genetic variants (primarily c.1905+1G>A, c.1679T>G, c.2846A>T, and c.1236G>A) causing partial or complete dihydropyrimidine dehydrogenase deficiency, leading to severe and potentially fatal toxicity from 5-fluorouracil, capecitabine, and tegafur",
+    "outcomes": [
+      {
+        "id": "severe_fluoropyrimidine_toxicity",
+        "severity": 0.9,
+        "description": "Grade 3-4 toxicity including severe mucositis, diarrhea, neutropenia, and hand-foot syndrome"
+      },
+      {
+        "id": "fatal_fluoropyrimidine_reaction",
+        "severity": 1,
+        "description": "Treatment-related death from fluoropyrimidine chemotherapy in DPYD-deficient patients"
+      },
+      {
+        "id": "treatment_abandonment",
+        "severity": 0.7,
+        "description": "Inability to complete intended chemotherapy course due to toxicity"
+      }
+    ],
+    "actions": [
+      {
+        "id": "pretreatment_dpyd_testing",
+        "title": "Pre-treatment DPYD genotyping",
+        "impact": 1,
+        "difficulty": "low",
+        "description": "Recommended DPYD testing before initiating any fluoropyrimidine chemotherapy (DPYD-IS update pending)"
+      },
+      {
+        "id": "dose_reduction_fluoropyrimidine",
+        "title": "DPYD-guided dose reduction",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Reduce fluoropyrimidine dose by 25-50% for intermediate metabolizers; avoid for poor metabolizers"
+      },
+      {
+        "id": "alternative_chemotherapy_agents",
+        "title": "Alternative chemotherapy regimen",
+        "impact": 0.8,
+        "difficulty": "high",
+        "description": "Consider non-fluoropyrimidine-based regimens for complete DPD deficiency"
+      },
+      {
+        "id": "toxicity_monitoring",
+        "title": "Enhanced toxicity monitoring",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Close clinical monitoring for early signs of mucositis, diarrhea, and myelosuppression"
+      }
+    ]
+  },
+  "gene_therapy_aging": {
+    "trait_id": "gene_therapy_aging",
+    "mechanism": "AAV-delivered gene therapies targeting aging pathways (klotho, follistatin, TERT)",
+    "outcomes": [
+      {
+        "id": "delivery_challenge",
+        "severity": 0.6,
+        "description": "AAV delivery to sufficient cell populations remains challenging"
+      },
+      {
+        "id": "immunogenicity",
+        "severity": 0.5,
+        "description": "Pre-existing AAV immunity limits treatment window"
+      }
+    ],
+    "actions": [
+      {
+        "id": "monitor_field",
+        "title": "Monitor AAV gene therapy for aging",
+        "impact": 0.2,
+        "difficulty": "low",
+        "description": "Field is pre-clinical to early Phase I. No approved therapies for aging indications"
+      },
+      {
+        "id": "telomerase_caution",
+        "title": "Avoid telomerase-as-a-pill products",
+        "impact": 0.9,
+        "difficulty": "low",
+        "description": "The 2022 PNAS MCMV-TERT paper (+41% lifespan) was retracted August 2025. No credible telomerase pill evidence"
+      }
+    ]
+  },
+  "genome_stability": {
+    "trait_id": "genome_stability",
+    "mechanism": "DNA repair pathways (NER, BER, HR, NHEJ, MMR) and genome maintenance machinery",
+    "outcomes": [
+      {
+        "id": "dna_damage_accumulation",
+        "severity": 0.8,
+        "description": "Unrepaired DNA damage is a primary driver of aging and cancer"
+      },
+      {
+        "id": "progeroid_syndromes",
+        "severity": 0.9,
+        "description": "Mutations in WRN, BLM, ERCC genes cause accelerated aging phenotypes"
+      }
+    ],
+    "actions": [
+      {
+        "id": "avoid_dna_damage",
+        "title": "Minimize UV, smoking, and genotoxic exposures",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Environmental DNA damage overwhelms repair capacity over time"
+      },
+      {
+        "id": "nad_support",
+        "title": "Support NAD+ for PARP-mediated DNA repair",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "PARP1 consumes NAD+ during DNA repair; NAD+ availability may become limiting with age"
+      },
+      {
+        "id": "cancer_screening",
+        "title": "Age-appropriate cancer screening",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Genome instability increases cancer risk; screening is the most effective preventive action"
+      }
+    ]
+  },
+  "glucose_insulin_management": {
+    "trait_id": "glucose_insulin_management",
+    "mechanism": "Glucose/insulin signaling and metabolic health",
+    "outcomes": [
+      {
+        "id": "insulin_resistance",
+        "severity": 0.7,
+        "description": "Driver of metabolic syndrome"
+      }
+    ],
+    "actions": [
+      {
+        "id": "annual_glucose",
+        "title": "Annual HbA1c, fasting glucose, fasting insulin",
+        "impact": 0.8,
+        "difficulty": "low"
+      },
+      {
+        "id": "cgm_2weeks",
+        "title": "Consider 2-week CGM for comprehensive glucose data",
+        "impact": 0.7,
+        "difficulty": "medium",
+        "description": "More signal than single fasting measurement"
+      },
+      {
+        "id": "glp1_consideration",
+        "title": "Discuss GLP-1 (semaglutide) with physician if indicated",
+        "impact": 0.8,
+        "difficulty": "high",
+        "description": "Showing biological age effects beyond weight loss"
+      }
+    ]
+  },
+  "glucose_metabolism": {
+    "trait_id": "glucose_metabolism",
+    "mechanism": "GCKR/GNPDA2-mediated glucose regulation",
+    "outcomes": [
+      {
+        "id": "glucose_dysregulation",
+        "severity": 0.5,
+        "description": "Altered glucose metabolism"
+      }
+    ],
+    "actions": [
+      {
+        "id": "carb_management",
+        "title": "Careful carbohydrate management",
+        "impact": 0.6,
+        "difficulty": "medium"
+      },
+      {
+        "id": "glucose_monitoring",
+        "title": "Regular glucose monitoring",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "health_profile": {
+    "trait_id": "health_profile",
+    "mechanism": "Broad genetic profile across multiple body systems with no identified high-risk variants in well-characterized disease genes",
+    "outcomes": [
+      {
+        "id": "health_profile_optimal",
+        "severity": 0.2,
+        "description": "Favorable overall health profile \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "health_profile_moderate",
+        "severity": 0.5,
+        "description": "Moderate overall health profile \u2014 some genetic predisposition"
+      },
+      {
+        "id": "health_profile_elevated",
+        "severity": 0.8,
+        "description": "Elevated overall health profile \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_health_profile",
+        "title": "Discuss overall health profile with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_health_profile",
+        "title": "Evidence-based overall health optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "hearing_health": {
+    "trait_id": "hearing_health",
+    "mechanism": "Inner ear hair cell and cochlear development genes maintaining auditory function",
+    "outcomes": [
+      {
+        "id": "hearing_health_optimal",
+        "severity": 0.2,
+        "description": "Favorable hearing function \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "hearing_health_moderate",
+        "severity": 0.5,
+        "description": "Moderate hearing function \u2014 some genetic predisposition"
+      },
+      {
+        "id": "hearing_health_elevated",
+        "severity": 0.8,
+        "description": "Elevated hearing function \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_hearing_health",
+        "title": "Discuss hearing function with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_hearing_health",
+        "title": "Evidence-based hearing optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "heme_metabolism": {
+    "trait_id": "heme_metabolism",
+    "mechanism": "HMOX1 heme oxygenase activity",
+    "outcomes": [
+      {
+        "id": "heme_accumulation",
+        "severity": 0.4,
+        "description": "Impaired heme breakdown"
+      }
+    ],
+    "actions": [
+      {
+        "id": "antioxidant_support",
+        "title": "Ensure adequate antioxidants",
+        "impact": 0.5,
+        "difficulty": "low"
+      },
+      {
+        "id": "iron_monitoring",
+        "title": "Monitor iron levels",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "hereditary_cancer": {
+    "trait_id": "hereditary_cancer",
+    "mechanism": "Tumor suppressor and DNA repair genes (BRCA1/2, TP53, mismatch repair) guarding against malignant transformation",
+    "outcomes": [
+      {
+        "id": "hereditary_cancer_optimal",
+        "severity": 0.2,
+        "description": "Favorable cancer protection \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "hereditary_cancer_moderate",
+        "severity": 0.5,
+        "description": "Moderate cancer protection \u2014 some genetic predisposition"
+      },
+      {
+        "id": "hereditary_cancer_elevated",
+        "severity": 0.8,
+        "description": "Elevated cancer protection \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_hereditary_cancer",
+        "title": "Discuss cancer protection with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_hereditary_cancer",
+        "title": "Evidence-based cancer prevention optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "histamine_intolerance": {
+    "trait_id": "histamine_intolerance",
+    "mechanism": "DAO enzyme activity",
+    "outcomes": [
+      {
+        "id": "histamine_symptoms",
+        "severity": 0.5,
+        "description": "Headaches, itching, flushing"
+      }
+    ],
+    "actions": [
+      {
+        "id": "low_histamine_diet",
+        "title": "Follow low-histamine diet",
+        "impact": 0.8,
+        "difficulty": "high"
+      },
+      {
+        "id": "dao_supplement",
+        "title": "Take DAO enzyme",
+        "impact": 0.6,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "hypoxia_response": {
+    "trait_id": "hypoxia_response",
+    "mechanism": "HIF1A-mediated oxygen sensing",
+    "outcomes": [
+      {
+        "id": "altered_hypoxia_response",
+        "severity": 0.4,
+        "description": "Modified oxygen utilization"
+      }
+    ],
+    "actions": [
+      {
+        "id": "altitude_training",
+        "title": "Consider altitude training",
+        "impact": 0.3,
+        "difficulty": "high"
+      },
+      {
+        "id": "nitric_oxide_support",
+        "title": "Support nitric oxide",
+        "impact": 0.4,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "immune_rejuvenation": {
+    "trait_id": "immune_rejuvenation",
+    "mechanism": "Reversal of immunosenescence \u2014 T-cell exhaustion, thymic involution, inflammaging",
+    "outcomes": [
+      {
+        "id": "immunosenescence",
+        "severity": 0.7,
+        "description": "Age-related decline in immune function increases infection and cancer risk"
+      },
+      {
+        "id": "inflammaging",
+        "severity": 0.6,
+        "description": "Chronic low-grade inflammation from aged immune cells"
+      }
+    ],
+    "actions": [
+      {
+        "id": "urolithin_a_immune",
+        "title": "Urolithin A for naive T-cell expansion",
+        "impact": 0.4,
+        "difficulty": "low",
+        "description": "Expands naive-like CD8+ T cells (preclinical, single study 2025)"
+      },
+      {
+        "id": "plasmapheresis_evaluate",
+        "title": "Monitor TPE+IVIG clinical trial results",
+        "impact": 0.3,
+        "difficulty": "low",
+        "description": "TPE+IVIG RCT showed immune-cell composition shift and biological age reduction (2025)"
+      },
+      {
+        "id": "thymic_regeneration",
+        "title": "Monitor thymic regeneration research",
+        "impact": 0.2,
+        "difficulty": "low",
+        "description": "TRIIM protocol (GH + DHEA + metformin) showed thymic regeneration in small trial; needs replication"
+      }
+    ]
+  },
+  "immune_response": {
+    "trait_id": "immune_response",
+    "mechanism": "Immune system regulatory genes (HLA, cytokine receptors, transcription factors) influencing predisposition to autoimmune conditions and infection response",
+    "outcomes": [
+      {
+        "id": "immune_response_optimal",
+        "severity": 0.2,
+        "description": "Favorable immune regulation \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "immune_response_moderate",
+        "severity": 0.5,
+        "description": "Moderate immune regulation \u2014 some genetic predisposition"
+      },
+      {
+        "id": "immune_response_elevated",
+        "severity": 0.8,
+        "description": "Elevated immune regulation \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_immune_response",
+        "title": "Discuss immune regulation with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_immune_response",
+        "title": "Evidence-based immune health optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "inflammation": {
+    "trait_id": "inflammation",
+    "mechanism": "IL-6 and TNF-alpha signaling",
+    "outcomes": [
+      {
+        "id": "chronic_inflammation",
+        "severity": 0.7,
+        "description": "Accelerated aging, disease risk"
+      }
+    ],
+    "actions": [
+      {
+        "id": "omega3",
+        "title": "Increase omega-3 intake",
+        "impact": 0.7,
+        "difficulty": "low"
+      },
+      {
+        "id": "curcumin",
+        "title": "Take curcumin",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "reduce_omega6",
+        "title": "Reduce omega-6 foods",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "inflammation_marker": {
+    "trait_id": "inflammation_marker",
+    "mechanism": "CRP production and inflammatory response",
+    "outcomes": [
+      {
+        "id": "elevated_crp",
+        "severity": 0.5,
+        "description": "Increased baseline inflammation"
+      }
+    ],
+    "actions": [
+      {
+        "id": "anti_inflammatory_diet",
+        "title": "Follow anti-inflammatory diet",
+        "impact": 0.7,
+        "difficulty": "medium"
+      },
+      {
+        "id": "omega3",
+        "title": "Increase omega-3 intake",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "test_crp",
+        "title": "Monitor CRP levels",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "insulin_signaling": {
+    "trait_id": "insulin_signaling",
+    "mechanism": "TCF7L2/GSK3-mediated glucose metabolism",
+    "outcomes": [
+      {
+        "id": "insulin_resistance",
+        "severity": 0.7,
+        "description": "Increased Type 2 diabetes risk"
+      },
+      {
+        "id": "glucose_dysregulation",
+        "severity": 0.6,
+        "description": "Difficulty managing blood sugar"
+      }
+    ],
+    "actions": [
+      {
+        "id": "low_glycemic_diet",
+        "title": "Follow low glycemic diet",
+        "impact": 0.8,
+        "difficulty": "medium"
+      },
+      {
+        "id": "berberine",
+        "title": "Consider berberine supplementation",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "glucose_monitoring",
+        "title": "Regular glucose monitoring",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "chromium",
+        "title": "Consider chromium supplementation",
+        "impact": 0.4,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "intermittent_fasting": {
+    "trait_id": "intermittent_fasting",
+    "mechanism": "Periodic fasting activates autophagy and reduces insulin/IGF-1 signaling",
+    "outcomes": [
+      {
+        "id": "autophagy_induction",
+        "severity": 0.4,
+        "description": "Cellular cleanup activated during fasting periods"
+      },
+      {
+        "id": "insulin_sensitivity",
+        "severity": 0.5,
+        "description": "Improved glucose regulation"
+      }
+    ],
+    "actions": [
+      {
+        "id": "if_protocol",
+        "title": "Consider 16:8 or 5:2 fasting protocol",
+        "impact": 0.5,
+        "difficulty": "medium",
+        "description": "High-compliance fasters show age-opposing molecular trajectories within 6 months (TirolGesund 2025)"
+      },
+      {
+        "id": "fasting_safety",
+        "title": "Consult physician before extended fasts",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Not recommended for underweight, pregnant, or those with eating disorder history"
+      }
+    ]
+  },
+  "irinotecan_toxicity": {
+    "trait_id": "irinotecan_toxicity",
+    "mechanism": "UGT1A1 genetic variants (particularly UGT1A1*28 TA repeat polymorphism) reducing UDP-glucuronosyltransferase 1A1 enzyme activity, impairing glucuronidation of SN-38 (the active metabolite of irinotecan) and leading to severe neutropenia and diarrhea",
+    "outcomes": [
+      {
+        "id": "severe_neutropenia_irinotecan",
+        "severity": 0.9,
+        "description": "Grade 3-4 neutropenia with increased infection risk at standard irinotecan doses"
+      },
+      {
+        "id": "severe_delayed_diarrhea",
+        "severity": 0.8,
+        "description": "Severe delayed-onset diarrhea requiring intensive supportive care and dose reduction"
+      },
+      {
+        "id": "irinotecan_intolerance",
+        "severity": 0.6,
+        "description": "Inability to tolerate therapeutic irinotecan doses requiring regimen modification"
+      }
+    ],
+    "actions": [
+      {
+        "id": "pretreatment_ugt1a1_testing",
+        "title": "Pre-treatment UGT1A1 genotyping",
+        "impact": 0.9,
+        "difficulty": "low",
+        "description": "UGT1A1*28 genotyping recommended for irinotecan doses >= 150 mg/m2 (FDA label)"
+      },
+      {
+        "id": "dose_reduction_irinotecan",
+        "title": "UGT1A1-guided dose reduction",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Reduce starting irinotecan dose by 25-30% for UGT1A1 7/7 (poor metabolizer) genotypes"
+      },
+      {
+        "id": "aggressive_supportive_care",
+        "title": "Aggressive supportive care",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Intensive monitoring and early intervention for neutropenia and diarrhea"
+      },
+      {
+        "id": "alternative_regimens",
+        "title": "Consider alternative chemotherapy",
+        "impact": 0.6,
+        "difficulty": "high",
+        "description": "Consider non-irinotecan-containing regimens for patients with severe UGT1A1 deficiency"
+      }
+    ]
+  },
+  "iron_handling": {
+    "trait_id": "iron_handling",
+    "mechanism": "HFE-mediated iron regulation",
+    "outcomes": [
+      {
+        "id": "iron_accumulation",
+        "severity": 0.6,
+        "description": "Progressive iron buildup"
+      }
+    ],
+    "actions": [
+      {
+        "id": "regular_iron_monitoring",
+        "title": "Monitor iron levels annually",
+        "impact": 0.8,
+        "difficulty": "low"
+      },
+      {
+        "id": "blood_donation",
+        "title": "Consider blood donation",
+        "impact": 0.7,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "iron_overload": {
+    "trait_id": "iron_overload",
+    "mechanism": "HFE gene and hepcidin regulation",
+    "outcomes": [
+      {
+        "id": "hemochromatosis",
+        "severity": 0.9,
+        "description": "Iron accumulation in organs"
+      }
+    ],
+    "actions": [
+      {
+        "id": "blood_donation",
+        "title": "Regular blood donation",
+        "impact": 0.9,
+        "difficulty": "medium"
+      },
+      {
+        "id": "iron_testing",
+        "title": "Monitor ferritin and iron",
+        "impact": 0.8,
+        "difficulty": "low"
+      },
+      {
+        "id": "avoid_iron_supplements",
+        "title": "Avoid iron supplements",
+        "impact": 0.7,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "kidney_health": {
+    "trait_id": "kidney_health",
+    "mechanism": "Renal structural and transport genes (collagen IV, polycystins, nephrocystins) maintaining kidney filtration",
+    "outcomes": [
+      {
+        "id": "kidney_health_optimal",
+        "severity": 0.2,
+        "description": "Favorable kidney function \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "kidney_health_moderate",
+        "severity": 0.5,
+        "description": "Moderate kidney function \u2014 some genetic predisposition"
+      },
+      {
+        "id": "kidney_health_elevated",
+        "severity": 0.8,
+        "description": "Elevated kidney function \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_kidney_health",
+        "title": "Discuss kidney function with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_kidney_health",
+        "title": "Evidence-based kidney health optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "klotho_anti_aging": {
+    "trait_id": "klotho_anti_aging",
+    "mechanism": "Klotho protein \u2014 systemic anti-aging factor; membrane and soluble forms regulate FGF23, Wnt, and ion homeostasis",
+    "outcomes": [
+      {
+        "id": "klotho_decline",
+        "severity": 0.6,
+        "description": "Klotho levels decline with age; low klotho associated with cognitive decline, kidney disease, cardiovascular disease"
+      },
+      {
+        "id": "cognitive_resilience",
+        "severity": 0.5,
+        "description": "Higher klotho levels protect against cognitive decline \u2014 KL-VS haplotype carriers show enhanced cognition"
+      }
+    ],
+    "actions": [
+      {
+        "id": "exercise_klotho",
+        "title": "Aerobic exercise increases klotho levels",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Multiple studies show exercise acutely and chronically increases circulating klotho"
+      },
+      {
+        "id": "klotho_gene_therapy",
+        "title": "Monitor klotho gene therapy pipeline",
+        "impact": 0.3,
+        "difficulty": "low",
+        "description": "AAV-delivered s-KL extended mouse lifespan; Klotho Neurosciences has IND-track pipeline"
+      },
+      {
+        "id": "vitamin_d_klotho",
+        "title": "Maintain adequate vitamin D (regulates klotho expression)",
+        "impact": 0.4,
+        "difficulty": "low",
+        "description": "Vitamin D response elements present in klotho promoter"
+      }
+    ]
+  },
+  "klotho_gene_therapy": {
+    "trait_id": "klotho_gene_therapy",
+    "mechanism": "Klotho protein acts as systemic anti-aging factor; declines with age",
+    "outcomes": [
+      {
+        "id": "klotho_decline",
+        "severity": 0.5,
+        "description": "Age-related klotho decline linked to cognitive and kidney function loss"
+      },
+      {
+        "id": "cognitive_protection",
+        "severity": 0.4,
+        "description": "Higher klotho levels associated with cognitive resilience"
+      }
+    ],
+    "actions": [
+      {
+        "id": "monitor_klotho",
+        "title": "Monitor klotho gene therapy pipeline",
+        "impact": 0.3,
+        "difficulty": "low",
+        "description": "Klotho Neurosciences s-KL pipeline; AAV-delivered s-KL extended mouse lifespan; watch for IND filing"
+      }
+    ]
+  },
+  "lactose_intolerance": {
+    "trait_id": "lactose_intolerance",
+    "mechanism": "LCT gene lactase expression",
+    "outcomes": [
+      {
+        "id": "gi_discomfort",
+        "severity": 0.4,
+        "description": "Bloating, gas, digestive issues"
+      }
+    ],
+    "actions": [
+      {
+        "id": "avoid_dairy",
+        "title": "Avoid dairy products",
+        "impact": 0.9,
+        "difficulty": "medium"
+      },
+      {
+        "id": "lactase_enzyme",
+        "title": "Take lactase enzyme",
+        "impact": 0.7,
+        "difficulty": "low"
+      },
+      {
+        "id": "dairy_free_alternatives",
+        "title": "Use dairy-free alternatives",
+        "impact": 0.8,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "lamin_aging": {
+    "trait_id": "lamin_aging",
+    "mechanism": "LMNA-mediated nuclear envelope stability",
+    "outcomes": [
+      {
+        "id": "accelerated_aging",
+        "severity": 0.6,
+        "description": "Progeria-related aging pathway"
+      }
+    ],
+    "actions": [
+      {
+        "id": "medical_screening",
+        "title": "Regular cardiovascular screening",
+        "impact": 0.7,
+        "difficulty": "low"
+      },
+      {
+        "id": "aging_interventions",
+        "title": "Consider rapamycin",
+        "impact": 0.4,
+        "difficulty": "high"
+      }
+    ]
+  },
+  "ldl_receptor": {
+    "trait_id": "ldl_receptor",
+    "mechanism": "LDLR-mediated LDL clearance",
+    "outcomes": [
+      {
+        "id": "elevated_ldl",
+        "severity": 0.7,
+        "description": "Reduced LDL clearance"
+      }
+    ],
+    "actions": [
+      {
+        "id": "statin_therapy",
+        "title": "Consider statin therapy",
+        "impact": 0.8,
+        "difficulty": "high"
+      },
+      {
+        "id": "strict_diet",
+        "title": "Very low saturated fat diet",
+        "impact": 0.6,
+        "difficulty": "high"
+      }
+    ]
+  },
+  "lipid_composition": {
+    "trait_id": "lipid_composition",
+    "mechanism": "ELOVL2-mediated very long chain fatty acid synthesis",
+    "outcomes": [
+      {
+        "id": "altered_membrane_lipids",
+        "severity": 0.3,
+        "description": "Slightly modified cell membrane composition"
+      }
+    ],
+    "actions": [
+      {
+        "id": "balanced_fat_intake",
+        "title": "Maintain balanced fat intake",
+        "impact": 0.4,
+        "difficulty": "low"
+      },
+      {
+        "id": "omega3_support",
+        "title": "Ensure adequate omega-3 intake",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "lipid_disorder": {
+    "trait_id": "lipid_disorder",
+    "mechanism": "Monogenic and polygenic lipid disorders caused by variants in LDLR, APOB, PCSK9 (familial hypercholesterolemia), LPL, APOC2 (hypertriglyceridemia), ABCA1, LCAT (low HDL), and LIPA (lysosomal acid lipase deficiency), leading to severely abnormal lipid profiles",
+    "outcomes": [
+      {
+        "id": "familial_hypercholesterolemia",
+        "severity": 0.9,
+        "description": "Severely elevated LDL cholesterol from LDLR, APOB, or PCSK9 pathogenic variants"
+      },
+      {
+        "id": "severe_hypertriglyceridemia",
+        "severity": 0.8,
+        "description": "Markedly elevated triglycerides with pancreatitis risk from LPL or APOC2 deficiency"
+      },
+      {
+        "id": "premature_ascvd",
+        "severity": 0.9,
+        "description": "Premature atherosclerotic cardiovascular disease before age 55 (men) or 65 (women)"
+      },
+      {
+        "id": "tendon_xanthomas",
+        "severity": 0.4,
+        "description": "Achilles tendon and extensor tendon xanthomas in familial hypercholesterolemia"
+      }
+    ],
+    "actions": [
+      {
+        "id": "lipid_specialist_referral",
+        "title": "Referral to lipid specialist",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Comprehensive lipid panel, Lp(a), apoB, and specialist evaluation for monogenic lipid disorder"
+      },
+      {
+        "id": "high_intensity_statin",
+        "title": "High-intensity statin therapy",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "High-intensity statin (atorvastatin 40-80mg or rosuvastatin 20-40mg) as first-line therapy"
+      },
+      {
+        "id": "combination_lipid_therapy",
+        "title": "Combination lipid-lowering therapy",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Add ezetimibe, PCSK9 inhibitor, or bempedoic acid if LDL targets not met on statin alone"
+      },
+      {
+        "id": "lpheresis_consideration",
+        "title": "Consider lipoprotein apheresis",
+        "impact": 0.7,
+        "difficulty": "high",
+        "description": "LDL apheresis for homozygous FH or severe heterozygous FH refractory to medications"
+      },
+      {
+        "id": "family_cascade_testing",
+        "title": "Cascade family screening",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "First-degree relative lipid testing and genetic testing for identified familial variant"
+      }
+    ]
+  },
+  "lipid_management": {
+    "trait_id": "lipid_management",
+    "mechanism": "Apolipoprotein B as primary lipid risk factor",
+    "outcomes": [
+      {
+        "id": "elevated_apoB",
+        "severity": 0.7,
+        "description": "Direct measure of atherogenic particles"
+      }
+    ],
+    "actions": [
+      {
+        "id": "apoB_test",
+        "title": "Request apoB test (more predictive than LDL-C)",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "Target: <80 mg/dL primary prevention, <60 high-risk"
+      },
+      {
+        "id": "statin_therapy",
+        "title": "Statin therapy if indicated",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Generic atorvastatin or rosuvastatin first-line"
+      },
+      {
+        "id": "lipid_panel",
+        "title": "Annual lipid panel",
+        "impact": 0.6,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "lipid_metabolism": {
+    "trait_id": "lipid_metabolism",
+    "mechanism": "APOB and PCSK9 regulation of LDL cholesterol",
+    "outcomes": [
+      {
+        "id": "elevated_ldl",
+        "severity": 0.7,
+        "description": "Increased cardiovascular risk"
+      }
+    ],
+    "actions": [
+      {
+        "id": "heart_healthy_diet",
+        "title": "Follow heart-healthy diet",
+        "impact": 0.7,
+        "difficulty": "medium"
+      },
+      {
+        "id": "statin_therapy",
+        "title": "Consider statin therapy",
+        "impact": 0.8,
+        "difficulty": "high"
+      },
+      {
+        "id": "monitor_lipids",
+        "title": "Regular lipid monitoring",
+        "impact": 0.6,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "lipid_storage": {
+    "trait_id": "lipid_storage",
+    "mechanism": "PNPLA3/TM6SF2-mediated lipid droplet function",
+    "outcomes": [
+      {
+        "id": "hepatic_fat",
+        "severity": 0.6,
+        "description": "Increased liver fat storage"
+      }
+    ],
+    "actions": [
+      {
+        "id": "reduce_alcohol",
+        "title": "Minimize alcohol consumption",
+        "impact": 0.8,
+        "difficulty": "medium"
+      },
+      {
+        "id": "sugar_reduction",
+        "title": "Reduce fructose and sugar",
+        "impact": 0.7,
+        "difficulty": "medium"
+      },
+      {
+        "id": "liver_support",
+        "title": "Consider liver support supplements",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "lipid_transport": {
+    "trait_id": "lipid_transport",
+    "mechanism": "APOE-mediated lipid transport",
+    "outcomes": [
+      {
+        "id": "cardiovascular_risk",
+        "severity": 0.6,
+        "description": "Altered lipid metabolism and cardiovascular risk"
+      },
+      {
+        "id": "cognitive_risk",
+        "severity": 0.5,
+        "description": "Potential cognitive health implications"
+      }
+    ],
+    "actions": [
+      {
+        "id": "omega3_supplementation",
+        "title": "Take omega-3 supplements",
+        "impact": 0.7,
+        "difficulty": "low"
+      },
+      {
+        "id": " lipid_monitoring",
+        "title": "Regular lipid panel monitoring",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "brain_health_support",
+        "title": "Support brain health with antioxidants",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "liver_health": {
+    "trait_id": "liver_health",
+    "mechanism": "Hepatic metabolism and detoxification genes maintaining liver function and regenerative capacity",
+    "outcomes": [
+      {
+        "id": "liver_health_optimal",
+        "severity": 0.2,
+        "description": "Favorable liver function \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "liver_health_moderate",
+        "severity": 0.5,
+        "description": "Moderate liver function \u2014 some genetic predisposition"
+      },
+      {
+        "id": "liver_health_elevated",
+        "severity": 0.8,
+        "description": "Elevated liver function \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_liver_health",
+        "title": "Discuss liver function with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_liver_health",
+        "title": "Evidence-based liver health optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "longevity": {
+    "trait_id": "longevity",
+    "mechanism": "FOXO3-mediated cellular longevity",
+    "outcomes": [
+      {
+        "id": "longevity_association",
+        "severity": 0.3,
+        "description": "Associated with exceptional longevity"
+      }
+    ],
+    "actions": [
+      {
+        "id": "healthy_lifestyle",
+        "title": "Maintain healthy lifestyle",
+        "impact": 0.6,
+        "difficulty": "medium"
+      },
+      {
+        "id": "stress_management",
+        "title": "Manage oxidative stress",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "longevity_pathway": {
+    "trait_id": "longevity_pathway",
+    "mechanism": "SIRT1-mediated longevity pathways",
+    "outcomes": [
+      {
+        "id": "altered_longevity",
+        "severity": 0.4,
+        "description": "Modified cellular aging pathways"
+      }
+    ],
+    "actions": [
+      {
+        "id": "resveratrol",
+        "title": "Consider resveratrol",
+        "impact": 0.4,
+        "difficulty": "low"
+      },
+      {
+        "id": "calorie_mimicking",
+        "title": "Practice intermittent fasting",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "mTOR_signaling": {
+    "trait_id": "mTOR_signaling",
+    "mechanism": "mTORC1/mTORC2 \u2014 master nutrient and growth signaling hub; integrates insulin, amino acids, energy status",
+    "outcomes": [
+      {
+        "id": "hyperactive_mtor",
+        "severity": 0.7,
+        "description": "Chronic mTORC1 overactivation drives aging through increased translation, reduced autophagy, and metabolic dysfunction"
+      },
+      {
+        "id": "mTORC2_insulin",
+        "severity": 0.5,
+        "description": "mTORC2 dysregulation contributes to insulin resistance with age"
+      }
+    ],
+    "actions": [
+      {
+        "id": "rapamycin_mtor",
+        "title": "Discuss rapamycin (mTORC1 inhibitor) with longevity-literate physician",
+        "impact": 0.7,
+        "difficulty": "high",
+        "description": "Pulse dosing 5-10mg weekly; PEARL RCT showed healthspan marker improvement at 1 year"
+      },
+      {
+        "id": "protein_cycling",
+        "title": "Moderate protein restriction or cycling",
+        "impact": 0.4,
+        "difficulty": "medium",
+        "description": "Lower protein intake reduces mTORC1 signaling; balance against sarcopenia risk in older adults"
+      },
+      {
+        "id": "exercise_mtor",
+        "title": "Exercise provides tissue-specific mTOR benefits",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Resistance exercise activates mTORC1 in muscle for hypertrophy while systemic effects differ"
+      }
+    ]
+  },
+  "malignant_hyperthermia": {
+    "trait_id": "malignant_hyperthermia",
+    "mechanism": "Pathogenic variants in RYR1 (ryanodine receptor) and CACNA1S (calcium channel) genes causing abnormal calcium release from skeletal muscle sarcoplasmic reticulum in response to volatile anesthetics (halothane, sevoflurane, desflurane) and succinylcholine, leading to a life-threatening hypermetabolic crisis",
+    "outcomes": [
+      {
+        "id": "malignant_hyperthermia_crisis",
+        "severity": 1,
+        "description": "Life-threatening hyperthermia, muscle rigidity, rhabdomyolysis, acidosis, and cardiac arrest during anesthesia"
+      },
+      {
+        "id": "mh_susceptibility",
+        "severity": 0.8,
+        "description": "Confirmed MH susceptibility requiring avoidance of triggering agents for life"
+      },
+      {
+        "id": "exertional_rhabdomyolysis",
+        "severity": 0.6,
+        "description": "Increased risk of exertional rhabdomyolysis and heat stroke in RYR1 variant carriers"
+      }
+    ],
+    "actions": [
+      {
+        "id": "mh_alert_identification",
+        "title": "Medical alert identification",
+        "impact": 1,
+        "difficulty": "low",
+        "description": "Wear medical alert bracelet and carry MH susceptibility card at all times"
+      },
+      {
+        "id": "anesthesia_safe_protocol",
+        "title": "MH-safe anesthesia protocol",
+        "impact": 1,
+        "difficulty": "medium",
+        "description": "Inform anesthesiologist: use only non-triggering agents (propofol, ketamine, opioids, nondepolarizing NMBs)"
+      },
+      {
+        "id": "dantrolene_availability",
+        "title": "Dantrolene and MH cart availability",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Ensure surgical facility has dantrolene and MH protocol; elective surgery at MH-ready centers"
+      },
+      {
+        "id": "family_mh_screening",
+        "title": "Family cascade testing for MH",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "All first-degree relatives should undergo genetic testing for the identified RYR1/CACNA1S variant"
+      },
+      {
+        "id": "heat_stroke_precautions",
+        "title": "Heat stroke precautions",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "Avoid extreme heat, intense exercise in hot environments, and maintain hydration"
+      }
+    ]
+  },
+  "methylation": {
+    "trait_id": "methylation",
+    "mechanism": "MTHFR enzyme efficiency",
+    "outcomes": [
+      {
+        "id": "elevated_homocysteine",
+        "severity": 0.8,
+        "description": "Increased cardiovascular risk"
+      },
+      {
+        "id": "folate_deficiency",
+        "severity": 0.6,
+        "description": "Fatigue and cognitive effects"
+      }
+    ],
+    "actions": [
+      {
+        "id": "methylfolate_supplementation",
+        "title": "Take methylfolate",
+        "impact": 0.9,
+        "difficulty": "low",
+        "description": "400-800mcg methylfolate daily"
+      },
+      {
+        "id": "reduce_folic_acid",
+        "title": "Avoid synthetic folic acid",
+        "impact": 0.7,
+        "difficulty": "medium"
+      },
+      {
+        "id": "test_homocysteine",
+        "title": "Monitor homocysteine levels",
+        "impact": 0.6,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "mitochondrial_biogenesis": {
+    "trait_id": "mitochondrial_biogenesis",
+    "mechanism": "PGC-1alpha-mediated mitochondrial generation",
+    "outcomes": [
+      {
+        "id": "reduced_mitochondria",
+        "severity": 0.4,
+        "description": "Lower mitochondrial density"
+      }
+    ],
+    "actions": [
+      {
+        "id": "aerobic_exercise",
+        "title": "Regular cardio exercise",
+        "impact": 0.7,
+        "difficulty": "medium"
+      },
+      {
+        "id": "cold_exposure",
+        "title": "Consider cold exposure",
+        "impact": 0.4,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "mitochondrial_function": {
+    "trait_id": "mitochondrial_function",
+    "mechanism": "SIRT3-mediated mitochondrial regulation",
+    "outcomes": [
+      {
+        "id": "mitochondrial_dysfunction",
+        "severity": 0.5,
+        "description": "Reduced mitochondrial efficiency"
+      }
+    ],
+    "actions": [
+      {
+        "id": "mitochondrial_support",
+        "title": "Take CoQ10 and PQQ",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "nad_boost",
+        "title": "Support NAD+ levels",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "monogenic_diabetes": {
+    "trait_id": "monogenic_diabetes",
+    "mechanism": "Monogenic diabetes resulting from variants in beta-cell genes including GCK (MODY2), HNF1A (MODY3), HNF4A (MODY1), HNF1B (MODY5), and KCNJ11/ABCC8 (neonatal diabetes), causing impaired insulin secretion rather than insulin resistance",
+    "outcomes": [
+      {
+        "id": "mody2_gck",
+        "severity": 0.3,
+        "description": "GCK-MODY: mild, stable fasting hyperglycemia from birth; rarely requires treatment beyond diet"
+      },
+      {
+        "id": "mody3_hnf1a",
+        "severity": 0.7,
+        "description": "HNF1A-MODY: progressive hyperglycemia typically diagnosed in adolescence/young adulthood"
+      },
+      {
+        "id": "mody5_hnf1b",
+        "severity": 0.7,
+        "description": "HNF1B-MODY with renal cysts and genitourinary abnormalities"
+      },
+      {
+        "id": "neonatal_diabetes",
+        "severity": 0.9,
+        "description": "Neonatal diabetes mellitus from KCNJ11/ABCC8 variants, treatable with sulfonylureas"
+      }
+    ],
+    "actions": [
+      {
+        "id": "correct_diabetes_classification",
+        "title": "Reclassify diabetes subtype",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Distinguish monogenic diabetes from type 1 and type 2 diabetes; C-peptide and autoantibody testing"
+      },
+      {
+        "id": "sulfonylurea_therapy",
+        "title": "Sulfonylurea transition",
+        "impact": 0.9,
+        "difficulty": "medium",
+        "description": "Transition HNF1A/HNF4A-MODY and KCNJ11/ABCC8 neonatal diabetes from insulin to sulfonylurea therapy"
+      },
+      {
+        "id": "gck_no_tx_needed",
+        "title": "GCK-MODY: no pharmacotherapy",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "GCK-MODY rarely requires pharmacotherapy; avoid unnecessary insulin or oral hypoglycemics"
+      },
+      {
+        "id": "family_screening_mody",
+        "title": "Cascade family screening for MODY",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Test first-degree relatives for the identified MODY variant; up to 50% may be affected"
+      }
+    ]
+  },
+  "muscle_performance": {
+    "trait_id": "muscle_performance",
+    "mechanism": "ACTN3/HDAC4-mediated muscle composition",
+    "outcomes": [
+      {
+        "id": "power_vs_endurance",
+        "severity": 0.4,
+        "description": "Natural predisposition to certain exercise types"
+      }
+    ],
+    "actions": [
+      {
+        "id": "strength_training",
+        "title": "Include strength training",
+        "impact": 0.7,
+        "difficulty": "medium"
+      },
+      {
+        "id": "endurance_training",
+        "title": "Include endurance activities",
+        "impact": 0.6,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "muscular_strength": {
+    "trait_id": "muscular_strength",
+    "mechanism": "Skeletal muscle mass and strength capacity",
+    "outcomes": [
+      {
+        "id": "sarcopenia",
+        "severity": 0.6,
+        "description": "Age-related muscle loss"
+      }
+    ],
+    "actions": [
+      {
+        "id": "resistance_training",
+        "title": "2x/week full-body compound training",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Squat, hinge, press, pull, carry - 30-45 min"
+      },
+      {
+        "id": "grip_strength_test",
+        "title": "Annual hand dynamometer test ($30)",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "Simple proxy for overall strength"
+      }
+    ]
+  },
+  "nad_metabolism": {
+    "trait_id": "nad_metabolism",
+    "mechanism": "NAMPT/NMNAT1-mediated NAD+ biosynthesis",
+    "outcomes": [
+      {
+        "id": "low_nad",
+        "severity": 0.5,
+        "description": "Reduced NAD+ levels affecting sirtuins"
+      }
+    ],
+    "actions": [
+      {
+        "id": "nad_precursors",
+        "title": "Take NAD+ precursors (NMN/NR)",
+        "impact": 0.7,
+        "difficulty": "low"
+      },
+      {
+        "id": "niacinamide",
+        "title": "Consider niacinamide",
+        "impact": 0.4,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "neurodegeneration_risk": {
+    "trait_id": "neurodegeneration_risk",
+    "mechanism": "Genetic variants conferring increased susceptibility to neurodegenerative diseases including Alzheimer disease (APOE e4, PSEN1/2, APP), Parkinson disease (LRRK2, GBA, SNCA, PRKN), and ALS (C9orf72, SOD1, TARDBP, FUS)",
+    "outcomes": [
+      {
+        "id": "alzheimer_risk",
+        "severity": 0.9,
+        "description": "Elevated lifetime risk of Alzheimer disease, particularly APOE e4 carriers"
+      },
+      {
+        "id": "parkinson_risk",
+        "severity": 0.8,
+        "description": "Elevated risk of Parkinson disease from LRRK2, GBA, and other variants"
+      },
+      {
+        "id": "als_risk",
+        "severity": 0.9,
+        "description": "Elevated risk of amyotrophic lateral sclerosis from C9orf72, SOD1 variants"
+      },
+      {
+        "id": "early_onset_neurodegeneration",
+        "severity": 1,
+        "description": "Early-onset disease in high-penetrance variants (PSEN1, APP, SOD1)"
+      }
+    ],
+    "actions": [
+      {
+        "id": "neurology_referral",
+        "title": "Referral to neurology specialist",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Comprehensive neurological evaluation and baseline cognitive assessment"
+      },
+      {
+        "id": "cognitive_monitoring",
+        "title": "Serial cognitive monitoring",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Regular cognitive screening (MoCA, Montreal Cognitive Assessment) for early detection"
+      },
+      {
+        "id": "neuroprotective_lifestyle",
+        "title": "Neuroprotective lifestyle interventions",
+        "impact": 0.5,
+        "difficulty": "medium",
+        "description": "Cognitive stimulation, social engagement, Mediterranean diet, physical exercise"
+      },
+      {
+        "id": "cardiovascular_risk_control",
+        "title": "Cardiovascular risk factor control",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Aggressive management of hypertension, diabetes, and hyperlipidemia for brain health"
+      },
+      {
+        "id": "clinical_trial_enrollment",
+        "title": "Clinical trial consideration",
+        "impact": 0.5,
+        "difficulty": "high",
+        "description": "Discuss eligibility for preventive trials and disease-modifying therapies"
+      },
+      {
+        "id": "genetic_counseling_neuro",
+        "title": "Genetic counseling for family planning",
+        "impact": 0.7,
+        "difficulty": "medium",
+        "description": "Discuss implications for family members and reproductive options for high-penetrance variants"
+      }
+    ]
+  },
+  "neurological_health": {
+    "trait_id": "neurological_health",
+    "mechanism": "Neuronal function and maintenance genes protecting against neurodegenerative processes",
+    "outcomes": [
+      {
+        "id": "neurological_health_optimal",
+        "severity": 0.2,
+        "description": "Favorable neurological function \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "neurological_health_moderate",
+        "severity": 0.5,
+        "description": "Moderate neurological function \u2014 some genetic predisposition"
+      },
+      {
+        "id": "neurological_health_elevated",
+        "severity": 0.8,
+        "description": "Elevated neurological function \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_neurological_health",
+        "title": "Discuss neurological function with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_neurological_health",
+        "title": "Evidence-based brain health optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "neuroplasticity": {
+    "trait_id": "neuroplasticity",
+    "mechanism": "BDNF-mediated neural plasticity",
+    "outcomes": [
+      {
+        "id": "reduced_neuroplasticity",
+        "severity": 0.5,
+        "description": "Diminished brain adaptability"
+      }
+    ],
+    "actions": [
+      {
+        "id": "exercise",
+        "title": "Regular aerobic exercise",
+        "impact": 0.8,
+        "difficulty": "medium"
+      },
+      {
+        "id": "bdnf_support",
+        "title": "Consider BDNF-supporting supplements",
+        "impact": 0.4,
+        "difficulty": "low"
+      },
+      {
+        "id": "cognitive_stimulation",
+        "title": "Engage in learning",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "neurotransmitter_metabolism": {
+    "trait_id": "neurotransmitter_metabolism",
+    "mechanism": "MAOA monoamine oxidase activity",
+    "outcomes": [
+      {
+        "id": "altered_neurotransmitters",
+        "severity": 0.4,
+        "description": "Modified neurotransmitter levels"
+      }
+    ],
+    "actions": [
+      {
+        "id": "amino_acid_support",
+        "title": "Balance amino acid intake",
+        "impact": 0.4,
+        "difficulty": "medium"
+      },
+      {
+        "id": "mood_monitoring",
+        "title": "Monitor mood patterns",
+        "impact": 0.3,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "omega3_metabolism": {
+    "trait_id": "omega3_metabolism",
+    "mechanism": "FADS1/FADS2 fatty acid desaturase activity",
+    "outcomes": [
+      {
+        "id": "reduced_omega3_conversion",
+        "severity": 0.5,
+        "description": "Impaired conversion to long-chain omega-3s"
+      }
+    ],
+    "actions": [
+      {
+        "id": "direct_omega3",
+        "title": "Take direct EPA/DHA supplements",
+        "impact": 0.8,
+        "difficulty": "low"
+      },
+      {
+        "id": "fish_intake",
+        "title": "Eat fatty fish 2-3x per week",
+        "impact": 0.6,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "oxidative_metabolism": {
+    "trait_id": "oxidative_metabolism",
+    "mechanism": "PPARGC1B-mediated oxidative metabolism",
+    "outcomes": [
+      {
+        "id": "reduced_oxidative_capacity",
+        "severity": 0.4,
+        "description": "Slightly reduced oxidative metabolism"
+      }
+    ],
+    "actions": [
+      {
+        "id": "aerobic_training",
+        "title": "Aerobic exercise training",
+        "impact": 0.6,
+        "difficulty": "medium"
+      },
+      {
+        "id": "balanced_diet",
+        "title": "Balanced nutrition",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "oxidative_stress": {
+    "trait_id": "oxidative_stress",
+    "mechanism": "SOD2 and glutathione activity",
+    "outcomes": [
+      {
+        "id": "cellular_damage",
+        "severity": 0.6,
+        "description": "Accelerated aging at cellular level"
+      }
+    ],
+    "actions": [
+      {
+        "id": "nac",
+        "title": "Take NAC",
+        "impact": 0.7,
+        "difficulty": "low"
+      },
+      {
+        "id": "vitamin_c",
+        "title": "Take vitamin C",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "selenium",
+        "title": "Ensure selenium intake",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "oxidative_stress_response": {
+    "trait_id": "oxidative_stress_response",
+    "mechanism": "NFE2L2-mediated antioxidant response",
+    "outcomes": [
+      {
+        "id": "reduced_detoxification",
+        "severity": 0.5,
+        "description": "Diminished cellular protection"
+      }
+    ],
+    "actions": [
+      {
+        "id": "nac",
+        "title": "Take NAC",
+        "impact": 0.7,
+        "difficulty": "low"
+      },
+      {
+        "id": "sulforaphane",
+        "title": "Include cruciferous vegetables",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "avoid_toxins",
+        "title": "Minimize environmental toxin exposure",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "partial_reprogramming": {
+    "trait_id": "partial_reprogramming",
+    "mechanism": "Transient expression of Yamanaka factors (OSK/OSKM) to reverse mesenchymal drift aging signature",
+    "outcomes": [
+      {
+        "id": "mesenchymal_drift",
+        "severity": 0.5,
+        "description": "Age-related shift toward mesenchymal cell states \u2014 primary target of partial reprogramming"
+      },
+      {
+        "id": "teratoma_risk",
+        "severity": 0.8,
+        "description": "Full reprogramming risk: teratoma formation. Partial avoids this but delivery methods still being optimized"
+      }
+    ],
+    "actions": [
+      {
+        "id": "monitor_clinical",
+        "title": "Monitor clinical trials (NewLimit, Retro Biosciences)",
+        "impact": 0.3,
+        "difficulty": "low",
+        "description": "AAV-OSK extended lifespan 109% in old mice; first-in-human trials pending"
+      },
+      {
+        "id": "epigenetic_tracking",
+        "title": "Track epigenetic age longitudinally",
+        "impact": 0.3,
+        "difficulty": "low",
+        "description": "Use clocks to track mesenchymal drift reversal if reprogramming therapies become available"
+      }
+    ]
+  },
+  "proteasome_autophagy": {
+    "trait_id": "proteasome_autophagy",
+    "mechanism": "Macroautophagy, chaperone-mediated autophagy, and ubiquitin-proteasome system clearance",
+    "outcomes": [
+      {
+        "id": "autophagy_decline",
+        "severity": 0.6,
+        "description": "Age-related decline in autophagy impairs clearance of damaged proteins and organelles"
+      },
+      {
+        "id": "aggregate_accumulation",
+        "severity": 0.5,
+        "description": "Protein aggregates (tau, amyloid, lipofuscin) accumulate with declining clearance"
+      }
+    ],
+    "actions": [
+      {
+        "id": "intermittent_fasting_autophagy",
+        "title": "Intermittent fasting to induce autophagy",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Fasting periods >16h trigger significant autophagy upregulation"
+      },
+      {
+        "id": "exercise_autophagy",
+        "title": "Exercise to stimulate autophagy",
+        "impact": 0.7,
+        "difficulty": "medium",
+        "description": "Both aerobic and resistance exercise activate autophagy in muscle and brain"
+      },
+      {
+        "id": "spermidine_foods",
+        "title": "Spermidine-rich foods (wheat germ, aged cheese, mushrooms)",
+        "impact": 0.4,
+        "difficulty": "low",
+        "description": "Polyamine that induces autophagy; epidemiological associations with lower mortality"
+      }
+    ]
+  },
+  "protein_homeostasis": {
+    "trait_id": "protein_homeostasis",
+    "mechanism": "Chaperone networks (HSP70/HSP90/HSP60) and ubiquitin-proteasome quality control",
+    "outcomes": [
+      {
+        "id": "proteotoxic_stress",
+        "severity": 0.7,
+        "description": "Accumulation of misfolded proteins drives neurodegeneration and aging"
+      },
+      {
+        "id": "chaperone_decline",
+        "severity": 0.6,
+        "description": "Age-related decline in heat shock response impairs cellular stress resistance"
+      }
+    ],
+    "actions": [
+      {
+        "id": "heat_stress_therapy",
+        "title": "Sauna / heat exposure (4-7x/week)",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Finnish sauna cohort: 4-7x/week associated with 40% lower all-cause mortality, 63% lower cardiovascular mortality"
+      },
+      {
+        "id": "exercise_chaperones",
+        "title": "Exercise to induce HSP response",
+        "impact": 0.7,
+        "difficulty": "medium",
+        "description": "Exercise transiently upregulates heat shock proteins and proteasome activity"
+      },
+      {
+        "id": "sulforaphane_nrf2",
+        "title": "Sulforaphane (broccoli sprouts) for NRF2 activation",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "Activates NRF2 pathway which regulates proteasome subunits and chaperones"
+      }
+    ]
+  },
+  "rapamycin_protocol": {
+    "trait_id": "rapamycin_protocol",
+    "mechanism": "mTOR inhibition for healthspan extension",
+    "outcomes": [
+      {
+        "id": "immunosuppression_risk",
+        "severity": 0.6,
+        "description": "Requires physician supervision"
+      }
+    ],
+    "actions": [
+      {
+        "id": "rapamycin_consult",
+        "title": "Seek longevity-literate physician (Attia network, AgelessRx)",
+        "impact": 0.8,
+        "difficulty": "high"
+      },
+      {
+        "id": "rapamycin_pulse",
+        "title": "If prescribed: 5-10mg weekly (pulse, not daily)",
+        "impact": 0.7,
+        "difficulty": "high",
+        "description": "PEARL RCT showed improved healthspan markers at 1 year"
+      }
+    ]
+  },
+  "rare_functional_variant": {
+    "trait_id": "rare_functional_variant",
+    "mechanism": "Rare genetic variant (allele frequency < 1%) predicted to cause a functional effect on protein coding, splicing, or regulatory elements, but of uncertain or uncharacterized clinical significance requiring systematic evaluation of population frequency, in silico predictions, literature evidence, and segregation data",
+    "outcomes": [
+      {
+        "id": "uncertain_significance",
+        "severity": 0.5,
+        "description": "Variant of uncertain significance (VUS) requiring ongoing reclassification efforts"
+      },
+      {
+        "id": "potential_pathogenicity",
+        "severity": 0.6,
+        "description": "Variant with conflicting or limited evidence for pathogenicity; may be reclassified"
+      },
+      {
+        "id": "incidental_finding",
+        "severity": 0.5,
+        "description": "Incidental or secondary finding unrelated to primary testing indication"
+      },
+      {
+        "id": "carrier_status",
+        "severity": 0.3,
+        "description": "Carrier status for a recessive condition without clinical phenotype"
+      }
+    ],
+    "actions": [
+      {
+        "id": "variant_classification",
+        "title": "Systematic variant classification",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Apply ACMG/AMP criteria for variant classification; check ClinVar, gnomAD, and literature databases"
+      },
+      {
+        "id": "literature_reevaluation",
+        "title": "Periodic literature reevaluation",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Reclassify variant every 2-5 years as new evidence becomes available; many VUS are reclassified"
+      },
+      {
+        "id": "segregation_analysis",
+        "title": "Family segregation analysis",
+        "impact": 0.7,
+        "difficulty": "high",
+        "description": "Test affected and unaffected family members to assess variant cosegregation with phenotype"
+      },
+      {
+        "id": "functional_studies",
+        "title": "Functional characterization studies",
+        "impact": 0.5,
+        "difficulty": "high",
+        "description": "In vitro or in vivo functional studies to assess variant effect on protein function"
+      },
+      {
+        "id": "expert_consultation",
+        "title": "Expert consultation and multidisciplinary review",
+        "impact": 0.7,
+        "difficulty": "medium",
+        "description": "Consultation with clinical genetics, molecular pathology, and disease-specific specialists for complex cases"
+      }
+    ]
+  },
+  "respiratory_health": {
+    "trait_id": "respiratory_health",
+    "mechanism": "Lung development and surfactant genes maintaining airway function and gas exchange",
+    "outcomes": [
+      {
+        "id": "respiratory_health_optimal",
+        "severity": 0.2,
+        "description": "Favorable respiratory function \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "respiratory_health_moderate",
+        "severity": 0.5,
+        "description": "Moderate respiratory function \u2014 some genetic predisposition"
+      },
+      {
+        "id": "respiratory_health_elevated",
+        "severity": 0.8,
+        "description": "Elevated respiratory function \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_respiratory_health",
+        "title": "Discuss respiratory function with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_respiratory_health",
+        "title": "Evidence-based lung health optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "senescence": {
+    "trait_id": "senescence",
+    "mechanism": "Cellular senescence \u2014 irreversible cell cycle arrest with pro-inflammatory SASP secretion",
+    "outcomes": [
+      {
+        "id": "sasp_inflammation",
+        "severity": 0.7,
+        "description": "Senescence-associated secretory phenotype drives chronic inflammation"
+      },
+      {
+        "id": "tissue_dysfunction",
+        "severity": 0.6,
+        "description": "Senescent cell accumulation impairs tissue repair and regeneration"
+      }
+    ],
+    "actions": [
+      {
+        "id": "senolytic_dq",
+        "title": "Discuss D+Q senolytic protocol with physician",
+        "impact": 0.5,
+        "difficulty": "high",
+        "description": "Dasatinib + quercetin once-monthly; most evidence for senescent cell clearance"
+      },
+      {
+        "id": "exercise_senescence",
+        "title": "Regular exercise reduces senescent cell burden",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Exercise lowers p16INK4a expression and senescent cell markers"
+      },
+      {
+        "id": "fisetin_food",
+        "title": "Dietary fisetin (strawberries, apples, persimmons)",
+        "impact": 0.3,
+        "difficulty": "low",
+        "description": "Natural senolytic; food sources provide lower doses than supplements"
+      }
+    ]
+  },
+  "senolytic_protocol": {
+    "trait_id": "senolytic_protocol",
+    "mechanism": "Clearing senescent cells that drive aging",
+    "outcomes": [
+      {
+        "id": "senescence_accumulation",
+        "severity": 0.5,
+        "description": "Senescent cells drive inflammatory aging"
+      }
+    ],
+    "actions": [
+      {
+        "id": "dasatinib_quercetin",
+        "title": "D+Q (dasatinib + quercetin) once monthly",
+        "impact": 0.7,
+        "difficulty": "high",
+        "description": "Most evidence for senolytic effect"
+      },
+      {
+        "id": "fisetin_consider",
+        "title": "Fisetin protocols less evidence-supported",
+        "impact": 0.4,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "serotonin_transport": {
+    "trait_id": "serotonin_transport",
+    "mechanism": "SLC6A4 serotonin transporter function",
+    "outcomes": [
+      {
+        "id": "mood_vulnerability",
+        "severity": 0.5,
+        "description": "Altered serotonin reuptake"
+      }
+    ],
+    "actions": [
+      {
+        "id": "serotonin_support",
+        "title": "Ensure tryptophan/5-HTP",
+        "impact": 0.4,
+        "difficulty": "low"
+      },
+      {
+        "id": "stress_reduction",
+        "title": "Prioritize stress reduction",
+        "impact": 0.6,
+        "difficulty": "medium"
+      },
+      {
+        "id": "social_support",
+        "title": "Maintain strong social connections",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "skin_health": {
+    "trait_id": "skin_health",
+    "mechanism": "Epidermal barrier and wound healing genes maintaining skin integrity and repair capacity",
+    "outcomes": [
+      {
+        "id": "skin_health_optimal",
+        "severity": 0.2,
+        "description": "Favorable skin integrity \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "skin_health_moderate",
+        "severity": 0.5,
+        "description": "Moderate skin integrity \u2014 some genetic predisposition"
+      },
+      {
+        "id": "skin_health_elevated",
+        "severity": 0.8,
+        "description": "Elevated skin integrity \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_skin_health",
+        "title": "Discuss skin integrity with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_skin_health",
+        "title": "Evidence-based skin health optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "sleep_longevity": {
+    "trait_id": "sleep_longevity",
+    "mechanism": "Sleep duration and quality impact on cellular repair",
+    "outcomes": [
+      {
+        "id": "sleep_debt",
+        "severity": 0.6,
+        "description": "Accumulates disease risk"
+      }
+    ],
+    "actions": [
+      {
+        "id": "sleep_7to9",
+        "title": "Target 7-9 hours nightly",
+        "impact": 0.8,
+        "difficulty": "medium"
+      },
+      {
+        "id": "fixed_wake_time",
+        "title": "Consistent wake time (highest-leverage sleep intervention)",
+        "impact": 0.7,
+        "difficulty": "medium"
+      },
+      {
+        "id": "sleep_hygiene",
+        "title": "Sleep hygiene: cool room, dark, no screens before bed",
+        "impact": 0.6,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "sleep_quality": {
+    "trait_id": "sleep_quality",
+    "mechanism": "Circadian rhythm and neurotransmitter activity",
+    "outcomes": [
+      {
+        "id": "insomnia",
+        "severity": 0.6,
+        "description": "Difficulty falling or staying asleep"
+      },
+      {
+        "id": "poor_recovery",
+        "severity": 0.5,
+        "description": "Reduced next-day performance"
+      }
+    ],
+    "actions": [
+      {
+        "id": "magnesium_glycinate",
+        "title": "Take magnesium glycinate",
+        "impact": 0.7,
+        "difficulty": "low"
+      },
+      {
+        "id": "sleep_hygiene",
+        "title": "Practice sleep hygiene",
+        "impact": 0.6,
+        "difficulty": "medium"
+      },
+      {
+        "id": "avoid_blue_light",
+        "title": "Avoid screens before bed",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "smoking_cessation": {
+    "trait_id": "smoking_cessation",
+    "mechanism": "Tobacco toxicity and oxidative damage",
+    "outcomes": [
+      {
+        "id": "smoking_mortality",
+        "severity": 0.9,
+        "description": "Quitting at 25-34 recovers ~10 years of life"
+      }
+    ],
+    "actions": [
+      {
+        "id": "quit_smoking",
+        "title": "Quit smoking",
+        "impact": 0.95,
+        "difficulty": "high",
+        "description": "Strongest lifestyle intervention"
+      },
+      {
+        "id": "cessation_support",
+        "title": "Use cessation support (patches, gum, counseling)",
+        "impact": 0.7,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "statin_myopathy": {
+    "trait_id": "statin_myopathy",
+    "mechanism": "SLCO1B1 variants (particularly c.521T>C, rs4149056) encoding reduced-function OATP1B1 transporter, impairing hepatic uptake of statins (particularly simvastatin, but also atorvastatin and pitavastatin), leading to elevated systemic statin exposure and increased risk of dose-dependent statin-induced myopathy",
+    "outcomes": [
+      {
+        "id": "statin_myalgia",
+        "severity": 0.5,
+        "description": "Muscle pain without CK elevation, often leading to statin non-adherence"
+      },
+      {
+        "id": "statin_myopathy_ck_elevated",
+        "severity": 0.7,
+        "description": "Muscle pain/symptoms with elevated creatine kinase levels"
+      },
+      {
+        "id": "rhabdomyolysis",
+        "severity": 0.9,
+        "description": "Severe muscle breakdown with CK > 10x ULN, risk of renal failure"
+      },
+      {
+        "id": "statin_discontinuation",
+        "severity": 0.6,
+        "description": "Inability to tolerate any statin due to muscle symptoms"
+      }
+    ],
+    "actions": [
+      {
+        "id": "pretreatment_slco1b1_testing",
+        "title": "SLCO1B1 genotype consideration",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Pre-treatment SLCO1B1 genotyping when considering simvastatin therapy (CPIC Level A guideline)"
+      },
+      {
+        "id": "avoid_high_dose_simvastatin",
+        "title": "Avoid high-dose simvastatin",
+        "impact": 0.9,
+        "difficulty": "low",
+        "description": "Avoid simvastatin > 20 mg in SLCO1B1 c.521TC; avoid simvastatin entirely in c.521CC homozygotes"
+      },
+      {
+        "id": "alternative_statin",
+        "title": "Use alternative statin",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "Rosuvastatin or pravastatin are less dependent on OATP1B1 and have lower myopathy risk"
+      },
+      {
+        "id": "lower_dose_strategy",
+        "title": "Lower dose with add-on therapy",
+        "impact": 0.7,
+        "difficulty": "medium",
+        "description": "Low-dose rosuvastatin (5-10 mg) plus ezetimibe for patients unable to tolerate standard statin doses"
+      },
+      {
+        "id": "coq10_supplementation",
+        "title": "CoQ10 supplementation trial",
+        "impact": 0.3,
+        "difficulty": "low",
+        "description": "Consider Coenzyme Q10 supplementation; limited but potential benefit for statin myalgia"
+      }
+    ]
+  },
+  "stem_cells": {
+    "trait_id": "stem_cells",
+    "mechanism": "Stem cell exhaustion is a hallmark of aging; replenishment may restore tissue function",
+    "outcomes": [
+      {
+        "id": "stem_cell_exhaustion",
+        "severity": 0.6,
+        "description": "Declining stem cell pools impair tissue repair and regeneration"
+      },
+      {
+        "id": "unregulated_risk",
+        "severity": 0.9,
+        "description": "Unregulated stem cell clinics cause serious adverse events including infections and tumors"
+      }
+    ],
+    "actions": [
+      {
+        "id": "clinical_trials_only",
+        "title": "Only consider stem cell therapies in registered clinical trials",
+        "impact": 0.9,
+        "difficulty": "low",
+        "description": "Avoid unregulated clinics. iPSC-derived therapies (e.g., brain immune rejuvenation) are preclinical only"
+      },
+      {
+        "id": "exercise_stem_cells",
+        "title": "Exercise to support endogenous stem cell function",
+        "impact": 0.5,
+        "difficulty": "medium",
+        "description": "Exercise mobilizes endogenous stem cells and supports niche function"
+      }
+    ]
+  },
+  "supplements_evidence": {
+    "trait_id": "supplements_evidence",
+    "mechanism": "Evidence-based evaluation of common longevity supplements",
+    "outcomes": [
+      {
+        "id": "ineffective_spending",
+        "severity": 0.4,
+        "description": "Most supplement-aisle longevity products lack RCT endpoint evidence"
+      }
+    ],
+    "actions": [
+      {
+        "id": "avoid_nmn_alone",
+        "title": "Avoid NMN/NR monotherapy",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Blood NAD+ goes up; clinical endpoints do not (confirmed by latest large RCT, NR-long COVID-2025)"
+      },
+      {
+        "id": "avoid_resveratrol",
+        "title": "Skip resveratrol and pterostilbene",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "No RCT support at endpoint level for anti-aging claims"
+      },
+      {
+        "id": "vitamin_d_only_if_deficient",
+        "title": "Test vitamin D before supplementing",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "VITAL RCT (n=25,871, 5.3yr): no reduction in cancer (HR 0.96), CVD (HR 0.97), or all-cause mortality (HR 0.99) in non-deficient adults"
+      }
+    ]
+  },
+  "telomere_maintenance": {
+    "trait_id": "telomere_maintenance",
+    "mechanism": "TERT-mediated telomere length maintenance",
+    "outcomes": [
+      {
+        "id": "telomere_attrition",
+        "severity": 0.4,
+        "description": "Accelerated cellular aging"
+      }
+    ],
+    "actions": [
+      {
+        "id": "telomere_support",
+        "title": "Consider TA-65 or similar",
+        "impact": 0.3,
+        "difficulty": "low"
+      },
+      {
+        "id": "healthy_lifestyle",
+        "title": "Telomere-friendly lifestyle",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "thermogenesis": {
+    "trait_id": "thermogenesis",
+    "mechanism": "UCP2/UCP3-mediated non-shivering thermogenesis",
+    "outcomes": [
+      {
+        "id": "altered_thermogenesis",
+        "severity": 0.3,
+        "description": "Modified metabolic heat production"
+      }
+    ],
+    "actions": [
+      {
+        "id": "cold_exposure",
+        "title": "Cold exposure training",
+        "impact": 0.4,
+        "difficulty": "medium"
+      },
+      {
+        "id": "metabolic_support",
+        "title": "Support metabolism",
+        "impact": 0.3,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "thiopurine_toxicity": {
+    "trait_id": "thiopurine_toxicity",
+    "mechanism": "TPMT and NUDT15 genetic variants leading to reduced thiopurine S-methyltransferase activity, causing accumulation of 6-thioguanine nucleotides and severe myelosuppression with standard doses of azathioprine, 6-mercaptopurine, and thioguanine",
+    "outcomes": [
+      {
+        "id": "severe_myelosuppression",
+        "severity": 0.9,
+        "description": "Life-threatening bone marrow suppression with pancytopenia at standard thiopurine doses"
+      },
+      {
+        "id": "thiopurine_intolerance",
+        "severity": 0.6,
+        "description": "Inability to tolerate therapeutic doses of thiopurine medications"
+      },
+      {
+        "id": "treatment_interruption",
+        "severity": 0.7,
+        "description": "Forced interruption of thiopurine therapy for IBD, autoimmune conditions, or leukemia"
+      }
+    ],
+    "actions": [
+      {
+        "id": "pretreatment_tpmt_testing",
+        "title": "Pre-treatment TPMT/NUDT15 testing",
+        "impact": 1,
+        "difficulty": "low",
+        "description": "Mandatory pharmacogenetic testing before initiating thiopurine therapy"
+      },
+      {
+        "id": "dose_reduction_thiopurine",
+        "title": "Empiric dose reduction",
+        "impact": 0.9,
+        "difficulty": "low",
+        "description": "Reduce starting dose by 30-80% based on TPMT/NUDT15 phenotype; homozygous deficient: avoid or use 10% dose"
+      },
+      {
+        "id": "alternative_immunosuppressant",
+        "title": "Alternative immunosuppressant therapy",
+        "impact": 0.8,
+        "difficulty": "medium",
+        "description": "Consider methotrexate, mycophenolate, or biologic therapy for TPMT-deficient patients"
+      },
+      {
+        "id": "cbc_monitoring",
+        "title": "Intensive CBC monitoring",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "Weekly CBC monitoring during thiopurine dose titration for intermediate metabolizers"
+      }
+    ]
+  },
+  "thrombosis_risk": {
+    "trait_id": "thrombosis_risk",
+    "mechanism": "F5/F2/F13A1-mediated clotting cascade",
+    "outcomes": [
+      {
+        "id": "clotting_risk",
+        "severity": 0.7,
+        "description": "Increased thrombosis risk"
+      }
+    ],
+    "actions": [
+      {
+        "id": "hydration",
+        "title": "Maintain excellent hydration",
+        "impact": 0.7,
+        "difficulty": "low"
+      },
+      {
+        "id": "mobility",
+        "title": "Avoid prolonged sitting",
+        "impact": 0.6,
+        "difficulty": "medium"
+      },
+      {
+        "id": "clotting_avoid",
+        "title": "Discuss risk with physician",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "thyroid_function": {
+    "trait_id": "thyroid_function",
+    "mechanism": "Thyroid hormone synthesis, transport, and receptor genes regulating metabolic rate and energy balance",
+    "outcomes": [
+      {
+        "id": "thyroid_function_optimal",
+        "severity": 0.2,
+        "description": "Favorable thyroid function \u2014 low risk of adverse outcomes"
+      },
+      {
+        "id": "thyroid_function_moderate",
+        "severity": 0.5,
+        "description": "Moderate thyroid function \u2014 some genetic predisposition"
+      },
+      {
+        "id": "thyroid_function_elevated",
+        "severity": 0.8,
+        "description": "Elevated thyroid function \u2014 increased genetic risk requiring monitoring"
+      }
+    ],
+    "actions": [
+      {
+        "id": "screen_thyroid_function",
+        "title": "Discuss thyroid function with healthcare provider",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Review findings and determine appropriate screening or monitoring"
+      },
+      {
+        "id": "lifestyle_thyroid_function",
+        "title": "Evidence-based metabolic health optimization",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Implement recommended lifestyle and preventive measures"
+      }
+    ]
+  },
+  "trametinib_rapamycin": {
+    "trait_id": "trametinib_rapamycin",
+    "mechanism": "Combined MEK + mTOR inhibition for synergistic longevity effects",
+    "outcomes": [
+      {
+        "id": "synergy_potential",
+        "severity": 0.4,
+        "description": "Combo outperforms rapamycin alone in ITP mouse studies"
+      },
+      {
+        "id": "toxicity_concern",
+        "severity": 0.8,
+        "description": "Trametinib has serious toxicity profile \u2014 melanoma drug, not wellness compound"
+      }
+    ],
+    "actions": [
+      {
+        "id": "monitor_combo_trial",
+        "title": "Wait for Phase II combination trial",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "Both drugs FDA-approved separately; trametinib toxicity requires clinical-supervised combination studies before any off-label consideration"
+      },
+      {
+        "id": "rapamycin_first",
+        "title": "Discuss rapamycin alone with longevity-literate physician first",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Rapamycin monotherapy has more safety data than combination approaches"
+      }
+    ]
+  },
+  "triglyceride_metabolism": {
+    "trait_id": "triglyceride_metabolism",
+    "mechanism": "APOC3-mediated triglyceride regulation",
+    "outcomes": [
+      {
+        "id": "elevated_triglycerides",
+        "severity": 0.6,
+        "description": "Increased cardiovascular risk"
+      }
+    ],
+    "actions": [
+      {
+        "id": "reduce_sugar",
+        "title": "Reduce sugar and refined carbs",
+        "impact": 0.8,
+        "difficulty": "medium"
+      },
+      {
+        "id": "omega3",
+        "title": "Increase omega-3 intake",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "fiber_intake",
+        "title": "Increase dietary fiber",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "urate_excretion": {
+    "trait_id": "urate_excretion",
+    "mechanism": "ABCG2-mediated uric acid excretion",
+    "outcomes": [
+      {
+        "id": "elevated_urate",
+        "severity": 0.6,
+        "description": "Increased gout and kidney stone risk"
+      }
+    ],
+    "actions": [
+      {
+        "id": "purine_restriction",
+        "title": "Reduce purine-rich foods",
+        "impact": 0.7,
+        "difficulty": "medium"
+      },
+      {
+        "id": "urate_monitoring",
+        "title": "Monitor uric acid levels",
+        "impact": 0.6,
+        "difficulty": "low"
+      },
+      {
+        "id": "hydration",
+        "title": "Maintain high water intake",
+        "impact": 0.5,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "urolithin_a": {
+    "trait_id": "urolithin_a",
+    "mechanism": "Mitophagy induction via gut microbiome",
+    "outcomes": [
+      {
+        "id": "mitophagy_decline",
+        "severity": 0.4,
+        "description": "Age-related decline in mitophagy"
+      }
+    ],
+    "actions": [
+      {
+        "id": "urolithin_supplement",
+        "title": "Consider Mitopure (urolithin A)",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "4-week RCT on immune endpoints in Nature Aging"
+      }
+    ]
+  },
+  "vitamin_a": {
+    "trait_id": "vitamin_a",
+    "mechanism": "BCMO1 beta-carotene conversion",
+    "outcomes": [
+      {
+        "id": "vitamin_a_deficiency",
+        "severity": 0.5,
+        "description": "Reduced vitamin A from plant sources"
+      }
+    ],
+    "actions": [
+      {
+        "id": "preformed_vitamin_a",
+        "title": "Include preformed vitamin A in diet",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Eat liver, eggs, dairy"
+      },
+      {
+        "id": "beta_carotene_supplement",
+        "title": "Consider beta-carotene supplement",
+        "impact": 0.4,
+        "difficulty": "low"
+      }
+    ]
+  },
+  "vitamin_d": {
+    "trait_id": "vitamin_d",
+    "mechanism": "VDR receptor sensitivity",
+    "outcomes": [
+      {
+        "id": "vitamin_d_insufficiency",
+        "severity": 0.6,
+        "description": "Bone density issues, immune dysfunction"
+      }
+    ],
+    "actions": [
+      {
+        "id": "vitamin_d3",
+        "title": "Take Vitamin D3",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "2000-4000 IU daily with K2"
+      },
+      {
+        "id": "sun_exposure",
+        "title": "Increase sun exposure",
+        "impact": 0.5,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  "warfarin_sensitivity": {
+    "trait_id": "warfarin_sensitivity",
+    "mechanism": "VKORC1 promoter variants (particularly -1639G>A) reducing vitamin K epoxide reductase complex expression, combined with CYP2C9 loss-of-function variants (*2, *3) reducing S-warfarin clearance, leading to heightened warfarin sensitivity and increased bleeding risk at standard doses",
+    "outcomes": [
+      {
+        "id": "warfarin_bleeding_risk",
+        "severity": 0.9,
+        "description": "Elevated risk of major bleeding including intracranial hemorrhage on standard warfarin doses"
+      },
+      {
+        "id": "prolonged_dose_titration",
+        "severity": 0.5,
+        "description": "Extended time to reach stable therapeutic INR during warfarin initiation"
+      },
+      {
+        "id": "low_warfarin_dose_requirement",
+        "severity": 0.4,
+        "description": "Requirement for substantially lower warfarin doses (1-4 mg/day vs. typical 4-8 mg/day)"
+      }
+    ],
+    "actions": [
+      {
+        "id": "pretreatment_pharmacogenomic_dosing",
+        "title": "Pharmacogenomic-guided warfarin dosing",
+        "impact": 0.9,
+        "difficulty": "low",
+        "description": "Use CPIC-endorsed algorithm incorporating VKORC1, CYP2C9 genotype, age, weight, and INR target"
+      },
+      {
+        "id": "reduced_loading_dose",
+        "title": "Reduced loading and maintenance dose",
+        "impact": 0.9,
+        "difficulty": "low",
+        "description": "Typically 2-4 mg starting dose; avoid standard 5-10 mg loading in VKORC1 AA / CYP2C9 *2/*3 carriers"
+      },
+      {
+        "id": "frequent_inr_monitoring",
+        "title": "Frequent INR monitoring during initiation",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "More frequent INR checks during first 2-4 weeks of therapy to prevent supratherapeutic levels"
+      },
+      {
+        "id": "consider_doac",
+        "title": "Consider DOAC alternative",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Direct oral anticoagulants (apixaban, rivaroxaban) may be safer alternatives to warfarin"
+      }
+    ]
+  },
+  "developmental": {
+    "trait_id": "developmental",
+    "mechanism": "Embryonic development and morphogenesis pathways affecting structural formation",
+    "outcomes": [
+      {
+        "id": "developmental_variation",
+        "severity": 0.4,
+        "description": "Variation in genes affecting developmental processes may influence structural and functional traits"
+      }
+    ],
+    "actions": [
+      {
+        "id": "developmental_screening",
+        "title": "Discuss developmental genetic findings with healthcare provider",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "Review findings in context of personal and family history"
+      },
+      {
+        "id": "developmental_monitoring",
+        "title": "Monitor relevant structural or functional parameters",
+        "impact": 0.4,
+        "difficulty": "medium",
+        "description": "Follow condition-specific screening guidelines if applicable"
+      }
+    ]
+  },
+  "choline_metabolism": {
+    "trait_id": "choline_metabolism",
+    "mechanism": "PEMT-mediated endogenous choline synthesis from phosphatidylethanolamine; choline is essential for methylation (via betaine), membrane integrity, lipoprotein secretion, and neurotransmitter synthesis",
+    "outcomes": [
+      {
+        "id": "choline_deficiency",
+        "severity": 0.6,
+        "description": "Reduced endogenous choline synthesis increases risk of fatty liver, muscle damage, and impaired methylation when dietary intake is insufficient"
+      },
+      {
+        "id": "methylation_compromise",
+        "severity": 0.5,
+        "description": "Choline is a major methyl donor \u2014 deficiency shifts methylation burden to folate pathway"
+      }
+    ],
+    "actions": [
+      {
+        "id": "choline_rich_diet",
+        "title": "Include choline-rich foods: eggs (yolks), beef liver, soy lecithin, wheat germ, cruciferous vegetables",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "Dietary choline compensates for reduced endogenous synthesis"
+      },
+      {
+        "id": "choline_supplement",
+        "title": "Consider citicoline or alpha-GPC supplementation (250-500mg/day)",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Supplemental choline forms that cross the blood-brain barrier effectively"
+      },
+      {
+        "id": "liver_monitoring",
+        "title": "Monitor liver function (ALT, AST) and consider ultrasound if fatty liver is suspected",
+        "impact": 0.6,
+        "difficulty": "medium",
+        "description": "Choline deficiency is a direct cause of non-alcoholic fatty liver disease"
+      }
+    ]
+  },
+  "iron_homeostasis": {
+    "trait_id": "iron_homeostasis",
+    "mechanism": "Hepcidin-ferroportin axis regulating dietary iron absorption and reticuloendothelial iron recycling; TMPRSS6 matriptase-2 modulates hepcidin expression",
+    "outcomes": [
+      {
+        "id": "iron_deficiency_risk",
+        "severity": 0.5,
+        "description": "Higher hepcidin reduces iron absorption, increasing risk of iron deficiency especially with plant-based diets or blood loss"
+      },
+      {
+        "id": "iron_overload_risk",
+        "severity": 0.6,
+        "description": "Lower hepcidin increases iron absorption; combined with HFE hemochromatosis variants can lead to iron overload"
+      }
+    ],
+    "actions": [
+      {
+        "id": "monitor_iron_panel",
+        "title": "Monitor ferritin, serum iron, TIBC, and transferrin saturation annually",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Regular iron panel monitoring catches both deficiency and overload early"
+      },
+      {
+        "id": "vitamin_c_with_iron",
+        "title": "Pair iron-rich foods with vitamin C to enhance absorption (if deficient)",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "Vitamin C increases non-heme iron absorption 2-3x"
+      },
+      {
+        "id": "avoid_excess_supplementation",
+        "title": "Avoid iron supplementation without documented deficiency and physician guidance",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Excess iron is pro-oxidative and contributes to aging via Fenton reaction"
+      }
+    ]
+  },
+  "magnesium_status": {
+    "trait_id": "magnesium_status",
+    "mechanism": "TRPM6-mediated intestinal magnesium absorption and renal reabsorption; magnesium is cofactor for 300+ enzymes including ATP metabolism, DNA repair, and neurotransmitter regulation",
+    "outcomes": [
+      {
+        "id": "magnesium_insufficiency",
+        "severity": 0.5,
+        "description": "Suboptimal magnesium status can impair energy production, sleep quality, muscle function, and cardiovascular health"
+      }
+    ],
+    "actions": [
+      {
+        "id": "magnesium_supplementation",
+        "title": "Supplement magnesium glycinate or malate (200-400mg elemental/day)",
+        "impact": 0.8,
+        "difficulty": "low",
+        "description": "Well-absorbed magnesium forms that don't cause GI distress"
+      },
+      {
+        "id": "magnesium_rich_foods",
+        "title": "Include leafy greens, nuts, seeds, dark chocolate, and legumes daily",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "Dietary magnesium supports consistent daily intake"
+      },
+      {
+        "id": "epsom_salt_baths",
+        "title": "Epsom salt baths or topical magnesium oil for transdermal absorption",
+        "impact": 0.3,
+        "difficulty": "low",
+        "description": "Alternative route that bypasses gut absorption issues"
+      }
+    ]
+  },
+  "thyroid_metabolism": {
+    "trait_id": "thyroid_metabolism",
+    "mechanism": "Deiodinase enzymes (DIO1, DIO2) convert T4 to active T3 in peripheral tissues; selenium-dependent process crucial for metabolic rate, thermogenesis, and cognitive function",
+    "outcomes": [
+      {
+        "id": "reduced_t4_to_t3",
+        "severity": 0.5,
+        "description": "Reduced peripheral T4\u2192T3 conversion can cause tissue-level hypothyroidism despite normal TSH"
+      },
+      {
+        "id": "metabolic_slowdown",
+        "severity": 0.4,
+        "description": "Lower cellular T3 reduces basal metabolic rate and thermogenesis"
+      }
+    ],
+    "actions": [
+      {
+        "id": "selenium_zinc_support",
+        "title": "Ensure adequate selenium (100-200mcg/day) and zinc \u2014 required deiodinase cofactors",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Selenium and zinc are essential for deiodinase enzyme function"
+      },
+      {
+        "id": "full_thyroid_panel",
+        "title": "Monitor TSH, free T3, free T4, and reverse T3 \u2014 not just TSH alone",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Comprehensive thyroid panel reveals conversion efficiency"
+      },
+      {
+        "id": "iodine_balance",
+        "title": "Maintain adequate but not excessive iodine (150-300mcg/day)",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "Both deficiency and excess can impair thyroid function"
+      }
+    ]
+  },
+  "selenium_metabolism": {
+    "trait_id": "selenium_metabolism",
+    "mechanism": "Selenium incorporation into selenoproteins (GPX1, GPX4, SEPP1, DIO1/2/3) \u2014 critical for antioxidant defense, thyroid hormone metabolism, and ferroptosis protection",
+    "outcomes": [
+      {
+        "id": "reduced_antioxidant_defense",
+        "severity": 0.5,
+        "description": "Lower GPX activity increases vulnerability to oxidative stress and lipid peroxidation"
+      },
+      {
+        "id": "ferroptosis_sensitivity",
+        "severity": 0.4,
+        "description": "GPX4 requires selenium to prevent ferroptotic cell death"
+      }
+    ],
+    "actions": [
+      {
+        "id": "selenium_supplementation",
+        "title": "Selenium supplementation (selenomethionine 100-200mcg/day)",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Supports GPX and deiodinase enzyme activity"
+      },
+      {
+        "id": "brazil_nuts",
+        "title": "1-2 Brazil nuts/day provides full RDA of selenium",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Brazil nuts are the richest natural selenium source; don't exceed 3-4/day to avoid toxicity"
+      }
+    ]
+  },
+  "zinc_homeostasis": {
+    "trait_id": "zinc_homeostasis",
+    "mechanism": "SLC39A8 (ZIP8) and SLC30A8 (ZnT8) transporters regulating cellular zinc uptake and distribution; zinc is essential for immune function, DNA repair, growth, and 300+ zinc-finger transcription factors",
+    "outcomes": [
+      {
+        "id": "zinc_insufficiency",
+        "severity": 0.5,
+        "description": "Reduced cellular zinc can impair immune response, wound healing, and antioxidant defense"
+      }
+    ],
+    "actions": [
+      {
+        "id": "zinc_supplementation",
+        "title": "Ensure adequate zinc intake (15-25mg/day; zinc picolinate or citrate)",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Well-absorbed zinc forms support immune and antioxidant function"
+      },
+      {
+        "id": "zinc_rich_foods",
+        "title": "Include oysters, beef, pumpkin seeds, and lentils regularly",
+        "impact": 0.5,
+        "difficulty": "low",
+        "description": "Dietary zinc from animal sources is more bioavailable than plant sources"
+      }
+    ]
+  },
+  "carrier_status": {
+    "trait_id": "carrier_status",
+    "mechanism": "Heterozygous pathogenic variant in a gene associated with an autosomal recessive condition. Carrier status typically does not cause disease but may be relevant for reproductive planning and family screening.",
+    "outcomes": [
+      {
+        "id": "carrier_informational",
+        "severity": 0.3,
+        "description": "Carrier of a recessive condition \u2014 generally healthy but may pass variant to offspring"
+      },
+      {
+        "id": "reproductive_implications",
+        "severity": 0.4,
+        "description": "If partner is also a carrier, 25% risk of affected child per pregnancy"
+      }
+    ],
+    "actions": [
+      {
+        "id": "genetic_counseling",
+        "title": "Discuss carrier status with a genetic counselor for family planning implications",
+        "impact": 0.7,
+        "difficulty": "low",
+        "description": "Carrier screening for partner and genetic counseling for reproductive options"
+      },
+      {
+        "id": "family_screening",
+        "title": "Inform family members \u2014 siblings have 50% chance of being carriers",
+        "impact": 0.5,
+        "difficulty": "medium",
+        "description": "Cascade carrier testing for at-risk family members"
+      },
+      {
+        "id": "carrier_education",
+        "title": "Understand the condition \u2014 carrier status is not a disease diagnosis",
+        "impact": 0.6,
+        "difficulty": "low",
+        "description": "Most carriers are healthy; knowledge empowers informed reproductive decisions"
+      }
+    ]
+  }
+}

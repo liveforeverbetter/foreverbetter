@@ -1,0 +1,111 @@
+{
+  "version": "2026-06-01",
+  "purpose": "Local, manually extracted competitor/reference benchmark inputs for internal pipeline scoring. This file is not rendered in consumer dashboards.",
+  "sources": [
+    {
+      "id": "tellmegen_ultra_wgs",
+      "url": "https://www.tellmegen.com/en/dna-test-ultra",
+      "reference_area": "genetics",
+      "extracted_claims": {
+        "sequencing_depth": "30x whole genome sequencing",
+        "variant_scale": "roughly 3 billion bases/variant positions represented across WGS-scale output",
+        "report_count": "600+ reports",
+        "consumer_sections": [
+          "health or genetic vulnerability",
+          "pharmacogenetics",
+          "hereditary conditions",
+          "personal traits",
+          "wellness",
+          "ancestry"
+        ],
+        "raw_downloads": [
+          "FASTQ",
+          "VCF"
+        ],
+        "wgs_variant_class_surface": [
+          "rare variants",
+          "copy number variants",
+          "large insertions/deletions",
+          "tandem repeats",
+          "rearrangements"
+        ]
+      },
+      "internal_scoring_use": [
+        "Benchmark whether reports cover the same consumer genetics sections.",
+        "Benchmark whether WGS-scale variant classes are either interpreted or explicitly disclosed as out of scope.",
+        "Benchmark PRS and rare-variant handling separately so reduced fixtures do not overclaim WGS parity."
+      ]
+    },
+    {
+      "id": "superpower_biomarkers",
+      "url": "https://superpower.com/biomarkers",
+      "secondary_url": "https://superpower.com/best-biomarkers",
+      "reference_area": "biomarkers",
+      "extracted_claims": {
+        "annual_panel_size": "100+ biomarkers",
+        "consumer_domains": [
+          "nutrient status",
+          "immune and inflammation",
+          "cardiovascular and longevity",
+          "metabolic and body composition",
+          "hormonal and reproductive health",
+          "sleep and circadian health",
+          "performance and recovery",
+          "brain and mental wellbeing"
+        ],
+        "analysis_outputs": [
+          "personalized action plan",
+          "dashboard-style result presentation",
+          "longitudinal retesting loop",
+          "clinician or care-team review boundary"
+        ]
+      },
+      "internal_scoring_use": [
+        "Require at least 100 supported biomarker definitions.",
+        "Require the sample fixture to exercise at least 100 measured markers.",
+        "Require health-system domains, derived metrics, action depth, and multi-date trend readiness."
+      ]
+    },
+    {
+      "id": "whoop_api",
+      "url": "https://developer.whoop.com/api/",
+      "recovery_docs_url": "https://developer.whoop.com/docs/developing/user-data/recovery",
+      "reference_area": "wearables",
+      "extracted_claims": {
+        "api_objects": [
+          "cycle",
+          "recovery",
+          "sleep",
+          "workout"
+        ],
+        "recovery_signals": [
+          "recovery score",
+          "HRV RMSSD",
+          "resting heart rate",
+          "SpO2",
+          "skin temperature"
+        ],
+        "sleep_signals": [
+          "sleep performance",
+          "sleep efficiency",
+          "light sleep",
+          "slow-wave sleep",
+          "REM sleep",
+          "respiratory rate"
+        ],
+        "cycle_and_workout_signals": [
+          "strain",
+          "average heart rate",
+          "max heart rate",
+          "heart-rate zone durations",
+          "workout count"
+        ]
+      },
+      "internal_scoring_use": [
+        "Require a broad enough wearable signal catalog to cover recovery, sleep, cycle, workout, and behavior-context data.",
+        "Require JSON parsing from WHOOP-style exports rather than only manual CSV summaries.",
+        "Score authenticated sync separately from upload parsing so OAuth absence is visible without blocking fixture analysis."
+      ]
+    }
+  ]
+}
