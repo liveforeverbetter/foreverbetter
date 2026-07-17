@@ -792,22 +792,22 @@ test('serves readiness and agent discovery metadata', async () => {
   const ready = await get('/ready');
   assert.equal(ready.ok, true);
   assert.equal(ready.service, 'foreverbetter-api');
-  assert.equal(ready.version, '0.5.1');
+  assert.equal(ready.version, '0.5.2');
   assert.deepEqual(Object.keys(ready).sort(), ['ok', 'service', 'version']);
 
   const version = await get('/version');
-  assert.deepEqual(version, { service: 'foreverbetter-api', version: '0.5.1' });
+  assert.deepEqual(version, { service: 'foreverbetter-api', version: '0.5.2' });
 
   const readyDetails = await get('/ready/details');
   assert.equal(readyDetails.service, 'foreverbetter-api');
-  assert.equal(readyDetails.version, '0.5.1');
+  assert.equal(readyDetails.version, '0.5.2');
   assert.equal(readyDetails.storage.checks.store, 'memory');
   assert.ok(readyDetails.enabled_endpoints.includes('imports.file'));
 
   const manifest = await get('/.well-known/health-agent.json');
   assert.equal(manifest.name, 'ForeverBetter API');
   assert.equal(manifest.service, 'foreverbetter-api');
-  assert.equal(manifest.version, '0.5.1');
+  assert.equal(manifest.version, '0.5.2');
   assert.ok(manifest.auth.token_requirements.endpoint_claims.includes('enabled_endpoints'));
   assert.equal(manifest.auth.token_requirements.full_user_data_reads_by_default, true);
   assert.ok(manifest.auth.token_requirements.default_user_data_read_endpoints.includes('sources.read'));
@@ -824,7 +824,7 @@ test('serves readiness and agent discovery metadata', async () => {
   const openApi = await get('/openapi.json');
   assert.equal(openApi.openapi, '3.1.0');
   assert.equal(openApi.info.title, 'ForeverBetter API');
-  assert.equal(openApi.info.version, '0.5.1');
+  assert.equal(openApi.info.version, '0.5.2');
   assert.ok(openApi.paths['/mcp']);
   assert.ok(openApi.paths['/capabilities']);
   assert.ok(openApi.paths['/pricing']);
@@ -1826,6 +1826,42 @@ test('serves public design systems without auth', async () => {
   assert.ok(packageBody.files.some((file: any) => file.path === 'dashboard/styles.css' && file.sha256.length === 64));
   assert.ok(packageBody.components.some((component: any) => component.type === 'whoop_provider_card'));
   assert.ok(packageBody.binary_assets.some((asset: any) => asset.path === 'dashboard/assets/tablet-dashboard.png'));
+  assert.equal(packageBody.design_specification.format, 'design_system_handoff');
+  assert.equal(packageBody.design_specification.manifest.components.length, 50);
+  assert.ok(packageBody.design_specification.files.some((file: any) => file.path === 'design-system/components/bio/BiomarkerPanel.jsx'));
+  assert.ok(packageBody.design_specification.files.some((file: any) => file.path === 'design-system/components/bio/BiomarkerPanel.d.ts'));
+  assert.ok(packageBody.design_specification.manifest.components.every((component: any) =>
+    packageBody.design_specification.files.some((file: any) => file.path === `design-system/${component.sourcePath}`),
+  ));
+  assert.ok(packageBody.design_specification.manifest.templates.every((template: any) =>
+    packageBody.design_specification.files.some((file: any) => file.path === `design-system/${template.entryPath}`),
+  ));
+
+  const apertureImplementation = await fetch(`${baseUrl}/design/systems/aperture/implementation`);
+  assert.equal(apertureImplementation.status, 200);
+  const aperturePackage = await apertureImplementation.json();
+  assert.equal(aperturePackage.format, 'design_system_handoff');
+  assert.equal(aperturePackage.components.length, 20);
+  assert.ok(aperturePackage.files.some((file: any) => file.path === 'design-system/ui_kits/aperture-app/AppWearables.jsx'));
+  assert.ok(aperturePackage.templates.some((template: any) => template.entryPath === 'templates/health-dashboard/HealthDashboard.dc.html'));
+  assert.ok(aperturePackage.starting_points.every((startingPoint: any) =>
+    aperturePackage.files.some((file: any) => file.path === `design-system/${startingPoint.path}`),
+  ));
+
+  const apertureStylesheet = await fetch(`${baseUrl}/design-system-specs/aperture/styles.css`);
+  assert.equal(apertureStylesheet.status, 200);
+  assert.match(apertureStylesheet.headers.get('content-type') ?? '', /^text\/css/);
+  assert.match(apertureStylesheet.headers.get('cache-control') ?? '', /public/);
+  assert.match(await apertureStylesheet.text(), /@import/);
+
+  const meridianStylesheet = await fetch(`${baseUrl}/design-system-specs/meridian/styles.css`, { method: 'HEAD' });
+  assert.equal(meridianStylesheet.status, 200);
+  assert.match(meridianStylesheet.headers.get('content-type') ?? '', /^text\/css/);
+
+  const missingImplementation = await fetch(`${baseUrl}/design/systems/nope/implementation`);
+  assert.equal(missingImplementation.status, 404);
+  const traversal = await fetch(`${baseUrl}/design-system-specs/aperture/..%2FSKILL.md`);
+  assert.equal(traversal.status, 404);
 
   const missing = await fetch(`${baseUrl}/design/systems/nope`);
   assert.equal(missing.status, 404);

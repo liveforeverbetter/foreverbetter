@@ -356,7 +356,7 @@ export const ENDPOINTS: EndpointDefinition[] = [
     category: 'design_systems',
     scopes: ['health:data:read'],
     mcpTool: 'get_design_implementation',
-    description: 'Get the exact production Meridian dashboard HTML, CSS, JavaScript, binary asset URLs, component map, and API bindings so an agent can build the corresponding app.',
+    description: 'Get the complete Aperture or Meridian design-system handoff (components, tokens, templates, UI kits, manifest, and binary asset URLs). Meridian also includes its production dashboard bindings.',
   },
   {
     id: 'dashboard_specs.read',

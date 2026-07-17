@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.5.2] - 2026-07-17
+
+- Publish complete Aperture and Meridian design-system handoffs through
+  `GET /design/systems/{id}/implementation`, including source components,
+  tokens, templates, UI-kit starting points, manifests, checksums, and included
+  binary-asset URLs.
+- Serve each supplied handoff source file under
+  `GET /design-system-specs/{id}/...`, while deliberately excluding the bundles'
+  `uploads/` reference material.
+- Keep the Meridian production dashboard package available alongside its full
+  handoff, and document the MCP and OpenAPI contract for both systems.
+
 ## [0.5.1] - 2026-07-17
 
 - Refocus the dashboard sign-in illustration on ForeverBetter's three public

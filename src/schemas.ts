@@ -17,7 +17,7 @@ const INFRA_OPERATION_DESCRIPTIONS: Record<string, string> = {
   'GET /openapi.json': 'This OpenAPI 3.1 specification, generated from the same schema source the service validates requests against.',
   'GET /design/systems': 'List curated design-token sets for health & wellness UIs, inspired by well-known apps. Public reference data - no auth required.',
   'GET /design/systems/{}': 'Get a design system\'s full tokens (color, typography, spacing, radii, elevation, motion, components) plus a ready-to-paste DESIGN.md. Public reference data.',
-  'GET /design/systems/{}/implementation': 'Get the exact production Meridian dashboard files, assets, component map, and API bindings. An agent can write these files unchanged to reproduce the hosted dashboard.',
+  'GET /design/systems/{}/implementation': 'Get a full public design-system handoff: component source, declarations, prompts, tokens, templates, UI kits, manifest, and binary asset URLs. Meridian also includes its existing production dashboard package and bindings.',
   'POST /auth/otp/start': 'Send an 8-digit email sign-in code so a person can authorize an agent without a password.',
   'POST /auth/otp/verify': 'Verify an emailed one-time code and return an access token scoped to that user.',
   'POST /sandbox/sessions': 'Create a short-lived, synthetic-only sandbox session and return a complete multimodal demo result without persisting data.',
@@ -156,7 +156,7 @@ export const toolInputSchemas: Record<string, JsonSchema> = {
     type: 'object',
     additionalProperties: false,
     properties: {
-      design_id: { type: 'string', enum: ['meridian'], default: 'meridian', description: 'The production design implementation to retrieve. Returns exact HTML, CSS, JavaScript, asset URLs, component selectors, and API bindings.' },
+      design_id: { type: 'string', enum: ['aperture', 'meridian'], default: 'meridian', description: 'The full public design-system handoff to retrieve. Returns exact source files, tokens, components, templates, UI kits, binary asset URLs, and (for Meridian) production dashboard bindings.' },
     },
   },
   get_health_context: {
@@ -335,7 +335,7 @@ export function openApiDocument(baseUrl = 'http://localhost:8787', x402?: X402Pu
       '/billing/stripe/webhook': { post: operationWithBody('Receive verified Stripe subscription webhook', { type: 'object', additionalProperties: true }, false) },
       '/design/systems': { get: simpleOperation('List design systems for health UIs', false) },
       '/design/systems/{id}': { get: simpleOperation('Get a design system with tokens + DESIGN.md', false) },
-      '/design/systems/{id}/implementation': { get: simpleOperation('Get exact production design files and component bindings for an agent-built app', false) },
+      '/design/systems/{id}/implementation': { get: simpleOperation('Get the complete public design-system handoff and implementation bindings for an agent-built app', false) },
       '/auth/otp/start': { post: operationWithBody('Start email OTP', authOtpStartSchema(), false) },
       '/auth/otp/verify': { post: operationWithBody('Verify email OTP', authOtpVerifySchema(), false) },
       '/agent-login/start': { post: operationWithBody('Start explicit browser approval for a named agent', { type: 'object', additionalProperties: false, properties: { agent_name: { type: 'string', maxLength: 80 } } }, false) },

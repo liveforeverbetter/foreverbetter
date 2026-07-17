@@ -59,29 +59,33 @@ structure as well as palette. `hero`, `sections`, and `voice` give the order
 and tone, so a client can reproduce the intended information hierarchy instead
 of applying a palette-only theme.
 
-## Reproduce the Meridian dashboard exactly
+## Retrieve the full Aperture or Meridian handoff
 
-Tokens help an agent design a new UI. If it needs to build the exact production
-Meridian dashboard, use the implementation package instead. Meridian is a
-**WHOOP-inspired wearable-performance dashboard**: recovery, strain, sleep,
-and connected-data readiness lead the experience. It is an independent
-ForeverBetter implementation, not affiliated with or endorsed by WHOOP.
+Tokens help an agent design a new UI. If it needs the supplied source material,
+use an implementation package. Both handoffs include component source, design
+tokens, templates, UI-kit starting points, a component/template manifest,
+checksums, and URLs for included binary assets.
 
 ```bash
+curl -s "$FB_API/design/systems/aperture/implementation" > aperture-handoff.json
 curl -s "$FB_API/design/systems/meridian/implementation" > meridian-dashboard.json
 ```
 
-The response contains the complete, production `dashboard/index.html`,
-`dashboard/styles.css`, and `dashboard/app.js` file contents; checksums; binary
-asset URLs; component selectors; and the ForeverBetter API bindings the files
-expect. Write the files at the supplied paths and download the binary assets to
-their listed paths. The entry point is `dashboard/index.html` and is intended to
-be served at `/dashboard` on the same API origin.
+Each text file is returned inline with a checksum and a public source URL under
+`/design-system-specs/{id}/...`; write it at the supplied path. Download binary
+assets from their listed URLs. UI-kit health values are illustrative, not user
+records: bind a rendered product to the user's authorized ForeverBetter data or
+show the supplied connection and empty states.
 
-This is deliberately a file package rather than generated JSX: it gives an agent
-the exact working implementation while keeping live health values and OAuth
-flows in the existing API contract. Over MCP, call `get_design_implementation`
-with `{ "design_id": "meridian" }`.
+Meridian is a **WHOOP-inspired wearable-performance dashboard**: recovery,
+strain, sleep, and connected-data readiness lead the experience. It is an
+independent ForeverBetter implementation, not affiliated with or endorsed by
+WHOOP. Its response also contains the pinned production `dashboard/index.html`,
+`dashboard/styles.css`, and `dashboard/app.js` package plus the API bindings it
+expects. The entry point is `dashboard/index.html` and is intended to be served
+at `/dashboard` on the same API origin. Over MCP, call
+`get_design_implementation` with `{ "design_id": "aperture" }` or
+`{ "design_id": "meridian" }`.
 
 Every visual system carries the same full dashboard contract. Alongside tokens
 and components it exposes `metrics`, `modality_sections`, `responsive`,
@@ -90,15 +94,13 @@ voice, and section order still change by system, but no visual system drops a
 modality or the action plan. These fields let an agent or custom dashboard
 builder reproduce the information architecture without copying reference HTML.
 
-`aperture` encodes the user-provided Aperture Design System handoff for clients
-that want a calm, consumer-health interface. Query it with
-`GET /design/systems/aperture` to receive the teal-led tokens, Fustat and Geist
-Mono type roles, five health-pillar colors, components, layout, source-aware
-metric rules, responsive behavior, action-plan voice, and motion guidance. It
-is a design contract, not the ForeverBetter hosted dashboard implementation:
+`aperture` is a calm, consumer-health interface with teal-led tokens, Fustat
+and Geist Mono type roles, five health-pillar colors, source-aware metric rules,
+responsive behavior, action-plan voice, and motion guidance. Retrieve its full
+handoff when an agent needs the supplied component source and templates:
 
 ```bash
-curl -s "$FB_API/design/systems/aperture" | jq .
+curl -s "$FB_API/design/systems/aperture/implementation" | jq .
 ```
 
 Its `aperture_energy_score` is deliberately conditional: render it only when a
@@ -116,8 +118,8 @@ derived scores and keeps a generated UI from inventing health values.
 
 ## How these are sourced
 
-The token values are our own encoding, built with open Google Fonts and system
-font stacks. No proprietary fonts, screenshots, or third-party design datasets
-are used. `aperture` encodes its user-provided handoff as tokens, layout, data
-contracts, and motion guidance, without shipping prototype HTML, runtimes,
-fonts, or uploaded images. Treat systems as a starting point and make them yours.
+The API exposes the supplied Aperture and Meridian handoff source: tokens,
+components, templates, UI-kit prototypes, manifests, and included assets. It
+deliberately excludes each bundle's `uploads/` reference material. Treat the
+systems as a starting point and bind the layouts to live, scoped API data rather
+than treating the illustrative UI-kit values as health records.
