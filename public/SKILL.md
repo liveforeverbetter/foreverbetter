@@ -48,6 +48,12 @@ Treat this as an execution workflow, not a page to summarize.
 - Ask before a paid request, destructive deletion, external share, or public upload.
   Normal authenticated reads, analysis, and private artifact creation need no extra
   confirmation once the user has chosen the workflow.
+- Before re-running any analysis, uploading any file, or queuing any job, check what
+  already exists: list sources (`GET /sources`), list analyses (`GET /analyses`), and
+  check running genetics jobs (`GET /genetics/jobs/:id` from any queued interpretation).
+  Reuse completed work whenever it is still fresh. A user whose data is already uploaded
+  should never see a duplicate upload, a redundant WGS job, or an identical re-analysis.
+  "I already uploaded this" means reuse the existing source IDs, do not re-upload.
 - Finish by delivering the requested artifact or result, its coverage and provenance,
   and one optional next step. A setup checklist alone is not a completed run.
 
@@ -109,10 +115,16 @@ stuck, read `docs_url` and the full docs before retrying.
    or x402 per-call payment; self-hosted uses the operator's configured auth and does
    not require hosted billing.
 3. **Discover** what this deployment can connect: `GET /capabilities`.
-4. **Ask the outcome** the user wants, and which data they already have ready.
-5. **Run the matching use-case playbook** end to end, connecting only the data that
+4. **Check existing state** before uploading or re-running anything. Call
+   `GET /sources` and `GET /analyses` to see what is already uploaded, what analyses
+   have completed, and what jobs are already queued. Skip re-upload when a source
+   already exists with `upload_status: "complete"`. Skip new analyses when a fresh
+   completed analysis already covers the user's chosen outcome. If a WGS genetics job
+   is already running for a source, wait for it rather than queuing a duplicate.
+5. **Ask the outcome** the user wants, and which data they already have ready.
+6. **Run the matching use-case playbook** end to end, connecting only the data that
    playbook needs, one modality at a time.
-6. **Deliver** the result, then offer the natural next use case.
+7. **Deliver** the result, then offer the natural next use case.
 
 Keep the first result fast. Connect the minimum a playbook needs, show value, and
 add modalities afterward. Wearables come last in any flow because provider
@@ -237,6 +249,10 @@ exist as MCP tools when connected over MCP.
 
 **Optimize everything (full multimodal review)** (`/use-cases/ai-health-agent`, `/use-cases/action-protocol`)
 For "here's all my data, optimize me" or "make sense of my bloodwork and wearables."
+
+**Pre-flight:** `GET /sources` and `GET /analyses` first. Reuse existing source IDs
+and completed analyses; never re-queue a WGS job that is already running.
+
 1. Connect every modality the user has ready, one at a time (see "Connecting data").
 2. `POST /analyses` over all of their source IDs for one multimodal analysis.
 3. `POST /users/{id}/health-context` for the consolidated picture: coverage per
@@ -250,8 +266,20 @@ For "here's all my data, optimize me" or "make sense of my bloodwork and wearabl
 
 First value: a custom dashboard from the smallest useful source.
 
-1. `POST /imports/file` (or the genetics upload flow) for the first ready source.
-2. `POST /analyses` with that source's IDs and an optional `profile`.
+**Pre-flight (do first):** `GET /sources` and `GET /analyses` to inventory what is
+already uploaded and analyzed. If the user says "I already uploaded this," reuse
+existing source IDs. If a recent analysis already covers the needed modalities, use
+it directly (skip to step 3) rather than re-running. When including a genetics source
+in a multimodal `POST /analyses`, check first whether that source already has a
+completed genetics analysis or a running WGS job; if it does, use the existing
+analysis or wait for the running job. Never include a raw VCF source in `POST
+/analyses` if `POST /genetics/analyze` was already called separately for it; the
+multimodal analysis will re-queue the WGS worker redundantly.
+
+1. `POST /imports/file` (or the genetics upload flow) for the first ready source,
+   only if that source is not already present.
+2. `POST /analyses` with that source's IDs and an optional `profile`, only if no
+   existing analysis covers the needed modalities.
 3. `GET /dashboard-specs/{analysis_id}` for the render-ready spec (cards, values,
    targets, sections, coverage, freshness, provenance).
 4. `GET /analyses/{id}/recommendations` for tiered core, optimize, and maintain items.
@@ -267,6 +295,10 @@ First value: a custom dashboard from the smallest useful source.
    expiring, unguessable link. Give the `dashboard_url` to the user.
 
 **Personal action protocol** (`/use-cases/action-protocol`)
+
+**Pre-flight:** `GET /sources` and `GET /analyses` first. Reuse existing source IDs
+and analyses.
+
 1. `POST /imports/file` (category `biomarkers`) for labs, and `POST /imports/file`
    (category `behavioral`) for the user's current supplements and medications.
 2. `POST /analyses` (or `POST /biomarkers/analyze`) over both source IDs, with a
@@ -350,6 +382,16 @@ the genetics `source.id`, wait for `upload_status: "complete"`, then call
 `POST /genetics/analyze` or `POST /genetics/ancestry`. For small text exports only, use
 `/imports/file` with category `genetics`. Genetics and biomarker source IDs are separate;
 pass both in `source_ids` only for a multimodal analysis.
+
+**Gating rule: do not re-queue genetics work.** Before calling `POST /genetics/analyze`
+or including a genetics source ID in `POST /analyses`, always check `GET /analyses`
+first. If that source already has a genetics-only analysis or if a WGS job is running for
+it (`genetics.jobs.read`), do not submit it again. Including a raw VCF source in a
+multimodal `POST /analyses` automatically re-queues the WGS worker, which is redundant
+when a prior genetics analysis already completed. Instead, use the existing genetics
+analysis results, or wait for the running job and re-read the analysis afterward. Only
+submit a new genetics analysis when the source has never been analyzed or the user
+explicitly requests a re-analysis with different parameters (e.g. `annotation_depth`).
 
 The hosted capability registry reports full dbSNP as available only when the operator
 has enabled the provisioned GRCh37 worker reference. The default is the compact
