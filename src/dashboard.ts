@@ -4,13 +4,18 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import { securityHeaders, type AuthConfig } from './auth.js';
 
 const DASHBOARD_ROOT = join(process.cwd(), 'public', 'dashboard');
+const DESIGN_SYSTEM_SPECS_ROOT = join(process.cwd(), 'public', 'design-system-specs');
 const PUBLIC_SKILL_PATH = join(process.cwd(), 'public', 'SKILL.md');
 const CONTENT_TYPES: Record<string, string> = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.js': 'application/javascript; charset=utf-8',
+  '.jsx': 'application/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.ts': 'text/plain; charset=utf-8',
   '.svg': 'image/svg+xml; charset=utf-8',
   '.png': 'image/png',
+  '.ttf': 'font/ttf',
   '.md': 'text/markdown; charset=utf-8',
 };
 
@@ -43,11 +48,15 @@ export async function serveDashboardAsset(req: IncomingMessage, res: ServerRespo
 function assetPathFor(pathname: string): string | undefined {
   if (pathname === '/SKILL.md') return PUBLIC_SKILL_PATH;
   if (pathname === '/dashboard' || pathname === '/dashboard/') return join(DASHBOARD_ROOT, 'index.html');
-  if (!pathname.startsWith('/dashboard/')) return undefined;
-  const relative = pathname.slice('/dashboard/'.length);
+  if (pathname.startsWith('/dashboard/')) return publicAssetPath(DASHBOARD_ROOT, pathname.slice('/dashboard/'.length));
+  if (pathname.startsWith('/design-system-specs/')) return publicAssetPath(DESIGN_SYSTEM_SPECS_ROOT, pathname.slice('/design-system-specs/'.length));
+  return undefined;
+}
+
+function publicAssetPath(root: string, relative: string): string | undefined {
   if (!relative || relative.includes('\0')) return undefined;
-  const candidate = normalize(join(DASHBOARD_ROOT, relative));
-  return candidate.startsWith(DASHBOARD_ROOT) ? candidate : undefined;
+  const candidate = normalize(join(root, relative));
+  return candidate.startsWith(`${root}/`) ? candidate : undefined;
 }
 
 function extension(pathname: string): string {

@@ -242,10 +242,11 @@ Start with [Connect your agent](https://foreverbetter.mintlify.app/connect-your-
 
 ```bash
 curl -s "$FB_API/design/systems/aperture" | jq .
-curl -s "$FB_API/design/systems/meridian/implementation" > meridian-dashboard.json
+curl -s "$FB_API/design/systems/aperture/implementation" > aperture-handoff.json
+curl -s "$FB_API/design/systems/meridian/implementation" > meridian-handoff.json
 ```
 
-The Meridian implementation endpoint returns production HTML, CSS, JavaScript, assets, and API bindings. ForeverBetter and Aperture return reusable colors, type, spacing, layouts, and required data fields, so a client can build a distinct UI without losing source details or action-plan content.
+The Aperture and Meridian implementation endpoints return complete design-system handoffs: source components, tokens, templates, UI-kit starting points, manifests, checksums, and URLs for included binary assets. Every source file is also available at `/design-system-specs/{id}/...`. Meridian additionally includes its pinned production dashboard package and API bindings. UI-kit health values are illustrative; a client must bind them to the user's scoped ForeverBetter data or render the supplied connection state.
 
 ## API structure
 
@@ -259,7 +260,7 @@ The source of truth is [`src/endpoints.ts`](src/endpoints.ts), which defines 48 
 | Connect | Wearable start, callback, status, WHOOP/Oura sync and refresh, provider webhooks |
 | Analyze | Biomarker, wearable, genetics, ancestry, multimodal analysis, rerun, and job status |
 | Act | Recommendations, action plans, goals, trends, and retest reminders |
-| Render | Dashboard specs, private snapshot links, design systems, and the Meridian implementation contract |
+| Render | Dashboard specs, private snapshot links, and full Aperture/Meridian design-system handoffs |
 | Query | Unified health context, grounded query, REST, and MCP |
 | Govern | Export, deletion, webhook events, API keys, billing status, and admin readiness |
 

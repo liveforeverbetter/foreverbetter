@@ -250,7 +250,7 @@ async function callTool(method: string, params: Record<string, unknown>, store: 
     requireScope(auth, 'health:data:read');
     const designId = typeof params.design_id === 'string' ? params.design_id.trim() : 'meridian';
     const implementation = await getDesignImplementation(designId, baseUrl);
-    if (!implementation) throw new Error('Design implementation not found. Use design_id "meridian".');
+    if (!implementation) throw new Error('Design implementation not found. Use design_id "aperture" or "meridian".');
     return implementation;
   }
 
