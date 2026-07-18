@@ -61,7 +61,7 @@ check("API root sends developers to the docs", async () => {
 
 check("consumer dashboard is reachable", async () => {
   const text = await fetchText(`${baseUrl}/dashboard`);
-  if (!text.includes("Set up through your agent")) throw new Error("dashboard did not include agent-first onboarding");
+  if (!text.includes("Set up with your agent")) throw new Error("dashboard did not include agent-first onboarding");
   if (!text.includes("ForeverBetter Connect")) throw new Error("dashboard did not describe the ForeverBetter Connect app");
   if (text.includes('id="page-health-connect"') || text.includes('data-route="health-connect"')) {
     throw new Error("dashboard still exposes the confusing Health Connect page");
