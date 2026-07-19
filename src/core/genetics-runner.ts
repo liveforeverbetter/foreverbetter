@@ -5,6 +5,7 @@ import * as path from 'node:path';
 import type { GeneticAnalysisJobStage, GeneticsAnnotationDepth, RawSourceReference } from '../types.js';
 import { normalizeGeneticsDashboard, type ConsumerGeneticsSection } from './genetic-insights.js';
 import { scoreBundledPositionAwarePgs } from './pgs-position-scorer.js';
+import type { PgsPopulationSimilarity } from './pgs-calibration.js';
 
 export interface GeneticsPipelineResult {
   status: 'complete' | 'setup_required' | 'failed';
@@ -53,6 +54,8 @@ export interface GeneticsPipelineOptions {
    * the tail on demand. When omitted, behaviour is unchanged.
    */
   saveFullArtifact?: (body: Buffer) => Promise<FullAnalysisArtifactRef | undefined>;
+  /** Produced by the dedicated pgsc_calc PRS process; never inferred from the 91-marker ancestry endpoint. */
+  pgsPopulationSimilarity?: PgsPopulationSimilarity;
 }
 
 const DEFAULT_TIMEOUT_MS = 120_000;
@@ -140,10 +143,16 @@ export async function runGeneticsPipelineWithWriter(
     if (await exists(path.join(registryDir, 'manifest.json'))) {
       await options.onProgress?.({ stage: 'polygenic_scoring', progress_pct: 89, progress_message: 'Matching position- and allele-aware consumer performance scores.' });
       try {
+        const calibrationRegistryPath = env.HEALTH_ANALYSIS_PGS_CALIBRATION_PATH
+          ?? path.join(registryDir, 'calibration.json');
         const positionScores = await scoreBundledPositionAwarePgs(
           inputPath,
           env.HEALTH_ANALYSIS_DBSNP_GRCH37_PATH,
           registryDir,
+          {
+            ...(await exists(calibrationRegistryPath) ? { calibrationRegistryPath } : {}),
+            populationSimilarity: options.pgsPopulationSimilarity,
+          },
         );
         const metadata = isRecord(dashboard.metadata) ? dashboard.metadata : {};
         const existingScores = Array.isArray(metadata.prs_scores) ? metadata.prs_scores : [];
@@ -158,7 +167,9 @@ export async function runGeneticsPipelineWithWriter(
           errors: positionScores.errors,
           matching_method: 'normalized_grch37_position_and_alleles',
           reference_inference_policy: 'dbsnp_reference_plus_variant_only_wgs_assumption',
-          percentile_policy: 'withheld_without_compatible_reference_distribution',
+          calibration_registry: await exists(calibrationRegistryPath) ? calibrationRegistryPath : null,
+          population_similarity: options.pgsPopulationSimilarity ?? null,
+          percentile_policy: 'empirical_MostSimilarPop_only_when_panel_model_build_coverage_and_population_assignment_match',
         };
         dashboard.metadata = metadata;
       } catch (pgsError) {

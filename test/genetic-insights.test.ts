@@ -46,6 +46,11 @@ test('preserves a reference-relative percentile only with a named reference pane
           method: 'pgsc_calc Z_MostSimilarPop',
           reference_panel: 'HGDP+1kGP',
           reference_release: 'v1',
+          population: 'EUR',
+          population_sample_size: 525,
+          population_assignment_method: 'pgsc_calc_random_forest',
+          z_score: 1.34,
+          direction_interpretation: 'higher_liability',
         },
       }],
     },
@@ -56,6 +61,9 @@ test('preserves a reference-relative percentile only with a named reference pane
   assert.equal(section.insights[0].calculation_state, 'reference_relative');
   assert.equal(section.insights[0].percentile, 91);
   assert.equal(section.insights[0].calibration?.reference_panel, 'HGDP+1kGP');
+  assert.equal(section.insights[0].calibration?.population, 'EUR');
+  assert.equal(section.insights[0].calibration?.population_sample_size, 525);
+  assert.equal(section.insights[0].calibration?.z_score, 1.34);
 });
 
 test('marks low-coverage scores uninterpretable even if the legacy payload has a percentile', () => {

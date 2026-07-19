@@ -84,6 +84,30 @@ services:
       api:
         condition: service_healthy
 
+  # Opt-in, one-shot PRS reference process. It consumes score rows produced on
+  # dedicated HGDP+1kGP compute and writes a de-identified calibration artifact.
+  # It never starts with the normal API/WGS stack.
+  prs-reference-builder:
+    profiles: ["prs"]
+    image: ${IMAGE:-ghcr.io/liveforeverbetter/foreverbetter}:${IMAGE_TAG:-latest}
+    build: .
+    restart: "no"
+    env_file: .env
+    environment:
+      PROCESS: worker:prs-reference
+      PRS_REFERENCE_SCORE_ROWS_PATH: /data/prs/reference-scores.tsv.gz
+      PRS_CALIBRATION_OUTPUT_PATH: /data/prs/calibration.json
+      PRS_SCORE_MANIFEST_PATH: /app/data/genetics/pgs/manifest.json
+      # The worker validates these when the opt-in profile is actually run.
+      # Keep normal `docker compose config` and API startup independent of PRS.
+      PRS_CALIBRATION_RELEASE: ${PRS_CALIBRATION_RELEASE:-}
+      PRS_REFERENCE_PANEL_SHA256: ${PRS_REFERENCE_PANEL_SHA256:-}
+      PRS_REFERENCE_UNRELATED_SAMPLES: ${PRS_REFERENCE_UNRELATED_SAMPLES:-}
+      PRS_REFERENCE_GENERATOR_VERSION: ${PRS_REFERENCE_GENERATOR_VERSION:-}
+      PRS_REFERENCE_GENERATOR_COMMAND: ${PRS_REFERENCE_GENERATOR_COMMAND:-}
+    volumes:
+      - ${PRS_REFERENCE_WORKDIR:-./.prs-reference}:/data/prs
+
   # Optional S3-compatible object storage. Enable with `--profile s3` and set
   # STORAGE_DRIVER=s3 plus the S3_* vars in .env.
   minio:

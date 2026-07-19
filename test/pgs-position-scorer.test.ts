@@ -114,8 +114,12 @@ test('every bundled PGS score is SHA-256 pinned, parses, and is coordinate-scora
 
   for (const score of manifest.scores) {
     const filePath = path.join(dir, score.scoring_file);
-    const sha = createHash('sha256').update(readFileSync(filePath)).digest('hex');
+    const body = readFileSync(filePath);
+    const text = body.toString('utf8');
+    const sha = createHash('sha256').update(body).digest('hex');
     assert.equal(sha, score.sha256, `${score.pgs_id} SHA-256 must match the manifest (integrity)`);
+    assert.equal(text.match(/^#weight_type=(.*)$/m)?.[1], score.weight_type, `${score.pgs_id} weight type must match the pinned file header`);
+    assert.equal(Number(text.match(/^#variants_number=(.*)$/m)?.[1]), score.variants, `${score.pgs_id} variant count must match the pinned file header`);
 
     const rows = await parsePgsScoringFile(filePath);
     assert.ok(rows.length > 0, `${score.pgs_id} must parse at least one weight`);

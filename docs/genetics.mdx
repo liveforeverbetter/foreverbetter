@@ -162,6 +162,54 @@ loci, allele mismatches, and missing/uncallable loci separately. This is useful
 for a raw model score, but it is not equivalent to all-sites callability and is
 one reason calibration remains withheld.
 
+### HGDP + 1000 Genomes reference calibration
+
+Reference-relative results use the PGS Catalog recommended
+`pgsc_HGDP+1kGP_v1` panel. A result is upgraded from `raw_score_only` to
+`reference_relative` only when all of these gates pass:
+
+- the scoring-file SHA-256, GRCh37 build, scoring algorithm, and weighted
+  variant count exactly match the calibration artifact;
+- at least 95% of the model variants pass the uploaded-genome matching QC;
+- `pgsc_calc` returns a non-low-confidence `MostSimilarPop` assignment from the
+  same reference-panel release;
+- that super-population has at least 100 unrelated reference samples and a
+  valid score distribution.
+
+The API returns the empirical `percentile_MostSimilarPop`, population-relative
+z-score, population label, sample count, assignment method, panel release, and
+direction status. “Most similar population” is a statistical PCA/classifier
+assignment, not identity, ethnicity, nationality, or culture. Population
+normalization does not make a score equally predictive across ancestries and
+does not convert it to absolute disease risk.
+
+Direction is a separate evidence gate. A percentile can describe where the
+model score sits while the trait direction remains withheld. Only models whose
+pinned source semantics establish `higher_trait_value` or `higher_liability`
+receive higher/lower trait language; an `NR` weight type is never guessed.
+
+Build the compact, de-identified calibration registry from the dedicated
+reference-scoring output with:
+
+```bash
+npm run prs:calibration:build -- \
+  --scores /data/prs/reference-scores.tsv.gz \
+  --release 2026-07-19.1 \
+  --reference-sha256 <sha256-of-pgsc_HGDP+1kGP_v1.tar.zst> \
+  --unrelated-samples <count> \
+  --generator-version <pinned-generator-version>
+```
+
+The input rows must have been calculated with
+`foreverbetter.position_allele.grch37.v1`; mixing the official calculator's
+`SUM` with a different matched-variant set is rejected. The generated artifact
+contains sorted score distributions only and strips all reference sample IDs.
+Configure `HEALTH_ANALYSIS_PGS_CALIBRATION_PATH` when the artifact is stored
+outside `data/genetics/pgs/calibration.json`. Until the artifact and a
+compatible population-similarity result are present, the valid raw score is
+returned with the precise calibration-unavailable reason and reanalysis stays
+recommended.
+
 ### Query fallback and reanalysis
 
 The WGS worker uses `bcftools` first. If the final annotated VCF is readable but

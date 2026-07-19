@@ -21,3 +21,4 @@ content/out/
 
 # skill-creator eval workspace (local only)
 .skill-workspace/
+.prs-reference/
