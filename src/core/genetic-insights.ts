@@ -7,7 +7,7 @@
  * health and optimization insights from the completed WGS dashboard.
  */
 
-export const GENETIC_INTERPRETATION_RELEASE = '2026-07-19.1';
+export const GENETIC_INTERPRETATION_RELEASE = '2026-07-19.2';
 
 export type GeneticCalculationState =
   | 'calibrated_absolute_risk'
@@ -55,6 +55,11 @@ export interface GeneticConsumerInsight {
     method: string;
     reference_panel?: string;
     reference_release?: string;
+    population?: string;
+    population_sample_size?: number;
+    population_assignment_method?: string;
+    z_score?: number;
+    direction_interpretation?: string;
   };
   source?: {
     id?: string;
@@ -337,6 +342,11 @@ function explicitCalibration(score: Record<string, unknown>): {
       method,
       reference_panel: referencePanel,
       reference_release: stringValue(calibration?.reference_release) ?? stringValue(calibration?.referenceRelease),
+      population: stringValue(calibration?.population),
+      population_sample_size: numberValue(calibration?.population_sample_size),
+      population_assignment_method: stringValue(calibration?.population_assignment_method),
+      z_score: numberValue(calibration?.z_score),
+      direction_interpretation: stringValue(calibration?.direction_interpretation),
     },
   };
 }

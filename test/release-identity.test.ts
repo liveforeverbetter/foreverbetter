@@ -20,7 +20,9 @@ test('package, container workflow, and Compose defaults share one release identi
   assert.match(publishWorkflow, /IMAGE_NAME: \$\{\{ github\.repository \}\}/);
   assert.match(publishWorkflow, /images: \$\{\{ env\.REGISTRY \}\}\/\$\{\{ env\.IMAGE_NAME \}\}/);
   assert.doesNotMatch(publishWorkflow, /foreverbetter-api/);
-  assert.equal((compose.match(/ghcr\.io\/liveforeverbetter\/foreverbetter/g) ?? []).length, 3);
+  // API, WGS worker, wearable worker, and opt-in PRS reference builder all use
+  // the exact same published image identity.
+  assert.equal((compose.match(/ghcr\.io\/liveforeverbetter\/foreverbetter/g) ?? []).length, 4);
   assert.match(selfHosting, /IMAGE=ghcr\.io\/liveforeverbetter\/foreverbetter/);
   assert.match(selfHosting, /IMAGE_TAG=1\.2\.3/);
 });

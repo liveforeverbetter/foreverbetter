@@ -5,6 +5,14 @@ import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import * as os from 'node:os';
 import * as path from 'node:path';
 import * as readline from 'node:readline';
+import {
+  calibratePgsScore,
+  loadPgsCalibrationRegistry,
+  type PgsCalibrationRegistry,
+  type PgsCalibrationResult,
+  type PgsDirectionInterpretation,
+  type PgsPopulationSimilarity,
+} from './pgs-calibration.js';
 
 export interface BundledPgsManifestEntry {
   pgs_id: string;
@@ -23,7 +31,7 @@ export interface BundledPgsManifestEntry {
   development_ancestry?: string;
   evaluation_ancestry?: string;
   calibration_state: 'raw_score_only';
-  direction_interpretation: 'withheld';
+  direction_interpretation: PgsDirectionInterpretation;
   license?: string;
   limitations: string[];
 }
@@ -48,13 +56,13 @@ export interface PositionGenotype {
 export interface PositionAwarePgsResult {
   disease: string;
   score: number;
-  riskLabel: 'Raw score only' | 'Insufficient coverage';
-  percentile: null;
+  riskLabel: string;
+  percentile: number | null;
   description: string;
   variantsScored: number;
   totalWeightedVariants: number;
   coveragePct: number;
-  confidence: 'low';
+  confidence: 'low' | 'medium';
   confidenceTier: 'prs';
   sourceType: 'pgs_catalog_score';
   sourceId: string;
@@ -64,9 +72,10 @@ export interface PositionAwarePgsResult {
   genomeBuild: string;
   ancestry: string;
   matchingMethod: 'position_allele';
-  calculationState: 'raw_score_only' | 'insufficient_coverage';
-  calibration: null;
-  reanalysisRecommended: true;
+  calculationState: 'reference_relative' | 'raw_score_only' | 'insufficient_coverage';
+  calibration: PgsCalibrationResult | null;
+  calibrationUnavailableReason?: string;
+  reanalysisRecommended: boolean;
   matchingQc: {
     observed_variant_calls: number;
     inferred_homozygous_reference: number;
@@ -83,7 +92,18 @@ interface PgsManifest {
   scores: BundledPgsManifestEntry[];
 }
 
-export async function scoreBundledPositionAwarePgs(inputVcf: string, dbsnpVcf: string, registryDir: string): Promise<{
+export interface PositionAwarePgsCalibrationOptions {
+  calibrationRegistryPath?: string;
+  calibrationRegistry?: PgsCalibrationRegistry;
+  populationSimilarity?: PgsPopulationSimilarity;
+}
+
+export async function scoreBundledPositionAwarePgs(
+  inputVcf: string,
+  dbsnpVcf: string,
+  registryDir: string,
+  calibrationOptions: PositionAwarePgsCalibrationOptions = {},
+): Promise<{
   registry_release: string;
   scores: PositionAwarePgsResult[];
   errors: Array<{ pgs_id: string; error: string }>;
@@ -102,6 +122,15 @@ export async function scoreBundledPositionAwarePgs(inputVcf: string, dbsnpVcf: s
   }
   if (loaded.length === 0) return { registry_release: manifest.release, scores: [], errors };
 
+  let calibrationRegistry = calibrationOptions.calibrationRegistry;
+  if (!calibrationRegistry && calibrationOptions.calibrationRegistryPath) {
+    try {
+      calibrationRegistry = await loadPgsCalibrationRegistry(calibrationOptions.calibrationRegistryPath);
+    } catch (error) {
+      errors.push({ pgs_id: 'calibration_registry', error: errorMessage(error) });
+    }
+  }
+
   const inputBuild = await detectVcfGenomeBuild(inputVcf);
   if (inputBuild !== 'GRCh37') {
     throw new Error(inputBuild === 'GRCh38'
@@ -116,7 +145,15 @@ export async function scoreBundledPositionAwarePgs(inputVcf: string, dbsnpVcf: s
       queryObservedGenotypes(inputVcf, requestedKeys),
       queryDbsnpReferenceAlleles(dbsnpVcf, requestedKeys, tempDir),
     ]);
-    const scores = loaded.map(({ definition, rows }) => scoreWeightRows(definition, manifest.release, rows, observed, references));
+    const scores = loaded.map(({ definition, rows }) => scoreWeightRows(
+      definition,
+      manifest.release,
+      rows,
+      observed,
+      references,
+      calibrationRegistry,
+      calibrationOptions.populationSimilarity,
+    ));
     return { registry_release: manifest.release, scores, errors };
   } finally {
     await rm(tempDir, { recursive: true, force: true });
@@ -129,6 +166,8 @@ export function scoreWeightRows(
   rows: PgsWeightRow[],
   observed: Map<string, PositionGenotype>,
   referenceAlleles: Map<string, string>,
+  calibrationRegistry?: PgsCalibrationRegistry,
+  populationSimilarity?: PgsPopulationSimilarity,
 ): PositionAwarePgsResult {
   let rawScore = 0;
   let observedCalls = 0;
@@ -168,19 +207,39 @@ export function scoreWeightRows(
 
   const matched = observedCalls + inferredReference - rejectedAlleles;
   const coveragePct = rows.length > 0 ? Math.round((matched / rows.length) * 10_000) / 100 : 0;
-  const calculationState = coveragePct >= 95 ? 'raw_score_only' : 'insufficient_coverage';
+  const roundedScore = Math.round(rawScore * 1_000_000) / 1_000_000;
+  const calibrationDecision = calibratePgsScore({
+    pgs_id: definition.pgs_id,
+    raw_score: roundedScore,
+    scoring_file_sha256: definition.sha256,
+    genome_build: definition.genome_build,
+    weighted_variant_count: rows.length,
+    coverage_pct: coveragePct,
+    direction_interpretation: definition.direction_interpretation,
+    registry: calibrationRegistry,
+    similarity: populationSimilarity,
+  });
+  const calculationState = coveragePct < 95
+    ? 'insufficient_coverage'
+    : calibrationDecision.calibrated ? 'reference_relative' : 'raw_score_only';
+  const calibration = calibrationDecision.calibrated ? calibrationDecision.result : null;
+  const percentile = calibration?.percentile ?? null;
   return {
     disease: definition.trait_id,
-    score: Math.round(rawScore * 1_000_000) / 1_000_000,
-    riskLabel: calculationState === 'raw_score_only' ? 'Raw score only' : 'Insufficient coverage',
-    percentile: null,
-    description: calculationState === 'raw_score_only'
-      ? 'The model was scored by normalized GRCh37 position and alleles. Direction and percentile are withheld because the source does not provide a compatible calibrated reference distribution.'
-      : `Only ${matched} of ${rows.length} model variants could be scored after position and allele quality control. No interpretation is returned.`,
+    score: roundedScore,
+    riskLabel: calculationState === 'reference_relative'
+      ? referenceRelativeLabel(percentile!, definition.direction_interpretation)
+      : calculationState === 'raw_score_only' ? 'Raw score only' : 'Insufficient coverage',
+    percentile,
+    description: calculationState === 'reference_relative'
+      ? referenceRelativeDescription(percentile!, calibration!, definition.direction_interpretation)
+      : calculationState === 'raw_score_only'
+        ? `The model was scored by normalized GRCh37 position and alleles. Percentile interpretation is withheld: ${calibrationDecision.calibrated ? 'unknown calibration error' : calibrationDecision.reason}`
+        : `Only ${matched} of ${rows.length} model variants could be scored after position and allele quality control. No interpretation is returned.`,
     variantsScored: matched,
     totalWeightedVariants: rows.length,
     coveragePct,
-    confidence: 'low',
+    confidence: calculationState === 'reference_relative' ? 'medium' : 'low',
     confidenceTier: 'prs',
     sourceType: 'pgs_catalog_score',
     sourceId: definition.pgs_id,
@@ -191,8 +250,9 @@ export function scoreWeightRows(
     ancestry: [definition.development_ancestry, definition.evaluation_ancestry].filter(Boolean).join(' | '),
     matchingMethod: 'position_allele',
     calculationState,
-    calibration: null,
-    reanalysisRecommended: true,
+    calibration,
+    ...(!calibrationDecision.calibrated ? { calibrationUnavailableReason: calibrationDecision.reason } : {}),
+    reanalysisRecommended: calculationState !== 'reference_relative',
     matchingQc: {
       observed_variant_calls: observedCalls,
       inferred_homozygous_reference: inferredReference,
@@ -209,10 +269,29 @@ export function scoreWeightRows(
       efo_id: definition.efo_id,
       genome_build: definition.genome_build,
       weight_type: definition.weight_type,
+      direction_interpretation: definition.direction_interpretation,
       license: definition.license,
       limitations: definition.limitations,
     }],
   };
+}
+
+function referenceRelativeLabel(percentile: number, direction: PgsDirectionInterpretation): string {
+  const band = percentile >= 80 ? 'Higher' : percentile < 20 ? 'Lower' : 'Typical';
+  if (direction === 'higher_liability') return `${band} inherited liability`;
+  if (direction === 'higher_trait_value') return `${band} genetic tendency`;
+  return `${band} model score`;
+}
+
+function referenceRelativeDescription(
+  percentile: number,
+  calibration: PgsCalibrationResult,
+  direction: PgsDirectionInterpretation,
+): string {
+  const rank = `${percentile.toFixed(1)}th percentile among ${calibration.population_sample_size} unrelated ${calibration.population} reference samples`;
+  if (direction === 'higher_liability') return `The score is at the ${rank}; a higher score represents greater inherited liability, not absolute disease risk or a diagnosis.`;
+  if (direction === 'higher_trait_value') return `The score is at the ${rank}; a higher score represents a higher genetically predicted trait value, not a measured phenotype.`;
+  return `The model score is at the ${rank}. The source does not establish a safe consumer direction, so higher/lower trait interpretation remains withheld.`;
 }
 
 export async function parsePgsScoringFile(filePath: string): Promise<PgsWeightRow[]> {

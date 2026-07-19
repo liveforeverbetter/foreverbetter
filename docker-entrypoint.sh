@@ -18,11 +18,14 @@ case "${PROCESS:-api}" in
   worker:wearables|wearables-worker|wearables)
     exec node dist/workers/wearables-worker.js
     ;;
+  worker:prs-reference|prs-reference)
+    exec node dist/workers/prs-reference-worker.js
+    ;;
   migrate)
     exec node dist/db/migrate.js
     ;;
   *)
-    echo "Unknown PROCESS '${PROCESS}'. Use api, worker:wgs, worker:wearables, or migrate." >&2
+    echo "Unknown PROCESS '${PROCESS}'. Use api, worker:wgs, worker:wearables, worker:prs-reference, or migrate." >&2
     exit 1
     ;;
 esac
