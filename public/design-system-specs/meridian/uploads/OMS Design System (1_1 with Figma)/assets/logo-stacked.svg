@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 40" width="124" height="40">
-  
-  <g transform="translate(0,8) scale(0.9)">
-    <path d="M 19.225 0 L 11.7 4.322 L 11.7 17.812 L 7.547 20.219 L 3.37 17.81 L 3.37 12.994 L 7.547 10.608 L 10.233 12.166 L 10.233 8.27 L 7.524 6.731 L 0 11.102 L 0 19.749 L 7.549 24.096 L 15.073 19.749 L 15.073 6.261 L 19.251 3.852 L 23.426 6.261 L 23.426 11.055 L 19.251 13.486 L 16.541 11.914 L 16.541 15.791 L 19.225 17.34 L 26.823 13.017 L 26.823 4.322 L 19.225 0 Z" fill="#020005" fill-rule="nonzero"></path>
-  </g>
-  
-  <text x="38" y="20" font-family="Fustat, Inter, sans-serif" font-weight="700" font-size="14" fill="#020005" letter-spacing="0.5">OMS</text>
-  <text x="38" y="34" font-family="Fustat, Inter, sans-serif" font-weight="500" font-size="9" fill="#64708F" letter-spacing="0.4">DESIGN SYSTEM</text>
-</svg>
