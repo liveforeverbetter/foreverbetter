@@ -1,0 +1,64 @@
+<!-- @dsCard group="6 · Components" name="Separator" subtitle="1px divider — horizontal & vertical" viewport="900x420" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Separator — OMS Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; background: var(--bg-page-default, #fff); }
+  body {
+    padding: 44px 48px 64px;
+    font-family: var(--font-main, "Fustat"), system-ui, sans-serif;
+    color: var(--fg-primary);
+  }
+  .page-header { margin: 0 0 36px; }
+  .page-title {
+    font-family: var(--font-main, "Fustat");
+    font-weight: 700; font-size: 40px; line-height: 1.2;
+    color: var(--slate-900, #141635); margin: 0 0 12px;
+  }
+  .page-desc {
+    font-family: "Geist", system-ui, sans-serif;
+    font-weight: 400; font-size: 16px; line-height: 24px;
+    color: var(--slate-500, #64708F); margin: 0; max-width: 930px;
+    white-space: pre-line;
+  }
+
+  .specimens { display: flex; flex-direction: row; gap: 80px; align-items: flex-start; margin-top: 8px; }
+  .specimen { display: flex; flex-direction: column; gap: 14px; }
+  .specimen__label {
+    font-family: "Geist", system-ui, sans-serif;
+    font-weight: 500; font-size: 13px;
+    color: var(--purple-700, #670DE5);
+  }
+
+  /* Separator — 1px line, slate-300 */
+  .oms-separator { background: var(--slate-300, #C8CFE1); border: 0; flex: 0 0 auto; }
+  .oms-separator--h { width: 246px; height: 1px; }
+  .oms-separator--v { width: 1px; height: 24px; }
+</style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">Separator</h1>
+    <p class="page-desc">Separators are used to visually divide content and create clear structure within a layout. They help group related elements and improve readability without adding heavy visual weight.
+
+Use separators sparingly to break up sections or distinguish between different types of content. Keep them subtle so they support the layout without drawing unnecessary attention.</p>
+  </header>
+
+  <div class="specimens">
+    <div class="specimen">
+      <span class="specimen__label">Horizontal</span>
+      <hr class="oms-separator oms-separator--h" />
+    </div>
+    <div class="specimen">
+      <span class="specimen__label">Vertical</span>
+      <hr class="oms-separator oms-separator--v" />
+    </div>
+  </div>
+
+</body>
+</html>

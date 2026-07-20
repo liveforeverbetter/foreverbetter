@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Top Nav — OMS Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="../components/topnav.css?v=1" />
+<style>
+  body {
+    margin: 0;
+    background: var(--bg-canvas, #f6f4ef);
+    color: var(--slate-950);
+    font-family: var(--font-display);
+    padding: 48px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0 0 4px;
+    color: var(--slate-950);
+  }
+  .lede {
+    font-family: var(--font-doc);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--slate-700);
+    max-width: 720px;
+    margin: 0;
+  }
+  .frame {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px dashed var(--slate-200);
+  }
+  .label {
+    font-family: var(--font-doc);
+    font-size: 12px;
+    color: var(--slate-500);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 8px;
+  }
+  .doc-card {
+    background: #fff;
+    border: 1px solid var(--slate-200);
+    border-radius: 24px;
+    padding: 32px;
+  }
+  .doc-card h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--slate-950);
+    margin: 0 0 4px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .section-sub {
+    font-family: var(--font-doc);
+    font-size: 13px;
+    color: var(--slate-500);
+    margin: 0 0 24px;
+  }
+  table.spec {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-doc);
+    font-size: 13px;
+  }
+  table.spec th, table.spec td {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--slate-200);
+    vertical-align: top;
+  }
+  table.spec th {
+    color: var(--slate-500);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    width: 180px;
+  }
+  table.spec td { color: var(--slate-900); }
+  table.spec code {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    background: var(--slate-50);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Top Nav</h1>
+    <p class="lede">Primary horizontal navigation bar. Sits at the top of the viewport, contains optional search on the left and the right group (menu items + profile). 1:1 with Figma node <code>309:2177</code>.</p>
+  </header>
+
+  <!-- Default: profile + menu items, no search -->
+  <div>
+    <p class="label">Default</p>
+    <div class="frame">
+      <nav class="oms-topnav" aria-label="Top navigation">
+        <div class="oms-topnav__right">
+          <div class="oms-topnav__menu">
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </span>
+              <span>Menu Item</span>
+            </a>
+          </div>
+          <a href="#" class="oms-topnav__profile">
+            <span class="oms-topnav__profile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M6.168 18.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855"></path></svg>
+            </span>
+            <span>User Name</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- With chevron menu item (dropdown) -->
+  <div>
+    <p class="label">Menu item with dropdown chevron</p>
+    <div class="frame">
+      <nav class="oms-topnav" aria-label="Top navigation">
+        <div class="oms-topnav__right">
+          <div class="oms-topnav__menu">
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </span>
+              <span>Menu Item</span>
+              <span class="oms-topnav__item-chev">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </a>
+          </div>
+          <a href="#" class="oms-topnav__profile">
+            <span class="oms-topnav__profile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M6.168 18.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855"></path></svg>
+            </span>
+            <span>User Name</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- With left search -->
+  <div>
+    <p class="label">With search (Figma propVisible=true)</p>
+    <div class="frame">
+      <nav class="oms-topnav" aria-label="Top navigation">
+        <label class="oms-topnav__search">
+          <svg class="oms-topnav__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4-4"></path></svg>
+          <input type="text" placeholder="Search" />
+        </label>
+        <div class="oms-topnav__right">
+          <div class="oms-topnav__menu">
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </span>
+              <span>Menu Item</span>
+            </a>
+          </div>
+          <a href="#" class="oms-topnav__profile">
+            <span class="oms-topnav__profile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M6.168 18.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855"></path></svg>
+            </span>
+            <span>User Name</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Anatomy -->
+  <div class="doc-card">
+    <h2>Anatomy</h2>
+    <p class="section-sub">All metrics taken from Figma node 309:2177.</p>
+    <table class="spec">
+      <tbody>
+        <tr><th>Bar</th><td>height <code>64</code>, bg <code>#fff</code>, border-bottom <code>1px slate-300</code>, padding <code>0 36</code></td></tr>
+        <tr><th>Right group</th><td>flex row, gap <code>32</code> between menu and profile, align center, justified to right</td></tr>
+        <tr><th>Menu item</th><td>radius <code>12</code>, padding <code>6 / 8</code>, gap <code>8</code>; 16×16 leading icon · Fustat 500/14 slate-950 · optional 16×16 chevron-down trailing</td></tr>
+        <tr><th>Profile</th><td>radius <code>6</code>, padding <code>8</code>, gap <code>8</code>; 16×16 user icon · Fustat 500/14 slate-950</td></tr>
+        <tr><th>Hover</th><td>both menu item and profile get bg <code>slate-50</code></td></tr>
+        <tr><th>Optional search</th><td>left-anchored 300×40, radius <code>8</code>, fill <code>rgb(246,246,252)</code>, border <code>rgb(223,227,240)</code> — same input as Table search</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

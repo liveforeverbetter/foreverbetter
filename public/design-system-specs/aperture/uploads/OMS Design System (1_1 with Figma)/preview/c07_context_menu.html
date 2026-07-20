@@ -1,0 +1,187 @@
+<!-- @dsCard group="6 · Components" name="Context menu" subtitle="Item type × state matrix + composed menus" viewport="1100x720" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Context menu — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../components/context_menu.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  html, body { margin: 0; background: var(--bg-page-default, #F6F6FC); }
+  body {
+    padding: 40px 48px 80px;
+    font-family: var(--font-main);
+    color: var(--fg-primary);
+  }
+  .page-header { max-width: 900px; margin: 0 0 40px; }
+  .page-title {
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    color: var(--slate-900, #141635);
+    margin: 0 0 12px;
+  }
+  .page-desc {
+    font-family: "Geist", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--slate-500, #64708F);
+    margin: 0;
+    max-width: 900px;
+    white-space: pre-line;
+  }
+  .col-label {
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.2;
+    color: var(--purple-700, #670DE5);
+    margin: 36px 0 18px;
+  }
+
+  .stage {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 80px;
+    align-items: flex-start;
+  }
+
+  /* Atom matrix */
+  .atom-matrix {
+    display: grid;
+    grid-template-columns: 90px auto auto;
+    column-gap: 32px;
+    row-gap: 16px;
+    align-items: center;
+    padding: 24px;
+    background: #FFF;
+    border: 1px solid var(--slate-200, #DFE3F0);
+    border-radius: 16px;
+    width: max-content;
+  }
+  .atom-matrix .col-head,
+  .atom-matrix .row-head {
+    font-family: "Geist", system-ui, sans-serif;
+    font-size: 11px;
+    color: var(--purple-700, #670DE5);
+    text-transform: lowercase;
+    letter-spacing: 0.04em;
+  }
+  .atom-matrix .row-head { padding-left: 4px; }
+  .atom-matrix .item-cell {
+    width: 127px;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid var(--slate-200, #DFE3F0);
+    border-radius: 8px;
+  }
+
+  .menu-row {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .menu-caption {
+    font-family: "Geist", system-ui, sans-serif;
+    font-size: 11px;
+    color: var(--slate-500, #64708F);
+    text-transform: lowercase;
+    letter-spacing: 0.04em;
+  }
+</style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">Context menu</h1>
+    <p class="page-desc">The context menu provides a list of actions related to a specific item or element. It is typically triggered by an overflow icon (three dots) and surfaces secondary actions without cluttering the main interface.
+
+Use context menus for item-level actions such as edit, duplicate, or delete. Keep the list concise and prioritize frequently used actions, using visual distinction (e.g. danger styles) for destructive options.</p>
+  </header>
+
+  <h2 class="col-label">Item — type × state matrix</h2>
+  <div class="atom-matrix">
+    <div></div>
+    <div class="col-head">default</div>
+    <div class="col-head">destructive</div>
+
+    <div class="row-head">default</div>
+    <div class="item-cell">
+      <button class="oms-cmenu__item">
+        <span class="oms-cmenu__icon"><i data-lucide="pencil"></i></span>Action
+      </button>
+    </div>
+    <div class="item-cell">
+      <button class="oms-cmenu__item" data-type="destructive">
+        <span class="oms-cmenu__icon"><i data-lucide="trash-2"></i></span>Delete
+      </button>
+    </div>
+
+    <div class="row-head">hover</div>
+    <div class="item-cell">
+      <button class="oms-cmenu__item" data-state="hover">
+        <span class="oms-cmenu__icon"><i data-lucide="pencil"></i></span>Action
+      </button>
+    </div>
+    <div class="item-cell">
+      <button class="oms-cmenu__item" data-type="destructive" data-state="hover">
+        <span class="oms-cmenu__icon"><i data-lucide="trash-2"></i></span>Delete
+      </button>
+    </div>
+
+    <div class="row-head">selected</div>
+    <div class="item-cell">
+      <button class="oms-cmenu__item" data-state="selected">
+        <span class="oms-cmenu__icon"><i data-lucide="pencil"></i></span>Action
+      </button>
+    </div>
+    <div class="item-cell">
+      <button class="oms-cmenu__item" data-type="destructive" data-state="selected">
+        <span class="oms-cmenu__icon"><i data-lucide="trash-2"></i></span>Delete
+      </button>
+    </div>
+  </div>
+
+  <h2 class="col-label">Composed menus</h2>
+
+  <div class="stage">
+    <div class="menu-row">
+      <span class="menu-caption">basic actions</span>
+      <div class="oms-cmenu" role="menu">
+        <button class="oms-cmenu__item" role="menuitem">
+          <span class="oms-cmenu__icon"><i data-lucide="eye"></i></span>View
+        </button>
+        <button class="oms-cmenu__item" role="menuitem">
+          <span class="oms-cmenu__icon"><i data-lucide="pencil"></i></span>Edit
+        </button>
+        <button class="oms-cmenu__item" role="menuitem">
+          <span class="oms-cmenu__icon"><i data-lucide="copy"></i></span>Duplicate
+        </button>
+      </div>
+    </div>
+
+    <div class="menu-row">
+      <span class="menu-caption">with destructive action</span>
+      <div class="oms-cmenu" role="menu">
+        <button class="oms-cmenu__item" role="menuitem">
+          <span class="oms-cmenu__icon"><i data-lucide="eye"></i></span>View
+        </button>
+        <button class="oms-cmenu__item" role="menuitem">
+          <span class="oms-cmenu__icon"><i data-lucide="pencil"></i></span>Edit
+        </button>
+        <button class="oms-cmenu__item" role="menuitem">
+          <span class="oms-cmenu__icon"><i data-lucide="download"></i></span>Export
+        </button>
+        <button class="oms-cmenu__item" role="menuitem" data-type="destructive">
+          <span class="oms-cmenu__icon"><i data-lucide="trash-2"></i></span>Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

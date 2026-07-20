@@ -1,0 +1,57 @@
+/* ─────────────────────────────────────────────────────────────────
+   OMS Design System — Global Status Banner
+   1:1 with Figma:
+     • node 309:2164 (device=desktop, status=sandbox)
+     • node 2149:2860 (device=desktop, status=live)
+   Both variants share the same purple gradient + border.
+   Sits at the very top of the app, above the topnav.
+   ───────────────────────────────────────────────────────────────── */
+
+.oms-status-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 56px;
+  padding: 12px 36px;
+  border: 0;
+  border-bottom: 1px solid var(--purple-200, #D5C4F2);
+  font-family: var(--font-display, "Fustat"), system-ui, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Sandbox — primary gradient */
+.oms-status-banner[data-mode="sandbox"],
+.oms-status-banner:not([data-mode]) {
+  background: linear-gradient(90deg, #EAE4F5 0%, #F6F3FB 100%);
+}
+
+/* Live — lavender → light blue → mint cyan (per Figma) */
+.oms-status-banner[data-mode="live"] {
+  background: linear-gradient(90deg, #D5C8F4 0%, #D2D8F6 50%, #D0F5FD 100%);
+  border-bottom-color: #BFD9F2;
+}
+
+/* Left: mode label — Fustat 500/14, slate-900 */
+.oms-status-banner__mode {
+  font-family: var(--font-display, "Fustat"), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--slate-900, rgb(20,22,53));
+  flex: 0 0 auto;
+}
+
+/* Center: message — Fustat 700/14, slate-900 */
+.oms-status-banner__msg {
+  font-family: var(--font-display, "Fustat"), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--slate-900, rgb(20,22,53));
+  text-align: center;
+  flex: 1 1 auto;
+}
+
+.oms-status-banner__action { flex: 0 0 auto; }

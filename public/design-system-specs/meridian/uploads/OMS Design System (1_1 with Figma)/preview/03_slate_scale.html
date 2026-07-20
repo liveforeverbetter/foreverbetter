@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Slate scale</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-page-default); }
+  body { padding: 20px 24px; font-family: var(--font-doc); }
+  .label { font-family: var(--font-doc); font-weight: 500; font-size: 12px; color: var(--fg-primary); margin-bottom: 10px; letter-spacing: 0.02em; }
+  .row { display: flex; gap: 6px; }
+  .swatch { flex: 1; border-radius: 8px; height: 64px; padding: 8px 10px; display: flex; flex-direction: column; justify-content: space-between; }
+  .step { font-family: var(--font-doc); font-weight: 500; font-size: 11px; }
+  .hex  { font-family: var(--font-doc); font-size: 10px; opacity: 0.85; }
+  .light { color: var(--slate-700); }
+  .dark  { color: rgba(255,255,255,0.92); }
+</style>
+</head>
+<body>
+  <div class="label">Slate — neutrals</div>
+  <div class="row">
+    <div class="swatch light" style="background:var(--slate-50);  border:1px solid var(--slate-200)"><span class="step">50</span><span class="hex">#F6F6FC</span></div>
+    <div class="swatch light" style="background:var(--slate-100)"><span class="step">100</span><span class="hex">#EEF0F9</span></div>
+    <div class="swatch light" style="background:var(--slate-200)"><span class="step">200</span><span class="hex">#DFE3F0</span></div>
+    <div class="swatch light" style="background:var(--slate-300)"><span class="step">300</span><span class="hex">#C8CFE1</span></div>
+    <div class="swatch dark"  style="background:var(--slate-400)"><span class="step">400</span><span class="hex">#929EBA</span></div>
+    <div class="swatch dark"  style="background:var(--slate-500)"><span class="step">500</span><span class="hex">#64708F</span></div>
+    <div class="swatch dark"  style="background:var(--slate-600)"><span class="step">600</span><span class="hex">#48526F</span></div>
+    <div class="swatch dark"  style="background:var(--slate-700)"><span class="step">700</span><span class="hex">#363E5C</span></div>
+    <div class="swatch dark"  style="background:var(--slate-800)"><span class="step">800</span><span class="hex">#222744</span></div>
+    <div class="swatch dark"  style="background:var(--slate-900)"><span class="step">900 · ink</span><span class="hex">#141635</span></div>
+    <div class="swatch dark"  style="background:var(--slate-950); outline: 2px solid var(--purple-500); outline-offset: 1px;"><span class="step">950 · CTA</span><span class="hex">#090624</span></div>
+  </div>
+</body>
+</html>

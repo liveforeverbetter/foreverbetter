@@ -1,0 +1,59 @@
+<!-- @dsCard group="6 · Components" name="Radio" subtitle="Single-select control — default · focus · disabled × unselected · selected" viewport="760x520" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Radio — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-page-default, #fff); }
+  body { padding: 40px 48px 64px; font-family: var(--font-main, "Fustat"), system-ui, sans-serif; color: var(--fg-primary); }
+  .page-header { margin: 0 0 36px; }
+  .page-title { font-family: var(--font-main, "Fustat"); font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--slate-900, #141635); margin: 0 0 12px; }
+  .page-desc { font-family: "Geist", system-ui, sans-serif; font-size: 16px; line-height: 24px; color: var(--slate-500, #64708F); margin: 0; max-width: 1000px; white-space: pre-line; }
+
+  .matrix { display: grid; grid-template-columns: 110px 90px 90px; gap: 28px 40px; align-items: center; width: max-content; margin-top: 24px; }
+  .row-head, .col-head { font-family: "Geist", system-ui, sans-serif; font-weight: 500; font-size: 14px; color: var(--purple-700, #670DE5); }
+  .cell { display: flex; align-items: center; }
+
+  .oms-radio {
+    width: 16px; height: 16px; border-radius: 50%; box-sizing: border-box;
+    box-shadow: inset 0 0 0 1px var(--slate-500, #64708F);
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #fff;
+  }
+  .oms-radio.is-selected { box-shadow: inset 0 0 0 1px var(--slate-900, #141635); background: radial-gradient(circle, var(--slate-900, #141635) 0 4px, #fff 4px); }
+  .oms-radio.is-focus { box-shadow: inset 0 0 0 1px var(--slate-500, #64708F), 0 0 0 2px #fff, 0 0 0 4px var(--purple-300, #C4B0F5); }
+  .oms-radio.is-selected.is-focus { box-shadow: inset 0 0 0 1px var(--slate-900, #141635), 0 0 0 2px #fff, 0 0 0 4px var(--purple-300, #C4B0F5); }
+  .oms-radio.is-disabled { opacity: 0.5; }
+</style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">Radio</h1>
+    <p class="page-desc">Radio buttons let users select exactly one option from a set. Use them in forms and settings where the choices are mutually exclusive.
+
+Provide a clear label per option and ensure states — default, focused, selected, and disabled — give clear visual feedback.</p>
+  </header>
+
+  <div class="matrix">
+    <span></span>
+    <span class="col-head">Unselected</span>
+    <span class="col-head">Selected</span>
+
+    <span class="row-head">Default</span>
+    <span class="cell"><span class="oms-radio"></span></span>
+    <span class="cell"><span class="oms-radio is-selected"></span></span>
+
+    <span class="row-head">Focus</span>
+    <span class="cell"><span class="oms-radio is-focus"></span></span>
+    <span class="cell"><span class="oms-radio is-selected is-focus"></span></span>
+
+    <span class="row-head">Disabled</span>
+    <span class="cell"><span class="oms-radio is-disabled"></span></span>
+    <span class="cell"><span class="oms-radio is-selected is-disabled"></span></span>
+  </div>
+
+</body>
+</html>

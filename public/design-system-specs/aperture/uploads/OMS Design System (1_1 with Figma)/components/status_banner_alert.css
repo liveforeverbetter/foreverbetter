@@ -1,0 +1,70 @@
+/* ─────────────────────────────────────────────────────────────────
+   OMS Design System — Status banner (use-case alert)
+   1:1 with Figma node 309:1038 / 309:1735 (device=mobile, use case=*)
+   Compact title + description + trailing md secondary button.
+   Variants: success · warning · info · error
+   (Distinct from the global environment banner in status_banner.css.)
+   ───────────────────────────────────────────────────────────────── */
+
+.oms-sbanner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  font-family: "Fustat", system-ui, sans-serif;
+}
+
+.oms-sbanner__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.oms-sbanner__title {
+  font-family: "Fustat", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--slate-900, #141635);
+  margin: 0;
+}
+.oms-sbanner__desc {
+  font-family: "Fustat", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.35;
+  margin: 0;
+}
+.oms-sbanner__action { flex: 0 0 auto; }
+
+/* ── Success ─────────────────────────────────────────────────────── */
+.oms-sbanner--success {
+  background: var(--emerald-50, #ECFDF5);
+  box-shadow: inset 0 0 0 1px var(--emerald-200, #A7F3D0);
+}
+.oms-sbanner--success .oms-sbanner__desc { color: var(--emerald-700, #047857); }
+
+/* ── Warning ─────────────────────────────────────────────────────── */
+.oms-sbanner--warning {
+  background: var(--orange-50, #FFF7ED);
+  box-shadow: inset 0 0 0 1px var(--orange-200, #FED7AA);
+}
+.oms-sbanner--warning .oms-sbanner__desc { color: var(--amber-700, #B45309); }
+
+/* ── Info ────────────────────────────────────────────────────────── */
+.oms-sbanner--info {
+  background: var(--purple-50, #F6F3FB);
+  box-shadow: inset 0 0 0 1px var(--purple-200, #D5C4F2);
+}
+.oms-sbanner--info .oms-sbanner__desc { color: var(--purple-700, #670DE5); }
+
+/* ── Error ───────────────────────────────────────────────────────── */
+.oms-sbanner--error {
+  background: var(--red-50, #FEF2F2);
+  box-shadow: inset 0 0 0 1px var(--red-200, #FECACA);
+}
+.oms-sbanner--error .oms-sbanner__desc { color: var(--red-700, #B91C1C); }

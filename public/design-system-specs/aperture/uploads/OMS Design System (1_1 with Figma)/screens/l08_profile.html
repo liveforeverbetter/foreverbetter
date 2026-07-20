@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- @dsCard group="7 · Layouts" name="Profile" subtitle="Account profile — editable details, role, 2FA" viewport="1440x900" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OMS · Profile</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="../components/sidebar.css?v=15" />
+<link rel="stylesheet" href="../components/topnav.css" />
+<link rel="stylesheet" href="../components/buttons.css" />
+<link rel="stylesheet" href="../components/cards.css?v=2" />
+<link rel="stylesheet" href="../components/status_banner.css" />
+<link rel="stylesheet" href="../components/floater_button.css" />
+<script defer src="../components/sidebar.js"></script>
+<style>
+  html, body { margin: 0; background: #fff; }
+  body { font-family: var(--font-display); color: var(--fg-primary); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  .shell { display: flex; flex-direction: column; min-height: 100vh; background: #fff; }
+  .body { display: flex; flex: 1; min-height: 0; align-items: stretch; }
+  .body > [data-oms-sidebar] { align-self: stretch; display: flex; flex-direction: column; }
+  .body > [data-oms-sidebar] > .oms-sidebar { flex: 1; height: auto; }
+  .main-col { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .main { flex: 1; padding: 32px 40px 64px; display: flex; flex-direction: column; gap: 28px; background: #fff; }
+
+  .page-title { font-family: var(--font-display); font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--slate-950); letter-spacing: -0.01em; margin: 0; }
+
+  /* Identity header */
+  .identity { display: flex; align-items: center; gap: 16px; }
+  .identity__avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--purple-100, #EAE4F5); color: #670DE5;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 24px; flex: 0 0 64px;
+  }
+  .identity__text { display: flex; flex-direction: column; gap: 2px; }
+  .identity__name { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 24px; color: var(--slate-950); }
+  .identity__name button { background: none; border: 0; padding: 0; color: var(--slate-500); cursor: pointer; display: inline-flex; }
+  .identity__name svg { width: 18px; height: 18px; stroke-width: 1.75; }
+  .identity__sub { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--fg-secondary); }
+  .identity__chip { display: inline-flex; align-items: center; gap: 6px; }
+  .identity__chip svg { width: 16px; height: 16px; stroke-width: 1.75; color: var(--slate-500); }
+  .identity__dot { width: 4px; height: 4px; border-radius: 50%; background: var(--slate-400, #97A2BD); }
+
+  .res-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: 1040px; }
+  .res-row .oms-card-resource { width: 100%; }
+</style>
+</head>
+<body>
+<div class="shell" data-screen-label="Profile">
+
+  <div class="oms-status-banner" data-mode="sandbox" data-oms-status-banner>
+    <span class="oms-status-banner__mode" data-oms-status-banner-mode>Sandbox mode</span>
+    <span class="oms-status-banner__msg" data-oms-status-banner-msg>You are testing OMSX capabilities in a sandbox environment</span>
+    <span class="oms-status-banner__action">
+      <button class="btn btn-sm btn-secondary" data-oms-status-banner-action>Switch to live</button>
+    </span>
+  </div>
+
+  <div class="body">
+    <div data-oms-sidebar data-active="Profile" data-assets-base="../assets"></div>
+
+    <div class="main-col">
+      <nav class="oms-topnav" aria-label="Top navigation">
+        <div class="oms-topnav__right">
+          <div class="oms-topnav__menu">
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"></path></svg>
+              </span><span>System status</span>
+            </a>
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              </span><span>Docs</span>
+            </a>
+          </div>
+          <a href="#" class="oms-topnav__profile">
+            <span class="oms-topnav__profile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path></svg>
+            </span><span>Sarah Jones</span>
+          </a>
+        </div>
+      </nav>
+
+      <main class="main">
+        <h1 class="page-title">Profile</h1>
+
+        <div class="identity">
+          <span class="identity__avatar" aria-hidden="true">SJ</span>
+          <div class="identity__text">
+            <span class="identity__name">
+              Sarah Jones
+              <button aria-label="Edit name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path></svg></button>
+            </span>
+            <span class="identity__sub">
+              <span class="identity__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 5L2 7"></path></svg>sarah@company.com</span>
+              <span class="identity__dot"></span>
+              <span class="identity__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path></svg>Admin</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Resource cards -->
+        <section class="res-row" data-screen-label="Profile resources">
+          <a href="#" class="oms-card-resource">
+            <div class="oms-card-resource__body">
+              <div class="oms-card-resource__title">Account security</div>
+              <div class="oms-card-resource__desc">How do we keep your account secure?</div>
+            </div>
+            <span class="oms-card-resource__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+            </span>
+          </a>
+          <a href="#" class="oms-card-resource">
+            <div class="oms-card-resource__body">
+              <div class="oms-card-resource__title">Privacy policy</div>
+              <div class="oms-card-resource__desc">How do we keep your information private?</div>
+            </div>
+            <span class="oms-card-resource__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+            </span>
+          </a>
+          <a href="#" class="oms-card-resource">
+            <div class="oms-card-resource__body">
+              <div class="oms-card-resource__title">Support</div>
+              <div class="oms-card-resource__desc">More questions? Talk to our team</div>
+            </div>
+            <span class="oms-card-resource__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+            </span>
+          </a>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <button class="oms-floater oms-floater--fixed" aria-label="Contact support">
+    <span class="oms-floater__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9a9 9 0 0 1 18 0v9a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></span>
+  </button>
+</div>
+
+<script>
+  function setMode(mode){const banner=document.querySelector('[data-oms-status-banner]');if(!banner)return;banner.setAttribute('data-mode',mode);const m=banner.querySelector('[data-oms-status-banner-mode]'),s=banner.querySelector('[data-oms-status-banner-msg]'),a=banner.querySelector('[data-oms-status-banner-action]');if(mode==='live'){m.textContent='Live mode';s.textContent='You are operating in the live OMSX environment — real funds and customers';a.textContent='Switch to sandbox';}else{m.textContent='Sandbox mode';s.textContent='You are testing OMSX capabilities in a sandbox environment';a.textContent='Switch to live';}const t=document.querySelector('[data-oms-mode-toggle]');if(t){t.querySelectorAll('.oms-mode-toggle__opt').forEach((o,i)=>{const on=(i===0&&mode==='sandbox')||(i===1&&mode==='live');o.classList.toggle('is-active',on);o.setAttribute('aria-selected',String(on));});t.classList.toggle('oms-mode-toggle--live',mode==='live');}}
+  function wireToggle(){const t=document.querySelector('[data-oms-mode-toggle]');if(!t||t.__w)return false;t.__w=true;t.addEventListener('click',e=>{const o=e.target.closest('.oms-mode-toggle__opt');if(!o)return;const i=[...t.querySelectorAll('.oms-mode-toggle__opt')].indexOf(o);setMode(i===1?'live':'sandbox');});return true;}
+  if(!wireToggle()){const mo=new MutationObserver(()=>{if(wireToggle())mo.disconnect();});mo.observe(document.body,{childList:true,subtree:true});}
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-oms-status-banner-action]');if(!b)return;const cur=document.querySelector('[data-oms-status-banner]').getAttribute('data-mode');setMode(cur==='live'?'sandbox':'live');});
+</script>
+</body>
+</html>

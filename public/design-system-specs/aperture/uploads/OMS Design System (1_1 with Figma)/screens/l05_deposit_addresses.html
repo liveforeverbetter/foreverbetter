@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- @dsCard group="7 · Layouts" name="Deposit addresses" subtitle="Deposit address table — status, token, chain, row actions" viewport="1440x1024" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OMS · Deposit addresses</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="../components/sidebar.css?v=18" />
+<link rel="stylesheet" href="../components/topnav.css" />
+<link rel="stylesheet" href="../components/buttons.css" />
+<link rel="stylesheet" href="../components/badges.css" />
+<link rel="stylesheet" href="../components/inputs.css" />
+<link rel="stylesheet" href="../components/status_banner.css" />
+<link rel="stylesheet" href="../components/table.css" />
+<link rel="stylesheet" href="../components/context_menu.css" />
+<link rel="stylesheet" href="../components/floater_button.css" />
+<script defer src="../components/sidebar.js"></script>
+<style>
+  html, body { margin: 0; background: #fff; }
+  body { font-family: var(--font-display); color: var(--fg-primary); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  .shell { min-height: 100vh; display: flex; flex-direction: column; background: #fff; }
+  .body { display: flex; flex: 1; min-height: 0; align-items: stretch; }
+  .body > [data-oms-sidebar] { align-self: stretch; display: flex; flex-direction: column; }
+  .body > [data-oms-sidebar] > .oms-sidebar { flex: 1; height: auto; }
+  .main-col { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .main { flex: 1; padding: 32px 36px 24px; display: flex; flex-direction: column; gap: 28px; background: #fff; }
+  .main .oms-table, .main .oms-table__slot, .main .oms-table__scroll, .main .oms-table__grid { width: 100%; }
+  .page-title { font-family: var(--font-display); font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--slate-950); margin: 0; letter-spacing: -0.01em; }
+
+  .dacontrols { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .dacontrols__right { display: flex; align-items: center; gap: 12px; }
+  .btn-create { appearance: none; display: inline-flex; align-items: center; gap: 8px; background: rgb(2,0,5); color: #fff; border: 0; border-radius: 12px; padding: 12px 20px; font-family: var(--font-display); font-weight: 600; font-size: 14px; line-height: 1.2; cursor: pointer; white-space: nowrap; }
+  .btn-create:hover { background: rgb(20,22,53); }
+  .btn-create svg { width: 16px; height: 16px; stroke-width: 2; }
+
+  .cell-flag, .cell-asset, .cell-chain, .id-cell, .wallet { display: inline-flex; align-items: center; gap: 8px; }
+  .cell-flag svg, .cell-asset svg, .cell-chain svg { width: 18px; height: 18px; flex: 0 0 18px; }
+  .id-cell__copy { background: none; border: 0; padding: 0; color: var(--slate-400); cursor: pointer; display: inline-flex; }
+  .id-cell__copy svg { width: 16px; height: 16px; stroke-width: 1.75; }
+  .id-cell__copy:hover { color: var(--slate-700); }
+  .cust-link { color: var(--purple-700); font-weight: 500; text-decoration: none; }
+  .row-kebab { width: 28px; height: 28px; border: 0; background: transparent; color: var(--slate-500); border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+  .row-kebab:hover { background: var(--slate-50); color: var(--slate-950); }
+  .row-kebab svg { width: 16px; height: 16px; stroke-width: 1.75; }
+  .row-menu { position: absolute; top: 36px; right: 8px; z-index: 5; }
+  .row-menu .oms-cmenu { min-width: 160px; box-shadow: 0 12px 32px -8px rgba(2,0,5,0.18), 0 2px 8px rgba(2,0,5,0.06); }
+  .row-menu[hidden] { display: none; }
+  .oms-table__grid tbody tr:hover td { background: rgb(246, 246, 252); }
+
+  .oms-table__grid th, .oms-table__grid td,
+  .oms-table__grid .oms-table__head-label, .oms-table__grid .oms-table__cell-text, .oms-table__grid .oms-badge { font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="shell" data-screen-label="Deposit addresses">
+
+  <div class="oms-status-banner" data-mode="sandbox" data-oms-status-banner>
+    <span class="oms-status-banner__mode" data-oms-status-banner-mode>Sandbox mode</span>
+    <span class="oms-status-banner__msg" data-oms-status-banner-msg>You are testing OMSX capabilities in a sandbox environment</span>
+    <span class="oms-status-banner__action">
+      <button class="btn btn-sm btn-secondary" data-oms-status-banner-action>Switch to live</button>
+    </span>
+  </div>
+
+  <div class="body">
+    <div data-oms-sidebar data-active="Deposit addresses" data-assets-base="../assets"></div>
+
+    <div class="main-col">
+      <nav class="oms-topnav" aria-label="Top navigation">
+        <div class="oms-topnav__right">
+          <div class="oms-topnav__menu">
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              </span><span>Docs</span>
+            </a>
+          </div>
+          <a href="#" class="oms-topnav__profile">
+            <span class="oms-topnav__profile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path></svg>
+            </span><span>User Name</span>
+          </a>
+        </div>
+      </nav>
+
+      <main class="main">
+        <h1 class="page-title">Deposit addresses</h1>
+
+        <section class="oms-table" data-screen-label="Deposit addresses table">
+          <div class="dacontrols">
+            <label class="oms-table__search">
+              <svg class="oms-table__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4-4"></path></svg>
+              <input type="text" placeholder="Search" />
+            </label>
+            <div class="dacontrols__right">
+              <button class="oms-table__icon-btn" aria-label="Filter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+              </button>
+              <button class="oms-table__icon-btn" aria-label="Download">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              </button>
+              <button class="btn-create">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                Create deposit address
+              </button>
+            </div>
+          </div>
+
+          <div class="oms-table__slot">
+            <div class="oms-table__scroll">
+              <table class="oms-table__grid">
+                <thead><tr id="thead"></tr></thead>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <button class="oms-floater oms-floater--fixed" aria-label="Contact support">
+    <span class="oms-floater__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9a9 9 0 0 1 18 0v9a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></span>
+  </button>
+</div>
+
+<script>
+  const copyIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+  const moreIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>';
+  const eyeIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
+  const trashIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><path d="M3 6h18"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>';
+  const usFlag = '<svg viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="daUs"><circle cx="12" cy="12" r="11"/></clipPath></defs><g clip-path="url(#daUs)"><rect width="24" height="24" fill="#fff"/><g fill="#B22234"><rect y="0" width="24" height="1.85"/><rect y="3.7" width="24" height="1.85"/><rect y="7.4" width="24" height="1.85"/><rect y="11.1" width="24" height="1.85"/><rect y="14.8" width="24" height="1.85"/><rect y="18.5" width="24" height="1.85"/><rect y="22.2" width="24" height="1.85"/></g><rect width="11" height="9.25" fill="#3C3B6E"/></g></svg>';
+  const usdtIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#26A17B"/><path d="M13.3 11.13V9.5h3.74V7H7v2.5h3.74v1.63c-3.04.14-5.32.74-5.32 1.47s2.28 1.33 5.32 1.47v5.22h2.56V14.07c3.03-.14 5.31-.74 5.31-1.47s-2.28-1.33-5.31-1.47Z" fill="#fff"/></svg>';
+  const usdcIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2775CA"/><path d="M12.5 18.5v-.79c2.07-.28 3.36-1.43 3.36-3.04 0-1.49-.92-2.36-2.93-2.7l-1.5-.24c-1.13-.21-1.58-.59-1.58-1.21 0-.73.65-1.21 1.65-1.21 1.04 0 1.69.42 1.86 1.18.04.16.18.27.34.27h1c.18 0 .33-.14.32-.33-.16-1.43-1.25-2.4-2.92-2.6V6.5h-1v1.3c-1.99.26-3.24 1.4-3.24 2.93 0 1.46.92 2.41 2.85 2.74l1.49.25c1.16.21 1.66.59 1.66 1.27 0 .78-.74 1.32-1.81 1.32-1.13 0-1.91-.47-2.06-1.27a.35.35 0 0 0-.34-.27h-1.08c-.18 0-.33.15-.32.33.17 1.51 1.27 2.5 3.24 2.73v.78h1Z" fill="#fff"/></svg>';
+  const ethIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#627EEA"/><path d="M12 4v5.9l5 2.23L12 4Z" fill="#fff" fill-opacity="0.6"/><path d="M12 4 7 12.13l5-2.23V4Z" fill="#fff"/><path d="M12 16.48V20l5-6.92-5 2.4Z" fill="#fff" fill-opacity="0.6"/><path d="M12 20v-3.52l-5-2.4L12 20Z" fill="#fff"/><path d="m12 15.43 5-2.4-5-2.22v4.62Z" fill="#fff" fill-opacity="0.2"/><path d="m7 13.03 5 2.4v-4.62l-5 2.22Z" fill="#fff" fill-opacity="0.6"/></svg>';
+
+  const ASSET = { USDT: usdtIcon, USDC: usdcIcon };
+  const STATUS = { Active:"oms-badge--success", Pending:"oms-badge--info", Failed:"oms-badge--danger" };
+  const HEADERS = ["Status","Source","Customer","Supported token","Supported chain","Destination account","Wallet address","Account Holder","Actions"];
+  const ROWS = [
+    { status:"Active",  token:"USDT", wallet:true,  holder:"Jane Doe" },
+    { status:"Pending", token:"USDT", wallet:true,  holder:"Jane Doe" },
+    { status:"Failed",  token:"USDC", wallet:false, holder:"Jane Doe" },
+  ];
+
+  document.getElementById('thead').innerHTML = HEADERS.map(h => `<th><span class="oms-table__head-label">${h}</span></th>`).join('');
+
+  const cStatus = s => `<td><div class="oms-table__cell"><span class="oms-badge ${STATUS[s]} oms-badge--sm">${s}</span></div></td>`;
+  const cSource = () => `<td><div class="oms-table__cell"><span class="cell-flag">${usFlag}<span class="oms-table__cell-text">USD</span></span></div></td>`;
+  const cCust = () => `<td><div class="oms-table__cell"><span class="id-cell"><a href="#" class="cust-link">cst_01kr...ybto</a><button class="id-cell__copy" aria-label="Copy customer">${copyIcon}</button></span></div></td>`;
+  const cToken = t => `<td><div class="oms-table__cell"><span class="cell-asset">${ASSET[t]}<span class="oms-table__cell-text">${t}</span></span></div></td>`;
+  const cChain = () => `<td><div class="oms-table__cell"><span class="cell-chain">${ethIcon}<span class="oms-table__cell-text">Ethereum</span></span></div></td>`;
+  const cDest = () => `<td><div class="oms-table__cell"><span class="id-cell"><span class="oms-table__cell-text">9876...3210</span><button class="id-cell__copy" aria-label="Copy destination account">${copyIcon}</button></span></div></td>`;
+  const cWallet = has => has
+    ? `<td><div class="oms-table__cell"><span class="id-cell"><span class="oms-table__cell-text">0xAsdf...f80</span><button class="id-cell__copy" aria-label="Copy wallet address">${copyIcon}</button></span></div></td>`
+    : `<td><div class="oms-table__cell"><span class="oms-table__cell-text">NA</span></div></td>`;
+  const cPlain = t => `<td><div class="oms-table__cell"><span class="oms-table__cell-text">${t}</span></div></td>`;
+  const cActions = (i) => `<td><div class="oms-table__cell" style="position:relative;justify-content:flex-start;"><button class="row-kebab" aria-label="Row actions" data-kebab="${i}">${moreIcon}</button>
+    <div class="row-menu" id="da-menu-${i}" hidden>
+      <div class="oms-cmenu">
+        <button class="oms-cmenu__item" data-action="view"><span class="oms-cmenu__icon">${eyeIcon}</span><span>View details</span></button>
+        <button class="oms-cmenu__item" data-type="destructive" data-action="delete"><span class="oms-cmenu__icon">${trashIcon}</span><span>Delete</span></button>
+      </div>
+    </div>
+  </div></td>`;
+
+  document.getElementById('tbody').innerHTML = ROWS.map((r, i) =>
+    `<tr>${cStatus(r.status)}${cSource()}${cCust()}${cToken(r.token)}${cChain()}${cDest()}${cWallet(r.wallet)}${cPlain(r.holder)}${cActions(i)}</tr>`
+  ).join('');
+
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-kebab]');
+    const inMenu = e.target.closest('.row-menu');
+    if (btn) {
+      const i = btn.getAttribute('data-kebab');
+      const menu = document.getElementById('da-menu-' + i);
+      const open = !menu.hasAttribute('hidden');
+      document.querySelectorAll('.row-menu').forEach(m => m.setAttribute('hidden',''));
+      if (!open) menu.removeAttribute('hidden');
+      e.stopPropagation();
+    } else if (!inMenu) {
+      document.querySelectorAll('.row-menu').forEach(m => m.setAttribute('hidden',''));
+    }
+  });
+
+  function setMode(mode){const banner=document.querySelector('[data-oms-status-banner]');if(!banner)return;banner.setAttribute('data-mode',mode);const m=banner.querySelector('[data-oms-status-banner-mode]'),s=banner.querySelector('[data-oms-status-banner-msg]'),a=banner.querySelector('[data-oms-status-banner-action]');if(mode==='live'){m.textContent='Live mode';s.textContent='You are operating in the live OMSX environment — real funds and customers';a.textContent='Switch to sandbox';}else{m.textContent='Sandbox mode';s.textContent='You are testing OMSX capabilities in a sandbox environment';a.textContent='Switch to live';}const t=document.querySelector('[data-oms-mode-toggle]');if(t){t.querySelectorAll('.oms-mode-toggle__opt').forEach((o,i)=>{const on=(i===0&&mode==='sandbox')||(i===1&&mode==='live');o.classList.toggle('is-active',on);o.setAttribute('aria-selected',String(on));});t.classList.toggle('oms-mode-toggle--live',mode==='live');}}
+  function wireToggle(){const t=document.querySelector('[data-oms-mode-toggle]');if(!t||t.__w)return false;t.__w=true;t.addEventListener('click',e=>{const o=e.target.closest('.oms-mode-toggle__opt');if(!o)return;const i=[...t.querySelectorAll('.oms-mode-toggle__opt')].indexOf(o);setMode(i===1?'live':'sandbox');});return true;}
+  if(!wireToggle()){const mo=new MutationObserver(()=>{if(wireToggle())mo.disconnect();});mo.observe(document.body,{childList:true,subtree:true});}
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-oms-status-banner-action]');if(!b)return;const cur=document.querySelector('[data-oms-status-banner]').getAttribute('data-mode');setMode(cur==='live'?'sandbox':'live');});
+</script>
+</body>
+</html>

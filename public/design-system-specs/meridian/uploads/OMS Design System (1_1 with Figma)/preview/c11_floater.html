@@ -1,0 +1,30 @@
+<!-- @dsCard group="6 · Components" name="Floater" subtitle="Fixed AI/support floating action button" viewport="640x520" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Floater — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../components/floater_button.css">
+<style>
+  html, body { margin: 0; background: var(--bg-page-default, #fff); }
+  body { padding: 40px 48px 64px; font-family: var(--font-main, "Fustat"), system-ui, sans-serif; color: var(--fg-primary); }
+  .page-header { margin: 0 0 36px; }
+  .page-title { font-family: var(--font-main, "Fustat"); font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--slate-900, #141635); margin: 0 0 12px; }
+  .page-desc { font-family: "Geist", system-ui, sans-serif; font-size: 16px; line-height: 24px; color: var(--slate-500, #64708F); margin: 0; max-width: 760px; }
+  .stage { margin-top: 48px; }
+  .stage .oms-floater { position: static; }
+</style>
+</head>
+<body>
+  <header class="page-header">
+    <h1 class="page-title">Floater</h1>
+    <p class="page-desc">The floating action button provides quick access to AI/support from anywhere in the product. It remains fixed on screen so help is always within reach without disrupting the current workflow.</p>
+  </header>
+  <div class="stage">
+    <button class="oms-floater" aria-label="Contact support">
+      <span class="oms-floater__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9a9 9 0 0 1 18 0v9a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></span>
+    </button>
+  </div>
+</body>
+</html>

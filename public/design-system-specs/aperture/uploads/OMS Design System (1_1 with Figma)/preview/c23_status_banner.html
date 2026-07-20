@@ -1,0 +1,124 @@
+<!-- @dsCard group="6 · Components" name="Status banner" subtitle="Use-case alert — success · warning · info · error" viewport="1280x720" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Status banner — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../components/buttons.css">
+<link rel="stylesheet" href="../components/status_banner_alert.css">
+<style>
+  html, body { margin: 0; background: var(--bg-page-default, #fff); }
+  body {
+    padding: 40px 48px 64px;
+    font-family: var(--font-main, "Fustat"), system-ui, sans-serif;
+    color: var(--fg-primary);
+  }
+  .page-header { margin: 0 0 36px; }
+  .page-title {
+    font-family: var(--font-main, "Fustat");
+    font-weight: 700; font-size: 40px; line-height: 1.2;
+    color: var(--slate-900, #141635); margin: 0 0 12px;
+  }
+  .page-desc {
+    font-family: "Geist", system-ui, sans-serif;
+    font-weight: 400; font-size: 16px; line-height: 24px;
+    color: var(--slate-500, #64708F); margin: 0; max-width: 1100px;
+    white-space: pre-line;
+  }
+  .matrix {
+    display: grid;
+    grid-template-columns: 90px minmax(640px, 1fr) 380px;
+    column-gap: 48px;
+    row-gap: 28px;
+    align-items: center;
+    margin-top: 16px;
+  }
+  .row-label {
+    font-family: "Geist", system-ui, sans-serif;
+    font-weight: 500; font-size: 13px;
+    color: var(--purple-700, #670DE5);
+  }
+</style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">Status banner</h1>
+    <p class="page-desc">Status banners communicate system states and guide users toward the next step. Use success for completed actions, info for neutral updates, warning for situations that require attention, and error for issues that block progress.
+
+Choose the status based on urgency and impact: warnings highlight incomplete or required actions (e.g. pending KYC), while errors indicate something has failed or must be resolved. Pair banners with clear, concise messaging and include a relevant action when possible (e.g. "Start KYC" or "See details") to help users move forward.</p>
+  </header>
+
+  <div class="matrix">
+    <!-- Success -->
+    <div class="row-label">Success</div>
+    <div class="oms-sbanner oms-sbanner--success">
+      <div class="oms-sbanner__body">
+        <p class="oms-sbanner__title">Customer verification</p>
+        <p class="oms-sbanner__desc">KYC completed on Jan 14, 2026</p>
+      </div>
+      <span class="oms-sbanner__action"><button class="btn btn-md btn-secondary">Button</button></span>
+    </div>
+    <div class="oms-sbanner oms-sbanner--success">
+      <div class="oms-sbanner__body">
+        <p class="oms-sbanner__title">Customer verification</p>
+        <p class="oms-sbanner__desc">KYC completed on Jan 14, 2026</p>
+      </div>
+      <span class="oms-sbanner__action"><button class="btn btn-md btn-secondary">Button</button></span>
+    </div>
+
+    <!-- Warning -->
+    <div class="row-label">Warning</div>
+    <div class="oms-sbanner oms-sbanner--warning">
+      <div class="oms-sbanner__body">
+        <p class="oms-sbanner__title">Customer verification</p>
+        <p class="oms-sbanner__desc">KYC pending. Customer needs to start KYC verification to access wallets and virtual accounts.</p>
+      </div>
+      <span class="oms-sbanner__action"><button class="btn btn-md btn-secondary">Button</button></span>
+    </div>
+    <div class="oms-sbanner oms-sbanner--warning">
+      <div class="oms-sbanner__body">
+        <p class="oms-sbanner__title">Customer verification</p>
+        <p class="oms-sbanner__desc">KYC pending. Customer needs to start KYC verification to access wallets and virtual accounts.</p>
+      </div>
+      <span class="oms-sbanner__action"><button class="btn btn-md btn-secondary">Button</button></span>
+    </div>
+
+    <!-- Info -->
+    <div class="row-label">Info</div>
+    <div class="oms-sbanner oms-sbanner--info">
+      <div class="oms-sbanner__body">
+        <p class="oms-sbanner__title">Customer verification</p>
+        <p class="oms-sbanner__desc">KYC completed on Jan 14, 2026</p>
+      </div>
+      <span class="oms-sbanner__action"><button class="btn btn-md btn-secondary">Button</button></span>
+    </div>
+    <div class="oms-sbanner oms-sbanner--info">
+      <div class="oms-sbanner__body">
+        <p class="oms-sbanner__title">Customer verification</p>
+        <p class="oms-sbanner__desc">KYC completed on Jan 14, 2026</p>
+      </div>
+      <span class="oms-sbanner__action"><button class="btn btn-md btn-secondary">Button</button></span>
+    </div>
+
+    <!-- Error -->
+    <div class="row-label">Error</div>
+    <div class="oms-sbanner oms-sbanner--error">
+      <div class="oms-sbanner__body">
+        <p class="oms-sbanner__title">Customer verification</p>
+        <p class="oms-sbanner__desc">KYC pending. Customer needs to start KYC verification to access wallets and virtual accounts.</p>
+      </div>
+      <span class="oms-sbanner__action"><button class="btn btn-md btn-secondary">Button</button></span>
+    </div>
+    <div class="oms-sbanner oms-sbanner--error">
+      <div class="oms-sbanner__body">
+        <p class="oms-sbanner__title">Customer verification</p>
+        <p class="oms-sbanner__desc">KYC pending. Customer needs to start KYC verification to access wallets and virtual accounts.</p>
+      </div>
+      <span class="oms-sbanner__action"><button class="btn btn-md btn-secondary">Button</button></span>
+    </div>
+  </div>
+
+</body>
+</html>

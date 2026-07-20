@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Menu Item — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../components/menu_item.css">
+<style>
+  html, body { margin: 0; background: var(--slate-50); }
+  body {
+    padding: 32px 36px 56px;
+    font-family: var(--font-body);
+    color: var(--fg-primary);
+    display: flex; flex-direction: column; gap: 28px;
+  }
+  .doc { max-width: 720px; }
+  .doc h1 { font-family: var(--font-display); font-weight: 700; font-size: 32px; line-height: 1.2; color: var(--slate-900); margin: 0 0 12px; }
+  .doc p  { font-family: var(--font-body); font-size: 14px; line-height: 22px; color: var(--slate-500); margin: 0; }
+  .group-title {
+    font-family: var(--font-doc); font-weight: 600; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--fg-secondary); margin: 0 0 12px;
+  }
+  .grid { display: grid; grid-template-columns: 90px 1fr; row-gap: 14px; column-gap: 24px; align-items: center; max-width: 520px; }
+  .grid > .lbl {
+    font-family: var(--font-doc); font-size: 13px; color: var(--slate-500);
+  }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+</style>
+</head>
+<body>
+  <div class="doc" data-screen-label="Menu Item">
+    <h1>Menu Item</h1>
+    <p>Generic dropdown / accordion trigger. Leading icon, label, trailing chevron. Five states (default, hover, selected, disabled, focused) and two orientations (closed, open).</p>
+  </div>
+
+  <div class="pair">
+    <div>
+      <h2 class="group-title">Closed</h2>
+      <div class="grid">
+        <span class="lbl">Default</span>
+        <button type="button" class="oms-menu-item">
+          <span class="oms-menu-item__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M6 6.2A2 2 0 0 1 9.8 7c0 1.4-2 1.6-2 3"/><path d="M8 12.2v.05"/></svg></span>
+          <span class="oms-menu-item__label">Menu Item</span>
+          <span class="oms-menu-item__chev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></span>
+        </button>
+
+        <span class="lbl">Hover</span>
+        <button type="button" class="oms-menu-item" data-state="hover">
+          <span class="oms-menu-item__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M6 6.2A2 2 0 0 1 9.8 7c0 1.4-2 1.6-2 3"/><path d="M8 12.2v.05"/></svg></span>
+          <span class="oms-menu-item__label">Menu Item</span>
+          <span class="oms-menu-item__chev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></span>
+        </button>
+
+        <span class="lbl">Selected</span>
+        <button type="button" class="oms-menu-item" data-state="selected">
+          <span class="oms-menu-item__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M6 6.2A2 2 0 0 1 9.8 7c0 1.4-2 1.6-2 3"/><path d="M8 12.2v.05"/></svg></span>
+          <span class="oms-menu-item__label">Menu Item</span>
+          <span class="oms-menu-item__chev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></span>
+        </button>
+
+        <span class="lbl">Disabled</span>
+        <button type="button" class="oms-menu-item" data-state="disabled" disabled>
+          <span class="oms-menu-item__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M6 6.2A2 2 0 0 1 9.8 7c0 1.4-2 1.6-2 3"/><path d="M8 12.2v.05"/></svg></span>
+          <span class="oms-menu-item__label">Menu Item</span>
+          <span class="oms-menu-item__chev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></span>
+        </button>
+
+        <span class="lbl">Focused</span>
+        <button type="button" class="oms-menu-item" data-state="focused">
+          <span class="oms-menu-item__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M6 6.2A2 2 0 0 1 9.8 7c0 1.4-2 1.6-2 3"/><path d="M8 12.2v.05"/></svg></span>
+          <span class="oms-menu-item__label">Menu Item</span>
+          <span class="oms-menu-item__chev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></span>
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="group-title">Open</h2>
+      <div class="grid">
+        <span class="lbl">Default</span>
+        <button type="button" class="oms-menu-item" data-open="true">
+          <span class="oms-menu-item__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M6 6.2A2 2 0 0 1 9.8 7c0 1.4-2 1.6-2 3"/><path d="M8 12.2v.05"/></svg></span>
+          <span class="oms-menu-item__label">Menu Item</span>
+          <span class="oms-menu-item__chev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></span>
+        </button>
+
+        <span class="lbl">Hover</span>
+        <button type="button" class="oms-menu-item" data-open="true" data-state="hover">
+          <span class="oms-menu-item__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M6 6.2A2 2 0 0 1 9.8 7c0 1.4-2 1.6-2 3"/><path d="M8 12.2v.05"/></svg></span>
+          <span class="oms-menu-item__label">Menu Item</span>
+          <span class="oms-menu-item__chev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></span>
+        </button>
+
+        <span class="lbl">Selected</span>
+        <button type="button" class="oms-menu-item" data-open="true" data-state="selected">
+          <span class="oms-menu-item__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M6 6.2A2 2 0 0 1 9.8 7c0 1.4-2 1.6-2 3"/><path d="M8 12.2v.05"/></svg></span>
+          <span class="oms-menu-item__label">Menu Item</span>
+          <span class="oms-menu-item__chev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></span>
+        </button>
+
+        <span class="lbl">Disabled</span>
+        <button type="button" class="oms-menu-item" data-open="true" data-state="disabled" disabled>
+          <span class="oms-menu-item__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M6 6.2A2 2 0 0 1 9.8 7c0 1.4-2 1.6-2 3"/><path d="M8 12.2v.05"/></svg></span>
+          <span class="oms-menu-item__label">Menu Item</span>
+          <span class="oms-menu-item__chev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></span>
+        </button>
+
+        <span class="lbl">Focused</span>
+        <button type="button" class="oms-menu-item" data-open="true" data-state="focused">
+          <span class="oms-menu-item__icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><path d="M6 6.2A2 2 0 0 1 9.8 7c0 1.4-2 1.6-2 3"/><path d="M8 12.2v.05"/></svg></span>
+          <span class="oms-menu-item__label">Menu Item</span>
+          <span class="oms-menu-item__chev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

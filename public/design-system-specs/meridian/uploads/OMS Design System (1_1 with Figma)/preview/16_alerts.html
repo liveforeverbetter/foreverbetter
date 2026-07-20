@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alert — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../components/alerts.css">
+<link rel="stylesheet" href="../components/buttons.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  html, body { margin: 0; background: var(--bg-page-default); }
+  body { padding: 28px 32px 48px; font-family: var(--font-body, "Fustat"), system-ui, sans-serif; color: var(--fg-primary); }
+  .preview-title { font-family: var(--font-display); font-weight: 600; font-size: 18px; letter-spacing: -0.01em; margin: 0 0 4px; }
+  .preview-sub { font-family: var(--font-doc, "Inter"); font-size: 12px; color: var(--fg-secondary); margin: 0 0 28px; }
+  .section { margin-top: 28px; border-top: 1px solid var(--slate-100); padding-top: 20px; }
+  .section:first-of-type { margin-top: 0; border-top: none; padding-top: 0; }
+  .section-title { font-family: var(--font-doc, "Inter"); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-secondary); margin: 0 0 16px; }
+  .stack { display: flex; flex-direction: column; gap: 16px; }
+  .tag { font-family: "Geist", system-ui, sans-serif; font-weight: 500; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-tertiary); margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+  <h1 class="preview-title">Alert</h1>
+  <p class="preview-sub">Use-case alerts + status banner — 1:1 with Figma node 309:1734.</p>
+
+  <section class="section">
+    <h2 class="section-title">Use-case alert (desktop)</h2>
+    <div class="stack">
+
+      <div>
+        <div class="tag">use case = info</div>
+        <div class="oms-alert oms-alert--info">
+          <div class="oms-alert__main">
+            <div class="oms-alert__stack">
+              <h3 class="oms-alert__title">Customer verification</h3>
+              <p class="oms-alert__desc">KYC completed on Jan 14, 2026</p>
+            </div>
+          </div>
+          <button class="btn btn-md btn-secondary oms-alert__action">View</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="tag">use case = success</div>
+        <div class="oms-alert oms-alert--success">
+          <div class="oms-alert__main">
+            <div class="oms-alert__stack">
+              <h3 class="oms-alert__title">Customer verification</h3>
+              <p class="oms-alert__desc">KYC completed on Jan 14, 2026</p>
+            </div>
+          </div>
+          <button class="btn btn-md btn-secondary oms-alert__action">View</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="tag">use case = warning</div>
+        <div class="oms-alert oms-alert--warning">
+          <div class="oms-alert__main">
+            <div class="oms-alert__stack">
+              <h3 class="oms-alert__title">Customer verification</h3>
+              <p class="oms-alert__desc">KYC pending. Customer needs to start KYC verification to access wallets and virtual accounts.</p>
+            </div>
+          </div>
+          <button class="btn btn-md btn-secondary oms-alert__action">View</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="tag">use case = danger</div>
+        <div class="oms-alert oms-alert--danger">
+          <div class="oms-alert__main">
+            <div class="oms-alert__stack">
+              <h3 class="oms-alert__title">Customer verification</h3>
+              <p class="oms-alert__desc">KYC pending. Customer needs to start KYC verification to access wallets and virtual accounts.</p>
+            </div>
+          </div>
+          <button class="btn btn-md btn-secondary oms-alert__action">View</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="tag">with leading icon (optional)</div>
+        <div class="oms-alert oms-alert--info">
+          <div class="oms-alert__main">
+            <span class="oms-alert__icon"><i data-lucide="info"></i></span>
+            <div class="oms-alert__stack">
+              <h3 class="oms-alert__title">Customer verification</h3>
+              <p class="oms-alert__desc">KYC completed on Jan 14, 2026</p>
+            </div>
+          </div>
+          <button class="btn btn-md btn-secondary oms-alert__action">View</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>

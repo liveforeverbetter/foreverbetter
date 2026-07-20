@@ -1,0 +1,70 @@
+/* ─────────────────────────────────────────────────────────────────
+   Menu Item — generic dropdown / accordion trigger row
+   Mirrors Figma node 320:13868
+   States: default · hover · selected · disabled · focused
+   Variants: closed (chevron-down) · open (chevron-up)
+   ───────────────────────────────────────────────────────────────── */
+
+.oms-menu-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 12px;
+  font-family: var(--font-doc, "Geist"), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--slate-950);
+  cursor: pointer;
+  text-align: left;
+  box-sizing: border-box;
+  min-width: 220px;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.oms-menu-item__icon {
+  width: 16px; height: 16px; flex: 0 0 auto;
+  color: currentColor;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.oms-menu-item__icon svg { width: 100%; height: 100%; display: block; }
+.oms-menu-item__label { flex: 1; }
+.oms-menu-item__chev {
+  width: 16px; height: 16px; flex: 0 0 auto;
+  color: currentColor;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: transform 150ms ease;
+}
+.oms-menu-item__chev svg { width: 100%; height: 100%; display: block; }
+
+/* States */
+.oms-menu-item:hover,
+.oms-menu-item[data-state="hover"] {
+  background: var(--purple-50, #f4eefe);
+}
+.oms-menu-item[data-state="selected"],
+.oms-menu-item.is-selected {
+  color: var(--purple-700);
+  background: transparent;
+}
+.oms-menu-item[data-state="disabled"],
+.oms-menu-item:disabled {
+  color: var(--slate-400, #94a3b8);
+  cursor: not-allowed;
+  background: transparent;
+}
+.oms-menu-item[data-state="focused"],
+.oms-menu-item:focus-visible {
+  outline: none;
+  border-color: var(--purple-400, #a575f5);
+  background: transparent;
+}
+
+/* Open variant — flip chevron */
+.oms-menu-item[data-open="true"] .oms-menu-item__chev,
+.oms-menu-item.is-open .oms-menu-item__chev {
+  transform: rotate(180deg);
+}

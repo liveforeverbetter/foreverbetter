@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Brand mark</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-page-default); }
+  body { padding: 28px 32px; font-family: var(--font-body); color: var(--fg-primary); }
+  .row { display: flex; align-items: center; gap: 32px; }
+  .lockup img { display: block; height: 40px; width: auto; }
+  .stack { display: flex; flex-direction: column; gap: 8px; }
+  .swatches { display: flex; gap: 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--slate-200); width: 240px; height: 44px; }
+  .swatches > div { flex: 1; }
+  .mono-row { display: flex; gap: 8px; align-items: center; }
+  .chip { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 999px; padding: 3px 10px; font-family: var(--font-doc); font-size: 11px; color: var(--fg-secondary); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="lockup">
+      <img src="../assets/logo_polygon_oms_stacked.svg" alt="Polygon OMS">
+    </div>
+    <div style="flex:1"></div>
+    <div class="stack">
+      <div class="swatches">
+        <div style="background: var(--purple-500)"></div>
+        <div style="background: var(--slate-950)"></div>
+        <div style="background: var(--slate-50)"></div>
+        <div style="background: #fff; border-left: 1px solid var(--slate-200)"></div>
+      </div>
+      <div class="mono-row">
+        <span class="chip">brand · #670DE5</span>
+        <span class="chip">ink · #090624</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

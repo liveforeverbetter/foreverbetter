@@ -1,0 +1,34 @@
+/* ─────────────────────────────────────────────────────────────────
+   OMS Design System — root stylesheet
+   Single entry point: consumers link THIS file instead of the 24
+   individual component sheets. Imports the foundations (tokens, type,
+   @font-face) first, then every component layer.
+   ───────────────────────────────────────────────────────────────── */
+
+/* Foundations — tokens, type scale, @font-face, radii, shadows */
+@import url("./colors_and_type.css");
+
+/* Components */
+@import url("./components/alerts.css");
+@import url("./components/area_chart.css");
+@import url("./components/area_chart_tooltip.css");
+@import url("./components/badges.css");
+@import url("./components/buttons.css");
+@import url("./components/cards.css");
+@import url("./components/checkbox_radio.css");
+@import url("./components/context_menu.css");
+@import url("./components/customer_profile.css");
+@import url("./components/drawer.css");
+@import url("./components/floater_button.css");
+@import url("./components/inputs.css");
+@import url("./components/list_item.css");
+@import url("./components/menu_item.css");
+@import url("./components/modal.css");
+@import url("./components/mode_toggle.css");
+@import url("./components/separator.css");
+@import url("./components/sidebar.css");
+@import url("./components/status_banner.css");
+@import url("./components/table.css");
+@import url("./components/toasts.css");
+@import url("./components/tooltip.css");
+@import url("./components/topnav.css");

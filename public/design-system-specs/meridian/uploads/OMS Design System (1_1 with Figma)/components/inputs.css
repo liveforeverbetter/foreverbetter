@@ -1,0 +1,190 @@
+/* ─────────────────────────────────────────────────────────────────
+   OMS Design System — Inputs
+   1:1 with Figma source (node 310:4077 — Input / Size=md / Type=Text)
+   States: Default · Active · Filled · Focus-Filled · Disabled
+   Destructive: False / True
+   Tokens defined in colors_and_type.css
+   ───────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ─── Input field tokens ─────────────────────────────────────── */
+  --input-radius:           12px;
+  --input-padding-x:        12px;
+  --input-gap:              4px;
+  --input-height-md:        40px;     /* default + filled + disabled */
+  --input-height-md-active: 44px;     /* active + focus-filled */
+  --input-icon-size:        16px;
+
+  --input-bg:               var(--pure-white);
+  --input-bg-disabled:      var(--pure-white);
+  --input-border:           var(--slate-300);   /* #C8CFE1 */
+  --input-border-active:    var(--slate-400);   /* #929EBA */
+  --input-border-danger:    var(--red-700);     /* #B91C1C */
+
+  --input-fg-text:          var(--slate-900);   /* #141635 */
+  --input-fg-placeholder:   var(--slate-500);   /* #64708F */
+  --input-fg-icon:          #020617;     /* per Figma — Lucide stroke is slate-950 */
+  --input-fg-icon-active:   #020617;
+
+  --input-label-fg:         var(--slate-900);
+  --input-label-fg-danger:  var(--red-700);
+  --input-help-fg:          var(--slate-400);   /* #929EBA */
+  --input-error-fg:         var(--red-700);
+  --input-counter-fg:       var(--slate-900);
+
+  --input-disabled-opacity: 0.5; /* @kind other */
+  --input-focus-ring:       0 0 0 4px rgba(103, 13, 229, 0.15); /* purple-500 @ 15% */
+  --input-focus-ring-danger: 0 0 0 4px rgba(185, 28, 28, 0.15); /* red-700 @ 15% */
+}
+
+/* ─── Wrapper: label + field + help ────────────────────────────── */
+.oms-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-display, "Fustat"), system-ui, sans-serif;
+}
+
+/* ─── Label row (label + counter) ──────────────────────────────── */
+.oms-input__label-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 14px;
+}
+
+.oms-input__label {
+  font-family: var(--font-display, "Fustat"), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--input-label-fg);
+}
+
+.oms-input__counter {
+  font-family: "Geist", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--input-counter-fg);
+  text-align: right;
+}
+
+/* ─── Field (the framed area) ──────────────────────────────────── */
+.oms-input__field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--input-gap);
+  height: var(--input-height-md);
+  padding: 0 var(--input-padding-x);
+  border-radius: var(--input-radius);
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  overflow: hidden;
+  transition: border-color 120ms ease, box-shadow 120ms ease, height 120ms ease;
+}
+
+/* The actual <input>, occupying all remaining space */
+.oms-input__field input,
+.oms-input__field textarea {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-display, "Fustat"), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--input-fg-text);
+  padding: 0;
+}
+
+.oms-input__field input::placeholder,
+.oms-input__field textarea::placeholder {
+  color: var(--input-fg-placeholder);
+  opacity: 1;
+}
+
+/* Leading + trailing icons (16×16) */
+.oms-input__icon {
+  flex: 0 0 var(--input-icon-size);
+  width: var(--input-icon-size);
+  height: var(--input-icon-size);
+  color: var(--input-fg-icon);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.oms-input__icon svg,
+.oms-input__icon i.lucide {
+  width: var(--input-icon-size);
+  height: var(--input-icon-size);
+  stroke-width: 1.5;
+}
+
+/* ─── State: Active (explicit only — Figma h44, slate-400 border) ─ */
+.oms-input--active .oms-input__field {
+  border-color: var(--input-border-active);
+  height: var(--input-height-md-active);
+}
+
+
+/* ─── State: Focus / Focus-Filled (explicit only — Figma h44) ──── */
+.oms-input--focus .oms-input__field {
+  border-color: var(--input-border-active);
+  height: var(--input-height-md-active);
+  box-shadow: var(--input-focus-ring);
+}
+.oms-input--focus.oms-input--danger .oms-input__field {
+  box-shadow: var(--input-focus-ring);
+}
+
+
+/* ─── State: Disabled ──────────────────────────────────────────── */
+.oms-input--disabled .oms-input__field,
+.oms-input--disabled .oms-input__label-row,
+.oms-input--disabled .oms-input__help,
+.oms-input--disabled .oms-input__error {
+  opacity: var(--input-disabled-opacity);
+}
+.oms-input--disabled .oms-input__field {
+  pointer-events: none;
+}
+.oms-input--disabled input,
+.oms-input--disabled textarea {
+  cursor: not-allowed;
+}
+
+/* ─── Variant: Destructive ──────────────────────────────────────
+   In Figma, destructive only re-colors the label and adds a
+   destructive message — the field border stays slate. */
+.oms-input--danger .oms-input__label { color: var(--input-label-fg-danger); }
+
+/* ─── Help + error messages ────────────────────────────────────── */
+.oms-input__help {
+  font-family: var(--font-display, "Fustat"), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--input-help-fg);
+}
+.oms-input__error {
+  font-family: var(--font-display, "Fustat"), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--input-error-fg);
+}
+
+/* ─── Layout: input + trailing button ──────────────────────────── */
+.oms-input__row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 8px;
+}
+.oms-input__row .oms-input__field { flex: 1 1 auto; }

@@ -1,0 +1,246 @@
+<!-- @dsCard group="6 · Components" name="List item" subtitle="User · payment · selection list rows with states" viewport="1280x1080" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List item — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../components/badges.css">
+<link rel="stylesheet" href="../components/list_item.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  html, body { margin: 0; background: var(--bg-page-default, #fff); }
+  body {
+    padding: 40px 48px 64px;
+    font-family: var(--font-main, "Fustat"), system-ui, sans-serif;
+    color: var(--fg-primary);
+  }
+  .page-header { margin: 0 0 36px; }
+  .page-title {
+    font-family: var(--font-main, "Fustat");
+    font-weight: 700; font-size: 40px; line-height: 1.2;
+    color: var(--slate-900, #141635); margin: 0 0 12px;
+  }
+  .page-desc {
+    font-family: "Geist", system-ui, sans-serif;
+    font-size: 16px; line-height: 24px;
+    color: var(--slate-500, #64708F); margin: 0; max-width: 1000px;
+    white-space: pre-line;
+  }
+  .group { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; max-width: 720px; }
+  .group__label {
+    font-family: "Geist", system-ui, sans-serif;
+    font-weight: 500; font-size: 14px;
+    color: var(--purple-700, #670DE5); margin: 0;
+  }
+  .row { display: grid; grid-template-columns: 90px 1fr; gap: 24px; align-items: center; }
+  .row__head {
+    font-family: "Geist", system-ui, sans-serif;
+    font-size: 13px; color: var(--slate-500, #64708F);
+  }
+
+  /* ── Payment list item ───────────────────────────────────────── */
+  .oms-pay-item {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; width: 352px; padding: 12px;
+    border-radius: 12px; background: #fff;
+    box-shadow: inset 0 0 0 1px var(--slate-300, #C8CFE1);
+    box-sizing: border-box; cursor: pointer;
+    font-family: "Fustat", system-ui, sans-serif;
+  }
+  .oms-pay-item.is-hover { box-shadow: inset 0 0 0 1px var(--slate-400, #929EBA); }
+  .oms-pay-item__details { display: flex; align-items: center; gap: 16px; }
+  .oms-radio {
+    width: 16px; height: 16px; border-radius: 50%; flex: 0 0 16px;
+    box-shadow: inset 0 0 0 1px var(--slate-400, #929EBA);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .oms-radio.is-selected { box-shadow: inset 0 0 0 5px var(--purple-700, #670DE5); }
+  .oms-pay-item__brand {
+    width: 32px; height: 32px; border-radius: 6px; flex: 0 0 32px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #1434CB; color: #fff; font-weight: 800; font-style: italic;
+    font-size: 13px; letter-spacing: -0.5px; font-family: Georgia, serif;
+  }
+  .oms-pay-item__num { font-weight: 700; font-size: 14px; color: var(--slate-900, #141635); }
+  .oms-pay-item__exp { font-weight: 500; font-size: 14px; color: var(--slate-500, #64708F); margin-top: 4px; }
+  .oms-pay-item__add {
+    display: flex; align-items: center; gap: 16px; width: 100%;
+    color: var(--slate-900, #141635); font-weight: 700; font-size: 14px;
+  }
+  .oms-pay-item__add svg { width: 24px; height: 24px; stroke-width: 2; }
+
+  /* ── Selection list item ─────────────────────────────────────── */
+  .oms-sel-item {
+    display: flex; align-items: center; gap: 12px;
+    width: 344px; padding: 16px;
+    border-radius: 12px; background: #fff;
+    box-shadow: inset 0 0 0 1px var(--slate-300, #C8CFE1);
+    box-sizing: border-box; cursor: pointer;
+    font-family: "Fustat", system-ui, sans-serif;
+  }
+  .oms-sel-item.is-hover { box-shadow: inset 0 0 0 1px var(--slate-400, #929EBA); }
+  .oms-sel-item.is-selected { box-shadow: inset 0 0 0 2px var(--purple-600, #7C3AED); }
+  .oms-sel-item__check {
+    width: 16px; height: 16px; border-radius: 4px; flex: 0 0 16px;
+    box-shadow: inset 0 0 0 1px var(--slate-400, #929EBA);
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff;
+  }
+  .oms-sel-item.is-selected .oms-sel-item__check {
+    background: var(--purple-700, #670DE5); box-shadow: none;
+  }
+  .oms-sel-item__check svg { width: 12px; height: 12px; stroke-width: 3; display: none; }
+  .oms-sel-item.is-selected .oms-sel-item__check svg { display: block; }
+  .oms-sel-item__body { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+  .oms-sel-item__title { font-weight: 700; font-size: 14px; color: var(--slate-900, #141635); }
+  .oms-sel-item__sub { font-weight: 500; font-size: 13px; color: var(--slate-500, #64708F); }
+</style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">List item</h1>
+    <p class="page-desc">List items represent individual entries within a list — users, payment methods, selectable options. They provide a consistent way to display key information alongside relevant metadata and actions.
+
+Use list items for scannable collections where users review or act on multiple entries. Support hover, selected, and status variants (e.g. active vs pending) to reflect state.</p>
+  </header>
+
+  <!-- ░░ User list item ░░ -->
+  <div class="group" style="max-width:760px;">
+    <p class="group__label">User list item — active</p>
+    <div class="row"><span class="row__head">Default</span>
+      <div class="oms-user-list-item">
+        <div class="oms-user-list-item__lead">
+          <div class="oms-user-list-item__member">
+            <div class="oms-user-list-item__avatar">SC</div>
+            <div class="oms-user-list-item__copy">
+              <div class="oms-user-list-item__name">Sarah Chen</div>
+              <div class="oms-user-list-item__meta">schen@acme.com · Admin</div>
+            </div>
+          </div>
+        </div>
+        <span class="oms-badge oms-badge--success oms-badge--sm"><i data-lucide="circle-check-big"></i>Active</span>
+        <button class="oms-user-list-item__action" aria-label="More"><i data-lucide="ellipsis-vertical"></i></button>
+      </div>
+    </div>
+    <div class="row"><span class="row__head">Hover</span>
+      <div class="oms-user-list-item is-hover">
+        <div class="oms-user-list-item__lead">
+          <div class="oms-user-list-item__member">
+            <div class="oms-user-list-item__avatar">SC</div>
+            <div class="oms-user-list-item__copy">
+              <div class="oms-user-list-item__name">Sarah Chen</div>
+              <div class="oms-user-list-item__meta">schen@acme.com · Admin</div>
+            </div>
+          </div>
+        </div>
+        <span class="oms-badge oms-badge--success oms-badge--sm"><i data-lucide="circle-check-big"></i>Active</span>
+        <button class="oms-user-list-item__action" aria-label="More"><i data-lucide="ellipsis-vertical"></i></button>
+      </div>
+    </div>
+
+    <p class="group__label" style="margin-top:16px;">User list item — pending</p>
+    <div class="row"><span class="row__head">Default</span>
+      <div class="oms-user-list-item oms-user-list-item--pending">
+        <div class="oms-user-list-item__lead">
+          <div class="oms-user-list-item__member">
+            <div class="oms-user-list-item__avatar">J</div>
+            <div class="oms-user-list-item__copy">
+              <div class="oms-user-list-item__name">jlacroix@acme.com</div>
+              <div class="oms-user-list-item__meta">Invited 2 days ago · Admin</div>
+            </div>
+          </div>
+        </div>
+        <span class="oms-badge oms-badge--warning oms-badge--sm"><i data-lucide="triangle-alert"></i>Pending</span>
+        <button class="oms-user-list-item__action" aria-label="More"><i data-lucide="ellipsis-vertical"></i></button>
+      </div>
+    </div>
+    <div class="row"><span class="row__head">Hover</span>
+      <div class="oms-user-list-item oms-user-list-item--pending is-hover">
+        <div class="oms-user-list-item__lead">
+          <div class="oms-user-list-item__member">
+            <div class="oms-user-list-item__avatar">J</div>
+            <div class="oms-user-list-item__copy">
+              <div class="oms-user-list-item__name">jlacroix@acme.com</div>
+              <div class="oms-user-list-item__meta">Invited 2 days ago · Admin</div>
+            </div>
+          </div>
+        </div>
+        <span class="oms-badge oms-badge--warning oms-badge--sm"><i data-lucide="triangle-alert"></i>Pending</span>
+        <button class="oms-user-list-item__action" aria-label="More"><i data-lucide="ellipsis-vertical"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░ Payment list item ░░ -->
+  <div class="group">
+    <p class="group__label">Payment list item</p>
+    <div class="row"><span class="row__head">Default</span>
+      <div class="oms-pay-item">
+        <div class="oms-pay-item__details">
+          <span class="oms-radio is-selected"></span>
+          <span class="oms-pay-item__brand">VISA</span>
+          <div>
+            <div class="oms-pay-item__num">Visa ending 4646</div>
+            <div class="oms-pay-item__exp">Expires 08/28</div>
+          </div>
+        </div>
+        <span class="oms-badge oms-badge--success oms-badge--sm">Current</span>
+      </div>
+    </div>
+    <div class="row"><span class="row__head">Hover</span>
+      <div class="oms-pay-item is-hover">
+        <div class="oms-pay-item__details">
+          <span class="oms-radio is-selected"></span>
+          <span class="oms-pay-item__brand">VISA</span>
+          <div>
+            <div class="oms-pay-item__num">Visa ending 4646</div>
+            <div class="oms-pay-item__exp">Expires 08/28</div>
+          </div>
+        </div>
+        <span class="oms-badge oms-badge--success oms-badge--sm">Current</span>
+      </div>
+    </div>
+    <div class="row"><span class="row__head">Add card</span>
+      <div class="oms-pay-item">
+        <span class="oms-pay-item__add"><i data-lucide="plus"></i>Add new card</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░ Selection list item ░░ -->
+  <div class="group">
+    <p class="group__label">Selection list item</p>
+    <div class="row"><span class="row__head">Default</span>
+      <div class="oms-sel-item">
+        <span class="oms-sel-item__check"><i data-lucide="check"></i></span>
+        <div class="oms-sel-item__body">
+          <span class="oms-sel-item__title">Acme Corporation</span>
+          <span class="oms-sel-item__sub">12 members · Owner</span>
+        </div>
+      </div>
+    </div>
+    <div class="row"><span class="row__head">Hover</span>
+      <div class="oms-sel-item is-hover">
+        <span class="oms-sel-item__check"><i data-lucide="check"></i></span>
+        <div class="oms-sel-item__body">
+          <span class="oms-sel-item__title">Acme Corporation</span>
+          <span class="oms-sel-item__sub">12 members · Owner</span>
+        </div>
+      </div>
+    </div>
+    <div class="row"><span class="row__head">Selected</span>
+      <div class="oms-sel-item is-selected">
+        <span class="oms-sel-item__check"><i data-lucide="check"></i></span>
+        <div class="oms-sel-item__body">
+          <span class="oms-sel-item__title">Acme Corporation</span>
+          <span class="oms-sel-item__sub">12 members · Owner</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>

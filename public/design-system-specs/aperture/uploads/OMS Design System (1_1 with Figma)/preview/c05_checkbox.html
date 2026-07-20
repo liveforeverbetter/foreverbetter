@@ -1,0 +1,81 @@
+<!-- @dsCard group="6 · Components" name="Checkbox" subtitle="default · focus · disabled × unchecked · indeterminate · checked" viewport="900x520" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Checkbox — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../components/checkbox_radio.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  html, body { margin: 0; background: var(--bg-page-default, #fff); }
+  body {
+    padding: 40px 48px 64px;
+    font-family: var(--font-main, "Fustat"), system-ui, sans-serif;
+    color: var(--fg-primary);
+  }
+  .page-header { margin: 0 0 36px; }
+  .page-title {
+    font-family: var(--font-main, "Fustat");
+    font-weight: 700; font-size: 40px; line-height: 1.2;
+    color: var(--slate-900, #141635); margin: 0 0 12px;
+  }
+  .page-desc {
+    font-family: "Geist", system-ui, sans-serif;
+    font-weight: 400; font-size: 16px; line-height: 24px;
+    color: var(--slate-500, #64708F); margin: 0; max-width: 1000px;
+    white-space: pre-line;
+  }
+  .matrix {
+    display: grid;
+    grid-template-columns: 110px repeat(3, 64px);
+    gap: 28px 40px;
+    align-items: center;
+    width: max-content;
+    margin-top: 24px;
+  }
+  .row-head {
+    font-family: "Geist", system-ui, sans-serif;
+    font-weight: 500; font-size: 14px;
+    color: var(--purple-700, #670DE5);
+  }
+  .cell { display: flex; align-items: center; }
+</style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">Checkbox</h1>
+    <p class="page-desc">Checkboxes allow users to select one or multiple options from a list. They are commonly used in forms, filters, and settings where multiple selections are possible.
+
+Use checkboxes when users need flexibility to choose any number of options, including none. Provide clear labels for each option, and ensure states—default, focused, checked, and disabled—give clear visual feedback.</p>
+  </header>
+
+  <div class="matrix">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <!-- default -->
+    <span class="row-head">default</span>
+    <span class="cell"><span class="oms-checkbox"></span></span>
+    <span class="cell"><span class="oms-checkbox is-indeterminate"><i data-lucide="minus"></i></span></span>
+    <span class="cell"><span class="oms-checkbox is-checked"><i data-lucide="check"></i></span></span>
+
+    <!-- focus -->
+    <span class="row-head">focus</span>
+    <span class="cell"><span class="oms-checkbox is-focus"></span></span>
+    <span class="cell"><span class="oms-checkbox is-indeterminate is-focus"><i data-lucide="minus"></i></span></span>
+    <span class="cell"><span class="oms-checkbox is-checked is-focus"><i data-lucide="check"></i></span></span>
+
+    <!-- disabled -->
+    <span class="row-head">disabled</span>
+    <span class="cell"><span class="oms-checkbox is-disabled"></span></span>
+    <span class="cell"><span class="oms-checkbox is-indeterminate is-disabled"><i data-lucide="minus"></i></span></span>
+    <span class="cell"><span class="oms-checkbox is-checked is-disabled"><i data-lucide="check"></i></span></span>
+  </div>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!-- @dsCard group="6 · Components" name="Badges" subtitle="5 states · 2 sizes · soft + solid · icon options" viewport="1200x720" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Badge — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../components/badges.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  html, body { margin: 0; background: var(--bg-page-default); }
+  body {
+    padding: 28px 32px 48px;
+    font-family: var(--font-body, "Fustat"), system-ui, sans-serif;
+    color: var(--fg-primary);
+  }
+  .preview-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+  }
+  .preview-sub {
+    font-family: var(--font-doc, "Inter");
+    font-size: 12px;
+    color: var(--fg-secondary);
+    margin: 0 0 28px;
+  }
+  .section { margin-top: 28px; border-top: 1px solid var(--slate-100); padding-top: 20px; }
+  .section:first-of-type { margin-top: 0; border-top: none; padding-top: 0; }
+  .section-title {
+    font-family: var(--font-doc, "Inter");
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--fg-secondary);
+    margin: 0 0 16px;
+  }
+
+  /* Matrix: rows = states, cols = (default/small × soft/solid × icon variants) */
+  .matrix {
+    display: grid;
+    grid-template-columns: 88px repeat(8, 1fr);
+    gap: 14px 18px;
+    align-items: center;
+    max-width: 1280px;
+  }
+  .matrix .col-head {
+    font-family: "Geist", system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--fg-tertiary);
+    text-align: left;
+  }
+  .row-head {
+    font-family: var(--font-doc, "Inter");
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--fg-secondary);
+  }
+  .cell { display: flex; align-items: center; }
+
+  .swatch-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+</style>
+</head>
+<body>
+
+  <h1 class="preview-title">Badge</h1>
+  <p class="preview-sub">5 states · 2 sizes · soft + solid · icon options — 1:1 with Figma node 310:4376.</p>
+
+  <!-- ─────────────────────────────────────────────────────────────
+       MATRIX: state × size/inverted × icon
+       ───────────────────────────────────────────────────────────── -->
+  <section class="section">
+    <h2 class="section-title">State matrix</h2>
+    <div class="matrix">
+
+      <span></span>
+      <span class="col-head">Default · soft</span>
+      <span class="col-head">Default · solid</span>
+      <span class="col-head">Default · icon</span>
+      <span class="col-head">Default · solid+icon</span>
+      <span class="col-head">Small · soft</span>
+      <span class="col-head">Small · solid</span>
+      <span class="col-head">Small · icon</span>
+      <span class="col-head">Small · solid+icon</span>
+
+      <!-- Info -->
+      <span class="row-head">Info</span>
+      <span class="cell"><span class="oms-badge oms-badge--info">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--info oms-badge--solid">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--info"><i data-lucide="info"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--info oms-badge--solid"><i data-lucide="info"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--info">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--info oms-badge--solid">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--info"><i data-lucide="info"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--info oms-badge--solid"><i data-lucide="info"></i>Tag</span></span>
+
+      <!-- Neutral -->
+      <span class="row-head">Neutral</span>
+      <span class="cell"><span class="oms-badge oms-badge--neutral">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--neutral oms-badge--solid">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--neutral"><i data-lucide="circle"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--neutral oms-badge--solid"><i data-lucide="circle"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--neutral">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--neutral oms-badge--solid">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--neutral"><i data-lucide="circle"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--neutral oms-badge--solid"><i data-lucide="circle"></i>Tag</span></span>
+
+      <!-- Success -->
+      <span class="row-head">Success</span>
+      <span class="cell"><span class="oms-badge oms-badge--success">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--success oms-badge--solid">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--success"><i data-lucide="check"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--success oms-badge--solid"><i data-lucide="check"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--success">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--success oms-badge--solid">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--success"><i data-lucide="check"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--success oms-badge--solid"><i data-lucide="check"></i>Tag</span></span>
+
+      <!-- Warning -->
+      <span class="row-head">Warning</span>
+      <span class="cell"><span class="oms-badge oms-badge--warning">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--warning oms-badge--solid">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--warning"><i data-lucide="triangle-alert"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--warning oms-badge--solid"><i data-lucide="triangle-alert"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--warning">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--warning oms-badge--solid">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--warning"><i data-lucide="triangle-alert"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--warning oms-badge--solid"><i data-lucide="triangle-alert"></i>Tag</span></span>
+
+      <!-- Danger -->
+      <span class="row-head">Danger</span>
+      <span class="cell"><span class="oms-badge oms-badge--danger">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--danger oms-badge--solid">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--danger"><i data-lucide="circle-x"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--danger oms-badge--solid"><i data-lucide="circle-x"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--danger">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--danger oms-badge--solid">Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--danger"><i data-lucide="circle-x"></i>Tag</span></span>
+      <span class="cell"><span class="oms-badge oms-badge--sm oms-badge--danger oms-badge--solid"><i data-lucide="circle-x"></i>Tag</span></span>
+
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────
+       IN CONTEXT
+       ───────────────────────────────────────────────────────────── -->
+  <section class="section">
+    <h2 class="section-title">Real-world labels</h2>
+    <div class="swatch-row">
+      <span class="oms-badge oms-badge--success"><i data-lucide="check"></i>Settled</span>
+      <span class="oms-badge oms-badge--info"><i data-lucide="loader"></i>Pending</span>
+      <span class="oms-badge oms-badge--warning"><i data-lucide="clock"></i>Review</span>
+      <span class="oms-badge oms-badge--danger"><i data-lucide="circle-x"></i>Failed</span>
+      <span class="oms-badge oms-badge--neutral">Draft</span>
+      <span class="oms-badge oms-badge--info oms-badge--solid">New</span>
+      <span class="oms-badge oms-badge--sm oms-badge--neutral">v2.4.1</span>
+      <span class="oms-badge oms-badge--sm oms-badge--success oms-badge--solid">LIVE</span>
+    </div>
+  </section>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>

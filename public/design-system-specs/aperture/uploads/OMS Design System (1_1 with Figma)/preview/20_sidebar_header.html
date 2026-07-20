@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Sidebar Header — Logo Lockup</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; background: #F6F4EF; }
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 32px;
+    font-family: "Fustat", "Inter", system-ui, sans-serif;
+  }
+  /* Sidebar Header — exact spec from Figma node 310:2717 (parent 310:2718)
+     Sidebar width: 240, Header height: 64, padding: 8px 24px,
+     Item 2 lines: 192×48 inner, padded 4 1.818, logo: 124.138×40 */
+  .sidebar-header {
+    width: 240px;
+    height: 64px;
+    background: #FFFFFF;
+    border: 1px solid #C8CFE1;
+    box-sizing: border-box;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar-header .lockup {
+    width: 192px;
+    height: 40px;
+    border-radius: 4.8px;
+    padding: 0 1.818px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .sidebar-header .lockup img {
+    width: 124.138px;
+    height: 40px;
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <div class="sidebar-header" data-screen-label="Sidebar Header">
+    <div class="lockup">
+      <img src="../assets/logo_polygon_oms_stacked.svg" alt="Polygon — Open Money Stack" />
+    </div>
+  </div>
+</body>
+</html>

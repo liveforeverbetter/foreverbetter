@@ -1,0 +1,132 @@
+<!-- @dsCard group="6 · Components" name="Profile pop-up" subtitle="Account menu — header, actions, item states" viewport="1280x720" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Profile pop-up — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../components/badges.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  html, body { margin: 0; background: var(--bg-page-default, #fff); }
+  body { padding: 40px 48px 64px; font-family: var(--font-main, "Fustat"), system-ui, sans-serif; color: var(--fg-primary); }
+  .page-header { margin: 0 0 36px; }
+  .page-title { font-family: var(--font-main, "Fustat"); font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--slate-900, #141635); margin: 0 0 12px; }
+  .page-desc { font-family: "Geist", system-ui, sans-serif; font-size: 16px; line-height: 24px; color: var(--slate-500, #64708F); margin: 0; max-width: 1000px; white-space: pre-line; }
+  .stage { display: flex; gap: 96px; align-items: flex-start; margin-top: 24px; flex-wrap: wrap; }
+  .col-label { font-family: "Geist", system-ui, sans-serif; font-weight: 500; font-size: 14px; color: var(--purple-700, #670DE5); margin: 0 0 16px; }
+
+  /* ── Pop-up card ── */
+  .oms-profile {
+    width: 370px;
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: inset 0 0 0 1px rgb(223,227,240), 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .oms-profile__head { display: flex; align-items: center; gap: 12px; padding: 24px; }
+  .oms-profile__avatar {
+    width: 44px; height: 44px; flex: 0 0 44px; border-radius: 9999px;
+    background: var(--purple-100, #EAE4F5); color: var(--purple-700, #670DE5);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .oms-profile__avatar svg { width: 22px; height: 22px; stroke-width: 1.75; }
+  .oms-profile__id { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+  .oms-profile__name-row { display: flex; align-items: center; gap: 12px; }
+  .oms-profile__name { font-weight: 700; font-size: 18px; line-height: 1.2; color: var(--slate-900, #141635); }
+  .oms-profile__email { font-weight: 500; font-size: 14px; line-height: 1.2; color: var(--slate-500, #64708F); }
+  .oms-profile__close { width: 16px; height: 16px; flex: 0 0 16px; border: 0; background: transparent; padding: 0; cursor: pointer; color: var(--slate-700, #363E5C); display: inline-flex; align-items: center; justify-content: center; }
+  .oms-profile__close svg { width: 16px; height: 16px; }
+  .oms-profile__sep { height: 1px; background: var(--slate-200, #DFE3F0); margin: 0 24px; }
+  .oms-profile__content { padding: 20px 24px; display: flex; flex-direction: column; gap: 2px; }
+
+  .oms-profile__item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px; border-radius: 8px; border: 0; background: transparent;
+    cursor: pointer; width: 100%; text-align: left;
+    font-family: "Fustat", system-ui, sans-serif; font-weight: 500; font-size: 14px;
+    color: var(--slate-900, #141635); text-decoration: none;
+  }
+  .oms-profile__item:hover { background: var(--slate-50, #F6F6FC); }
+  .oms-profile__item-icon { width: 18px; height: 18px; flex: 0 0 18px; display: inline-flex; }
+  .oms-profile__item-icon svg { width: 18px; height: 18px; stroke-width: 1.75; }
+  .oms-profile__item-label { flex: 1; }
+  .oms-profile__item-chev { width: 16px; height: 16px; flex: 0 0 16px; color: var(--slate-500, #64708F); display: inline-flex; }
+  .oms-profile__item-chev svg { width: 16px; height: 16px; stroke-width: 1.75; }
+
+  /* ── Atoms: profile menu item states ── */
+  .atoms { display: grid; grid-template-columns: 90px 200px; gap: 20px 32px; align-items: center; }
+  .atoms__head { font-family: "Geist", system-ui, sans-serif; font-size: 14px; color: var(--purple-700, #670DE5); }
+  .oms-profile-atom {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px; border-radius: 8px;
+    font-family: "Fustat", system-ui, sans-serif; font-weight: 500; font-size: 14px;
+    color: var(--slate-900, #141635);
+  }
+  .oms-profile-atom svg { width: 18px; height: 18px; stroke-width: 1.75; }
+  .oms-profile-atom.is-hover { background: var(--slate-50, #F6F6FC); }
+  .oms-profile-atom.is-selected { color: var(--purple-700, #670DE5); font-weight: 700; }
+</style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">Profile pop-up</h1>
+    <p class="page-desc">The profile menu provides quick access to user-specific actions and settings — surfacing account info and common actions such as profile settings, team management, and signing out.
+
+Use it for secondary, user-scoped actions that don't belong in primary navigation. Keep options concise and grouped logically, anchored from the top nav.</p>
+  </header>
+
+  <div class="stage">
+    <div>
+      <p class="col-label">Component</p>
+      <div class="oms-profile" role="menu">
+        <div class="oms-profile__head">
+          <span class="oms-profile__avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M6.168 18.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855"></path></svg></span>
+          <div class="oms-profile__id">
+            <div class="oms-profile__name-row">
+              <span class="oms-profile__name">Jane Doe</span>
+              <span class="oms-badge oms-badge--info oms-badge--sm"><i data-lucide="circle-check-big"></i>Admin</span>
+            </div>
+            <span class="oms-profile__email">email@email.com</span>
+          </div>
+          <button class="oms-profile__close" aria-label="Close"><i data-lucide="x"></i></button>
+        </div>
+        <div class="oms-profile__sep"></div>
+        <div class="oms-profile__content">
+          <a href="#" class="oms-profile__item">
+            <span class="oms-profile__item-icon"><i data-lucide="user-round"></i></span>
+            <span class="oms-profile__item-label">Profile settings</span>
+            <span class="oms-profile__item-chev"><i data-lucide="chevron-down"></i></span>
+          </a>
+          <a href="#" class="oms-profile__item">
+            <span class="oms-profile__item-icon"><i data-lucide="building-2"></i></span>
+            <span class="oms-profile__item-label">Business settings</span>
+            <span class="oms-profile__item-chev"><i data-lucide="chevron-down"></i></span>
+          </a>
+          <a href="#" class="oms-profile__item">
+            <span class="oms-profile__item-icon"><i data-lucide="log-out"></i></span>
+            <span class="oms-profile__item-label">Sign out</span>
+            <span class="oms-profile__item-chev"><i data-lucide="chevron-down"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="col-label">Atoms — menu item</p>
+      <div class="atoms">
+        <span class="atoms__head">Default</span>
+        <span class="oms-profile-atom"><i data-lucide="circle-user-round"></i>User Name</span>
+        <span class="atoms__head">Hover</span>
+        <span class="oms-profile-atom is-hover"><i data-lucide="circle-user-round"></i>User Name</span>
+        <span class="atoms__head">Selected</span>
+        <span class="oms-profile-atom is-selected"><i data-lucide="circle-user-round"></i>User Name</span>
+      </div>
+    </div>
+  </div>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>

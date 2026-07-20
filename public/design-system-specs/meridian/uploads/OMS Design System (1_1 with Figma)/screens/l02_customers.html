@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!-- @dsCard group="7 · Layouts" name="Customers" subtitle="Customer table — KYC status, balance, pagination" viewport="1440x1024" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OMS · Customers</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="../components/sidebar.css?v=18" />
+<link rel="stylesheet" href="../components/topnav.css" />
+<link rel="stylesheet" href="../components/buttons.css" />
+<link rel="stylesheet" href="../components/badges.css" />
+<link rel="stylesheet" href="../components/inputs.css" />
+<link rel="stylesheet" href="../components/status_banner.css" />
+<link rel="stylesheet" href="../components/table.css" />
+<link rel="stylesheet" href="../components/context_menu.css" />
+<link rel="stylesheet" href="../components/floater_button.css" />
+<script defer src="../components/sidebar.js"></script>
+<style>
+  html, body { margin: 0; background: #fff; }
+  body { font-family: var(--font-display); color: var(--fg-primary); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  .shell { min-height: 100vh; display: flex; flex-direction: column; background: #fff; }
+  .body { display: flex; flex: 1; min-height: 0; align-items: stretch; }
+  .body > [data-oms-sidebar] { align-self: stretch; display: flex; flex-direction: column; }
+  .body > [data-oms-sidebar] > .oms-sidebar { flex: 1; height: auto; }
+  .main-col { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .main { flex: 1; padding: 32px 36px 24px; display: flex; flex-direction: column; gap: 28px; background: #fff; }
+  .main .oms-table, .main .oms-table__slot, .main .oms-table__scroll, .main .oms-table__grid { width: 100%; }
+  .page-title { font-family: var(--font-display); font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--slate-950); margin: 0; letter-spacing: -0.01em; }
+
+  .id-cell, .email-cell { display: inline-flex; align-items: center; gap: 8px; }
+  .id-cell__copy { background: none; border: 0; padding: 0; color: var(--slate-400); cursor: pointer; display: inline-flex; }
+  .id-cell__copy svg { width: 16px; height: 16px; stroke-width: 1.75; }
+  .id-cell__copy:hover { color: var(--slate-700); }
+  .kyc { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; padding: 4px 10px; border-radius: 999px; }
+  .kyc svg { width: 15px; height: 15px; stroke-width: 2; flex: 0 0 15px; }
+  .kyc--notstarted { color: var(--slate-600, #48526F); background: var(--slate-100, #EDEFF5); }
+  .kyc--active     { color: var(--emerald-700, #047857); background: var(--emerald-50, #ECFDF5); }
+  .kyc--requires   { color: var(--amber-700, #B45309); background: var(--amber-50, #FFFBEB); }
+  .kyc--deactivated{ color: var(--red-700, #B91C1C); background: var(--red-50, #FEF2F2); }
+  .kyc--pending    { color: var(--purple-700, #670DE5); background: var(--purple-50, #F1EAFE); }
+  .row-kebab { width: 28px; height: 28px; border: 0; background: transparent; color: var(--slate-500); border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+  .row-kebab:hover { background: var(--slate-50); color: var(--slate-950); }
+  .row-kebab svg { width: 16px; height: 16px; stroke-width: 1.75; }
+  .row-menu { position: absolute; top: 36px; right: 8px; z-index: 5; }
+  .row-menu .oms-cmenu { min-width: 160px; box-shadow: 0 12px 32px -8px rgba(2,0,5,0.18), 0 2px 8px rgba(2,0,5,0.06); }
+  .row-menu[hidden] { display: none; }
+  .oms-table__grid tbody tr:hover td { background: rgb(246, 246, 252); }
+  .btn-add { appearance: none; display: inline-flex; align-items: center; gap: 8px; background: rgb(2,0,5); color: #fff; border: 0; border-radius: 12px; padding: 12px 20px; font-family: var(--font-display); font-weight: 600; font-size: 14px; line-height: 1.2; cursor: pointer; white-space: nowrap; }
+  .btn-add:hover { background: rgb(20,22,53); }
+  .btn-add svg { width: 16px; height: 16px; stroke-width: 2; }
+  .head-info { display: inline-flex; align-items: center; gap: 4px; }
+  .head-info svg { width: 14px; height: 14px; stroke-width: 1.75; color: var(--slate-500); }
+
+  .oms-table__grid th, .oms-table__grid td,
+  .oms-table__grid .oms-table__head-label, .oms-table__grid .oms-table__cell-text { font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="shell" data-screen-label="Customers">
+
+  <div class="oms-status-banner" data-mode="sandbox" data-oms-status-banner>
+    <span class="oms-status-banner__mode" data-oms-status-banner-mode>Sandbox mode</span>
+    <span class="oms-status-banner__msg" data-oms-status-banner-msg>You are testing OMSX capabilities in a sandbox environment</span>
+    <span class="oms-status-banner__action">
+      <button class="btn btn-sm btn-secondary" data-oms-status-banner-action>Switch to live</button>
+    </span>
+  </div>
+
+  <div class="body">
+    <div data-oms-sidebar data-active="Customers" data-assets-base="../assets"></div>
+
+    <div class="main-col">
+      <nav class="oms-topnav" aria-label="Top navigation">
+        <div class="oms-topnav__right">
+          <div class="oms-topnav__menu">
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              </span><span>Docs</span>
+            </a>
+          </div>
+          <a href="#" class="oms-topnav__profile">
+            <span class="oms-topnav__profile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path></svg>
+            </span><span>User Name</span>
+          </a>
+        </div>
+      </nav>
+
+      <main class="main">
+        <h1 class="page-title">Customers</h1>
+
+        <section class="oms-table" data-screen-label="Customers table">
+          <div class="oms-table__controls">
+            <label class="oms-table__search">
+              <svg class="oms-table__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4-4"></path></svg>
+              <input type="text" placeholder="Search" />
+            </label>
+            <div class="oms-table__controls-actions">
+              <button class="oms-table__icon-btn" aria-label="Filter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+              </button>
+              <button class="oms-table__icon-btn" aria-label="Download">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              </button>
+              <button class="btn-add">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                Add customer
+              </button>
+            </div>
+          </div>
+
+          <div class="oms-table__slot">
+            <div class="oms-table__scroll">
+              <table class="oms-table__grid">
+                <thead><tr id="thead"></tr></thead>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <nav class="oms-table__pagination" aria-label="Pagination">
+            <button class="oms-table__pag-btn" aria-label="First"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg></button>
+            <button class="oms-table__pag-btn" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+            <div class="oms-table__pag-numbers">
+              <button class="oms-table__pag-num is-active">1</button>
+              <button class="oms-table__pag-num">2</button>
+              <span class="oms-table__pag-ellipsis">…</span>
+              <button class="oms-table__pag-num">16</button>
+              <button class="oms-table__pag-num">17</button>
+            </div>
+            <button class="oms-table__pag-btn" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+            <button class="oms-table__pag-btn" aria-label="Last"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></button>
+          </nav>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <button class="oms-floater oms-floater--fixed" aria-label="Contact support">
+    <span class="oms-floater__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9a9 9 0 0 1 18 0v9a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></span>
+  </button>
+</div>
+
+<script>
+  const copyIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+  const infoIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>';
+
+  const KYC = {
+    notstarted:  { c:"kyc--notstarted", l:"Not started",    i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>' },
+    active:      { c:"kyc--active",     l:"Active",         i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg>' },
+    requires:    { c:"kyc--requires",  l:"Requires action", i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>' },
+    deactivated: { c:"kyc--deactivated",l:"Deactivated",    i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>' },
+    pending:     { c:"kyc--pending",   l:"Pending review",  i:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"></path><path d="M5 2h14"></path><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"></path><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"></path></svg>' },
+  };
+  const ROWS = [
+    { name:"Avery Collins", type:"Individual", email:"user@user.com", kyc:"notstarted",  bal:"$478.50",    created:"Jan 15, 2026" },
+    { name:"Jane Doe",      type:"Individual", email:"user@user.com", kyc:"active",      bal:"$12,345.67", created:"Jan 15, 2026" },
+    { name:"Jordan Blake",  type:"Individual", email:"user@user.com", kyc:"requires",    bal:"$1,324.00",  created:"Mar 22, 2026" },
+    { name:"Morgan Ellis",  type:"Business",   email:"user@user.com", kyc:"active",      bal:"$2,899.90",  created:"Jan 28, 2026" },
+    { name:"Riley Harper",  type:"Individual", email:null,            kyc:"deactivated", bal:"$582.00",    created:"Feb 11, 2026" },
+    { name:"Casey Morgan",  type:"Business",   email:null,            kyc:"pending",     bal:"$4,157.50",  created:"Mar 5, 2026" },
+    { name:"Taylor Quinn",  type:"Business",   email:"user@user.com", kyc:"active",      bal:"$6,231.00",  created:"Jan 9, 2026" },
+    { name:"Dakota Reese",  type:"Individual", email:"user@user.com", kyc:"active",      bal:"$916.00",    created:"Feb 19, 2026" },
+  ];
+  const HEADERS = [{l:"ID"},{l:"Name"},{l:"Type"},{l:"Email"},{l:"KYC Status"},{l:"Created"},{l:"Actions"}];
+  const moreIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>';
+  const eyeIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
+  const trashIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><path d="M3 6h18"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>';
+
+  document.getElementById('thead').innerHTML = HEADERS.map(h =>
+    `<th><span class="oms-table__head-label">${h.info ? `<span class="head-info">${h.l}${infoIcon}</span>` : h.l}</span></th>`
+  ).join('');
+
+  const cId = () => `<td><div class="oms-table__cell"><span class="id-cell"><span class="oms-table__cell-text">cust_01km...e1wr</span><button class="id-cell__copy" aria-label="Copy ID">${copyIcon}</button></span></div></td>`;
+  const cP = t => `<td><div class="oms-table__cell"><span class="oms-table__cell-text">${t}</span></div></td>`;
+  const cEmail = e => e
+    ? `<td><div class="oms-table__cell"><span class="email-cell"><span class="oms-table__cell-text">${e}</span><button class="id-cell__copy" aria-label="Copy email">${copyIcon}</button></span></div></td>`
+    : `<td><div class="oms-table__cell"><span class="oms-table__cell-text">NA</span></div></td>`;
+  const cKyc = k => { const x = KYC[k]; return `<td><div class="oms-table__cell"><span class="kyc ${x.c}">${x.i}${x.l}</span></div></td>`; };
+  const cActions = (i) => `<td><div class="oms-table__cell" style="position:relative;justify-content:flex-start;"><button class="row-kebab" aria-label="Row actions" data-kebab="${i}">${moreIcon}</button>
+    <div class="row-menu" id="cust-menu-${i}" hidden>
+      <div class="oms-cmenu">
+        <button class="oms-cmenu__item" data-action="view"><span class="oms-cmenu__icon">${eyeIcon}</span><span>View details</span></button>
+        <button class="oms-cmenu__item" data-type="destructive" data-action="deactivate"><span class="oms-cmenu__icon">${trashIcon}</span><span>Deactivate</span></button>
+      </div>
+    </div>
+  </div></td>`;
+
+  document.getElementById('tbody').innerHTML = ROWS.map((r, i) =>
+    `<tr>${cId()}${cP(r.name)}${cP(r.type)}${cEmail(r.email)}${cKyc(r.kyc)}${cP(r.created)}${cActions(i)}</tr>`
+  ).join('');
+
+  document.querySelectorAll('.oms-table__pag-num').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.oms-table__pag-num').forEach(o=>o.classList.remove('is-active'));b.classList.add('is-active');}));
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-kebab]');
+    const inMenu = e.target.closest('.row-menu');
+    if (btn) {
+      const i = btn.getAttribute('data-kebab');
+      const menu = document.getElementById('cust-menu-' + i);
+      const open = !menu.hasAttribute('hidden');
+      document.querySelectorAll('.row-menu').forEach(m => m.setAttribute('hidden',''));
+      if (!open) menu.removeAttribute('hidden');
+      e.stopPropagation();
+    } else if (!inMenu) {
+      document.querySelectorAll('.row-menu').forEach(m => m.setAttribute('hidden',''));
+    }
+  });
+
+  function setMode(mode){const banner=document.querySelector('[data-oms-status-banner]');if(!banner)return;banner.setAttribute('data-mode',mode);const m=banner.querySelector('[data-oms-status-banner-mode]'),s=banner.querySelector('[data-oms-status-banner-msg]'),a=banner.querySelector('[data-oms-status-banner-action]');if(mode==='live'){m.textContent='Live mode';s.textContent='You are operating in the live OMSX environment — real funds and customers';a.textContent='Switch to sandbox';}else{m.textContent='Sandbox mode';s.textContent='You are testing OMSX capabilities in a sandbox environment';a.textContent='Switch to live';}const t=document.querySelector('[data-oms-mode-toggle]');if(t){t.querySelectorAll('.oms-mode-toggle__opt').forEach((o,i)=>{const on=(i===0&&mode==='sandbox')||(i===1&&mode==='live');o.classList.toggle('is-active',on);o.setAttribute('aria-selected',String(on));});t.classList.toggle('oms-mode-toggle--live',mode==='live');}}
+  function wireToggle(){const t=document.querySelector('[data-oms-mode-toggle]');if(!t||t.__w)return false;t.__w=true;t.addEventListener('click',e=>{const o=e.target.closest('.oms-mode-toggle__opt');if(!o)return;const i=[...t.querySelectorAll('.oms-mode-toggle__opt')].indexOf(o);setMode(i===1?'live':'sandbox');});return true;}
+  if(!wireToggle()){const mo=new MutationObserver(()=>{if(wireToggle())mo.disconnect();});mo.observe(document.body,{childList:true,subtree:true});}
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-oms-status-banner-action]');if(!b)return;const cur=document.querySelector('[data-oms-status-banner]').getAttribute('data-mode');setMode(cur==='live'?'sandbox':'live');});
+</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Type primitives — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-page-default, #F6F6FC); }
+  body {
+    padding: 40px 48px 64px;
+    font-family: var(--font-main);
+    color: var(--fg-primary);
+  }
+
+  .page-header { max-width: 1100px; margin: 0 0 40px; }
+  .page-title  {
+    font-family: var(--font-main);
+    font-weight: var(--font-weight-bold);
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: var(--tracking-tight);
+    color: var(--slate-900, #141635);
+    margin: 0 0 12px;
+  }
+  .page-desc {
+    font-family: "Geist", system-ui, sans-serif;
+    font-weight: var(--font-weight-normal);
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--slate-500, #64708F);
+    margin: 0;
+    max-width: 1000px;
+  }
+
+  .section {
+    margin-top: 40px;
+  }
+  .section-title {
+    font-family: var(--font-main);
+    font-weight: var(--font-weight-semibold);
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--slate-500);
+    margin: 0 0 18px;
+  }
+
+  /* ── Table layout shared across tables ── */
+  .ptable {
+    border-collapse: collapse;
+    border: 1px solid var(--slate-200);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--pure-white, #FFFFFF);
+    width: 100%;
+    max-width: 880px;
+  }
+  .ptable th, .ptable td {
+    border-bottom: 1px solid var(--slate-200);
+    padding: 14px 20px;
+    vertical-align: middle;
+    text-align: left;
+  }
+  .ptable tr:last-child td { border-bottom: 0; }
+
+  .ptable th {
+    background: #FAFAFC;
+    font-family: var(--font-main);
+    font-weight: var(--font-weight-semibold);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    color: var(--slate-500);
+  }
+  .token-name {
+    font-family: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--purple-700, #670DE5);
+    white-space: nowrap;
+  }
+  .token-val {
+    font-family: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--slate-500);
+    white-space: nowrap;
+    width: 80px;
+  }
+  .specimen {
+    font-family: var(--font-main);
+    color: var(--slate-900);
+  }
+
+  /* Compact 2-col layout for trackings + family */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+</style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">Type primitives</h1>
+    <p class="page-desc">Raw typographic tokens from the Figma source — font family, size scale, weight scale, and letter-spacing scale. Semantic styles (h1–h5, body1–body5) are composed from these.</p>
+  </header>
+
+  <!-- ─── Family ─────────────────────────────────────────── -->
+  <section class="section">
+    <h2 class="section-title">Family</h2>
+    <table class="ptable">
+      <thead>
+        <tr><th>Token</th><th>Value</th><th>Specimen</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="token-name">--font-main</td>
+          <td class="token-val">Fustat</td>
+          <td class="specimen" style="font-family: var(--font-main); font-size: 24px; font-weight: 500;">The quick brown fox jumps over the lazy dog</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ─── Size scale ─────────────────────────────────────── -->
+  <section class="section">
+    <h2 class="section-title">Size scale</h2>
+    <table class="ptable">
+      <thead>
+        <tr><th style="width:200px">Token</th><th class="token-val">Px</th><th>Specimen</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="token-name">--font-size-xxs</td>  <td class="token-val">10px</td><td class="specimen" style="font-size: var(--font-size-xxs)">Aa Bb Cc · 10</td></tr>
+        <tr><td class="token-name">--font-size-xs</td>   <td class="token-val">12px</td><td class="specimen" style="font-size: var(--font-size-xs)">Aa Bb Cc · 12</td></tr>
+        <tr><td class="token-name">--font-size-sm</td>   <td class="token-val">14px</td><td class="specimen" style="font-size: var(--font-size-sm)">Aa Bb Cc · 14</td></tr>
+        <tr><td class="token-name">--font-size-base</td> <td class="token-val">16px</td><td class="specimen" style="font-size: var(--font-size-base)">Aa Bb Cc · 16</td></tr>
+        <tr><td class="token-name">--font-size-lg</td>   <td class="token-val">18px</td><td class="specimen" style="font-size: var(--font-size-lg)">Aa Bb Cc · 18</td></tr>
+        <tr><td class="token-name">--font-size-xl</td>   <td class="token-val">20px</td><td class="specimen" style="font-size: var(--font-size-xl)">Aa Bb Cc · 20</td></tr>
+        <tr><td class="token-name">--font-size-2xl</td>  <td class="token-val">24px</td><td class="specimen" style="font-size: var(--font-size-2xl)">Aa Bb Cc · 24</td></tr>
+        <tr><td class="token-name">--font-size-3xl</td>  <td class="token-val">28px</td><td class="specimen" style="font-size: var(--font-size-3xl)">Aa Bb Cc · 28</td></tr>
+        <tr><td class="token-name">--font-size-4xl</td>  <td class="token-val">32px</td><td class="specimen" style="font-size: var(--font-size-4xl)">Aa Bb Cc · 32</td></tr>
+        <tr><td class="token-name">--font-size-5xl</td>  <td class="token-val">40px</td><td class="specimen" style="font-size: var(--font-size-5xl)">Aa Bb · 40</td></tr>
+        <tr><td class="token-name">--font-size-6xl</td>  <td class="token-val">60px</td><td class="specimen" style="font-size: var(--font-size-6xl); line-height:1.1">Aa · 60</td></tr>
+        <tr><td class="token-name">--font-size-7xl</td>  <td class="token-val">80px</td><td class="specimen" style="font-size: var(--font-size-7xl); line-height:1.05">Aa · 80</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ─── Weight scale ───────────────────────────────────── -->
+  <section class="section">
+    <h2 class="section-title">Weight scale</h2>
+    <table class="ptable">
+      <thead>
+        <tr><th style="width:240px">Token</th><th class="token-val">Value</th><th>Specimen</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="token-name">--font-weight-thin</td>       <td class="token-val">100</td><td class="specimen" style="font-weight: 100; font-size:24px">Create deposit address</td></tr>
+        <tr><td class="token-name">--font-weight-extralight</td> <td class="token-val">200</td><td class="specimen" style="font-weight: 200; font-size:24px">Create deposit address</td></tr>
+        <tr><td class="token-name">--font-weight-light</td>      <td class="token-val">300</td><td class="specimen" style="font-weight: 300; font-size:24px">Create deposit address</td></tr>
+        <tr><td class="token-name">--font-weight-normal</td>     <td class="token-val">400</td><td class="specimen" style="font-weight: 400; font-size:24px">Create deposit address</td></tr>
+        <tr><td class="token-name">--font-weight-medium</td>     <td class="token-val">500</td><td class="specimen" style="font-weight: 500; font-size:24px">Create deposit address</td></tr>
+        <tr><td class="token-name">--font-weight-semibold</td>   <td class="token-val">600</td><td class="specimen" style="font-weight: 600; font-size:24px">Create deposit address</td></tr>
+        <tr><td class="token-name">--font-weight-bold</td>       <td class="token-val">700</td><td class="specimen" style="font-weight: 700; font-size:24px">Create deposit address</td></tr>
+        <tr><td class="token-name">--font-weight-extrabold</td>  <td class="token-val">800</td><td class="specimen" style="font-weight: 800; font-size:24px">Create deposit address</td></tr>
+        <tr><td class="token-name">--font-weight-black</td>      <td class="token-val">900</td><td class="specimen" style="font-weight: 900; font-size:24px">Create deposit address</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ─── Letter-spacing scale ───────────────────────────── -->
+  <section class="section">
+    <h2 class="section-title">Letter-spacing scale</h2>
+    <table class="ptable">
+      <thead>
+        <tr><th style="width:200px">Token</th><th class="token-val">Value</th><th>Specimen</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="token-name">--tracking-lighter</td><td class="token-val">−0.05em</td><td class="specimen" style="font-weight: 700; font-size:24px; letter-spacing: var(--tracking-lighter)">Create deposit address</td></tr>
+        <tr><td class="token-name">--tracking-tight</td>  <td class="token-val">−0.02em</td><td class="specimen" style="font-weight: 700; font-size:24px; letter-spacing: var(--tracking-tight)">Create deposit address</td></tr>
+        <tr><td class="token-name">--tracking-normal</td> <td class="token-val">0em</td>    <td class="specimen" style="font-weight: 700; font-size:24px; letter-spacing: var(--tracking-normal)">Create deposit address</td></tr>
+        <tr><td class="token-name">--tracking-wide</td>   <td class="token-val">0.02em</td> <td class="specimen" style="font-weight: 700; font-size:24px; letter-spacing: var(--tracking-wide)">Create deposit address</td></tr>
+        <tr><td class="token-name">--tracking-wider</td>  <td class="token-val">0.05em</td> <td class="specimen" style="font-weight: 700; font-size:24px; letter-spacing: var(--tracking-wider)">Create deposit address</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+</html>

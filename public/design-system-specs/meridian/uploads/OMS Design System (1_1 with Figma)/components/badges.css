@@ -1,0 +1,131 @@
+/* ─────────────────────────────────────────────────────────────────
+   OMS Design System — Badges
+   1:1 with Figma source (node 310:4376 — Badges)
+   States: info · neutral · success · warning · danger
+   Sizes:  default · small
+   Inverted: false (soft) / true (solid)
+   ───────────────────────────────────────────────────────────────── */
+
+:root {
+  --badge-radius: 16px;
+
+  /* Default size (h=26) */
+  --badge-pad-y:    4px;
+  --badge-pad-x:    8px;
+  --badge-gap:      4px;
+  --badge-font:     14px;
+  --badge-icon:     18px;
+
+  /* Small size (h=23) */
+  --badge-sm-pad-y: 4px;
+  --badge-sm-pad-x: 8px;
+  --badge-sm-font:  12px;
+  --badge-sm-icon:  15px;
+
+  /* ─── Soft variants (Inverted=False) ───────────────────────── */
+  --badge-info-bg:        var(--purple-50);
+  --badge-info-border:    var(--purple-200);
+  --badge-info-fg:        var(--purple-600);
+
+  --badge-neutral-bg:     var(--slate-50);
+  --badge-neutral-border: var(--slate-300);
+  --badge-neutral-fg:     var(--slate-900);
+
+  --badge-success-bg:     var(--emerald-50);
+  --badge-success-border: var(--emerald-200);
+  --badge-success-fg:     var(--emerald-700);
+
+  --badge-warning-bg:     var(--orange-50);
+  --badge-warning-border: var(--orange-200);
+  --badge-warning-fg:     var(--amber-700);
+
+  --badge-danger-bg:      var(--red-50);
+  --badge-danger-border:  var(--red-200);
+  --badge-danger-fg:      var(--red-700);
+
+  /* ─── Solid variants (Inverted=True) ───────────────────────── */
+  --badge-info-solid-bg:    var(--purple-500);
+  --badge-neutral-solid-bg: var(--slate-500);
+  --badge-success-solid-bg: var(--emerald-600);
+  --badge-warning-solid-bg: var(--amber-600);
+  --badge-danger-solid-bg:  var(--red-600);
+  --badge-solid-fg:         var(--pure-white);
+}
+
+/* ─── Base badge ───────────────────────────────────────────────── */
+.oms-badge {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--badge-gap);
+  padding: var(--badge-pad-y) var(--badge-pad-x);
+  border-radius: var(--badge-radius);
+  border: 0.5px solid transparent;
+  font-family: var(--font-display, "Fustat"), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: var(--badge-font);
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+}
+
+.oms-badge > * { display: inline-flex; align-items: center; }
+
+.oms-badge svg,
+.oms-badge i.lucide,
+.oms-badge i[data-lucide] {
+  width: var(--badge-icon);
+  height: var(--badge-icon);
+  stroke-width: 1.75;
+  flex: 0 0 auto;
+  display: block;
+}
+
+/* ─── Size: small ──────────────────────────────────────────────── */
+.oms-badge--sm {
+  padding: var(--badge-sm-pad-y) var(--badge-sm-pad-x);
+  font-size: var(--badge-sm-font);
+}
+.oms-badge--sm svg,
+.oms-badge--sm i.lucide,
+.oms-badge--sm i[data-lucide] {
+  width: var(--badge-sm-icon);
+  height: var(--badge-sm-icon);
+}
+
+/* ─── Soft variants ────────────────────────────────────────────── */
+.oms-badge--info {
+  background: var(--badge-info-bg);
+  border-color: var(--badge-info-border);
+  color: var(--badge-info-fg);
+}
+.oms-badge--neutral {
+  background: var(--badge-neutral-bg);
+  border-color: var(--badge-neutral-border);
+  color: var(--badge-neutral-fg);
+}
+.oms-badge--success {
+  background: var(--badge-success-bg);
+  border-color: var(--badge-success-border);
+  color: var(--badge-success-fg);
+}
+.oms-badge--warning {
+  background: var(--badge-warning-bg);
+  border-color: var(--badge-warning-border);
+  color: var(--badge-warning-fg);
+}
+.oms-badge--danger {
+  background: var(--badge-danger-bg);
+  border-color: var(--badge-danger-border);
+  color: var(--badge-danger-fg);
+}
+
+/* ─── Solid (Inverted) variants ────────────────────────────────── */
+.oms-badge--solid { color: var(--badge-solid-fg); border-color: transparent; }
+.oms-badge--info.oms-badge--solid    { background: var(--badge-info-solid-bg); }
+.oms-badge--neutral.oms-badge--solid { background: var(--badge-neutral-solid-bg); }
+.oms-badge--success.oms-badge--solid { background: var(--badge-success-solid-bg); }
+.oms-badge--warning.oms-badge--solid { background: var(--badge-warning-solid-bg); }
+.oms-badge--danger.oms-badge--solid  { background: var(--badge-danger-solid-bg); }

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!-- @dsCard group="6 · Components" name="Area chart tooltip" subtitle="Hover tooltip with marker + info card" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Area chart tooltip — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../components/area_chart.css">
+<link rel="stylesheet" href="../components/area_chart_tooltip.css">
+<style>
+  html, body { margin: 0; background: var(--bg-page-default, #F6F6FC); }
+  body {
+    padding: 32px 36px 56px;
+    font-family: var(--font-display);
+    color: var(--fg-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  h1 { font-family: var(--font-display); font-weight: 700; font-size: 28px; margin: 0; color: var(--slate-900); letter-spacing: -0.01em; }
+  .section-title { font-family: var(--font-display); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-secondary); margin: 24px 0 -8px; }
+
+  /* Live demo wrapper */
+  .demo-wrap { position: relative; max-width: 1200px; }
+  .demo-wrap .oms-area-chart[data-device="desktop"] { width: 100%; max-width: 100%; }
+  .oms-act-floating {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .static-demo { display: flex; gap: 64px; align-items: flex-start; flex-wrap: wrap; }
+  .static-demo > div { display: flex; flex-direction: column; gap: 12px; }
+  .static-demo small { font-family: "Geist", system-ui, sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-tertiary); }
+  .static-stage { position: relative; padding: 24px 80px; border: 1px dashed var(--slate-200); border-radius: 16px; background: #fff; min-height: 200px; }
+</style>
+</head>
+<body>
+
+  <h1>Area chart tooltip</h1>
+  <p style="margin:0;max-width:720px;font-size:14px;color:var(--slate-500);">Floating tooltip used on area charts. A vertical purple guide line with a dot marker pins the active data point on the chart and an info card sits beside it showing the date/event count, metric, delta vs prior period, and a link to drill in.</p>
+
+  <h2 class="section-title">Component (isolated)</h2>
+  <div class="static-demo">
+    <div>
+      <small>Default — up delta</small>
+      <div class="static-stage" style="height:200px;">
+        <div class="oms-act" style="height:160px;">
+          <div class="oms-act__marker">
+            <span class="oms-act__line"></span>
+            <span class="oms-act__dot"></span>
+          </div>
+          <div class="oms-act__card">
+            <p class="oms-act__title">Mar 8th - 4,100 events</p>
+            <p class="oms-act__metric">1.8B Transaction volume</p>
+            <span class="oms-act__delta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              13.17% DOD
+            </span>
+            <a class="oms-act__link" href="#">See more details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <small>Down delta</small>
+      <div class="static-stage" style="height:200px;">
+        <div class="oms-act" style="height:160px;">
+          <div class="oms-act__marker">
+            <span class="oms-act__line"></span>
+            <span class="oms-act__dot"></span>
+          </div>
+          <div class="oms-act__card">
+            <p class="oms-act__title">Aug 12th - 2,890 events</p>
+            <p class="oms-act__metric">920M Transaction volume</p>
+            <span class="oms-act__delta oms-act__delta--down">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><path d="m7 7 10 10"/><path d="M17 7v10H7"/></svg>
+              4.62% DOD
+            </span>
+            <a class="oms-act__link" href="#">See more details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Live demo — hover the chart</h2>
+  <div class="demo-wrap" id="demo-wrap">
+    <section class="oms-area-chart" data-device="desktop" data-data="true">
+      <div class="oms-area-chart__head">
+        <span class="oms-area-chart__label">YTD Transaction volume</span>
+        <div class="oms-area-chart__value-row">
+          <span class="oms-area-chart__value">$3.98B</span>
+          <span class="oms-area-chart__delta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            <span>22.41% YOY</span>
+          </span>
+        </div>
+      </div>
+      <div class="oms-area-chart__chart">
+        <div class="oms-area-chart__yaxis">
+          <span>4B</span><span>3B</span><span>2B</span><span>1B</span><span>0</span>
+        </div>
+        <div class="oms-area-chart__plot" id="plot">
+          <svg class="oms-area-chart__svg" viewBox="0 0 1102 136" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="act-fill-vert" x1="1102" y1="0" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%"   stop-color="rgb(149,81,245)"/>
+                <stop offset="22%"  stop-color="rgb(71,136,227)"/>
+                <stop offset="51%"  stop-color="rgb(6,182,212)"/>
+                <stop offset="100%" stop-color="rgb(6,182,212)"/>
+              </linearGradient>
+              <linearGradient id="act-fill-overlay" x1="0" y1="136" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%"   stop-color="rgb(255,255,255)" stop-opacity="1"/>
+                <stop offset="100%" stop-color="rgb(149,81,245)"  stop-opacity="0.5"/>
+              </linearGradient>
+            </defs>
+            <!-- Filled area (closed shape) -->
+            <path d="M 0 117 C 50 110 90 105 138 105 C 220 92 260 86 290 80 C 370 67 454 64 536 70 L 553 72 C 665 82 778 73 886 45 L 998 17 L 1102 0 L 1102 136 L 0 136 Z" fill="url(#act-fill-vert)" opacity="0.6"/>
+            <path d="M 0 117 C 50 110 90 105 138 105 C 220 92 260 86 290 80 C 370 67 454 64 536 70 L 553 72 C 665 82 778 73 886 45 L 998 17 L 1102 0 L 1102 136 L 0 136 Z" fill="url(#act-fill-overlay)" opacity="0.6"/>
+            <!-- Top edge curve only (used for tooltip dot positioning, invisible) -->
+            <path id="curve-path" d="M 0 117 C 50 110 90 105 138 105 C 220 92 260 86 290 80 C 370 67 454 64 536 70 L 553 72 C 665 82 778 73 886 45 L 998 17 L 1102 0" fill="none" stroke="none" pointer-events="none"/>
+          </svg>
+          <div class="oms-area-chart__xaxis">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+          </div>
+          <span class="oms-act__line" id="t-line" style="display:none;position:absolute;top:0;width:1px;background:#670DE5;pointer-events:none;z-index:4;transition:left 120ms cubic-bezier(.22,.61,.36,1);"></span>
+          <span class="oms-act__dot" id="t-dot" style="display:none;position:absolute;width:11px;height:11px;border-radius:50%;background:#670DE5;border:1px solid #fff;box-shadow:0 0 0 1px #670DE5;pointer-events:none;z-index:5;transform:translate(-50%,-50%);transition:left 120ms cubic-bezier(.22,.61,.36,1), top 120ms cubic-bezier(.22,.61,.36,1);"></span>
+          <div class="oms-act__card" id="t-card" style="display:none;position:absolute;min-width:191px;background:#fff;border-radius:12px;padding:12px;box-shadow:0 8px 24px -8px rgba(2,0,5,0.18),0 2px 6px rgba(2,0,5,0.06);flex-direction:column;gap:8px;font-family:Fustat,system-ui,sans-serif;z-index:6;pointer-events:none;transition:left 120ms cubic-bezier(.22,.61,.36,1), top 120ms cubic-bezier(.22,.61,.36,1);">
+            <p class="oms-act__title" id="t-title" style="margin:0;font-weight:500;font-size:14px;line-height:1.2;color:#000;">Mar 8th - 4,100 events</p>
+            <p class="oms-act__metric" id="t-metric" style="margin:0;font-weight:500;font-size:14px;line-height:1.2;color:#64708F;">1.8B Transaction volume</p>
+            <span class="oms-act__delta" id="t-delta" style="display:inline-flex;align-items:center;gap:4px;font-weight:500;font-size:14px;line-height:1.2;color:#047857;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" style="width:12px;height:12px;"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              <span id="t-delta-text">13.17% DOD</span>
+            </span>
+            <a class="oms-act__link" href="#" style="font-weight:500;font-size:12px;line-height:1.2;color:#670DE5;text-decoration:underline;text-underline-offset:2px;">See more details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<script>
+(() => {
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  // Data points (approx values to match the rendered curve)
+  const POINTS = [
+    {m:0, vol:'420M', delta:'+8.30%', events:'1,200', up:true},
+    {m:1, vol:'1.1B', delta:'+11.20%', events:'2,400', up:true},
+    {m:2, vol:'1.8B', delta:'+13.17%', events:'4,100', up:true},
+    {m:3, vol:'1.9B', delta:'+2.10%', events:'4,300', up:true},
+    {m:4, vol:'1.85B', delta:'-3.40%', events:'4,050', up:false},
+    {m:5, vol:'1.7B', delta:'-1.20%', events:'3,820', up:false},
+    {m:6, vol:'1.65B', delta:'-0.80%', events:'3,710', up:false},
+    {m:7, vol:'920M', delta:'-4.62%', events:'2,890', up:false},
+    {m:8, vol:'1.4B', delta:'+7.10%', events:'3,160', up:true},
+    {m:9, vol:'2.6B', delta:'+12.40%', events:'5,200', up:true},
+    {m:10, vol:'3.4B', delta:'+18.20%', events:'6,400', up:true},
+    {m:11, vol:'3.98B', delta:'+22.41%', events:'7,200', up:true},
+  ];
+  const plot = document.getElementById('plot');
+  const tLine = document.getElementById('t-line');
+  const tDot = document.getElementById('t-dot');
+  const tCard = document.getElementById('t-card');
+  const tTitle = document.getElementById('t-title');
+  const tMetric = document.getElementById('t-metric');
+  const tDelta = document.getElementById('t-delta');
+  const tDeltaText = document.getElementById('t-delta-text');
+
+  // Curve top y in svg viewBox units (136 tall). Map to plot pixels.
+  const curveY = [117, 100, 80, 60, 62, 72, 78, 95, 80, 50, 30, 12];
+
+  // Plot area (excluding x-axis labels) — xaxis is positioned BELOW the svg
+  // so the actual chart area is roughly plot height minus the xaxis row (~28px)
+  function plotMetrics(){
+    const r = plot.getBoundingClientRect();
+    const xaxis = plot.querySelector('.oms-area-chart__xaxis');
+    const axisH = xaxis ? xaxis.getBoundingClientRect().height + 8 : 28;
+    return { r, chartH: r.height - axisH };
+  }
+
+  // ── Pre-sample the SVG top-edge curve so the dot follows it exactly ──
+  // For each integer x in viewBox 0..1102, store the curve's y (also vb units).
+  const curvePath = document.getElementById('curve-path');
+  let curveLut = null;
+  function buildCurveLUT(){
+    if (!curvePath || !curvePath.getTotalLength) { curveLut = null; return; }
+    const len = curvePath.getTotalLength();
+    const VB_W = 1102;
+    const samples = Math.max(400, Math.ceil(VB_W));
+    const lut = new Array(VB_W + 1);
+    // First pass: write y at each integer x bucket from many path samples
+    for (let i = 0; i <= samples; i++){
+      const pt = curvePath.getPointAtLength((i/samples) * len);
+      const xi = Math.round(pt.x);
+      if (xi >= 0 && xi <= VB_W){
+        // If multiple samples hit the same x, take the topmost (smallest y).
+        if (lut[xi] == null || pt.y < lut[xi]) lut[xi] = pt.y;
+      }
+    }
+    // Second pass: linearly fill any holes
+    let last = null;
+    for (let x = 0; x <= VB_W; x++){
+      if (lut[x] == null){
+        // find next non-null
+        let nx = x + 1;
+        while (nx <= VB_W && lut[nx] == null) nx++;
+        if (last == null && nx > VB_W) { lut[x] = 0; continue; }
+        if (last == null) { lut[x] = lut[nx]; continue; }
+        if (nx > VB_W) { lut[x] = last; continue; }
+        const t = (x - (x-1)) / (nx - (x-1));
+        lut[x] = last + (lut[nx] - last) * (1 / (nx - x + 1));
+      }
+      last = lut[x];
+    }
+    curveLut = lut;
+  }
+
+  function curveYAtPx(xPx, totalPx){
+    // Map plot x px → viewBox x, look up the curve y in viewBox, then convert
+    // back to plot px relative to the chart area height.
+    if (!curveLut) buildCurveLUT();
+    const VB_W = 1102, VB_H = 136;
+    const vbX = Math.max(0, Math.min(VB_W, (xPx / totalPx) * VB_W));
+    const xi = Math.floor(vbX);
+    const xj = Math.min(VB_W, xi + 1);
+    const t = vbX - xi;
+    const yA = curveLut ? curveLut[xi] : 0;
+    const yB = curveLut ? curveLut[xj] : 0;
+    const yVB = yA + (yB - yA) * t;
+    return (yVB / VB_H);  // return as 0..1 of chart height
+  }
+
+  // Map a continuous month progress (0..11) to a data row (interpolated)
+  function lerpPoint(mProgress){
+    const i = Math.max(0, Math.min(POINTS.length - 1, Math.floor(mProgress)));
+    return POINTS[i];
+  }
+
+  function show(e) {
+    const { r, chartH } = plotMetrics();
+    const x = Math.max(0, Math.min(r.width, e.clientX - r.left));
+    const pct = x / r.width;
+    const mProgress = pct * (POINTS.length - 1);
+    const p = lerpPoint(mProgress);
+    const idx = Math.round(mProgress);
+    const day = String(8 + idx * 2).padStart(2, '');
+    tTitle.textContent = `${months[p.m]} ${day || '8'}th - ${p.events} events`;
+    tMetric.textContent = `${p.vol} Transaction volume`;
+    tDeltaText.textContent = `${p.delta} DOD`;
+    tDelta.style.color = p.up ? '#047857' : '#B91C1C';
+    tDelta.querySelector('svg').innerHTML = p.up
+      ? '<path d="M7 17 17 7"/><path d="M7 7h10v10"/>'
+      : '<path d="m7 7 10 10"/><path d="M17 7v10H7"/>';
+
+    // Smooth: dot follows the exact curve y at the mouse x (no snapping)
+    const yPx = curveYAtPx(x, r.width) * chartH;
+
+    // Vertical line — full chart height
+    tLine.style.left = x + 'px';
+    tLine.style.height = chartH + 'px';
+    tLine.style.display = 'block';
+
+    // Dot — center exactly on the curve at the current x (transform centers it)
+    tDot.style.left = x + 'px';
+    tDot.style.top = yPx + 'px';
+    tDot.style.display = 'block';
+
+    // Card — beside the dot. Flip to left if overflowing right.
+    tCard.style.display = 'flex';
+    const cardW = tCard.offsetWidth || 220;
+    const cardH = tCard.offsetHeight || 110;
+    let cardLeft = x + 16;
+    if (cardLeft + cardW > r.width - 8) cardLeft = x - cardW - 16;
+    let cardTop = yPx - cardH / 2;
+    cardTop = Math.max(8, Math.min(chartH - cardH - 8, cardTop));
+    tCard.style.left = cardLeft + 'px';
+    tCard.style.top = cardTop + 'px';
+  }
+
+  function hide() {
+    tLine.style.display = 'none';
+    tDot.style.display = 'none';
+    tCard.style.display = 'none';
+  }
+
+  // Throttle to animation frames for a buttery feel
+  let pending = null;
+  plot.addEventListener('mousemove', (e) => {
+    if (pending != null) return;
+    const ce = { clientX: e.clientX, clientY: e.clientY };
+    pending = requestAnimationFrame(() => { pending = null; show(ce); });
+  });
+  plot.addEventListener('mouseleave', hide);
+
+  // Build the LUT once layout settles, then show a default position.
+  setTimeout(() => {
+    buildCurveLUT();
+    const r = plot.getBoundingClientRect();
+    show({clientX: r.left + r.width * (3/11), clientY: r.top + r.height/2});
+  }, 60);
+  window.addEventListener('resize', () => { /* viewBox is fixed, LUT stays valid */ });
+})();
+</script>
+</body>
+</html>

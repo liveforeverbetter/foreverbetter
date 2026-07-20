@@ -1,0 +1,68 @@
+<!-- @dsCard group="6 · Components" name="Code input" subtitle="Tabbed code snippet with copy action" viewport="900x520" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Code input — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-page-default, #fff); }
+  body { padding: 40px 48px 64px; font-family: var(--font-main, "Fustat"), system-ui, sans-serif; color: var(--fg-primary); }
+  .page-header { margin: 0 0 36px; }
+  .page-title { font-family: var(--font-main, "Fustat"); font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--slate-900, #141635); margin: 0 0 12px; }
+  .page-desc { font-family: "Geist", system-ui, sans-serif; font-size: 16px; line-height: 24px; color: var(--slate-500, #64708F); margin: 0; max-width: 1000px; white-space: pre-line; }
+
+  .oms-code { width: 520px; border-radius: 12px; background: #fff; box-shadow: inset 0 0 0 1px var(--slate-300, #C8CFE1); overflow: hidden; margin-top: 32px; }
+  .oms-code__head { height: 48px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-bottom: 1px solid var(--slate-300, #C8CFE1); }
+  .oms-code__tabs { display: flex; gap: 4px; align-items: center; }
+  .oms-code__tab {
+    border: 0; background: transparent; cursor: pointer;
+    font-family: "Fustat", system-ui, sans-serif; font-weight: 500; font-size: 13px;
+    color: var(--slate-700, #363E5C); padding: 4px 12px; border-radius: 8px;
+  }
+  .oms-code__tab.is-active { background: var(--purple-100, #EAE4F5); color: var(--purple-700, #670DE5); font-weight: 700; }
+  .oms-code__copy {
+    width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--slate-300, #C8CFE1);
+    background: #fff; cursor: pointer; color: var(--slate-700, #363E5C);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .oms-code__copy svg { width: 14px; height: 14px; stroke-width: 1.75; }
+  .oms-code__body { padding: 18px 20px; margin: 0; overflow-x: auto; }
+  .oms-code__body pre { margin: 0; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; line-height: 1.6; color: var(--slate-500, #64708F); white-space: pre; }
+</style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">Code input</h1>
+    <p class="page-desc">Code snippets display implementation examples in a structured, developer-friendly format, supporting multiple frameworks or languages through tabs so users can switch between integration examples.
+
+Combines framework tabs with a copy action. Use clear tab labels (React, Next.js, Vanilla JS) and make the active tab state obvious.</p>
+  </header>
+
+  <div class="oms-code">
+    <div class="oms-code__head">
+      <div class="oms-code__tabs">
+        <button class="oms-code__tab is-active">React</button>
+        <button class="oms-code__tab">Next.js</button>
+        <button class="oms-code__tab">Vanilla JS</button>
+      </div>
+      <button class="oms-code__copy" aria-label="Copy code">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+      </button>
+    </div>
+    <div class="oms-code__body">
+<pre>import { OmsxProvider } from '@polygon/omsx-react';
+
+export default function App() {
+  return (
+    &lt;OmsxProvider publishableKey="pk_xxxxxxxxxxxx"&gt;
+      &lt;YourApp /&gt;
+    &lt;/OmsxProvider&gt;
+  );
+}</pre>
+    </div>
+  </div>
+
+</body>
+</html>

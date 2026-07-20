@@ -1,0 +1,234 @@
+/* ─────────────────────────────────────────────────────────────────
+   OMS Design System — Customer profile
+   1:1 with Figma source (node 313:10347 — Customer profile)
+   Variants: device = desktop | mobile · empty-state = false | true
+   Sub-component: detail-atom (default | hover | clicked / Copied)
+   ───────────────────────────────────────────────────────────────── */
+
+:root {
+  --cp-name-fg:        var(--slate-900, #141635);
+  --cp-balance-label-fg: var(--slate-500, #64708F);
+  --cp-detail-fg:      var(--slate-500, #64708F);
+  --cp-bullet-fg:      var(--slate-900, #141635);
+
+  --cp-atom-icon-bg:   #EAE4F5;             /* purple-50 */
+  --cp-atom-hover-bg:  var(--slate-50, #F6F6FC);
+  --cp-atom-hover-bd:  var(--slate-300, #C8CFE1);
+  --cp-atom-copied-bg: #ECFDF5;             /* emerald-50 */
+  --cp-atom-copied-bd: #A7F3D0;             /* emerald-200 */
+  --cp-atom-copied-fg: #047857;             /* emerald-700 */
+}
+
+/* ─── Wrapper ─────────────────────────────────────────────────── */
+.oms-customer-profile {
+  font-family: var(--font-main, "Fustat"), system-ui, sans-serif;
+  width: 100%;
+}
+
+/* ─── Desktop layout ─────────────────────────────────────────── */
+.oms-customer-profile[data-device="desktop"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 64px;
+  min-height: 92px;
+}
+
+.oms-customer-profile[data-device="desktop"] .oms-cp__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+.oms-customer-profile[data-device="desktop"] .oms-cp__name-row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+.oms-customer-profile[data-device="desktop"] .oms-cp__name {
+  font-family: var(--font-main, "Fustat"), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.1;
+  color: var(--cp-name-fg);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Balance block */
+.oms-customer-profile[data-device="desktop"] .oms-cp__balance {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+  text-align: right;
+}
+.oms-customer-profile[data-device="desktop"] .oms-cp__balance-label {
+  font-family: var(--font-main, "Fustat"), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--cp-balance-label-fg);
+  margin: 0;
+}
+.oms-customer-profile[data-device="desktop"] .oms-cp__balance-value {
+  font-family: var(--font-main, "Fustat"), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.1;
+  color: var(--cp-name-fg);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Mobile layout ──────────────────────────────────────────── */
+.oms-customer-profile[data-device="mobile"] {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+.oms-customer-profile[data-device="mobile"] .oms-cp__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  width: 100%;
+}
+.oms-customer-profile[data-device="mobile"] .oms-cp__name-row {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.oms-customer-profile[data-device="mobile"] .oms-cp__name {
+  font-family: var(--font-main, "Fustat"), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--cp-name-fg);
+  margin: 0;
+}
+.oms-customer-profile[data-device="mobile"] .oms-cp__balance-value {
+  font-family: var(--font-main, "Fustat"), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--cp-name-fg);
+  margin: 0;
+  text-align: center;
+}
+.oms-customer-profile[data-device="mobile"] .oms-cp__balance-label { display: none; }
+
+/* ─── Detail atoms row (shared) ──────────────────────────────── */
+.oms-cp__details {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+}
+.oms-customer-profile[data-device="mobile"] .oms-cp__details {
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.oms-cp__bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cp-bullet-fg);
+  flex: 0 0 auto;
+}
+
+/* ─── Detail atom (default · hover · clicked) ───────────────── */
+.oms-cp-atom {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-main, "Fustat"), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--cp-detail-fg);
+  border-radius: 16px;
+  border: 0.5px solid transparent;
+  padding: 0;
+  background: transparent;
+  cursor: copy;
+  transition: background-color 120ms ease, border-color 120ms ease;
+  white-space: nowrap;
+}
+.oms-cp-atom__icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: var(--cp-atom-icon-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  color: var(--slate-900, #141635);
+}
+.oms-cp-atom__icon svg,
+.oms-cp-atom__icon i.lucide { width: 12px; height: 12px; stroke-width: 1.75; }
+.oms-cp-atom__copy {
+  width: 10px;
+  height: 10px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--slate-500, #64708F);
+}
+.oms-cp-atom__copy svg,
+.oms-cp-atom__copy i.lucide { width: 10px; height: 10px; stroke-width: 1.75; }
+
+/* — hover/tap — desktop only, on the copyable identifier ([data-copyable]).
+   We pre-reserve the hover padding (with a matching negative margin) so the
+   atom's visual position stays put when the pill background appears. */
+.oms-customer-profile[data-device="desktop"] .oms-cp-atom[data-copyable] {
+  padding: 4px 8px 4px 4px;
+  margin: -4px -8px -4px -4px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .oms-customer-profile[data-device="desktop"] .oms-cp-atom[data-copyable]:hover,
+  .oms-customer-profile[data-device="desktop"] .oms-cp-atom[data-copyable][data-state="hover"] {
+    background-color: var(--cp-atom-hover-bg);
+    border-color: var(--cp-atom-hover-bd);
+  }
+  .oms-customer-profile[data-device="desktop"] .oms-cp-atom[data-copyable]:hover .oms-cp-atom__copy,
+  .oms-customer-profile[data-device="desktop"] .oms-cp-atom[data-copyable][data-state="hover"] .oms-cp-atom__copy {
+    display: inline-flex;
+  }
+  .oms-customer-profile[data-device="desktop"] .oms-cp-atom[data-copyable]:hover .oms-cp-atom__icon,
+  .oms-customer-profile[data-device="desktop"] .oms-cp-atom[data-copyable][data-state="hover"] .oms-cp-atom__icon {
+    background: transparent;
+  }
+}
+
+/* — clicked / "Copied" — works on every device.
+   On mobile we reserve the same padding/negative-margin pair as desktop's
+   hover rule so the atom doesn't shift after a tap. */
+.oms-customer-profile[data-device="mobile"] .oms-cp-atom[data-copyable][data-state="clicked"] {
+  padding: 4px 8px 4px 4px;
+  margin: -4px -8px -4px -4px;
+}
+
+.oms-cp-atom[data-state="clicked"] {
+  background-color: var(--cp-atom-copied-bg);
+  border-color: var(--cp-atom-copied-bd);
+  color: var(--cp-atom-copied-fg);
+  cursor: default;
+}
+.oms-cp-atom[data-state="clicked"] .oms-cp-atom__icon { display: none; }
+.oms-cp-atom[data-state="clicked"] .oms-cp-atom__copy {
+  display: inline-flex;
+  color: var(--cp-atom-copied-fg);
+}
+.oms-cp-atom[data-state="clicked"] .oms-cp-atom__label::before { content: "Copied"; }
+.oms-cp-atom[data-state="clicked"] .oms-cp-atom__label { font-size: 0; }
+.oms-cp-atom[data-state="clicked"] .oms-cp-atom__label::before { font-size: 14px; }

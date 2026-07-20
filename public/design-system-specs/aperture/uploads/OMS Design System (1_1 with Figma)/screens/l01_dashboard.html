@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!-- @dsCard group="7 · Layouts" name="Home" subtitle="KPIs, balance chart, recent activity" viewport="1440x900" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OMS · Dashboard</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="../components/sidebar.css?v=15" />
+<link rel="stylesheet" href="../components/topnav.css" />
+<link rel="stylesheet" href="../components/buttons.css" />
+<link rel="stylesheet" href="../components/status_banner.css" />
+<link rel="stylesheet" href="../components/cards.css?v=2" />
+<link rel="stylesheet" href="../components/area_chart.css" />
+<link rel="stylesheet" href="../components/floater_button.css" />
+<script defer src="../components/sidebar.js"></script>
+<style>
+  html, body { margin: 0; background: #fff; }
+  body { font-family: var(--font-display); color: var(--fg-primary); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  .shell { display: flex; flex-direction: column; min-height: 100vh; background: #fff; }
+  .body { display: flex; flex: 1; min-height: 0; align-items: stretch; }
+  .body > [data-oms-sidebar] { align-self: stretch; display: flex; flex-direction: column; }
+  .body > [data-oms-sidebar] > .oms-sidebar { flex: 1; height: auto; }
+  .main-col { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+  .main {
+    flex: 1;
+    padding: 32px 40px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    background: #fff;
+  }
+
+  /* The area chart component is fixed at 1200px desktop; let it shrink to
+     the available column so the dashboard breathes. */
+  .main .oms-area-chart[data-device="desktop"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* ── Quick start ──────────────────────────────────────────────── */
+  .quick-start {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .quick-start__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.2;
+    color: var(--slate-950);
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .quick-start__row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  /* Override the resource card's fixed 348px width so it stretches the row */
+  .quick-start__row .oms-card-resource { width: 100%; }
+</style>
+</head>
+<body>
+<div class="shell" data-screen-label="Dashboard">
+
+  <!-- ░░░ Sandbox banner ░░░ -->
+  <div class="oms-status-banner" data-mode="sandbox" data-oms-status-banner>
+    <span class="oms-status-banner__mode" data-oms-status-banner-mode>Sandbox mode</span>
+    <span class="oms-status-banner__msg" data-oms-status-banner-msg>You are testing OMSX capabilities in a sandbox environment</span>
+    <span class="oms-status-banner__action">
+      <button class="btn btn-sm btn-secondary" data-oms-status-banner-action>Switch to live</button>
+    </span>
+  </div>
+
+  <div class="body">
+    <!-- ░░░ Sidebar (Home active) ░░░ -->
+    <div data-oms-sidebar data-active="Home" data-assets-base="../assets"></div>
+
+    <div class="main-col">
+      <!-- ░░░ Topnav ░░░ -->
+      <nav class="oms-topnav" aria-label="Top navigation">
+        <div class="oms-topnav__right">
+          <div class="oms-topnav__menu">
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              </span><span>Docs</span>
+            </a>
+          </div>
+          <a href="#" class="oms-topnav__profile">
+            <span class="oms-topnav__profile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path></svg>
+            </span><span>User Name</span>
+          </a>
+        </div>
+      </nav>
+
+      <main class="main">
+        <!-- ░░░ YTD Transactions area chart ░░░ -->
+        <section class="oms-area-chart" data-device="desktop" data-data="true" data-screen-label="YTD Transactions">
+          <div class="oms-area-chart__head">
+            <span class="oms-area-chart__label">YTD Transactions</span>
+            <div class="oms-area-chart__value-row">
+              <span class="oms-area-chart__value">$3.98K</span>
+              <span class="oms-area-chart__delta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg>
+                <span>22.41%</span>
+              </span>
+            </div>
+          </div>
+          <div class="oms-area-chart__chart">
+            <div class="oms-area-chart__yaxis">
+              <span>40K</span><span>30K</span><span>20K</span><span>10K</span><span>0</span>
+            </div>
+            <div class="oms-area-chart__plot">
+              <svg class="oms-area-chart__svg" viewBox="0 0 1102 136" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="ds-ac-fill-vert" x1="1102" y1="0" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%"   stop-color="rgb(149,81,245)"/>
+                    <stop offset="22%"  stop-color="rgb(71,136,227)"/>
+                    <stop offset="51%"  stop-color="rgb(6,182,212)"/>
+                    <stop offset="100%" stop-color="rgb(6,182,212)"/>
+                  </linearGradient>
+                  <linearGradient id="ds-ac-fill-overlay" x1="0" y1="136" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%"   stop-color="rgb(255,255,255)" stop-opacity="1"/>
+                    <stop offset="100%" stop-color="rgb(149,81,245)"  stop-opacity="0.5"/>
+                  </linearGradient>
+                </defs>
+                <path d="M 553.476 72.298 L 536.672 70.833 C 454.535 63.674 371.827 66.71 290.435 79.873 L 137.664 104.579 L 0 117 L 0 136 L 1102 136 L 1102 30.797 L 1102 0 L 997.644 17 L 886.238 45.306 C 777.616 72.905 665.125 82.03 553.476 72.298 Z" fill="url(#ds-ac-fill-vert)" opacity="0.6"/>
+                <path d="M 553.476 72.298 L 536.672 70.833 C 454.535 63.674 371.827 66.71 290.435 79.873 L 137.664 104.579 L 0 117 L 0 136 L 1102 136 L 1102 30.797 L 1102 0 L 997.644 17 L 886.238 45.306 C 777.616 72.905 665.125 82.03 553.476 72.298 Z" fill="url(#ds-ac-fill-overlay)" opacity="0.6"/>
+              </svg>
+              <div class="oms-area-chart__xaxis">
+                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ░░░ Quick start row ░░░ -->
+        <section class="quick-start" data-screen-label="Quick start">
+          <h2 class="quick-start__title">Quick start</h2>
+          <div class="quick-start__row">
+            <a href="#" class="oms-card-resource">
+              <div class="oms-card-resource__body">
+                <div class="oms-card-resource__title">Explore API docs</div>
+                <div class="oms-card-resource__desc">Read more about our API</div>
+              </div>
+              <span class="oms-card-resource__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+              </span>
+            </a>
+
+            <a href="#" class="oms-card-resource">
+              <div class="oms-card-resource__body">
+                <div class="oms-card-resource__title">Invite team members</div>
+                <div class="oms-card-resource__desc">Add more users to your project</div>
+              </div>
+              <span class="oms-card-resource__icon" aria-hidden="true"></span>
+            </a>
+
+            <a href="#" class="oms-card-resource">
+              <div class="oms-card-resource__body">
+                <div class="oms-card-resource__title">Verify your business</div>
+                <div class="oms-card-resource__desc">Fill out KYB for your organization</div>
+              </div>
+              <span class="oms-card-resource__icon" aria-hidden="true"></span>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- ░░░ Floating support button ░░░ -->
+  <button class="oms-floater oms-floater--fixed" aria-label="Contact support">
+    <span class="oms-floater__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9a9 9 0 0 1 18 0v9a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg>
+    </span>
+  </button>
+</div>
+
+<script>
+  function setMode(mode){
+    const banner=document.querySelector('[data-oms-status-banner]');
+    if(!banner)return;
+    banner.setAttribute('data-mode',mode);
+    const m=banner.querySelector('[data-oms-status-banner-mode]'),
+          s=banner.querySelector('[data-oms-status-banner-msg]'),
+          a=banner.querySelector('[data-oms-status-banner-action]');
+    if(mode==='live'){
+      m.textContent='Live mode';
+      s.textContent='You are operating in the live OMSX environment — real funds and customers';
+      a.textContent='Switch to sandbox';
+    }else{
+      m.textContent='Sandbox mode';
+      s.textContent='You are testing OMSX capabilities in a sandbox environment';
+      a.textContent='Switch to live';
+    }
+    const t=document.querySelector('[data-oms-mode-toggle]');
+    if(t){
+      t.querySelectorAll('.oms-mode-toggle__opt').forEach((o,i)=>{
+        const on=(i===0&&mode==='sandbox')||(i===1&&mode==='live');
+        o.classList.toggle('is-active',on);
+        o.setAttribute('aria-selected',String(on));
+      });
+      t.classList.toggle('oms-mode-toggle--live',mode==='live');
+    }
+  }
+  function wireToggle(){
+    const t=document.querySelector('[data-oms-mode-toggle]');
+    if(!t||t.__w)return false;
+    t.__w=true;
+    t.addEventListener('click',e=>{
+      const o=e.target.closest('.oms-mode-toggle__opt');
+      if(!o)return;
+      const i=[...t.querySelectorAll('.oms-mode-toggle__opt')].indexOf(o);
+      setMode(i===1?'live':'sandbox');
+    });
+    return true;
+  }
+  if(!wireToggle()){
+    const mo=new MutationObserver(()=>{if(wireToggle())mo.disconnect();});
+    mo.observe(document.body,{childList:true,subtree:true});
+  }
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('[data-oms-status-banner-action]');
+    if(!b)return;
+    const cur=document.querySelector('[data-oms-status-banner]').getAttribute('data-mode');
+    setMode(cur==='live'?'sandbox':'live');
+  });
+</script>
+</body>
+</html>

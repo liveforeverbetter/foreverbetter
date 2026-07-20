@@ -1,0 +1,83 @@
+<!-- @dsCard group="6 · Components" name="Top nav" subtitle="Desktop inline actions + mobile condensed menu" viewport="1280x520" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Top nav — OMS</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="../components/topnav.css?v=2" />
+<style>
+  html, body { margin: 0; background: var(--bg-page-default, #fff); }
+  body {
+    padding: 40px 48px 64px;
+    color: var(--slate-950);
+    font-family: var(--font-main, "Fustat"), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page-header { margin: 0 0 40px; }
+  .page-title { font-family: var(--font-main, "Fustat"); font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--slate-900, #141635); margin: 0 0 12px; }
+  .page-desc { font-family: "Geist", system-ui, sans-serif; font-size: 16px; line-height: 24px; color: var(--slate-500, #64708F); margin: 0; max-width: 1000px; white-space: pre-line; }
+  .group { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
+  .group__label { font-family: "Geist", system-ui, sans-serif; font-weight: 500; font-size: 14px; color: var(--purple-700, #670DE5); margin: 0; }
+  .frame { border: 1px solid var(--slate-200, #DFE3F0); border-radius: 12px; overflow: hidden; }
+  .frame--mobile { max-width: 402px; }
+</style>
+</head>
+<body>
+
+  <header class="page-header">
+    <h1 class="page-title">Top nav</h1>
+    <p class="page-desc">The top navigation provides access to global actions and context across the product — documentation, account access, and navigation controls — while maintaining a consistent anchor for orientation.
+
+On desktop, actions are displayed inline; on mobile they condense into a menu trigger plus the profile avatar.</p>
+  </header>
+
+  <div class="group">
+    <p class="group__label">Desktop</p>
+    <div class="frame">
+      <nav class="oms-topnav" aria-label="Top navigation">
+        <div class="oms-topnav__right">
+          <div class="oms-topnav__menu">
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+              </span>
+              <span>System status</span>
+            </a>
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              </span>
+              <span>Docs</span>
+            </a>
+          </div>
+          <a href="#" class="oms-topnav__profile">
+            <span class="oms-topnav__profile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M6.168 18.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855"></path></svg>
+            </span>
+            <span>User Name</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="group">
+    <p class="group__label">Mobile</p>
+    <div class="frame frame--mobile">
+      <nav class="oms-topnav oms-topnav--mobile" aria-label="Top navigation">
+        <button class="oms-topnav__menu-btn" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <a href="#" class="oms-topnav__profile oms-topnav__profile--icononly" aria-label="Account">
+          <span class="oms-topnav__profile-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M6.168 18.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855"></path></svg>
+          </span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+</body>
+</html>

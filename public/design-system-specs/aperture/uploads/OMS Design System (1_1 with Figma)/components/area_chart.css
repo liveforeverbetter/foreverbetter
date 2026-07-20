@@ -1,0 +1,191 @@
+/* ─────────────────────────────────────────────────────────────────
+   OMS Design System — Area chart
+   1:1 with Figma source (node 320:16900 — Area chart)
+   Variants: device = desktop | mobile · data = true | false
+   ───────────────────────────────────────────────────────────────── */
+
+.oms-area-chart {
+  /* tokens */
+  --ac-bg:           #FFFFFF;
+  --ac-border:       #DFE3F0;
+  --ac-shadow:       0 0.5px 0.5px 0 rgba(0,0,0,0.10);
+  --ac-radius:       24px;
+  --ac-label:        var(--slate-500, #64708F);
+  --ac-value:        var(--slate-900, #141635);
+  --ac-delta-up:     #047857;       /* emerald-700 */
+  --ac-delta-down:   #B91C1C;       /* red-700 */
+  --ac-axis:         var(--slate-500, #64708F);
+
+  background: var(--ac-bg);
+  border: 1px solid var(--ac-border);
+  border-radius: var(--ac-radius);
+  box-shadow: var(--ac-shadow);
+  font-family: "Fustat", system-ui, sans-serif;
+  color: var(--ac-value);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ── Device sizing ─────────────────────────────────────────────── */
+.oms-area-chart[data-device="desktop"] {
+  padding: 24px;
+  width: 1200px;
+  height: 355px;
+}
+.oms-area-chart[data-device="mobile"] {
+  padding: 20px;
+  width: 370px;
+  height: 335px;
+  gap: 24px;
+}
+
+/* ── Header (label + value + delta) ───────────────────────────── */
+.oms-area-chart__head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.oms-area-chart__label {
+  font-family: "Fustat", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--ac-label);
+}
+.oms-area-chart__value-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.oms-area-chart__value {
+  font-family: "Fustat", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.1;
+  color: var(--ac-value);
+  letter-spacing: -0.02em;
+}
+.oms-area-chart__delta {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 0;
+  font-family: "Fustat", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--ac-delta-up);
+}
+.oms-area-chart__delta--down { color: var(--ac-delta-down); }
+.oms-area-chart__delta i.lucide,
+.oms-area-chart__delta svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.75;
+}
+
+/* ── Chart body ───────────────────────────────────────────────── */
+.oms-area-chart__chart {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex: 1;
+  min-height: 0;
+}
+.oms-area-chart[data-device="desktop"] .oms-area-chart__chart { gap: 24px; }
+.oms-area-chart[data-device="mobile"] .oms-area-chart__chart  { gap: 12px; }
+
+/* Y-axis */
+.oms-area-chart__yaxis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 28px;
+  font-family: "Fustat", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1;
+  color: var(--ac-axis);
+  flex: 0 0 auto;
+}
+
+/* Plot area */
+.oms-area-chart__plot {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.oms-area-chart__svg {
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
+  display: block;
+}
+
+/* X-axis */
+.oms-area-chart__xaxis {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  font-family: "Fustat", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1;
+  color: var(--ac-axis);
+}
+
+/* ── Empty state overlay ──────────────────────────────────────── */
+.oms-area-chart[data-data="false"] .oms-area-chart__plot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(246,246,252,0.48);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 12px 12px 0 0;
+  pointer-events: none;
+}
+.oms-area-chart__empty {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.oms-area-chart[data-data="false"] .oms-area-chart__empty { display: flex; }
+.oms-area-chart__empty-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--purple-50, #F1EAFE);
+  border: 1px solid var(--purple-200, #D5C4F2);
+  color: var(--purple-700, #670DE5);
+  font-family: "Fustat", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1;
+}
+.oms-area-chart__empty-pill i.lucide,
+.oms-area-chart__empty-pill svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 1.75;
+}

@@ -1,0 +1,64 @@
+/* ─────────────────────────────────────────────────────────────────
+   Mode Toggle — Sandbox / Live segmented control
+   1:1 with Figma OMS Design System "Mode Toggle"
+   (nodes 2149:3156 "state=1 / Sandbox active",
+          2149:3155 "state=2 / Live active")
+
+   Anatomy
+   • Outer pill   190×34, radius 24, border 1px rgb(234,228,245),
+                  padding 4
+   • Track bg     state-1 (Sandbox): linear-gradient
+                    rgb(234,228,245) 0% → rgb(246,243,251) 100%
+                  state-2 (Live): linear-gradient
+                    rgb(213,196,242) 0% → rgb(207,250,254) 100%
+   • Each segment 91×26, radius 24, padding 8
+                  active: bg #fff, shadow 0 1 2 rgba(0,0,0,0.05),
+                          label Fustat 500/14 rgb(20,22,53)
+                  inactive: transparent, label Fustat 500/14 rgb(100,112,143)
+   ───────────────────────────────────────────────────────────────── */
+
+.oms-mode-toggle {
+  width: 190px;
+  height: 34px;
+  border-radius: 24px;
+  border: 1px solid rgb(234, 228, 245);
+  padding: 3px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 0;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgb(234, 228, 245) 0%, rgb(246, 243, 251) 100%);
+  font-family: var(--font-display, "Fustat"), system-ui, sans-serif;
+}
+.oms-mode-toggle--live {
+  background: linear-gradient(90deg, var(--purple-200, #D5C4F2) 0%, var(--cyan-100, #CFFAFE) 100%);
+}
+
+.oms-mode-toggle__opt {
+  height: 100%;
+  border: 0;
+  background: transparent;
+  border-radius: 24px;
+  font-family: var(--font-display, "Fustat"), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: rgb(100, 112, 143);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+.oms-mode-toggle__opt.is-active {
+  background: #fff;
+  color: rgb(20, 22, 53);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.oms-mode-toggle__opt:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(103, 13, 229, 0.25);
+}

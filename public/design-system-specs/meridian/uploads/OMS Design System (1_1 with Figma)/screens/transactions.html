@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OMS · Transactions</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="../components/sidebar.css?v=15" />
+<link rel="stylesheet" href="../components/topnav.css" />
+<link rel="stylesheet" href="../components/buttons.css" />
+<link rel="stylesheet" href="../components/badges.css" />
+<link rel="stylesheet" href="../components/inputs.css" />
+<link rel="stylesheet" href="../components/alerts.css" />
+<link rel="stylesheet" href="../components/status_banner.css" />
+<link rel="stylesheet" href="../components/table.css" />
+<link rel="stylesheet" href="../components/floater_button.css" />
+<script defer src="../components/sidebar.js"></script>
+<style>
+  html, body { margin: 0; background: #fff; }
+  body { font-family: var(--font-display); color: var(--fg-primary); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  .shell { min-height: 100vh; display: flex; flex-direction: column; background: #fff; }
+  .body { display: flex; flex: 1; min-height: 0; align-items: stretch; }
+  .body > [data-oms-sidebar] { align-self: stretch; display: flex; flex-direction: column; }
+  .body > [data-oms-sidebar] > .oms-sidebar { flex: 1; height: auto; }
+  .main-col { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .main { flex: 1; padding: 48px 36px 24px; display: flex; flex-direction: column; gap: 28px; background: #fff; }
+  .main .oms-table, .main .oms-table__slot, .main .oms-table__scroll, .main .oms-table__grid { width: 100%; }
+  .main__header { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .page-title { font-family: var(--font-display); font-weight: 700; font-size: 40px; line-height: 1.2; color: var(--slate-950); margin: 0; letter-spacing: -0.01em; }
+
+  /* Tabs */
+  .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--slate-200); padding-bottom: 0; }
+  .tab {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--fg-secondary);
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tab.is-active { color: var(--purple-700); border-bottom-color: var(--purple-700); }
+  .tab__count {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 22px; padding: 0 6px; height: 18px;
+    border-radius: 999px; background: var(--slate-100); color: var(--slate-700);
+    font-size: 11px; font-weight: 700;
+  }
+  .tab.is-active .tab__count { background: var(--purple-100); color: var(--purple-700); }
+
+  /* Transaction-specific cell content */
+  .oms-tx__asset-cell, .oms-tx__method-cell { display:flex; flex-direction:column; gap:4px; align-items:flex-start; padding:8px 0; }
+  .oms-tx__asset-amt { display:inline-flex; align-items:center; gap:10px; }
+  .oms-tx__asset-icon { display:inline-flex; width:24px; height:24px; flex:0 0 24px; }
+  .oms-tx__asset-icon svg { width:24px; height:24px; display:block; }
+  .oms-tx__asset-text { font-size:14px; color: var(--slate-950); }
+  .oms-tx__asset-text strong { font-weight:700; }
+  .oms-tx__asset-code { color: var(--slate-500); font-weight:500; margin-left:2px; }
+  .oms-tx__party { display:inline-flex; align-items:center; gap:6px; font-size:13px; color: var(--slate-500); }
+  .oms-tx__party-label { color: var(--slate-500); }
+  .oms-tx__party-link { color: var(--purple-700); text-decoration:none; }
+  .oms-tx__party-link:hover { text-decoration: underline; }
+  .oms-tx__party-copy { background:none; border:0; padding:0; color: var(--slate-400); cursor:pointer; display:inline-flex; align-items:center; }
+  .oms-tx__party-copy:hover { color: var(--slate-700); }
+  .oms-tx__method-cell { font-size:14px; }
+  .oms-tx__method-label { color: var(--slate-500); }
+  .oms-tx__method-val   { color: var(--slate-950); font-weight:500; }
+</style>
+</head>
+<body>
+<div class="shell" data-screen-label="Transactions">
+
+  <div class="oms-status-banner" data-mode="sandbox" data-oms-status-banner>
+    <span class="oms-status-banner__mode" data-oms-status-banner-mode>Sandbox mode</span>
+    <span class="oms-status-banner__msg" data-oms-status-banner-msg>You are testing OMSX capabilities in a sandbox environment</span>
+    <span class="oms-status-banner__action">
+      <button class="btn btn-sm btn-secondary" data-oms-status-banner-action>Switch to Live</button>
+    </span>
+  </div>
+
+  <div class="body">
+    <div data-oms-sidebar data-active="Transactions" data-assets-base="../assets"></div>
+
+    <div class="main-col">
+      <nav class="oms-topnav" aria-label="Top navigation">
+        <div class="oms-topnav__right">
+          <div class="oms-topnav__menu">
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"></path></svg>
+              </span><span>System status</span>
+            </a>
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              </span><span>Docs</span>
+            </a>
+          </div>
+          <a href="#" class="oms-topnav__profile">
+            <span class="oms-topnav__profile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path></svg>
+            </span><span>User Name</span>
+          </a>
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="main__header">
+          <h1 class="page-title">Transactions</h1>
+        </div>
+
+        <section class="oms-table" data-screen-label="Transactions table">
+          <div class="oms-table__controls oms-table__controls--no-title">
+            <label class="oms-table__search">
+              <svg class="oms-table__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4-4"></path></svg>
+              <input type="text" placeholder="Search" />
+            </label>
+            <div class="oms-table__controls-actions">
+              <button class="oms-table__icon-btn" aria-label="Filter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+              </button>
+              <button class="oms-table__icon-btn" aria-label="Download">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="oms-table__slot">
+            <div class="oms-table__scroll">
+              <table class="oms-table__grid">
+                <thead><tr id="thead"></tr></thead>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <nav class="oms-table__pagination" aria-label="Pagination">
+            <button class="oms-table__pag-btn" aria-label="First page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg></button>
+            <button class="oms-table__pag-btn" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+            <div class="oms-table__pag-numbers">
+              <button class="oms-table__pag-num is-active">1</button>
+              <button class="oms-table__pag-num">2</button>
+              <button class="oms-table__pag-num">3</button>
+              <span class="oms-table__pag-ellipsis">…</span>
+              <button class="oms-table__pag-num">24</button>
+            </div>
+            <button class="oms-table__pag-btn" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+            <button class="oms-table__pag-btn" aria-label="Last"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg></button>
+          </nav>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <button class="oms-floater oms-floater--fixed" aria-label="Contact support">
+    <span class="oms-floater__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9a9 9 0 0 1 18 0v9a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></span>
+  </button>
+</div>
+
+<script>
+  const HEADERS = ["Type","From","To","Method","Status","Created"];
+  document.getElementById('thead').innerHTML = HEADERS.map(h => `<th><span class="oms-table__head-label">${h}</span></th>`).join('');
+
+  // Asset & flag glyphs (24×24, kept inline for fidelity)
+  const usdtIcon = `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#26A17B"/><path d="M13.3 11.13V9.5h3.74V7H7v2.5h3.74v1.63c-3.04.14-5.32.74-5.32 1.47s2.28 1.33 5.32 1.47v5.22h2.56V14.07c3.03-.14 5.31-.74 5.31-1.47s-2.28-1.33-5.31-1.47Zm0 2.49v-.01c-.08 0-.49.03-1.4.03-.72 0-1.23-.02-1.41-.03v.01c-2.81-.12-4.91-.61-4.91-1.2 0-.58 2.1-1.07 4.91-1.2v1.92c.18 0 .7.04 1.42.04.87 0 1.31-.05 1.39-.05V11.21c2.8.13 4.9.62 4.9 1.2 0 .59-2.1 1.07-4.9 1.2Z" fill="#fff"/></svg>`;
+  const usdcIcon = `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2775CA"/><path d="M12.5 18.5v-.79c2.07-.28 3.36-1.43 3.36-3.04 0-1.49-.92-2.36-2.93-2.7l-1.5-.24c-1.13-.21-1.58-.59-1.58-1.21 0-.73.65-1.21 1.65-1.21 1.04 0 1.69.42 1.86 1.18.04.16.18.27.34.27h1c.18 0 .33-.14.32-.33-.16-1.43-1.25-2.4-2.92-2.6V6.5h-1v1.3c-1.99.26-3.24 1.4-3.24 2.93 0 1.46.92 2.41 2.85 2.74l1.49.25c1.16.21 1.66.59 1.66 1.27 0 .78-.74 1.32-1.81 1.32-1.13 0-1.91-.47-2.06-1.27a.35.35 0 0 0-.34-.27h-1.08c-.18 0-.33.15-.32.33.17 1.51 1.27 2.5 3.24 2.73v.78h1Z" fill="#fff"/><path d="M9.97 20.94c-3.05-.95-5.26-3.6-5.26-6.94 0-3.34 2.21-5.99 5.26-6.94.2-.06.34-.24.34-.45v-.71c0-.16-.16-.27-.31-.22C6.21 6.73 3.5 9.99 3.5 14c0 4.01 2.71 7.27 6.5 8.33.15.04.31-.07.31-.23v-.71a.47.47 0 0 0-.34-.45Zm4.06-15.27c-.15-.04-.31.07-.31.22v.72c0 .2.14.39.34.45 3.05.95 5.26 3.6 5.26 6.94 0 3.34-2.21 5.99-5.26 6.94-.2.06-.34.24-.34.45v.71c0 .15.16.27.31.22 3.79-1.06 6.5-4.32 6.5-8.33 0-4.01-2.71-7.27-6.5-8.33Z" fill="#fff"/></svg>`;
+  const usFlag = `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><defs><clipPath id="usClip"><circle cx="12" cy="12" r="12"/></clipPath></defs><g clip-path="url(#usClip)"><rect width="24" height="24" fill="#fff"/><g fill="#B22234"><rect y="0"  width="24" height="1.85"/><rect y="3.7" width="24" height="1.85"/><rect y="7.4" width="24" height="1.85"/><rect y="11.1" width="24" height="1.85"/><rect y="14.8" width="24" height="1.85"/><rect y="18.5" width="24" height="1.85"/><rect y="22.2" width="24" height="1.85"/></g><rect width="11" height="9.25" fill="#3C3B6E"/></g></svg>`;
+  const copyIcon = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
+  const checkIcon = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="9 12 11 14 15 10"></polyline></svg>`;
+  const alertIcon = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>`;
+
+  const ICONS = { USDT: usdtIcon, USDC: usdcIcon, USD: usFlag };
+
+  const ROWS = [
+    { type:"Fiat → Crypto",   from:{icon:"USD", amount:"$ 31.1234",      party:"email@email.com"}, to:{icon:"USDT", amount:"30.1234 USDT", party:"email@email.com"}, source:"Cash",   dest:"Crypto", status:"completed", created:"Jan 15, 11:45 AM" },
+    { type:"Crypto → Fiat",   from:{icon:"USDT", amount:"30.1234 USDT",   party:"email@email.com"}, to:{icon:"USD",  amount:"$ 29.1234",   party:"email@email.com"}, source:"Crypto", dest:"ACH",    status:"completed", created:"Mar 21, 02:30 PM", hover:true },
+    { type:"Crypto → Crypto", from:{icon:"USDC", amount:"30.1234 USDC"},                              to:{icon:"USDC", amount:"30.1234 USDC"},                              source:"Crypto", dest:"Crypto", status:"completed", created:"Feb 10, 03:20 PM" },
+    { type:"Crypto → Crypto", from:{icon:"USDT", amount:"30.1234 USDT",   party:"email@email.com"}, to:{icon:"USDT", amount:"30.1234 USDT", party:"0xd…52c0"},          source:"Crypto", dest:"Crypto", status:"pending",   created:"Mar 05, 09:10 AM" },
+    { type:"Fiat → Crypto",   from:{icon:"USD", amount:"$ 31.1234",      party:"email@email.com"}, to:{icon:"USDT", amount:"30.1234 USDT", party:"email@email.com"}, source:"ACH",    dest:"Crypto", status:"pending",   created:"Mar 29, 01:55 PM" },
+  ];
+
+  const typeCell   = t => `<td><div class="oms-table__cell"><span class="oms-table__cell-text">${t}</span></div></td>`;
+  const partyLine = (label, party) => party ? `<div class="oms-tx__party"><span class="oms-tx__party-label">${label}:</span><a href="#" class="oms-tx__party-link">${party}</a><button class="oms-tx__party-copy" aria-label="Copy ${label}">${copyIcon}</button></div>` : '';
+  const assetCell = (label, side) => `<td><div class="oms-table__cell oms-tx__asset-cell"><div class="oms-tx__asset-amt"><span class="oms-tx__asset-icon">${ICONS[side.icon]}</span><span class="oms-tx__asset-text">${formatAmount(side.amount)}</span></div>${partyLine(label, side.party)}</div></td>`;
+  const methodCell = (src, dst) => `<td><div class="oms-table__cell oms-tx__method-cell"><div><span class="oms-tx__method-label">Source:</span> <span class="oms-tx__method-val">${src}</span></div><div><span class="oms-tx__method-label">Destination:</span> <span class="oms-tx__method-val">${dst}</span></div></div></td>`;
+  const statusCell = s => {
+    const map = { completed: { cls:'oms-badge--success', label:'Completed', icon: checkIcon },
+                  pending:   { cls:'oms-badge--warning', label:'Pending',   icon: alertIcon } };
+    const x = map[s];
+    return `<td><div class="oms-table__cell"><span class="oms-badge ${x.cls} oms-badge--sm">${x.icon}${x.label}</span></div></td>`;
+  };
+  function formatAmount(t){
+    // Bold the numeric leading portion, muted suffix for currency code
+    const m = t.match(/^(.*?)([A-Z]{3,4})$/);
+    if (m) return `<strong>${m[1].trim()}</strong> <span class="oms-tx__asset-code">${m[2]}</span>`;
+    return `<strong>${t}</strong>`;
+  }
+
+  document.getElementById('tbody').innerHTML = ROWS.map(r => `
+    <tr${r.hover?' class="is-hover"':''}>
+      ${typeCell(r.type)}
+      ${assetCell('Sender', r.from)}
+      ${assetCell('Receiver', r.to)}
+      ${methodCell(r.source, r.dest)}
+      ${statusCell(r.status)}
+      ${typeCell(r.created)}
+    </tr>
+  `).join('');
+
+  document.querySelectorAll('.oms-table__pag-num').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.oms-table__pag-num').forEach(o=>o.classList.remove('is-active'));b.classList.add('is-active');}));
+  document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(o=>o.classList.remove('is-active'));t.classList.add('is-active');}));
+
+  function setMode(mode){const banner=document.querySelector('[data-oms-status-banner]');if(!banner)return;banner.setAttribute('data-mode',mode);const m=banner.querySelector('[data-oms-status-banner-mode]'),s=banner.querySelector('[data-oms-status-banner-msg]'),a=banner.querySelector('[data-oms-status-banner-action]');if(mode==='live'){m.textContent='Live mode';s.textContent='You are operating in the live OMSX environment — real funds and customers';a.textContent='Switch to Sandbox';}else{m.textContent='Sandbox mode';s.textContent='You are testing OMSX capabilities in a sandbox environment';a.textContent='Switch to Live';}const t=document.querySelector('[data-oms-mode-toggle]');if(t){t.querySelectorAll('.oms-mode-toggle__opt').forEach((o,i)=>{const on=(i===0&&mode==='sandbox')||(i===1&&mode==='live');o.classList.toggle('is-active',on);o.setAttribute('aria-selected',String(on));});t.classList.toggle('oms-mode-toggle--live',mode==='live');}}
+  function wireToggle(){const t=document.querySelector('[data-oms-mode-toggle]');if(!t||t.__w)return false;t.__w=true;t.addEventListener('click',e=>{const o=e.target.closest('.oms-mode-toggle__opt');if(!o)return;const i=[...t.querySelectorAll('.oms-mode-toggle__opt')].indexOf(o);setMode(i===1?'live':'sandbox');});return true;}
+  if(!wireToggle()){const mo=new MutationObserver(()=>{if(wireToggle())mo.disconnect();});mo.observe(document.body,{childList:true,subtree:true});}
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-oms-status-banner-action]');if(!b)return;const cur=document.querySelector('[data-oms-status-banner]').getAttribute('data-mode');setMode(cur==='live'?'sandbox':'live');});
+</script>
+</body>
+</html>

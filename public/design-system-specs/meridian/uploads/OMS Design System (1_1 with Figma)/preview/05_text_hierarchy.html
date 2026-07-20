@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Foreground hierarchy</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg-page-default); }
+  body { padding: 22px 28px; font-family: var(--font-body); }
+  .card { border: 1px solid var(--slate-200); border-radius: 12px; padding: 18px 22px; background: var(--bg-surface); }
+  .ttl { font-family: var(--font-doc); font-size: 11px; color: var(--fg-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 12px; }
+  .line { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; }
+  .line + .line { border-top: 1px dashed var(--slate-200); }
+  .name { font-family: var(--font-doc); font-size: 11px; color: var(--fg-tertiary); }
+  .sample { font-family: var(--font-body); font-weight: 500; font-size: 16px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="ttl">Text hierarchy</div>
+    <div class="line"><span class="sample" style="color:var(--fg-primary)">Primary text — headings, body</span><span class="name">slate-900 · #141635</span></div>
+    <div class="line"><span class="sample" style="color:var(--fg-secondary)">Secondary — labels, metadata</span><span class="name">slate-500 · #64708F</span></div>
+    <div class="line"><span class="sample" style="color:var(--fg-tertiary)">Tertiary — captions, hints</span><span class="name">slate-400 · #929EBA</span></div>
+    <div class="line"><span class="sample" style="color:var(--fg-disabled)">Disabled</span><span class="name">slate-300 · #C8CFE1</span></div>
+    <div class="line"><span class="sample" style="color:var(--link)">Link / brand</span><span class="name">purple-500 · #670DE5</span></div>
+    <div class="line"><span class="sample" style="color:var(--fg-success)">Success text</span><span class="name">emerald-700 · #047857</span></div>
+    <div class="line"><span class="sample" style="color:var(--fg-warning)">Warning text</span><span class="name">amber-700 · #B45309</span></div>
+    <div class="line"><span class="sample" style="color:var(--fg-danger)">Danger text</span><span class="name">red-700 · #B91C1C</span></div>
+  </div>
+</body>
+</html>

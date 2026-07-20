@@ -1,0 +1,200 @@
+<!-- @dsCard group="6 · Components" name="Buttons" subtitle="3 sizes × 5 types × 5 states" viewport="1240x1400" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../components/buttons.css">
+<style>
+  html, body { margin: 0; background: #fff; }
+  body { padding: 24px 28px 28px; font-family: var(--font-doc); color: var(--fg-primary); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 88px repeat(5, 1fr);
+    column-gap: 18px;
+    row-gap: 22px;
+    align-items: center;
+  }
+  .col-head {
+    font-family: var(--font-doc);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-tertiary);
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--slate-200);
+  }
+  .row-head {
+    font-family: var(--font-doc);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--fg-secondary);
+  }
+  .row-head .sub {
+    display: block;
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--fg-tertiary);
+    margin-top: 2px;
+  }
+  .cell {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .section {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .section .label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--fg-primary);
+    letter-spacing: 0.02em;
+  }
+  .section .rule { flex: 1; height: 1px; background: var(--slate-200); }
+
+  /* SVG icon stroke inherits text color */
+  .btn-icon { stroke: currentColor; }
+</style>
+</head>
+<body>
+  <!-- Reusable plus-icon symbol -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12h14"></path>
+    </symbol>
+  </svg>
+
+  <div class="grid">
+    <!-- column headers -->
+    <div></div>
+    <div class="col-head">Default</div>
+    <div class="col-head">Hover</div>
+    <div class="col-head">Focused</div>
+    <div class="col-head">Clicked</div>
+    <div class="col-head">Disabled</div>
+
+    <!-- ── Large ─────────────────────────────────────────── -->
+    <div class="section"><span class="label">Large · 40px</span><span class="rule"></span></div>
+
+    <div class="row-head">Primary<span class="sub">.btn-primary</span></div>
+    <div class="cell"><button class="btn btn-lg btn-primary"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-primary" style="background:#222744"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-primary" style="box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-primary is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-primary is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <div class="row-head">Secondary<span class="sub">.btn-secondary</span></div>
+    <div class="cell"><button class="btn btn-lg btn-secondary"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-secondary" style="border-color:var(--slate-950)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-secondary" style="background:#fff;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-secondary is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-secondary is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <div class="row-head">Ghost<span class="sub">.btn-ghost</span></div>
+    <div class="cell"><button class="btn btn-lg btn-ghost"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-ghost" style="background:var(--purple-50)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-ghost" style="box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-ghost is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-ghost is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <div class="row-head">Danger primary<span class="sub">.btn-danger</span></div>
+    <div class="cell"><button class="btn btn-lg btn-danger"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-danger" style="background:#EF4444"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-danger" style="box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-danger is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-danger is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <div class="row-head">Danger secondary<span class="sub">.btn-danger-secondary</span></div>
+    <div class="cell"><button class="btn btn-lg btn-danger-secondary"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-danger-secondary" style="border-color:#991B1B"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-danger-secondary" style="background:#fff;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-danger-secondary is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-lg btn-danger-secondary is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <!-- ── Medium ────────────────────────────────────────── -->
+    <div class="section"><span class="label">Medium · 32px</span><span class="rule"></span></div>
+
+    <div class="row-head">Primary</div>
+    <div class="cell"><button class="btn btn-md btn-primary"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-primary" style="background:#222744"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-primary" style="box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-primary is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-primary is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <div class="row-head">Secondary</div>
+    <div class="cell"><button class="btn btn-md btn-secondary"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-secondary" style="border-color:var(--slate-950)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-secondary" style="background:#fff;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-secondary is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-secondary is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <div class="row-head">Ghost</div>
+    <div class="cell"><button class="btn btn-md btn-ghost"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-ghost" style="background:var(--purple-50)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-ghost" style="box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-ghost is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-ghost is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <div class="row-head">Danger primary</div>
+    <div class="cell"><button class="btn btn-md btn-danger"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-danger" style="background:#EF4444"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-danger" style="box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-danger is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-danger is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <div class="row-head">Danger secondary</div>
+    <div class="cell"><button class="btn btn-md btn-danger-secondary"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-danger-secondary" style="border-color:#991B1B"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-danger-secondary" style="background:#fff;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-danger-secondary is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-md btn-danger-secondary is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <!-- ── Small ─────────────────────────────────────────── -->
+    <div class="section"><span class="label">Small · 30px</span><span class="rule"></span></div>
+
+    <div class="row-head">Primary</div>
+    <div class="cell"><button class="btn btn-sm btn-primary"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-primary" style="background:#222744"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-primary" style="box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-primary is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-primary is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <div class="row-head">Secondary</div>
+    <div class="cell"><button class="btn btn-sm btn-secondary"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-secondary" style="border-color:var(--slate-950)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-secondary" style="background:#fff;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-secondary is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-secondary is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <div class="row-head">Ghost</div>
+    <div class="cell"><button class="btn btn-sm btn-ghost"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-ghost" style="background:var(--purple-50)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-ghost" style="box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-ghost is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-ghost is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <div class="row-head">Danger primary</div>
+    <div class="cell"><button class="btn btn-sm btn-danger"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-danger" style="background:#EF4444"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-danger" style="box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-danger is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-danger is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+
+    <div class="row-head">Danger secondary</div>
+    <div class="cell"><button class="btn btn-sm btn-danger-secondary"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-danger-secondary" style="border-color:#991B1B"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-danger-secondary" style="background:#fff;box-shadow:0 0 0 2px #fff,0 0 0 4px var(--purple-300)"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-danger-secondary is-active"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+    <div class="cell"><button class="btn btn-sm btn-danger-secondary is-disabled"><svg class="btn-icon"><use href="#i-plus"/></svg>Button<svg class="btn-icon"><use href="#i-plus"/></svg></button></div>
+  </div>
+</body>
+</html>

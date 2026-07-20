@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!-- @dsCard group="7 · Layouts" name="Webhooks" subtitle="Endpoint table with status, secret, row actions" viewport="1440x1024" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OMS · Webhooks</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="../components/sidebar.css?v=18" />
+<link rel="stylesheet" href="../components/topnav.css" />
+<link rel="stylesheet" href="../components/buttons.css" />
+<link rel="stylesheet" href="../components/badges.css" />
+<link rel="stylesheet" href="../components/status_banner.css" />
+<link rel="stylesheet" href="../components/table.css" />
+<link rel="stylesheet" href="../components/context_menu.css" />
+<link rel="stylesheet" href="../components/floater_button.css" />
+<script defer src="../components/sidebar.js"></script>
+<style>
+  html, body { margin: 0; background: #fff; }
+  body { font-family: var(--font-display); color: var(--fg-primary); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  .shell { min-height: 100vh; display: flex; flex-direction: column; background: #fff; }
+  .body { display: flex; flex: 1; min-height: 0; align-items: stretch; }
+  .body > [data-oms-sidebar] { align-self: stretch; display: flex; flex-direction: column; }
+  .body > [data-oms-sidebar] > .oms-sidebar { flex: 1; height: auto; }
+  .main-col { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .main { flex: 1; padding: 40px 32px; display: flex; flex-direction: column; gap: 24px; background: #fff; }
+
+  /* Page title */
+  .page-title {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 40px; line-height: 1.2; letter-spacing: -0.01em;
+    color: var(--slate-950); margin: 0;
+  }
+  .page-title svg { width: 20px; height: 20px; stroke-width: 1.75; color: var(--slate-500); }
+
+  /* Action row — black Add endpoint button right-aligned */
+  .action-row { display: flex; justify-content: flex-end; align-items: center; }
+  .btn-add {
+    appearance: none; display: inline-flex; align-items: center; gap: 8px;
+    background: rgb(2, 0, 5); color: #fff; border: 0; border-radius: 12px;
+    padding: 12px 20px; font-family: var(--font-display); font-weight: 600;
+    font-size: 14px; line-height: 1.2; cursor: pointer; transition: background 120ms;
+  }
+  .btn-add:hover { background: rgb(20, 22, 53); }
+  .btn-add svg { width: 16px; height: 16px; stroke-width: 2; }
+
+  .secret-mask { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; color: var(--slate-400); letter-spacing: 1px; }
+  .created-by-link { color: var(--purple-700); font-weight: 500; text-decoration: none; }
+
+  /* Last return stacked cell */
+  .lr { display: flex; flex-direction: column; gap: 2px; }
+  .lr__line { font-size: 13px; color: var(--slate-500); }
+  .lr__line strong { color: var(--slate-950); font-weight: 600; }
+
+  /* Header info icon */
+  .head-info { color: var(--slate-500); display: inline-flex; align-items: center; }
+  .head-info svg { width: 14px; height: 14px; stroke-width: 1.75; }
+
+  /* Row kebab + menu */
+  .row-kebab { width: 28px; height: 28px; border: 0; background: transparent; color: var(--slate-500); border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+  .row-kebab:hover { background: var(--slate-50); color: var(--slate-950); }
+  .row-kebab svg { width: 16px; height: 16px; stroke-width: 1.75; }
+  .row-menu { position: absolute; top: 36px; right: 8px; z-index: 5; }
+  .row-menu .oms-cmenu { min-width: 160px; box-shadow: 0 12px 32px -8px rgba(2,0,5,0.18), 0 2px 8px rgba(2,0,5,0.06); }
+  .row-menu[hidden] { display: none; }
+  .oms-table__grid tbody tr:hover td { background: rgb(246, 246, 252); }
+
+  /* All table text at 14px */
+  .oms-table__grid th,
+  .oms-table__grid td,
+  .oms-table__grid .oms-table__head-label,
+  .oms-table__grid .oms-table__cell-text,
+  .oms-table__grid .secret-mask,
+  .oms-table__grid .lr__line,
+  .oms-table__grid .created-by-link,
+  .oms-table__grid .oms-badge { font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="shell" data-screen-label="Webhooks">
+
+  <div class="oms-status-banner" data-mode="sandbox" data-oms-status-banner>
+    <span class="oms-status-banner__mode" data-oms-status-banner-mode>Sandbox mode</span>
+    <span class="oms-status-banner__msg" data-oms-status-banner-msg>You are testing OMS capabilities in a sandbox environment</span>
+    <span class="oms-status-banner__action">
+      <button class="btn btn-sm btn-secondary" data-oms-status-banner-action>Switch to live</button>
+    </span>
+  </div>
+
+  <div class="body">
+    <div data-oms-sidebar data-active="Webhooks" data-assets-base="../assets"></div>
+
+    <div class="main-col">
+      <nav class="oms-topnav" aria-label="Top navigation">
+        <div class="oms-topnav__right">
+          <div class="oms-topnav__menu">
+            <a href="#" class="oms-topnav__item">
+              <span class="oms-topnav__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </span><span>Menu Item</span>
+            </a>
+          </div>
+          <a href="#" class="oms-topnav__profile">
+            <span class="oms-topnav__profile-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path></svg>
+            </span><span>User Name</span>
+          </a>
+        </div>
+      </nav>
+
+      <main class="main">
+        <h1 class="page-title">
+          Webhooks
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        </h1>
+
+        <div class="action-row">
+          <button class="btn-add">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Add endpoint
+          </button>
+        </div>
+
+        <section class="oms-table" data-screen-label="Webhooks table">
+          <div class="oms-table__slot">
+            <div class="oms-table__scroll">
+              <table class="oms-table__grid">
+                <thead><tr id="thead"></tr></thead>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <button class="oms-floater oms-floater--fixed" aria-label="Contact support">
+    <span class="oms-floater__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9a9 9 0 0 1 18 0v9a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></span>
+  </button>
+</div>
+
+<script>
+  // ── Table ───────────────────────────────────────────────────────
+  const HEADERS = [
+    {l:"Endpoint"}, {l:"Creation date"}, {l:"Events"}, {l:"Status"},
+    {l:"Last return"}, {l:"Secret", info:true}, {l:"Created by"}, {l:"Actions"}
+  ];
+  const ROWS = [
+    { endpoint:"https://partner.example/webhook",  created:"Feb 28, 2026", events:"All", status:"inactive", lastType:"500", lastTs:"12.32 PM, Jun 3 2026", by:"Jane Doe" },
+    { endpoint:"https://partner.example/webhook", created:"Jun 3, 2026",  events:"All", status:"active",   lastType:null,  lastTs:null,                 by:"Jane Doe" },
+  ];
+  const STATUS = {
+    active:   { c:"oms-badge--success", l:"Active" },
+    inactive: { c:"oms-badge--danger",  l:"Inactive" },
+  };
+  const infoIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>';
+  const moreIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>';
+  const trashIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><path d="M3 6h18"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>';
+  const editIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path></svg>';
+
+  document.getElementById('thead').innerHTML = HEADERS.map(h =>
+    `<th><span class="oms-table__head-label">${h.l}${h.info ? `<span class="head-info" aria-hidden="true">${infoIcon}</span>` : ''}</span></th>`
+  ).join('');
+
+  const cP = t => `<td><div class="oms-table__cell"><span class="oms-table__cell-text">${t}</span></div></td>`;
+  const cStatus = s => { const x = STATUS[s]; return `<td><div class="oms-table__cell"><span class="oms-badge ${x.c} oms-badge--sm">${x.l}</span></div></td>`; };
+  const cLastReturn = r => r.lastType
+    ? `<td><div class="oms-table__cell"><span class="lr"><span class="lr__line"><strong>Type:</strong> ${r.lastType}</span><span class="lr__line"><strong>Timestamp:</strong> ${r.lastTs}</span></span></div></td>`
+    : `<td><div class="oms-table__cell"><span class="oms-table__cell-text">NA</span></div></td>`;
+  const cSecret = () => `<td><div class="oms-table__cell"><span class="secret-mask">********</span></div></td>`;
+  const cBy = t => `<td><div class="oms-table__cell"><a href="#" class="oms-table__cell-text created-by-link">${t}</a></div></td>`;
+  const cActions = (i) => `<td><div class="oms-table__cell" style="position:relative;justify-content:flex-end;"><button class="row-kebab" aria-label="Row actions" data-kebab="${i}">${moreIcon}</button>
+    <div class="row-menu" id="row-menu-${i}" hidden>
+      <div class="oms-cmenu">
+        <button class="oms-cmenu__item" data-type="destructive" data-action="delete"><span class="oms-cmenu__icon">${trashIcon}</span><span>Delete</span></button>
+        <button class="oms-cmenu__item" data-action="edit"><span class="oms-cmenu__icon">${editIcon}</span><span>Edit URL</span></button>
+      </div>
+    </div>
+  </div></td>`;
+
+  document.getElementById('tbody').innerHTML = ROWS.map((r, i) =>
+    `<tr data-row="${i}">${cP(r.endpoint)}${cP(r.created)}${cP(r.events)}${cStatus(r.status)}${cLastReturn(r)}${cSecret()}${cBy(r.by)}${cActions(i)}</tr>`
+  ).join('');
+
+  // Kebab toggle (second row open by default to mirror the reference)
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-kebab]');
+    const inMenu = e.target.closest('.row-menu');
+    if (btn) {
+      const i = btn.getAttribute('data-kebab');
+      const menu = document.getElementById('row-menu-' + i);
+      const open = !menu.hasAttribute('hidden');
+      document.querySelectorAll('.row-menu').forEach(m => m.setAttribute('hidden',''));
+      document.querySelectorAll('tr.is-menu-open').forEach(r => r.classList.remove('is-menu-open'));
+      if (!open) { menu.removeAttribute('hidden'); btn.closest('tr').classList.add('is-menu-open'); }
+      e.stopPropagation();
+    } else if (!inMenu) {
+      document.querySelectorAll('.row-menu').forEach(m => m.setAttribute('hidden',''));
+      document.querySelectorAll('tr.is-menu-open').forEach(r => r.classList.remove('is-menu-open'));
+    }
+  });
+
+  // Status banner toggle
+  function setMode(mode){const banner=document.querySelector('[data-oms-status-banner]');if(!banner)return;banner.setAttribute('data-mode',mode);const m=banner.querySelector('[data-oms-status-banner-mode]'),s=banner.querySelector('[data-oms-status-banner-msg]'),a=banner.querySelector('[data-oms-status-banner-action]');if(mode==='live'){m.textContent='Live mode';s.textContent='You are operating in the live OMS environment — real funds and customers';a.textContent='Switch to sandbox';}else{m.textContent='Sandbox mode';s.textContent='You are testing OMS capabilities in a sandbox environment';a.textContent='Switch to live';}const t=document.querySelector('[data-oms-mode-toggle]');if(t){t.querySelectorAll('.oms-mode-toggle__opt').forEach((o,i)=>{const on=(i===0&&mode==='sandbox')||(i===1&&mode==='live');o.classList.toggle('is-active',on);o.setAttribute('aria-selected',String(on));});t.classList.toggle('oms-mode-toggle--live',mode==='live');}}
+  function wireToggle(){const t=document.querySelector('[data-oms-mode-toggle]');if(!t||t.__w)return false;t.__w=true;t.addEventListener('click',e=>{const o=e.target.closest('.oms-mode-toggle__opt');if(!o)return;const i=[...t.querySelectorAll('.oms-mode-toggle__opt')].indexOf(o);setMode(i===1?'live':'sandbox');});return true;}
+  if(!wireToggle()){const mo=new MutationObserver(()=>{if(wireToggle())mo.disconnect();});mo.observe(document.body,{childList:true,subtree:true});}
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-oms-status-banner-action]');if(!b)return;const cur=document.querySelector('[data-oms-status-banner]').getAttribute('data-mode');setMode(cur==='live'?'sandbox':'live');});
+</script>
+</body>
+</html>
+
+<style id="__om-edit-overrides">
+#tbody >[data-row="0"] >td:nth-child(2) { font-size: 14px !important }
+</style>
