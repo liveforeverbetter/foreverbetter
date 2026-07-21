@@ -41,6 +41,10 @@ export interface HealthStore {
   updateGeneticAnalysisJobProgress(id: string, progress: { stage: GeneticAnalysisJobStage; progress_pct: number; progress_message?: string }): Promise<void>;
   completeGeneticAnalysisJob(id: string, result: unknown): Promise<void>;
   failGeneticAnalysisJob(id: string, error: string): Promise<void>;
+  /** Reset a specific running job back to queued without counting the interrupted run as a failed attempt. */
+  requeueGeneticAnalysisJob(id: string): Promise<void>;
+  /** Reset all running jobs whose lock is older than staleMinutes (default 30) back to queued. Returns the number reset. */
+  resetStaleGeneticAnalysisJobs(staleMinutes?: number): Promise<number>;
   upsertExternalAccount(account: ExternalAccount): Promise<ExternalAccount>;
   listExternalAccountsForUser(userId: string, organizationIds?: Set<string>): Promise<ExternalAccount[]>;
   saveProviderToken(token: ProviderToken): Promise<ProviderToken>;
@@ -304,6 +308,34 @@ export class HealthApiStore implements HealthStore {
       updated_at: new Date().toISOString(),
       error,
     });
+  }
+
+  async requeueGeneticAnalysisJob(id: string): Promise<void> {
+    const job = this.geneticJobs.get(id);
+    if (!job) return;
+    this.geneticJobs.set(id, {
+      ...job,
+      status: 'queued',
+      stage: 'queued',
+      progress_pct: 0,
+      progress_message: 'Waiting for the dedicated WGS worker.',
+      attempts: Math.max(0, job.attempts - 1),
+      locked_at: undefined,
+      worker_id: undefined,
+      updated_at: new Date().toISOString(),
+    });
+  }
+
+  async resetStaleGeneticAnalysisJobs(staleMinutes = 30): Promise<number> {
+    const cutoff = new Date(Date.now() - staleMinutes * 60 * 1000).toISOString();
+    let count = 0;
+    for (const job of this.geneticJobs.values()) {
+      if (job.status === 'running' && job.locked_at && job.locked_at < cutoff) {
+        await this.requeueGeneticAnalysisJob(job.id);
+        count++;
+      }
+    }
+    return count;
   }
 
   async upsertExternalAccount(account: ExternalAccount): Promise<ExternalAccount> {

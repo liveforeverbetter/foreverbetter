@@ -325,6 +325,30 @@ export class PostgresHealthStore implements HealthStore {
     );
   }
 
+  async requeueGeneticAnalysisJob(id: string): Promise<void> {
+    await this.query(
+      `update ${SCHEMA}.genetic_analysis_jobs
+       set status='queued', stage='queued', progress_pct=0,
+           progress_message='Waiting for the dedicated WGS worker.',
+           attempts=greatest(0, attempts-1), locked_at=null, worker_id=null, updated_at=now()
+       where id=$1 and status='running'`,
+      [id],
+    );
+  }
+
+  async resetStaleGeneticAnalysisJobs(staleMinutes = 30): Promise<number> {
+    const rows = await this.rows(
+      `update ${SCHEMA}.genetic_analysis_jobs
+       set status='queued', stage='queued', progress_pct=0,
+           progress_message='Waiting for the dedicated WGS worker.',
+           attempts=greatest(0, attempts-1), locked_at=null, worker_id=null, updated_at=now()
+       where status='running' and locked_at < now() - ($1 || ' minutes')::interval
+       returning id`,
+      [String(staleMinutes)],
+    );
+    return rows.length;
+  }
+
   async upsertExternalAccount(account: ExternalAccount): Promise<ExternalAccount> {
     const organizationId = requireOrganizationId(account.organization_id, account.id);
     const rows = await this.rows(

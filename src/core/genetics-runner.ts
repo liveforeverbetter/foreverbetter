@@ -57,6 +57,8 @@ export interface GeneticsPipelineOptions {
   saveFullArtifact?: (body: Buffer) => Promise<FullAnalysisArtifactRef | undefined>;
   /** Produced by the dedicated pgsc_calc PRS process; never inferred from the 91-marker ancestry endpoint. */
   pgsPopulationSimilarity?: PgsPopulationSimilarity;
+  /** When aborted, kills the current subprocess and rejects with an AbortError so the caller can requeue cleanly. */
+  signal?: AbortSignal;
 }
 
 const DEFAULT_TIMEOUT_MS = 120_000;
@@ -128,7 +130,7 @@ export async function runGeneticsPipelineWithWriter(
   const commandArgs = buildGeneticsPipelineArgs(userId, inputPath, outputDir, env, options);
   const tsxCommand = env.TSX_BIN ?? path.resolve(process.cwd(), 'node_modules/.bin/tsx');
   await options.onProgress?.({ stage: 'annotating_variants', progress_pct: 10, progress_message: 'Normalizing the VCF and annotating variants.' });
-  const result = await runCommand(tsxCommand, commandArgs, skillDir, timeoutMs, options.onProgress);
+  const result = await runCommand(tsxCommand, commandArgs, skillDir, timeoutMs, options.onProgress, options.signal);
   if (result.exitCode !== 0) {
     return {
       status: 'failed',
@@ -384,8 +386,10 @@ function runCommand(
   cwd: string,
   timeoutMs: number,
   onProgress?: GeneticsPipelineOptions['onProgress'],
+  signal?: AbortSignal,
 ): Promise<{ exitCode: number | null; stdout: string; stderr: string }> {
-  return new Promise(resolve => {
+  return new Promise((resolve, reject) => {
+    if (signal?.aborted) { reject(signal.reason ?? new Error('Aborted')); return; }
     const child = spawn(command, args, { cwd, stdio: ['ignore', 'pipe', 'pipe'] });
     let stdout = '';
     let stderr = '';
@@ -396,6 +400,13 @@ function runCommand(
       settled = true;
       void progressWrites.finally(() => resolve(result));
     };
+    const abort = () => {
+      if (settled) return;
+      settled = true;
+      child.kill('SIGTERM');
+      reject(signal?.reason ?? new Error('Aborted'));
+    };
+    signal?.addEventListener('abort', abort, { once: true });
     const timeout = setTimeout(() => {
       child.kill('SIGTERM');
       stderr = appendCommandOutputTail(stderr, `\nTimed out after ${timeoutMs}ms.`);
@@ -416,10 +427,12 @@ function runCommand(
     });
     child.on('close', exitCode => {
       clearTimeout(timeout);
+      signal?.removeEventListener('abort', abort);
       finish({ exitCode, stdout, stderr });
     });
     child.on('error', error => {
       clearTimeout(timeout);
+      signal?.removeEventListener('abort', abort);
       finish({ exitCode: 1, stdout, stderr: appendCommandOutputTail(stderr, `\n${error.message}`) });
     });
   });
