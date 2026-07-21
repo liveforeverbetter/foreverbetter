@@ -415,6 +415,9 @@ function loadInterpretations(
     "inherited-conditions.json",
     "physical-traits.json",
     "cellular-health.json",
+    "cardiometabolic.json",
+    "inflammation.json",
+    "skeletal-health.json",
   ];
 
   for (const file of files) {
