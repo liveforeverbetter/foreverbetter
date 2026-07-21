@@ -747,8 +747,8 @@ export function generateVariantAnnotation(
  *   5. "uncommon_mutations" — Frequency 1-5%
  */
 export function categorizeVariantForTab(annotation: ClinVarAnnotation): VariantCategory {
-  const significance = categorizeSignificance(annotation.clinicalSignificance);
-  const reviewed = annotation.reviewStatus.includes("expert") || annotation.reviewStatus.includes("practice");
+  const significance = categorizeSignificance(annotation.clinicalSignificance ?? '');
+  const reviewed = (annotation.reviewStatus ?? '').includes("expert") || (annotation.reviewStatus ?? '').includes("practice");
   const freq = annotation.populationFrequency || "";
 
   // 1. Genetic Conditions: expert reviewed + disease-associated + not drug response
