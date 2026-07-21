@@ -47,3 +47,10 @@ vendor/health-analysis-skill/.DS_Store
 # Design-system handoff ZIPs served via GitHub raw CDN
 public/design-system-specs/*.zip
 public/design-system-specs/**/*.zip
+
+# Local data extraction artifacts
+tellmegen-extracted-data/
+extracted-report-data/
+scripts/extract-pdf-data.ts
+scripts/integrate-extracted-data.ts
+scripts/rewrite-interpretations.ts

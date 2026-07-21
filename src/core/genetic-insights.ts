@@ -534,7 +534,7 @@ function isGeneticConsumerCategory(value: string): value is GeneticConsumerCateg
 
 function categoryForTrait(traitId: string): GeneticConsumerCategory {
   if (/(cancer|disease|diabetes|coronary|alzheimer|stroke|kidney|asthma|fibrillation)/.test(traitId)) return 'clinical_risk';
-  if (/(vo2|grip|lean_body|fat_free|exercise|fitness|walking|caffeine|reaction_time)/.test(traitId)) return 'performance';
+  if (/(vo2|grip|lean_body|fat_free|exercise|fitness|walking|caffeine|reaction_time)/.test(traitId)) return 'superpowers';
   if (/(sleep|chronotype)/.test(traitId)) return 'sleep_recovery';
   if (/(vitamin|homocysteine|alcohol)/.test(traitId)) return 'nutrition';
   if (/(cognitive|fluid_intelligence|neuroticism|personality|education|loneliness|friendship_satisfaction)/.test(traitId)) return 'research_only';
