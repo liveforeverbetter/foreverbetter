@@ -1814,7 +1814,7 @@ function buildClinVarVariantCards(
       reviewStatus: annotation.reviewStatus,
     };
 
-    cards[category].push(card);
+    cards[category]?.push(card) ?? cards.uncommon_mutations.push(card);
   }
 
   return cards;
@@ -6129,7 +6129,9 @@ Note: positional arguments are no longer accepted. Use the named flags above.
       printDailyActionPlanCronPrompt(outputDir);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : String(err);
+      const stack = err instanceof Error ? err.stack : undefined;
       console.error("❌ Pipeline failed");
+      if (stack) console.error(stack);
 
       if (msg.includes("bcftools") || msg.includes("command not found")) {
         console.error(`
