@@ -10,11 +10,36 @@ const workerId = process.env.HEALTH_ANALYSIS_WORKER_ID
   ?? process.env.GENOMIC_ANALYSIS_WORKER_ID
   ?? `health-analysis-worker-${randomUUID()}`;
 const pollMs = Number(process.env.HEALTH_ANALYSIS_WORKER_POLL_MS ?? process.env.GENOMIC_ANALYSIS_WORKER_POLL_MS ?? '10000');
+const staleLockMinutes = Number(process.env.HEALTH_ANALYSIS_STALE_LOCK_MINUTES ?? '30');
 const once = process.argv.includes('--once');
 const store = configuredStore();
 
+let shuttingDown = false;
+let activeJobId: string | undefined;
+let activeAbortController: AbortController | undefined;
+
+// Fly sends SIGTERM before SIGKILL (kill_timeout in fly.toml gives us the window).
+// Kill the current subprocess, requeue the job (decrementing attempts so the forced
+// shutdown doesn't count as a failed attempt), then exit so the new machine takes over.
+process.on('SIGTERM', () => {
+  shuttingDown = true;
+  console.log(JSON.stringify({ ts: new Date().toISOString(), worker_id: workerId, event: 'genetics_worker_sigterm', active_job_id: activeJobId ?? null }));
+  const requeue = activeJobId ? store.requeueGeneticAnalysisJob(activeJobId) : Promise.resolve();
+  activeAbortController?.abort(new Error('Worker is shutting down.'));
+  requeue.finally(() => process.exit(0));
+});
+
 async function main(): Promise<void> {
+  // On startup, reset any jobs that were left running by a previous worker that died
+  // without a clean shutdown (e.g. SIGKILL, OOM). This is a fallback for cases where
+  // the SIGTERM handler above did not get a chance to run.
+  const staleCount = await store.resetStaleGeneticAnalysisJobs(staleLockMinutes);
+  if (staleCount > 0) {
+    console.log(JSON.stringify({ ts: new Date().toISOString(), worker_id: workerId, event: 'genetics_stale_locks_reset', count: staleCount }));
+  }
+
   do {
+    if (shuttingDown) break;
     let processed = false;
     try {
       processed = await processNextJob();
@@ -38,6 +63,10 @@ async function processNextJob(): Promise<boolean> {
   const job = await store.claimNextGeneticAnalysisJob(workerId);
   if (!job) return false;
 
+  activeJobId = job.id;
+  activeAbortController = new AbortController();
+  const { signal } = activeAbortController;
+
   try {
     const [source, analysis] = await Promise.all([
       store.getSource(job.source_id),
@@ -57,6 +86,7 @@ async function processNextJob(): Promise<boolean> {
         onProgress: progress => store.updateGeneticAnalysisJobProgress(job.id, progress),
         saveFullArtifact: body => store.saveAnalysisArtifact(job.analysis_id, body),
         pgsPopulationSimilarity,
+        signal,
       },
     );
     upsertGeneticPipelineInterpretation(analysis, source, pipeline, job.id);
@@ -81,6 +111,17 @@ async function processNextJob(): Promise<boolean> {
       source_id: job.source_id,
     }));
   } catch (error) {
+    // Abort = graceful shutdown; the SIGTERM handler already requeued the job.
+    // Don't mark it failed — just log and exit.
+    if (signal.aborted) {
+      console.log(JSON.stringify({
+        ts: new Date().toISOString(),
+        worker_id: workerId,
+        job_id: job.id,
+        event: 'genetics_job_aborted_for_shutdown',
+      }));
+      return true;
+    }
     const message = errorMessage(error);
     try {
       await storeWriteWithRetry(job.id, 'record_failure', () => store.failGeneticAnalysisJob(job.id, message));
@@ -101,6 +142,9 @@ async function processNextJob(): Promise<boolean> {
       status: 'failed',
       error: message,
     }));
+  } finally {
+    activeJobId = undefined;
+    activeAbortController = undefined;
   }
   return true;
 }
