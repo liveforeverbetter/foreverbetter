@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { writeFile } from 'node:fs/promises';
-import type { AnalysisResult, ConnectorSyncJob, DataExportResult, ExternalAccount, GeneticAnalysisJob, GeneticAnalysisJobStage, Goal, NormalizedObservation, OtpChallenge, ProviderToken, RawSourceReference, TombstoneResult, WebhookEvent } from './types.js';
+import type { AnalysisResult, ConnectorSyncJob, DataExportResult, ExternalAccount, GeneticAnalysisJob, GeneticAnalysisJobStage, GeneticsAnnotationDepth, Goal, NormalizedObservation, OtpChallenge, ProviderToken, RawSourceReference, TombstoneResult, WebhookEvent } from './types.js';
 
 export interface IdempotencyRecord {
   key: string;
@@ -45,6 +45,16 @@ export interface HealthStore {
   requeueGeneticAnalysisJob(id: string): Promise<void>;
   /** Reset all running jobs whose lock is older than staleMinutes (default 30) back to queued. Returns the number reset. */
   resetStaleGeneticAnalysisJobs(staleMinutes?: number): Promise<number>;
+  // Durable checkpoint of a COMPLETED genetics pipeline result. The WGS worker
+  // writes it the moment the multi-hour annotation finishes, before the fragile
+  // analysis/job DB writes. If those writes fail, the next attempt resumes from
+  // this checkpoint and retries only the fast save instead of re-running the
+  // annotation. Keyed by source + annotation depth so a different-depth
+  // re-analysis recomputes. Stored in durable object storage, not the DB, so a
+  // DB-side failure cannot also lose the checkpoint.
+  saveGeneticAnalysisCheckpoint(sourceId: string, annotationDepth: GeneticsAnnotationDepth | undefined, result: unknown): Promise<void>;
+  getGeneticAnalysisCheckpoint(sourceId: string, annotationDepth: GeneticsAnnotationDepth | undefined): Promise<unknown | undefined>;
+  clearGeneticAnalysisCheckpoint(sourceId: string, annotationDepth: GeneticsAnnotationDepth | undefined): Promise<void>;
   upsertExternalAccount(account: ExternalAccount): Promise<ExternalAccount>;
   listExternalAccountsForUser(userId: string, organizationIds?: Set<string>): Promise<ExternalAccount[]>;
   saveProviderToken(token: ProviderToken): Promise<ProviderToken>;
@@ -76,6 +86,7 @@ export class HealthApiStore implements HealthStore {
   private sourcePayloads = new Map<string, Buffer>();
   private idempotency = new Map<string, IdempotencyRecord>();
   private geneticJobs = new Map<string, GeneticAnalysisJob>();
+  private geneticCheckpoints = new Map<string, unknown>();
   private externalAccounts = new Map<string, ExternalAccount>();
   private providerTokens = new Map<string, ProviderToken>();
   private connectorSyncJobs = new Map<string, ConnectorSyncJob>();
@@ -97,6 +108,7 @@ export class HealthApiStore implements HealthStore {
       sourcePayloads: new Map(Array.from(this.sourcePayloads, ([key, value]) => [key, Buffer.from(value)])),
       idempotency: new Map(this.idempotency),
       geneticJobs: new Map(this.geneticJobs),
+      geneticCheckpoints: new Map(this.geneticCheckpoints),
       externalAccounts: new Map(this.externalAccounts),
       providerTokens: new Map(this.providerTokens),
       connectorSyncJobs: new Map(this.connectorSyncJobs),
@@ -114,6 +126,7 @@ export class HealthApiStore implements HealthStore {
       this.sourcePayloads = snapshot.sourcePayloads;
       this.idempotency = snapshot.idempotency;
       this.geneticJobs = snapshot.geneticJobs;
+      this.geneticCheckpoints = snapshot.geneticCheckpoints;
       this.externalAccounts = snapshot.externalAccounts;
       this.providerTokens = snapshot.providerTokens;
       this.connectorSyncJobs = snapshot.connectorSyncJobs;
@@ -338,6 +351,18 @@ export class HealthApiStore implements HealthStore {
     return count;
   }
 
+  async saveGeneticAnalysisCheckpoint(sourceId: string, annotationDepth: GeneticsAnnotationDepth | undefined, result: unknown): Promise<void> {
+    this.geneticCheckpoints.set(geneticCheckpointObjectKey(sourceId, annotationDepth), result);
+  }
+
+  async getGeneticAnalysisCheckpoint(sourceId: string, annotationDepth: GeneticsAnnotationDepth | undefined): Promise<unknown | undefined> {
+    return this.geneticCheckpoints.get(geneticCheckpointObjectKey(sourceId, annotationDepth));
+  }
+
+  async clearGeneticAnalysisCheckpoint(sourceId: string, annotationDepth: GeneticsAnnotationDepth | undefined): Promise<void> {
+    this.geneticCheckpoints.delete(geneticCheckpointObjectKey(sourceId, annotationDepth));
+  }
+
   async upsertExternalAccount(account: ExternalAccount): Promise<ExternalAccount> {
     const existing = Array.from(this.externalAccounts.values()).find(item => (
       item.user_id === account.user_id
@@ -553,6 +578,9 @@ export class HealthApiStore implements HealthStore {
       this.observations.delete(sourceId);
       this.sourcePayloads.delete(sourceId);
       this.sources.delete(sourceId);
+      for (const depth of ['compact', 'full_dbsnp'] as const) {
+        this.geneticCheckpoints.delete(geneticCheckpointObjectKey(sourceId, depth));
+      }
     }
     let analyses = 0;
     for (const [id, analysis] of this.analyses) {
@@ -608,6 +636,13 @@ function resultRequestsGeneticReanalysis(result: unknown): boolean {
 
 export function createId(prefix: string): string {
   return `${prefix}_${randomUUID()}`;
+}
+
+// Object-storage key (and in-memory map key) for a genetics pipeline checkpoint.
+// Namespaced by source and annotation depth so re-analysis at a different depth
+// does not collide with a stored checkpoint from a prior depth.
+export function geneticCheckpointObjectKey(sourceId: string, annotationDepth: GeneticsAnnotationDepth | undefined): string {
+  return `genetic-checkpoints/${sourceId}/${annotationDepth ?? 'compact'}.json`;
 }
 
 function isAllowedOrganization(resourceOrganizationId: string | undefined, organizationIds?: Set<string>): boolean {

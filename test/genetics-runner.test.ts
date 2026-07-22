@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import * as os from 'node:os';
 import * as path from 'node:path';
 import { readFile, rm } from 'node:fs/promises';
-import { appendCommandOutputTail, buildGeneticsPipelineArgs, compactGeneticsDashboardForPersistence, geneticsPipelineTimeoutMs, progressFromPipelineOutput } from '../src/core/genetics-runner.js';
+import { appendCommandOutputTail, buildGeneticsPipelineArgs, compactGeneticsDashboardForPersistence, geneticsPipelineTimeoutMs, progressFromPipelineOutput, resolveGeneticsPipeline, type GeneticsPipelineResult } from '../src/core/genetics-runner.js';
 import { createId, HealthApiStore } from '../src/store.js';
 import type { AnalysisResult, GeneticAnalysisJob } from '../src/types.js';
 
@@ -218,6 +218,99 @@ test('claiming a genetic retry clears the previous attempt error', async () => {
   assert.equal(retry?.status, 'running');
   assert.equal(retry?.attempts, 2);
   assert.equal(retry?.error, undefined);
+});
+
+test('genetic analysis checkpoints round-trip and clear by source and depth', async () => {
+  const store = new HealthApiStore();
+  const sourceId = createId('src');
+  const compact: GeneticsPipelineResult = { status: 'complete', summary: 'compact run', raw: { gli: 1 } };
+  const full: GeneticsPipelineResult = { status: 'complete', summary: 'full run', raw: { gli: 2 } };
+
+  await store.saveGeneticAnalysisCheckpoint(sourceId, 'compact', compact);
+  await store.saveGeneticAnalysisCheckpoint(sourceId, 'full_dbsnp', full);
+
+  // Depths are namespaced independently, so they never clobber each other.
+  assert.deepEqual(await store.getGeneticAnalysisCheckpoint(sourceId, 'compact'), compact);
+  assert.deepEqual(await store.getGeneticAnalysisCheckpoint(sourceId, 'full_dbsnp'), full);
+  // Undefined depth resolves to the compact slot.
+  assert.deepEqual(await store.getGeneticAnalysisCheckpoint(sourceId, undefined), compact);
+
+  await store.clearGeneticAnalysisCheckpoint(sourceId, 'compact');
+  assert.equal(await store.getGeneticAnalysisCheckpoint(sourceId, 'compact'), undefined);
+  assert.deepEqual(await store.getGeneticAnalysisCheckpoint(sourceId, 'full_dbsnp'), full);
+});
+
+test('resolveGeneticsPipeline runs once, checkpoints, then resumes without re-running', async () => {
+  const store = new HealthApiStore();
+  const job = { source_id: createId('src'), annotation_depth: 'full_dbsnp' as const };
+  const completed: GeneticsPipelineResult = { status: 'complete', summary: 'expensive run', raw: { gli: 7 } };
+  let runs = 0;
+  const run = async (): Promise<GeneticsPipelineResult> => { runs += 1; return completed; };
+
+  let savedEvents = 0;
+  let resumeEvents = 0;
+  const first = await resolveGeneticsPipeline(store, job, run, {
+    onCheckpointSaved: () => { savedEvents += 1; },
+    onResume: () => { resumeEvents += 1; },
+  });
+  assert.equal(first.resumedFromCheckpoint, false);
+  assert.equal(runs, 1);
+  assert.equal(savedEvents, 1);
+  assert.deepEqual(first.pipeline, completed);
+
+  // Simulates the next attempt after a persistence failure: the compute is not
+  // re-run; the completed result is loaded from the checkpoint.
+  const second = await resolveGeneticsPipeline(store, job, run, {
+    onCheckpointSaved: () => { savedEvents += 1; },
+    onResume: () => { resumeEvents += 1; },
+  });
+  assert.equal(second.resumedFromCheckpoint, true);
+  assert.equal(runs, 1, 'the multi-hour pipeline must not run again on resume');
+  assert.equal(resumeEvents, 1);
+  assert.deepEqual(second.pipeline, completed);
+});
+
+test('resolveGeneticsPipeline does not checkpoint a failed or setup_required pipeline', async () => {
+  const store = new HealthApiStore();
+  const job = { source_id: createId('src'), annotation_depth: 'compact' as const };
+  const failed: GeneticsPipelineResult = { status: 'failed', summary: 'pipeline blew up' };
+
+  const result = await resolveGeneticsPipeline(store, job, async () => failed);
+  assert.equal(result.resumedFromCheckpoint, false);
+  assert.deepEqual(result.pipeline, failed);
+  // Nothing durable is stored, so a retry re-runs from scratch (correct: there
+  // is no completed compute to preserve).
+  assert.equal(await store.getGeneticAnalysisCheckpoint(job.source_id, job.annotation_depth), undefined);
+});
+
+test('a checkpoint write failure does not prevent returning the completed pipeline', async () => {
+  const store = new HealthApiStore();
+  store.saveGeneticAnalysisCheckpoint = async () => { throw new Error('object storage unavailable'); };
+  const job = { source_id: createId('src'), annotation_depth: 'full_dbsnp' as const };
+  const completed: GeneticsPipelineResult = { status: 'complete', summary: 'done', raw: {} };
+
+  let errors = 0;
+  const result = await resolveGeneticsPipeline(store, job, async () => completed, {
+    onCheckpointError: () => { errors += 1; },
+  });
+  assert.equal(result.resumedFromCheckpoint, false);
+  assert.deepEqual(result.pipeline, completed);
+  assert.equal(errors, 1);
+});
+
+test('tombstoning a user deletes their genetic analysis checkpoints', async () => {
+  const store = new HealthApiStore();
+  const source: import('../src/types.js').RawSourceReference = {
+    id: createId('src'), user_id: 'user_1', organization_id: 'org_1', category: 'genetics',
+    filename: 'genome.vcf.gz', content_type: 'application/gzip',
+    received_at: new Date().toISOString(), byte_length: 21, storage_mode: 'durable',
+  };
+  await store.saveSource(source, [], Buffer.from('##fileformat=VCFv4.2\n'));
+  await store.saveGeneticAnalysisCheckpoint(source.id, 'full_dbsnp', { status: 'complete', summary: 'x' });
+  assert.ok(await store.getGeneticAnalysisCheckpoint(source.id, 'full_dbsnp'));
+
+  await store.tombstoneUserData('user_1', 'org_1');
+  assert.equal(await store.getGeneticAnalysisCheckpoint(source.id, 'full_dbsnp'), undefined);
 });
 
 test('completed raw genetic scores advertise future calibration reanalysis', async () => {
