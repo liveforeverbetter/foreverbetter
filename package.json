@@ -31,6 +31,10 @@
     "kb:build": "node scripts/build-kb.mjs",
     "typecheck": "tsc --noEmit"
   },
+  "overrides": {
+    "axios": "1.18.1",
+    "fast-uri": "3.1.4"
+  },
   "engines": {
     "node": ">=22"
   },
