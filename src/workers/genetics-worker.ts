@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { configuredStore } from '../configured-store.js';
-import { runGeneticsPipelineWithWriter } from '../core/genetics-runner.js';
+import { resolveGeneticsPipeline, runGeneticsPipelineWithWriter } from '../core/genetics-runner.js';
 import { upsertGeneticPipelineInterpretation } from '../core/genetic-analysis.js';
 import { retryTransientStoreOperation } from '../core/store-retry.js';
 import type { PgsPopulationSimilarity } from '../core/pgs-calibration.js';
@@ -76,20 +76,41 @@ async function processNextJob(): Promise<boolean> {
     if (!source) throw new Error(`Source not found for genetic job: ${job.source_id}`);
     if (!analysis) throw new Error(`Analysis not found for genetic job: ${job.analysis_id}`);
 
-    const pgsPopulationSimilarity = await loadPgsPopulationSimilarity(source.id);
-    const pipeline = await runGeneticsPipelineWithWriter(
-      job.user_id,
-      source,
-      inputPath => store.writeSourcePayloadToFile(source.id, inputPath),
-      process.env,
+    // Resume from a durable checkpoint if the multi-hour compute already
+    // finished on a prior attempt whose persistence failed; otherwise run the
+    // pipeline and checkpoint the completed result before the fragile DB writes.
+    const { pipeline, resumedFromCheckpoint } = await resolveGeneticsPipeline(
+      store,
+      job,
+      async () => {
+        const pgsPopulationSimilarity = await loadPgsPopulationSimilarity(source.id);
+        return runGeneticsPipelineWithWriter(
+          job.user_id,
+          source,
+          inputPath => store.writeSourcePayloadToFile(source.id, inputPath),
+          process.env,
+          {
+            annotation_depth: job.annotation_depth,
+            onProgress: progress => store.updateGeneticAnalysisJobProgress(job.id, progress),
+            saveFullArtifact: body => store.saveAnalysisArtifact(job.analysis_id, body),
+            pgsPopulationSimilarity,
+            signal,
+          },
+        );
+      },
       {
-        annotation_depth: job.annotation_depth,
-        onProgress: progress => store.updateGeneticAnalysisJobProgress(job.id, progress),
-        saveFullArtifact: body => store.saveAnalysisArtifact(job.analysis_id, body),
-        pgsPopulationSimilarity,
-        signal,
+        onResume: () => console.log(JSON.stringify({ ts: new Date().toISOString(), worker_id: workerId, job_id: job.id, event: 'genetics_job_resumed_from_checkpoint' })),
+        onCheckpointSaved: () => console.log(JSON.stringify({ ts: new Date().toISOString(), worker_id: workerId, job_id: job.id, event: 'genetics_checkpoint_saved' })),
+        onCheckpointError: error => console.warn(JSON.stringify({ ts: new Date().toISOString(), worker_id: workerId, job_id: job.id, event: 'genetics_checkpoint_save_failed', error: errorMessage(error) })),
       },
     );
+    if (resumedFromCheckpoint) {
+      await store.updateGeneticAnalysisJobProgress(job.id, {
+        stage: 'persisting_results',
+        progress_pct: 96,
+        progress_message: 'Reusing the completed analysis from checkpoint and retrying the save.',
+      });
+    }
     pipelineSucceeded = pipeline.status === 'complete';
     upsertGeneticPipelineInterpretation(analysis, source, pipeline, job.id);
     await storeWriteWithRetry(job.id, 'persisting_progress', () => store.updateGeneticAnalysisJobProgress(job.id, {
@@ -103,6 +124,11 @@ async function processNextJob(): Promise<boolean> {
       await storeWriteWithRetry(job.id, 'fail_job', () => store.failGeneticAnalysisJob(job.id, pipeline.summary));
     } else {
       await storeWriteWithRetry(job.id, 'complete_job', () => store.completeGeneticAnalysisJob(job.id, pipeline));
+      // Results are safely persisted; drop the checkpoint so re-analysis of this
+      // source recomputes rather than resuming stale compute. Best-effort.
+      await store.clearGeneticAnalysisCheckpoint(job.source_id, job.annotation_depth).catch(error => {
+        console.warn(JSON.stringify({ ts: new Date().toISOString(), worker_id: workerId, job_id: job.id, event: 'genetics_checkpoint_clear_failed', error: errorMessage(error) }));
+      });
     }
     console.log(JSON.stringify({
       ts: new Date().toISOString(),
@@ -126,15 +152,21 @@ async function processNextJob(): Promise<boolean> {
     }
     const message = errorMessage(error);
     if (pipelineSucceeded) {
+      // The multi-hour compute finished and is checkpointed. Do NOT mark the job
+      // terminally failed: keep it retryable so the next attempt resumes from the
+      // checkpoint and retries only the fast DB write. failGeneticAnalysisJob with
+      // no override goes terminal only once attempts are exhausted.
+      const lastAttempt = job.attempts >= job.max_attempts;
       console.error(JSON.stringify({
         ts: new Date().toISOString(),
         worker_id: workerId,
         job_id: job.id,
         event: 'genetics_pipeline_succeeded_but_persistence_failed',
         error: message,
+        last_attempt: lastAttempt,
       }));
       try {
-        await store.failGeneticAnalysisJob(job.id, `Pipeline succeeded but persistence failed: ${message}`, { retryable: false });
+        await store.failGeneticAnalysisJob(job.id, `Analysis completed but saving results failed; the completed analysis is checkpointed and will resume on retry. ${message}`);
       } catch (persistenceError) {
         console.error(JSON.stringify({
           ts: new Date().toISOString(),
@@ -144,6 +176,10 @@ async function processNextJob(): Promise<boolean> {
           error: errorMessage(persistenceError),
           original_error: message,
         }));
+      }
+      if (lastAttempt) {
+        // No further attempts will run; drop the orphaned checkpoint.
+        await store.clearGeneticAnalysisCheckpoint(job.source_id, job.annotation_depth).catch(() => {});
       }
     } else {
       try {

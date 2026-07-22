@@ -69,6 +69,51 @@ const INLINE_CONDITION_ENTRIES_PER_MODALITY = 25;
 const DEFAULT_BUNDLED_SKILL_DIR = 'vendor/health-analysis-skill';
 const LEGACY_SKILL_DIR = '../open-source/skills/genomic-analysis';
 
+/** Minimal structural store surface the resume helper needs; avoids importing HealthStore here. */
+export interface GeneticsCheckpointStore {
+  getGeneticAnalysisCheckpoint(sourceId: string, annotationDepth: GeneticsAnnotationDepth | undefined): Promise<unknown | undefined>;
+  saveGeneticAnalysisCheckpoint(sourceId: string, annotationDepth: GeneticsAnnotationDepth | undefined, result: unknown): Promise<void>;
+}
+
+function isCompletePipelineResult(value: unknown): value is GeneticsPipelineResult {
+  return isRecord(value) && value.status === 'complete';
+}
+
+/**
+ * Run the genetics pipeline, or resume from a durable checkpoint if the
+ * expensive compute already completed on a previous attempt whose persistence
+ * failed. On a fresh completed run, the result is checkpointed BEFORE the caller
+ * attempts the fragile analysis/job DB writes, so those writes can be retried
+ * without ever re-running the multi-hour annotation. A checkpoint write failure
+ * is non-fatal: the in-memory result is still persisted normally.
+ */
+export async function resolveGeneticsPipeline(
+  store: GeneticsCheckpointStore,
+  job: { source_id: string; annotation_depth?: GeneticsAnnotationDepth },
+  run: () => Promise<GeneticsPipelineResult>,
+  hooks: {
+    onResume?: () => void;
+    onCheckpointSaved?: () => void;
+    onCheckpointError?: (error: unknown) => void;
+  } = {},
+): Promise<{ pipeline: GeneticsPipelineResult; resumedFromCheckpoint: boolean }> {
+  const checkpoint = await store.getGeneticAnalysisCheckpoint(job.source_id, job.annotation_depth).catch(() => undefined);
+  if (isCompletePipelineResult(checkpoint)) {
+    hooks.onResume?.();
+    return { pipeline: checkpoint, resumedFromCheckpoint: true };
+  }
+  const pipeline = await run();
+  if (pipeline.status === 'complete') {
+    try {
+      await store.saveGeneticAnalysisCheckpoint(job.source_id, job.annotation_depth, pipeline);
+      hooks.onCheckpointSaved?.();
+    } catch (error) {
+      hooks.onCheckpointError?.(error);
+    }
+  }
+  return { pipeline, resumedFromCheckpoint: false };
+}
+
 export async function runGeneticsPipeline(
   userId: string,
   source: RawSourceReference,

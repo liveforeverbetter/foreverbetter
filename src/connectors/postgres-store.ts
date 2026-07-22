@@ -1,12 +1,12 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
 import type pg from 'pg';
 import { getPool } from '../db/pool.js';
-import { createId } from '../store.js';
+import { createId, geneticCheckpointObjectKey } from '../store.js';
 import { configuredPayloadStore, payloadKey, S3PayloadStore, type PayloadStore, type SignedPayloadUpload } from './payload-store.js';
 import type { HealthStore, IdempotencyRecord } from '../store.js';
 import type {
   AnalysisResult, ConnectorSyncJob, DataExportResult, ExternalAccount, GeneticAnalysisJob,
-  Goal, NormalizedObservation, ProviderToken, RawSourceReference, TombstoneResult, WebhookEvent,
+  GeneticsAnnotationDepth, Goal, NormalizedObservation, ProviderToken, RawSourceReference, TombstoneResult, WebhookEvent,
 } from '../types.js';
 
 const SCHEMA = 'health_api';
@@ -350,6 +350,29 @@ export class PostgresHealthStore implements HealthStore {
     return rows.length;
   }
 
+  // Genetics pipeline checkpoint. Lives in durable object storage (not the DB)
+  // so a Postgres-side failure that blocks completeGeneticAnalysisJob/saveAnalysis
+  // cannot also lose the completed compute. The compacted result is bounded, so
+  // buffering it here is safe on the WGS worker.
+  async saveGeneticAnalysisCheckpoint(sourceId: string, annotationDepth: GeneticsAnnotationDepth | undefined, result: unknown): Promise<void> {
+    const body = Buffer.from(JSON.stringify(result ?? null));
+    await this.payloads.upload(geneticCheckpointObjectKey(sourceId, annotationDepth), body, 'application/json');
+  }
+
+  async getGeneticAnalysisCheckpoint(sourceId: string, annotationDepth: GeneticsAnnotationDepth | undefined): Promise<unknown | undefined> {
+    const body = await this.payloads.download(geneticCheckpointObjectKey(sourceId, annotationDepth));
+    if (!body) return undefined;
+    try {
+      return JSON.parse(body.toString('utf8')) as unknown;
+    } catch {
+      return undefined;
+    }
+  }
+
+  async clearGeneticAnalysisCheckpoint(sourceId: string, annotationDepth: GeneticsAnnotationDepth | undefined): Promise<void> {
+    await this.payloads.remove(geneticCheckpointObjectKey(sourceId, annotationDepth));
+  }
+
   async upsertExternalAccount(account: ExternalAccount): Promise<ExternalAccount> {
     const organizationId = requireOrganizationId(account.organization_id, account.id);
     const rows = await this.rows(
@@ -609,6 +632,22 @@ export class PostgresHealthStore implements HealthStore {
             analysis_id: String(row.id),
             error: error instanceof Error ? error.message : String(error),
           }));
+        }
+      }
+      // Delete any genetics checkpoints for the tombstoned sources so completed
+      // genomic compute is not left behind in object storage after deletion.
+      for (const row of sources.rows) {
+        for (const depth of ['compact', 'full_dbsnp'] as const) {
+          try {
+            await this.payloads.remove(geneticCheckpointObjectKey(String(row.id), depth));
+          } catch (error) {
+            console.warn(JSON.stringify({
+              ts: new Date().toISOString(),
+              event: 'genetic_checkpoint_tombstone_cleanup_failed',
+              source_id: String(row.id),
+              error: error instanceof Error ? error.message : String(error),
+            }));
+          }
         }
       }
       return {
