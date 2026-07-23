@@ -9,6 +9,7 @@
     "dev": "tsx src/index.ts",
     "migrate": "node dist/db/migrate.js",
     "production:smoke": "node scripts/production-smoke.mjs",
+    "deploy:fly": "node scripts/deploy-fly-managed.mjs",
     "labs:sync": "node scripts/sync-lab-locations.mjs",
     "e2e:scenario": "node scripts/e2e-scenario.mjs",
     "openapi:generate": "tsx scripts/generate-openapi.ts",

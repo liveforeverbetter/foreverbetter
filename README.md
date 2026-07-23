@@ -420,6 +420,14 @@ docker compose config --quiet
 
 PostgreSQL store tests run when `TEST_DATABASE_URL` is set. The scheduled readiness workflow runs the build, tests, skill verification, package verification, docs validation, dependency audit, and Compose validation. GitHub Actions are pinned to reviewed full commit SHAs.
 
+## Hosted Fly releases
+
+The managed hosted topology keeps the API and wearable worker in FRA while a
+single on-demand WGS worker and its encrypted reference volume live in AMS.
+Use [`DEPLOYMENT.md`](DEPLOYMENT.md) and `npm run deploy:fly` for a safe release
+that updates only the FRA Machines; the queued genetics dispatcher refreshes
+the AMS worker immediately before its next run.
+
 ## License
 
 AGPL-3.0-only. See [`LICENSE`](LICENSE).
