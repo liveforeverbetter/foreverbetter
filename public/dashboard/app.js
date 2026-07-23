@@ -467,6 +467,13 @@ function newestFirst(items, dateField) {
   return [...items].sort((a, b) => String(b[dateField] || '').localeCompare(String(a[dateField] || '')));
 }
 
+function completedGeneticsAnalysis(analysis) {
+  // A queued genetics row has only the pipeline-status interpretation. Keep a
+  // completed WGS result visible until a newer run has actual findings, rather
+  // than briefly replacing the six-category browser with an empty state.
+  return analysis?.modality === 'genetics' && Number(analysis.interpretation_count || 0) > 1;
+}
+
 function pluralize(count, singular, plural = `${singular}s`) {
   return `${count} ${count === 1 ? singular : plural}`;
 }
@@ -496,9 +503,12 @@ function refreshOverview() {
 
   if (!state.overviewLoaded) return;
   const latestWearable = newestFirst(sourcesByCategory.wearables, 'received_at')[0];
-  const latestGeneticAnalysis = newestFirst(state.overviewAnalyses.filter(analysis => analysis.modality === 'genetics'), 'created_at')[0];
+  const geneticAnalyses = newestFirst(state.overviewAnalyses.filter(analysis => analysis.modality === 'genetics'), 'created_at');
+  const newestGeneticAnalysis = geneticAnalyses[0];
+  const latestGeneticAnalysis = geneticAnalyses.find(completedGeneticsAnalysis) || newestGeneticAnalysis;
   const latestLab = newestFirst(sourcesByCategory.biomarkers, 'received_at')[0];
-  const geneticRunCount = state.overviewAnalyses.filter(analysis => analysis.modality === 'genetics').length;
+  const geneticRunCount = geneticAnalyses.length;
+  const geneticsProcessing = newestGeneticAnalysis && !completedGeneticsAnalysis(newestGeneticAnalysis);
 
   setOverviewModality(
     'wearables',
@@ -511,7 +521,9 @@ function refreshOverview() {
     sourcesByCategory.genetics.length > 0,
     sourcesByCategory.genetics.length ? `${pluralize(sourcesByCategory.genetics.length, 'file')} ready` : 'No genetic file',
     latestGeneticAnalysis
-      ? `Current interpretation updated ${formatRelDate(latestGeneticAnalysis.created_at)}${geneticRunCount > 1 ? ` · ${geneticRunCount - 1} earlier run${geneticRunCount === 2 ? '' : 's'} kept as history.` : '.'}`
+      ? geneticsProcessing && latestGeneticAnalysis !== newestGeneticAnalysis
+        ? `A newer WGS analysis is processing. Showing your latest completed interpretation from ${formatRelDate(latestGeneticAnalysis.created_at)}.`
+        : `Current interpretation updated ${formatRelDate(latestGeneticAnalysis.created_at)}${geneticRunCount > 1 ? ` · ${geneticRunCount - 1} earlier run${geneticRunCount === 2 ? '' : 's'} kept as history.` : '.'}`
       : sourcesByCategory.genetics.length ? 'Genetic data is ready for analysis.' : 'Upload a VCF or SNP-array export when you choose.',
   );
   setOverviewModality(
@@ -916,7 +928,10 @@ async function loadModalityInterpretations(page, modality, key, params) {
   if (!container) return;
   try {
     const analysisParams = new URLSearchParams(params);
-    analysisParams.set('limit', '1');
+    // Keep a completed genome browser present while a newer WGS job is still
+    // running. The API list is newest first, so fetch enough history to find
+    // the current completed interpretation without blending analyses together.
+    analysisParams.set('limit', page === 'genetics' ? '25' : '1');
     const result = await apiGet(`/analyses?modality=${modality}&${analysisParams}`, key);
     const analyses = result.analyses || [];
     if (!analyses.length) {
@@ -929,7 +944,9 @@ async function loadModalityInterpretations(page, modality, key, params) {
       return;
     }
 
-    const current = analyses[0];
+    const current = page === 'genetics'
+      ? analyses.find(completedGeneticsAnalysis) || analyses[0]
+      : analyses[0];
     const full = await apiGet(`/analyses/${current.id}`, key);
     const allInterpretations = full.derived_interpretations || [];
     // A current analysis can contain many observations of one metric (for
