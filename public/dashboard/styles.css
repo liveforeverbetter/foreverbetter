@@ -2909,3 +2909,124 @@ code {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- Wearable daily metric charts ---- */
+
+.wearable-metric-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.metric-group-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.metric-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.metric-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-muted);
+  border-radius: 10px;
+  padding: 12px 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.metric-card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metric-value {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.metric-value small {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.55;
+  margin-left: 1px;
+}
+
+.metric-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.metric-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metric-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 48px;
+  padding: 0 1px;
+}
+
+.metric-bar {
+  flex: 1;
+  border-radius: 2px 2px 0 0;
+  min-width: 6px;
+  transition: background 0.2s;
+}
+
+.metric-dates {
+  display: flex;
+  gap: 3px;
+}
+
+.metric-dates span {
+  flex: 1;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  text-align: center;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .metric-cards {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+  }
+  .metric-card {
+    padding: 10px 8px 6px;
+  }
+  .metric-value {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .metric-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}

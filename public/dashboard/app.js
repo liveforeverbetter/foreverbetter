@@ -982,6 +982,12 @@ async function loadModalityInterpretations(page, modality, key, params) {
       return;
     }
 
+    // Wearables get a time-series daily view instead of individual interpretation cards.
+    if (page === 'wearables' && full.normalized_observations?.length) {
+      container.innerHTML = `${analysisSummary}${renderWearableTimeSeries(full.normalized_observations)}`;
+      return;
+    }
+
     if (!interpretations.length) {
       container.innerHTML = `${analysisSummary}<div class="section-heading-row"><h2>Current interpretation</h2></div>
         <div class="card modality-placeholder">
@@ -1310,6 +1316,147 @@ function interpretationCard(interp) {
     ${evidence}
     ${interp.action ? `<div class="interp-action"><strong>What to do</strong><p>${escapeHtml(interp.action)}</p></div>` : ''}
   </article>`;
+}
+
+// ---- Wearable daily time-series view ----
+
+const WEARABLE_METRIC_GROUPS = [
+  {
+    label: 'Recovery & Readiness',
+    metrics: ['recovery_score', 'hrv', 'resting_heart_rate', 'spo2', 'skin_temperature', 'respiratory_rate'],
+    color: '#22c55e',
+  },
+  {
+    label: 'Sleep',
+    metrics: ['sleep_duration', 'deep_sleep_minutes', 'rem_sleep_minutes', 'sleep_efficiency_percentage', 'sleep_consistency_percentage'],
+    color: '#8b5cf6',
+  },
+  {
+    label: 'Activity & Strain',
+    metrics: ['steps', 'active_energy', 'workout_count', 'daytime_strain', 'strain_score'],
+    color: '#f59e0b',
+  },
+];
+
+const WEARABLE_METRIC_LABELS = {
+  recovery_score: 'Recovery %',
+  hrv: 'HRV ms',
+  resting_heart_rate: 'RHR bpm',
+  spo2: 'SpO2 %',
+  skin_temperature: 'Skin Temp °C',
+  respiratory_rate: 'Resp Rate',
+  sleep_duration: 'Sleep hrs',
+  deep_sleep_minutes: 'Deep Sleep min',
+  rem_sleep_minutes: 'REM Sleep min',
+  sleep_efficiency_percentage: 'Sleep Eff %',
+  sleep_consistency_percentage: 'Sleep Consist %',
+  steps: 'Steps',
+  active_energy: 'Active kcal',
+  workout_count: 'Workouts',
+  daytime_strain: 'Strain',
+  strain_score: 'Strain',
+};
+
+const WEARABLE_METRIC_UNITS = {
+  recovery_score: '%',
+  hrv: 'ms',
+  resting_heart_rate: 'bpm',
+  spo2: '%',
+  skin_temperature: '°C',
+  respiratory_rate: 'rpm',
+  sleep_duration: 'h',
+  deep_sleep_minutes: 'm',
+  rem_sleep_minutes: 'm',
+  sleep_efficiency_percentage: '%',
+  sleep_consistency_percentage: '%',
+  steps: '',
+  active_energy: 'kcal',
+  workout_count: '',
+  daytime_strain: '',
+  strain_score: '',
+};
+
+function renderWearableTimeSeries(observations) {
+  const daily = buildWearableDailyData(observations);
+  const metricNames = Object.keys(daily);
+  if (!metricNames.length) return '<div class="card modality-placeholder"><h2>No wearable data available.</h2><p>Connect WHOOP, Oura, or Health Connect to see daily trends.</p></div>';
+
+  const groups = WEARABLE_METRIC_GROUPS
+    .map(g => ({ ...g, metrics: g.metrics.filter(m => daily[m]) }))
+    .filter(g => g.metrics.length);
+
+  return `<div class="wearable-metric-grid">${groups.map(g => renderWearableGroup(g, daily)).join('')}</div>`;
+}
+
+function buildWearableDailyData(observations) {
+  const daily = {};
+  for (const obs of observations) {
+    if (obs.type !== 'wearable_metric') continue;
+    const name = obs.name;
+    if (!name) continue;
+    const date = (obs.observed_at || '').slice(0, 10);
+    if (!date) continue;
+    if (!daily[name]) daily[name] = {};
+    if (!daily[name][date]) daily[name][date] = [];
+    daily[name][date].push(obs.value);
+  }
+  const aggregated = {};
+  for (const [name, dates] of Object.entries(daily)) {
+    const entries = Object.entries(dates)
+      .map(([date, values]) => ({ date, value: aggregateMetric(name, values) }))
+      .sort((a, b) => a.date.localeCompare(b.date))
+      .slice(-7);
+    if (entries.length) aggregated[name] = entries;
+  }
+  return aggregated;
+}
+
+function aggregateMetric(name, values) {
+  if (!values.length) return 0;
+  if (name === 'steps' || name === 'active_energy') return Math.round(values.reduce((a, b) => a + b, 0));
+  if (name === 'workout_count') return values.reduce((a, b) => a + b, 0);
+  if (name === 'sleep_duration') return +(values.reduce((a, b) => a + b, 0) / 3600).toFixed(1);
+  if (name === 'deep_sleep_minutes' || name === 'rem_sleep_minutes') return Math.round(values.reduce((a, b) => a + b, 0) / 60);
+  return +((values.reduce((a, b) => a + b, 0) / values.length)).toFixed(1);
+}
+
+function renderWearableGroup(group, daily) {
+  return `<section class="metric-group">
+    <h3 class="metric-group-label" style="color:${group.color}">${escapeHtml(group.label)}</h3>
+    <div class="metric-cards">${group.metrics.map(m => renderMetricCard(m, daily[m], group.color)).join('')}</div>
+  </section>`;
+}
+
+function renderMetricCard(name, dailyValues, color) {
+  const latest = dailyValues[dailyValues.length - 1];
+  const unit = WEARABLE_METRIC_UNITS[name] || '';
+  const label = WEARABLE_METRIC_LABELS[name] || titleCase(name.replace(/_/g, ' '));
+  const max = Math.max(...dailyValues.map(d => d.value), 1);
+  const min = Math.min(...dailyValues.map(d => d.value));
+  const range = max - min || 1;
+  const barData = dailyValues.map(d => ({ date: d.date.slice(5), value: d.value }));
+
+  return `<article class="metric-card">
+    <div class="metric-card-head">
+      <strong class="metric-value">${formatMetricValue(name, latest.value)}<small>${unit}</small></strong>
+      <span class="metric-label">${escapeHtml(label)}</span>
+    </div>
+    <div class="metric-chart" aria-hidden="true">
+      <div class="metric-bars">${barData.map(b => {
+        const height = Math.max(4, ((b.value - min) / range) * 100);
+        return `<span class="metric-bar" style="height:${height}%;background:${color}" title="${b.date}: ${b.value}${unit}"></span>`;
+      }).join('')}</div>
+      <div class="metric-dates">${barData.map(b => `<span>${escapeHtml(b.date)}</span>`).join('')}</div>
+    </div>
+  </article>`;
+}
+
+function formatMetricValue(name, value) {
+  if (value == null) return '—';
+  if (name === 'steps') return value >= 1000 ? `${(value / 1000).toFixed(1)}k` : String(value);
+  if (name === 'active_energy') return String(value);
+  if (name === 'sleep_duration') return String(value);
+  return String(value);
 }
 
 function geneticAnalysisOverviewCard(interp) {
