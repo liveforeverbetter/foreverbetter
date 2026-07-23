@@ -85,7 +85,8 @@ function parseArgs(argv) {
     const token = argv[index];
     if (!token.startsWith('--')) continue;
     const [name, inline] = token.slice(2).split(/=(.*)/s, 2);
-    parsed[name] = inline ?? (argv[index + 1]?.startsWith('--') ? true : argv[++index]);
+    const next = argv[index + 1];
+    parsed[name] = inline ?? (!next || next.startsWith('--') ? true : argv[++index]);
   }
   return parsed;
 }
