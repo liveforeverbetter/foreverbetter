@@ -1,3 +1,5 @@
+import { HEALTH_CONNECT_METRIC_MAP } from '../connectors/wearables.js';
+
 export interface BiomarkerReading {
   id: string;
   value: number;
@@ -382,14 +384,26 @@ function rowToWearables(row: Record<string, string>): WearableReading[] {
   const rawValue = firstDefined(row, ['value', 'result', 'average']);
   if (rawId && rawValue != null) {
     const value = numberFrom(rawValue);
-    return value == null ? [] : [{ id: normalizeReadingId(rawId, WEARABLE_LOOKUP), value, unit: firstDefined(row, ['unit', 'units']) }];
+    return value == null ? [] : [{ id: wearableDefinitionFor(rawId)?.id ?? normalizeId(rawId), value, unit: firstDefined(row, ['unit', 'units']) }];
   }
 
   return Object.entries(row).flatMap(([key, value]) => {
     const numeric = numberFrom(value);
-    const def = WEARABLE_LOOKUP.get(normalizeId(key));
+    const def = wearableDefinitionFor(key);
     return numeric == null || !def ? [] : [{ id: def.id, value: numeric, unit: def.unit }];
   });
+}
+
+// Resolve a raw wearable metric name to a canonical definition. Consults the
+// Health Connect record-type map as a fallback so imported Health Connect names
+// (which collapse to separator-less tokens like "restingheartrate") resolve to
+// the same canonical ids the mobile SDK path produces, instead of only "steps".
+function wearableDefinitionFor(rawId: string): Definition | undefined {
+  const normalized = normalizeId(rawId);
+  const direct = WEARABLE_LOOKUP.get(normalized);
+  if (direct) return direct;
+  const mapped = HEALTH_CONNECT_METRIC_MAP[normalized];
+  return mapped ? WEARABLE_LOOKUP.get(mapped) : undefined;
 }
 
 // Convert a reading into the definition's canonical unit so scoring and derived

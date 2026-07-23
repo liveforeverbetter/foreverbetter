@@ -492,6 +492,67 @@ test('WHOOP sync auto-refreshes on a 401 and returns the rotated token', async (
   }
 });
 
+test('WHOOP sync normalizes recovery and sleep records into observations', async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (input: RequestInfo | URL, init?: RequestInit): Promise<Response> => {
+    const url = typeof input === 'string' ? input : input instanceof URL ? input.toString() : input.url;
+    if (url.includes('/developer/v2/recovery')) {
+      return new Response(JSON.stringify({ records: [{ score: { recovery_score: 66, resting_heart_rate: 54, hrv_rmssd_milli: 48.5, spo2_percentage: 96 } }] }), { status: 200, headers: { 'content-type': 'application/json' } });
+    }
+    if (url.includes('/developer/v2/activity/sleep')) {
+      return new Response(JSON.stringify({ records: [{ score: {
+        sleep_efficiency_percentage: 91,
+        respiratory_rate: 14.2,
+        stage_summary: { total_in_bed_time_milli: 28_800_000, total_awake_time_milli: 1_800_000, total_slow_wave_sleep_time_milli: 5_400_000, total_rem_sleep_time_milli: 6_300_000 },
+      } }] }), { status: 200, headers: { 'content-type': 'application/json' } });
+    }
+    if (url.includes('api.prod.whoop.com/developer')) {
+      return new Response(JSON.stringify({ records: [] }), { status: 200, headers: { 'content-type': 'application/json' } });
+    }
+    return originalFetch(input, init);
+  };
+  try {
+    const res = await fetch(`${baseUrl}/connections/whoop/sync`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'idempotency-key': `whoop-normalize-${Date.now()}` },
+      body: JSON.stringify({ user_id: 'dev-user', organization_id: 'org_personal_dev_user', access_token: 'good_access', start: '2026-06-01', end: '2026-06-02' }),
+    });
+    const body = await res.json();
+    assert.equal(body.provider, 'whoop');
+    const observations: any[] = body.normalized_observations ?? [];
+    const byName = (name: string) => observations.find(observation => observation.name === name);
+    assert.equal(byName('hrv')?.value, 48.5);
+    assert.equal(byName('resting_heart_rate')?.value, 54);
+    assert.equal(byName('recovery_score')?.value, 66);
+    assert.equal(byName('sleep_efficiency')?.value, 91);
+    // 28,800,000 ms in bed minus 1,800,000 ms awake = 27,000,000 ms = 7.5 hours.
+    assert.equal(byName('sleep_duration')?.value, 7.5);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test('imported Health Connect record-type names resolve beyond steps', async () => {
+  const imported = await post('/imports/file', {
+    user_id: 'hc_import_user',
+    category: 'wearables',
+    provider: 'health_connect',
+    filename: 'health-connect.json',
+    content_type: 'application/json',
+    text: JSON.stringify({ readings: [
+      { type: 'Steps', value: 8200, unit: 'count' },
+      { type: 'RestingHeartRate', value: 56, unit: 'bpm' },
+      { type: 'HeartRateVariabilityRmssd', value: 47, unit: 'ms' },
+      { type: 'OxygenSaturation', value: 97, unit: '%' },
+    ] }),
+  });
+  const names = (imported.normalized_observations ?? []).map((observation: any) => observation.name);
+  assert.ok(names.includes('steps'), 'steps present');
+  assert.ok(names.includes('resting_heart_rate'), 'resting_heart_rate resolved from RestingHeartRate');
+  assert.ok(names.includes('hrv'), 'hrv resolved from HeartRateVariabilityRmssd');
+  assert.ok(names.includes('spo2'), 'spo2 resolved from OxygenSaturation');
+});
+
 test('retires the legacy wearable pull endpoint', async () => {
   const response = await fetch(`${baseUrl}/connections/wearables/sync`, {
     method: 'POST',
