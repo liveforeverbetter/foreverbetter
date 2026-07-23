@@ -254,8 +254,8 @@ export interface WearableSyncResult {
 export async function syncWearableProvider(provider: ProviderId, input: ConnectorSyncRequest): Promise<WearableSyncResult> {
   const connector = wearableConnector(provider);
   if (provider === 'whoop') {
-    const { raw, refreshed } = await fetchWhoop(input, connector);
-    return { provider: 'whoop', raw, refreshed_token: refreshed };
+    const { raw, readings, refreshed } = await fetchWhoop(input, connector);
+    return { provider: 'whoop', raw, readings, refreshed_token: refreshed };
   }
   const { raw, readings, refreshed } = await fetchOura(input, connector);
   return { provider: 'oura', raw, readings, refreshed_token: refreshed };
@@ -329,17 +329,20 @@ function normalizeOuraReadings(payloads: unknown[]): WearableReading[] {
   return readings;
 }
 
-async function fetchWhoop(input: ConnectorSyncRequest, connector: WearableConnector): Promise<{ raw: unknown[]; refreshed?: OAuthTokenSet }> {
+async function fetchWhoop(input: ConnectorSyncRequest, connector: WearableConnector): Promise<{ raw: unknown[]; readings: WearableReading[]; refreshed?: OAuthTokenSet }> {
   if (!input.access_token && !input.refresh_token) throw new Error('WHOOP sync requires access_token (or refresh_token with client credentials).');
   const params = windowParams(input, true);
   const paths = ['/cycle', '/recovery', '/activity/sleep', '/activity/workout'];
   const canRefresh = Boolean(input.refresh_token && input.client_id && input.client_secret);
 
-  const fetchAll = (token: string) => Promise.all(paths.map(path => providerGet(`${connector.api_base_url}${path}?${params}`, token)));
+  const fetchAll = async (token: string) => {
+    const raw = await Promise.all(paths.map(path => providerGet(`${connector.api_base_url}${path}?${params}`, token)));
+    return { raw, readings: normalizeWhoopReadings(raw) };
+  };
 
   if (input.access_token) {
     try {
-      return { raw: await fetchAll(input.access_token) };
+      return await fetchAll(input.access_token);
     } catch (error) {
       if (!(error instanceof ProviderHttpError && error.status === 401 && canRefresh)) throw error;
     }
@@ -353,7 +356,57 @@ async function fetchWhoop(input: ConnectorSyncRequest, connector: WearableConnec
     client_secret: input.client_secret!,
   });
   if (!refreshed.access_token) throw new Error('WHOOP token refresh did not return an access_token.');
-  return { raw: await fetchAll(refreshed.access_token), refreshed };
+  return { ...(await fetchAll(refreshed.access_token)), refreshed };
+}
+
+// Normalize WHOOP v2 responses ([cycle, recovery, sleep, workout], each an
+// object with a `records` array) into canonical wearable readings. WHOOP nests
+// each metric under a per-record `score` object, and reports sleep stage
+// durations in milliseconds. Without this, WHOOP data is fetched but never
+// mapped to observations, so nothing reaches the dashboard.
+export function normalizeWhoopReadings(payloads: unknown[]): WearableReading[] {
+  const [, recovery, sleep, workout] = payloads.map(responseRows);
+  const readings: WearableReading[] = [];
+
+  for (const row of recovery ?? []) {
+    const score = objectRecord(objectRecord(row).score);
+    const recoveryScore = numberValue(score.recovery_score);
+    if (recoveryScore != null) readings.push({ id: 'recovery_score', value: recoveryScore, unit: '%' });
+    const restingHeartRate = numberValue(score.resting_heart_rate);
+    if (restingHeartRate != null) readings.push({ id: 'resting_heart_rate', value: restingHeartRate, unit: 'bpm' });
+    const hrv = numberValue(score.hrv_rmssd_milli);
+    if (hrv != null) readings.push({ id: 'hrv', value: Math.round(hrv * 100) / 100, unit: 'ms' });
+    const spo2 = numberValue(score.spo2_percentage);
+    if (spo2 != null) readings.push({ id: 'spo2', value: Math.round(spo2 * 100) / 100, unit: '%' });
+    const skinTemp = numberValue(score.skin_temp_celsius);
+    if (skinTemp != null) readings.push({ id: 'skin_temperature', value: Math.round(skinTemp * 100) / 100, unit: 'C' });
+  }
+
+  for (const row of sleep ?? []) {
+    const score = objectRecord(objectRecord(row).score);
+    const efficiency = numberValue(score.sleep_efficiency_percentage);
+    if (efficiency != null) readings.push({ id: 'sleep_efficiency', value: Math.round(efficiency * 100) / 100, unit: '%' });
+    const respiratoryRate = numberValue(score.respiratory_rate);
+    if (respiratoryRate != null) readings.push({ id: 'respiratory_rate', value: Math.round(respiratoryRate * 100) / 100, unit: 'rpm' });
+    const consistency = numberValue(score.sleep_consistency_percentage);
+    if (consistency != null) readings.push({ id: 'sleep_consistency', value: consistency, unit: '%' });
+    const stages = objectRecord(score.stage_summary);
+    const inBed = numberValue(stages.total_in_bed_time_milli);
+    const awake = numberValue(stages.total_awake_time_milli) ?? 0;
+    if (inBed != null && inBed - awake > 0) {
+      readings.push({ id: 'sleep_duration', value: Math.round(((inBed - awake) / 3_600_000) * 100) / 100, unit: 'hours' });
+    }
+    const deep = numberValue(stages.total_slow_wave_sleep_time_milli);
+    if (deep != null) readings.push({ id: 'deep_sleep_minutes', value: Math.round(deep / 60_000), unit: 'min' });
+    const rem = numberValue(stages.total_rem_sleep_time_milli);
+    if (rem != null) readings.push({ id: 'rem_sleep_minutes', value: Math.round(rem / 60_000), unit: 'min' });
+  }
+
+  if ((workout ?? []).length) {
+    readings.push({ id: 'workout_count', value: workout.length, unit: 'sessions/week' });
+  }
+
+  return readings;
 }
 
 function windowParams(input: ConnectorSyncRequest, dateTime: boolean): string {
@@ -379,6 +432,7 @@ async function providerGet(url: string, accessToken: string): Promise<unknown> {
 function responseRows(payload: unknown): unknown[] {
   if (Array.isArray(payload)) return payload;
   const record = objectRecord(payload);
+  if (Array.isArray(record.records)) return record.records;
   if (Array.isArray(record.data)) return record.data;
   if (Array.isArray(record.items)) return record.items;
   return [];
