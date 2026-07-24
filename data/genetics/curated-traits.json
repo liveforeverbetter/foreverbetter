@@ -4955,7 +4955,7 @@
         "rs3849154"
       ],
       "heritability_pct": 80,
-      "risk_loci": null,
+      "risk_loci": 44,
       "variants": [],
       "references": [
         "Mitchel B.L, Saklatvala J.R, et al . Genome-wide association meta-analysis identifies 29 new acne",
@@ -5096,7 +5096,7 @@
         "rs2"
       ],
       "heritability_pct": 22,
-      "risk_loci": null,
+      "risk_loci": 334,
       "variants": [],
       "references": [
         "Barton AR, Sherman MA, Mukamel RE, et al. Whole-exome imputation within UK Biobank powers rare",
@@ -5348,7 +5348,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 261,
       "variants": [],
       "references": [
         "Pazoki R, Vujkovic M, Elliott J, et al. Genetic analysis in European ancestry individuals identifies 517 loci",
@@ -5508,7 +5508,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 383,
       "variants": [],
       "references": [
         "Barton AR, Sherman MA, et al. Whole-exome imputation within UK Biobank powers rare coding variant",
@@ -5768,7 +5768,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 268,
       "variants": [],
       "references": [
         "Barton AR, Sherman MA, et al. Whole-exome imputation within UK Biobank powers rare coding variant",
@@ -6112,7 +6112,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 12,
       "variants": [],
       "references": [
         "Folkersen L., Gustafsson S., et al. Genomic and drug target evaluation of 90 cardiovascular proteins in",
@@ -6333,7 +6333,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 39,
       "variants": [],
       "references": [
         "Fan Q, Pozarickij A, Tan NYQ, et al. Genome-wide association meta-analysis of corneal curvature identifies",
@@ -6364,7 +6364,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 9,
       "variants": [],
       "references": [
         "Murtagh P, O'Brien C. Corneal Hysteresis, Intraocular Pressure, and Progression of Glaucoma: Time for a",
@@ -6426,7 +6426,7 @@
         "rs72748935"
       ],
       "heritability_pct": 50,
-      "risk_loci": null,
+      "risk_loci": 32,
       "variants": [],
       "references": [
         "Shungin D, Haworth S, et al . Genome-wide analysis of dental caries and periodontitis combining clinical",
@@ -6652,7 +6652,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 763,
       "variants": [],
       "references": [
         "Vuckovic D., Bao E.L., et al. The Polygenic and Monogenic Basis of Blood Traits and Diseases. Cell, 01 Sep",
@@ -6697,7 +6697,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 25,
       "variants": [],
       "references": [
         "McCartney DL, Min JL, Richmond RC, et al . Genome-wide association studies identify 137 genetic loci for",
@@ -6727,7 +6727,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 13,
       "variants": [],
       "references": [
         "Hariri L, Rehman A. Estradiol. 2023 Jun 28. In: StatPearls [Internet]. Treasure Island (FL): StatPearls",
@@ -6878,7 +6878,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 55,
       "variants": [],
       "references": [
         "UK BIOBANK Jan 2012",
@@ -6916,7 +6916,7 @@
         "rs12273363"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 14,
       "variants": [],
       "references": [
         "Bonfiglio F, Liu X, Smillie C, et al GWAS of stool frequency provides insights into gastrointestinal motility",
@@ -7028,7 +7028,7 @@
         "rs2"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 556,
       "variants": [],
       "references": [
         "Barton A.R., Sherman M.A., et al. Whole-exome imputation within UK Biobank powers rare coding variant",
@@ -7553,7 +7553,7 @@
         "rs3"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 242,
       "variants": [],
       "references": [
         "Jansen PR, Watanabe K, Stringer S, et al . Genome-wide analysis of insomnia in 1,331,010 individuals",
@@ -7604,7 +7604,7 @@
       ],
       "rsids": [],
       "heritability_pct": 62,
-      "risk_loci": null,
+      "risk_loci": 30,
       "variants": [],
       "references": [
         "Jones AV, Tilley M, Gutteridge A, et al. GWAS of self-reported mosquito bite size, itch intensity and",
@@ -7665,7 +7665,7 @@
         "rs4550447"
       ],
       "heritability_pct": 25,
-      "risk_loci": null,
+      "risk_loci": 36,
       "variants": [],
       "references": [
         "de Kovel CGF, Carrión-Castillo A, Francks C. A large-scale population study of early life factors influencing",
@@ -7697,7 +7697,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 10,
       "variants": [],
       "references": [
         "Liu Y, Basty N, Whitcher B, et al. Genetic architecture of 11 organ traits derived from abdominal MRI using",
@@ -7816,7 +7816,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 811,
       "variants": [],
       "references": [
         "Vuckovic D., Bao E.L., et al. The Polygenic and Monogenic Basis of Blood Traits and Diseases. Cell, 01 Sep",
@@ -8148,7 +8148,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 375,
       "variants": [],
       "references": [
         "Vuckovic D., Bao E.L., et al. The Polygenic and Monogenic Basis of Blood Traits and Diseases. Cell, 01 Sep",
@@ -8326,7 +8326,7 @@
       ],
       "rsids": [],
       "heritability_pct": 8,
-      "risk_loci": null,
+      "risk_loci": 37,
       "variants": [],
       "references": [
         "Dudding T., Haworth S., et al . Genome wide analysis for mouth ulcers identifies associations at immune",
@@ -8460,7 +8460,7 @@
       ],
       "rsids": [],
       "heritability_pct": 15,
-      "risk_loci": null,
+      "risk_loci": 85,
       "variants": [],
       "references": [
         "García A.M., Sánchez-Meca J., et al . Neuroticism and suicidal thoughts: a meta-analytic study. Rev. Esp.",
@@ -8602,7 +8602,7 @@
         "rs12"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 636,
       "variants": [],
       "references": [
         "Vuckovic D., Bao E.L., et al. The Polygenic and Monogenic Basis of Blood Traits and Diseases. Cell, 01 Sep",
@@ -8849,7 +8849,7 @@
       ],
       "rsids": [],
       "heritability_pct": 18,
-      "risk_loci": null,
+      "risk_loci": 37,
       "variants": [],
       "references": [
         "Campos AI, García-Marín LM, Byrne EM, et al . Insights into the aetiology of snoring from observational",
@@ -9071,7 +9071,7 @@
         "rs1"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 1103,
       "variants": [],
       "references": [
         "Chen M.H., Raffield L.M., et al. Trans-ethnic and Ancestry-Specific Blood-Cell Genetics in 746,667",
@@ -9104,7 +9104,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 16,
       "variants": [],
       "references": [
         "Folkersen L., Gustaffson S., et al. Genomic and drug target evaluation of 90 cardiovascular proteins in",
@@ -9199,7 +9199,7 @@
       ],
       "rsids": [],
       "heritability_pct": 32,
-      "risk_loci": null,
+      "risk_loci": 74,
       "variants": [],
       "references": [
         "Eppinga RN, Hagemeijer Y, Burgess S, et al. Identification of genomic loci associated with resting heart",
@@ -9331,7 +9331,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 306,
       "variants": [],
       "references": [
         "Karlsson L.R., Biroli P., et al . Genome-wide association analyses of risk tolerance and risky behaviors in",
@@ -9405,7 +9405,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 25,
       "variants": [],
       "references": [
         "Folkersen L., Gustaffson S., et al. Genomic and drug target evaluation of 90 cardiovascular proteins in",
@@ -9523,7 +9523,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 353,
       "variants": [],
       "references": [
         "Albumin Blood Test. MedlinePlus. National Library of medicine (NIH) [June 2022].",
@@ -9891,7 +9891,7 @@
         "rs1"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 34,
       "variants": [],
       "references": [
         "Liu Y., Basty N., et al. Genetic architecture of 11 organ traits derived from abdominal MRI using deep",
@@ -9931,7 +9931,7 @@
       ],
       "rsids": [],
       "heritability_pct": 44,
-      "risk_loci": null,
+      "risk_loci": 20,
       "variants": [],
       "references": [
         "Li C, Stoma S, Lotta LA, Warner S, et al. Genome-wide Association Analysis in Humans Links Nucleotide",
@@ -10099,7 +10099,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 442,
       "variants": [],
       "references": [
         "Barton AR, Sherman MA, Mukamel RE, et al. Whole-exome imputation within UK Biobank powers rare",
@@ -10172,7 +10172,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 53,
       "variants": [],
       "references": [
         "Timmins I.R., Zaccardi F., et al. Genome-wide association study of self-reported walking pace suggests",
@@ -10284,7 +10284,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 1026,
       "variants": [],
       "references": [
         "Chen M.H., Raffield L.M., et al. Trans-ethnic and Ancestry-Specific Blood-Cell Genetics in 746,667",
@@ -14457,7 +14457,7 @@
         "rs1"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 396,
       "variants": [],
       "references": [
         "Nacarelli GS, Fasolino T, Davis S. Dietary, macronutrient, micronutrient, and nutrigenetic factors impacting",
@@ -14582,7 +14582,7 @@
         "rs1"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 215,
       "variants": [],
       "references": [
         "O'Donnell MJ, Chin SL, Rangarajan S, et al. Global and regional effects of potentially modifiable risk",
@@ -14840,7 +14840,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 453,
       "variants": [],
       "references": [
         "Body fat percentage. UK Biobank Database. Data-Field 23099",
@@ -15069,7 +15069,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 76,
       "variants": [],
       "references": [
         "Medina-Gomez C, Kemp JP, Trajanoska K, et al. Life-Course Genome-wide Association Study Meta-analysis",
@@ -15320,7 +15320,7 @@
         "rs7"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 314,
       "variants": [],
       "references": [
         "Barton AR, Sherman MA, Mukamel RE, Loh PR. Whole-exome imputation within UK Biobank",
@@ -15498,7 +15498,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 628,
       "variants": [],
       "references": [
         "Barton AR, Sherman MA, et al. Whole-exome imputation within UK Biobank powers rare coding variant",
@@ -15623,7 +15623,7 @@
         "rs73181210"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 323,
       "variants": [],
       "references": [
         "National Heart, Lung and Blood Institute (NHLBI) [March 2022] .",
@@ -15842,7 +15842,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 18,
       "variants": [],
       "references": [
         "Folkersen L., Gustaffson S., et al. Genomic and drug target evaluation of 90 cardiovascular proteins in",
@@ -15998,7 +15998,7 @@
         "rs1"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 168,
       "variants": [],
       "references": [
         "Mexican Diabetes Association (AMD) [February 2022] [February 2022] .",
@@ -16299,7 +16299,7 @@
       ],
       "rsids": [],
       "heritability_pct": 29,
-      "risk_loci": null,
+      "risk_loci": 158,
       "variants": [],
       "references": [
         "Gao XR, Huang H, Nannini DR, et al . Genome-wide association analyses identify new loci influencing",
@@ -16618,7 +16618,7 @@
         "rs1"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 329,
       "variants": [],
       "references": [
         "Ponce MC, Sankari A, Sharma S. Pulmonary Function Tests. StatPearls Publishing. 2023 Jan.",
@@ -16974,7 +16974,7 @@
       ],
       "rsids": [],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 268,
       "variants": [],
       "references": [
         "Barton AR, Sherman MA, Mukamel RE, et al. Whole-exome imputation within UK Biobank powers rare",
@@ -17092,7 +17092,7 @@
         "rs1"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 125,
       "variants": [],
       "references": [
         "Evangelou E, Warren HR, Mosen-Ansorena D, et al . Genetic analysis of over 1 million people identifies 535",
@@ -17296,7 +17296,7 @@
         "rs1"
       ],
       "heritability_pct": null,
-      "risk_loci": null,
+      "risk_loci": 241,
       "variants": [],
       "references": [
         "Gill D., Cameron A.C., et al. Urate, Blood Pressure, and cardiovascular disease: Evidence From Mendelian",

@@ -134,7 +134,7 @@ function extractSnpResults(text: string): SnpResult[] {
 /** Extract polygenic / PRS info: risk percentages, loci count, genes analyzed */
 function extractPrsInfo(text: string): ExtractedReport["prs_info"] {
   // Check if this is a PRS-based report (has "Number of risk loci" section)
-  const lociMatch = text.match(/Number\s+of\s+risk\s+loci\s*\n\s*(\d+)\s*loci/i);
+  const lociMatch = text.match(/Number\s+of\s+risk\s+loci\s*\n+\s*(\d+)/i);
   const genesMatch = text.match(
     /Genes\s+analyzed\s*\n([\s\S]*?)(?=\n\s*\n|\nThese results)/
   );
