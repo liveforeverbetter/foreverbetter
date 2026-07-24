@@ -4,14 +4,16 @@ The hosted topology intentionally separates fast API work from full-genome
 analysis:
 
 - FRA: the HTTP API and wearable worker, without a reference volume.
-- AMS: one 4 GB, on-demand WGS Machine with the single encrypted 40 GB
+- AMS: one 4 GB, stopped-between-jobs WGS Machine with the single encrypted 40 GB
   `dbsnp_refs` volume mounted at `/data/reference`.
 
 The API persists a genetics job before requesting the WGS Machine. If the AMS
 Machine is stopped, the dispatcher starts it; if it is already running, it is
 left alone. It refreshes the stopped Machine to the current API image before
 starting it. A capacity failure keeps the job durable and queued rather than
-failing the API request.
+failing the API request. This is on-demand *start*, not create-per-job
+provisioning: the pre-provisioned Machine is required to retain its dbSNP
+volume and durable-storage secret references.
 
 ## Ordinary release
 
@@ -23,14 +25,17 @@ as drift. Instead, run the checked managed release flow:
 # Inspect the expected topology first (no changes).
 npm run deploy:fly -- --app fb-health-api
 
-# Build once, update only FRA API/wearable Machines, then verify /ready.
+# Build once, update every API/wearable Machine, then verify /ready.
 npm run deploy:fly -- --app fb-health-api --execute
 ```
 
-The release command requires exactly one `dbsnp_refs` volume in AMS and one
-Machine attached to it. It updates the FRA API and wearable worker only. The
-next queued genetic job updates and starts the AMS worker automatically, so a
-release never interrupts an active WGS run.
+The release command requires exactly one `dbsnp_refs` volume in AMS. When its
+single WGS Machine is attached, the next queued genetic job updates and starts
+that worker automatically, so a release never interrupts an active WGS run.
+If Fly capacity prevents the worker from being attached, the command still
+releases the API and wearable workers, then reports WGS as degraded. In that
+state, do not requeue WGS analyses; restore the attached worker and its machine
+ID first.
 
 ## Initial WGS worker bootstrap
 
