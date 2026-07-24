@@ -5212,7 +5212,8 @@
         "Zhou H et al. Genome-wide meta-analysis of problematic alcohol use in 435,563 individuals yields insights",
         "into biology and relationships with other traits. Nature Neuroscience, 25; 2020, 23(7):809-818."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A small inherited component (~5-10%) of alcohol-use tendency; environment and habit dominate. Light context, not a label; if drinking is a concern, behavior and support matter far more than genetics.",
+      "needs_consumer_copy": false
     },
     "alcohol_flush_reaction": {
       "trait_id": "alcohol_flush_reaction",
@@ -5241,7 +5242,8 @@
         "Chen CC et al. Interaction between the functional polymorphisms of the alcohol-metabolism genes in",
         "protection against alcoholism. Am J Hum Genet. 1999 Sep;65(3):795-807."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Whether you carry ALDH2 variants that cause the alcohol 'flush' (facial redness, nausea) from slower alcohol breakdown. Flushing is a signal to drink less and is linked to higher risk from heavy drinking.",
+      "needs_consumer_copy": false
     },
     "alkaline_phosphatase_levels": {
       "trait_id": "alkaline_phosphatase_levels",
@@ -6093,7 +6095,8 @@
         "Sproston N.R. et Ashworth J.J. Role of C-Reactive Protein at Sites of Inflammation and Infection. Front",
         "Immunol. 2018; 9: 754."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean for CRP, a key inflammation marker. Your measured CRP (a simple blood test) is what to act on; a higher genetic tendency is a nudge to check it and address sleep, weight, and illness context.",
+      "needs_consumer_copy": false
     },
     "cathepsin_d_levels": {
       "trait_id": "cathepsin_d_levels",
@@ -6155,7 +6158,8 @@
         "Matti C et al. CCR5 deficiency/CCR5?32: resistant to HIV infection at the cost of curtailed CD4 + T cell",
         "memory responses. EMBO J. 2020 Aug 3;39(15):e105854."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Whether you carry the CCR5-delta32 deletion, which hampers HIV's entry into cells and can lower susceptibility. Inherited context only; it does not replace prevention or testing.",
+      "needs_consumer_copy": false
     },
     "cognitive_ability": {
       "trait_id": "cognitive_ability",
@@ -6283,7 +6287,8 @@
         "Lee J.J., Wedow R., et al. Gene discovery and polygenic prediction from a genome-wide association study",
         "of educational attainment in 1.1 million individuals. Nature Genetics, 23 Jul 2018, 50(8):1112-1121."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A research-context signal for cognitive performance, shaped far more by education, environment, health, and sleep than by genes. Interest-only; never a measure of intelligence or potential.",
+      "needs_consumer_copy": false
     },
     "corneal_curvature": {
       "trait_id": "corneal_curvature",
@@ -6469,7 +6474,8 @@
         "polymorphisms is influenced by the time of exposure to malaria. Sci Rep. 2018 Sep 14;8(1):13851.",
         "Reich D et al. Reduced Neutrophil Count in People of African Descent Is Due To a Regulatory Variant in the"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Duffy-antigen status, linked to resistance to Plasmodium vivax malaria and more common in African-ancestry populations. Ancestry-linked context, not a clinical instruction.",
+      "needs_consumer_copy": false
     },
     "earlobe_type": {
       "trait_id": "earlobe_type",
@@ -6662,7 +6668,8 @@
         "Höglund J, Hadizadeh F, et al. Gene-Based Variant Analysis of Whole-Exome Sequencing in Relation to",
         "Eosinophil Count. Front Immunol. 2022; 13: 862255."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic tendency for eosinophil levels, immune cells tied to allergy and parasite response. Your measured blood count is what matters; genetics is background for interpreting it.",
+      "needs_consumer_copy": false
     },
     "epigenetic_aging": {
       "trait_id": "epigenetic_aging",
@@ -6704,7 +6711,8 @@
         "DNA methylation biomarkers of aging. Genome Biol. 2021 Jun 29;22(1):194.",
         "National Institute on Aging (NIA) [March 2021]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Your genetic lean toward faster or slower biological aging (as read by DNA-methylation clocks). Aging is highly modifiable; pair this with a measured methylation age if you have one, plus sleep, training, and metabolic health, which move it most.",
+      "needs_consumer_copy": false
     },
     "estradiol_levels": {
       "trait_id": "estradiol_levels",
@@ -6888,7 +6896,8 @@
         "Zargarán D., Zoller F., et al . Facial skin aging: Key concepts and overview of processes. Int J Cosmet Sci.",
         "2022 Aug; 44(4): 414-420."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "An inherited tendency for visible skin aging. Sun exposure, smoking, and skincare drive far more of the outcome than genetics; treat this as light context.",
+      "needs_consumer_copy": false
     },
     "frequency_of_bowel_movements": {
       "trait_id": "frequency_of_bowel_movements",
@@ -7450,7 +7459,8 @@
         "allele-specific real-time polymerase chain reaction in a heterogeneous population compared to flow",
         "cytometry and single nucleotide polymorphism detection assays. Pathology. 2020;52(2):256-261."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Whether you likely carry HLA-B27, a marker linked to certain autoimmune conditions (e.g. ankylosing spondylitis). A flag for clinical context, not a diagnosis; confirm with a proper HLA-B27 test if relevant.",
+      "needs_consumer_copy": false
     },
     "insomnia": {
       "trait_id": "insomnia",
@@ -7562,7 +7572,8 @@
         "Roth T. Insomnia: definition, prevalence, etiology, and consequences. J Clin Sleep Med. 2007 Aug 15;3(5",
         "Suppl):S7-10."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean toward insomnia; studies attribute roughly 38-59% of the variation to genetics. Read it as context, not a diagnosis; compare with your actual sleep patterns and see a clinician if sleepless nights persist.",
+      "needs_consumer_copy": false
     },
     "intensity_of_itching_due_to_mosquito_bites": {
       "trait_id": "intensity_of_itching_due_to_mosquito_bites",
@@ -7826,7 +7837,8 @@
         "Lin B.D., Willemsen G., et al. Heritability and GWAS Studies for Monocyte-Lymphocyte RatioTwin Res Hum",
         "Genet . 2017 Apr;20(2):97-107."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "An inherited tendency for lymphocyte levels, central immune cells. A measured blood count, read with infection and nutrition context, is the actionable value.",
+      "needs_consumer_copy": false
     },
     "male_baldness": {
       "trait_id": "male_baldness",
@@ -8028,7 +8040,8 @@
         "attention: Evidence from middle childhood and adulthood. PLoS One. 2019;14(8):e0221353. Published",
         "2019 Aug 22."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A research signal for reasoning and processing speed. Age, sleep, stress, and practice move it far more than genetics; treat it as context, not a verdict.",
+      "needs_consumer_copy": false
     },
     "monocyte_count": {
       "trait_id": "monocyte_count",
@@ -8158,7 +8171,8 @@
         "Crosslin D.R., McDavid A., et al. Genetic variation associated with circulating monocyte count in the",
         "eMERGE Network. Hum Mol Genet. 2013 May 15; 22(10): 2119-2127."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in monocyte levels, immune cells that fight infection. A measured count is the real signal; genetics is background.",
+      "needs_consumer_copy": false
     },
     "morning_circadian_rythm_morning_person": {
       "trait_id": "morning_circadian_rythm_morning_person",
@@ -8276,7 +8290,8 @@
         "Skarke C., Lahens N.F. et al . A Pilot Characterization of the Human Chronobiome. Scientific Reports, 07",
         "Dec 2017, 7(1):17141."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Your inherited lean toward being a morning or evening person. Line it up with your real sleep timing and light exposure; consistent wake times and morning light shift your rhythm regardless of the tendency.",
+      "needs_consumer_copy": false
     },
     "mouth_ulcers": {
       "trait_id": "mouth_ulcers",
@@ -8470,7 +8485,8 @@
         "Luciano M., Hagenaars S.P., et al . Association analysis in over 329,000 individuals identifies 116",
         "independent variants influencing neuroticism. Nature Genetics, 18 Dec 2017, 50(1):6-11."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A small inherited component (~15%) of the tendency toward negative emotions. Current stress, sleep, support, and circumstances dominate; this is context, not a personality label or a mental-health prediction.",
+      "needs_consumer_copy": false
     },
     "neutrophil_count": {
       "trait_id": "neutrophil_count",
@@ -8609,7 +8625,8 @@
         "2020, 182(5):1214-1231.e11.",
         "Skokowa J., Dale D.C., et al. Severe congenital neutropenias. Nat Rev Dis Primers. 2017 Jun 8; 3: 17032."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "An inherited tendency for neutrophil levels, the front-line infection-fighting cells. A measured count is what to interpret; some ancestries run lower normal ranges.",
+      "needs_consumer_copy": false
     },
     "nicotine_dependence_after_prolonged_consumption": {
       "trait_id": "nicotine_dependence_after_prolonged_consumption",
@@ -8857,7 +8874,8 @@
         "Medline Plus [July 2021].",
         "MSD Manuals [Feb 2023]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A modest inherited tendency toward snoring (~18% heritable). Loud snoring with pauses can point to sleep apnea worth checking; compare with any sleep-tracking or partner reports.",
+      "needs_consumer_copy": false
     },
     "psa_prostate_specific_antigen_levels": {
       "trait_id": "psa_prostate_specific_antigen_levels",
@@ -9814,7 +9832,8 @@
         "habitual sleep duration supported by accelerometer-derived estimates. Nature Communications, 07 Mar",
         "2019, 10(1):1100."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Sleep need is meaningfully inherited (genetics may set up to ~45% of habitual duration). Compare this tendency with your tracked sleep; even natural short sleepers do better protecting a consistent, sufficient sleep window.",
+      "needs_consumer_copy": false
     },
     "smell": {
       "trait_id": "smell",
@@ -9940,7 +9959,8 @@
         "diseases. Nat Cell Biol. 2022 Feb;24(2):135-147.",
         "Telomere. National Human Genome Research Institute (NIH) [July 2024]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Telomere length is a partly inherited (~44%) cellular-aging marker that shortens with age and stress. A measured telomere test, plus sleep, exercise, and lower inflammation, tells you more than the tendency alone.",
+      "needs_consumer_copy": false
     },
     "thyroid_function_tsh_levels": {
       "trait_id": "thyroid_function_tsh_levels",
@@ -10294,7 +10314,8 @@
         "Crosslin D.R., McDavid A., et al. Genetic variants associated with the white blood cell count in 13,923",
         "subjects in the eMERGE Network. Hum Genet. 2012 Apr;131(4):639-52."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic tendency for overall white-blood-cell level. Your measured count is the number that counts; this adds context for interpreting it.",
+      "needs_consumer_copy": false
     },
     "gene_comt": {
       "trait_id": "gene_comt",
@@ -14324,7 +14345,8 @@
         "27;7(39):62954-62965.",
         "Minlikeeva A.N., Browne R.W., et al. Single-Nucleotide Polymorphisms and Markers of Oxidative Stress in"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Your genetic lean in antioxidant enzymes (glutathione peroxidase, catalase) that clear reactive oxygen species. Colorful-plant diet, sleep, and training influence this more; treat as context.",
+      "needs_consumer_copy": false
     },
     "apolipoprotein_a1_levels": {
       "trait_id": "apolipoprotein_a1_levels",
@@ -14631,7 +14653,8 @@
         "Drayna D. Human taste genetics. Annu Rev Genomics Hum Genet. 2005;6:21735.",
         "Smail H.O. The roles of genes in the bitter taste. AIMS Genet. 2019; 6(4): 8897."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How strongly you taste bitter compounds (via TAS2R variants), which can nudge food and vegetable preferences. No health action; just self-knowledge.",
+      "needs_consumer_copy": false
     },
     "blood_glucose": {
       "trait_id": "blood_glucose",
@@ -15104,7 +15127,8 @@
         "Childs E., Hohoff C., et al. Association between ADORA2A and DRD2 polymorphisms and caffeine-induced",
         "anxiety. Neuropsychopharmacology. 2008 Nov;33(12):2791-800."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genes shape caffeine's anxiety-provoking effect via adenosine receptors. If caffeine makes you jittery, this adds context; try lower doses and earlier timing and watch your own response, resting HR, and sleep.",
+      "needs_consumer_copy": false
     },
     "caffeine_and_sports_performance": {
       "trait_id": "caffeine_and_sports_performance",
@@ -15137,7 +15161,8 @@
         "for Definitive Findings. Front Sports Act Living. 2020 Dec 11;2:574854.",
         "Wang J, Dewi L, Peng Y, et al. Does ergogenic effect of caffeine supplementation depend on CYP1A2"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your CYP1A2 genetics shape caffeine's performance (ergogenic) effect. If you use caffeine before training, test dose and timing against your actual performance and how you feel.",
+      "needs_consumer_copy": false
     },
     "caffeine_dependence_after_prolonged_consumption": {
       "trait_id": "caffeine_dependence_after_prolonged_consumption",
@@ -15196,7 +15221,8 @@
         "Barcelos RP, Lima FD, Carvalho NR, Bresciani G, Royes LF. Caffeine effects on systemic metabolism,",
         "oxidative-inflammatory pathways, and exercise performance. Nutr Res. 2020 Aug;80:1-17."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Genetic context for how much caffeine you tend to consume. Combine it with your own tolerance, sleep, and resting HR; the tendency is not a prescription.",
+      "needs_consumer_copy": false
     },
     "calcium_levels": {
       "trait_id": "calcium_levels",
@@ -15887,7 +15913,8 @@
         "Hong X., Hao K., et al. Genome-wide association study identifies peanut allergy-specific loci and evidence",
         "of epigenetic mediation in US children. Nat Commun. 2015 Feb 24;6:6304."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "An inherited lean in peanut-allergy risk. Genetics is only part of the picture; actual symptoms and clinical testing are decisive, so never self-diagnose from this.",
+      "needs_consumer_copy": false
     },
     "glycated_hemoglobin_levels": {
       "trait_id": "glycated_hemoglobin_levels",
@@ -16181,7 +16208,8 @@
         "May;10(5):867-83.",
         "García-Martín E., Martínez C.., et al. Diamine oxidase rs10156191 and rs2052129 variants are associated"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Your genetic capacity to break down dietary histamine (via the DAO and HNMT enzymes). If high-histamine foods trigger symptoms, this adds context; an elimination trial and clinical review confirm it.",
+      "needs_consumer_copy": false
     },
     "intraocular_pressure": {
       "trait_id": "intraocular_pressure",
@@ -16344,7 +16372,8 @@
         "interacts with Oct-1 and stimulates lactase promoter activity in vitro. Hum Mol Genet. 2005 Dec",
         "15;14(24):3945-53."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Whether you carry the variant that keeps the lactase enzyme active into adulthood (lactose tolerance). Compare with how dairy actually affects you; your symptoms are the real test.",
+      "needs_consumer_copy": false
     },
     "ldl_cholesterol_levels": {
       "trait_id": "ldl_cholesterol_levels",
@@ -16485,7 +16514,8 @@
         "of ?-Carotene and the Daily Intake of Carotenoids in Healthy Japanese WomenPLoS One. 2016;",
         "11(12): e0168857."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in circulating beta-carotene and vitamin A. A measured level plus colorful-vegetable intake is what to act on; genetics is background.",
+      "needs_consumer_copy": false
     },
     "long_chain_omega_fatty_acids_levels": {
       "trait_id": "long_chain_omega_fatty_acids_levels",
@@ -16518,7 +16548,8 @@
         "2011 Jul;7(7):e1002193.",
         "Krupa K., Fritz K., et al. (2022) Omega-3 Fatty Acids. StatPearls."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Your genetic tendency in omega-3/6 levels, fats you cannot fully make yourself. Pair with oily-fish intake or a measured omega-3 index rather than acting on the tendency alone.",
+      "needs_consumer_copy": false
     },
     "lung_function_exhaled_air_volume": {
       "trait_id": "lung_function_exhaled_air_volume",
@@ -16851,7 +16882,8 @@
         "Venditti C., Musa-Veloso K., et al. Determinants of Sweetness Preference: A Scoping Review of Human",
         "Studies. Nutrients. 2020 Mar; 12(3): 718."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "An inherited lean toward liking sweet foods. Useful self-awareness for managing intake; environment and habit are stronger drivers.",
+      "needs_consumer_copy": false
     },
     "serum_phosphate_levels": {
       "trait_id": "serum_phosphate_levels",
@@ -17346,7 +17378,8 @@
         "Ankar A. et Kumar A. (2021) Vitamin B12 Deficiency. StatPearls.",
         "OLeary F. et Samman S. Vitamin B12 in Health and Disease. Nutrients. 2010 Mar; 2(3): 299316."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "B12 levels are notably inherited (~60% of the variation) alongside diet. A measured B12 is what to act on, especially on a low-animal-product diet; a genetic lean toward low levels is a reason to test.",
+      "needs_consumer_copy": false
     },
     "vitamin_c_levels": {
       "trait_id": "vitamin_c_levels",
@@ -17377,7 +17410,8 @@
         "Mendelian Randomization Analysis in European Populations. Diabetes Care, 17 Nov 2020, 44(1):98-106",
         "Muhammad A., Jamil R.T., et al. (2022) Vitamin C (Ascorbic Acid). StatPearls"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic tendency in vitamin C levels, alongside diet. A measured level plus fruit and veg intake is what matters; genetics is context.",
+      "needs_consumer_copy": false
     },
     "vitamin_d_levels": {
       "trait_id": "vitamin_d_levels",
@@ -17436,7 +17470,8 @@
         "National Library of Medicine (NIH). Office of Dietary Supplements [April 2022]",
         "National Health Service in England (NHS). Vitamin D [August 2020]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Vitamin D levels are partly inherited and strongly sun- and diet-driven. Measure serum 25-OH vitamin D before changing supplementation; a genetic lean toward low levels is a reason to test.",
+      "needs_consumer_copy": false
     },
     "vitamin_e_levels": {
       "trait_id": "vitamin_e_levels",
@@ -17477,7 +17512,8 @@
         "Wang T, Xu L. Circulating Vitamin E Levels and Risk of Coronary Artery Disease and Myocardial Infarction:",
         "A Mendelian Randomization Study. Nutrients. 2019;11(9):2153."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in vitamin E levels. Deficiency is rare with a normal diet; a measured level is the real signal if there is concern.",
+      "needs_consumer_copy": false
     }
   }
 }
