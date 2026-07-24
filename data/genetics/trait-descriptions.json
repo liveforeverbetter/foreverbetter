@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "note": "Hand-authored consumer copy per trait (our own words), merged into the curated catalog. Keyed by trait_id. consumer_value = how to read this genetic tendency alongside your measured biomarkers and wearable data.",
+  "descriptions": {
+    "resting_heart_rate": { "consumer_value": "Resting heart rate is meaningfully heritable but very trainable. Compare this inherited tendency with your wearable's resting-HR trend; a lower, stable resting rate usually reflects good cardiovascular fitness." },
+    "systolic_blood_pressure_levels": { "consumer_value": "An inherited tendency toward higher or lower systolic (top-number) blood pressure. Repeated validated home or clinic readings are decisive; treat this as one input, not a verdict." },
+    "diastolic_blood_pressure_levels": { "consumer_value": "An inherited tendency for diastolic (bottom-number) blood pressure. Confirm with repeated measured readings; lifestyle and the actual numbers take precedence." },
+    "ldl_cholesterol_levels": { "consumer_value": "A tendency toward higher or lower LDL ('bad') cholesterol, a core driver of cardiovascular risk. A higher tendency is a reason to measure LDL or ApoB directly and act on the number." },
+    "hdl_cholesterol_levels": { "consumer_value": "A tendency for HDL ('good') cholesterol. Use a current lipid panel to see your real level; the inherited signal is background context." },
+    "apolipoprotein_b_levels": { "consumer_value": "ApoB counts the artery-clogging cholesterol particles that best predict heart-disease risk. A higher genetic tendency is a strong nudge to measure ApoB directly and keep it low." },
+    "apolipoprotein_a1_levels": { "consumer_value": "ApoA1 is the main protein in HDL cholesterol. Read this tendency next to a measured ApoA1 or HDL result; the blood test is what counts." },
+    "qt_intervals": { "consumer_value": "Genetic context for the heart's electrical recovery time (the QT interval). Most useful before starting medicines that can lengthen QT; pair with an ECG rather than acting on genetics alone." },
+    "blood_coagulation_factor_v_leiden_and_20210g_a": { "consumer_value": "These clotting-factor variants raise the tendency to form blood clots. Worth flagging before long flights, surgery, or hormonal therapy, and if you have a personal or family history of clots; discuss with a clinician." },
+    "blood_glucose": { "consumer_value": "An inherited tendency for fasting glucose. Read it beside your measured glucose, HbA1c, and any continuous-glucose data; the numbers, plus post-meal movement and sleep, are what you act on." },
+    "prediction_of_visceral_adipose_tissue": { "consumer_value": "A tendency toward visceral fat (stored around the organs), which carries more cardiometabolic risk than fat elsewhere. Pair with a waist measurement; it responds well to sleep, resistance training, protein/fibre, and fewer refined carbs." },
+    "body_fat_percentage": { "consumer_value": "An inherited tendency for body-fat level. Compare with a measured method (DEXA or impedance) and your waist; training, diet, and sleep dominate the actual outcome." },
+    "body_mass_index": { "consumer_value": "BMI has genetic contributors but is a coarse signal. Use measured waist, body fat, and strength for a truer picture of body composition." },
+    "basal_metabolic_rate": { "consumer_value": "Your genetic tendency for resting energy burn. Combine with measured weight, body composition, and activity; BMR genetics rarely explains weight on its own." },
+    "urate_levels": { "consumer_value": "A higher urate tendency can mean higher gout risk and links to diet and metabolic health. If you've had gout or a high measured urate, this adds context; hydration, weight, and alcohol/purine intake matter." },
+    "creatinine_levels": { "consumer_value": "A creatinine tendency, used to estimate kidney filtration. A measured creatinine or eGFR is the actionable value; the inherited signal is background." },
+    "calcium_levels": { "consumer_value": "Genetic context for blood-calcium regulation. A measured calcium, alongside vitamin D and PTH when relevant, is what to interpret." },
+    "serum_phosphate_levels": { "consumer_value": "Genetic context for blood phosphate. Interpret alongside a measured phosphate and kidney function." },
+    "serum_albumin_levels": { "consumer_value": "Albumin is a general liver and nutrition protein marker. Use this tendency as context for a measured albumin result." },
+    "alkaline_phosphatase_levels": { "consumer_value": "ALP is a liver- and bone-related enzyme. This is background for interpreting a measured ALP result, not a standalone signal." },
+    "bilirubin_levels": { "consumer_value": "A bilirubin tendency, often reflecting Gilbert's-type variants. Mildly higher levels are usually benign; use this to interpret a blood result." },
+    "liver_iron_levels": { "consumer_value": "Genetic context for how the liver handles iron. Pair with ferritin and iron studies; a measured panel matters far more than the tendency." },
+    "birth_weight": { "consumer_value": "A largely historical trait with genetic contributors and limited day-to-day relevance now." }
+  }
+}
