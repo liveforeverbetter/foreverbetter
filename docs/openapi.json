@@ -1,9 +1,9 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "wellnizz API",
+    "title": "Wellnizz API",
     "version": "0.5.2",
-    "description": "wellnizz API and MCP-compatible service for genetics, biomarkers, wearables, lab discovery, dashboard specs, action plans, and hosted billing.",
+    "description": "Wellnizz API and MCP-compatible service for genetics, biomarkers, wearables, lab discovery, dashboard specs, action plans, and hosted billing.",
     "x-guidance": "Use /openapi.json to discover the API. For a payable operation, make the exact request without credentials, select a compatible option from PAYMENT-REQUIRED, then retry unchanged with PAYMENT-SIGNATURE. x402 payments create a payer-scoped private workspace; do not send user_id or organization_id. Use GET /.well-known/x402.json for the live route and price catalog."
   },
   "servers": [
@@ -2327,7 +2327,7 @@
     },
     "/api/v1/sdk/users/{user_id}/sync": {
       "post": {
-        "summary": "Push Google Health Connect readings from the wellnizz mobile SDK",
+        "summary": "Push Google Health Connect readings from the Wellnizz mobile SDK",
         "security": [
           {
             "bearerAuth": []
@@ -2422,7 +2422,7 @@
             }
           }
         },
-        "description": "Push user-authorized Google Health Connect readings through the stable wellnizz mobile SDK envelope."
+        "description": "Push user-authorized Google Health Connect readings through the stable Wellnizz mobile SDK envelope."
       }
     },
     "/connections/wearables/jobs/{id}": {
@@ -8148,7 +8148,7 @@
       "scopes": [
         "health:connections:write"
       ],
-      "description": "Push user-authorized Google Health Connect readings through the stable wellnizz mobile SDK envelope."
+      "description": "Push user-authorized Google Health Connect readings through the stable Wellnizz mobile SDK envelope."
     },
     {
       "id": "connections.jobs.read",
@@ -8309,6 +8309,17 @@
         "health:data:read"
       ],
       "description": "Read queued WGS/SNP-array analysis status, progress stage, retry state, and reanalysis recommendation."
+    },
+    {
+      "id": "genetics.slice.read",
+      "method": "GET",
+      "path": "/analyses/:id/genetic-slice",
+      "category": "genetics",
+      "scopes": [
+        "health:data:read"
+      ],
+      "mcpTool": "query_genetic_slice",
+      "description": "Query a completed genetic analysis by gene, rsID, or significance without downloading the full artifact."
     },
     {
       "id": "design_implementation.read",
