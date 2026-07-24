@@ -20,6 +20,16 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const REPORTS_DIR = path.join(ROOT, 'extracted-report-data', 'reports');
 const OUT = path.join(ROOT, 'data', 'genetics', 'curated-traits.json');
+const DESCRIPTIONS_FILE = path.join(ROOT, 'data', 'genetics', 'trait-descriptions.json');
+
+// Hand-authored consumer copy (our own words), merged in by trait_id.
+function authoredDescriptions(): Record<string, { consumer_value?: string; description?: string }> {
+  try {
+    return JSON.parse(fs.readFileSync(DESCRIPTIONS_FILE, 'utf8')).descriptions ?? {};
+  } catch {
+    return {};
+  }
+}
 
 // Health-domain taxonomy (Phase 1b). A trait maps to one domain by keyword; the
 // source category is a fallback signal.
@@ -80,6 +90,7 @@ interface CuratedTrait {
   variants: Array<{ rsid: string; gene: string; genotype?: string }>;
   references: string[];
   // Consumer prose is authored separately (never copied verbatim).
+  consumer_value?: string;
   needs_consumer_copy: boolean;
 }
 
@@ -98,6 +109,7 @@ function readReports(): any[] {
 
 function build(): void {
   const reports = readReports().filter(r => r.parsed_successfully);
+  const authored = authoredDescriptions();
   const traits: Record<string, CuratedTrait> = {};
 
   for (const r of reports) {
@@ -132,7 +144,8 @@ function build(): void {
       risk_loci: riskLoci(r),
       variants,
       references: (r.bibliography ?? []).slice(0, 8),
-      needs_consumer_copy: true,
+      ...(authored[id]?.consumer_value ? { consumer_value: authored[id].consumer_value } : {}),
+      needs_consumer_copy: !authored[id]?.consumer_value,
     };
   }
 

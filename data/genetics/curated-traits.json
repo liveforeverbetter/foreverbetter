@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "version": "1.0.0",
-  "updated": "2026-07-23",
+  "updated": "2026-07-24",
   "note": "Curated genetics trait catalog. Structured facts only (genes, rsIDs, heritability, loci, citations, domain). Consumer prose authored separately.",
   "total_traits": 401,
   "by_domain": {
@@ -5354,7 +5354,8 @@
         "Pazoki R, Vujkovic M, Elliott J, et al. Genetic analysis in European ancestry individuals identifies 517 loci",
         "associated with liver enzymes. Nat Commun. 2021 May 10;12(1):2579. doi: 10.1038/s41467-021-22338-2."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "ALP is a liver- and bone-related enzyme. This is background for interpreting a measured ALP result, not a standalone signal.",
+      "needs_consumer_copy": false
     },
     "asparagus_odor_detection": {
       "trait_id": "asparagus_odor_detection",
@@ -5644,7 +5645,8 @@
         "McMurray RG, Soares J, Caspersen CJ, McCurdy T. Examining variations of resting metabolic rate of",
         "adults: a public health perspective. Med Sci Sports Exerc. 2014 Jul;46(7):1352-8."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Your genetic tendency for resting energy burn. Combine with measured weight, body composition, and activity; BMR genetics rarely explains weight on its own.",
+      "needs_consumer_copy": false
     },
     "bilirubin_levels": {
       "trait_id": "bilirubin_levels",
@@ -5776,7 +5778,8 @@
         "levels. Hum Mol Genet. 2009 Jul 15;18(14):2700-10.",
         "Vítek L, Tiribelli C. Bilirubin: The yellow hormone? J Hepatol. 2021 Dec;75(6):1485-1490."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A bilirubin tendency, often reflecting Gilbert's-type variants. Mildly higher levels are usually benign; use this to interpret a blood result.",
+      "needs_consumer_copy": false
     },
     "birth_weight": {
       "trait_id": "birth_weight",
@@ -5899,7 +5902,8 @@
         "Medline Plus. Birth Weight [May 2022]",
         "Warrington NM et al. Maternal and fetal genetic effects on birth weight and their relevance to cardiometabolic risk factors. Nature Genetics, 01 May 2019, 51(5):804-814."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A largely historical trait with genetic contributors and limited day-to-day relevance now.",
+      "needs_consumer_copy": false
     },
     "blood_coagulation_factor_v_leiden_and_20210g_a": {
       "trait_id": "blood_coagulation_factor_v_leiden_and_20210g_a",
@@ -5939,7 +5943,8 @@
         "Doherty TM, Kelley A. Bleeding Disorders. 2019 Jun 16. StatPearls [Internet]. Treasure Island (FL):",
         "StatPearls Publishing; 2020 Jan-."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "These clotting-factor variants raise the tendency to form blood clots. Worth flagging before long flights, surgery, or hormonal therapy, and if you have a personal or family history of clots; discuss with a clinician.",
+      "needs_consumer_copy": false
     },
     "blood_group_abo_rh": {
       "trait_id": "blood_group_abo_rh",
@@ -7700,7 +7705,8 @@
         "Wilman HR, Parisinos CA, Atabaki-Pasdar N, et al. Genetic studies of abdominal MRI data identify genes",
         "regulating hepcidin as major determinants of liver iron concentration. J Hepatol. 2019 Sep;71(3):594-602."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Genetic context for how the liver handles iron. Pair with ferritin and iron studies; a measured panel matters far more than the tendency.",
+      "needs_consumer_copy": false
     },
     "lymphocyte_count": {
       "trait_id": "lymphocyte_count",
@@ -8948,7 +8954,8 @@
         "Arking DE et al. Genetic association study of QT interval highlights role for calcium signaling pathways in",
         "myocardial repolarization. Nature Genetics, 22 Jun 2014, 46(8):826-836."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Genetic context for the heart's electrical recovery time (the QT interval). Most useful before starting medicines that can lengthen QT; pair with an ECG rather than acting on genetics alone.",
+      "needs_consumer_copy": false
     },
     "red_blood_cell_count": {
       "trait_id": "red_blood_cell_count",
@@ -9200,7 +9207,8 @@
         "Your heart rate. British Heart Foundation [July 2022].",
         "Pulse. MedlinePlus. National Library of medicine (NIH) [Feb 2023]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Resting heart rate is meaningfully heritable but very trainable. Compare this inherited tendency with your wearable's resting-HR trend; a lower, stable resting rate usually reflects good cardiovascular fitness.",
+      "needs_consumer_copy": false
     },
     "risk_tendency": {
       "trait_id": "risk_tendency",
@@ -9524,7 +9532,8 @@
         "Moman RN, Gupta N, Varacallo M. Physiology, Albumin. 2022 Dec 26. In: StatPearls [Internet]. Treasure",
         "Island (FL): StatPearls Publishing; 2024 Jan-."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Albumin is a general liver and nutrition protein marker. Use this tendency as context for a measured albumin result.",
+      "needs_consumer_copy": false
     },
     "sex_hormone_regulation_shbg": {
       "trait_id": "sex_hormone_regulation_shbg",
@@ -14460,7 +14469,8 @@
         "Richardson TG, Sanderson E, Palmer TM, et al. Evaluating the relationship between circulating lipoprotein",
         "lipids and apolipoproteins with risk of coronary heart disease: A multivariable Mendelian randomisation"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "ApoA1 is the main protein in HDL cholesterol. Read this tendency next to a measured ApoA1 or HDL result; the blood test is what counts.",
+      "needs_consumer_copy": false
     },
     "apolipoprotein_b_levels": {
       "trait_id": "apolipoprotein_b_levels",
@@ -14584,7 +14594,8 @@
         "Sniderman AD, Thanassoulis G, Glavinovic T, et al. Apolipoprotein B Particles and Cardiovascular Disease:",
         "A Narrative Review. JAMA Cardiol. 2019 Dec 1;4(12):1287-1295."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "ApoB counts the artery-clogging cholesterol particles that best predict heart-disease risk. A higher genetic tendency is a strong nudge to measure ApoB directly and keep it low.",
+      "needs_consumer_copy": false
     },
     "bitter_taste_perception": {
       "trait_id": "bitter_taste_perception",
@@ -14715,7 +14726,8 @@
         "Centers for Disease Control and Prevention (CDC) [April 2022].",
         "NIH: National Institute of Diabetes and Digestive and Kidney Diseases [July 2021]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "An inherited tendency for fasting glucose. Read it beside your measured glucose, HbA1c, and any continuous-glucose data; the numbers, plus post-meal movement and sleep, are what you act on.",
+      "needs_consumer_copy": false
     },
     "body_fat_percentage": {
       "trait_id": "body_fat_percentage",
@@ -14838,7 +14850,8 @@
         "observational study for lifestyle modification and genotyping. Scientific Reports volume 11, Article",
         "number: 13180 (2021)."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "An inherited tendency for body-fat level. Compare with a measured method (DEXA or impedance) and your waist; training, diet, and sleep dominate the actual outcome.",
+      "needs_consumer_copy": false
     },
     "body_mass_index": {
       "trait_id": "body_mass_index",
@@ -14970,7 +14983,8 @@
         "National Heart, Lung, and Blood Institute (NIH) [April 2022]",
         "Word Health Organization (WHO) [March 2022]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "BMI has genetic contributors but is a coarse signal. Use measured waist, body fat, and strength for a truer picture of body composition.",
+      "needs_consumer_copy": false
     },
     "bone_mineral_density": {
       "trait_id": "bone_mineral_density",
@@ -15316,7 +15330,8 @@
         "Tinawi M. Disorders of Calcium Metabolism: Hypocalcemia and Hypercalcemia. Cureus. 2021",
         "Jan 1;13(1):e12420."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Genetic context for blood-calcium regulation. A measured calcium, alongside vitamin D and PTH when relevant, is what to interpret.",
+      "needs_consumer_copy": false
     },
     "celiac_disease_predisposition": {
       "trait_id": "celiac_disease_predisposition",
@@ -15493,7 +15508,8 @@
         "De Rosa S, Greco M, Rauseo M, Annetta MG. The Good, the Bad, and the Serum Creatinine: Exploring the",
         "Effect of Muscle Mass and Nutrition. Blood Purif. 2023;52(9-10):775-785."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A creatinine tendency, used to estimate kidney filtration. A measured creatinine or eGFR is the actionable value; the inherited signal is background.",
+      "needs_consumer_copy": false
     },
     "diastolic_blood_pressure_levels": {
       "trait_id": "diastolic_blood_pressure_levels",
@@ -15615,7 +15631,8 @@
         "regulation through meta-analysis of 1.3 million individuals. Nat Genet. 2020 Dec;52(12):1314-1332.",
         "Word Health Organization (WHO) [March 2023]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "An inherited tendency for diastolic (bottom-number) blood pressure. Confirm with repeated measured readings; lifestyle and the actual numbers take precedence.",
+      "needs_consumer_copy": false
     },
     "exercise_induced_muscle_damage_initial_phase": {
       "trait_id": "exercise_induced_muscle_damage_initial_phase",
@@ -16124,7 +16141,8 @@
         "März W., Kleber M.E., et al. HDL cholesterol: reappraisal of its clinical relevanceClin Res Cardiol. 2017;",
         "106(9): 663675."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A tendency for HDL ('good') cholesterol. Use a current lipid panel to see your real level; the inherited signal is background context.",
+      "needs_consumer_copy": false
     },
     "histamine_intolerance": {
       "trait_id": "histamine_intolerance",
@@ -16433,7 +16451,8 @@
         "Pirahanchi Y., Sinawe H., et al. Biochemistry, LDL Cholesterol. StatPearls",
         "Lee Y. et Siddiqui W.J. Cholesterol Levels. StatPearls"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A tendency toward higher or lower LDL ('bad') cholesterol, a core driver of cardiovascular risk. A higher tendency is a reason to measure LDL or ApoB directly and act on the number.",
+      "needs_consumer_copy": false
     },
     "levels_of_vitamin_a_beta_carotene": {
       "trait_id": "levels_of_vitamin_a_beta_carotene",
@@ -16801,7 +16820,8 @@
         "subcutaneous vs. visceral adipose tissue differentially contribute to metabolic dysfunction and",
         "atherogenic risk of patients with obesity. Sci Rep, 2021; 11, 1831."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A tendency toward visceral fat (stored around the organs), which carries more cardiometabolic risk than fat elsewhere. Pair with a waist measurement; it responds well to sleep, resistance training, protein/fibre, and fewer refined carbs.",
+      "needs_consumer_copy": false
     },
     "preference_for_sweets": {
       "trait_id": "preference_for_sweets",
@@ -16961,7 +16981,8 @@
         "coding variant coding association and fine-mapping analyses. Nat Genet. 2021 Aug;53(8):1260-1269.",
         "Phosphate in Blood. MedlinePlus. National Library of medicine (NIH) [October 2023]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Genetic context for blood phosphate. Interpret alongside a measured phosphate and kidney function.",
+      "needs_consumer_copy": false
     },
     "systolic_blood_pressure_levels": {
       "trait_id": "systolic_blood_pressure_levels",
@@ -17079,7 +17100,8 @@
         "National Heart, Lung and Blood Institute (NHLBI) [March 2022] .",
         "Word Health Organization (WHO) [March 2023]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "An inherited tendency toward higher or lower systolic (top-number) blood pressure. Repeated validated home or clinic readings are decisive; treat this as one input, not a verdict.",
+      "needs_consumer_copy": false
     },
     "tendinopathies_in_lower_extremities_legs": {
       "trait_id": "tendinopathies_in_lower_extremities_legs",
@@ -17283,7 +17305,8 @@
         "Yu-Lin Ko. Genetics of hyperuricemia and gout: Insights from recent genome-wide association studies and",
         "Mendelian randomization studies. Tzu Chi Med J. 2022 Jul-Sep; 34(3): 261-269."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A higher urate tendency can mean higher gout risk and links to diet and metabolic health. If you've had gout or a high measured urate, this adds context; hydration, weight, and alcohol/purine intake matter.",
+      "needs_consumer_copy": false
     },
     "vitamin_b12_levels": {
       "trait_id": "vitamin_b12_levels",
