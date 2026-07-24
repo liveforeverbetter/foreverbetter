@@ -120,7 +120,7 @@ function crossModalReading(label: string, measured: { value: number; unit?: stri
   const value = measured ? `${measured.value}${measured.unit ? ` ${measured.unit}` : ''}` : '';
   if (measured && hasGenetic) {
     const share = heritability != null ? `~${heritability}%` : 'a modest share';
-    return `Your measured ${lower} (${value}) is the number to act on. Genetics explains ${share} of the baseline for this trait and is largely trainable, so most of your result reflects fitness, lifestyle, and current physiology.`;
+    return `Your measured ${lower} (${value}) is the number to act on. Genetics explains ${share} of the baseline for this trait.`;
   }
   if (hasGenetic) {
     const share = heritability != null ? ` (heritability ${heritability}%)` : '';
