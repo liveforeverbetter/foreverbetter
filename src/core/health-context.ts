@@ -43,6 +43,7 @@ export function buildHealthContext(input: HealthContextOptions) {
     },
     priority_findings: derived.slice(0, Math.min(Math.max(input.maxFindings ?? 12, 1), 50)).map(findingSummary),
     modality_contexts: buildModalityContexts(input.observations, derived),
+    cross_modality: buildCrossModality(input.observations, derived),
     data_gaps: MODALITIES
       .filter(modality => !observedModalities.has(modality))
       .map(modality => ({
@@ -55,6 +56,83 @@ export function buildHealthContext(input: HealthContextOptions) {
       clinical_boundary: 'Wellness, performance, longevity, and educational context only. Not diagnosis, treatment, or clinical decision support.',
     },
   };
+}
+
+// Signals that exist in more than one modality: an inherited genetic tendency,
+// a real-time wearable reading, and/or a measured biomarker. Genetics and
+// wearables stay separate modalities (different meaning and update cadence); we
+// link them per signal so the measured value stays primary and the genetic
+// tendency is read as context, never blended into one number.
+interface CrossModalSignal {
+  key: string;
+  label: string;
+  geneticTraitIds: string[];
+  wearableMetricId?: string;
+  biomarkerIds?: string[];
+}
+
+const CROSS_MODAL_SIGNALS: CrossModalSignal[] = [
+  { key: 'resting_heart_rate', label: 'Resting heart rate', geneticTraitIds: ['resting_heart_rate'], wearableMetricId: 'resting_heart_rate' },
+  { key: 'sleep_duration', label: 'Sleep duration', geneticTraitIds: ['sleep_duration'], wearableMetricId: 'sleep_duration' },
+  { key: 'vo2max', label: 'Aerobic fitness (VO2max)', geneticTraitIds: ['vo2max', 'cardiorespiratory_fitness', 'aerobic_trainability'], wearableMetricId: 'vo2max_estimate' },
+  { key: 'body_fat', label: 'Body fat', geneticTraitIds: ['body_fat_percentage'], wearableMetricId: 'body_fat_percent', biomarkerIds: ['body_fat_percent'] },
+  { key: 'blood_glucose', label: 'Blood glucose', geneticTraitIds: ['blood_glucose'], wearableMetricId: 'glucose_mean', biomarkerIds: ['fasting_glucose', 'hba1c'] },
+  { key: 'ldl_cholesterol', label: 'LDL cholesterol', geneticTraitIds: ['ldl_cholesterol_levels'], biomarkerIds: ['ldl_c'] },
+  { key: 'apob', label: 'ApoB', geneticTraitIds: ['apolipoprotein_b_levels'], biomarkerIds: ['apob'] },
+  { key: 'systolic_bp', label: 'Systolic blood pressure', geneticTraitIds: ['systolic_blood_pressure_levels'], biomarkerIds: ['systolic_bp'] },
+  { key: 'urate', label: 'Urate', geneticTraitIds: ['urate_levels'], biomarkerIds: ['urate'] },
+];
+
+function buildCrossModality(observations: NormalizedObservation[], derived: DerivedInterpretation[]) {
+  const geneticFindings = derived.filter(finding => finding.category === 'genetics');
+  const entries: Array<Record<string, unknown>> = [];
+  for (const signal of CROSS_MODAL_SIGNALS) {
+    const genetic = geneticFindings.find(finding => {
+      const traitId = rawString(finding.raw, 'trait_id') ?? rawString(finding.raw, 'id');
+      return traitId != null && signal.geneticTraitIds.includes(traitId);
+    });
+    const measured = latestMeasured(observations, signal);
+    if (!genetic && !measured) continue;
+    const heritability = genetic ? rawNumber(genetic.raw, 'heritability_pct') : undefined;
+    entries.push({
+      signal: signal.key,
+      label: signal.label,
+      measured: measured ? { value: measured.value, unit: measured.unit, modality: measured.modality } : null,
+      inherited: genetic ? { present: true, heritability_pct: heritability ?? null } : null,
+      reading: crossModalReading(signal.label, measured, heritability, Boolean(genetic)),
+    });
+  }
+  return entries;
+}
+
+function latestMeasured(observations: NormalizedObservation[], signal: CrossModalSignal): { value: number; unit?: string; modality: 'wearables' | 'biomarkers' } | undefined {
+  const candidates = observations.filter(obs =>
+    typeof obs.value === 'number'
+    && ((obs.category === 'wearables' && signal.wearableMetricId != null && obs.name === signal.wearableMetricId)
+      || (obs.category === 'biomarkers' && (signal.biomarkerIds ?? []).includes(obs.name))));
+  if (candidates.length === 0) return undefined;
+  const latest = candidates.reduce((a, b) => ((b.observed_at ?? '') >= (a.observed_at ?? '') ? b : a));
+  return { value: latest.value as number, unit: latest.unit, modality: latest.category as 'wearables' | 'biomarkers' };
+}
+
+function crossModalReading(label: string, measured: { value: number; unit?: string } | undefined, heritability: number | undefined, hasGenetic: boolean): string {
+  const lower = label.toLowerCase();
+  const value = measured ? `${measured.value}${measured.unit ? ` ${measured.unit}` : ''}` : '';
+  if (measured && hasGenetic) {
+    const share = heritability != null ? `~${heritability}%` : 'a modest share';
+    return `Your measured ${lower} (${value}) is the number to act on. Genetics explains ${share} of the baseline for this trait and is largely trainable, so most of your result reflects fitness, lifestyle, and current physiology.`;
+  }
+  if (hasGenetic) {
+    const share = heritability != null ? ` (heritability ${heritability}%)` : '';
+    return `Genetics gives inherited context for ${lower}${share}, but there is no measured value yet. Add a wearable or lab reading to see where you actually stand.`;
+  }
+  return `Your measured ${lower} (${value}) is what to act on; an inherited reference for this signal is not available yet.`;
+}
+
+function rawNumber(raw: unknown, key: string): number | undefined {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return undefined;
+  const value = (raw as Record<string, unknown>)[key];
+  return typeof value === 'number' && Number.isFinite(value) ? value : undefined;
 }
 
 function findingSummary(finding: DerivedInterpretation) {
