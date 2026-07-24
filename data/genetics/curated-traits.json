@@ -41,7 +41,8 @@
         "Zhao S, Lian R, Jin L, et al. Clinical and genetic analysis of infants with pontocerebellar hypoplasia type 6",
         "caused by RARS2 variations. Epilepsia Open. 2024 Feb.9(1):250-257."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "acute_intermittent_porphyria_hmbs_gene": {
       "trait_id": "acute_intermittent_porphyria_hmbs_gene",
@@ -66,7 +67,8 @@
         "Whatley SD, Badminton MN. Acute Intermittent Porphyria. 2005 Sep 27 [updated 2019 Dec 5]. In: Adam MP,",
         "Mirzaa GM, Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews® [Internet]. Seattle"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "agenesis_of_the_corpus_callosum_with_peripheral_neuropathy_accpn": {
       "trait_id": "agenesis_of_the_corpus_callosum_with_peripheral_neuropathy_accpn",
@@ -90,7 +92,8 @@
         "Howard HC, Mount DB, Rochefort D,et al. The K-Cl cotransporter KCC3 is mutant in a severe peripheral",
         "neuropathy associated with agenesis of the corpus callosum. Nat Genet. 2002 Nov;32(3):384-92."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "alpha_1_antitrypsin_deficiency": {
       "trait_id": "alpha_1_antitrypsin_deficiency",
@@ -123,7 +126,8 @@
         "mutations. Orphanet J Rare Dis. 2014 Nov 26;9:172.",
         "Jardim JR, Casas-Maldonado F, Fernandes FLA, et al . Update on and future perspectives for the diagnosis of"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "alpha_mannosidosis": {
       "trait_id": "alpha_mannosidosis",
@@ -148,7 +152,8 @@
         "involvement of variants in GHR and SLC19A3 genes in the variable expressivity of cognitive impairment. PLoS",
         "One. 2021 Oct 6;16(10):e0258202. doi: 10.1371/journal.pone.0258202."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "amyloidosis_finnish_type_gsn_gene": {
       "trait_id": "amyloidosis_finnish_type_gsn_gene",
@@ -173,7 +178,8 @@
         "Zorgati H, Larsson M, Ren W, et al. The role of gelsolin domain 3 in familial amyloidosis (Finnish type). Proc",
         "Natl Acad Sci U S A. 2019 Jul 9.116(28):13958-13963."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "arsacs_autosomal_recessive_spastic_ataxia_of_charlevoix_saguenay": {
       "trait_id": "arsacs_autosomal_recessive_spastic_ataxia_of_charlevoix_saguenay",
@@ -198,7 +204,8 @@
         "2]. In: Adam MP, Ardinger HH, Pagon RA, Wallace SE, Bean LJH, Gripp KW, Mirzaa GM, Amemiya A, editors.",
         "GeneReviews® [Internet]. Seattle (WA): University of Washington, Seattle; 1993-2023."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "autosomal_dominant_limb_girdle_muscular_dystrophy": {
       "trait_id": "autosomal_dominant_limb_girdle_muscular_dystrophy",
@@ -223,7 +230,8 @@
         "Sarparanta J, Jonson PH, Golzio C, et al. Mutations affecting the cytoplasmic functions of the co-chaperone",
         "DNAJB6 cause limb-girdle muscular dystrophy. Nat Genet. 2012 Feb 26.44(4):450-5, S1-2."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "autosomal_dominant_multiple_epiphyseal_dysplasia": {
       "trait_id": "autosomal_dominant_multiple_epiphyseal_dysplasia",
@@ -252,7 +260,8 @@
         "an accurate assessment of their relative contribution. Hum Mutat. 2012 Jan.33(1):144-57.",
         "Toral López J, González Huerta LM. Recurrent Mutation (p.Arg718Pro) in the COMP Gene with Clinical"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "autosomal_dominant_polycystic_kidney_disease": {
       "trait_id": "autosomal_dominant_polycystic_kidney_disease",
@@ -283,7 +292,8 @@
         "Jdiaa SS, Mustafa RA, Yu ASL. Treatment of Autosomal-Dominant Polycystic Kidney Disease. Am J Kidney Dis.",
         "2025 Apr.85(4):491-500."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "autosomal_dominant_retinitis_pigmentosa": {
       "trait_id": "autosomal_dominant_retinitis_pigmentosa",
@@ -312,7 +322,8 @@
         "Autosomal Dominant Retinitis Pigmentosa Due to RHO, c.68C>A (p.P23H) Variant. Am J Ophthalmol. 2024",
         "Dec.268:340-347."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "autosomal_recessive_limb_girdle_muscular_dystrophy": {
       "trait_id": "autosomal_recessive_limb_girdle_muscular_dystrophy",
@@ -347,7 +358,8 @@
         "Genet. 2001 Dec 1;10(25):2851-9.",
         "Cottrell CE, Mendell J, Hart-Kothari M, et al . Maternal uniparental disomy of chromosome 4 in a patient with"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "autosomal_recessive_polycystic_kidney_disease": {
       "trait_id": "autosomal_recessive_polycystic_kidney_disease",
@@ -374,7 +386,8 @@
         "In: Adam MP, Mirzaa GM, Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews®",
         "[Internet]. Seattle (WA): University of Washington, Seattle; 1993-2022."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "autosomal_recessive_retinitis_pigmentosa": {
       "trait_id": "autosomal_recessive_retinitis_pigmentosa",
@@ -413,7 +426,8 @@
         "USH2A retinopathy reveals an allelic hierarchy of disease-causing variants. European journal of human",
         "genetics : EJHG. 2015 Oct;23(10):1318-27."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "beta_thalassemia": {
       "trait_id": "beta_thalassemia",
@@ -437,7 +451,8 @@
         "Sripichai O, Fucharoen S . Fetal hemoglobin regulation in β-thalassemia: heterogeneity, modifiers and",
         "therapeutic approaches. Expert Rev Hematol. 2016 Dec;9(12):1129-1137."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "biotinidase_deficiency": {
       "trait_id": "biotinidase_deficiency",
@@ -462,7 +477,8 @@
         "Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews® [Internet]. Seattle (WA): University of",
         "Washington, Seattle; 1993-2022."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "birt_hogg_dube_syndrome": {
       "trait_id": "birt_hogg_dube_syndrome",
@@ -489,7 +505,8 @@
         "Sattler, E. C., Steinlein, O. K. Birt-Hogg-Dubé Syndrome. GeneReviews®. University of Washington, Seattle.",
         "Sattler, E. C., Syunyaeva, Z., Mansmann, U., et al. Genetic Risk Factors for Spontaneous Pneumothorax in BirtHogg-Dubé Syndrome. Chest. 2020 May;157(5):1199-1206."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "bloom_syndrome": {
       "trait_id": "bloom_syndrome",
@@ -510,7 +527,8 @@
         "German, J., Sanz, M. M., Ciocci, S., et al. Syndrome-causing mutations of the BLM gene in persons in the",
         "Bloom's Syndrome Registry. Human mutation. 2007 Aug;28(8):743-53."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "brugada_syndrome": {
       "trait_id": "brugada_syndrome",
@@ -536,7 +554,8 @@
         "Causing Overlapping Phenotype of Long QT Syndrome, Brugada Syndrome, and Conduction Defect. J Am",
         "Heart Assoc. 2016 Jul 5;5(7):e003379."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "canavan_disease": {
       "trait_id": "canavan_disease",
@@ -558,7 +577,8 @@
         "Mendes MI, Smith DE, Pop A, et al . Clinically Distinct Phenotypes of Canavan Disease Correlate with Residual",
         "Aspartoacylase Enzyme Activity. Hum Mutat. 2017 May;38(5):524-531."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "catecholaminergic_polymorphic_ventricular_tachycardia_casq2_gene": {
       "trait_id": "catecholaminergic_polymorphic_ventricular_tachycardia_casq2_gene",
@@ -583,7 +603,8 @@
         "Rev. 2022 Apr.11:e20.",
         "Catecholaminergic polymorphic ventricular tachycardia. Orphanet. ORPHA3286 [January 2021]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "catecholaminergic_polymorphic_ventricular_tachycardia_ryr2_gene": {
       "trait_id": "catecholaminergic_polymorphic_ventricular_tachycardia_ryr2_gene",
@@ -611,7 +632,8 @@
         "Rev. 2022 Apr.11:e20.",
         "Catecholaminergic polymorphic ventricular tachycardia. Orphanet. ORPHA3286 [January 2021]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "catecholaminergic_polymorphic_ventricular_tachycardia_trdn_gene": {
       "trait_id": "catecholaminergic_polymorphic_ventricular_tachycardia_trdn_gene",
@@ -638,7 +660,8 @@
         "Rev. 2022 Apr.11:e20.",
         "Catecholaminergic polymorphic ventricular tachycardia. Orphanet. ORPHA3286 [January 2021]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "cbla_type_methylmalonic_aciduria": {
       "trait_id": "cbla_type_methylmalonic_aciduria",
@@ -663,7 +686,8 @@
         "31(1):55-66.",
         "Wesół-Kucharska D, Kaczor M, Pajdowska M, et al. Clinical picture and treatment effects in 5 patients with"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "cblb_type_methylmalonic_aciduria": {
       "trait_id": "cblb_type_methylmalonic_aciduria",
@@ -688,7 +712,8 @@
         "Mar;87(3):219-25.",
         "Lofgren M, Banerjee R. Loss of allostery and coenzyme B12 delivery by a pathogenic mutation in"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "cerebrotendinous_xanthomatosis": {
       "trait_id": "cerebrotendinous_xanthomatosis",
@@ -713,7 +738,8 @@
         "CEREBROTENDINOUS XANTHOMATOSIS. CTX. Online Mendelian Inheritance in Man, OMIM®. Johns Hopkins",
         "University, Baltimore, MD."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "classical_homocystinuria_due_to_cbs_deficiency": {
       "trait_id": "classical_homocystinuria_due_to_cbs_deficiency",
@@ -738,7 +764,8 @@
         "cystathionine-beta-synthase variants. Hum Mutat. 2019 Sep;40(9):1530-1545.",
         "Kožich V, Sokolová J, Morris AAM, et al . Cystathionine β-synthase deficiency in the E-HOD registry-part I:"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "congenital_disorder_of_glycosylation_type_1a_pmm2_gene": {
       "trait_id": "congenital_disorder_of_glycosylation_type_1a_pmm2_gene",
@@ -763,7 +790,8 @@
         "Lam C, Krasnewich DM. PMM2-CDG. 2005 Aug 15 [updated 2021 May 20]. In: Adam MP, Mirzaa GM, Pagon RA,",
         "Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews® [Internet]. Seattle (WA): University of"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "congenital_disorder_of_glycosylation_type_1c_alg6_gene": {
       "trait_id": "congenital_disorder_of_glycosylation_type_1c_alg6_gene",
@@ -788,7 +816,8 @@
         "CONGENITAL DISORDER OF GLYCOSYLATION, TYPE Ic. CDG1C. Online Mendelian Inheritance in Man, OMIM®.",
         "Johns Hopkins University, Baltimore, MD."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "congenital_disorder_of_glycosylation_type_1k_alg1_gene": {
       "trait_id": "congenital_disorder_of_glycosylation_type_1k_alg1_gene",
@@ -815,7 +844,8 @@
         "Kranz C, Denecke J, Lehle L, et al. Congenital disorder of glycosylation type Ik (CDG-Ik): a defect of",
         "mannosyltransferase I. Am J Hum Genet. 2004 Mar.74(3):545-51."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "congenital_muscular_alpha_dystroglycanopathy_and_walker_warburg_syndrome": {
       "trait_id": "congenital_muscular_alpha_dystroglycanopathy_and_walker_warburg_syndrome",
@@ -853,7 +883,8 @@
         "10.1212/01.wnl.0000346518.68110.60. Epub 2009 Mar 18. Erratum in: Neurology. 2019 Aug 20;93(8):371.",
         "Erratum in: Neurology. 2019 Aug 20;93(8):371."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "congenital_myasthenic_syndrome_chrnb1_gene": {
       "trait_id": "congenital_myasthenic_syndrome_chrnb1_gene",
@@ -880,7 +911,8 @@
         "Ohno K, Ohkawara B, Shen XM, et al. Clinical and Pathologic Features of Congenital Myasthenic Syndromes",
         "Caused by 35 Genes-A Comprehensive Review. Int J Mol Sci. 2023 Feb 13.24(4):3730."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "congenital_myasthenic_syndrome_rapsn_gene": {
       "trait_id": "congenital_myasthenic_syndrome_rapsn_gene",
@@ -905,7 +937,8 @@
         "Caused by 35 Genes-A Comprehensive Review. Int J Mol Sci. 2023 Feb 13;24(4):3730.",
         "Ohno K, Engel AG. Lack of founder haplotype for the rhapsyn N88K mutation: N88K is an ancient founder"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "congenital_stationary_night_blindness": {
       "trait_id": "congenital_stationary_night_blindness",
@@ -937,7 +970,8 @@
         "van Genderen MM, Bijveld MM, Claassen YB, et al . Mutations in TRPM1 are a common cause of complete",
         "congenital stationary stationary night blindness. Am J Hum Genet. 2009 Nov;85(5):730-6."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "congenital_stationary_night_blindness_oguchi_disease": {
       "trait_id": "congenital_stationary_night_blindness_oguchi_disease",
@@ -966,7 +1000,8 @@
         "Sergouniotis PI, Davidson AE, Sehmi K, et al. Mizuo-Nakamura phenomenon in Oguchi disease due to a",
         "homozygous nonsense mutation in the SAG gene. Eye (Lond). 2011 Aug.25(8):1098-101."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "cystic_fibrosis": {
       "trait_id": "cystic_fibrosis",
@@ -991,7 +1026,8 @@
         "Hanssens LS, Duchateau J, Casimir GJ. CFTR Protein: Not Just a Chloride Channel? Cells. 2021",
         "Oct 22;10(11):2844."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "cystinosis": {
       "trait_id": "cystinosis",
@@ -1016,7 +1052,8 @@
         "Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews® [Internet]. Seattle (WA): University of",
         "Washington, Seattle; 1993-2022."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "d_bifunctional_protein_deficiency": {
       "trait_id": "d_bifunctional_protein_deficiency",
@@ -1039,7 +1076,8 @@
         "Yamamoto A, Fukumura S, Habata Y, et al . Novel HSD17B4 Variants Cause Progressive Leukodystrophy in",
         "Childhood: Case Report and Literature Review. Child Neurol Open. 2021 Oct 11;8:2329048X211048613."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "diastrophic_dysplasia": {
       "trait_id": "diastrophic_dysplasia",
@@ -1064,7 +1102,8 @@
         "Unger S, Superti-Furga A. Diastrophic Dysplasia. 2004 Nov 15 [updated 2021 Dec 23]. In: Adam MP, Mirzaa",
         "GM, Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews® [Internet]. Seattle (WA):"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "dihydrolipoamide_dehydrogenase_deficiency": {
       "trait_id": "dihydrolipoamide_dehydrogenase_deficiency",
@@ -1089,7 +1128,8 @@
         "deficiency revealed by structural analyses of disease-causing enzyme variants. Hum Mol Genet. 2019 Oct",
         "15;28(20):3339-3354."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "dilated_cardiomyopathy_1a_lmna_gene": {
       "trait_id": "dilated_cardiomyopathy_1a_lmna_gene",
@@ -1114,7 +1154,8 @@
         "Am Coll Cardiol. 2016 Jun 28;67(25):2996-3010.",
         "Reichart D, Magnussen C, Zeller T, et al.Dilated cardiomyopathy: from epidemiologic to genetic phenotypes: A"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "dilated_cardiomyopathy_1d_tnnt2_gene": {
       "trait_id": "dilated_cardiomyopathy_1d_tnnt2_gene",
@@ -1143,7 +1184,8 @@
         "CARDIOMYOPATHY, DILATED, 1D. CMD1D. Online Mendelian Inheritance in Man, OMIM®. Johns Hopkins",
         "University, Baltimore, MD."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "dilated_cardiomyopathy_1dd_rbm20_gene": {
       "trait_id": "dilated_cardiomyopathy_1dd_rbm20_gene",
@@ -1170,7 +1212,8 @@
         "CARDIOMYOPATHY, DILATED, 1D. CMD1DD. Online Mendelian Inheritance in Man, OMIM®. Johns Hopkins",
         "University, Baltimore, MD."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "dilated_cardiomyopathy_1e_scn5a_gene": {
       "trait_id": "dilated_cardiomyopathy_1e_scn5a_gene",
@@ -1195,7 +1238,8 @@
         "CARDIOMYOPATHY, DILATED, 1E. CMD1DD. Online Mendelian Inheritance in Man, OMIM®. Johns Hopkins",
         "University, Baltimore, MD."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "dilated_cardiomyopathy_1g_ttn_gene": {
       "trait_id": "dilated_cardiomyopathy_1g_ttn_gene",
@@ -1220,7 +1264,8 @@
         "and emerging therapeutics. Front Cardiovasc Med. 2022 Sep 7.9:972301.",
         "Hershberger RE, Jordan E. Dilated Cardiomyopathy Overview. 2007 Jul 27 [Updated 2024 Dec 12]. In: Adam"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "dilated_cardiomyopathy_1hh_bag3_gene": {
       "trait_id": "dilated_cardiomyopathy_1hh_bag3_gene",
@@ -1245,7 +1290,8 @@
         "CARDIOMYOPATHY, DILATED, 1HH. CMD1DD. Online Mendelian Inheritance in Man, OMIM®. Johns Hopkins",
         "University, Baltimore, MD."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "dilated_cardiomyopathy_1i_des_gene": {
       "trait_id": "dilated_cardiomyopathy_1i_des_gene",
@@ -1270,7 +1316,8 @@
         "CARDIOMYOPATHY, DILATED, 1I. CMD1I. Online Mendelian Inheritance in Man, OMIM®. Johns Hopkins",
         "University, Baltimore, MD."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "dilated_cardiomyopathy_1p_pln_gene": {
       "trait_id": "dilated_cardiomyopathy_1p_pln_gene",
@@ -1297,7 +1344,8 @@
         "CARDIOMYOPATHY, DILATED, 1P. CMD1P. Online Mendelian Inheritance in Man, OMIM®. Johns Hopkins",
         "University, Baltimore, MD."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "dilated_cardiomyopathy_1s_myh7_gene": {
       "trait_id": "dilated_cardiomyopathy_1s_myh7_gene",
@@ -1322,7 +1370,8 @@
         "Cardiomyopathies: Results From a Dutch Multicenter Cohort Study. JACC Heart Fail. 2024 Jan.12(1):134-147.",
         "CARDIOMYOPATHY, DILATED, 1S. CMD1S. Online Mendelian Inheritance in Man, OMIM®. Johns Hopkins"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "dilated_cardiomyopathy_1z_tnnc1_gene": {
       "trait_id": "dilated_cardiomyopathy_1z_tnnc1_gene",
@@ -1347,7 +1396,8 @@
         "TNNC1-A31S, predisposes to hypertrophic cardiomyopathy and ventricular fibrillation. J Biol Chem. 2012 Sep",
         "14.287(38):31845-55."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "dubin_johnson_syndrome": {
       "trait_id": "dubin_johnson_syndrome",
@@ -1372,7 +1422,8 @@
         "Talaga ZJ, Vaidya PN. Dubin Johnson Syndrome. 2022 Jul 11. In: StatPearls [Internet]. Treasure Island (FL):",
         "StatPearls Publishing; 2022 Jan-."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "ehlers_danlos_syndrome_eds": {
       "trait_id": "ehlers_danlos_syndrome_eds",
@@ -1414,7 +1465,8 @@
         "Malfait F, Francomano C, Byers P, et al. The 2017 international classification of the Ehlers-Danlos syndromes.",
         "Am J Med Genet C Semin Med Genet. 2017 Mar;175(1):8-26."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "fabry_disease": {
       "trait_id": "fabry_disease",
@@ -1435,7 +1487,8 @@
         "Mehta A, Hughes DA. Fabry Disease. 2002 Aug 5 [Updated 2024 Apr 11]. In: Adam MP, Feldman J, Mirzaa GM,",
         "et al., editors. GeneReviews® [Internet]. Seattle (WA): University of Washington, Seattle. 1993-2025."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "familial_adenomatous_polyposis": {
       "trait_id": "familial_adenomatous_polyposis",
@@ -1461,7 +1514,8 @@
         "Yen T, Stanich PP, Axell L, Patel SG. APC-Associated Polyposis Conditions. 1998 Dec 18 [updated 2022 May",
         "12]. In: Adam MP, Mirzaa GM, Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews®"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "familial_advanced_sleep_phase_syndrome_fasps": {
       "trait_id": "familial_advanced_sleep_phase_syndrome_fasps",
@@ -1483,7 +1537,8 @@
         "Silvestri R, Guarnieri B.Advanced sleep phase syndrome: Role of genetics and aging. Handb Clin Neurol.",
         "2025;206:61-70."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "familial_arrhythmogenic_right_ventricular_cardiomyopathy": {
       "trait_id": "familial_arrhythmogenic_right_ventricular_cardiomyopathy",
@@ -1512,7 +1567,8 @@
         "Shah SN, Umapathi KK, Horenstein MS, et al. Arrhythmogenic Right Ventricular Cardiomyopathy. 2024 Mar 20.",
         "In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing. 2025 Jan."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "familial_breast_cancer_brca1_and_brca2_genes": {
       "trait_id": "familial_breast_cancer_brca1_and_brca2_genes",
@@ -1543,7 +1599,8 @@
         "Professional Version. 2022 Nov 4. In: PDQ Cancer Information Summaries [Internet]. Bethesda (MD): National",
         "Cancer Institute (US); 2002-."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "familial_dysautonomia_riley_day_syndrome": {
       "trait_id": "familial_dysautonomia_riley_day_syndrome",
@@ -1569,7 +1626,8 @@
         "Slaugenhaupt SA, Blumenfeld A, Gill SP, et al . Tissue-specific expression of a splicing mutation in the IKBKAP",
         "gene causes familial dysautonomia. Am J Hum Genet. 2001 Mar;68(3):598-605."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "familial_hypercholesterolemia": {
       "trait_id": "familial_hypercholesterolemia",
@@ -1600,7 +1658,8 @@
         "variable phenotypes. Eur J Med Genet. 2020 Apr;63(4):103831.",
         "Ison HE, Clarke SL, Knowles JW. Familial Hypercholesterolemia. 2014 Jan 2 [updated 2022 Jul 7]. In: Adam"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "familial_hypertrophic_cardiomyopathy_hcm": {
       "trait_id": "familial_hypertrophic_cardiomyopathy_hcm",
@@ -1634,7 +1693,8 @@
         "15;32(6):1709-16.",
         "Regitz-Zagrosek V, Erdmann J, Wellnhofer E, et al. Novel mutation in the alpha-tropomyosin gene and"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "familial_mediterranean_fever": {
       "trait_id": "familial_mediterranean_fever",
@@ -1659,7 +1719,8 @@
         "Majeed HA, El-Khateeb M, El-Shanti H, et al . The spectrum of familial Mediterranean fever gene mutations in",
         "Arabs: report of a large series. Semin Arthritis Rheum. 2005 Jun;34(6):813-8."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "familial_porphyria_cutanea_tarda_urod_gene": {
       "trait_id": "familial_porphyria_cutanea_tarda_urod_gene",
@@ -1680,7 +1741,8 @@
         "Porphyria Cutanea Tarda. American Porphyria Foundation (APF).",
         "Porphyria cutanea tarda. Orphanet. ORPHA101330 [March 2024]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "familial_thoracic_aortic_aneurysm_and_dissection_acta2_gene": {
       "trait_id": "familial_thoracic_aortic_aneurysm_and_dissection_acta2_gene",
@@ -1705,7 +1767,8 @@
         "Management of Aortic Disease: A Report of the American Heart Association/American College of Cardiology",
         "Joint Committee on Clinical Practice Guidelines. Circulation. 2022 Dec 13.146(24):e334-e482."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "familial_thoracic_aortic_aneurysm_and_dissection_myh11_gene": {
       "trait_id": "familial_thoracic_aortic_aneurysm_and_dissection_myh11_gene",
@@ -1730,7 +1793,8 @@
         "Management of Aortic Disease: A Report of the American Heart Association/American College of Cardiology",
         "Joint Committee on Clinical Practice Guidelines. Circulation. 2022 Dec 13.146(24):e334-e482."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "familiar_hyperinsulinism_abcc8_related": {
       "trait_id": "familiar_hyperinsulinism_abcc8_related",
@@ -1755,7 +1819,8 @@
         "Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews® [Internet]. Seattle (WA):",
         "University of Washington, Seattle; 1993-2022."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "fanconi_anemia_fanca_gene": {
       "trait_id": "fanconi_anemia_fanca_gene",
@@ -1786,7 +1851,8 @@
         "Zhong L, Zhang W, Zhang K, et al. Clinical and genetic features of Fanconi anemia associated with a variant of",
         "FANCA gene: Case report and literature review. Medicine (Baltimore). 2024 Sep 6.103(36):e39358."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "fanconi_anemia_fancc_gene": {
       "trait_id": "fanconi_anemia_fancc_gene",
@@ -1810,7 +1876,8 @@
         "Nalepa G, Clapp DW. Fanconi anaemia and cancer: an intricate relationship. Nat Rev Cancer. 2018",
         "Mar;18(3):168-185."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "fanconi_anemia_fance_gene": {
       "trait_id": "fanconi_anemia_fance_gene",
@@ -1834,7 +1901,8 @@
         "van Twest S, Murphy VJ, Hodson C, Tan W, et al. Mechanism of Ubiquitination and Deubiquitination in the",
         "Fanconi Anemia Pathway. Mol Cell. 2017 Jan 19;65(2):247-259."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "fanconi_anemia_fancg_gene": {
       "trait_id": "fanconi_anemia_fancg_gene",
@@ -1865,7 +1933,8 @@
         "Park J, Kim M, Jang W, et al. Founder haplotype analysis of Fanconi anemia in the Korean population finds",
         "common ancestral haplotypes for a FANCG variant. Ann Hum Genet. 2015 May;79(3):153-61."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "gaucher_disease": {
       "trait_id": "gaucher_disease",
@@ -1887,7 +1956,8 @@
         "Weinreb NJ, Goker-Alpan O, Kishnani PS, et al . The diagnosis and management of Gaucher disease in",
         "pediatric patients: where do we go from here? Mol Genet Metab. 2022 May;136(1):4-21."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "gck_related_diabetes_mody_2": {
       "trait_id": "gck_related_diabetes_mody_2",
@@ -1909,7 +1979,8 @@
         "Dickens LT, Naylor RN. Clinical Management of Women with Monogenic Diabetes During Pregnancy. Curr Diab",
         "Rep. 2018 Feb 15.18(3):12."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "glucose_6_phosphate_dehydrogenase_deficiency_g6pd_deficiency": {
       "trait_id": "glucose_6_phosphate_dehydrogenase_deficiency_g6pd_deficiency",
@@ -1934,7 +2005,8 @@
         "Luzzatto L, Arese P . Favism and Glucose-6-Phosphate Dehydrogenase Deficiency. N Engl J Med. 2018 Jan",
         "4;378(1):60-71."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "glutaric_acidemia_type_1": {
       "trait_id": "glutaric_acidemia_type_1",
@@ -1959,7 +2031,8 @@
         "Larson A, Goodman S. Glutaric Acidemia Type 1. 2019 Sep 19. In: Adam MP, Mirzaa GM, Pagon RA, Wallace",
         "SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews® [Internet]. Seattle (WA): University of"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "glutaric_acidemia_type_2": {
       "trait_id": "glutaric_acidemia_type_2",
@@ -1985,7 +2058,8 @@
         "Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews® [Internet]. Seattle (WA): University of",
         "Washington, Seattle; 1993-2022."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "glycogen_storage_disease_type_1a_von_gierke_disease": {
       "trait_id": "glycogen_storage_disease_type_1a_von_gierke_disease",
@@ -2010,7 +2084,8 @@
         "Niba ETE, Wijaya YOS, Awano H, et al . DBS Screening for Glycogen Storage Disease Type 1a: Detection of",
         "c.648G>T Mutation in G6PC by Combination of Modified Competitive Oligonucleotide Priming-PCR and"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "glycogen_storage_disease_type_1b": {
       "trait_id": "glycogen_storage_disease_type_1b",
@@ -2035,7 +2110,8 @@
         "type I: a practice guideline of the American College of Medical Genetics and Genomics. Genet Med.",
         "2014 Nov;16(11):e1."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "glycogen_storage_disease_type_3": {
       "trait_id": "glycogen_storage_disease_type_3",
@@ -2057,7 +2133,8 @@
         "6]. In: Adam MP, Mirzaa GM, Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews®",
         "[Internet]. Seattle (WA): University of Washington, Seattle; 1993-2022."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "glycogen_storage_disease_type_iv": {
       "trait_id": "glycogen_storage_disease_type_iv",
@@ -2080,7 +2157,8 @@
         "MP, Feldman J, Mirzaa GM, Pagon RA, Wallace SE, Amemiya A, editors. GeneReviews® [Internet]. Seattle (WA):",
         "University of Washington, Seattle. 19932025."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "glycogen_storage_disease_type_vi": {
       "trait_id": "glycogen_storage_disease_type_vi",
@@ -2100,7 +2178,8 @@
         "MP, Feldman J, Mirzaa GM, et al., editors. GeneReviews® [Internet]. Seattle (WA): University of Washington,",
         "Seattle. 1993-2025."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "glycogenosis_type_2_or_pompe_disease": {
       "trait_id": "glycogenosis_type_2_or_pompe_disease",
@@ -2125,7 +2204,8 @@
         "Colombian Patients Affected by Pompe Disease. In: JIMD reports. 2012. p. 39-48.",
         "Meena NK, Raben N. Pompe Disease: New Developments in an Old Lysosomal Storage Disorder."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "glycogenosis_type_5_or_mcardles_disease": {
       "trait_id": "glycogenosis_type_5_or_mcardles_disease",
@@ -2150,7 +2230,8 @@
         "Polymorphisms in the PYGM Gene. Hum Mutat. 2015 Jul;36(7):669-78.",
         "Pizzamiglio C, Mahroo OA, Khan KN, et al. Phenotype and genotype of 197 British patients with McArdle"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "gracile_syndrome": {
       "trait_id": "gracile_syndrome",
@@ -2174,7 +2255,8 @@
         "Visapää I, Fellman V, Vesa J, Dasvarma A, et al. GRACILE syndrome, a lethal metabolic disorder with iron",
         "overload, is caused by a point mutation in BCS1L. Am J Hum Genet. 2002 Oct;71(4):863-76."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hamartoma_tumor_syndrome_pten_gene": {
       "trait_id": "hamartoma_tumor_syndrome_pten_gene",
@@ -2199,7 +2281,8 @@
         "Lobo GP, Waite KA, Planchon Smet al. Germline and somatic cancer-associated mutations in the ATP-binding",
         "motifs of PTEN influence its subcellular localization and tumor suppressive function. Hum Mol Genet. 2009"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hemophilia_a": {
       "trait_id": "hemophilia_a",
@@ -2223,7 +2306,8 @@
         "Srivastava A, Santagostino E, Dougall A, et al . WFH Guidelines for the Management of Hemophilia, 3rd",
         "edition. Haemophilia. 2020 Aug;26 Suppl 6:1-158."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hemophilia_b": {
       "trait_id": "hemophilia_b",
@@ -2250,7 +2334,8 @@
         "cohort compared with locus-specific genetic databases of the European Association for Haemophilia and",
         "Allied Disorders and the Centers for Disease Control and Prevention Hemophilia A or Hemophilia B Mutation"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hereditary_cancer_palb2_gene": {
       "trait_id": "hereditary_cancer_palb2_gene",
@@ -2274,7 +2359,8 @@
         "Zhou J, Wang H, Fu F, et al. Spectrum of PALB2 germline mutations and characteristics of PALB2-related",
         "breast cancer: Screening of 16,501 unselected patients with breast cancer and 5890 controls by nextgeneration sequencing. Cancer. 2020 Jul 15.126(14):3202-3208."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hereditary_coproporphyria_cpox_gene": {
       "trait_id": "hereditary_coproporphyria_cpox_gene",
@@ -2301,7 +2387,8 @@
         "Whatley SD, Mason NG, Woolf JR, et al. Diagnostic strategies for autosomal dominant acute porphyrias:",
         "retrospective analysis of 467 unrelated patients referred for mutational analysis of the HMBS, CPOX, or PPOX"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hereditary_fructose_intolerance": {
       "trait_id": "hereditary_fructose_intolerance",
@@ -2326,7 +2413,8 @@
         "to hereditary fructose intolerance. FEBS Lett. 2002 Nov 6;531(2):152-6.",
         "Gaughan S, Ayres L, Baker PR II. Hereditary Fructose Intolerance. 2015 Dec 17 [updated 2021 Feb 18]. In:"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hereditary_hemochromatosis_type_1_hfe_gene": {
       "trait_id": "hereditary_hemochromatosis_type_1_hfe_gene",
@@ -2349,7 +2437,8 @@
         "Kowdley KV, Brown KE, Ahn J, et al . ACG Clinical Guideline: Hereditary Hemochromatosis. Am J",
         "Gastroenterol. 2019 Aug;114(8):1202-1218."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hereditary_hemochromatosis_type_2a_hjv_gene": {
       "trait_id": "hereditary_hemochromatosis_type_2a_hjv_gene",
@@ -2377,7 +2466,8 @@
         "Seattle. 1993-2025.",
         "Takami A, Tatsumi Y, Sakai K, et al. Juvenile Hemochromatosis: A Case Report and Review of the Literature."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hereditary_hemochromatosis_type_2b_hamp_gene": {
       "trait_id": "hereditary_hemochromatosis_type_2b_hamp_gene",
@@ -2399,7 +2489,8 @@
         "Hattori A, Miyajima H, Tomosugi N, et al. Clinicopathological study of Japanese patients with genetic iron",
         "overload syndromes. Pathol Int. 2012 Sep.62(9):612-8."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hereditary_hemochromatosis_type_3_tfr2_gene": {
       "trait_id": "hereditary_hemochromatosis_type_3_tfr2_gene",
@@ -2421,7 +2512,8 @@
         "Kowdley DS, Kowdley KV. Appropriate Clinical Genetic Testing of Hemochromatosis Type 2-4, Including",
         "Ferroportin Disease. Appl Clin Genet. 2021 Aug 12.14:353-361."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hereditary_hemochromatosis_type_4_slc40a1_gene": {
       "trait_id": "hereditary_hemochromatosis_type_4_slc40a1_gene",
@@ -2448,7 +2540,8 @@
         "Wu LY, Song ZY, Li QH, et al. Iron chelators reverse organ damage in type 4B hereditary hemochromatosis:",
         "Case reports. Medicine (Baltimore). 2021 Apr 2.100(13):e25258."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hereditary_hemorrhagic_telangiectasia": {
       "trait_id": "hereditary_hemorrhagic_telangiectasia",
@@ -2472,7 +2565,8 @@
         "Hereditary hemorrhagic telangiectasia. Mayo Clinic [Feb. 07,2025].",
         "Hereditary hemorrhagic telangiectasia. Orphanet. ORPHA774 [January 2019]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hereditary_paraganglioma_pheochromocytoma_syndrome": {
       "trait_id": "hereditary_paraganglioma_pheochromocytoma_syndrome",
@@ -2503,7 +2597,8 @@
         "Turin CG, Crenshaw MM, Fishbein L. Pheochromocytoma and paraganglioma: germline genetics and",
         "hereditary syndromes. Endocr Oncol. 2022 Jun 28.2(1):R65-R77."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hnf1a_related_diabetes_mody_3": {
       "trait_id": "hnf1a_related_diabetes_mody_3",
@@ -2524,7 +2619,8 @@
         "Serbis A, Kantza E, Siomou E, et al. Monogenic Defects of Beta Cell Function: From Clinical Suspicion to",
         "Genetic Diagnosis and Management of Rare Types of Diabetes. Int J Mol Sci. 2024 Sep 29.25(19):10501."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hnf1b_related_diabetes_mody_5": {
       "trait_id": "hnf1b_related_diabetes_mody_5",
@@ -2548,7 +2644,8 @@
         "Ya ş ar Köstek H, Özgüç Çömlek F, Gürkan H, et al. A Case of Diabetes Mellitus Type MODY5 as a Feature of",
         "17q12 Deletion Syndrome. J Clin Res Pediatr Endocrinol. 2024 May 31.16(2):205-210."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hnf4a_related_diabetes_mody_1": {
       "trait_id": "hnf4a_related_diabetes_mody_1",
@@ -2573,7 +2670,8 @@
         "Washington, Seattle. 1993-2025.",
         "Pearson ER, Starkey BJ, Powell RJ, et al. Genetic cause of hyperglycaemia and response to treatment in"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "homocystinuria_due_to_mthfr_deficiency": {
       "trait_id": "homocystinuria_due_to_mthfr_deficiency",
@@ -2604,7 +2702,8 @@
         "Froese DS, Huemer M, Suormala T, et al . Mutation Update and Review of Severe Methylenetetrahydrofolate",
         "Reductase Deficiency. Hum Mutat. 2016 May;37(5):427-38."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hypokalemic_periodic_paralysis": {
       "trait_id": "hypokalemic_periodic_paralysis",
@@ -2630,7 +2729,8 @@
         "Elbaz, A., Vale-Santos, J., Jurkat-Rott, K., et al . Hypokalemic periodic paralysis and the dihydropyridine",
         "receptor (CACNL1A3): genotype/phenotype correlations for two predominant mutations and evidence for the"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "hypophosphatasia": {
       "trait_id": "hypophosphatasia",
@@ -2653,7 +2753,8 @@
         "Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews® [Internet]. Seattle (WA):",
         "University of Washington, Seattle; 1993-2023."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "junctional_epidermolysis_bullosa": {
       "trait_id": "junctional_epidermolysis_bullosa",
@@ -2679,7 +2780,8 @@
         "Mirzaa GM, Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews® [Internet]. Seattle",
         "(WA): University of Washington, Seattle; 1993-2022."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "juvenile_polyposis_syndrome_bmpr1a_gene": {
       "trait_id": "juvenile_polyposis_syndrome_bmpr1a_gene",
@@ -2702,7 +2804,8 @@
         "Dal Buono A, Gaiani F, Poliani L, et al. Juvenile polyposis syndrome: An overview. Best Pract Res Clin",
         "Gastroenterol. 2022 Jun-Aug.58-59:101799."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "juvenile_polyposis_syndrome_smad4_gene": {
       "trait_id": "juvenile_polyposis_syndrome_smad4_gene",
@@ -2725,7 +2828,8 @@
         "Dal Buono A, Gaiani F, Poliani L, et al. Juvenile polyposis syndrome: An overview. Best Pract Res Clin",
         "Gastroenterol. 2022 Jun-Aug.58-59:101799."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "leigh_syndrome_french_canadian_type_lsfc": {
       "trait_id": "leigh_syndrome_french_canadian_type_lsfc",
@@ -2747,7 +2851,8 @@
         "Mootha VK, Lepage P, Miller K, et al.Identification of a gene causing human cytochrome c oxidase deficiency",
         "by integrative genomics. Proc Natl Acad Sci U S A. 2003 Jan 21;100(2):605-10. doi: 10.1073/pnas.242716699."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "leukoencephalopathy_with_vanishing_white_matter": {
       "trait_id": "leukoencephalopathy_with_vanishing_white_matter",
@@ -2776,7 +2881,8 @@
         "van der Knaap, M. S., Leegwater, P. A., van Berkel, C. G., et al. Arg113His mutation in eIF2Bepsilon as cause of",
         "leukoencephalopathy in adults. Neurology. 2004 May 11;62(9):1598-600."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "li_fraumeni_syndrome": {
       "trait_id": "li_fraumeni_syndrome",
@@ -2801,7 +2907,8 @@
         "Seattle (WA): University of Washington, Seattle; 1993-2023.",
         "Vieira IA, Andreis TF, Fernandes BV, et al. Prevalence of the Brazilian TP53 Founder c.1010G>A"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "long_chain_3_hydroxyacyl_coa_dehydrogenase_deficiency": {
       "trait_id": "long_chain_3_hydroxyacyl_coa_dehydrogenase_deficiency",
@@ -2829,7 +2936,8 @@
         "Karall D, Brunner-Krainz M, Kogelnig K, et al . Clinical outcome, biochemical and therapeutic follow-up in 14",
         "Austrian patients with Long-Chain 3-Hydroxy Acyl CoA Dehydrogenase Deficiency (LCHADD). Orphanet J Rare"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "long_qt_syndrome_type_3": {
       "trait_id": "long_qt_syndrome_type_3",
@@ -2856,7 +2964,8 @@
         "Wilde AAM, Amin AS. Clinical Spectrum of SCN5A Mutations: Long QT Syndrome, Brugada Syndrome, and",
         "Cardiomyopathy. JACC Clin Electrophysiol. 2018 May.4(5):569-579."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "long_qt_syndrome_types_14_15_and_16": {
       "trait_id": "long_qt_syndrome_types_14_15_and_16",
@@ -2881,7 +2990,8 @@
         "Hussey JW, Limpitikul WB, Dick IE. Calmodulin Mutations in Human Disease. Channels (Austin).",
         "2023 Dec.17(1):2165278."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "long_qt_syndrome_types_1_and_2": {
       "trait_id": "long_qt_syndrome_types_1_and_2",
@@ -2908,7 +3018,8 @@
         "Kekenes-Huskey PM, Burgess DE, Sun B, et al. Mutation-Specific Differences in Kv7.1 (KCNQ1) and Kv11.1",
         "(KCNH2) Channel Dysfunction and Long QT Syndrome Phenotypes. Int J Mol Sci. 2022 Jul 2.23(13):7389."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "lynch_syndrome": {
       "trait_id": "lynch_syndrome",
@@ -2944,7 +3055,8 @@
         "Apr;250(5):518-531.",
         "Cohen SA, Pritchard CC, Jarvik G.Lynch Syndrome: From Screening to Diagnosis to Treatment in the Era of"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "malignant_hyperthermia": {
       "trait_id": "malignant_hyperthermia",
@@ -2969,7 +3081,8 @@
         "gene (RYR1) in malignant hyperthermia: genotype-phenotype correlation. Am J Hum Genet. 1998",
         "Mar;62(3):599-609."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "maple_syrup_urine_disease_type_1b": {
       "trait_id": "maple_syrup_urine_disease_type_1b",
@@ -2993,7 +3106,8 @@
         "Adam MP, Mirzaa GM, Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews®",
         "[Internet]. Seattle (WA): University of Washington, Seattle; 1993-2022."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "medium_chain_acyl_coa_dehydrogenase_deficiency_mcadd": {
       "trait_id": "medium_chain_acyl_coa_dehydrogenase_deficiency_mcadd",
@@ -3017,7 +3131,8 @@
         "Sturm M, Herebian D, Mueller M, et al. Functional effects of different medium-chain acyl-CoA dehydrogenase",
         "genotypes and identification of asymptomatic variants. PLoS One. 2012;7(9):e45110."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "metachromatic_leukodystrophy": {
       "trait_id": "metachromatic_leukodystrophy",
@@ -3042,7 +3157,8 @@
         "Leukodystrophy. Human mutation. 2016 Jan;37(1):16-27.",
         "Gort, L., Coll, M. J., Chabás, A . Identification of 12 novel mutations and two new polymorphisms in the"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "methylmalonic_aciduria_due_to_methylmalonyl_coa_mutase_deficiency": {
       "trait_id": "methylmalonic_aciduria_due_to_methylmalonyl_coa_mutase_deficiency",
@@ -3067,7 +3183,8 @@
         "Worgan LC, Niles K, Tirone JC, et al. Spectrum of mutations in mut methylmalonic acidemia and identification",
         "of a common Hispanic mutation and haplotype. Hum Mutat. 2006 Jan;27(1):31-43."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "methylmalonic_aciduria_with_homocystinuria_cblc_type": {
       "trait_id": "methylmalonic_aciduria_with_homocystinuria_cblc_type",
@@ -3096,7 +3213,8 @@
         "2021 Dec 16]. In: Adam MP, Feldman J, Mirzaa GM, et al., editors. GeneReviews® [Internet]. Seattle (WA):",
         "University of Washington, Seattle. 1993-2025."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "methylmalonic_aciduria_with_homocystinuria_cbld_type": {
       "trait_id": "methylmalonic_aciduria_with_homocystinuria_cbld_type",
@@ -3125,7 +3243,8 @@
         "Stucki M, Coelho D, Suormala T, et al. Molecular mechanisms leading to three different phenotypes in the cblD",
         "defect of intracellular cobalamin metabolism. Hum Mol Genet. 2012 Mar 15;21(6):1410-8."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "methylmalonic_aciduria_with_homocystinuria_cblf_type": {
       "trait_id": "methylmalonic_aciduria_with_homocystinuria_cblf_type",
@@ -3152,7 +3271,8 @@
         "Tanner SM, Sturm AC, Baack EC, et al. Inherited cobalamin malabsorption. Mutations in three genes reveal",
         "functional and ethnic patterns. Orphanet J Rare Dis. 2012 Aug 28.7:56."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "methylmalonic_aciduria_with_homocystinuria_cblj_type": {
       "trait_id": "methylmalonic_aciduria_with_homocystinuria_cblj_type",
@@ -3175,7 +3295,8 @@
         "Liu Y, Kang L, Li D, Jin Y, et al. Patients with cobalamin G or J defect missed by the current newborn screening",
         "program: diagnosis and novel mutations. J Hum Genet. 2019 Apr.64(4):305-312."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "mitochondrial_trifunctional_protein_deficiency": {
       "trait_id": "mitochondrial_trifunctional_protein_deficiency",
@@ -3202,7 +3323,8 @@
         "Prasun P, LoPiccolo MK, Ginevic I. Long-Chain Hydroxyacyl-CoA Dehydrogenase Deficiency / Trifunctional",
         "Protein Deficiency. 2022 Sep 1. In: Adam MP, Feldman J, Mirzaa GM, et al., editors. GeneReviews® [Internet]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "mucolipidosis_ii_and_iii_alpha_beta": {
       "trait_id": "mucolipidosis_ii_and_iii_alpha_beta",
@@ -3225,7 +3347,8 @@
         "Velho RV, De Pace R, Klünder S, et al. Analyses of disease-related GNPTAB mutations define a novel GlcNAc-1phosphotransferase interaction domain and an alternative site-1 protease cleavage site. Hum Mol Genet. 2015",
         "Jun 15;24(12):3497-505."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "mucolipidosis_iii_gamma_gnptg_gene": {
       "trait_id": "mucolipidosis_iii_gamma_gnptg_gene",
@@ -3249,7 +3372,8 @@
         "Alegra T, Sperb-Ludwig F, Guarany NR, et al. Clinical Characterization of Mucolipidoses II and III: A Multicenter",
         "Study. J Pediatr Genet. 2019 Dec.8(4):198-204."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "mucolipidosis_type_iv_mcoln1_gene": {
       "trait_id": "mucolipidosis_type_iv_mcoln1_gene",
@@ -3274,7 +3398,8 @@
         "GeneReviews® [Internet].",
         "Misko A, Wood L, Kiselyov K, et al. Progress in elucidating pathophysiology of mucolipidosis IV. Neurosci Lett."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "multiple_endocrine_neoplasia_2b": {
       "trait_id": "multiple_endocrine_neoplasia_2b",
@@ -3299,7 +3424,8 @@
         "Eng, C., Mulligan, L. M., Smith, D. P., et al . Mutation of the RET proto-oncogene in sporadic medullary thyroid",
         "carcinoma. Genes, chromosomes & cancer. 1995 Mar;12(3):209-12."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "multiple_endocrine_neoplasia_type_1": {
       "trait_id": "multiple_endocrine_neoplasia_type_1",
@@ -3324,7 +3450,8 @@
         "9.121(16):527-533.",
         "Multiple Endocrine Neoplasia Type 1 National Institute of Diabetes and Digestive and Kidney Diseases"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "multiple_endocrine_neoplasia_type_4": {
       "trait_id": "multiple_endocrine_neoplasia_type_4",
@@ -3349,7 +3476,8 @@
         "Seattle. 19932025.",
         "Ruggeri RM, Benevento E, De Cicco F, et al. Multiple endocrine neoplasia type 4 (MEN4): a thorough update on"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "neurofibromatosis_type_2": {
       "trait_id": "neurofibromatosis_type_2",
@@ -3374,7 +3502,8 @@
         "Tiwari R, Singh AK. Neurofibromatosis Type 2. 2022 Oct 3. In: StatPearls [Internet]. Treasure Island (FL):",
         "StatPearls Publishing. 2025 Jan."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "neurofibromatosis_type_i": {
       "trait_id": "neurofibromatosis_type_i",
@@ -3403,7 +3532,8 @@
         "Washington, Seattle; 1993-2023.",
         "Koczkowska M, Chen Y, Callens T, et al. Genotype-Phenotype Correlation in NF1: Evidence for a More Severe"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "neuronal_ceroid_lipofuscinoses_type_1_associated_to_ppt1": {
       "trait_id": "neuronal_ceroid_lipofuscinoses_type_1_associated_to_ppt1",
@@ -3428,7 +3558,8 @@
         "Mole SE, Anderson G, Band HA, et al. Clinical challenges and future therapeutic approaches for neuronal",
         "ceroid lipofuscinosis. Lancet Neurol. 2019 Jan;18(1):107-116."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "neuronal_ceroid_lipofuscinosis_type_10_ctsd_gene": {
       "trait_id": "neuronal_ceroid_lipofuscinosis_type_10_ctsd_gene",
@@ -3449,7 +3580,8 @@
         "May 29]. In: Adam MP, Feldman J, Mirzaa GM, Pagon RA, Wallace SE, Amemiya A, editors. GeneReviews®",
         "[Internet]. Seattle (WA): University of Washington, Seattle. 19932025."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "neuronal_ceroid_lipofuscinosis_type_11_grn_gene": {
       "trait_id": "neuronal_ceroid_lipofuscinosis_type_11_grn_gene",
@@ -3473,7 +3605,8 @@
         "Nóbrega PR, Paiva ARB, Amorim Junior AD, et al. Further description of the phenotypic spectrum of neuronal",
         "ceroid lipofuscinosis type 11. Genet Med. 2025 Jan.27(1):101291."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "neuronal_ceroid_lipofuscinosis_type_13_ctsf_gene": {
       "trait_id": "neuronal_ceroid_lipofuscinosis_type_13_ctsf_gene",
@@ -3495,7 +3628,8 @@
         "May 29]. In: Adam MP, Feldman J, Mirzaa GM, Pagon RA, Wallace SE, Amemiya A, editors. GeneReviews®",
         "[Internet]. Seattle (WA): University of Washington, Seattle. 19932025."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "neuronal_ceroid_lipofuscinosis_type_2_tpp1_gene": {
       "trait_id": "neuronal_ceroid_lipofuscinosis_type_2_tpp1_gene",
@@ -3520,7 +3654,8 @@
         "neuronal ceroid lipofuscinosis type 2 (CLN2 disease): an open-label extension study. Lancet Neurol. 2024",
         "Jan.23(1):60-70."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "neuronal_ceroid_lipofuscinosis_type_3_cln3_gene": {
       "trait_id": "neuronal_ceroid_lipofuscinosis_type_3_cln3_gene",
@@ -3545,7 +3680,8 @@
         "Mole SE, Anderson G, Band HA, et al. Clinical challenges and future therapeutic approaches for neuronal",
         "ceroid lipofuscinosis. Lancet Neurol. 2019 Jan;18(1):107-116."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "neuronal_ceroid_lipofuscinosis_type_5_cln5_gene": {
       "trait_id": "neuronal_ceroid_lipofuscinosis_type_5_cln5_gene",
@@ -3568,7 +3704,8 @@
         "Mole SE, Anderson G, Band HA, et al. Clinical challenges and future therapeutic approaches for neuronal",
         "ceroid lipofuscinosis. Lancet Neurol. 2019 Jan;18(1):107-116."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "neuronal_ceroid_lipofuscinosis_type_6_cln6_gene": {
       "trait_id": "neuronal_ceroid_lipofuscinosis_type_6_cln6_gene",
@@ -3593,7 +3730,8 @@
         "Clinical challenges and future therapeutic approaches for neuronal ceroid lipofuscinosis.",
         "Rus CM, Weissensteiner T, Pereira C, et al. Clinical and genetic characterization of a cohort of 97 CLN6"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "neuronal_ceroid_lipofuscinosis_type_7_mfsd8_gene": {
       "trait_id": "neuronal_ceroid_lipofuscinosis_type_7_mfsd8_gene",
@@ -3618,7 +3756,8 @@
         "Clinical challenges and future therapeutic approaches for neuronal ceroid lipofuscinosis.",
         "Rus CM, Weissensteiner T, Pereira C, et al. Clinical and genetic characterization of a cohort of 97 CLN6"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "neuronal_ceroid_lipofuscinosis_type_8_cln8_gene": {
       "trait_id": "neuronal_ceroid_lipofuscinosis_type_8_cln8_gene",
@@ -3643,7 +3782,8 @@
         "Suppl):S43-7.",
         "Sahin Y, Güngör O, Gormez Z, et al. Exome sequencing identifies a novel homozygous CLN8 mutation in a"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "niemann_pick_disease_type_a_and_b": {
       "trait_id": "niemann_pick_disease_type_a_and_b",
@@ -3671,7 +3811,8 @@
         "Seattle. 1993-2025.",
         "Takami A, Tatsumi Y, Sakai K, et al. Juvenile Hemochromatosis: A Case Report and Review of the Literature."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "niemann_pick_disease_type_c": {
       "trait_id": "niemann_pick_disease_type_c",
@@ -3700,7 +3841,8 @@
         "Millat G, Chikh K, Naureckiene S, et al. Niemann-Pick disease type C: spectrum of HE1 mutations and",
         "genotype/phenotype correlations in the NPC2 group. Am J Hum Genet. 2001 Nov.69(5):1013-21."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "non_syndromic_mitochondrial_hearing_loss": {
       "trait_id": "non_syndromic_mitochondrial_hearing_loss",
@@ -3725,7 +3867,8 @@
         "Usami SI, Nishio SY. Nonsyndromic Hearing Loss and Deafness, Mitochondrial. 2004 Oct 22 [updated 2018",
         "Jun 14]. In: Adam MP, Mirzaa GM, Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "nonsyndromic_hearing_loss_and_deafness_dfnb1": {
       "trait_id": "nonsyndromic_hearing_loss_and_deafness_dfnb1",
@@ -3749,7 +3892,8 @@
         "Yang H, Luo H, Zhang G, et al. A multiplex PCR amplicon sequencing assay to screen genetic hearing loss",
         "variants in newborns. BMC Med Genomics. 2021 Feb 27;14(1):61."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "oculocutaneous_albinism_oca2_gene": {
       "trait_id": "oculocutaneous_albinism_oca2_gene",
@@ -3771,7 +3915,8 @@
         "Simeonov DR, Wang X, Wang C, et al . DNA variations in oculocutaneous albinism: an updated mutation list",
         "and current outstanding issues in molecular diagnostics. Hum Mutat. 2013 Jun;34(6):827-35."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "oculocutaneous_albinism_slc45a2_gene": {
       "trait_id": "oculocutaneous_albinism_slc45a2_gene",
@@ -3799,7 +3944,8 @@
         "Adam MP, Feldman J, Mirzaa GM, et al., editors. GeneReviews® [Internet]. Seattle (WA): University of",
         "Washington, Seattle. 1993-2025."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "oculocutaneous_albinism_tyr_gene": {
       "trait_id": "oculocutaneous_albinism_tyr_gene",
@@ -3824,7 +3970,8 @@
         "Marçon CR, Maia M . Albinism: epidemiology, genetics, cutaneous characterization, psychosocial factors. An",
         "Bras Dermatol. 2019 Sep-Oct;94(5):503-520."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "oculocutaneous_albinism_tyrp1_gene": {
       "trait_id": "oculocutaneous_albinism_tyrp1_gene",
@@ -3853,7 +4000,8 @@
         "Ullah MI. Clinical and Mutation Spectrum of Autosomal Recessive Non-Syndromic Oculocutaneous Albinism",
         "(nsOCA) in Pakistan: A Review. Genes (Basel). 2022 Jun 16.13(6):1072."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "ornithine_transcarbamylase_deficiency": {
       "trait_id": "ornithine_transcarbamylase_deficiency",
@@ -3876,7 +4024,8 @@
         "(WA): University of Washington, Seattle. 1993-2025.",
         "Wang H, Ran J, Jiang T. Urea. Subcell Biochem. 2014.73:7-29."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pendred_syndrome": {
       "trait_id": "pendred_syndrome",
@@ -3901,7 +4050,8 @@
         "Wémeau JL, Kopp P. Pendred syndrome. Best Pract Res Clin Endocrinol Metab. 2017 Mar;31(2):213-224.",
         "Wémeau JL, Kopp P."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "peters_plus_syndrome": {
       "trait_id": "peters_plus_syndrome",
@@ -3926,7 +4076,8 @@
         "Zhang A, Venkat A, Taujale R, et al. Peters plus syndrome mutations affect the function and stability of human",
         "β1,3-glucosyltransferase. J Biol Chem. 2021 Jul;297(1):100843."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "peutz_jeghers_syndrome": {
       "trait_id": "peutz_jeghers_syndrome",
@@ -3945,7 +4096,8 @@
         "Peutz-Jeghers syndrome. MedlinePlus. National Library of Medicine (NIH) [October 1, 2013].",
         "Peutz-Jeghers syndrome. Orphanet. ORPHA2869 [February 2022]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "phenylketonuria": {
       "trait_id": "phenylketonuria",
@@ -3968,7 +4120,8 @@
         "diagnosis and treatment. Orphanet J Rare Dis. 2017 Oct 12;12(1):162.",
         "BIOPKU database"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "polymerase_proofreading_associated_polyposis_pold1_and_pole_genes": {
       "trait_id": "polymerase_proofreading_associated_polyposis_pold1_and_pole_genes",
@@ -3994,7 +4147,8 @@
         "hereditary colorectal cancer predisposition. Dis Colon Rectum. 2014 Mar.57(3):396-7.",
         "Polymerase proofreading-related polyposis. Orphanet. ORPHA447877 [June 2024]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pontocerebellar_hypoplasia_type_10_clp1_gene": {
       "trait_id": "pontocerebellar_hypoplasia_type_10_clp1_gene",
@@ -4016,7 +4170,8 @@
         "van Dijk T, Baas F, Barth PG, Poll-The BT. What's new in pontocerebellar hypoplasia? An update on genes and",
         "subtypes. Orphanet J Rare Dis. 2018 Jun 15.13(1):92."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pontocerebellar_hypoplasia_type_11_tbc1d23_gene": {
       "trait_id": "pontocerebellar_hypoplasia_type_11_tbc1d23_gene",
@@ -4038,7 +4193,8 @@
         "van Dijk T, Baas F, Barth PG, Poll-The BT. What's new in pontocerebellar hypoplasia? An update on genes and",
         "subtypes. Orphanet J Rare Dis. 2018 Jun 15.13(1):92."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pontocerebellar_hypoplasia_type_1a_vrk1_gene": {
       "trait_id": "pontocerebellar_hypoplasia_type_1a_vrk1_gene",
@@ -4063,7 +4219,8 @@
         "Živković SA, Nowak RJ, DiCapua D. CMT2 and distal hereditary motor neuropathy associated with VRK1",
         "variants: Case series. Neuromuscul Disord. 2025 Feb.47:105254."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pontocerebellar_hypoplasia_type_1b_exosc3_gene": {
       "trait_id": "pontocerebellar_hypoplasia_type_1b_exosc3_gene",
@@ -4091,7 +4248,8 @@
         "→C, p.G31A is a founder",
         "mutation causing severe pontocerebellar hypoplasia type 1 among the Czech Roma. J Neurogenet. 2013"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pontocerebellar_hypoplasia_type_2b_tsen2_gene": {
       "trait_id": "pontocerebellar_hypoplasia_type_2b_tsen2_gene",
@@ -4115,7 +4273,8 @@
         "Feldman J, Mirzaa GM, et al., editors. GeneReviews® [Internet]. Seattle (WA): University of Washington,",
         "Seattle. 1993-2025."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pontocerebellar_hypoplasia_type_2d_sepsecs_gene": {
       "trait_id": "pontocerebellar_hypoplasia_type_2d_sepsecs_gene",
@@ -4144,7 +4303,8 @@
         "Schoenmakers E, Chatterjee K. Human Genetic Disorders Resulting in Systemic Selenoprotein Deficiency. Int J",
         "Mol Sci. 2021 Nov 29.22(23):12927. doi: 10.3390/ijms222312927."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pontocerebellar_hypoplasia_type_6_rars2_gene": {
       "trait_id": "pontocerebellar_hypoplasia_type_6_rars2_gene",
@@ -4169,7 +4329,8 @@
         "Zhao S, Lian R, Jin L, et al. Clinical and genetic analysis of infants with pontocerebellar hypoplasia type 6",
         "caused by RARS2 variations. Epilepsia Open. 2024 Feb.9(1):250-257."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pontocerebellar_hypoplasia_type_7_toe1_gene": {
       "trait_id": "pontocerebellar_hypoplasia_type_7_toe1_gene",
@@ -4190,7 +4351,8 @@
         "van Dijk T, Baas F, Barth PG, Poll-The BT. What's new in pontocerebellar hypoplasia? An update on genes and",
         "subtypes. Orphanet J Rare Dis. 2018 Jun 15.13(1):92."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pontocerebellar_hypoplasia_type_8_chmp1a_gene": {
       "trait_id": "pontocerebellar_hypoplasia_type_8_chmp1a_gene",
@@ -4211,7 +4373,8 @@
         "van Dijk T, Baas F, Barth PG, Poll-The BT. What's new in pontocerebellar hypoplasia? An update on genes and",
         "subtypes. Orphanet J Rare Dis. 2018 Jun 15.13(1):92."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pontocerebellar_hypoplasia_type_9_ampd2_gene": {
       "trait_id": "pontocerebellar_hypoplasia_type_9_ampd2_gene",
@@ -4234,7 +4397,8 @@
         "van Dijk T, Baas F, Barth PG, Poll-The BT. What's new in pontocerebellar hypoplasia? An update on genes and",
         "subtypes. Orphanet J Rare Dis. 2018 Jun 15.13(1):92."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pontocerebellar_hypoplasia_types_2a_4_and_5_tsen54_gene": {
       "trait_id": "pontocerebellar_hypoplasia_types_2a_4_and_5_tsen54_gene",
@@ -4259,7 +4423,8 @@
         "van Dijk T, Baas F. TSEN54 Pontocerebellar Hypoplasia. 2009 Sep 8 [updated 2020 May 28]. In: Adam MP,",
         "Everman DB, Mirzaa GM, Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews®"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "primary_hyperoxaluria_type_1_ph1": {
       "trait_id": "primary_hyperoxaluria_type_1_ph1",
@@ -4279,7 +4444,8 @@
         "2022 May 17;15(Suppl 1):i4-i8.",
         "Milliner DS, Harris PC, Sas DJ, et al . GeneReviews® [Internet]. Seattle (WA): University of Washington, Seattle;"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "primary_hyperoxaluria_type_2_ph2": {
       "trait_id": "primary_hyperoxaluria_type_2_ph2",
@@ -4293,7 +4459,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "primary_hyperoxaluria_type_3_ph3": {
       "trait_id": "primary_hyperoxaluria_type_3_ph3",
@@ -4325,7 +4492,8 @@
         "Hopp K, Cogal AG, Bergstralh EJ, et al. Phenotype-Genotype Correlations and Estimated Carrier Frequencies of",
         "Primary Hyperoxaluria. J Am Soc Nephrol. 2015 Oct.26(10):2559-70."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pyridoxine_dependent_epilepsy": {
       "trait_id": "pyridoxine_dependent_epilepsy",
@@ -4339,7 +4507,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "pyruvate_kinase_deficiency": {
       "trait_id": "pyruvate_kinase_deficiency",
@@ -4353,7 +4522,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "refsum_disease": {
       "trait_id": "refsum_disease",
@@ -4367,7 +4537,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "retinitis_pigmentosa_with_or_without_skeletal_abnormalities": {
       "trait_id": "retinitis_pigmentosa_with_or_without_skeletal_abnormalities",
@@ -4381,7 +4552,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "rhizomelic_chondrodysplasia_punctata_type_1": {
       "trait_id": "rhizomelic_chondrodysplasia_punctata_type_1",
@@ -4395,7 +4567,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "rhizomelic_chondrodysplasia_punctata_type_3": {
       "trait_id": "rhizomelic_chondrodysplasia_punctata_type_3",
@@ -4409,7 +4582,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "salla_disease": {
       "trait_id": "salla_disease",
@@ -4423,7 +4597,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "sj_gren_larsson_syndrome": {
       "trait_id": "sj_gren_larsson_syndrome",
@@ -4445,7 +4620,8 @@
         "Weustenfeld M, Eidelpes R, Schmuth M, et al. Genotype and phenotype variability in Sjögren-Larsson",
         "syndrome. Hum Mutat. 2019 Feb;40(2):177-186. doi: 10.1002/humu.23679."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "spastic_paraplegia_atl1_gene": {
       "trait_id": "spastic_paraplegia_atl1_gene",
@@ -4468,7 +4644,8 @@
         "Li T, Tu L, Zhang Q, et al. SPG3A gene polymorphisms in hereditary spastic paraplegia. Int J Clin Exp Pathol.",
         "2017 Sep 1.10(9):9760-9764."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "spastic_paraplegia_spast_gene": {
       "trait_id": "spastic_paraplegia_spast_gene",
@@ -4491,7 +4668,8 @@
         "Varghaei P, Estiar MA, Ashtiani S, et al. Genetic, structural and clinical analysis of spastic paraplegia 4.",
         "Parkinsonism Relat Disord. 2022 May.98:62-69."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "spastic_paraplegia_with_pelizaeus_merzbacher_disease_plp1_gene": {
       "trait_id": "spastic_paraplegia_with_pelizaeus_merzbacher_disease_plp1_gene",
@@ -4515,7 +4693,8 @@
         "Yao L, Zhu Z, Zhang C, et al. PLP1 gene mutations cause spastic paraplegia type 2 in three families. Ann Clin",
         "Transl Neurol. 2023 Mar.10(3):328-338. doi: 10.1002/acn3.51722. Epub 2023 Jan 9."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "systemic_amyloidosis_fga_gene": {
       "trait_id": "systemic_amyloidosis_fga_gene",
@@ -4542,7 +4721,8 @@
         "America. Amyloid. 2013 Mar.20(1):52-5.",
         "Taylor GW, Gilbertson JA, Sayed R, et al. Proteomic Analysis for the Diagnosis of Fibrinogen A α -chain"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "tay_sachs_disease": {
       "trait_id": "tay_sachs_disease",
@@ -4567,7 +4747,8 @@
         "Toro C, Shirvan L, Tifft C. HEXA Disorders. 1999 Mar 11 [updated 2020 Oct 1]. In: Adam MP, Mirzaa GM, Pagon",
         "RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews® [Internet]. Seattle (WA): University of"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "transthyretin_amyloidosis_ttr_gene": {
       "trait_id": "transthyretin_amyloidosis_ttr_gene",
@@ -4592,7 +4773,8 @@
         "Magalhães J, Eira J, Liz MA. The role of transthyretin in cell biology: impact on human pathophysiology. Cell",
         "Mol Life Sci. 2021 Sep;78(17-18):6105-6117."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "tuberous_sclerosis": {
       "trait_id": "tuberous_sclerosis",
@@ -4617,7 +4799,8 @@
         "Adam MP, Feldman J, Mirzaa GM, et al., editors. GeneReviews® [Internet]. Seattle (WA): University of",
         "Washington, Seattle. 1993-2025."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "tyrosinemia_type_i": {
       "trait_id": "tyrosinemia_type_i",
@@ -4642,7 +4825,8 @@
         "Mirzaa GM, Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews® [Internet]. Seattle",
         "(WA): University of Washington, Seattle; 1993-2023."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "tyrosinemia_type_ii": {
       "trait_id": "tyrosinemia_type_ii",
@@ -4671,7 +4855,8 @@
         "da Silva ISF, Sopa I, Gomes D, et al. From skin lesions to tyrosinemia type II diagnosis. J Inherit Metab Dis.",
         "2024 Sep.47(5):1107-1108."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "usher_syndrome": {
       "trait_id": "usher_syndrome",
@@ -4706,7 +4891,8 @@
         "Koenekoop R, Arriaga M, Trzupek KM, et al. Usher Syndrome Type II. 1999 Dec 10 [updated 2020 Oct 22]. In:",
         "Adam MP, Mirzaa GM, Pagon RA, Wallace SE, Bean LJH, Gripp KW, Amemiya A, editors. GeneReviews®"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "variegate_porphyria_ppox_gene": {
       "trait_id": "variegate_porphyria_ppox_gene",
@@ -4729,7 +4915,8 @@
         "Variegate Porphyria. American Porphyria Foundation (APF).",
         "Variegate porphyria. Orphanet. ORPHA79473 [June 2014]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "very_long_chain_acyl_coa_dehydrogenase_deficiency_vlcadd": {
       "trait_id": "very_long_chain_acyl_coa_dehydrogenase_deficiency_vlcadd",
@@ -4743,7 +4930,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "visceral_amyloidosis_apoa1_gene": {
       "trait_id": "visceral_amyloidosis_apoa1_gene",
@@ -4757,7 +4945,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "von_hippel_lindau_syndrome": {
       "trait_id": "von_hippel_lindau_syndrome",
@@ -4771,7 +4960,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "von_willebrand_disease": {
       "trait_id": "von_willebrand_disease",
@@ -4785,7 +4975,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "wilms_tumor_1_wt1_gene": {
       "trait_id": "wilms_tumor_1_wt1_gene",
@@ -4799,7 +4990,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "wilson_disease": {
       "trait_id": "wilson_disease",
@@ -4813,7 +5005,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "x_linked_adrenoleukodystrophy": {
       "trait_id": "x_linked_adrenoleukodystrophy",
@@ -4827,7 +5020,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "x_linked_congenital_stationary_night_blindness": {
       "trait_id": "x_linked_congenital_stationary_night_blindness",
@@ -4841,7 +5035,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "x_linked_dominant_rhizomelic_chondrodysplasia_punctata": {
       "trait_id": "x_linked_dominant_rhizomelic_chondrodysplasia_punctata",
@@ -4855,7 +5050,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "x_linked_recessive_rhizomelic_chondrodysplasia_punctata": {
       "trait_id": "x_linked_recessive_rhizomelic_chondrodysplasia_punctata",
@@ -4869,7 +5065,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "x_linked_retinitis_pigmentosa": {
       "trait_id": "x_linked_retinitis_pigmentosa",
@@ -4883,7 +5080,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "zellweger_syndrome": {
       "trait_id": "zellweger_syndrome",
@@ -4897,7 +5095,8 @@
       "risk_loci": null,
       "variants": [],
       "references": [],
-      "needs_consumer_copy": true
+      "consumer_value": "A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.",
+      "needs_consumer_copy": false
     },
     "acne_vulgaris": {
       "trait_id": "acne_vulgaris",
@@ -10485,7 +10684,8 @@
         "StatPearls Publishing; 2024 Jan-.",
         "Small CB, Margolis DA, Shaefer MS, Ross LL. HLA-B*57:01 allele prevalence in HIV-infected North"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "acenocoumarol_fenprocoumon_adverse_effects": {
       "trait_id": "acenocoumarol_fenprocoumon_adverse_effects",
@@ -10505,7 +10705,8 @@
         "Swen JJ, Nijenhuis M, de Boer A, et al.Pharmacogenetics: from bench to byte--an update of guidelines.",
         "Clin Pharmacol Ther. 2011 May;89(5):662-73."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "allopurinol_dosage": {
       "trait_id": "allopurinol_dosage",
@@ -10531,7 +10732,8 @@
         "transporter and a determinant of drug response. Clin Pharmacol Ther. 2015 May;97(5):518-25.",
         "Woodward OM, Köttgen A, Coresh J, et al. Identification of a urate transporter, ABCG2, with a common"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "amifampridine_dosage": {
       "trait_id": "amifampridine_dosage",
@@ -10565,7 +10767,8 @@
         "Kuznetsov IB, McDuffie M, Moslehi R. A web server for inferring the human N-acetyltransferase-2 (NAT2)",
         "enzymatic phenotype from NAT2 genotype. Bioinformatics. 2009 May 1;25(9):1185-6."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "amitriptyline_dosage": {
       "trait_id": "amitriptyline_dosage",
@@ -10618,7 +10821,8 @@
         "(CPIC) for CYP2D6 and CYP2C19 genotypes and dosing of tricyclic antidepressants: 2016 update. Clin",
         "Pharmacol Ther. 2017 Jul;102(1):37-44."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "atazanavir_adverse_effects": {
       "trait_id": "atazanavir_adverse_effects",
@@ -10646,7 +10850,8 @@
         "Johnson DH, Venuto C, Ritchie MD, Morse GD, Daar ES, McLaren PJ, et al. Genomewide association study",
         "of atazanavir pharmacokinetics and hyperbilirubinemia in AIDS Clinical Trials Group protocol A5202."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "atorvastatin_dosage": {
       "trait_id": "atorvastatin_dosage",
@@ -10701,7 +10906,8 @@
         "Mykkänen AJH, Tarkiainen EK, Taskinen S, et al. Genome-Wide Association Study of Atorvastatin",
         "Pharmacokinetics: Associations With SLCO1B1, UGT1A3, and LPP. Clin Pharmacol Ther. 2024"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "brivaracetam_dosage": {
       "trait_id": "brivaracetam_dosage",
@@ -10751,7 +10957,8 @@
         "National Center for Biotechnology Information (US); 2012-.",
         "U.S. Food and Drug Administration. Table of Pharmacogenetic Associations."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "carbamazepine_dosage": {
       "trait_id": "carbamazepine_dosage",
@@ -10776,7 +10983,8 @@
         "Zhao GX, Zhang Z, Cai WK, et al . Associations between CYP3A4, CYP3A5 and SCNIA polymorphisms and",
         "carbamazepine metabolism in epilepsy: A meta-analysis. Epilepsy Res. 2021 Jul;173:106615."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "celecoxib_dosage": {
       "trait_id": "celecoxib_dosage",
@@ -10864,7 +11072,8 @@
         "McCormack PL. Celecoxib: a review of its use for symptomatic relief in the treatment of osteoarthritis,",
         "rheumatoid arthritis and ankylosing spondylitis. Drugs. 2011 Dec 24;71(18):2457-89."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "cisplatin_adverse_reactions": {
       "trait_id": "cisplatin_adverse_reactions",
@@ -10902,7 +11111,8 @@
         "Thiesen S, Yin P, Jorgensen AL, et al. TPMT, COMT and ACYP2 genetic variants in paediatric cancer",
         "patients with cisplatin-induced ototoxicity. Pharmacogenet Genomics. 2017 Jun;27(6):213-222."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "citalopram_dosage": {
       "trait_id": "citalopram_dosage",
@@ -10956,7 +11166,8 @@
         "Campos AI, Byrne EM, Mitchell BL, et al.Impact of CYP2C19 metaboliser status on SSRI response: a",
         "retrospective study of 9500 participants of the Australian Genetics of Depression Study."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "clobazam_adverse_reactions": {
       "trait_id": "clobazam_adverse_reactions",
@@ -11007,7 +11218,8 @@
         "antiepileptic drugs on serum clobazam and N-desmethyl clobazam concentrations in patients with",
         "epilepsy. Ther Drug Monit. 2013 Jun;35(3):305-12."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "clomipramine_dosage": {
       "trait_id": "clomipramine_dosage",
@@ -11061,7 +11273,8 @@
         "Yokono A, Morita S, Someya T, et al.The effect of CYP2C19 and CYP2D6 genotypes on the metabolism of",
         "clomipramine in Japanese psychiatric patients. J Clin Psychopharmacol. 2001 Dec;21(6):549-55."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "clopidogrel_dosage": {
       "trait_id": "clopidogrel_dosage",
@@ -11114,7 +11327,8 @@
         "Yudi MB, Clark DJ, Farouque O, et al. Clopidogrel, prasugrel or ticagrelor in patients with acute coronary",
         "syndromes undergoing percutaneous coronary intervention. Intern Med J. 2016 May;46(5):559-65."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "codeine_dosage": {
       "trait_id": "codeine_dosage",
@@ -11135,7 +11349,8 @@
         "guidelines for cytochrome P450 2D6 genotype and codeine therapy: 2014 update. Clin Pharmacol Ther.",
         "2014 Apr;95(4):376-82."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "daunorubicin_doxorubicin_adverse_reactions": {
       "trait_id": "daunorubicin_doxorubicin_adverse_reactions",
@@ -11175,7 +11390,8 @@
         "Chang VY, Wang JJ. Pharmacogenetics of Chemotherapy-Induced Cardiotoxicity. Curr Oncol Rep. 2018",
         "Apr 30;20(7):52."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "desipramine_dosage": {
       "trait_id": "desipramine_dosage",
@@ -11195,7 +11411,8 @@
         "Samer CF, Lorenzini KI, Rollason V, et al.Applications of CYP450 testing in the clinical setting. Mol Diagn",
         "Ther. 2013 Jun;17(3):165-84."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "diazepam_adverse_reactions": {
       "trait_id": "diazepam_adverse_reactions",
@@ -11249,7 +11466,8 @@
         "CYP2B6 phenotypes and the pharmacokinetics and safety of diazepam. Biomed Pharmacother.",
         "2022 Nov;155:113747."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "docetaxel_adverse_effects": {
       "trait_id": "docetaxel_adverse_effects",
@@ -11269,7 +11487,8 @@
         "polymorphisms in SLCO1B3 and ABCC2 with docetaxel-induced leukopenia. Cancer Sci.",
         "2008;99(5):96772."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "doxepin_dosage": {
       "trait_id": "doxepin_dosage",
@@ -11322,7 +11541,8 @@
         "(CPIC) for CYP2D6 and CYP2C19 genotypes and dosing of tricyclic antidepressants: 2016 update. Clin",
         "Pharmacol Ther. 2017 Jul;102(1):37-44."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "efavirenz_adverse_effects": {
       "trait_id": "efavirenz_adverse_effects",
@@ -11393,7 +11613,8 @@
         "Clifford, D. B., Evans, S., Yang, Y., et al. Long-term impact of efavirenz on neuropsychological performance",
         "and symptoms in HIV-infected individuals (ACTG 5097s). HIV clinical trials, 2009; 10(6), 343355."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "escitalopram_dosage": {
       "trait_id": "escitalopram_dosage",
@@ -11446,7 +11667,8 @@
         "Oct;30(10):1114-1120.",
         "Rao N. The clinical pharmacokinetics of escitalopram. Clin Pharmacokinet. 2007;46(4):281-90."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "fentanyl_efficacy": {
       "trait_id": "fentanyl_efficacy",
@@ -11471,7 +11693,8 @@
         "pharmacodynamics and adverse effects. Basic Clin Pharmacol Toxicol. 2019 Mar;124(3):321-329.",
         "Tanaka N, Naito T, Yagi T, et al.Impact of CYP3A5*3 on plasma exposure and urinary excretion of fentanyl"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "floxacillin_adverse_effects": {
       "trait_id": "floxacillin_adverse_effects",
@@ -11492,7 +11715,8 @@
         "Lindh M, Hallberg P, Yue QY, Wadelius M.Clinical factors predicting drug-induced liver injury due to",
         "flucloxacillin. Drug Healthc Patient Saf. 2018 Nov 21;10:95-101."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "flucytosine_adverse_reactions": {
       "trait_id": "flucytosine_adverse_reactions",
@@ -11585,7 +11809,8 @@
         "Publishing; 2024 Jan.",
         "Vermes A, Guchelaar HJ, Dankert J. Flucytosine: a review of its pharmacology, clinical indications,"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "fluindione_adverse_reactions": {
       "trait_id": "fluindione_adverse_reactions",
@@ -11675,7 +11900,8 @@
         "cardiovascular diseases: State of the art and implementation-recommendations of the French National",
         "Network of Pharmacogenetics (RNPGx). Therapie. 2017 Apr;72(2):257-267."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "fluorouracil_capecitabine_dosage": {
       "trait_id": "fluorouracil_capecitabine_dosage",
@@ -11768,7 +11994,8 @@
         "Maillard M, Launay M, Royer B, et al. Quantitative impact of pre-analytical process on plasma uracil when",
         "testing for dihydropyrimidine dehydrogenase deficiency. Br J Clin Pharmacol. 2023 Feb;89(2):762-772."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "flurbiprofen_dosage": {
       "trait_id": "flurbiprofen_dosage",
@@ -11856,7 +12083,8 @@
         "Pharmaceutics. 2020 Nov 2;12(11):1049.",
         "Theken KN, Lee CR, Gong L, et al. Clinical Pharmacogenetics Implementation Consortium Guideline (CPIC)"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "fluvastatin_dosage": {
       "trait_id": "fluvastatin_dosage",
@@ -11974,7 +12202,8 @@
         "Ramsamooj H, Preuss CV. Fluvastatin. 2023 May 29. In: StatPearls [Internet]. Treasure Island (FL):",
         "StatPearls Publishing; 2024 Jan. PMID: 28613474."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "fluvoxamine_dosage": {
       "trait_id": "fluvoxamine_dosage",
@@ -11992,7 +12221,8 @@
         "(CPIC) Guideline for CYP2D6, CYP2C19, CYP2B6, SLC6A4, and HTR2A Genotypes and Serotonin Reuptake",
         "Inhibitor Antidepressants. Clin Pharmacol Ther. 2023 Jul;114(1):51-68. doi: 10.1002/cpt.2903. Epub 2023"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "g6pd_deficiency_and_adverse_drug_reactions": {
       "trait_id": "g6pd_deficiency_and_adverse_drug_reactions",
@@ -12037,7 +12267,8 @@
         "Richardson SR and O´Malley GF. Glucose-6-Phosphate Dehydrogenase Deficiency. Treasure Island (FL):",
         "StatPearls Publishing; 2024 Jan-."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "hydrochlorothiazide_efficacy": {
       "trait_id": "hydrochlorothiazide_efficacy",
@@ -12062,7 +12293,8 @@
         "Vormfelde SV, Brockmöller J . The genetics of loop diuretic effects. Pharmacogenomics J. 2012",
         "Feb;12(1):45-53."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "hydrocodone_dosage": {
       "trait_id": "hydrocodone_dosage",
@@ -12083,7 +12315,8 @@
         "Smith DM, Stevenson JM, Ho TT, et al. Pharmacogenetics: A Precision Medicine Approach to Combatting",
         "the Opioid Epidemic. J Am Coll Clin Pharm. 2022 Feb;5(2):239-250."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "ibuprofen_dosage": {
       "trait_id": "ibuprofen_dosage",
@@ -12169,7 +12402,8 @@
         "Zobdeh F, Eremenko II, Akan MA, et al . Pharmacogenetics and Pain Treatment with a Focus on NonSteroidal Anti-Inflammatory Drugs (NSAIDs) and Antidepressants: A Systematic Review. Pharmaceutics.",
         "2022 Jun 1;14(6):1190."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "iloperidone_dosage": {
       "trait_id": "iloperidone_dosage",
@@ -12192,7 +12426,8 @@
         "metabolic inhibition via CYP2D6 and/or CYP3A4 and a comparison to quetiapine and ziprasidone. J Clin",
         "Psychopharmacol. 2013 Feb;33(1):3-10."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "imipramine_dosage": {
       "trait_id": "imipramine_dosage",
@@ -12246,7 +12481,8 @@
         "(CPIC) for CYP2D6 and CYP2C19 genotypes and dosing of tricyclic antidepressants: 2016 update. Clin",
         "Pharmacol Ther. 2017 Jul;102(1):37-44."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "inhalation_anesthetics_and_succinylcholine_adverse_reactions": {
       "trait_id": "inhalation_anesthetics_and_succinylcholine_adverse_reactions",
@@ -12382,7 +12618,8 @@
         "Rosenberg H, Pollock N, Schiemann A, et al. Malignant hyperthermia: a review. Orphanet J Rare Dis. 2015",
         "Aug 4;10:93."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "irinotecan_adverse_effects": {
       "trait_id": "irinotecan_adverse_effects",
@@ -12410,7 +12647,8 @@
         "Hulshof EC, Deenen MJ, Nijenhuis M, et al . Dutch pharmacogenetics working group (DPWG) guideline for",
         "the gene-drug interaction between UGT1A1 and irinotecan. Eur J Hum Genet. 2023 Sep;31(9):982-987."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "isoniazid_adverse_effects": {
       "trait_id": "isoniazid_adverse_effects",
@@ -12450,7 +12688,8 @@
         "with plasma isoniazid concentration and its metabolic ratio in ethiopian tuberculosis patients. Sci Rep.",
         "2023 Jul 15;13(1):11438."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "ivacaftor_efficacy": {
       "trait_id": "ivacaftor_efficacy",
@@ -12522,7 +12761,8 @@
         "G551S, S1251N, S1255P, S549N, S549R, or G970R Mutation [Internet]. Ottawa (ON): Canadian Agency for",
         "Drugs and Technologies in Health; 2015 Jul."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "lansoprazole_dexlansoprazole_dosage": {
       "trait_id": "lansoprazole_dexlansoprazole_dosage",
@@ -12576,7 +12816,8 @@
         "Jun;109(6):1417-1423.",
         "Zhao F, Wang J, Yang Y, et al.Effect of CYP2C19 genetic polymorphisms on the efficacy of proton pump"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "lornoxicam_dosage": {
       "trait_id": "lornoxicam_dosage",
@@ -12660,7 +12901,8 @@
         "Theken KN, Lee CR, Gong L, et al. Clinical Pharmacogenetics Implementation Consortium Guideline (CPIC)",
         "for CYP2C9 and Nonsteroidal Anti-Inflammatory Drugs. Clin Pharmacol Ther. 2020 Aug;108(2):191-200."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "lovastatin_dosage": {
       "trait_id": "lovastatin_dosage",
@@ -12714,7 +12956,8 @@
         "Lu B, Sun L, Seraydarian M et al. Effect of SLCO1B1 T521C on Statin-Related Myotoxicity With Use of",
         "Lovastatin and Atorvastatin. Clin Pharmacol Ther. 2021 Sep;110(3):733-740."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "lumacaftor_ivacaftor_efficacy": {
       "trait_id": "lumacaftor_ivacaftor_efficacy",
@@ -12739,7 +12982,8 @@
         "Ratjen F, Hug C, Marigowda G, et al.Efficacy and safety of lumacaftor and ivacaftor in patients aged 6-11",
         "years with cystic fibrosis homozygous for F508del-CFTR: a randomised, placebo-controlled phase 3 trial."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "meloxicam_dosage": {
       "trait_id": "meloxicam_dosage",
@@ -12821,7 +13065,8 @@
         "Theken KN, Lee CR, Gong L, et al. Clinical Pharmacogenetics Implementation Consortium Guideline (CPIC)",
         "for CYP2C9 and Nonsteroidal Anti-Inflammatory Drugs. Clin Pharmacol Ther. 2020 Aug;108(2):191-200."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "methotrexate_adverse_reactions": {
       "trait_id": "methotrexate_adverse_reactions",
@@ -12846,7 +13091,8 @@
         "Shao W, Yuan Y, Li Y.Association Between MTHFR C677T Polymorphism and Methotrexate Treatment",
         "Outcome in Rheumatoid Arthritis Patients: A Systematic Review and Meta-Analysis. Genet Test Mol"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "methotrexate_in_rheumatoid_arthritis_efficacy": {
       "trait_id": "methotrexate_in_rheumatoid_arthritis_efficacy",
@@ -12880,7 +13126,8 @@
         "Lee YH, Song GG. A meta-analysis of the association between the ATIC 347 C/G polymorphism",
         "and methotrexate responsiveness and toxicity in rheumatoid arthritis. Semin Arthritis Rheum."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "metoprolol_dosage": {
       "trait_id": "metoprolol_dosage",
@@ -12903,7 +13150,8 @@
         "Cardiovascular Patient to Carvedilol and Metoprolol. Curr Drug Metab. 2015;17(1):30-6.",
         "Thomas CD, Johnson JA. Pharmacogenetic factors affecting β-blocker metabolism and response. Expert"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "mivacurium_and_succinylcholine_adverse_reactions": {
       "trait_id": "mivacurium_and_succinylcholine_adverse_reactions",
@@ -12948,7 +13196,8 @@
         "Jul;26(7):351-6.",
         "Zhu GD, Dawson E, Huskey A, et al. Genetic Testing for BCHE Variants Identifies Patients at Risk of"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "nilotinib_adverse_reactions": {
       "trait_id": "nilotinib_adverse_reactions",
@@ -12973,7 +13222,8 @@
         "Singer JB, Shou Y, Giles F, et al. UGT1A1 promoter polymorphism increases risk of nilotinib-induced",
         "hyperbilirubinemia. Leukemia. 2007 Nov;21(11):2311-5."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "nortriptyline_dosage": {
       "trait_id": "nortriptyline_dosage",
@@ -12994,7 +13244,8 @@
         "(CPIC) for CYP2D6 and CYP2C19 genotypes and dosing of tricyclic antidepressants: 2016 update. Clin",
         "Pharmacol Ther. 2017 Jul;102(1):37-44."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "olanzapine_adverse_effects": {
       "trait_id": "olanzapine_adverse_effects",
@@ -13029,7 +13280,8 @@
         "Zubiaur P, Soria-Chacartegui P, Villapalos-García G, et al. The pharmacogenetics of treatment with",
         "olanzapine. Pharmacogenomics. 2021 Sep;22(14):939-958."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "olanzapine_efficacy": {
       "trait_id": "olanzapine_efficacy",
@@ -13072,7 +13324,8 @@
         "response to antipsychotic medication in first-episode schizophrenia patients. Am J Psychiatry. 2006",
         "Mar;163(3):529-31."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "omeprazole_dosage": {
       "trait_id": "omeprazole_dosage",
@@ -13126,7 +13379,8 @@
         "Jun;109(6):1417-1423.",
         "Zhao F, Wang J, Yang Y, et al.Effect of CYP2C19 genetic polymorphisms on the efficacy of proton pump"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "pantoprazole_dosage": {
       "trait_id": "pantoprazole_dosage",
@@ -13180,7 +13434,8 @@
         "medicine. Expert Opin Drug Metab Toxicol. 2018 Apr;14(4):447-460.",
         "Lima JJ, Thomas CD, Barbarino J, et al.Clinical Pharmacogenetics Implementation Consortium"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "paroxetin_dosage": {
       "trait_id": "paroxetin_dosage",
@@ -13203,7 +13458,8 @@
         "paroxetine: population pharmacokinetic approach to guide paroxetine personalized therapy in chinese",
         "psychotic patients. Front Pharmacol. 2022 Sep 12;13:966622."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "peginterferons_alfa_2a_2b_and_ribavirin_efficacy": {
       "trait_id": "peginterferons_alfa_2a_2b_and_ribavirin_efficacy",
@@ -13229,7 +13485,8 @@
         "Hepatitis C Patients Treated with Peginterferon and Ribavirin Combination Therapy. Int J Med Sci. 2017",
         "Sep 4;14(11):1088-1093."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "phenytoin_dosage": {
       "trait_id": "phenytoin_dosage",
@@ -13317,7 +13574,8 @@
         "Karnes JH, Rettie AE, Somogyi AA, et al.Clinical Pharmacogenetics Implementation Consortium (CPIC)",
         "Guideline for CYP2C9 and HLA-B Genotypes and Phenytoin Dosing: 2020 Update. Clin Pharmacol Ther."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "piroxicam_dosage": {
       "trait_id": "piroxicam_dosage",
@@ -13404,7 +13662,8 @@
         "Theken KN, Lee CR, Gong L, et al. Clinical Pharmacogenetics Implementation Consortium Guideline (CPIC)",
         "for CYP2C9 and Nonsteroidal Anti-Inflammatory Drugs. Clin Pharmacol Ther. 2020 Aug;108(2):191-200."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "pitavastatin_dosage": {
       "trait_id": "pitavastatin_dosage",
@@ -13458,7 +13717,8 @@
         "Chung JY, Cho JY, Yu KS et al. Effect of OATP1B1 (SLCO1B1) variant alleles on the pharmacokinetics of",
         "pitavastatin in healthy volunteers. Clin Pharmacol Ther. 2005 Oct;78(4):342-50."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "pitolisant_dosage": {
       "trait_id": "pitolisant_dosage",
@@ -13477,7 +13737,8 @@
         "Harwell V, Fasinu PS. Pitolisant and Other Histamine-3 Receptor Antagonists-An Update on Therapeutic",
         "Potentials and Clinical Prospects. Medicines (Basel). 2020 Sep 1;7(9):55."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "pravastatin_dosage": {
       "trait_id": "pravastatin_dosage",
@@ -13532,7 +13793,8 @@
         "Ramsey LB, Gong L, Lee SB, et al. PharmVar GeneFocus: SLCO1B1. Clin Pharmacol Ther. 2023",
         "Apr;113(4):782-793."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "quetiapine_dosage": {
       "trait_id": "quetiapine_dosage",
@@ -13590,7 +13852,8 @@
         "Solhaug V, Tveito M, Waade RB, et al. Impact of age, sex and cytochrome P450 genotype on quetiapine and",
         "N-desalkylquetiapine serum concentrations: A study based on real-world data from 8118 patients. Br J"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "rosuvastatin_dosage": {
       "trait_id": "rosuvastatin_dosage",
@@ -13646,7 +13909,8 @@
         "Luvai A, Mbagaya W, Hall AS, et al. Rosuvastatin: a review of the pharmacology and clinical effectiveness",
         "in cardiovascular disease. Clin Med Insights Cardiol. 2012;6:17-33."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "selective_serotonin_reuptake_inhibitors_ssris_adverse_effects": {
       "trait_id": "selective_serotonin_reuptake_inhibitors_ssris_adverse_effects",
@@ -13673,7 +13937,8 @@
         "polymorphisms of HTR2A and the safety and efficacy of antidepressants in depression: a meta-analysis.",
         "Pharmacogenomics J. 2021 Apr;21(2):200-215."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "sertraline_dosage": {
       "trait_id": "sertraline_dosage",
@@ -13771,7 +14036,8 @@
         "the gene-drug interaction between CYP2C19 and CYP2D6 and SSRIs. Eur J Hum Genet. 2022",
         "Oct;30(10):1114-1120."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "simvastatin_dosage": {
       "trait_id": "simvastatin_dosage",
@@ -13823,7 +14089,8 @@
         "Ramsey LB, Gong L, Lee SB, et al. PharmVar GeneFocus: SLCO1B1. Clin Pharmacol Ther. 2023",
         "Apr;113(4):782-793."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "siponimod_dosage": {
       "trait_id": "siponimod_dosage",
@@ -13908,7 +14175,8 @@
         "variation on adverse events with propafenone in the pediatric and young adult population. Clin Transl Sci.",
         "2022 Jul;15(7):1787-1795."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "tacrolimus_dosage": {
       "trait_id": "tacrolimus_dosage",
@@ -13937,7 +14205,8 @@
         "tacrolimus: a systematic review and meta-analysis of observational studies. Pharmacogenomics J. 2015",
         "Feb;15(1):38-48."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "tamoxifen_efficacy": {
       "trait_id": "tamoxifen_efficacy",
@@ -13958,7 +14227,8 @@
         "Schroth W, Goetz MP, Hamann U, et al. Association between CYP2D6 polymorphisms and outcomes",
         "among women with early stage breast cancer treated with tamoxifen. JAMA. 2009 Oct 7;302(13):1429-36."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "tenoxicam_dosage": {
       "trait_id": "tenoxicam_dosage",
@@ -14043,7 +14313,8 @@
         "al., editors. Medical Genetics Summaries [Internet]. Bethesda (MD): National Center for Biotechnology",
         "Information (US)."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "thioguanine_azathioprine_mercaptopurine_dosage": {
       "trait_id": "thioguanine_azathioprine_mercaptopurine_dosage",
@@ -14115,7 +14386,8 @@
         "Relling MV, Schwab M, Whirl-Carrillo M, et al. Clinical Pharmacogenetics Implementation Consortium",
         "Guideline for Thiopurine Dosing Based on TPMT and NUDT15 Genotypes: 2018 Update. Clin Pharmacol"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "tramadol_dosage": {
       "trait_id": "tramadol_dosage",
@@ -14138,7 +14410,8 @@
         "Matic M, Nijenhuis M, Soree B, et al. Dutch Pharmacogenetics Working Group (DPWG) guideline for the",
         "gene-drug interaction between CYP2D6 and opioids (codeine, tramadol and oxycodone). Eur J Hum Genet."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "trimipramine_dosage": {
       "trait_id": "trimipramine_dosage",
@@ -14192,7 +14465,8 @@
         "Kirchheiner J, Müller G, Meineke I, et al. Effects of polymorphisms in CYP2D6, CYP2C9, and CYP2C19 on",
         "trimipramine pharmacokinetics. J Clin Psychopharmacol. 2003 Oct;23(5):459-66."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "valproic_acid_adverse_effects": {
       "trait_id": "valproic_acid_adverse_effects",
@@ -14232,7 +14506,8 @@
         "Sitarz KS, Elliott HR, Karaman BS, et al.Valproic acid triggers increased mitochondrial biogenesis in POLGdeficient fibroblasts. Mol Genet Metab. 2014 May;112(1):57-63.",
         "Stewart JD, Horvath R, Baruffini E, et al. Polymerase γ gene POLG determines the risk of sodium valproateinduced liver toxicity. Hepatology. 2010 Nov;52(5):1791-6."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "venlafaxine_dosage": {
       "trait_id": "venlafaxine_dosage",
@@ -14252,7 +14527,8 @@
         "Frederiksen T. Using population pharmacokinetic analyses of drugs metabolized by CYP2D6 to study the",
         "genotype-phenotype translation. Basic Clin Pharmacol Toxicol. 2023 Aug;133(2):113-123."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "voriconazole_dosage": {
       "trait_id": "voriconazole_dosage",
@@ -14306,7 +14582,8 @@
         "Guidelines for CYP2C19 and Voriconazole Therapy. Clin Pharmacol Ther. 2017 Jul;102(1):45-51.",
         "Swen JJ, Nijenhuis M, de Boer A, et al. Pharmacogenetics: from bench to byte--an update of guidelines."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "vortioxetine_dosage": {
       "trait_id": "vortioxetine_dosage",
@@ -14328,7 +14605,8 @@
         "Zhang X, Cai Y, Hu X, et al. Systematic Review and Meta-Analysis of Vortioxetine for the Treatment of",
         "Major Depressive Disorder in Adults. Front Psychiatry. 2022 Jun 24;13:922648."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "warfarin_adverse_reactions": {
       "trait_id": "warfarin_adverse_reactions",
@@ -14352,7 +14630,8 @@
         "Wadelius M, Chen LY, Lindh JD, et al . The largest prospective warfarin-treated cohort supports genetic",
         "forecasting. Blood. 2009 Jan 22;113(4):784-92."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.",
+      "needs_consumer_copy": false
     },
     "antioxidant_capacity": {
       "trait_id": "antioxidant_capacity",
