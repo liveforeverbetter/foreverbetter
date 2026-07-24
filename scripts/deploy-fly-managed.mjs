@@ -5,9 +5,11 @@
  * The WGS Machine deliberately lives outside fly.toml: it has a 40 GB volume
  * in its own region and is started by the durable genetics queue. Running a
  * normal `fly deploy` risks treating that intentionally external volume as
- * config drift. This command deploys only the FRA API/wearable Machines. The
+ * config drift. This command deploys every API/wearable Machine. The
  * dispatcher refreshes the stopped WGS Machine to this image before its next
- * queued job starts.
+ * queued job starts. A missing WGS Machine is reported as degraded rather
+ * than blocking a safe API release: queued WGS jobs must still wait until an
+ * operator restores the single-volume worker topology.
  *
  * Dry-run is the default. Pass --execute to make changes.
  */
@@ -22,13 +24,13 @@ const execute = args.execute === true;
 
 const machines = flyJson(['machines', 'list', '--app', app, '--json']);
 const volumes = flyJson(['volumes', 'list', '--app', app, '--json']);
-const { apiMachine, wearableMachine, wgsMachine } = validateTopology(machines, volumes);
+const { apiMachines, wearableMachines, wgs } = validateTopology(machines, volumes);
 
 const image = `registry.fly.io/${app}:${imageLabel}`;
 console.log(`Managed Fly release for ${app}`);
-console.log(`  API:       ${apiMachine.id} (${primaryRegion})`);
-console.log(`  wearables: ${wearableMachine.id} (${primaryRegion})`);
-console.log(`  WGS:       ${wgsMachine.id} (${wgsRegion}, ${wgsMachine.state})`);
+console.log(`  API:       ${formatMachines(apiMachines)}`);
+console.log(`  wearables: ${formatMachines(wearableMachines)}`);
+console.log(`  WGS:       ${wgs.message}`);
 console.log(`  image:     ${image}`);
 
 if (!execute) {
@@ -37,16 +39,31 @@ if (!execute) {
 }
 
 run('fly', ['deploy', '--app', app, '--build-only', '--push', '--image-label', imageLabel]);
-run('fly', ['machine', 'update', apiMachine.id, '--app', app, '--image', image, '--yes']);
-run('fly', ['machine', 'update', wearableMachine.id, '--app', app, '--image', image, '--skip-start', '--yes']);
+for (const machine of apiMachines) {
+  run('fly', ['machine', 'update', machine.id, '--app', app, '--image', image, '--yes']);
+}
+for (const machine of wearableMachines) {
+  const updateArgs = ['machine', 'update', machine.id, '--app', app, '--image', image];
+  if (machine.state !== 'started' && machine.state !== 'starting') updateArgs.push('--skip-start');
+  updateArgs.push('--yes');
+  run('fly', updateArgs);
+}
 
 const ready = await fetch(`https://${app}.fly.dev/ready`);
 if (!ready.ok || (await ready.json()).ok !== true) throw new Error('Hosted /ready check failed after deployment.');
 
 const after = flyJson(['machines', 'list', '--app', app, '--json']);
-const updated = after.find(machine => machine.id === apiMachine.id);
-if (!updated?.config?.image?.includes(`:${imageLabel}`)) throw new Error('API Machine did not receive the requested image.');
-console.log('Managed Fly release complete. The AMS WGS Machine will refresh to this image immediately before its next queued genetics job.');
+for (const machine of [...apiMachines, ...wearableMachines]) {
+  const updated = after.find(candidate => candidate.id === machine.id);
+  if (!updated?.config?.image?.includes(`:${imageLabel}`)) {
+    throw new Error(`Machine ${machine.id} did not receive the requested image.`);
+  }
+}
+if (wgs.machine) {
+  console.log('Managed Fly release complete. The AMS WGS Machine will refresh to this image immediately before its next queued genetics job.');
+} else {
+  console.log('Managed Fly release complete with WGS degraded. Do not requeue WGS analyses until the AMS worker is attached to dbsnp_refs and its ID is configured.');
+}
 
 function validateTopology(machines, volumes) {
   const referenceVolumes = volumes.filter(volume => volume.name === 'dbsnp_refs');
@@ -55,15 +72,26 @@ function validateTopology(machines, volumes) {
   if (reference.region !== wgsRegion) throw new Error(`Expected dbsnp_refs in ${wgsRegion}; found ${reference.region}.`);
 
   const machineWithReference = machines.filter(machine => machine.config?.mounts?.some(mount => mount.volume === reference.id));
-  if (machineWithReference.length !== 1) throw new Error(`Expected exactly one WGS Machine attached to ${reference.id}; found ${machineWithReference.length}.`);
+  if (machineWithReference.length > 1) throw new Error(`Expected at most one WGS Machine attached to ${reference.id}; found ${machineWithReference.length}.`);
   const wgsMachine = machineWithReference[0];
-  if (wgsMachine.region !== wgsRegion) throw new Error(`WGS Machine must be in ${wgsRegion}; found ${wgsMachine.region}.`);
+  if (wgsMachine && wgsMachine.region !== wgsRegion) throw new Error(`WGS Machine must be in ${wgsRegion}; found ${wgsMachine.region}.`);
 
-  const fraMachines = machines.filter(machine => machine.region === primaryRegion && !machine.config?.mounts?.length);
-  const apiMachine = fraMachines.find(machine => processGroup(machine) === 'app');
-  const wearableMachine = fraMachines.find(machine => processGroup(machine) === 'worker');
-  if (!apiMachine || !wearableMachine) throw new Error(`Expected one app and one wearable worker in ${primaryRegion}.`);
-  return { apiMachine, wearableMachine, wgsMachine };
+  const apiMachines = machines.filter(machine => processGroup(machine) === 'app' && !machine.config?.mounts?.length);
+  const wearableMachines = machines.filter(machine => processGroup(machine) === 'worker' && !machine.config?.mounts?.length);
+  if (!apiMachines.length || !wearableMachines.length) {
+    throw new Error(`Expected at least one app and one wearable worker without mounts (primary region: ${primaryRegion}).`);
+  }
+  if (!apiMachines.some(machine => machine.region === primaryRegion) || !wearableMachines.some(machine => machine.region === primaryRegion)) {
+    throw new Error(`Expected an app and wearable worker in the primary region (${primaryRegion}).`);
+  }
+  const wgs = wgsMachine
+    ? { machine: wgsMachine, message: `${wgsMachine.id} (${wgsRegion}, ${wgsMachine.state})` }
+    : { machine: undefined, message: `degraded: ${reference.id} is unattached in ${wgsRegion}` };
+  return { apiMachines, wearableMachines, wgs };
+}
+
+function formatMachines(machines) {
+  return machines.map(machine => `${machine.id} (${machine.region}, ${machine.state})`).join(', ');
 }
 
 function processGroup(machine) {
