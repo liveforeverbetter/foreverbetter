@@ -38,6 +38,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -48,6 +55,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -77,6 +91,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -87,6 +108,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -120,6 +148,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -130,6 +165,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -158,6 +200,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -168,6 +217,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -197,6 +253,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -207,6 +270,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -236,6 +306,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -246,6 +323,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -275,6 +359,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -285,6 +376,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -314,6 +412,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -324,6 +429,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -353,6 +465,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -363,6 +482,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -392,6 +518,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -402,6 +535,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -435,6 +575,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -445,6 +592,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -478,6 +632,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -488,6 +649,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -498,6 +666,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -508,6 +683,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -549,6 +731,11 @@
                     "description": "The source of the billing decision. Hosted Checkout is normally shown once the introductory request allowance is exhausted."
                   }
                 }
+              },
+              "example": {
+                "tier": "standard",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "activation_source": "request_limit"
               }
             }
           }
@@ -581,6 +768,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -591,6 +785,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -601,6 +802,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -611,6 +819,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -629,6 +844,9 @@
                     "minLength": 1
                   }
                 }
+              },
+              "example": {
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c"
               }
             }
           }
@@ -657,6 +875,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -667,6 +892,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -706,6 +938,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -716,6 +955,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -745,6 +991,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -755,6 +1008,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -784,6 +1044,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -794,6 +1061,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -823,6 +1097,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -833,6 +1114,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -855,6 +1143,9 @@
                     "description": "Email address of the person authorizing access."
                   }
                 }
+              },
+              "example": {
+                "email": "you@example.com"
               }
             }
           }
@@ -883,6 +1174,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -893,6 +1191,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -920,6 +1225,10 @@
                     "description": "The 8-digit code from the sign-in email."
                   }
                 }
+              },
+              "example": {
+                "email": "you@example.com",
+                "token": "48213705"
               }
             }
           }
@@ -948,6 +1257,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -958,6 +1274,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -976,6 +1299,9 @@
                     "maxLength": 80
                   }
                 }
+              },
+              "example": {
+                "agent_name": "Longevity Copilot"
               }
             }
           }
@@ -1003,6 +1329,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1013,6 +1346,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1041,6 +1381,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1051,6 +1398,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1079,6 +1433,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1089,6 +1450,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1121,6 +1489,11 @@
                     ]
                   }
                 }
+              },
+              "example": {
+                "session_code": "AGL-7F3K-92QD",
+                "access_token": "eyJhbGciOiJI...",
+                "decision": "approve"
               }
             }
           }
@@ -1148,6 +1521,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1158,6 +1538,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1203,6 +1590,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1213,6 +1607,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1258,6 +1659,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1268,6 +1676,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1278,6 +1693,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1288,6 +1710,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1362,6 +1791,13 @@
                     "default": 365
                   }
                 }
+              },
+              "example": {
+                "name": "Personal agent key",
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "tier": "free",
+                "intended_use": "personal_agent"
               }
             }
           }
@@ -1384,6 +1820,35 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/SourceImportResult"
+                },
+                "example": {
+                  "source": {
+                    "id": "src_bio_5f3a90",
+                    "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                    "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                    "category": "biomarkers",
+                    "filename": "panel-2026-07.csv",
+                    "content_type": "text/csv",
+                    "received_at": "2026-07-24T09:15:00.000Z",
+                    "byte_length": 512,
+                    "storage_mode": "durable",
+                    "upload_status": "complete"
+                  },
+                  "normalized_observations": [
+                    {
+                      "id": "obs_apob_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_bio_5f3a90",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "name": "apob",
+                      "value": 108,
+                      "unit": "mg/dL",
+                      "observed_at": "2026-07-24T09:15:00.000Z"
+                    }
+                  ],
+                  "warnings": []
                 }
               }
             }
@@ -1394,6 +1859,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1404,6 +1876,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1414,6 +1893,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1424,6 +1910,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1486,6 +1979,14 @@
                     ]
                   }
                 ]
+              },
+              "example": {
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "category": "biomarkers",
+                "filename": "panel-2026-07.csv",
+                "content_type": "text/csv",
+                "text": "marker,value,unit\napob,108,mg/dL\nhscrp,0.8,mg/L\n"
               }
             }
           }
@@ -1518,6 +2019,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1528,6 +2036,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1538,6 +2053,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1548,6 +2070,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1590,6 +2119,13 @@
                     "type": "string"
                   }
                 }
+              },
+              "example": {
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "filename": "genome.vcf.gz",
+                "byte_length": 734003200,
+                "content_type": "application/gzip"
               }
             }
           }
@@ -1622,6 +2158,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1632,6 +2175,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1642,6 +2192,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1652,6 +2209,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1678,6 +2242,10 @@
                     "minLength": 1
                   }
                 }
+              },
+              "example": {
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c"
               }
             }
           }
@@ -1700,6 +2268,24 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/SourceList"
+                },
+                "example": {
+                  "sources": [
+                    {
+                      "id": "src_bio_5f3a90",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "category": "biomarkers",
+                      "filename": "panel-2026-07.pdf",
+                      "content_type": "application/pdf",
+                      "received_at": "2026-07-24T09:15:00.000Z",
+                      "byte_length": 48213,
+                      "storage_mode": "durable",
+                      "upload_status": "complete"
+                    }
+                  ],
+                  "count": 1,
+                  "total": 3
                 }
               }
             }
@@ -1710,6 +2296,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1720,6 +2313,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1790,6 +2390,34 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/SourceDetail"
+                },
+                "example": {
+                  "source": {
+                    "id": "src_bio_5f3a90",
+                    "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                    "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                    "category": "biomarkers",
+                    "filename": "panel-2026-07.pdf",
+                    "content_type": "application/pdf",
+                    "received_at": "2026-07-24T09:15:00.000Z",
+                    "byte_length": 48213,
+                    "storage_mode": "durable",
+                    "upload_status": "complete"
+                  },
+                  "normalized_observations": [
+                    {
+                      "id": "obs_apob_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_bio_5f3a90",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "name": "apob",
+                      "value": 108,
+                      "unit": "mg/dL",
+                      "observed_at": "2026-07-24T09:15:00.000Z"
+                    }
+                  ]
                 }
               }
             }
@@ -1800,6 +2428,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1810,6 +2445,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1833,6 +2475,18 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/WebhookEventList"
+                },
+                "example": {
+                  "events": [
+                    {
+                      "id": "evt_9a1b",
+                      "type": "analysis.completed",
+                      "data": {
+                        "analysis_id": "an_7d1e9c4b2a3f"
+                      },
+                      "created_at": "2026-07-24T09:15:00.000Z"
+                    }
+                  ]
                 }
               }
             }
@@ -1843,6 +2497,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1853,6 +2514,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1886,6 +2554,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1896,6 +2571,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1947,6 +2629,11 @@
                     }
                   }
                 }
+              },
+              "example": {
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "source_provider": "whoop"
               }
             }
           }
@@ -1979,6 +2666,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -1989,6 +2683,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2021,6 +2722,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2031,6 +2739,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2080,6 +2795,12 @@
                     "type": "string"
                   }
                 }
+              },
+              "example": {
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "source_provider": "whoop",
+                "code": "oauth_authorization_code"
               }
             }
           }
@@ -2112,6 +2833,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2122,6 +2850,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2165,6 +2900,16 @@
                     }
                   }
                 }
+              },
+              "example": {
+                "provider": "whoop",
+                "client_id": "your_whoop_client_id",
+                "redirect_uri": "https://your-app.example.com/callback",
+                "scopes": [
+                  "read:recovery",
+                  "read:cycles",
+                  "read:sleep"
+                ]
               }
             }
           }
@@ -2197,6 +2942,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2207,6 +2959,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2239,6 +2998,12 @@
                     "type": "string"
                   }
                 }
+              },
+              "example": {
+                "code": "oauth_authorization_code",
+                "client_id": "your_whoop_client_id",
+                "client_secret": "your_whoop_client_secret",
+                "redirect_uri": "https://your-app.example.com/callback"
               }
             }
           }
@@ -2271,6 +3036,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2281,6 +3053,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2318,6 +3097,11 @@
                     }
                   }
                 }
+              },
+              "example": {
+                "refresh_token": "your_refresh_token",
+                "client_id": "your_whoop_client_id",
+                "client_secret": "your_whoop_client_secret"
               }
             }
           }
@@ -2350,6 +3134,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2360,6 +3151,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2418,6 +3216,29 @@
                     }
                   }
                 }
+              },
+              "example": {
+                "provider": "health_connect",
+                "sdkVersion": "1.4.0",
+                "syncTimestamp": "2026-07-24T09:15:00.000Z",
+                "data": {
+                  "records": [
+                    {
+                      "type": "steps",
+                      "count": 8214,
+                      "startTime": "2026-07-23T00:00:00.000Z",
+                      "endTime": "2026-07-23T23:59:59.000Z"
+                    }
+                  ],
+                  "sleep": [
+                    {
+                      "startTime": "2026-07-23T23:10:00.000Z",
+                      "endTime": "2026-07-24T06:55:00.000Z",
+                      "stages": []
+                    }
+                  ],
+                  "workouts": []
+                }
               }
             }
           }
@@ -2450,6 +3271,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2460,6 +3288,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2483,6 +3318,22 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AnalysisList"
+                },
+                "example": {
+                  "analyses": [
+                    {
+                      "id": "an_7d1e9c4b2a3f",
+                      "created_at": "2026-07-24T09:15:00.000Z",
+                      "source_ids": [
+                        "src_gen_2c8d1a",
+                        "src_bio_5f3a90",
+                        "src_wear_9a1b7c"
+                      ],
+                      "interpretation_count": 63
+                    }
+                  ],
+                  "count": 1,
+                  "total": 1
                 }
               }
             }
@@ -2493,6 +3344,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2503,6 +3361,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2571,6 +3436,144 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AnalysisResult"
+                },
+                "example": {
+                  "id": "an_7d1e9c4b2a3f",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "modality": "multimodal",
+                  "operation": "analyze",
+                  "created_at": "2026-07-24T09:15:00.000Z",
+                  "source_ids": [
+                    "src_gen_2c8d1a",
+                    "src_bio_5f3a90",
+                    "src_wear_9a1b7c"
+                  ],
+                  "raw_source_references": [
+                    {
+                      "id": "src_bio_5f3a90",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "category": "biomarkers",
+                      "filename": "panel-2026-07.pdf",
+                      "content_type": "application/pdf",
+                      "received_at": "2026-07-24T09:15:00.000Z",
+                      "byte_length": 48213,
+                      "storage_mode": "durable",
+                      "upload_status": "complete"
+                    }
+                  ],
+                  "normalized_observations": [
+                    {
+                      "id": "obs_apob_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_bio_5f3a90",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "name": "apob",
+                      "value": 108,
+                      "unit": "mg/dL",
+                      "observed_at": "2026-07-24T09:15:00.000Z"
+                    },
+                    {
+                      "id": "obs_rhr_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_wear_9a1b7c",
+                      "category": "wearables",
+                      "type": "cardiovascular",
+                      "name": "resting_heart_rate",
+                      "value": 58,
+                      "unit": "bpm",
+                      "observed_at": "2026-07-24T09:15:00.000Z",
+                      "provider": "whoop"
+                    }
+                  ],
+                  "derived_interpretations": [
+                    {
+                      "id": "int_rhr_9c2a",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "genetics",
+                      "type": "polygenic_score",
+                      "title": "Resting heart rate",
+                      "status": "reference_relative",
+                      "score": 62,
+                      "summary": "Your inherited baseline for resting heart rate sits around the population average. Your measured wearable value is the number to act on.",
+                      "action": "Track resting heart rate from your wearable and retest after eight weeks of Zone 2 training.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_gen_2c8d1a"
+                        ],
+                        "source_categories": [
+                          "genetics"
+                        ],
+                        "source_type": "direct",
+                        "engine": "genetics-polygenic-v2",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "domain": "cardiovascular",
+                        "genes": [
+                          "GJA1",
+                          "MYH6",
+                          "SCN10A",
+                          "CCDC141",
+                          "RNF220"
+                        ],
+                        "rsids": [
+                          "rs272564",
+                          "rs12110693",
+                          "rs6801957",
+                          "rs17287293"
+                        ],
+                        "risk_loci": 74,
+                        "heritability_pct": 32,
+                        "consumer_value": "About a third of resting heart rate is inherited; the rest responds to aerobic fitness, sleep, and recovery. Use your measured value as the signal and this as the baseline it moves around.",
+                        "references": [
+                          "Eppinga RN, et al. Nat Genet. 2016;48(12):1557-1563.",
+                          "den Hoed M, et al. Nat Genet. 2013;45(6):621-631."
+                        ]
+                      }
+                    },
+                    {
+                      "id": "int_apob_4d7e",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "title": "ApoB",
+                      "status": "above_range",
+                      "score": 108,
+                      "summary": "ApoB of 108 mg/dL is above the optimal range for long-term cardiovascular risk.",
+                      "action": "Discuss lipid-lowering options with your clinician and retest in twelve weeks.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_bio_5f3a90"
+                        ],
+                        "source_categories": [
+                          "biomarkers"
+                        ],
+                        "source_type": "direct",
+                        "engine": "biomarkers-reference-v3",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "value": 108,
+                        "unit": "mg/dL",
+                        "reference_low": 40,
+                        "reference_high": 90
+                      }
+                    }
+                  ],
+                  "healthspan_score": 78,
+                  "domain_scores": {
+                    "cardiovascular": 74,
+                    "metabolic": 81
+                  }
                 }
               }
             }
@@ -2581,6 +3584,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2591,6 +3601,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2601,6 +3618,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2611,6 +3635,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2667,6 +3698,20 @@
                       }
                     }
                   }
+                }
+              },
+              "example": {
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "source_ids": [
+                  "src_gen_2c8d1a",
+                  "src_bio_5f3a90",
+                  "src_wear_9a1b7c"
+                ],
+                "annotation_depth": "compact",
+                "profile": {
+                  "age": 41,
+                  "sex": "male"
                 }
               }
             }
@@ -2690,6 +3735,144 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AnalysisResult"
+                },
+                "example": {
+                  "id": "an_7d1e9c4b2a3f",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "modality": "multimodal",
+                  "operation": "analyze",
+                  "created_at": "2026-07-24T09:15:00.000Z",
+                  "source_ids": [
+                    "src_gen_2c8d1a",
+                    "src_bio_5f3a90",
+                    "src_wear_9a1b7c"
+                  ],
+                  "raw_source_references": [
+                    {
+                      "id": "src_bio_5f3a90",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "category": "biomarkers",
+                      "filename": "panel-2026-07.pdf",
+                      "content_type": "application/pdf",
+                      "received_at": "2026-07-24T09:15:00.000Z",
+                      "byte_length": 48213,
+                      "storage_mode": "durable",
+                      "upload_status": "complete"
+                    }
+                  ],
+                  "normalized_observations": [
+                    {
+                      "id": "obs_apob_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_bio_5f3a90",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "name": "apob",
+                      "value": 108,
+                      "unit": "mg/dL",
+                      "observed_at": "2026-07-24T09:15:00.000Z"
+                    },
+                    {
+                      "id": "obs_rhr_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_wear_9a1b7c",
+                      "category": "wearables",
+                      "type": "cardiovascular",
+                      "name": "resting_heart_rate",
+                      "value": 58,
+                      "unit": "bpm",
+                      "observed_at": "2026-07-24T09:15:00.000Z",
+                      "provider": "whoop"
+                    }
+                  ],
+                  "derived_interpretations": [
+                    {
+                      "id": "int_rhr_9c2a",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "genetics",
+                      "type": "polygenic_score",
+                      "title": "Resting heart rate",
+                      "status": "reference_relative",
+                      "score": 62,
+                      "summary": "Your inherited baseline for resting heart rate sits around the population average. Your measured wearable value is the number to act on.",
+                      "action": "Track resting heart rate from your wearable and retest after eight weeks of Zone 2 training.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_gen_2c8d1a"
+                        ],
+                        "source_categories": [
+                          "genetics"
+                        ],
+                        "source_type": "direct",
+                        "engine": "genetics-polygenic-v2",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "domain": "cardiovascular",
+                        "genes": [
+                          "GJA1",
+                          "MYH6",
+                          "SCN10A",
+                          "CCDC141",
+                          "RNF220"
+                        ],
+                        "rsids": [
+                          "rs272564",
+                          "rs12110693",
+                          "rs6801957",
+                          "rs17287293"
+                        ],
+                        "risk_loci": 74,
+                        "heritability_pct": 32,
+                        "consumer_value": "About a third of resting heart rate is inherited; the rest responds to aerobic fitness, sleep, and recovery. Use your measured value as the signal and this as the baseline it moves around.",
+                        "references": [
+                          "Eppinga RN, et al. Nat Genet. 2016;48(12):1557-1563.",
+                          "den Hoed M, et al. Nat Genet. 2013;45(6):621-631."
+                        ]
+                      }
+                    },
+                    {
+                      "id": "int_apob_4d7e",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "title": "ApoB",
+                      "status": "above_range",
+                      "score": 108,
+                      "summary": "ApoB of 108 mg/dL is above the optimal range for long-term cardiovascular risk.",
+                      "action": "Discuss lipid-lowering options with your clinician and retest in twelve weeks.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_bio_5f3a90"
+                        ],
+                        "source_categories": [
+                          "biomarkers"
+                        ],
+                        "source_type": "direct",
+                        "engine": "biomarkers-reference-v3",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "value": 108,
+                        "unit": "mg/dL",
+                        "reference_low": 40,
+                        "reference_high": 90
+                      }
+                    }
+                  ],
+                  "healthspan_score": 78,
+                  "domain_scores": {
+                    "cardiovascular": 74,
+                    "metabolic": 81
+                  }
                 }
               }
             }
@@ -2700,6 +3883,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2710,6 +3900,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2733,6 +3930,41 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RecommendationsResult"
+                },
+                "example": {
+                  "analysis_id": "an_7d1e9c4b2a3f",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "generated_at": "2026-07-24T09:15:00.000Z",
+                  "healthspan_score": 78,
+                  "count": 1,
+                  "recommendations": [
+                    {
+                      "title": "Lower ApoB toward optimal",
+                      "category": "cardiovascular",
+                      "priority": "high",
+                      "rationale": "ApoB of 108 mg/dL is above the optimal range for long-term risk.",
+                      "action": "Discuss lipid management with your clinician; retest in twelve weeks.",
+                      "provenance": {
+                        "analysis_id": "an_7d1e9c4b2a3f",
+                        "source_ids": [
+                          "src_bio_5f3a90"
+                        ],
+                        "engine": "recommendations-v2"
+                      }
+                    }
+                  ],
+                  "protocols": [
+                    {
+                      "id": "core",
+                      "name": "Core protocol",
+                      "focus": "Cardiovascular risk",
+                      "domains": [
+                        "cardiovascular"
+                      ],
+                      "items": []
+                    }
+                  ]
                 }
               }
             }
@@ -2743,6 +3975,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2753,6 +3992,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2776,6 +4022,48 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ActionPlan"
+                },
+                "example": {
+                  "analysis_id": "an_7d1e9c4b2a3f",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "generated_at": "2026-07-24T09:15:00.000Z",
+                  "status": "ready",
+                  "summary": "Two core interventions target your above-range ApoB and support your cardiovascular baseline.",
+                  "interventions": [
+                    {
+                      "title": "Increase soluble fiber to 10 g/day",
+                      "cadence": "Today",
+                      "evidence_grade": "B",
+                      "rationale": "Lowers ApoB-bearing lipoproteins."
+                    }
+                  ],
+                  "supplements": [
+                    {
+                      "name": "Omega-3 (EPA/DHA)",
+                      "dose": "2 g/day",
+                      "evidence_grade": "B",
+                      "already_taking": false
+                    }
+                  ],
+                  "cautions": [
+                    "Do not change prescribed medications without your clinician."
+                  ],
+                  "evidence_key": {
+                    "A": "Consistent RCT evidence",
+                    "B": "Limited or mixed RCT evidence"
+                  },
+                  "sources": [
+                    {
+                      "title": "Eppinga RN, et al. Nat Genet. 2016.",
+                      "url": "https://doi.org/10.1038/ng.3708"
+                    }
+                  ],
+                  "disclaimer": "This is not medical advice. Confirm any change with a qualified clinician.",
+                  "provenance": {
+                    "analysis_id": "an_7d1e9c4b2a3f",
+                    "engine": "action-plan-v3"
+                  }
                 }
               }
             }
@@ -2786,6 +4074,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2796,6 +4091,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2819,6 +4121,144 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AnalysisResult"
+                },
+                "example": {
+                  "id": "an_7d1e9c4b2a3f",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "modality": "multimodal",
+                  "operation": "analyze",
+                  "created_at": "2026-07-24T09:15:00.000Z",
+                  "source_ids": [
+                    "src_gen_2c8d1a",
+                    "src_bio_5f3a90",
+                    "src_wear_9a1b7c"
+                  ],
+                  "raw_source_references": [
+                    {
+                      "id": "src_bio_5f3a90",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "category": "biomarkers",
+                      "filename": "panel-2026-07.pdf",
+                      "content_type": "application/pdf",
+                      "received_at": "2026-07-24T09:15:00.000Z",
+                      "byte_length": 48213,
+                      "storage_mode": "durable",
+                      "upload_status": "complete"
+                    }
+                  ],
+                  "normalized_observations": [
+                    {
+                      "id": "obs_apob_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_bio_5f3a90",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "name": "apob",
+                      "value": 108,
+                      "unit": "mg/dL",
+                      "observed_at": "2026-07-24T09:15:00.000Z"
+                    },
+                    {
+                      "id": "obs_rhr_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_wear_9a1b7c",
+                      "category": "wearables",
+                      "type": "cardiovascular",
+                      "name": "resting_heart_rate",
+                      "value": 58,
+                      "unit": "bpm",
+                      "observed_at": "2026-07-24T09:15:00.000Z",
+                      "provider": "whoop"
+                    }
+                  ],
+                  "derived_interpretations": [
+                    {
+                      "id": "int_rhr_9c2a",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "genetics",
+                      "type": "polygenic_score",
+                      "title": "Resting heart rate",
+                      "status": "reference_relative",
+                      "score": 62,
+                      "summary": "Your inherited baseline for resting heart rate sits around the population average. Your measured wearable value is the number to act on.",
+                      "action": "Track resting heart rate from your wearable and retest after eight weeks of Zone 2 training.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_gen_2c8d1a"
+                        ],
+                        "source_categories": [
+                          "genetics"
+                        ],
+                        "source_type": "direct",
+                        "engine": "genetics-polygenic-v2",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "domain": "cardiovascular",
+                        "genes": [
+                          "GJA1",
+                          "MYH6",
+                          "SCN10A",
+                          "CCDC141",
+                          "RNF220"
+                        ],
+                        "rsids": [
+                          "rs272564",
+                          "rs12110693",
+                          "rs6801957",
+                          "rs17287293"
+                        ],
+                        "risk_loci": 74,
+                        "heritability_pct": 32,
+                        "consumer_value": "About a third of resting heart rate is inherited; the rest responds to aerobic fitness, sleep, and recovery. Use your measured value as the signal and this as the baseline it moves around.",
+                        "references": [
+                          "Eppinga RN, et al. Nat Genet. 2016;48(12):1557-1563.",
+                          "den Hoed M, et al. Nat Genet. 2013;45(6):621-631."
+                        ]
+                      }
+                    },
+                    {
+                      "id": "int_apob_4d7e",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "title": "ApoB",
+                      "status": "above_range",
+                      "score": 108,
+                      "summary": "ApoB of 108 mg/dL is above the optimal range for long-term cardiovascular risk.",
+                      "action": "Discuss lipid-lowering options with your clinician and retest in twelve weeks.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_bio_5f3a90"
+                        ],
+                        "source_categories": [
+                          "biomarkers"
+                        ],
+                        "source_type": "direct",
+                        "engine": "biomarkers-reference-v3",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "value": 108,
+                        "unit": "mg/dL",
+                        "reference_low": 40,
+                        "reference_high": 90
+                      }
+                    }
+                  ],
+                  "healthspan_score": 78,
+                  "domain_scores": {
+                    "cardiovascular": 74,
+                    "metabolic": 81
+                  }
                 }
               }
             }
@@ -2829,6 +4269,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2839,6 +4286,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2849,6 +4303,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2859,6 +4320,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2872,7 +4340,8 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {}
-              }
+              },
+              "example": {}
             }
           }
         },
@@ -2894,6 +4363,144 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AnalysisResult"
+                },
+                "example": {
+                  "id": "an_7d1e9c4b2a3f",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "modality": "multimodal",
+                  "operation": "analyze",
+                  "created_at": "2026-07-24T09:15:00.000Z",
+                  "source_ids": [
+                    "src_gen_2c8d1a",
+                    "src_bio_5f3a90",
+                    "src_wear_9a1b7c"
+                  ],
+                  "raw_source_references": [
+                    {
+                      "id": "src_bio_5f3a90",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "category": "biomarkers",
+                      "filename": "panel-2026-07.pdf",
+                      "content_type": "application/pdf",
+                      "received_at": "2026-07-24T09:15:00.000Z",
+                      "byte_length": 48213,
+                      "storage_mode": "durable",
+                      "upload_status": "complete"
+                    }
+                  ],
+                  "normalized_observations": [
+                    {
+                      "id": "obs_apob_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_bio_5f3a90",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "name": "apob",
+                      "value": 108,
+                      "unit": "mg/dL",
+                      "observed_at": "2026-07-24T09:15:00.000Z"
+                    },
+                    {
+                      "id": "obs_rhr_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_wear_9a1b7c",
+                      "category": "wearables",
+                      "type": "cardiovascular",
+                      "name": "resting_heart_rate",
+                      "value": 58,
+                      "unit": "bpm",
+                      "observed_at": "2026-07-24T09:15:00.000Z",
+                      "provider": "whoop"
+                    }
+                  ],
+                  "derived_interpretations": [
+                    {
+                      "id": "int_rhr_9c2a",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "genetics",
+                      "type": "polygenic_score",
+                      "title": "Resting heart rate",
+                      "status": "reference_relative",
+                      "score": 62,
+                      "summary": "Your inherited baseline for resting heart rate sits around the population average. Your measured wearable value is the number to act on.",
+                      "action": "Track resting heart rate from your wearable and retest after eight weeks of Zone 2 training.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_gen_2c8d1a"
+                        ],
+                        "source_categories": [
+                          "genetics"
+                        ],
+                        "source_type": "direct",
+                        "engine": "genetics-polygenic-v2",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "domain": "cardiovascular",
+                        "genes": [
+                          "GJA1",
+                          "MYH6",
+                          "SCN10A",
+                          "CCDC141",
+                          "RNF220"
+                        ],
+                        "rsids": [
+                          "rs272564",
+                          "rs12110693",
+                          "rs6801957",
+                          "rs17287293"
+                        ],
+                        "risk_loci": 74,
+                        "heritability_pct": 32,
+                        "consumer_value": "About a third of resting heart rate is inherited; the rest responds to aerobic fitness, sleep, and recovery. Use your measured value as the signal and this as the baseline it moves around.",
+                        "references": [
+                          "Eppinga RN, et al. Nat Genet. 2016;48(12):1557-1563.",
+                          "den Hoed M, et al. Nat Genet. 2013;45(6):621-631."
+                        ]
+                      }
+                    },
+                    {
+                      "id": "int_apob_4d7e",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "title": "ApoB",
+                      "status": "above_range",
+                      "score": 108,
+                      "summary": "ApoB of 108 mg/dL is above the optimal range for long-term cardiovascular risk.",
+                      "action": "Discuss lipid-lowering options with your clinician and retest in twelve weeks.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_bio_5f3a90"
+                        ],
+                        "source_categories": [
+                          "biomarkers"
+                        ],
+                        "source_type": "direct",
+                        "engine": "biomarkers-reference-v3",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "value": 108,
+                        "unit": "mg/dL",
+                        "reference_low": 40,
+                        "reference_high": 90
+                      }
+                    }
+                  ],
+                  "healthspan_score": 78,
+                  "domain_scores": {
+                    "cardiovascular": 74,
+                    "metabolic": 81
+                  }
                 }
               }
             }
@@ -2904,6 +4511,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2914,6 +4528,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2924,6 +4545,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2934,6 +4562,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -2991,6 +4626,13 @@
                     }
                   }
                 }
+              },
+              "example": {
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "source_ids": [
+                  "src_bio_5f3a90"
+                ]
               }
             }
           }
@@ -3013,6 +4655,144 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AnalysisResult"
+                },
+                "example": {
+                  "id": "an_7d1e9c4b2a3f",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "modality": "multimodal",
+                  "operation": "analyze",
+                  "created_at": "2026-07-24T09:15:00.000Z",
+                  "source_ids": [
+                    "src_gen_2c8d1a",
+                    "src_bio_5f3a90",
+                    "src_wear_9a1b7c"
+                  ],
+                  "raw_source_references": [
+                    {
+                      "id": "src_bio_5f3a90",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "category": "biomarkers",
+                      "filename": "panel-2026-07.pdf",
+                      "content_type": "application/pdf",
+                      "received_at": "2026-07-24T09:15:00.000Z",
+                      "byte_length": 48213,
+                      "storage_mode": "durable",
+                      "upload_status": "complete"
+                    }
+                  ],
+                  "normalized_observations": [
+                    {
+                      "id": "obs_apob_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_bio_5f3a90",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "name": "apob",
+                      "value": 108,
+                      "unit": "mg/dL",
+                      "observed_at": "2026-07-24T09:15:00.000Z"
+                    },
+                    {
+                      "id": "obs_rhr_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_wear_9a1b7c",
+                      "category": "wearables",
+                      "type": "cardiovascular",
+                      "name": "resting_heart_rate",
+                      "value": 58,
+                      "unit": "bpm",
+                      "observed_at": "2026-07-24T09:15:00.000Z",
+                      "provider": "whoop"
+                    }
+                  ],
+                  "derived_interpretations": [
+                    {
+                      "id": "int_rhr_9c2a",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "genetics",
+                      "type": "polygenic_score",
+                      "title": "Resting heart rate",
+                      "status": "reference_relative",
+                      "score": 62,
+                      "summary": "Your inherited baseline for resting heart rate sits around the population average. Your measured wearable value is the number to act on.",
+                      "action": "Track resting heart rate from your wearable and retest after eight weeks of Zone 2 training.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_gen_2c8d1a"
+                        ],
+                        "source_categories": [
+                          "genetics"
+                        ],
+                        "source_type": "direct",
+                        "engine": "genetics-polygenic-v2",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "domain": "cardiovascular",
+                        "genes": [
+                          "GJA1",
+                          "MYH6",
+                          "SCN10A",
+                          "CCDC141",
+                          "RNF220"
+                        ],
+                        "rsids": [
+                          "rs272564",
+                          "rs12110693",
+                          "rs6801957",
+                          "rs17287293"
+                        ],
+                        "risk_loci": 74,
+                        "heritability_pct": 32,
+                        "consumer_value": "About a third of resting heart rate is inherited; the rest responds to aerobic fitness, sleep, and recovery. Use your measured value as the signal and this as the baseline it moves around.",
+                        "references": [
+                          "Eppinga RN, et al. Nat Genet. 2016;48(12):1557-1563.",
+                          "den Hoed M, et al. Nat Genet. 2013;45(6):621-631."
+                        ]
+                      }
+                    },
+                    {
+                      "id": "int_apob_4d7e",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "title": "ApoB",
+                      "status": "above_range",
+                      "score": 108,
+                      "summary": "ApoB of 108 mg/dL is above the optimal range for long-term cardiovascular risk.",
+                      "action": "Discuss lipid-lowering options with your clinician and retest in twelve weeks.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_bio_5f3a90"
+                        ],
+                        "source_categories": [
+                          "biomarkers"
+                        ],
+                        "source_type": "direct",
+                        "engine": "biomarkers-reference-v3",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "value": 108,
+                        "unit": "mg/dL",
+                        "reference_low": 40,
+                        "reference_high": 90
+                      }
+                    }
+                  ],
+                  "healthspan_score": 78,
+                  "domain_scores": {
+                    "cardiovascular": 74,
+                    "metabolic": 81
+                  }
                 }
               }
             }
@@ -3023,6 +4803,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3033,6 +4820,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3043,6 +4837,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3053,6 +4854,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3110,6 +4918,13 @@
                     }
                   }
                 }
+              },
+              "example": {
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "source_ids": [
+                  "src_bio_5f3a90"
+                ]
               }
             }
           }
@@ -3132,6 +4947,144 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AnalysisResult"
+                },
+                "example": {
+                  "id": "an_7d1e9c4b2a3f",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "modality": "multimodal",
+                  "operation": "analyze",
+                  "created_at": "2026-07-24T09:15:00.000Z",
+                  "source_ids": [
+                    "src_gen_2c8d1a",
+                    "src_bio_5f3a90",
+                    "src_wear_9a1b7c"
+                  ],
+                  "raw_source_references": [
+                    {
+                      "id": "src_bio_5f3a90",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "category": "biomarkers",
+                      "filename": "panel-2026-07.pdf",
+                      "content_type": "application/pdf",
+                      "received_at": "2026-07-24T09:15:00.000Z",
+                      "byte_length": 48213,
+                      "storage_mode": "durable",
+                      "upload_status": "complete"
+                    }
+                  ],
+                  "normalized_observations": [
+                    {
+                      "id": "obs_apob_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_bio_5f3a90",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "name": "apob",
+                      "value": 108,
+                      "unit": "mg/dL",
+                      "observed_at": "2026-07-24T09:15:00.000Z"
+                    },
+                    {
+                      "id": "obs_rhr_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_wear_9a1b7c",
+                      "category": "wearables",
+                      "type": "cardiovascular",
+                      "name": "resting_heart_rate",
+                      "value": 58,
+                      "unit": "bpm",
+                      "observed_at": "2026-07-24T09:15:00.000Z",
+                      "provider": "whoop"
+                    }
+                  ],
+                  "derived_interpretations": [
+                    {
+                      "id": "int_rhr_9c2a",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "genetics",
+                      "type": "polygenic_score",
+                      "title": "Resting heart rate",
+                      "status": "reference_relative",
+                      "score": 62,
+                      "summary": "Your inherited baseline for resting heart rate sits around the population average. Your measured wearable value is the number to act on.",
+                      "action": "Track resting heart rate from your wearable and retest after eight weeks of Zone 2 training.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_gen_2c8d1a"
+                        ],
+                        "source_categories": [
+                          "genetics"
+                        ],
+                        "source_type": "direct",
+                        "engine": "genetics-polygenic-v2",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "domain": "cardiovascular",
+                        "genes": [
+                          "GJA1",
+                          "MYH6",
+                          "SCN10A",
+                          "CCDC141",
+                          "RNF220"
+                        ],
+                        "rsids": [
+                          "rs272564",
+                          "rs12110693",
+                          "rs6801957",
+                          "rs17287293"
+                        ],
+                        "risk_loci": 74,
+                        "heritability_pct": 32,
+                        "consumer_value": "About a third of resting heart rate is inherited; the rest responds to aerobic fitness, sleep, and recovery. Use your measured value as the signal and this as the baseline it moves around.",
+                        "references": [
+                          "Eppinga RN, et al. Nat Genet. 2016;48(12):1557-1563.",
+                          "den Hoed M, et al. Nat Genet. 2013;45(6):621-631."
+                        ]
+                      }
+                    },
+                    {
+                      "id": "int_apob_4d7e",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "title": "ApoB",
+                      "status": "above_range",
+                      "score": 108,
+                      "summary": "ApoB of 108 mg/dL is above the optimal range for long-term cardiovascular risk.",
+                      "action": "Discuss lipid-lowering options with your clinician and retest in twelve weeks.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_bio_5f3a90"
+                        ],
+                        "source_categories": [
+                          "biomarkers"
+                        ],
+                        "source_type": "direct",
+                        "engine": "biomarkers-reference-v3",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "value": 108,
+                        "unit": "mg/dL",
+                        "reference_low": 40,
+                        "reference_high": 90
+                      }
+                    }
+                  ],
+                  "healthspan_score": 78,
+                  "domain_scores": {
+                    "cardiovascular": 74,
+                    "metabolic": 81
+                  }
                 }
               }
             }
@@ -3142,6 +5095,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3152,6 +5112,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3162,6 +5129,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3172,6 +5146,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3229,6 +5210,13 @@
                     }
                   }
                 }
+              },
+              "example": {
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "source_ids": [
+                  "src_wear_9a1b7c"
+                ]
               }
             }
           }
@@ -3251,6 +5239,144 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AnalysisResult"
+                },
+                "example": {
+                  "id": "an_7d1e9c4b2a3f",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "modality": "multimodal",
+                  "operation": "analyze",
+                  "created_at": "2026-07-24T09:15:00.000Z",
+                  "source_ids": [
+                    "src_gen_2c8d1a",
+                    "src_bio_5f3a90",
+                    "src_wear_9a1b7c"
+                  ],
+                  "raw_source_references": [
+                    {
+                      "id": "src_bio_5f3a90",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "category": "biomarkers",
+                      "filename": "panel-2026-07.pdf",
+                      "content_type": "application/pdf",
+                      "received_at": "2026-07-24T09:15:00.000Z",
+                      "byte_length": 48213,
+                      "storage_mode": "durable",
+                      "upload_status": "complete"
+                    }
+                  ],
+                  "normalized_observations": [
+                    {
+                      "id": "obs_apob_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_bio_5f3a90",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "name": "apob",
+                      "value": 108,
+                      "unit": "mg/dL",
+                      "observed_at": "2026-07-24T09:15:00.000Z"
+                    },
+                    {
+                      "id": "obs_rhr_1",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "source_id": "src_wear_9a1b7c",
+                      "category": "wearables",
+                      "type": "cardiovascular",
+                      "name": "resting_heart_rate",
+                      "value": 58,
+                      "unit": "bpm",
+                      "observed_at": "2026-07-24T09:15:00.000Z",
+                      "provider": "whoop"
+                    }
+                  ],
+                  "derived_interpretations": [
+                    {
+                      "id": "int_rhr_9c2a",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "genetics",
+                      "type": "polygenic_score",
+                      "title": "Resting heart rate",
+                      "status": "reference_relative",
+                      "score": 62,
+                      "summary": "Your inherited baseline for resting heart rate sits around the population average. Your measured wearable value is the number to act on.",
+                      "action": "Track resting heart rate from your wearable and retest after eight weeks of Zone 2 training.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_gen_2c8d1a"
+                        ],
+                        "source_categories": [
+                          "genetics"
+                        ],
+                        "source_type": "direct",
+                        "engine": "genetics-polygenic-v2",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "domain": "cardiovascular",
+                        "genes": [
+                          "GJA1",
+                          "MYH6",
+                          "SCN10A",
+                          "CCDC141",
+                          "RNF220"
+                        ],
+                        "rsids": [
+                          "rs272564",
+                          "rs12110693",
+                          "rs6801957",
+                          "rs17287293"
+                        ],
+                        "risk_loci": 74,
+                        "heritability_pct": 32,
+                        "consumer_value": "About a third of resting heart rate is inherited; the rest responds to aerobic fitness, sleep, and recovery. Use your measured value as the signal and this as the baseline it moves around.",
+                        "references": [
+                          "Eppinga RN, et al. Nat Genet. 2016;48(12):1557-1563.",
+                          "den Hoed M, et al. Nat Genet. 2013;45(6):621-631."
+                        ]
+                      }
+                    },
+                    {
+                      "id": "int_apob_4d7e",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "biomarkers",
+                      "type": "lipids",
+                      "title": "ApoB",
+                      "status": "above_range",
+                      "score": 108,
+                      "summary": "ApoB of 108 mg/dL is above the optimal range for long-term cardiovascular risk.",
+                      "action": "Discuss lipid-lowering options with your clinician and retest in twelve weeks.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_bio_5f3a90"
+                        ],
+                        "source_categories": [
+                          "biomarkers"
+                        ],
+                        "source_type": "direct",
+                        "engine": "biomarkers-reference-v3",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "value": 108,
+                        "unit": "mg/dL",
+                        "reference_low": 40,
+                        "reference_high": 90
+                      }
+                    }
+                  ],
+                  "healthspan_score": 78,
+                  "domain_scores": {
+                    "cardiovascular": 74,
+                    "metabolic": 81
+                  }
                 }
               }
             }
@@ -3261,6 +5387,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3271,6 +5404,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3281,6 +5421,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3291,6 +5438,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3348,6 +5502,14 @@
                     }
                   }
                 }
+              },
+              "example": {
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "source_ids": [
+                  "src_gen_2c8d1a"
+                ],
+                "annotation_depth": "compact"
               }
             }
           }
@@ -3370,6 +5532,63 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AncestryResult"
+                },
+                "example": {
+                  "schema_version": "1.0",
+                  "id": "anc_3f7a",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "source_id": "src_gen_2c8d1a",
+                  "status": "complete",
+                  "reference_panel": "1000_genomes_phase3",
+                  "proportion_unit": "percent",
+                  "method": {
+                    "id": "curated_aim_maximum_likelihood",
+                    "version": "1.0",
+                    "execution": "synchronous"
+                  },
+                  "resolution": "regional",
+                  "summary": "Predominantly Northwestern European with a Southern European component.",
+                  "ancestry": [
+                    {
+                      "region": "Europe",
+                      "sub_region": "Northwestern Europe",
+                      "proportion": 78.4,
+                      "confidence": "high"
+                    },
+                    {
+                      "region": "Europe",
+                      "sub_region": "Southern Europe",
+                      "proportion": 21.6,
+                      "confidence": "medium"
+                    }
+                  ],
+                  "haplogroups": {
+                    "maternal": {
+                      "haplogroup": "H1"
+                    },
+                    "paternal": {
+                      "haplogroup": "R-M269"
+                    }
+                  },
+                  "quality": {
+                    "variant_count": 640000,
+                    "marker_count": 4500,
+                    "matched_markers": 4380,
+                    "matched_proportion": 97.3,
+                    "compatible_for_projection": true,
+                    "notes": []
+                  },
+                  "methodology": {
+                    "algorithm": "Maximum-likelihood projection onto curated ancestry-informative markers.",
+                    "reference_panel": "1000 Genomes Phase 3",
+                    "reference_populations": "Five super-populations with regional subpanels.",
+                    "marker_source": "Curated ancestry-informative markers.",
+                    "limitations": [
+                      "Genetic ancestry is not identity, ethnicity, or nationality."
+                    ]
+                  },
+                  "generated_at": "2026-07-24T09:15:00.000Z"
                 }
               }
             }
@@ -3380,6 +5599,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3390,6 +5616,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3435,6 +5668,12 @@
                     "default": "continental"
                   }
                 }
+              },
+              "example": {
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "source_id": "src_gen_2c8d1a",
+                "resolution": "regional"
               }
             }
           }
@@ -3457,6 +5696,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GeneticJob"
+                },
+                "example": {
+                  "id": "job_2c8d",
+                  "analysis_id": "an_7d1e9c4b2a3f",
+                  "source_id": "src_gen_2c8d1a",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "status": "running",
+                  "attempts": 1,
+                  "max_attempts": 3,
+                  "created_at": "2026-07-24T09:15:00.000Z",
+                  "updated_at": "2026-07-24T09:15:00.000Z"
                 }
               }
             }
@@ -3467,6 +5717,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3477,6 +5734,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3500,6 +5764,89 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DashboardSpec"
+                },
+                "example": {
+                  "schema_version": "1.0",
+                  "id": "dash_7d1e9c",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "analysis_id": "an_7d1e9c4b2a3f",
+                  "generated_at": "2026-07-24T09:15:00.000Z",
+                  "cards": [
+                    {
+                      "id": "card_apob",
+                      "title": "ApoB",
+                      "category": "cardiovascular",
+                      "status": "above_range",
+                      "summary": "ApoB of 108 mg/dL is above the optimal range.",
+                      "value": 108,
+                      "unit": "mg/dL",
+                      "target": {
+                        "min": 40,
+                        "max": 90
+                      },
+                      "visualization": "range",
+                      "confidence": "high",
+                      "provenance": {
+                        "source_ids": [
+                          "src_bio_5f3a90"
+                        ],
+                        "source_categories": [
+                          "biomarkers"
+                        ],
+                        "source_type": "direct",
+                        "engine": "biomarkers-reference-v3",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      }
+                    }
+                  ],
+                  "coverage": [
+                    {
+                      "modality": "biomarkers",
+                      "present": true,
+                      "source_count": 1,
+                      "finding_count": 22
+                    },
+                    {
+                      "modality": "genetics",
+                      "present": true,
+                      "source_count": 1,
+                      "finding_count": 41
+                    }
+                  ],
+                  "quality": {
+                    "status": "complete",
+                    "usable": true,
+                    "warnings": [],
+                    "freshness": [
+                      {
+                        "modality": "biomarkers",
+                        "status": "fresh",
+                        "threshold_days": 180,
+                        "latest_received_at": "2026-07-24T09:15:00.000Z",
+                        "age_days": 0
+                      }
+                    ]
+                  },
+                  "sections": [
+                    {
+                      "id": "sec_cardio",
+                      "title": "Cardiovascular",
+                      "category": "cardiovascular",
+                      "card_ids": [
+                        "card_apob"
+                      ]
+                    }
+                  ],
+                  "provenance": {
+                    "source_ids": [
+                      "src_gen_2c8d1a",
+                      "src_bio_5f3a90",
+                      "src_wear_9a1b7c"
+                    ],
+                    "storage_mode": "durable",
+                    "clinical_boundary": "Informational only. Not a diagnosis."
+                  }
                 }
               }
             }
@@ -3510,6 +5857,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3520,6 +5874,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3543,6 +5904,22 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DashboardLinkResult"
+                },
+                "example": {
+                  "dashboard_url": "https://app.wellnizz.com/dashboards/private/eyJhbGciOiJIUzI1NiJ9.abc123",
+                  "analysis_id": "an_7d1e9c4b2a3f",
+                  "design": {
+                    "id": "aperture",
+                    "name": "Aperture",
+                    "layout": {}
+                  },
+                  "visibility": "private_by_possession",
+                  "expires_at": "2026-08-23T09:15:00.000Z",
+                  "sharing": {
+                    "default": "private",
+                    "optional": true,
+                    "note": "Anyone with this link can view the dashboard until it expires."
+                  }
                 }
               }
             }
@@ -3553,6 +5930,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3563,6 +5947,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3573,6 +5964,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3583,6 +5981,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3593,6 +5998,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3625,6 +6037,11 @@
                     "default": 30
                   }
                 }
+              },
+              "example": {
+                "analysis_id": "an_7d1e9c4b2a3f",
+                "design_id": "aperture",
+                "expires_in_days": 30
               }
             }
           }
@@ -3663,6 +6080,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3685,6 +6109,89 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HealthContext"
+                },
+                "example": {
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "generated_at": "2026-07-24T09:15:00.000Z",
+                  "latest_analysis_id": "an_7d1e9c4b2a3f",
+                  "coverage": [
+                    {
+                      "modality": "genetics",
+                      "present": true,
+                      "source_count": 1
+                    },
+                    {
+                      "modality": "biomarkers",
+                      "present": true,
+                      "source_count": 1
+                    },
+                    {
+                      "modality": "wearables",
+                      "present": true,
+                      "source_count": 1
+                    }
+                  ],
+                  "counts": {
+                    "genetics": 41,
+                    "biomarkers": 22,
+                    "wearables": 6
+                  },
+                  "priority_findings": [
+                    {
+                      "title": "ApoB above range",
+                      "category": "biomarkers",
+                      "priority": "high"
+                    },
+                    {
+                      "title": "Resting heart rate baseline",
+                      "category": "genetics",
+                      "priority": "info"
+                    }
+                  ],
+                  "modality_contexts": {
+                    "cardiovascular": {
+                      "measured": [
+                        "apob",
+                        "resting_heart_rate"
+                      ],
+                      "genetic": [
+                        "resting_heart_rate"
+                      ]
+                    }
+                  },
+                  "cross_modality": [
+                    {
+                      "signal": "resting_heart_rate",
+                      "domain": "cardiovascular",
+                      "measured": {
+                        "value": 58,
+                        "unit": "bpm",
+                        "modality": "wearables",
+                        "source_id": "src_wear_9a1b7c",
+                        "observed_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "genetic": {
+                        "heritability_pct": 32,
+                        "trait": "Resting heart rate",
+                        "finding_id": "int_rhr_9c2a"
+                      },
+                      "reading": "Your measured resting heart rate is 58 bpm, the number to act on. Genetics explains about 32% of the baseline for this trait."
+                    }
+                  ],
+                  "data_gaps": [
+                    {
+                      "modality": "biomarkers",
+                      "marker": "lp(a)",
+                      "reason": "not_measured"
+                    }
+                  ],
+                  "provenance": {
+                    "analysis_ids": [
+                      "an_7d1e9c4b2a3f"
+                    ],
+                    "storage_mode": "durable"
+                  }
                 }
               }
             }
@@ -3695,6 +6202,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3705,6 +6219,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3734,6 +6255,10 @@
                     "maximum": 50
                   }
                 }
+              },
+              "example": {
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "max_findings": 20
               }
             }
           }
@@ -3756,6 +6281,38 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/TrendsResult"
+                },
+                "example": {
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "generated_at": "2026-07-24T09:15:00.000Z",
+                  "window_days": 180,
+                  "marker_count": 2,
+                  "improving": 1,
+                  "worsening": 0,
+                  "stable": 1,
+                  "markers": [
+                    {
+                      "marker": "apob",
+                      "name": "ApoB",
+                      "modality": "biomarkers",
+                      "trend": "improving",
+                      "first": 121,
+                      "latest": 108,
+                      "points": [
+                        {
+                          "value": 121,
+                          "observed_at": "2026-01-20T09:00:00.000Z",
+                          "source_id": "src_bio_old"
+                        },
+                        {
+                          "value": 108,
+                          "observed_at": "2026-07-24T09:15:00.000Z",
+                          "source_id": "src_bio_5f3a90"
+                        }
+                      ]
+                    }
+                  ]
                 }
               }
             }
@@ -3766,6 +6323,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3776,6 +6340,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3811,6 +6382,14 @@
                     "minimum": 1
                   }
                 }
+              },
+              "example": {
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "markers": [
+                  "apob",
+                  "resting_heart_rate"
+                ],
+                "window_days": 180
               }
             }
           }
@@ -3833,6 +6412,23 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RetestReminderList"
+                },
+                "example": {
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "generated_at": "2026-07-24T09:15:00.000Z",
+                  "reminders": [
+                    {
+                      "category": "biomarkers",
+                      "metric": "apob",
+                      "last_observed_at": "2026-07-24T09:15:00.000Z",
+                      "cadence_days": 90,
+                      "next_due_at": "2026-10-22T09:15:00.000Z",
+                      "days_until_due": 90,
+                      "status": "ok",
+                      "reason": "Retested recently; next draw in about three months."
+                    }
+                  ]
                 }
               }
             }
@@ -3843,6 +6439,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3853,6 +6456,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3876,6 +6486,24 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GoalList"
+                },
+                "example": {
+                  "goals": [
+                    {
+                      "id": "goal_4d7e",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "title": "Lower ApoB to optimal",
+                      "metric": "apob",
+                      "target_value": 80,
+                      "target_unit": "mg/dL",
+                      "target_direction": "decrease",
+                      "due_date": "2026-12-31",
+                      "status": "active",
+                      "created_at": "2026-07-24T09:15:00.000Z",
+                      "updated_at": "2026-07-24T09:15:00.000Z"
+                    }
+                  ]
                 }
               }
             }
@@ -3886,6 +6514,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3896,6 +6531,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3917,6 +6559,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Goal"
+                },
+                "example": {
+                  "id": "goal_4d7e",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "title": "Lower ApoB to optimal",
+                  "metric": "apob",
+                  "target_value": 80,
+                  "target_unit": "mg/dL",
+                  "target_direction": "decrease",
+                  "due_date": "2026-12-31",
+                  "status": "active",
+                  "created_at": "2026-07-24T09:15:00.000Z",
+                  "updated_at": "2026-07-24T09:15:00.000Z"
                 }
               }
             }
@@ -3927,6 +6583,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3937,6 +6600,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3947,6 +6617,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -3957,6 +6634,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4007,6 +6691,15 @@
                     "type": "string"
                   }
                 }
+              },
+              "example": {
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "title": "Lower ApoB to optimal",
+                "metric": "apob",
+                "target_value": 80,
+                "target_unit": "mg/dL",
+                "target_direction": "decrease",
+                "due_date": "2026-12-31"
               }
             }
           }
@@ -4029,6 +6722,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Goal"
+                },
+                "example": {
+                  "id": "goal_4d7e",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "title": "Lower ApoB to optimal",
+                  "metric": "apob",
+                  "target_value": 80,
+                  "target_unit": "mg/dL",
+                  "target_direction": "decrease",
+                  "due_date": "2026-12-31",
+                  "status": "active",
+                  "created_at": "2026-07-24T09:15:00.000Z",
+                  "updated_at": "2026-07-24T09:15:00.000Z"
                 }
               }
             }
@@ -4039,6 +6746,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4049,6 +6763,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4070,6 +6791,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Goal"
+                },
+                "example": {
+                  "id": "goal_4d7e",
+                  "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                  "title": "Lower ApoB to optimal",
+                  "metric": "apob",
+                  "target_value": 80,
+                  "target_unit": "mg/dL",
+                  "target_direction": "decrease",
+                  "due_date": "2026-12-31",
+                  "status": "active",
+                  "created_at": "2026-07-24T09:15:00.000Z",
+                  "updated_at": "2026-07-24T09:15:00.000Z"
                 }
               }
             }
@@ -4080,6 +6815,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4090,6 +6832,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4139,6 +6888,10 @@
                     "type": "string"
                   }
                 }
+              },
+              "example": {
+                "status": "achieved",
+                "note": "Retest confirmed ApoB at 79 mg/dL."
               }
             }
           }
@@ -4171,6 +6924,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4181,6 +6941,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4204,6 +6971,58 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/QueryResult"
+                },
+                "example": {
+                  "query": "How does my genetic resting heart rate compare to my measured value?",
+                  "matches": [
+                    {
+                      "id": "int_rhr_9c2a",
+                      "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                      "analysis_id": "an_7d1e9c4b2a3f",
+                      "category": "genetics",
+                      "type": "polygenic_score",
+                      "title": "Resting heart rate",
+                      "status": "reference_relative",
+                      "score": 62,
+                      "summary": "Your inherited baseline for resting heart rate sits around the population average. Your measured wearable value is the number to act on.",
+                      "action": "Track resting heart rate from your wearable and retest after eight weeks of Zone 2 training.",
+                      "provenance": {
+                        "source_ids": [
+                          "src_gen_2c8d1a"
+                        ],
+                        "source_categories": [
+                          "genetics"
+                        ],
+                        "source_type": "direct",
+                        "engine": "genetics-polygenic-v2",
+                        "generated_at": "2026-07-24T09:15:00.000Z"
+                      },
+                      "raw": {
+                        "domain": "cardiovascular",
+                        "genes": [
+                          "GJA1",
+                          "MYH6",
+                          "SCN10A",
+                          "CCDC141",
+                          "RNF220"
+                        ],
+                        "rsids": [
+                          "rs272564",
+                          "rs12110693",
+                          "rs6801957",
+                          "rs17287293"
+                        ],
+                        "risk_loci": 74,
+                        "heritability_pct": 32,
+                        "consumer_value": "About a third of resting heart rate is inherited; the rest responds to aerobic fitness, sleep, and recovery. Use your measured value as the signal and this as the baseline it moves around.",
+                        "references": [
+                          "Eppinga RN, et al. Nat Genet. 2016;48(12):1557-1563.",
+                          "den Hoed M, et al. Nat Genet. 2013;45(6):621-631."
+                        ]
+                      }
+                    }
+                  ]
                 }
               }
             }
@@ -4214,6 +7033,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4224,6 +7050,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4259,6 +7092,11 @@
                     }
                   }
                 }
+              },
+              "example": {
+                "user_id": "usr_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c",
+                "query": "How does my genetic resting heart rate compare to my measured value?"
               }
             }
           }
@@ -4291,6 +7129,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4301,6 +7146,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4417,6 +7269,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4427,6 +7286,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4460,6 +7326,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4470,6 +7343,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4503,6 +7383,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4513,6 +7400,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4546,6 +7440,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4556,6 +7457,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4574,6 +7482,9 @@
                     "minLength": 1
                   }
                 }
+              },
+              "example": {
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c"
               }
             }
           }
@@ -4606,6 +7517,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4616,6 +7534,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4634,6 +7559,9 @@
                     "minLength": 1
                   }
                 }
+              },
+              "example": {
+                "organization_id": "org_personal_9f2c8a7b6d5e4f3a2b1c0d9e8f7a6b5c"
               }
             }
           }
@@ -4666,6 +7594,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -4676,6 +7611,13 @@
               "application/problem+json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://wellnizz.com/problems/forbidden",
+                  "title": "Forbidden",
+                  "status": 403,
+                  "detail": "This API key is not permitted to call this endpoint.",
+                  "request_id": "req_5f3a90c2"
                 }
               }
             }
@@ -7068,6 +10010,14 @@
           "modality_contexts": {
             "type": "object",
             "additionalProperties": true
+          },
+          "cross_modality": {
+            "type": "array",
+            "description": "Signals present in more than one modality (resting heart rate, glucose, LDL/ApoB, VO2max, body fat, blood pressure, urate, sleep). Each entry pairs the latest measured value with the inherited genetic tendency; the measured value is primary and heritability is context.",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
           },
           "data_gaps": {
             "type": "array",
