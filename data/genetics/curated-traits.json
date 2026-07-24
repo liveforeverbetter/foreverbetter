@@ -4963,7 +4963,8 @@
         "Amita H., Sadia M., et al . Acne Vulgaris. StatPearls [Internet].",
         "Linda K., Alan B., et al . Acne Vulgaris: Diagnosis and Treatment. Am Fam Physician. 2019;100(8):475-484"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Acne susceptibility is highly inherited (~80%). Genetics sets the tendency, but skincare, diet, hormones, and stress drive flares; treat as context.",
+      "needs_consumer_copy": false
     },
     "alanine_aminotransferase_levels": {
       "trait_id": "alanine_aminotransferase_levels",
@@ -5106,7 +5107,8 @@
         "van Beek JH, de Moor MH, de Geus EJ, et al. The genetic architecture of liver enzyme levels: GGT, ALT and",
         "AST. Behav Genet. 2013 Jul;43(4):329-39. doi: 10.1007/s10519-013-9593-y. Epub 2013 Apr 12."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean (~22%) in the liver enzyme ALT. A measured ALT is what to interpret, alongside alcohol, weight, and medications.",
+      "needs_consumer_copy": false
     },
     "alcohol_dependence_after_prolonged_consumption": {
       "trait_id": "alcohol_dependence_after_prolonged_consumption",
@@ -5386,7 +5388,8 @@
         "Eriksson, Nicholas et al. Web-based, participant-driven studies yield novel genetic associations for",
         "common traits. PLoS genetics vol. 6,6 e1000993. 24 Jun. 2010."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Whether you can smell the odor asparagus gives urine, a single-gene trait. Fun; no health relevance.",
+      "needs_consumer_copy": false
     },
     "aspartate_aminotransferase_levels": {
       "trait_id": "aspartate_aminotransferase_levels",
@@ -5520,7 +5523,8 @@
         "Sookoian S, Pirola CJ. Liver enzymes, metabolomics and genome-wide association studies: from systems",
         "biology to the personalized medicine. World J Gastroenterol. 2015 Jan 21;21(3):711-25."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic tendency in the liver and muscle enzyme AST (GOT1/GOT2 genes). A measured AST is the actionable value; genetics is background.",
+      "needs_consumer_copy": false
     },
     "basal_metabolic_rate": {
       "trait_id": "basal_metabolic_rate",
@@ -5981,7 +5985,8 @@
         "ABO blood group system. Encyclopedia Britannica, [May 2022]",
         "National Health Services. Blood Groups [May 2022]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Your predicted ABO/Rh blood group from genetics. Useful to know; confirm with a typed blood test before anything clinical.",
+      "needs_consumer_copy": false
     },
     "c_reactive_protein_levels": {
       "trait_id": "c_reactive_protein_levels",
@@ -6125,7 +6130,8 @@
         "Mijanovik O., Petushkova A., et al. Cathepsin D-Managing the Delicate Balance. Pharmaceutics 2021,",
         "13(6), 837."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic tendency in cathepsin D, a protease studied in cancer and other contexts. Research-level background; a measured level is what matters if tested.",
+      "needs_consumer_copy": false
     },
     "ccr5delta32_and_susceptibility_to_hiv_infection": {
       "trait_id": "ccr5delta32_and_susceptibility_to_hiv_infection",
@@ -6348,7 +6354,8 @@
         "identifies the platelet-derived growth factor receptor α gene as a quantitative trait locus for eye size in",
         "white Europeans. Mol Vis. 2013;19:243-53. Epub 2013 Jan 3."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Corneal curvature is substantially inherited and shapes your prescription. An eye exam is what defines it.",
+      "needs_consumer_copy": false
     },
     "corneal_hysteresis": {
       "trait_id": "corneal_hysteresis",
@@ -6381,7 +6388,8 @@
         "of Progression Risk: A Report by the American Academy of Ophthalmology. Ophthalmology. 2023",
         "Apr;130(4):433-442."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in corneal give, studied in glaucoma risk. Context for eye health; an eye-pressure or cornea exam is decisive.",
+      "needs_consumer_copy": false
     },
     "dental_caries_and_periodontitis": {
       "trait_id": "dental_caries_and_periodontitis",
@@ -6441,7 +6449,8 @@
         "Martínez M, Montero E, et al . Association between caries and periodontal diseases in a sample of",
         "employed adults in Spain: a cross-sectional study. Clinical Oral Investigations volume 25, pages39573966 (2021)."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Cavity and gum-disease risk is about 50% inherited. Genetics sets the tendency; brushing, flossing, diet, and dental visits decide the outcome.",
+      "needs_consumer_copy": false
     },
     "duffy_antigen_malaria_resistant": {
       "trait_id": "duffy_antigen_malaria_resistant",
@@ -6511,7 +6520,8 @@
         "Adhikari K, Reales G, Smith AJP, Konka E, Palmen J, Quinto-Sanchez M, et al. A genome-wide association",
         "study identifies multiple loci for variation in human ear morphology. Nat Commun, 2015; 6(1):7500."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Whether your earlobes are attached or free, a polygenic trait. Pure curiosity; no health meaning.",
+      "needs_consumer_copy": false
     },
     "earwax_type_armpit_odor": {
       "trait_id": "earwax_type_armpit_odor",
@@ -6544,7 +6554,8 @@
         "Martin A, Saathoff M, Kuhn F, Max H, Terstegen L, Natsch A. A functional ABCC11 allele is essential in the",
         "biochemical formation of human axillary odor. J Invest Dermatol, 2010; 130(2):52940."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Your ABCC11 variant sets earwax type (wet or dry) and body-odor intensity. Fun biology; no action needed.",
+      "needs_consumer_copy": false
     },
     "eosinophil_count": {
       "trait_id": "eosinophil_count",
@@ -6743,7 +6754,8 @@
         "Schmitz D, Ek WE, Berggren E, et al. Genome-wide Association Study of Estradiol Levels and the Causal",
         "Effect of Estradiol on Bone Mineral Density. J Clin Endocrinol Metab. 2021 Oct 21;106(11):e4471-e4486."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in estrogen (estradiol) levels. A measured hormone panel, read with age and cycle context, is decisive.",
+      "needs_consumer_copy": false
     },
     "eye_clarity": {
       "trait_id": "eye_clarity",
@@ -6817,7 +6829,8 @@
         "Frank RN, Puklin JE, Stock C, Canter LA. Race, iris color, and age-related macular degeneration. Trans Am",
         "Ophthalmol Soc. 2000;98:109-117."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Genetic context for iris appearance and clarity. Cosmetic curiosity, not a health signal.",
+      "needs_consumer_copy": false
     },
     "facial_aging": {
       "trait_id": "facial_aging",
@@ -6933,7 +6946,8 @@
         "Walter SA, Kjellström L, Nyhlin H, et al. Assessment of normal bowel habits in the general adult",
         "population: the Popcol study. Scand J Gastroenterol. 2010 May;45(5):556-66."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A small inherited component of how often you go. Diet, fibre, hydration, and activity matter far more; light context only.",
+      "needs_consumer_copy": false
     },
     "gamma_glutamyl_transferase_levels": {
       "trait_id": "gamma_glutamyl_transferase_levels",
@@ -7045,7 +7059,8 @@
         "van Beek J.H.D.A., de Moor M.H.M., et al. The Genetic Architecture of Liver Enzyme Levels: GGT, ALT and",
         "AST. Behav Genet. 2013 Jul; 43(4): 329-339."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic tendency in GGT, a liver enzyme sensitive to alcohol. A measured GGT is what to act on.",
+      "needs_consumer_copy": false
     },
     "gene_mthfr": {
       "trait_id": "gene_mthfr",
@@ -7084,7 +7099,8 @@
         "disease: A meta-analysis. Vascular. 2020:1708538120982698.",
         "Osadnik T et al. Genetic and environmental factors associated with homocysteine concentrations in a"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "MTHFR variants can modestly affect folate metabolism and homocysteine. Most carriers need no action; if concerned, measure homocysteine and B-vitamins rather than acting on the gene alone.",
+      "needs_consumer_copy": false
     },
     "hair_color": {
       "trait_id": "hair_color",
@@ -7215,7 +7231,8 @@
         "most of the SNP heritability. Nature Communications. 2018 Dec;9(1):5271.",
         "National Library of Medicine (NIH). Is hair color determined by genetics? [Jun 2020]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Hair color is highly inherited (~73%), with MC1R driving red shades. Pure trait context.",
+      "needs_consumer_copy": false
     },
     "hair_shape": {
       "trait_id": "hair_shape",
@@ -7247,7 +7264,8 @@
         "Liu F al. Meta-analysis of genome-wide association studies identifies 8 novel loci involved in shape",
         "variation of human head hair. Human Molecular Genetics, 01 Feb 2018, 27(3):559-575."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Hair waviness is one of the most heritable traits (~95%). Pure curiosity.",
+      "needs_consumer_copy": false
     },
     "heat_production_in_response_to_cold": {
       "trait_id": "heat_production_in_response_to_cold",
@@ -7287,7 +7305,8 @@
         "Pages 23012307.",
         "Reguero M, Gómez de Cedrón M, et al. Precision Nutrition to Activate Thermogenesis as a Complementary"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Genetic context for cold-induced heat production (ADRB2/ADRB3). Interesting metabolic background, not an action item.",
+      "needs_consumer_copy": false
     },
     "height": {
       "trait_id": "height",
@@ -7428,7 +7447,8 @@
         "Jelenkovic A, et al. Genetic and environmental influences on height from infancy to early adulthood: An",
         "individual-based pooled analysis of 45 twin cohorts. Sci Rep. 2016 Jun 23;6:28496."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Height is ~80% inherited; this estimates the genetic baseline, while your measured height is the reality. Childhood nutrition accounts for much of the rest.",
+      "needs_consumer_copy": false
     },
     "hla_b27_antigen": {
       "trait_id": "hla_b27_antigen",
@@ -7625,7 +7645,8 @@
         "pathophysiology, prevention, and treatment. Front Immunol. 2022 Sep 21;13:1024559.",
         "Mosquito bites. Mayo Clinic [Oct. 2022]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "How much mosquito bites itch is fairly inherited (~62%). Fun context; repellent and not scratching still help most.",
+      "needs_consumer_copy": false
     },
     "left_handedness_left_lateral": {
       "trait_id": "left_handedness_left_lateral",
@@ -7686,7 +7707,8 @@
         "Jing SS. Hand Dominance: Nature, Nurture, and Relevance for Hand Surgeons. J Hand Microsurg. 2020",
         "Jun 22;14(1):111-112. German."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Handedness is about 25% inherited. Fun context; no health action.",
+      "needs_consumer_copy": false
     },
     "liver_iron_levels": {
       "trait_id": "liver_iron_levels",
@@ -7970,7 +7992,8 @@
         "Yap CX et al. Dissection of genetic variation and evidence for pleiotropy in male pattern baldness. Nature",
         "Communications, 20 Dec 2018, 9(1):5407."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean toward male-pattern hair loss, which tracks loosely with some health conditions. If it matters to you, early treatment works best; a heads-up, not destiny.",
+      "needs_consumer_copy": false
     },
     "mental_agility": {
       "trait_id": "mental_agility",
@@ -8351,7 +8374,8 @@
         "Minhas S., Sajjad A., et al . Oral Ulcers Presentation in Systemic Diseases: An Update. Open Access Maced",
         "J Med Sci. 2019 Oct 15; 7(19): 3341-3347."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A small inherited tendency (~8%) toward mouth ulcers. Stress, diet, and irritation drive most episodes.",
+      "needs_consumer_copy": false
     },
     "nasion_prominence": {
       "trait_id": "nasion_prominence",
@@ -8380,7 +8404,8 @@
         "Paternoster L et al. Genome-wide association study of three-dimensional facial morphology identifies a",
         "variant in PAX3 associated with nasion position. Am J Hum Genet, 2012; 90(3):47885."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic contributor to the bridge-of-nose facial structure. Pure trait context.",
+      "needs_consumer_copy": false
     },
     "neuroticisms": {
       "trait_id": "neuroticisms",
@@ -8654,7 +8679,8 @@
         "Quach BC et al. Expanding the genetic architecture of nicotine dependence and its shared genetics with",
         "multiple traits. Nature Communications, 03 Nov 2020, 11(1):5562."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A strong genetic component to nicotine dependence once smoking starts. If you smoke or vape, this is extra reason to prioritize quitting; genetics makes it harder, not inevitable.",
+      "needs_consumer_copy": false
     },
     "permanent_tooth_eruption": {
       "trait_id": "permanent_tooth_eruption",
@@ -8691,7 +8717,8 @@
         "Kurosaka H et al. Development of dentition: From initiation to occlusion and related diseases. J Oral",
         "Biosci. 2022 Jun;64(2):159-164."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A largely inherited trait for when permanent teeth come in. Historical and curiosity context.",
+      "needs_consumer_copy": false
     },
     "persistence_of_fetal_hemoglobin": {
       "trait_id": "persistence_of_fetal_hemoglobin",
@@ -8722,7 +8749,8 @@
         "Liu N, Hargreaves VV, Zhu Q, Kurland JV, Hong J, Kim W, Sher F, et al. Direct Promoter Repression by",
         "BCL11A Controls the Fetal to Adult Hemoglobin Switch. Cell. 2018 Apr 5;173(2):430-442.e17."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Whether you carry variants that keep fetal hemoglobin higher, which can soften sickle-cell and thalassemia severity. Clinical context for those conditions.",
+      "needs_consumer_copy": false
     },
     "photic_sneeze_reflex": {
       "trait_id": "photic_sneeze_reflex",
@@ -8749,7 +8777,8 @@
         "Wang M, Sun X, Shi Y, Song X, Mi H. A genome-wide association study on photic sneeze reflex in the",
         "Chinese population. Sci Rep. 2019 Mar 21;9(1):4993."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Whether bright light makes you sneeze (the photic sneeze reflex), likely a dominant single-gene trait. Harmless curiosity.",
+      "needs_consumer_copy": false
     },
     "pigmented_rings_on_the_iris": {
       "trait_id": "pigmented_rings_on_the_iris",
@@ -8776,7 +8805,8 @@
         "Mackey DA, Wilkinson CH, Kearns LS, Hewitt AW. Classification of iris colour: review and refinement of a",
         "classification schema. Clin Exp Ophthalmol. 2011 Jul;39(5):462-71."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A highly inherited (~70-95%) iris-patterning trait. Cosmetic curiosity.",
+      "needs_consumer_copy": false
     },
     "probability_of_having_red_hair": {
       "trait_id": "probability_of_having_red_hair",
@@ -8816,7 +8846,8 @@
         "pigmentation. PLoS Genet. 2008;4(5).",
         "Sulem P et al. Two newly identified genetic determinants of pigmentation in Europeans. Nat Genet."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Your genetic likelihood of red hair (MC1R). Note that red-hair variants also relate to sun sensitivity and anesthetic response, worth mentioning to a doctor or dentist.",
+      "needs_consumer_copy": false
     },
     "probability_of_snoring": {
       "trait_id": "probability_of_snoring",
@@ -8914,7 +8945,8 @@
         "American Cancer Society. Prostate Cancer. Early detection, diagnosis, and staging [May 2022]",
         "National Institute of Health. National Cancer Institute [May 2022]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "About 40% of PSA variation is genetic. Read this next to a measured PSA, which is what screening uses; the genetic lean helps interpret borderline values.",
+      "needs_consumer_copy": false
     },
     "qt_intervals": {
       "trait_id": "qt_intervals",
@@ -9099,7 +9131,8 @@
         "Pilling L.C., Atkins J.L., et al. Red blood cell distribution width: Genetic evidence for aging pathways in",
         "116,666 volunteers. PLoS One. 2017; 12(9): e0185083."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic tendency in red-blood-cell count. A measured count is the real signal, read with iron and hydration context.",
+      "needs_consumer_copy": false
     },
     "resistin_levels": {
       "trait_id": "resistin_levels",
@@ -9132,7 +9165,8 @@
         "Jamaluddin S., Weakley S.M., et al. Resistin: functional roles and therapeutic considerations for",
         "cardiovascular disease. Br J Pharmacol. 2012 Feb; 165(3): 622-632."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in resistin, a fat-derived hormone linked to insulin resistance. Research-level background; measured metabolic markers matter more.",
+      "needs_consumer_copy": false
     },
     "resting_heart_rate": {
       "trait_id": "resting_heart_rate",
@@ -9359,7 +9393,8 @@
         "Dohmen T., Falk A., et al . Individual Risk Attitudes: Measurement, Determinants, and Behavioral",
         "Consequences. Journal of the European Economic Association, Volume 9, Issue 3, 1 June 2011, Pages"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Risk tolerance is moderately inherited (up to ~30%). Self-awareness context; behavior and circumstance dominate real decisions.",
+      "needs_consumer_copy": false
     },
     "secretor_status_and_abh_antigens_fut2_gene": {
       "trait_id": "secretor_status_and_abh_antigens_fut2_gene",
@@ -9398,7 +9433,8 @@
         "but not holo-transcobalamin, and is associated with haptocorrin glycosylation. Hum Mol Genet.",
         "2017;26(24):4975-4988."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Your FUT2 secretor status, which shapes gut microbes and susceptibility to some infections. Interesting biology; not an action item on its own.",
+      "needs_consumer_copy": false
     },
     "selectin_e_levels": {
       "trait_id": "selectin_e_levels",
@@ -9430,7 +9466,8 @@
         "30,931 individuals. Nature Metabolism, 16 Oct 2020, 2(10):1135-1148.",
         "Polfus L.M., Raffield L.M., et al. Whole genome sequence association with E-selectin levels reveals lossof-function variant in African Americans. Hum Mol Genet. 2019 Feb 1; 28(3): 515-523."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic tendency in E-selectin, an inflammation and vascular marker. Research-level background.",
+      "needs_consumer_copy": false
     },
     "serum_albumin_levels": {
       "trait_id": "serum_albumin_levels",
@@ -9629,7 +9666,8 @@
         "Hammond G.L. Diverse Roles for Sex Hormone-Binding Globulin in Reproduction. Biol Reprod. 2011 Sep;",
         "85(3): 431441."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in SHBG, which sets how much of your sex hormones are free and active. A measured SHBG plus testosterone or estradiol, read with age, is decisive.",
+      "needs_consumer_copy": false
     },
     "skin_melanin_levels": {
       "trait_id": "skin_melanin_levels",
@@ -9760,7 +9798,8 @@
       "references": [
         "UK Biobank Database. Skin colour, Data-Field 1717 [Version Feb-2022]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A highly inherited skin-pigmentation trait tied to ancestry. Relevant mainly for sun protection and vitamin D: lighter skin burns faster, darker skin makes less vitamin D from sun.",
+      "needs_consumer_copy": false
     },
     "sleep_duration": {
       "trait_id": "sleep_duration",
@@ -9863,7 +9902,8 @@
         "Aloum L, Alefishat E, Adem A, Petroianu G. Ionone Is More than a Violet's Fragrance: A Review. Molecules.",
         "2020 Dec 10;25(24):5822. doi: 10.3390/molecules25245822. PMID: 33321809; PMCID: PMC7764282."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Your genetic sensitivity to certain smell compounds (e.g. beta-ionone, floral notes). Fun sensory context.",
+      "needs_consumer_copy": false
     },
     "spleen_volume": {
       "trait_id": "spleen_volume",
@@ -9920,7 +9960,8 @@
         "Aldulaimi S. et Mendez A. Splenomegaly: Diagnosis and Management in Adults. Am Fam Physician.",
         "2021;104(3):271-276."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic tendency in spleen size. Background context; imaging is what defines it clinically.",
+      "needs_consumer_copy": false
     },
     "telomere_length": {
       "trait_id": "telomere_length",
@@ -10021,7 +10062,8 @@
         "thyroid hormone regulation. Nature Communications. 2018 Oct;9(1):4455.",
         "Cooper, D. S. & Biondi, B. Subclinical thyroid disease. Lancet. 2012; 379, 11421154."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in TSH (thyroid) levels. A measured TSH, with free T4 when needed, is what to act on.",
+      "needs_consumer_copy": false
     },
     "tooth_morphology": {
       "trait_id": "tooth_morphology",
@@ -10051,7 +10093,8 @@
         "Oota H, Hanihara T, Ishida H, Maki K, Park SB, Kimura R. Effects of an Asian-specific nonsynonymous",
         "EDAR variant on multiple dental traits. J Hum Genet. 2012 Aug;57(8):508-14."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A highly inherited tooth-shape trait (e.g. shovel-shaped incisors), often ancestry-linked. Curiosity context.",
+      "needs_consumer_copy": false
     },
     "total_serum_protein_levels": {
       "trait_id": "total_serum_protein_levels",
@@ -10129,7 +10172,8 @@
         "Total Protein and Albumin/Globulin (A/G) Ratio. MedlinePlus. National Library of medicine (NIH)",
         "[October 2021]."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic tendency in total blood protein. A measured level is the actionable value; genetics is background.",
+      "needs_consumer_copy": false
     },
     "usual_walking_pace": {
       "trait_id": "usual_walking_pace",
@@ -10202,7 +10246,8 @@
         "Sprinter Status. Genes (Basel). 2022 Oct; 13(10): 1710.",
         "Usual walking pace. UK Biobank Database. Data-Field 924"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A small inherited lean in habitual walking pace, which tracks with fitness and longevity. Your measured steps and pace are what to act on.",
+      "needs_consumer_copy": false
     },
     "white_blood_cell_count": {
       "trait_id": "white_blood_cell_count",
@@ -10348,7 +10393,8 @@
         "Serrano JM, Banks JB, Fagan TJ, et al. The influence of Val158Met COMT on physiological stress",
         "responsivity. Stress. 2019 Mar;22(2):276-279."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "COMT (Val158Met) sets how fast you clear dopamine, with subtle effects on stress response and focus. Interesting context, not deterministic, and heavily shaped by sleep and stress.",
+      "needs_consumer_copy": false
     },
     "gene_mtr": {
       "trait_id": "gene_mtr",
@@ -10381,7 +10427,8 @@
         "van Meurs JB, Pare G, Schwartz SM, et al. Common genetic loci influencing plasma homocysteine",
         "concentrations and their effect on risk of coronary artery disease. Am J Clin Nutr. 2013 Sep;98(3):668-76."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "MTR variants may modestly affect homocysteine and B12 metabolism. Measure homocysteine or B12 if relevant rather than acting on the gene.",
+      "needs_consumer_copy": false
     },
     "gene_mtrr": {
       "trait_id": "gene_mtrr",
@@ -10414,7 +10461,8 @@
         "methionine synthase reductase. Biochemistry. 2002 Nov 12;41(45):13378-85.",
         "Rossokha Z, Fishchuk L, Vorobei L, et al. Hyperhomocysteinemia in men and women of married couples"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "MTRR variants can subtly affect B12 recycling and homocysteine. Context for interpreting a measured B12 or homocysteine.",
+      "needs_consumer_copy": false
     },
     "abacavir_adverse_effects": {
       "trait_id": "abacavir_adverse_effects",
@@ -15100,7 +15148,8 @@
         "Sözen T, Özışık L, Başaran NÇ. An overview and management of osteoporosis. Eur J Rheumatol. 2017",
         "Mar;4(1):46-56."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in bone density, central to osteoporosis risk. A measured DEXA scan is decisive; resistance training, protein, vitamin D, and calcium build bone.",
+      "needs_consumer_copy": false
     },
     "caffeine_and_anxiety": {
       "trait_id": "caffeine_and_anxiety",
@@ -15396,7 +15445,8 @@
         "2020. J Pediatr Gastroenterol Nutr. 2020 Jan;70(1):141-156.",
         "Lebwohl B, Ludvigsson JF, Green PH. Celiac disease and non-celiac gluten sensitivity."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Whether you carry the HLA-DQ2.5/DQ8 haplotypes needed for celiac disease. Most carriers never develop it; if you have symptoms, get proper celiac testing and do not cut gluten first.",
+      "needs_consumer_copy": false
     },
     "creatinine_levels": {
       "trait_id": "creatinine_levels",
@@ -15698,7 +15748,8 @@
         "polymorphisms associated with exertional rhabdomyolysis. Eur J Appl Physiol, 2013; 113(8):19972004.",
         "Pimenta EM, Coelho DB, Cruz IR, Morandi RF, Veneroso CE, de Azambuja Pussieldi G, et al. The"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in early-phase muscle damage from hard exercise. Context for recovery planning; your actual soreness and performance guide load.",
+      "needs_consumer_copy": false
     },
     "exercise_induced_muscle_damage_regeneration_capacity": {
       "trait_id": "exercise_induced_muscle_damage_regeneration_capacity",
@@ -15738,7 +15789,8 @@
         "muscle damage: implications for athletic performance, injury and ageing. Eur J Appl Physiol, 2016;",
         "116(9):1595625."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in how well muscle regenerates after damage. Use it to inform recovery time; measured performance and soreness decide training.",
+      "needs_consumer_copy": false
     },
     "exercise_induced_muscle_damage_second_phase": {
       "trait_id": "exercise_induced_muscle_damage_second_phase",
@@ -15776,7 +15828,8 @@
         "polymorphisms and the effect of physical exercise on inflammatory parameters and physical performance",
         "in elderly women. Age (Omaha), 2013; 35(6):245563."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in later, inflammation-driven muscle damage. Context for recovery; watch how you respond to intense sessions.",
+      "needs_consumer_copy": false
     },
     "farmer_hunter_profile": {
       "trait_id": "farmer_hunter_profile",
@@ -15803,7 +15856,8 @@
         "Fumagalli M., Camus S.M, et al. Genetic diversity of CHC22 clathrin impacts its function in glucose",
         "metabolism. eLife (2019); 8: e41517."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Genetic context for how your body handles carbohydrate and glucose after meals. Pair with measured glucose and how you feel on different diets.",
+      "needs_consumer_copy": false
     },
     "food_intake_control": {
       "trait_id": "food_intake_control",
@@ -15843,7 +15897,8 @@
         "waist-hip ratio in women. Ann. Nutr. Metab.",
         "Word Health Organization (WHO) [June 2021]"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in appetite-regulation signals (leptin, NPY). Useful self-awareness; environment, sleep, and protein/fibre drive real intake.",
+      "needs_consumer_copy": false
     },
     "galectin_3_levels": {
       "trait_id": "galectin_3_levels",
@@ -15875,7 +15930,8 @@
         "30,931 individuals. Nature Metabolism, 16 Oct 2020, 2(10):1135-1148.",
         "Blanda V., Marcello U.B., et al. Galectin-3 in cardiovascular diseases. Int. J. Mol. Sci. 2020, 21(23), 9232."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic tendency in galectin-3, an inflammation and fibrosis marker. Research-level background; a measured level matters if tested.",
+      "needs_consumer_copy": false
     },
     "genetic_predisposition_to_peanut_allergy": {
       "trait_id": "genetic_predisposition_to_peanut_allergy",
@@ -16033,7 +16089,8 @@
         "Sinnott-Armstrong N, Tanigawa Y, Amar D, et al . Genetics of 35 blood and urine biomarkers in the UK",
         "Biobank. Nat Genet. 2021 Feb;53(2):185-194."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in HbA1c, the 3-month glucose average used to diagnose diabetes. A measured HbA1c is what to act on; a higher genetic tendency is a reason to check it.",
+      "needs_consumer_copy": false
     },
     "hdl_cholesterol_levels": {
       "trait_id": "hdl_cholesterol_levels",
@@ -16334,7 +16391,8 @@
         "intraocular pressure. Hum Mol Genet. 2018 Jun 15;27(12):2205-2213.",
         "Machiele R, Motlagh M, Patel BC. Intraocular Pressure. StatPearls. 2022, July."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "Eye pressure is partly inherited (~29%), and high pressure is a glaucoma risk factor. A measured eye-pressure test at the optometrist is decisive.",
+      "needs_consumer_copy": false
     },
     "lactose_intolerance": {
       "trait_id": "lactose_intolerance",
@@ -16657,7 +16715,8 @@
         "and chronic obstructive pulmonary disease associations across multiple ancestries. Nat Genet. 2019",
         "Mar;51(3):481-493."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in lung function (exhaled volume). Measured spirometry, plus smoking status and fitness, is decisive; pair with any respiratory or VO2 tracking.",
+      "needs_consumer_copy": false
     },
     "muscle_endurance": {
       "trait_id": "muscle_endurance",
@@ -16688,7 +16747,8 @@
         "Tharabenjasin P, Pabalan N, Jarjanazi H. Association of the ACTN3 R577X (rs1815739) polymorphism with",
         "elite power sports: A meta-analysis. PLoS One. 2019 May 30;14(5):e0217390."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean toward endurance versus power muscle fibers (e.g. ACTN3). Interesting training context; your measured performance decides what you are good at.",
+      "needs_consumer_copy": false
     },
     "myoadenylate_deaminase_ampd1_gene": {
       "trait_id": "myoadenylate_deaminase_ampd1_gene",
@@ -16721,7 +16781,8 @@
         "Lopez-Schenk R, Collins NL, Schenk NA, Beard DA. Integrated Functions of Cardiac Energetics, Mechanics,",
         "and Purine Nucleotide Metabolism. Compr Physiol. 2023 Dec 29;14(1):5345-5369."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "An AMPD1 variant that can cause faster fatigue or exercise intolerance in some carriers. If you tire unusually fast, this adds context; symptoms and testing come first.",
+      "needs_consumer_copy": false
     },
     "prediction_of_visceral_adipose_tissue": {
       "trait_id": "prediction_of_visceral_adipose_tissue",
@@ -17173,7 +17234,8 @@
         "A, et al. The Variants Within the COL5A1 Gene are Associated with Reduced Risk of Anterior Cruciate",
         "Ligament Injury in Skiers. J Hum Kinet, 2015; 45(1):10311."
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in lower-limb tendon and ligament injury risk (collagen genes). Context for load management; progress training gradually and mind recovery.",
+      "needs_consumer_copy": false
     },
     "tendinopathies_in_upper_extremities_arms": {
       "trait_id": "tendinopathies_in_upper_extremities_arms",
@@ -17213,7 +17275,8 @@
         "variations associated with rotator cuff disease. J Shoulder Elb Surg, 2014; 23(2):22735.",
         "Vaughn NH, Stepanyan H, Gallo RA, Dhawan A. Genetic Factors in Tendon Injury: A Systematic Review of"
       ],
-      "needs_consumer_copy": true
+      "consumer_value": "A genetic lean in rotator-cuff and upper-limb tendon injury risk (COL1A1). Context for shoulder load and warm-up; your pain and history guide training.",
+      "needs_consumer_copy": false
     },
     "urate_levels": {
       "trait_id": "urate_levels",
