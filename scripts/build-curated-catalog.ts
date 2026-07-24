@@ -50,6 +50,13 @@ const DOMAIN_RULES: Array<[RegExp, Domain]> = [
   [/hair|eye|skin|earlobe|earwax|freckle|corneal|iris|tooth|teeth|smell|odor|sneeze|itch|asparagus|red hair|baldness|height|birth weight|nasion|photic/i, 'sensory_traits'],
 ];
 
+// Accurate consumer framing for domains whose specific result is
+// genotype-dependent (computed per user), so we do not need per-trait prose.
+const DOMAIN_GENERIC_COPY: Partial<Record<Domain, string>> = {
+  pharmacogenomics: 'How your genetics may affect your response to this medication. Genotype-guided dosing (CPIC guidance) can lower side effects or improve effectiveness, but never change a medication on your own; share this with the prescriber who manages it.',
+  hereditary: 'A carrier and condition screening result: it flags genes worth discussing with a clinician, not a diagnosis. Carrier status often means no symptoms for you but can matter for family planning, and any actionable result should be confirmed with clinical testing.',
+};
+
 function domainFor(traitName: string, sourceCategory: string): Domain {
   if (sourceCategory === 'pharmacology') return 'pharmacogenomics';
   if (sourceCategory === 'hereditary') return 'hereditary';
@@ -144,9 +151,16 @@ function build(): void {
       risk_loci: riskLoci(r),
       variants,
       references: (r.bibliography ?? []).slice(0, 8),
-      ...(authored[id]?.consumer_value ? { consumer_value: authored[id].consumer_value } : {}),
-      needs_consumer_copy: !authored[id]?.consumer_value,
+      ...(consumerValueFor(id, domainFor(r.trait_name, r.internal_category)) ? { consumer_value: consumerValueFor(id, domainFor(r.trait_name, r.internal_category)) } : {}),
+      needs_consumer_copy: !consumerValueFor(id, domainFor(r.trait_name, r.internal_category)),
     };
+  }
+
+  function consumerValueFor(traitId: string, domain: Domain): string | undefined {
+    // Hand-authored trait copy wins; pharmacogenomics/hereditary use an accurate
+    // domain framing because their specific action is genotype-dependent and
+    // computed per user at analysis time.
+    return authored[traitId]?.consumer_value ?? DOMAIN_GENERIC_COPY[domain];
   }
 
   const byDomain: Record<string, number> = {};

@@ -579,11 +579,46 @@ async function loadOverviewData() {
     state.overviewAnalyses = analysisResult.analyses || [];
     state.overviewLoaded = true;
     refreshOverview();
+    void loadCrossModality(key);
   } catch {
     setOverviewModality('wearables', false, 'Check data', 'Open Wearables to view your connected data.');
     setOverviewModality('genetics', false, 'Check genetics', 'Open Genetics to view your uploaded data.');
     setOverviewModality('labs', false, 'Check labs', 'Open Labs to view your uploaded panels.');
   }
+}
+
+// Cross-modality: show signals that exist in more than one modality (a genetic
+// tendency plus a measured wearable/lab value) with the measured value leading.
+async function loadCrossModality(key) {
+  const container = $('#overview-cross-modality');
+  if (!container || !state.user?.id) return;
+  try {
+    const ctx = await api(`/users/${encodeURIComponent(state.user.id)}/health-context`, { organization_id: personalOrganizationId(state.user.id) }, key);
+    const entries = (ctx.cross_modality || []).filter(entry => entry && (entry.measured || entry.inherited));
+    if (!entries.length) { container.classList.add('hidden'); container.innerHTML = ''; return; }
+    container.classList.remove('hidden');
+    container.innerHTML = `<div class="section-heading-row"><div><p class="page-eyebrow">How your data connects</p><h2>Genes, biomarkers &amp; wearables together</h2></div><p>Your measured values lead; genetics adds inherited context.</p></div>
+      <div class="cross-modality-grid">${entries.map(crossModalityCard).join('')}</div>`;
+  } catch {
+    container.classList.add('hidden');
+  }
+}
+
+function crossModalityCard(entry) {
+  const measured = entry.measured ? `${entry.measured.value}${entry.measured.unit ? ` ${entry.measured.unit}` : ''}` : null;
+  const heritability = entry.inherited && entry.inherited.heritability_pct != null
+    ? `~${entry.inherited.heritability_pct}% heritable`
+    : entry.inherited ? 'inherited context' : null;
+  return `<article class="card cross-modality-card">
+    <h3>${escapeHtml(entry.label || '')}</h3>
+    <div class="cross-modality-values">
+      ${measured
+        ? `<div class="cm-cell"><span>Measured</span><strong>${escapeHtml(measured)}</strong><small>${escapeHtml(entry.measured.modality || '')}</small></div>`
+        : `<div class="cm-cell cm-missing"><span>Measured</span><strong>—</strong><small>no reading yet</small></div>`}
+      ${heritability ? `<div class="cm-cell"><span>Inherited</span><strong>${escapeHtml(heritability)}</strong><small>genetic tendency</small></div>` : ''}
+    </div>
+    ${entry.reading ? `<p class="cross-modality-reading">${escapeHtml(entry.reading)}</p>` : ''}
+  </article>`;
 }
 
 $('#copy-key')?.addEventListener('click', () => copyText(state.apiKey, 'Key copied.'));
