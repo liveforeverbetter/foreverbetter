@@ -1355,7 +1355,7 @@ const WEARABLE_METRIC_GROUPS = [
   },
   {
     label: 'Sleep',
-    metrics: ['sleep_duration', 'deep_sleep_minutes', 'rem_sleep_minutes', 'sleep_efficiency_percentage', 'sleep_consistency_percentage'],
+    metrics: ['sleep_duration', 'deep_sleep_minutes', 'rem_sleep_minutes', 'sleep_efficiency', 'sleep_consistency'],
     color: '#8b5cf6',
   },
   {
@@ -1375,8 +1375,8 @@ const WEARABLE_METRIC_LABELS = {
   sleep_duration: 'Sleep hrs',
   deep_sleep_minutes: 'Deep Sleep min',
   rem_sleep_minutes: 'REM Sleep min',
-  sleep_efficiency_percentage: 'Sleep Eff %',
-  sleep_consistency_percentage: 'Sleep Consist %',
+  sleep_efficiency: 'Sleep Eff %',
+  sleep_consistency: 'Sleep Consist %',
   steps: 'Steps',
   active_energy: 'Active kcal',
   workout_count: 'Workouts',
@@ -1394,8 +1394,8 @@ const WEARABLE_METRIC_UNITS = {
   sleep_duration: 'h',
   deep_sleep_minutes: 'm',
   rem_sleep_minutes: 'm',
-  sleep_efficiency_percentage: '%',
-  sleep_consistency_percentage: '%',
+  sleep_efficiency: '%',
+  sleep_consistency: '%',
   steps: '',
   active_energy: 'kcal',
   workout_count: '',
@@ -1416,21 +1416,33 @@ function renderWearableTimeSeries(observations) {
 }
 
 function buildWearableDailyData(observations) {
-  const daily = {};
+  // Group by metric, then by day. For each day, pick the best source
+  // (WHOOP > Oura > Health Connect) to avoid double-counting across
+  // overlapping uploads.
+  const byMetric = {};
   for (const obs of observations) {
     if (obs.type !== 'wearable_metric') continue;
     const name = obs.name;
     if (!name) continue;
     const date = (obs.observed_at || '').slice(0, 10);
     if (!date) continue;
-    if (!daily[name]) daily[name] = {};
-    if (!daily[name][date]) daily[name][date] = [];
-    daily[name][date].push(obs.value);
+    if (!byMetric[name]) byMetric[name] = {};
+    if (!byMetric[name][date]) byMetric[name][date] = [];
+    byMetric[name][date].push(obs);
   }
+
   const aggregated = {};
-  for (const [name, dates] of Object.entries(daily)) {
+  for (const [name, dates] of Object.entries(byMetric)) {
     const entries = Object.entries(dates)
-      .map(([date, values]) => ({ date, value: aggregateMetric(name, values) }))
+      .map(([date, obsList]) => {
+        const providers = [...new Set(obsList.map(o => o.provider).filter(Boolean))];
+        const preferredProvider = providers.includes('whoop') ? 'whoop'
+          : providers.includes('oura') ? 'oura'
+          : providers[0] || 'unknown';
+        const preferredObs = obsList.filter(o => o.provider === preferredProvider || !o.provider);
+        const values = preferredObs.map(o => o.value);
+        return { date, value: aggregateMetric(name, values) };
+      })
       .sort((a, b) => a.date.localeCompare(b.date))
       .slice(-7);
     if (entries.length) aggregated[name] = entries;
@@ -1440,10 +1452,17 @@ function buildWearableDailyData(observations) {
 
 function aggregateMetric(name, values) {
   if (!values.length) return 0;
-  if (name === 'steps' || name === 'active_energy') return Math.round(values.reduce((a, b) => a + b, 0));
+  // Steps and active energy are cumulative per source — use the max across
+  // time windows rather than the sum (to avoid double-counting from
+  // granular Health Connect delta records).
+  if (name === 'steps' || name === 'active_energy') return Math.max(...values);
+  // WHOOP sleep_duration is already in hours.
+  if (name === 'sleep_duration') return +((values.reduce((a, b) => a + b, 0) / values.length)).toFixed(1);
+  // WHOOP deep_sleep_minutes and rem_sleep_minutes are already in minutes.
+  if (name === 'deep_sleep_minutes' || name === 'rem_sleep_minutes') return Math.round(values.reduce((a, b) => a + b, 0) / values.length);
+  // Workout count sums across days.
   if (name === 'workout_count') return values.reduce((a, b) => a + b, 0);
-  if (name === 'sleep_duration') return +(values.reduce((a, b) => a + b, 0) / 3600).toFixed(1);
-  if (name === 'deep_sleep_minutes' || name === 'rem_sleep_minutes') return Math.round(values.reduce((a, b) => a + b, 0) / 60);
+  // Rate metrics (HRV, RHR, SpO2, etc.) use the most recent value.
   return +((values.reduce((a, b) => a + b, 0) / values.length)).toFixed(1);
 }
 

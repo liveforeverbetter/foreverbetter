@@ -369,37 +369,41 @@ export function normalizeWhoopReadings(payloads: unknown[]): WearableReading[] {
   const readings: WearableReading[] = [];
 
   for (const row of recovery ?? []) {
-    const score = objectRecord(objectRecord(row).score);
+    const rec = objectRecord(row);
+    const score = objectRecord(rec.score);
+    const observedAt = typeof rec.created_at === 'string' ? rec.created_at : undefined;
     const recoveryScore = numberValue(score.recovery_score);
-    if (recoveryScore != null) readings.push({ id: 'recovery_score', value: recoveryScore, unit: '%' });
+    if (recoveryScore != null) readings.push({ id: 'recovery_score', value: recoveryScore, unit: '%', observed_at: observedAt });
     const restingHeartRate = numberValue(score.resting_heart_rate);
-    if (restingHeartRate != null) readings.push({ id: 'resting_heart_rate', value: restingHeartRate, unit: 'bpm' });
+    if (restingHeartRate != null) readings.push({ id: 'resting_heart_rate', value: restingHeartRate, unit: 'bpm', observed_at: observedAt });
     const hrv = numberValue(score.hrv_rmssd_milli);
-    if (hrv != null) readings.push({ id: 'hrv', value: Math.round(hrv * 100) / 100, unit: 'ms' });
+    if (hrv != null) readings.push({ id: 'hrv', value: Math.round(hrv * 100) / 100, unit: 'ms', observed_at: observedAt });
     const spo2 = numberValue(score.spo2_percentage);
-    if (spo2 != null) readings.push({ id: 'spo2', value: Math.round(spo2 * 100) / 100, unit: '%' });
+    if (spo2 != null) readings.push({ id: 'spo2', value: Math.round(spo2 * 100) / 100, unit: '%', observed_at: observedAt });
     const skinTemp = numberValue(score.skin_temp_celsius);
-    if (skinTemp != null) readings.push({ id: 'skin_temperature', value: Math.round(skinTemp * 100) / 100, unit: 'C' });
+    if (skinTemp != null) readings.push({ id: 'skin_temperature', value: Math.round(skinTemp * 100) / 100, unit: 'C', observed_at: observedAt });
   }
 
   for (const row of sleep ?? []) {
-    const score = objectRecord(objectRecord(row).score);
+    const slp = objectRecord(row);
+    const score = objectRecord(slp.score);
+    const observedAt = typeof slp.created_at === 'string' ? slp.created_at : undefined;
     const efficiency = numberValue(score.sleep_efficiency_percentage);
-    if (efficiency != null) readings.push({ id: 'sleep_efficiency', value: Math.round(efficiency * 100) / 100, unit: '%' });
+    if (efficiency != null) readings.push({ id: 'sleep_efficiency', value: Math.round(efficiency * 100) / 100, unit: '%', observed_at: observedAt });
     const respiratoryRate = numberValue(score.respiratory_rate);
-    if (respiratoryRate != null) readings.push({ id: 'respiratory_rate', value: Math.round(respiratoryRate * 100) / 100, unit: 'rpm' });
+    if (respiratoryRate != null) readings.push({ id: 'respiratory_rate', value: Math.round(respiratoryRate * 100) / 100, unit: 'rpm', observed_at: observedAt });
     const consistency = numberValue(score.sleep_consistency_percentage);
-    if (consistency != null) readings.push({ id: 'sleep_consistency', value: consistency, unit: '%' });
+    if (consistency != null) readings.push({ id: 'sleep_consistency', value: consistency, unit: '%', observed_at: observedAt });
     const stages = objectRecord(score.stage_summary);
     const inBed = numberValue(stages.total_in_bed_time_milli);
     const awake = numberValue(stages.total_awake_time_milli) ?? 0;
     if (inBed != null && inBed - awake > 0) {
-      readings.push({ id: 'sleep_duration', value: Math.round(((inBed - awake) / 3_600_000) * 100) / 100, unit: 'hours' });
+      readings.push({ id: 'sleep_duration', value: Math.round(((inBed - awake) / 3_600_000) * 100) / 100, unit: 'hours', observed_at: observedAt });
     }
     const deep = numberValue(stages.total_slow_wave_sleep_time_milli);
-    if (deep != null) readings.push({ id: 'deep_sleep_minutes', value: Math.round(deep / 60_000), unit: 'min' });
+    if (deep != null) readings.push({ id: 'deep_sleep_minutes', value: Math.round(deep / 60_000), unit: 'min', observed_at: observedAt });
     const rem = numberValue(stages.total_rem_sleep_time_milli);
-    if (rem != null) readings.push({ id: 'rem_sleep_minutes', value: Math.round(rem / 60_000), unit: 'min' });
+    if (rem != null) readings.push({ id: 'rem_sleep_minutes', value: Math.round(rem / 60_000), unit: 'min', observed_at: observedAt });
   }
 
   if ((workout ?? []).length) {
