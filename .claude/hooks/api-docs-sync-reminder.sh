@@ -18,13 +18,13 @@ case "$file" in
   */src/schemas.ts|*/src/endpoints.ts)
     # The reference is generated from code — regenerate it automatically.
     if [ -n "$repo" ] && ( cd "$repo" && npm run openapi:generate >/dev/null 2>&1 ); then
-      emit "API reference schema changed ($file). Regenerated docs/openapi.json automatically. Before finishing, update the relevant docs/*.mdx pages using the Diataxis framework (full request/response examples and a use-case guide for the affected flow), and reflect any new response fields there."
+      emit "API reference schema changed ($file). Regenerated docs/openapi.json automatically. Before finishing, update the relevant docs/*.mdx pages using the Diataxis framework (full request/response examples and a use-case guide for the affected flow), reflect any new response fields there, and update the onboarding/install skill skills/wellnizz/SKILL.md if the flow or endpoints an agent uses changed."
     else
-      emit "API reference schema changed ($file), but automatic openapi:generate did not run cleanly. Run \`npm run openapi:generate\` and update the relevant docs/*.mdx (Diataxis) before finishing."
+      emit "API reference schema changed ($file), but automatic openapi:generate did not run cleanly. Run \`npm run openapi:generate\`, update the relevant docs/*.mdx (Diataxis), and update skills/wellnizz/SKILL.md if agent-facing flows changed."
     fi
     ;;
   */src/http.ts|*/src/auth.ts|*/src/core/genetic-insights.ts|*/src/core/health-context.ts|*/src/core/analysis.ts)
-    emit "API surface changed ($file). Before finishing, run \`npm run openapi:generate\` and update the relevant docs/*.mdx pages using the Diataxis framework (full request/response examples and a use-case guide for the affected flow)."
+    emit "API surface changed ($file). Before finishing, run \`npm run openapi:generate\`, update the relevant docs/*.mdx pages using the Diataxis framework (full request/response examples and a use-case guide for the affected flow), and update the onboarding/install skill skills/wellnizz/SKILL.md if the flow or endpoints an agent uses changed."
     ;;
   *)
     : # not an API-defining file — stay silent
