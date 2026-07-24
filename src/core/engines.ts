@@ -15,6 +15,7 @@ export interface WearableReading {
   unit?: string;
   window_days?: number;
   original_unit?: string;
+  observed_at?: string;
 }
 
 export interface EngineFinding {

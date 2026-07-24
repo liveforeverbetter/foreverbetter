@@ -183,6 +183,7 @@ function readingToWearableObservation(source: RawSourceReference) {
     name: reading.id,
     value: reading.value,
     unit: reading.unit,
+    observed_at: reading.observed_at ?? source.received_at,
     provider: source.provider,
     raw: reading,
   });
