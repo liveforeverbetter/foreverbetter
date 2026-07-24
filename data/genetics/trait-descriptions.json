@@ -24,6 +24,47 @@
     "alkaline_phosphatase_levels": { "consumer_value": "ALP is a liver- and bone-related enzyme. This is background for interpreting a measured ALP result, not a standalone signal." },
     "bilirubin_levels": { "consumer_value": "A bilirubin tendency, often reflecting Gilbert's-type variants. Mildly higher levels are usually benign; use this to interpret a blood result." },
     "liver_iron_levels": { "consumer_value": "Genetic context for how the liver handles iron. Pair with ferritin and iron studies; a measured panel matters far more than the tendency." },
-    "birth_weight": { "consumer_value": "A largely historical trait with genetic contributors and limited day-to-day relevance now." }
+    "birth_weight": { "consumer_value": "A largely historical trait with genetic contributors and limited day-to-day relevance now." },
+
+    "sleep_duration": { "consumer_value": "Sleep need is meaningfully inherited (genetics may set up to ~45% of habitual duration). Compare this tendency with your tracked sleep; even natural short sleepers do better protecting a consistent, sufficient sleep window." },
+    "insomnia": { "consumer_value": "A genetic lean toward insomnia; studies attribute roughly 38-59% of the variation to genetics. Read it as context, not a diagnosis; compare with your actual sleep patterns and see a clinician if sleepless nights persist." },
+    "morning_circadian_rythm_morning_person": { "consumer_value": "Your inherited lean toward being a morning or evening person. Line it up with your real sleep timing and light exposure; consistent wake times and morning light shift your rhythm regardless of the tendency." },
+    "probability_of_snoring": { "consumer_value": "A modest inherited tendency toward snoring (~18% heritable). Loud snoring with pauses can point to sleep apnea worth checking; compare with any sleep-tracking or partner reports." },
+
+    "cognitive_ability": { "consumer_value": "A research-context signal for cognitive performance, shaped far more by education, environment, health, and sleep than by genes. Interest-only; never a measure of intelligence or potential." },
+    "mental_agility": { "consumer_value": "A research signal for reasoning and processing speed. Age, sleep, stress, and practice move it far more than genetics; treat it as context, not a verdict." },
+    "neuroticisms": { "consumer_value": "A small inherited component (~15%) of the tendency toward negative emotions. Current stress, sleep, support, and circumstances dominate; this is context, not a personality label or a mental-health prediction." },
+    "caffeine_and_anxiety": { "consumer_value": "How your genes shape caffeine's anxiety-provoking effect via adenosine receptors. If caffeine makes you jittery, this adds context; try lower doses and earlier timing and watch your own response, resting HR, and sleep." },
+
+    "epigenetic_aging": { "consumer_value": "Your genetic lean toward faster or slower biological aging (as read by DNA-methylation clocks). Aging is highly modifiable; pair this with a measured methylation age if you have one, plus sleep, training, and metabolic health, which move it most." },
+    "telomere_length": { "consumer_value": "Telomere length is a partly inherited (~44%) cellular-aging marker that shortens with age and stress. A measured telomere test, plus sleep, exercise, and lower inflammation, tells you more than the tendency alone." },
+    "facial_aging": { "consumer_value": "An inherited tendency for visible skin aging. Sun exposure, smoking, and skincare drive far more of the outcome than genetics; treat this as light context." },
+
+    "c_reactive_protein_levels": { "consumer_value": "A genetic lean for CRP, a key inflammation marker. Your measured CRP (a simple blood test) is what to act on; a higher genetic tendency is a nudge to check it and address sleep, weight, and illness context." },
+    "white_blood_cell_count": { "consumer_value": "A genetic tendency for overall white-blood-cell level. Your measured count is the number that counts; this adds context for interpreting it." },
+    "lymphocyte_count": { "consumer_value": "An inherited tendency for lymphocyte levels, central immune cells. A measured blood count, read with infection and nutrition context, is the actionable value." },
+    "neutrophil_count": { "consumer_value": "An inherited tendency for neutrophil levels, the front-line infection-fighting cells. A measured count is what to interpret; some ancestries run lower normal ranges." },
+    "monocyte_count": { "consumer_value": "A genetic lean in monocyte levels, immune cells that fight infection. A measured count is the real signal; genetics is background." },
+    "eosinophil_count": { "consumer_value": "A genetic tendency for eosinophil levels, immune cells tied to allergy and parasite response. Your measured blood count is what matters; genetics is background for interpreting it." },
+    "hla_b27_antigen": { "consumer_value": "Whether you likely carry HLA-B27, a marker linked to certain autoimmune conditions (e.g. ankylosing spondylitis). A flag for clinical context, not a diagnosis; confirm with a proper HLA-B27 test if relevant." },
+    "ccr5delta32_and_susceptibility_to_hiv_infection": { "consumer_value": "Whether you carry the CCR5-delta32 deletion, which hampers HIV's entry into cells and can lower susceptibility. Inherited context only; it does not replace prevention or testing." },
+    "duffy_antigen_malaria_resistant": { "consumer_value": "Duffy-antigen status, linked to resistance to Plasmodium vivax malaria and more common in African-ancestry populations. Ancestry-linked context, not a clinical instruction." },
+
+    "vitamin_d_levels": { "consumer_value": "Vitamin D levels are partly inherited and strongly sun- and diet-driven. Measure serum 25-OH vitamin D before changing supplementation; a genetic lean toward low levels is a reason to test." },
+    "vitamin_b12_levels": { "consumer_value": "B12 levels are notably inherited (~60% of the variation) alongside diet. A measured B12 is what to act on, especially on a low-animal-product diet; a genetic lean toward low levels is a reason to test." },
+    "vitamin_c_levels": { "consumer_value": "A genetic tendency in vitamin C levels, alongside diet. A measured level plus fruit and veg intake is what matters; genetics is context." },
+    "vitamin_e_levels": { "consumer_value": "A genetic lean in vitamin E levels. Deficiency is rare with a normal diet; a measured level is the real signal if there is concern." },
+    "levels_of_vitamin_a_beta_carotene": { "consumer_value": "A genetic lean in circulating beta-carotene and vitamin A. A measured level plus colorful-vegetable intake is what to act on; genetics is background." },
+    "long_chain_omega_fatty_acids_levels": { "consumer_value": "Your genetic tendency in omega-3/6 levels, fats you cannot fully make yourself. Pair with oily-fish intake or a measured omega-3 index rather than acting on the tendency alone." },
+    "lactose_intolerance": { "consumer_value": "Whether you carry the variant that keeps the lactase enzyme active into adulthood (lactose tolerance). Compare with how dairy actually affects you; your symptoms are the real test." },
+    "histamine_intolerance": { "consumer_value": "Your genetic capacity to break down dietary histamine (via the DAO and HNMT enzymes). If high-histamine foods trigger symptoms, this adds context; an elimination trial and clinical review confirm it." },
+    "alcohol_flush_reaction": { "consumer_value": "Whether you carry ALDH2 variants that cause the alcohol 'flush' (facial redness, nausea) from slower alcohol breakdown. Flushing is a signal to drink less and is linked to higher risk from heavy drinking." },
+    "alcohol_dependence_after_prolonged_consumption": { "consumer_value": "A small inherited component (~5-10%) of alcohol-use tendency; environment and habit dominate. Light context, not a label; if drinking is a concern, behavior and support matter far more than genetics." },
+    "caffeine_and_sports_performance": { "consumer_value": "How your CYP1A2 genetics shape caffeine's performance (ergogenic) effect. If you use caffeine before training, test dose and timing against your actual performance and how you feel." },
+    "caffeine_dependence_after_prolonged_consumption": { "consumer_value": "Genetic context for how much caffeine you tend to consume. Combine it with your own tolerance, sleep, and resting HR; the tendency is not a prescription." },
+    "antioxidant_capacity": { "consumer_value": "Your genetic lean in antioxidant enzymes (glutathione peroxidase, catalase) that clear reactive oxygen species. Colorful-plant diet, sleep, and training influence this more; treat as context." },
+    "bitter_taste_perception": { "consumer_value": "How strongly you taste bitter compounds (via TAS2R variants), which can nudge food and vegetable preferences. No health action; just self-knowledge." },
+    "preference_for_sweets": { "consumer_value": "An inherited lean toward liking sweet foods. Useful self-awareness for managing intake; environment and habit are stronger drivers." },
+    "genetic_predisposition_to_peanut_allergy": { "consumer_value": "An inherited lean in peanut-allergy risk. Genetics is only part of the picture; actual symptoms and clinical testing are decisive, so never self-diagnose from this." }
   }
 }
