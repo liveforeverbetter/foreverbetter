@@ -103,7 +103,7 @@ function consumerGeneticInterpretations(
     raw: {
       ...insight,
       interpretation_release: section.interpretation_release,
-      domain: insight.category,
+      domain: insight.domain ?? insight.category,
       query_aliases: consumerInsightAliases(insight),
     },
   }));

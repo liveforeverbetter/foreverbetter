@@ -970,7 +970,7 @@ async function loadModalityInterpretations(page, modality, key, params) {
     const condensedCount = Math.max(0, allInterpretations.length - currentSignals.length);
     const analysisSummary = currentAnalysisSummary(page, current, historyCount, currentSignals.length, allInterpretations.length, condensedCount);
 
-    // Genetics is deliberately browsed as six result lenses. Unlike wearable
+    // Genetics is deliberately browsed by health-domain lens. Unlike wearable
     // observations, a genome can legitimately carry hundreds of supporting
     // variants; showing a mixed priority feed makes that depth feel noisy and
     // obscures the question a person is trying to answer.
@@ -1057,59 +1057,44 @@ function currentAnalysisSummary(page, analysis, historyCount, findingCount, rawF
   return `<div class="analysis-summary current-analysis-summary"><strong>Current</strong><span>Updated ${escapeHtml(formatRelDate(analysis.created_at))} · ${findingCount} current ${findingCount === 1 ? 'finding' : 'findings'}</span><small>${history} ${geneticsNote}${consolidationNote}</small></div>`;
 }
 
+// Result lenses are health domains, so a finding sits next to the biomarker and
+// wearable signals for the same body system (driven by raw.domain from the
+// curated catalog, with sensible fallbacks by finding type).
 const GENETICS_RESULT_CATEGORIES = [
-  {
-    id: 'medication',
-    label: 'Medication response',
-    eyebrow: 'Prescribing context',
-    description: 'Drug-response findings and CPIC-backed context to take to a prescriber.',
-    tone: 'violet',
-  },
-  {
-    id: 'clinical',
-    label: 'Clinical findings',
-    eyebrow: 'Condition evidence',
-    description: 'Condition and catalog findings that deserve careful, clinician-aware review.',
-    tone: 'coral',
-  },
-  {
-    id: 'risk',
-    label: 'Risk & predisposition',
-    eyebrow: 'Risk context',
-    description: 'Variant-led risk context, grouped so one trait is not repeated per rsID.',
-    tone: 'amber',
-  },
-  {
-    id: 'polygenic',
-    label: 'Polygenic scores',
-    eyebrow: 'Population context',
-    description: 'Multi-variant scores with coverage, calibration, and evidence limits kept visible.',
-    tone: 'teal',
-  },
-  {
-    id: 'traits',
-    label: 'Traits & Longevity',
-    eyebrow: 'Personal context',
-    description: 'Your stable, lifestyle-relevant trait interpretations and suggested next measurements.',
-    tone: 'leaf',
-  },
-  {
-    id: 'analysis',
-    label: 'Analysis & evidence',
-    eyebrow: 'How to read this',
-    description: 'Coverage, analysis scope, and the evidence context behind this WGS interpretation.',
-    tone: 'ink',
-  },
+  { id: 'cardiovascular', label: 'Heart & circulation', eyebrow: 'Cardiovascular', description: 'Heart-rate, blood-pressure, and vascular genetics to read alongside your wearable and lab signals.', tone: 'coral' },
+  { id: 'metabolic', label: 'Metabolism & body', eyebrow: 'Metabolic', description: 'Glucose, lipids, weight, and body-composition genetics that pair with your biomarkers.', tone: 'amber' },
+  { id: 'physical_performance', label: 'Fitness & performance', eyebrow: 'Physical', description: 'Strength, endurance, VO2max, and recovery tendencies to compare with measured performance.', tone: 'teal' },
+  { id: 'nutrition_response', label: 'Nutrition & response', eyebrow: 'Nutrition', description: 'How your genetics shape vitamins, caffeine, alcohol, and food response.', tone: 'leaf' },
+  { id: 'sleep_circadian', label: 'Sleep & rhythm', eyebrow: 'Sleep', description: 'Sleep-duration and chronotype tendencies to line up with your sleep tracking.', tone: 'violet' },
+  { id: 'cognitive_mood', label: 'Cognition & mood', eyebrow: 'Cognitive', description: 'Research-context signals for cognition and mood, shared as context rather than prediction.', tone: 'ink' },
+  { id: 'immunity_inflammation', label: 'Immunity & inflammation', eyebrow: 'Immune', description: 'Inflammatory and immune-related genetics to read with your inflammatory markers.', tone: 'coral' },
+  { id: 'longevity_aging', label: 'Longevity & aging', eyebrow: 'Aging', description: 'Aging-rate and longevity-linked genetics for the long view.', tone: 'leaf' },
+  { id: 'sensory_traits', label: 'Traits & senses', eyebrow: 'Personal traits', description: 'Physical and sensory traits — the human side of your genome.', tone: 'teal' },
+  { id: 'pharmacogenomics', label: 'Medication response', eyebrow: 'Prescribing context', description: 'Drug-response and dosing genetics with CPIC-backed context to take to a prescriber.', tone: 'violet' },
+  { id: 'hereditary', label: 'Hereditary conditions', eyebrow: 'Carrier & condition', description: 'Carrier status and condition-linked findings that deserve careful, clinician-aware review.', tone: 'amber' },
+  { id: 'analysis', label: 'Analysis & evidence', eyebrow: 'How to read this', description: 'Coverage, analysis scope, and the evidence context behind this WGS interpretation.', tone: 'ink' },
 ];
 
+const GENETICS_DOMAIN_IDS = new Set(GENETICS_RESULT_CATEGORIES.map(category => category.id));
+// Legacy consumer categories (pre-domain) fall back to the closest domain.
+const GENETICS_CATEGORY_TO_DOMAIN = {
+  clinical_risk: 'hereditary', health_trait: 'physical_performance', superpowers: 'physical_performance',
+  nutrition: 'nutrition_response', sleep_recovery: 'sleep_circadian', pharmacogenomics: 'pharmacogenomics',
+  research_only: 'cognitive_mood',
+};
+
 function geneticResultCategoryId(interp) {
+  const raw = interp.raw && typeof interp.raw === 'object' ? interp.raw : {};
+  const domain = typeof raw.domain === 'string' ? raw.domain : '';
+  if (GENETICS_DOMAIN_IDS.has(domain)) return domain;
+  if (GENETICS_CATEGORY_TO_DOMAIN[domain]) return GENETICS_CATEGORY_TO_DOMAIN[domain];
   return ({
-    genetic_drug_response: 'medication',
-    genetic_condition_finding: 'clinical',
-    genetic_condition_catalog_match: 'clinical',
-    genetic_risk_finding: 'risk',
-    genetic_prs_score: 'polygenic',
-    genetic_consumer_insight: 'traits',
+    genetic_drug_response: 'pharmacogenomics',
+    genetic_condition_finding: 'hereditary',
+    genetic_condition_catalog_match: 'hereditary',
+    genetic_risk_finding: 'hereditary',
+    genetic_prs_score: 'physical_performance',
+    genetic_consumer_insight: 'physical_performance',
     genetic_pipeline_analysis: 'analysis',
   })[interp.type] || 'analysis';
 }
@@ -1133,7 +1118,7 @@ function renderGeneticsCategoryBrowser(interpretations, meta = {}) {
         <div><p class="page-eyebrow">Genome map</p><h2 id="genetics-browser-heading">Choose a result lens</h2></div>
         ${fileMeta}
       </div>
-      <p class="genetics-browser-lede">Six calm pathways through your WGS result. Select one to see only the findings that belong there.</p>
+      <p class="genetics-browser-lede">Your WGS result organized by health domain. Select one to see the findings that belong there, next to the biomarker and wearable signals for the same body system.</p>
       <div class="genetics-category-grid" role="tablist" aria-label="Genetic result categories">
         ${GENETICS_RESULT_CATEGORIES.map(category => geneticCategoryCard(category, grouped.get(category.id) || [], category.id === initial)).join('')}
       </div>
@@ -1191,7 +1176,14 @@ function geneticsCategoryIcon(category) {
     traits: '<path d="M12 20c4.4-2.1 7-5.6 7-10.5C15 9.3 12.7 7.3 12 4 11.3 7.3 9 9.3 5 9.5 5 14.4 7.6 17.9 12 20Z"/><path d="M12 20v-8m0 3c-1.4-1.6-3.1-2.2-4.7-2.2M12 12c1.3-1.6 2.9-2.2 4.5-2.2"/>',
     analysis: '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.7 1.8M8 4.8l1.4 1M16 4.8l-1.4 1"/>',
   };
-  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${paths[category] || paths.analysis}</svg>`;
+  // Map each health-domain lens to the closest existing glyph.
+  const alias = {
+    cardiovascular: 'clinical', hereditary: 'clinical', immunity_inflammation: 'risk',
+    metabolic: 'polygenic', physical_performance: 'traits', nutrition_response: 'traits',
+    sleep_circadian: 'analysis', cognitive_mood: 'traits', longevity_aging: 'traits',
+    sensory_traits: 'traits', pharmacogenomics: 'medication',
+  };
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${paths[alias[category] || category] || paths.analysis}</svg>`;
 }
 
 function interpretationPriority(interp) {
