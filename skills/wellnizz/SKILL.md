@@ -350,7 +350,13 @@ and completed analyses; never re-queue a WGS job that is already running.
 1. Connect every modality the user has ready, one at a time (see "Connecting data").
 2. `POST /analyses` over all of their source IDs for one multimodal analysis.
 3. `POST /users/{id}/health-context` for the consolidated picture: coverage per
-   modality, priority findings, and gaps, with provenance.
+   modality, priority findings, and gaps, with provenance. It also returns
+   `cross_modality`: for a signal that exists in more than one modality (resting
+   heart rate, glucose, LDL/ApoB, VO2max, body fat, blood pressure, urate, sleep),
+   each entry gives the latest measured value with its source modality, the
+   inherited genetic tendency (`heritability_pct`), and a plain `reading`. Present
+   the measured value as the number to act on and the genetic tendency as context;
+   never blend them into one figure.
 4. `GET /analyses/{id}/action-plan` for the prioritized, cited plan; add
    `GET /dashboard-specs/{id}` if they also want it rendered.
 5. Offer to make it recurring (a daily or scheduled refresh) and to fill the biggest
@@ -495,6 +501,19 @@ the genetics `source.id`, wait for `upload_status: "complete"`, then call
 `POST /genetics/analyze` or `POST /genetics/ancestry`. For small text exports only, use
 `/imports/file` with category `genetics`. Genetics and biomarker source IDs are separate;
 pass both in `source_ids` only for a multimodal analysis.
+
+**What each genetics finding carries.** A completed genetics analysis returns per-trait
+findings, each grouped under one of eleven health domains (`domain`): cardiovascular,
+metabolic, cognitive_mood, longevity_aging, nutrition_response, sleep_circadian,
+immunity_inflammation, physical_performance, sensory_traits, pharmacogenomics, and
+hereditary. Every finding surfaces its evidence: the `genes` analyzed, the `rsids`
+(variant IDs), the number of `risk_loci`, the trait `heritability_pct` (how much of the
+trait is inherited), a plain-language `consumer_value` describing what the result means
+and what to do, and primary-study `references`. Present these together, and lead with the
+domain grouping so the user sees their genome organized by what it affects. Heritability
+is context, not destiny: a 32% heritable trait is still mostly shaped by measured inputs,
+so pair any strong genetic tendency with the user's own biomarker or wearable value when
+one exists (see the `cross_modality` array from `POST /users/{id}/health-context`).
 
 **Gating rule: do not re-queue genetics work.** Before calling `POST /genetics/analyze`
 or including a genetics source ID in `POST /analyses`, always check `GET /analyses`

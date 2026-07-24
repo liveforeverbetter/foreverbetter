@@ -1,4 +1,5 @@
 import { ENDPOINTS } from './endpoints.js';
+import { requestExamples, responseExamples } from './openapi-examples.js';
 import { SERVICE_VERSION } from './version.js';
 import type { X402PublicConfig } from './x402.js';
 
@@ -52,6 +53,35 @@ function attachOperationDescriptions(paths: Record<string, Record<string, unknow
       if (op.description) continue;
       const description = lookup.get(`${method.toUpperCase()} ${normalizeOpenApiPath(path)}`);
       if (description) op.description = description;
+    }
+  }
+}
+
+// Attach concrete request/response examples to the generated spec. Requests are
+// keyed by "METHOD /path" (matching the raw OpenAPI path); responses are keyed by
+// the component schema name a media type $refs, so every endpoint that returns a
+// typed schema shows a worked example.
+function attachExamples(paths: Record<string, Record<string, unknown>>): void {
+  const refName = (schema: unknown): string | undefined => {
+    const r = (schema as { $ref?: unknown } | null)?.$ref;
+    return typeof r === 'string' ? r.split('/').pop() : undefined;
+  };
+  for (const [path, methods] of Object.entries(paths)) {
+    for (const [method, operation] of Object.entries(methods)) {
+      if (!operation || typeof operation !== 'object') continue;
+      const op = operation as {
+        requestBody?: { content?: Record<string, { schema?: unknown; example?: unknown }> };
+        responses?: Record<string, { content?: Record<string, { schema?: unknown; example?: unknown }> }>;
+      };
+      const reqMedia = op.requestBody?.content?.['application/json'];
+      const reqExample = requestExamples[`${method.toUpperCase()} ${path}`];
+      if (reqMedia && reqExample !== undefined) reqMedia.example = reqExample;
+      for (const response of Object.values(op.responses ?? {})) {
+        for (const media of Object.values(response.content ?? {})) {
+          const name = refName(media.schema);
+          if (name && responseExamples[name] !== undefined) media.example = responseExamples[name];
+        }
+      }
     }
   }
 }
@@ -459,6 +489,7 @@ export function openApiDocument(baseUrl = 'http://localhost:8787', x402?: X402Pu
   };
   attachOperationDescriptions(doc.paths as unknown as Record<string, Record<string, unknown>>);
   attachX402Operations(doc.paths as unknown as Record<string, Record<string, unknown>>, x402);
+  attachExamples(doc.paths as unknown as Record<string, Record<string, unknown>>);
   (doc as Record<string, unknown>)['x-x402'] = x402 ?? { enabled: false, version: 2 };
   return doc;
 }
@@ -1024,7 +1055,7 @@ function responseSchemas(): Record<string, JsonSchema> {
     },
     HealthContext: {
       type: 'object', additionalProperties: false, required: ['user_id', 'generated_at', 'coverage', 'counts', 'priority_findings', 'modality_contexts', 'data_gaps', 'provenance'],
-      properties: { user_id: userId, organization_id: organizationId, generated_at: timestamp, latest_analysis_id: { type: 'string' }, coverage: { type: 'array', items: { type: 'object', additionalProperties: true } }, counts: { type: 'object', additionalProperties: { type: 'integer' } }, priority_findings: { type: 'array', items: { type: 'object', additionalProperties: true } }, modality_contexts: { type: 'object', additionalProperties: true }, data_gaps: { type: 'array', items: { type: 'object', additionalProperties: true } }, provenance: { type: 'object', additionalProperties: true } },
+      properties: { user_id: userId, organization_id: organizationId, generated_at: timestamp, latest_analysis_id: { type: 'string' }, coverage: { type: 'array', items: { type: 'object', additionalProperties: true } }, counts: { type: 'object', additionalProperties: { type: 'integer' } }, priority_findings: { type: 'array', items: { type: 'object', additionalProperties: true } }, modality_contexts: { type: 'object', additionalProperties: true }, cross_modality: { type: 'array', description: 'Signals present in more than one modality (resting heart rate, glucose, LDL/ApoB, VO2max, body fat, blood pressure, urate, sleep). Each entry pairs the latest measured value with the inherited genetic tendency; the measured value is primary and heritability is context.', items: { type: 'object', additionalProperties: true } }, data_gaps: { type: 'array', items: { type: 'object', additionalProperties: true } }, provenance: { type: 'object', additionalProperties: true } },
     },
     TrendsResult: {
       type: 'object', additionalProperties: false, required: ['user_id', 'generated_at', 'marker_count', 'improving', 'worsening', 'stable', 'markers'],
