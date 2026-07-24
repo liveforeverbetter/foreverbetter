@@ -1516,6 +1516,7 @@ function geneticConsumerReport(interp, raw) {
       genes: Array.isArray(evidence.genes) ? evidence.genes : genes,
       variants: Array.isArray(evidence.variants) && evidence.variants.length ? evidence.variants : variants,
       heritability_pct: evidence.heritability_pct != null ? evidence.heritability_pct : raw.heritability_pct,
+      risk_loci: evidence.risk_loci != null ? evidence.risk_loci : raw.risk_loci,
       coverage: evidence.coverage || raw.coverage,
       matching: evidence.matching || raw.matching,
       calibration: evidence.calibration || raw.calibration,
@@ -1523,7 +1524,9 @@ function geneticConsumerReport(interp, raw) {
     action: contract.action || interp.action || '',
     technical: contract.technical && typeof contract.technical === 'object' ? contract.technical : geneticTechnicalFields(raw),
     limitations: Array.isArray(contract.limitations) ? contract.limitations : Array.isArray(raw.limitations) ? raw.limitations : [],
-    references: Array.isArray(contract.references) ? contract.references : raw.source ? [raw.source] : [],
+    references: Array.isArray(contract.references) ? contract.references
+      : Array.isArray(raw.references) && raw.references.length ? raw.references.map(ref => (typeof ref === 'string' ? { name: ref } : ref))
+      : raw.source ? [raw.source] : [],
   };
 }
 
@@ -1540,7 +1543,8 @@ function geneticEvidence(evidence) {
   const genes = Array.isArray(evidence.genes) ? evidence.genes.filter(Boolean) : [];
   const variants = Array.isArray(evidence.variants) ? evidence.variants.filter(Boolean) : [];
   const heritability = typeof evidence.heritability_pct === 'number' ? evidence.heritability_pct : null;
-  if (!genes.length && !variants.length && heritability == null) return '';
+  const loci = typeof evidence.risk_loci === 'number' ? evidence.risk_loci : null;
+  if (!genes.length && !variants.length && heritability == null && loci == null) return '';
   const rows = variants.map(variant => {
     const record = typeof variant === 'object' ? variant : { rsid: variant };
     const detail = [record.gene, record.genotype, record.clinical_significance].filter(Boolean).join(' · ');
@@ -1549,6 +1553,7 @@ function geneticEvidence(evidence) {
   const summaryBits = [];
   if (variants.length) summaryBits.push(`${variants.length} variant${variants.length === 1 ? '' : 's'}`);
   if (genes.length) summaryBits.push(`${genes.length} gene${genes.length === 1 ? '' : 's'}`);
+  if (loci != null) summaryBits.push(`${loci} risk loci`);
   if (heritability != null) summaryBits.push(`~${heritability}% heritable`);
   return `<details class="genetic-evidence"><summary>${summaryBits.join(' · ') || 'Evidence'}</summary>
     ${heritability != null ? `<p><strong>Heritability</strong><span>Genetics explains ~${heritability}% of this trait; the rest is lifestyle, environment, and measured physiology.</span></p>` : ''}

@@ -17,7 +17,7 @@ export const GENETIC_INTERPRETATION_RELEASE = '2026-07-19.3';
 // to attach the full gene/rsID panel to a finding instead of the handful of
 // hardcoded spotlights, so a whole-genome analysis surfaces the evidence it
 // actually computed. Loaded once, best-effort (missing file degrades silently).
-interface CuratedTraitFacts { genes: string[]; rsids: string[]; heritability_pct: number | null; domain: string | null; consumer_value: string | null }
+interface CuratedTraitFacts { genes: string[]; rsids: string[]; heritability_pct: number | null; domain: string | null; consumer_value: string | null; risk_loci: number | null; references: string[] }
 let curatedCatalogCache: Map<string, CuratedTraitFacts> | null | undefined;
 
 function normalizeTraitKey(value: string | undefined): string {
@@ -27,10 +27,10 @@ function normalizeTraitKey(value: string | undefined): string {
 function curatedCatalog(): Map<string, CuratedTraitFacts> | null {
   if (curatedCatalogCache !== undefined) return curatedCatalogCache;
   try {
-    const raw = JSON.parse(readFileSync(resolve(process.cwd(), 'data/genetics/curated-traits.json'), 'utf8')) as { traits?: Record<string, { trait_id?: string; display_name?: string; genes?: string[]; rsids?: string[]; heritability_pct?: number | null; domain?: string; consumer_value?: string }> };
+    const raw = JSON.parse(readFileSync(resolve(process.cwd(), 'data/genetics/curated-traits.json'), 'utf8')) as { traits?: Record<string, { trait_id?: string; display_name?: string; genes?: string[]; rsids?: string[]; heritability_pct?: number | null; domain?: string; consumer_value?: string; risk_loci?: number | null; references?: string[] }> };
     const map = new Map<string, CuratedTraitFacts>();
     for (const trait of Object.values(raw.traits ?? {})) {
-      const facts: CuratedTraitFacts = { genes: trait.genes ?? [], rsids: trait.rsids ?? [], heritability_pct: trait.heritability_pct ?? null, domain: trait.domain ?? null, consumer_value: trait.consumer_value ?? null };
+      const facts: CuratedTraitFacts = { genes: trait.genes ?? [], rsids: trait.rsids ?? [], heritability_pct: trait.heritability_pct ?? null, domain: trait.domain ?? null, consumer_value: trait.consumer_value ?? null, risk_loci: trait.risk_loci ?? null, references: trait.references ?? [] };
       for (const key of [trait.trait_id, trait.display_name]) {
         const normalized = normalizeTraitKey(key);
         if (normalized) map.set(normalized, facts);
@@ -116,6 +116,11 @@ export interface GeneticConsumerInsight {
   genes?: string[];
   rsids?: string[];
   heritability_pct?: number;
+  // Number of trait-associated loci from the source study (context for a
+  // polygenic result).
+  risk_loci?: number;
+  // Primary-study citations for this trait (bibliography, not a third-party lab).
+  references?: string[];
   // Health domain from the curated catalog (cardiovascular, metabolic, …); drives
   // the dashboard result lens.
   domain?: string;
@@ -463,6 +468,8 @@ function normalizePolygenicScore(score: Record<string, unknown>): GeneticConsume
     genes: spotlight?.genes ?? (curated?.genes.length ? curated.genes : undefined),
     rsids: spotlight?.rsids ?? (curated?.rsids.length ? curated.rsids : undefined),
     heritability_pct: curated?.heritability_pct ?? undefined,
+    risk_loci: curated?.risk_loci ?? undefined,
+    references: curated?.references.length ? curated.references : undefined,
     domain: curated?.domain ?? undefined,
     next_measurement: spotlight?.nextMeasurement ?? measurementForTrait(traitId),
     limitations: [
